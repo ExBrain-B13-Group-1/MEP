@@ -1,1 +1,1 @@
-Myanmar Education Portal
+Myanmar Education Portal(MEP)
