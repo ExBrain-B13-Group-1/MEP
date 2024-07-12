@@ -15,8 +15,12 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+
+    <script src="./resourse/js/navigation.js" defer></script>
   </head>
   <body>
+
+
     <aside
       id="logo-sidebar"
       close="false"
@@ -37,7 +41,7 @@
         <ul class="space-y-1 font-medium">
           <li>
             <a
-              href="#"
+            href="./dashboard.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -76,7 +80,7 @@
 
           <li>
             <a
-              href="#"
+              href="./finance.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -105,7 +109,7 @@
 
           <li>
             <a
-              href="#"
+              href="./userlists..php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -157,7 +161,7 @@
 
           <li>
             <a
-              href="#"
+              href="./institutelists.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -208,7 +212,7 @@
 
           <li>
             <a
-              href="#"
+              href="./mail.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -302,14 +306,14 @@
             >
               <li>
                 <a
-                  href="#"
+                  href="./userfeedback.php"
                   class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor"
                   >Users</a
                 >
               </li>
               <li>
                 <a
-                  href="#"
+                  href="./institutefeedback.php"
                   class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor"
                   >Institutes</a
                 >
@@ -319,7 +323,7 @@
 
           <li>
             <a
-              href="#"
+              href="./pages.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -373,7 +377,7 @@
 
           <li>
             <a
-              href="#"
+              href="./tools.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -402,7 +406,7 @@
 
           <li>
             <a
-              href="#"
+              href="./faq.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -531,7 +535,7 @@
         <ul class="space-y-1 absolute bottom-0 font-medium w-full pr-6">
           <li>
             <a
-              href="#"
+              href="./setting.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -775,56 +779,12 @@
     </nav>
 
 
-    <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full bg-black" id="main" aria-checked="false">
-     
-      <!-- code here -->
-
+    <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full " id="main" aria-checked="false">
+        <h1>Notifications</h1>
+  
     </div>
 
 
-    <script>
-      $("#sidebarControl").click(() => {
-        if ($("#logo-sidebar").attr("close") === "true") {
-          $("#dropdown-example").attr("aria-checked", "false");
-          $("#logo-sidebar").attr("close", "false");
 
-          $("#sidebarControl").css({
-            transform: "rotate(0)",
-          });
-        } else {
-          $("#logo-sidebar").attr("close", "true");
-          $("#dropdown-example").attr("aria-checked", "true");
-          $("#sidebarControl").css({
-            transform: "rotate(180deg)",
-          });
-        }
-        isCloseSideBar();
-      });
-
-      function isCloseSideBar() {
-        if ($("#logo-sidebar").attr("close") === "true") {
-          $("#brandLogo").attr("src", "./resourse/img/LOGOclose.svg");
-          $("#navbar").css({ width: "93.5%",marginLeft:'5rem' });
-          $(".sideLabel").css({ display: "none" });
-          $(".sideLabel").parent().css({ justifyContent: "center" });
-          $("#main").attr("aria-checked", "true");
-          $("#brandLogo").css({
-            size: "100",
-          });
-          $("#logo-sidebar").css({
-            width: "5%",
-          });
-        } else {
-          $("#brandLogo").attr("src", "./resourse/img/LOGO.svg");
-          $("#navbar").css({ width: "83%",marginLeft:'14rem' });
-          $(".sideLabel").css({ display: "block" });
-          $("#main").attr("aria-checked", "false");
-          $(".sideLabel").parent().css({ justifyContent: "start" });
-          $("#logo-sidebar").css({
-            width: "15.5%",
-          });
-        }
-      }
-    </script>
   </body>
 </html>
