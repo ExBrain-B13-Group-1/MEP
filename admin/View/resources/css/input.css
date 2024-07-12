@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Start HPP CSS Code
+.....................
+..................... */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+/* .................
+   .................
+   End HPP CSS Code*/

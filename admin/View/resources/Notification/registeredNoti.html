@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="../lib/jquery-3.7.1.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="../css/output.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <div class="flex h-screen">
+        <!-- Sidebar placeholder -->
+        <div class="w-1/5 bg-gray-800 h-full p-4">
+            <!-- Sidebar content -->
+        </div>
+
+        <div class="flex-1 flex flex-col">
+            <!-- Navbar placeholder -->
+            <div class="flex justify-between items-center bg-white p-4 rounded-lg shadow mb-4">
+                <div class="text-2xl font-bold">Notifications</div>
+                <!-- Navbar content -->
+            </div>
+
+            <div class="flex h-full">
+                <!-- User Notifications -->
+                <div id="user-content" class="tab-content active flex-1 overflow-y-auto no-scrollbar px-4">
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <div class="text-xl font-bold mb-4">New User Requested Approval Pending</div>
+                        <div class="space-y-4" id="user-notification-list">
+                            <!-- New User Notifications will be appended here dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Institute Notifications -->
+                <div id="institute-content" class="tab-content flex-1 overflow-y-auto no-scrollbar px-4">
+                    <div class="bg-white p-4 rounded-lg shadow">
+                        <div class="text-xl font-bold mb-4">Institute Requested Approval Pending</div>
+                        <div class="space-y-4" id="institute-notification-list">
+                            <!-- Institute notifications will be appended here dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal For Cancel Or Confirm -->
+                <div id="confirmation-modal"
+                    class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
+                    <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+                        <h2 class="text-xl font-bold mb-4" id="modal-title"></h2>
+                        <p id="modal-message" class="mb-4"></p>
+                        <div class="flex justify-end">
+                            <button class="bg-gray-500 text-white px-4 py-2 rounded mr-2"
+                                id="cancel-button">Cancel</button>
+                            <button class="bg-primary-main text-white px-4 py-2 rounded"
+                                id="confirm-button">Confirm</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="flex flex-col justify-center space-y-4 border-l border-gray-400 px-4">
+                    <button id="user-tab" class="tab-button  text-dark-blue font-bold text-xl px-4 py-2 rounded">User
+                        <span
+                            class="px-2 py-1 rounded-full text-sm bg-red-500 text-white relative bottom-3">3</span></button>
+                    <button id="institute-tab" class="tab-button  text-gray-700 px-4 py-2 rounded">Institute <span
+                            class="px-2 py-1 rounded-full text-sm bg-red-500 text-white relative bottom-3">5</span></button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/registeredNoti.js"></script>
+
+</body>
+
+</html>

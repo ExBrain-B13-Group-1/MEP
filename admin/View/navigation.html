@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Navigation</title>
     <link rel="stylesheet" href="./resourse/css/output.css" />
-    <script src="./resourse/lib/jquery.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="resources/lib/jquery-3.7.1.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
     <script
       type="module"
@@ -779,9 +781,90 @@
      
       <!-- code here -->
 
+      <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div class="w-1/5 text-black h-full p-4">
+            <br>
+            <ul>
+                <li class="mb-2"><a href="#" class="block p-2 text-white bg-dark-blue rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" class="inline mr-1" viewBox="-2 -5 24 24" {...$$props}>
+                        <path fill="currentColor" d="M2 5.702V12h16V5.702L15.039 2H4.96zM0 5l4-5h12l4 5v7a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm13.874 2a4.002 4.002 0 0 1-7.748 0H2V5h16v2zm-2.142 0H8.268a2 2 0 0 0 3.464 0" />
+                    </svg>
+                    Inbox <span class="px-1.5 bg-white text-dark-blue rounded-md float-right">5</span></a>
+                </li>
+                <li class="mb-2"><a href="#" class="block p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" class="inline mr-1" viewBox="0 0 24 24" {...$$props}>
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14L21 3m0 0l-6.5 18a.55.55 0 0 1-1 0L10 14l-7-3.5a.55.55 0 0 1 0-1z" />
+                    </svg>
+                    Sent</a></li>
+                <li class="mb-2"><a href="#" class="block p-2">
+                    <ion-icon name="trash-outline" class="w-5 h-5 relative top-1 mr-1"></ion-icon>
+                    Trash</a></li>
+                <li class="mb-2 text-dark-blue bg-transparent border border-dark-blue rounded"><a href="#" class="block p-2">
+                    <ion-icon name="add-circle-outline" class="w-5 h-5 relative top-1 mr-1"></ion-icon>
+                    New Message</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col">
+            <!-- Navbar -->
+            <div class="px-4 bg-white shadow flex justify-between items-center">
+                <div class="text-xl font-semibold">Inbox</div>
+            </div>
+
+            <div class="flex-1 flex overflow-hidden ">
+                <!-- Middle Column -->
+                <div class="w-1/2 bg-white p-4 overflow-y-auto no-scrollbar text-sm">
+                    <div class="mb-4">
+                        <div class="relative">
+                            <input type="text" class="border border-dark-blue px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none" placeholder="Search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue" viewBox="0 0 24 24">
+                                <g fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="11" cy="11" r="7" />
+                                    <path stroke-linecap="round" d="M11 8a3 3 0 0 0-3 3m12 9l-3-3" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>                                
+                    <!-- 3 Tabs (User, Institute, Others) -->
+                    <div class="border border-dark-blue px-2 py-1 rounded flex items-center w-full">
+                        <div class="tabs w-full flex justify-between">
+                            <button
+                                class="tab-button bg-dark-blue text-white px-4 py-2 rounded w-2/6 mr-2">User</button>
+                            <button
+                                class="tab-button text-gray-700 px-4 py-2 rounded w-2/6 mr-2">Institute</button>
+                            <button class="tab-button text-gray-700 px-4 py-2 rounded w-2/6">Others</button>
+                        </div>
+                    </div>
+
+                    <!-- User Sent Mail -->
+                    <div id="user-content" class="tab-content active space-y-4 mt-3">
+                        <!-- Notifications will be dynamically added here -->
+                    </div>
+
+                    <!-- Institute Sent Mail -->
+                    <div id="institute-content" class="tab-content space-y-4 mt-3">
+                        <!-- Notifications will be dynamically added here -->
+                    </div>
+
+                    <!-- Others Sent Mail -->
+                    <div id="others-content" class="tab-content space-y-4 mt-3">
+                        <!-- Notifications will be dynamically added here -->
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div id="email-details-container" class="w-1/2 bg-white p-4 overflow-y-auto no-scrollbar">
+                    <!-- Email details will be dynamically added here -->
+                </div>
+
+            </div>
+        </div>
+    </div>
     </div>
 
-
+    <script src="resources/js/mailSystem.js"></script>
     <script>
       $("#sidebarControl").click(() => {
         if ($("#logo-sidebar").attr("close") === "true") {
