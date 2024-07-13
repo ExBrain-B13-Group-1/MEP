@@ -24,6 +24,7 @@ module.exports = {
       },
       boxShadow: {
         'custom': '0 2px 4px 0 rgba(0, 0, 0, 0.25)',
+        'custom-finance': '0px 0px 5px 1px rgba(0, 0, 0, 0.25)',
          dshadow:'2px 0 6px 0  rgba(0, 0, 0, 0.3)'
       }
     },

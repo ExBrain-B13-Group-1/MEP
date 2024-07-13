@@ -39,7 +39,7 @@
         <ul class="space-y-1 font-medium">
           <li>
             <a
-              href="adminDashboard.html"
+              href="adminDashboard.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -78,7 +78,7 @@
 
           <li>
             <a
-              href="#"
+              href="finance.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -210,7 +210,7 @@
 
           <li>
             <a
-              href="#"
+              href="mailSystem.php"
               class="flex items-center p-2 text-gray-500 rounded-lg bg-primarycolor group"
             >
               <svg
@@ -719,7 +719,7 @@
           </li>
           <li class="mx-1">
             <a
-              href="Notification/registeredNoti.html"
+              href="Notification/pendingNotification.php"
               class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
             >
               <svg
@@ -865,49 +865,6 @@
     </div>
 
     <script src="js/mailSystem.js"></script>
-    <script>
-      $("#sidebarControl").click(() => {
-        if ($("#logo-sidebar").attr("close") === "true") {
-          $("#dropdown-example").attr("aria-checked", "false");
-          $("#logo-sidebar").attr("close", "false");
-
-          $("#sidebarControl").css({
-            transform: "rotate(0)",
-          });
-        } else {
-          $("#logo-sidebar").attr("close", "true");
-          $("#dropdown-example").attr("aria-checked", "true");
-          $("#sidebarControl").css({
-            transform: "rotate(180deg)",
-          });
-        }
-        isCloseSideBar();
-      });
-
-      function isCloseSideBar() {
-        if ($("#logo-sidebar").attr("close") === "true") {
-          $("#brandLogo").attr("src", "../resources/img/LOGOclose.svg");
-          $("#navbar").css({ width: "93.5%",marginLeft:'5rem' });
-          $(".sideLabel").css({ display: "none" });
-          $(".sideLabel").parent().css({ justifyContent: "center" });
-          $("#main").attr("aria-checked", "true");
-          $("#brandLogo").css({
-            size: "100",
-          });
-          $("#logo-sidebar").css({
-            width: "5%",
-          });
-        } else {
-          $("#brandLogo").attr("src", "../resources/img/LOGO.svg");
-          $("#navbar").css({ width: "83%",marginLeft:'14rem' });
-          $(".sideLabel").css({ display: "block" });
-          $("#main").attr("aria-checked", "false");
-          $(".sideLabel").parent().css({ justifyContent: "start" });
-          $("#logo-sidebar").css({
-            width: "15.5%",
-          });
-        }
-      }
-    </script>
+    <script src="js/sidebar.js"></script>
   </body>
 </html>

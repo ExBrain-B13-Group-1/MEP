@@ -15,7 +15,7 @@
             <img src="../../../storages/logo-white.svg" class="mx-auto mb-5" alt="logo">
 
             <!-- New Password Form For Back-End -->
-            <form action="login.html" class="space-y-4 md:space-y-7">
+            <form action="login.php" class="space-y-4 md:space-y-7">
                 <!-- New Password -->
                 <div>
                     <input type="password" id="new-password" placeholder="New Password"

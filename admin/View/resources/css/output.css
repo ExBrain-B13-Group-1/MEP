@@ -668,6 +668,10 @@ video {
   bottom: 0px;
 }
 
+.-top-7 {
+  top: -1.75rem;
+}
+
 .bottom-0 {
   bottom: 0px;
 }
@@ -686,6 +690,10 @@ video {
 
 .left-3 {
   left: 0.75rem;
+}
+
+.left-5 {
+  left: 1.25rem;
 }
 
 .left-8 {
@@ -798,6 +806,11 @@ video {
   margin-right: 0.75rem;
 }
 
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -805,6 +818,10 @@ video {
 
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
 }
 
 .mb-4 {
@@ -855,6 +872,10 @@ video {
   margin-top: 0.25rem;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -869,6 +890,10 @@ video {
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .mt-6 {
@@ -986,6 +1011,10 @@ video {
   height: 3rem;
 }
 
+.h-14 {
+  height: 3.5rem;
+}
+
 .h-16 {
   height: 4rem;
 }
@@ -1048,6 +1077,10 @@ video {
 
 .w-12 {
   width: 3rem;
+}
+
+.w-14 {
+  width: 3.5rem;
 }
 
 .w-16 {
@@ -2052,6 +2085,11 @@ video {
   border-bottom-left-radius: 0.25rem;
 }
 
+.rounded-b-lg {
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
 .rounded-e {
   border-start-end-radius: 0.25rem;
   border-end-end-radius: 0.25rem;
@@ -2204,13 +2242,33 @@ video {
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 
+.bg-\[\#1B5F4E\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(27 95 78 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#A0AFFF\]\/60 {
   background-color: rgb(160 175 255 / 0.6);
+}
+
+.bg-\[\#C8EBE2\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(200 235 226 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#D9D9D9\] {
   --tw-bg-opacity: 1;
   background-color: rgb(217 217 217 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#E0CE2C\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 206 44 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#F5EFB9\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 239 185 / var(--tw-bg-opacity));
 }
 
 .bg-\[rgb\(255\2c 0\2c 0\)\] {
@@ -2226,6 +2284,11 @@ video {
 .bg-blue-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
+}
+
+.bg-blue-light-bg {
+  --tw-bg-opacity: 1;
+  background-color: rgb(160 175 255 / var(--tw-bg-opacity));
 }
 
 .bg-card-bg {
@@ -2474,6 +2537,11 @@ video {
   padding-right: 0.5rem;
 }
 
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -2541,6 +2609,10 @@ video {
   padding-inline-start: 0.75rem;
 }
 
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2595,10 +2667,6 @@ video {
 
 .align-super {
   vertical-align: super;
-}
-
-.font-sans {
-  font-family: Lato, sans-serif;
 }
 
 .text-2xl {
@@ -2719,16 +2787,18 @@ video {
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
 }
 
-.leading-normal {
-  line-height: 1.5;
-}
-
-.tracking-normal {
-  letter-spacing: 0em;
+.text-\[\#1B5F4E\] {
+  --tw-text-opacity: 1;
+  color: rgb(27 95 78 / var(--tw-text-opacity));
 }
 
 .text-\[\#336699\]\/\[\.35\] {
   color: rgb(51 102 153 / .35);
+}
+
+.text-\[\#C9B926\] {
+  --tw-text-opacity: 1;
+  color: rgb(201 185 38 / var(--tw-text-opacity));
 }
 
 .text-black {
@@ -2771,6 +2841,11 @@ video {
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
 
+.text-green-500 {
+  --tw-text-opacity: 1;
+  color: rgb(34 197 94 / var(--tw-text-opacity));
+}
+
 .text-primary-main {
   --tw-text-opacity: 1;
   color: rgb(68 96 239 / var(--tw-text-opacity));
@@ -2779,6 +2854,11 @@ video {
 .text-primarycolor {
   --tw-text-opacity: 1;
   color: rgb(68 96 239 / var(--tw-text-opacity));
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .text-transparent {
@@ -2992,6 +3072,12 @@ video {
 .shadow-custom {
   --tw-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
   --tw-shadow-colored: 0 2px 4px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-custom-finance {
+  --tw-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+  --tw-shadow-colored: 0px 0px 5px 1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
@@ -3230,6 +3316,12 @@ body {
 
 #bar-chart {
   max-height: 200px;
+}
+
+/* Finance Chart Container */
+
+#chart-container {
+  height: 500px;
 }
 
 #users-pie-chart,

@@ -4,11 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Dashboard</title>
-    <!-- Calendar Link -->
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css' rel='stylesheet' />
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js'></script>
-
+    <title>Finance</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="../resources/css/output.css" rel="stylesheet">
     <script src="../resources/lib/jquery-3.7.1.js"></script>
@@ -29,8 +25,8 @@
             </a>
             <ul class="space-y-1 font-medium">
                 <li>
-                    <a href="adminDashboard.html"
-                        class="flex items-center p-2 text-gray-500 rounded-lg bg-primarycolor group">
+                    <a href="adminDashboard.php"
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="w-5 h-5 transition duration-75" width="27" height="27" viewBox="0 0 27 27"
                             fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -44,12 +40,12 @@
                                 stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" />
                         </svg>
 
-                        <span class="ms-3 sideLabel text-white">Dashboard</span>
+                        <span class="ms-3 sideLabel group-hover:text-white">Dashboard</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="#" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="finance.php" class="flex items-center p-2 text-gray-500 rounded-lg bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -57,7 +53,7 @@
                                 stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
 
-                        <span class="flex-1 ms-3 whitespace-nowrap sideLabel group-hover:text-white">Finance</span>
+                        <span class="flex-1 ms-3 whitespace-nowrap sideLabel text-white">Finance</span>
                     </a>
                 </li>
 
@@ -113,7 +109,7 @@
                 </li>
 
                 <li>
-                    <a href="mailSystem.html" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="mailSystem.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="21" viewBox="0 0 27 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -351,7 +347,7 @@
                 </form>
             </div>
             <p class="bg-gradient-to-t from-[#92A3FF] to-[#00288E] text-transparent bg-clip-text font-bold text-lg">
-                Mail
+                Finance
             </p>
             <ul
                 class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
@@ -386,7 +382,7 @@
                     </a>
                 </li>
                 <li class="mx-1">
-                    <a href="Notification/registeredNoti.html"
+                    <a href="Notification/pendingNotification.php"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                         <svg width="30" height="33" viewBox="0 0 30 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -421,177 +417,87 @@
         aria-checked="false">
 
         <!-- code here -->
-           <!-- Dashboard Flex Container -->
-           <div class="flex mt-4 space-x-4">
-            <!-- Left Section (w-4/6) -->
-            <div class="w-4/6">
-                <div class="grid grid-cols-3 gap-4">
-                    <!-- Total Users -->
-                    <div
-                        class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
-                        <div>
-                            <div class="text-gray-700 text-left">Total <br> Users</div>
-                            <div class="text-2xl text-primary-main font-bold text-left">6,942</div>
-                        </div>
-                        <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em"
-                                class="text-primary-main" viewBox="0 0 24 24" {...$$props}>
-                                <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="1.5"
-                                    d="M18 18.72a9.1 9.1 0 0 0 3.741-.479q.01-.12.01-.241a3 3 0 0 0-4.692-2.478m.94 3.197l.001.031q0 .337-.037.666A11.94 11.94 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6 6 0 0 1 6 18.719m12 0a5.97 5.97 0 0 0-.941-3.197m0 0A6 6 0 0 0 12 12.75a6 6 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72a9 9 0 0 0 3.74.477m.94-3.197a5.97 5.97 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0a3 3 0 0 1 6 0m6 3a2.25 2.25 0 1 1-4.5 0a2.25 2.25 0 0 1 4.5 0m-13.5 0a2.25 2.25 0 1 1-4.5 0a2.25 2.25 0 0 1 4.5 0" />
-                            </svg>
-                        </div>
-                    </div>
-                    <!-- Total Institutes -->
-                    <div
-                        class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
-                        <div>
-                            <div class="text-gray-700 text-left">Total <br> Institutes</div>
-                            <div class="text-2xl text-primary-main font-bold text-left">1,960</div>
-                        </div>
-                        <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em"
-                                class="text-primary-main" viewBox="0 0 24 24" {...$$props}>
-                                <g fill="none" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="1.5" color="currentColor">
-                                    <path
-                                        d="M2 2h14c1.886 0 2.828 0 3.414.586S20 4.114 20 6v6c0 1.886 0 2.828-.586 3.414S17.886 16 16 16H9m1-9.5h6M2 17v-4c0-.943 0-1.414.293-1.707S3.057 11 4 11h2m-4 6h4m-4 0v5m4-5v-6m0 6v5m0-11h6" />
-                                    <path d="M6 6.5a2 2 0 1 1-4 0a2 2 0 0 1 4 0" />
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
-                    <!-- Total Earnings -->
-                    <div
-                        class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
-                        <div>
-                            <div class="text-gray-700 text-left">Amount <br> Earnings</div>
-                            <div class="text-2xl text-primary-main font-bold text-left">$ 5000</div>
-                        </div>
-                        <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em"
-                                class="text-primary-main" viewBox="0 0 24 24" {...$$props}>
-                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
-                                    <path
-                                        d="M12 6v12m3-8.5C15 8.12 13.657 7 12 7S9 8.12 9 9.5s1.343 2.5 3 2.5s3 1.12 3 2.5s-1.343 2.5-3 2.5s-3-1.12-3-2.5" />
-                                    <path
-                                        d="M7 3.338A9.954 9.954 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5" />
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
-                    <!-- Weekly Visitors -->
-                    <div class="col-span-3 bg-card-bg p-4 rounded-lg shadow-custom">
-                        <div class="text-xl font-bold mb-2">Weekly Visitors Comparison</div>
-                        <!-- Bar Chart Placeholder -->
-                        <canvas id="bar-chart" class="h-64"></canvas>
-                    </div>
+           <!-- Cards -->
+           <div class="grid grid-cols-3 gap-4 mb-4 mt-10 px-4">
+            <!-- Total Income -->
+            <div class="bg-white shadow-custom-finance rounded-lg flex flex-col justify-between h-full text-right relative">
+                <div class="bg-blue-light-bg w-14 h-14 flex justify-center items-center rounded absolute -top-7 left-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2.3em" height="2.3em"
+                    class="text-primary-main" viewBox="0 0 24 24" {...$$props}>
+                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
+                        <path
+                            d="M12 6v12m3-8.5C15 8.12 13.657 7 12 7S9 8.12 9 9.5s1.343 2.5 3 2.5s3 1.12 3 2.5s-1.343 2.5-3 2.5s-3-1.12-3-2.5" />
+                        <path
+                            d="M7 3.338A9.954 9.954 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5" />
+                    </g>
+                </svg>
+                </div>
+                <div class="px-4 pt-2">
+                    <h2 class="text-lg font-semibold">Total Income</h2>
+                    <p class="text-xs mb-3">2023-2024</p>
+                    <p class="text-sm text-green-500">+12% Last Month</p>
+                </div>
+                <div class="w-full bg-primary-main text-white px-4 py-2 mt-1 rounded-b-lg">
+                    <p class="text-xl font-bold">$100,000,000</p>
+                </div>
+            </div>
+            <!-- Income by User -->
+            <div class="bg-white shadow-custom-finance rounded-lg flex flex-col justify-between h-full text-right relative">
+                <div class="bg-[#C8EBE2] w-14 h-14 flex justify-center items-center rounded absolute -top-7 left-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em"
+                            class="text-[#1B5F4E]" viewBox="0 0 24 24" {...$$props}>
+                            <path fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="1.5"
+                                d="M18 18.72a9.1 9.1 0 0 0 3.741-.479q.01-.12.01-.241a3 3 0 0 0-4.692-2.478m.94 3.197l.001.031q0 .337-.037.666A11.94 11.94 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6 6 0 0 1 6 18.719m12 0a5.97 5.97 0 0 0-.941-3.197m0 0A6 6 0 0 0 12 12.75a6 6 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72a9 9 0 0 0 3.74.477m.94-3.197a5.97 5.97 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0a3 3 0 0 1 6 0m6 3a2.25 2.25 0 1 1-4.5 0a2.25 2.25 0 0 1 4.5 0m-13.5 0a2.25 2.25 0 1 1-4.5 0a2.25 2.25 0 0 1 4.5 0" />
+                        </svg>
+                </div>
+                <div class="px-4 pt-2">
+                    <h2 class="text-lg font-semibold">Income by User</h2>
+                    <p class="text-xs mb-3">2023-2024</p>
+                    <p class="text-sm text-red-500">-2% Last Month</p>
+                </div>
+                <div class="w-full bg-[#1B5F4E] text-white px-4 py-2 mt-1 rounded-b-lg">
+                    <p class="text-xl font-bold">$100,000,000</p>
+                </div>
+            </div>
+            <!-- Income by Institute -->
+            <div class="bg-white shadow-custom-finance rounded-lg flex flex-col justify-between h-full text-right relative">
+                <div class="bg-[#F5EFB9] w-14 h-14 flex justify-center items-center rounded absolute -top-7 left-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em"
+                    class="text-[#C9B926]" viewBox="0 0 24 24" {...$$props}>
+                    <g fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="1.5" color="currentColor">
+                        <path
+                            d="M2 2h14c1.886 0 2.828 0 3.414.586S20 4.114 20 6v6c0 1.886 0 2.828-.586 3.414S17.886 16 16 16H9m1-9.5h6M2 17v-4c0-.943 0-1.414.293-1.707S3.057 11 4 11h2m-4 6h4m-4 0v5m4-5v-6m0 6v5m0-11h6" />
+                        <path d="M6 6.5a2 2 0 1 1-4 0a2 2 0 0 1 4 0" />
+                    </g>
+                </svg>
+                </div>
+                <div class="px-4 pt-2">
+                    <h2 class="text-lg font-semibold">Income by Institute</h2>
+                    <p class="text-xs mb-3">2023-2024</p>
+                    <p class="text-sm text-green-500">+14% Last Month</p>
+                </div>
+                <div class="w-full bg-[#E0CE2C] text-white px-4 py-2 mt-1 rounded-b-lg">
+                    <p class="text-xl font-bold">$100,000,000</p>
+                </div>
+            </div>
+        </div>
 
-                    <!-- Users, Institutes Pie Charts and Ad Slot -->
-                    <div class="col-span-3 flex justify-between space-x-4">
-                        <div class="w-2/4 bg-card-bg p-4 rounded-lg shadow-custom ">
-                            <div class="font-bold mb-2">Users</div>
-                            <!-- Users Pie Chart Placeholder -->
-                            <canvas id="users-pie-chart" class="h-40"></canvas>
-                        </div>
-                        <div class="w-2/4  bg-card-bg p-4 rounded-lg shadow-custom">
-                            <div class=" font-bold mb-2">Institutes</div>
-                            <!-- Institutes Pie Chart Placeholder -->
-                            <canvas id="institutes-pie-chart" class="h-40"></canvas>
-                        </div>
-                        <div class="w-5/6 bg-card-bg py-4 rounded-lg shadow-custom">
-                            <div class="font-bold mb-2 px-2">Upcoming Ad Slots</div>
-                            <!-- Upcoming Ad Slots Placeholder -->
-                            <div id="upcoming-ad-slots"></div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Chart -->
+        <div id="chart-container" class="bg-white shadow-lg rounded-lg py-4 px-20 mx-4 ">
+            <div id="year-controls" class="flex justify-end items-center mb-4">
+                <button id="prev-year" class="p-2 rounded transform transition-transform duration-200 hover:scale-110">&lt;</button>
+                <span id="current-year" class="mx-4 text-lg font-bold">2024</span>
+                <button id="next-year" class="p-2 rounded transform transition-transform duration-200 hover:scale-110">&gt;</button>
             </div>
-            <!-- Right Section (w-2/6) -->
-            <div class="w-2/6">
-                <div class="grid grid-cols-1 gap-4">
-                    <!-- Calendar -->
-                    <div class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom">
-                        <!-- Calendar Placeholder -->
-                        <div id="calendar"></div>
-                        <div id="logos" class="flex justify-center items-center mt-4 space-x-2">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 1"
-                                class="logo rounded-full w-8 h-8" data-institute="1">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 2"
-                                class="logo rounded-full  w-8 h-8" data-institute="2">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 3"
-                                class="logo rounded-full  w-8 h-8" data-institute="3">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 2"
-                                class="logo rounded-full  w-8 h-8" data-institute="2">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 3"
-                                class="logo rounded-full  w-8 h-8" data-institute="3">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 3"
-                                class="logo rounded-full  w-8 h-8" data-institute="3">
-                        </div>
-                    </div>
-                    <!-- Top Clients -->
-                    <div class="col-span-1 bg-card-bg py-2 rounded-lg shadow-custom">
-                        <div class="text-xl font-bold mb-2 px-4">Top Clients</div>
-                        <!-- Top Clients Placeholder -->
-                        <div id="top-clients"></div>
-                    </div>
-                    <!-- For Recent Actions Later (Optional) -->
-                    <!-- <div class="col-span-1 bg-custom-bg p-4 rounded-lg shadow-custom"> -->
-                    <!-- <div class="text-xl font-bold mb-2">Recent Actions</div> -->
-                    <!-- Recent Actions Placeholder -->
-                    <!-- <div id="recent-actions"></div> -->
-                    <!-- </div> -->
-                </div>
-            </div>
+            <canvas id="financeChart"></canvas>
         </div>
     </div>
     </div>
 
-    <script src="js/adminDashboard.js"></script>
-    <script>
-        $("#sidebarControl").click(() => {
-            if ($("#logo-sidebar").attr("close") === "true") {
-                $("#dropdown-example").attr("aria-checked", "false");
-                $("#logo-sidebar").attr("close", "false");
-
-                $("#sidebarControl").css({
-                    transform: "rotate(0)",
-                });
-            } else {
-                $("#logo-sidebar").attr("close", "true");
-                $("#dropdown-example").attr("aria-checked", "true");
-                $("#sidebarControl").css({
-                    transform: "rotate(180deg)",
-                });
-            }
-            isCloseSideBar();
-        });
-
-        function isCloseSideBar() {
-            if ($("#logo-sidebar").attr("close") === "true") {
-                $("#brandLogo").attr("src", "../resources/img/LOGOclose.svg");
-                $("#navbar").css({ width: "93.5%", marginLeft: '5rem' });
-                $(".sideLabel").css({ display: "none" });
-                $(".sideLabel").parent().css({ justifyContent: "center" });
-                $("#main").attr("aria-checked", "true");
-                $("#brandLogo").css({
-                    size: "100",
-                });
-                $("#logo-sidebar").css({
-                    width: "5%",
-                });
-            } else {
-                $("#brandLogo").attr("src", "../resources/img/LOGO.svg");
-                $("#navbar").css({ width: "83%", marginLeft: '14rem' });
-                $(".sideLabel").css({ display: "block" });
-                $("#main").attr("aria-checked", "false");
-                $(".sideLabel").parent().css({ justifyContent: "start" });
-                $("#logo-sidebar").css({
-                    width: "15.5%",
-                });
-            }
-        }
-    </script>
+    <script src="js/finance.js"></script>
+    <script src="js/sidebar.js"></script>
 </body>
 
 </html>

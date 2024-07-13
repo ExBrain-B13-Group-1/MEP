@@ -25,6 +25,11 @@ body {
   max-height: 200px;
 }
 
+/* Finance Chart Container */
+#chart-container {
+  height: 500px; 
+}
+
 #users-pie-chart,
 #institutes-pie-chart {
   max-height: 100px;
