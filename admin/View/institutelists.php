@@ -814,8 +814,6 @@
               >
             </div>
 
-
-
             <form class="max-w-md">
               <label
                 for="default-search"
@@ -862,7 +860,10 @@
                   class="inline-flex items-center text-gray-500 bg-white border-2 border-primarycolor focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-1.5"
                   type="button"
                 >
-                <ion-icon name="options-outline" class="mr-3 font-md"></ion-icon>
+                  <ion-icon
+                    name="options-outline"
+                    class="mr-3 font-md"
+                  ></ion-icon>
                   Filter
                   <svg
                     class="w-2.5 h-2.5 ms-2.5"
@@ -915,7 +916,7 @@
                           class="text-black border border-gray-400 font-medium rounded-sm text-sm px-5 w-full py-1 text-center inline-flex items-center"
                           type="button"
                         >
-                        Reviews Range
+                          Reviews Range
                           <svg
                             class="w-2.5 h-2.5 ms-9"
                             aria-hidden="true"
@@ -1071,15 +1072,22 @@
               </th>
               <th scope="col" class="px-6 py-3 font-bold text-xs">ID</th>
               <th scope="col" class="px-6 py-3 font-bold text-xs">Logo</th>
-              <th scope="col" class="px-6 py-3 font-bold text-xs">Institute Name</th>
-              <th scope="col" class="px-6 py-3 font-bold text-xs">Registered Date</th>
+              <th scope="col" class="px-6 py-3 font-bold text-xs">
+                Institute Name
+              </th>
+              <th scope="col" class="px-6 py-3 font-bold text-xs">
+                Registered Date
+              </th>
               <th scope="col" class="px-6 py-3 font-bold text-xs">Class</th>
               <th scope="col" class="px-6 py-3 font-bold text-xs">Contact</th>
               <th scope="col" class="px-6 py-3 font-bold text-xs">Warn</th>
             </tr>
           </thead>
-          <tbody >
-            <tr aria-warm="true" class="bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50">
+          <tbody>
+            <tr
+              aria-warm="true"
+              class="bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50"
+            >
               <td class="w-4 p-4">
                 <div class="flex items-center">
                   <input
@@ -1094,10 +1102,72 @@
               </td>
 
               <td class="px-6 py-3 text-black text-xs">245</td>
-              <td class="px-6 py-3 text-black text-xs">John Smith</td>
-              <td class="px-6 py-3 text-black text-xs">23</td>
-              <td class="px-6 py-3 text-black text-xs">Male</td>
+              <td class="px-3 py-3 text-black text-xs">
+                <img
+                  src="./resourse/img/institute_logo.png"
+                  alt="Institute Logo"
+                  width="50"
+                />
+              </td>
+              <td class="px-6 py-3 text-black text-xs">ABC Institute</td>
               <td class="px-6 py-3 text-black text-xs">30.07.2024</td>
+              <td class="px-6 py-3 text-black text-xs">3 classes</td>
+              <td class="px-6 py-3 text-black flex justify-start align-middle">
+                <a
+                  href=""
+                  class="bg-blue-300 rounded-full flex justify-center align-middle items-center w-9 h-9"
+                >
+                  <ion-icon
+                    name="call-outline"
+                    class="text-md text-primarycolor"
+                  ></ion-icon>
+                </a>
+                <a
+                  href=""
+                  class="bg-blue-300 rounded-full flex justify-center align-middle items-center w-9 h-9 ml-2"
+                >
+                  <ion-icon
+                    name="alert-circle-outline"
+                    class="text-xl"
+                  ></ion-icon>
+                </a>
+              </td>
+              <td class="px-6 py-3 text-black">
+                <a href="">
+                  <ion-icon
+                    name="alert-circle-outline"
+                    class="text-red-500 text-3xl"
+                  ></ion-icon>
+                </a>
+              </td>
+            </tr>
+            <tr
+              class="bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50"
+            >
+              <td class="w-4 p-4">
+                <div class="flex items-center">
+                  <input
+                    id="checkbox-table-search-1"
+                    type="checkbox"
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+                  />
+                  <label for="checkbox-table-search-1" class="sr-only"
+                    >checkbox</label
+                  >
+                </div>
+              </td>
+
+              <td class="px-6 py-3 text-black text-xs">245</td>
+              <td class="px-3 py-3 text-black text-xs">
+                <img
+                  src="./resourse/img/institute_logo.png"
+                  alt="Institute Logo"
+                  width="50"
+                />
+              </td>
+              <td class="px-6 py-3 text-black text-xs">ABC Institute</td>
+              <td class="px-6 py-3 text-black text-xs">30.07.2024</td>
+              <td class="px-6 py-3 text-black text-xs">3 classes</td>
               <td class="px-6 py-3 text-black flex justify-start align-middle">
                 <a
                   href=""
@@ -1128,7 +1198,9 @@
               </td>
             </tr>
 
-            <tr class="bg-white border-b hover:bg-gray-50  aria-[ban=true]:line-through aria-[ban=true]:bg-red-200" aria-ban="true">
+            <tr
+              class="bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50"
+            >
               <td class="w-4 p-4">
                 <div class="flex items-center">
                   <input
@@ -1143,10 +1215,16 @@
               </td>
 
               <td class="px-6 py-3 text-black text-xs">245</td>
-              <td class="px-6 py-3 text-black text-xs">John Smith</td>
-              <td class="px-6 py-3 text-black text-xs">23</td>
-              <td class="px-6 py-3 text-black text-xs">Male</td>
+              <td class="px-3 py-3 text-black text-xs">
+                <img
+                  src="./resourse/img/institute_logo.png"
+                  alt="Institute Logo"
+                  width="50"
+                />
+              </td>
+              <td class="px-6 py-3 text-black text-xs">ABC Institute</td>
               <td class="px-6 py-3 text-black text-xs">30.07.2024</td>
+              <td class="px-6 py-3 text-black text-xs">3 classes</td>
               <td class="px-6 py-3 text-black flex justify-start align-middle">
                 <a
                   href=""
@@ -1177,7 +1255,9 @@
               </td>
             </tr>
 
-            <tr class="bg-white border-b hover:bg-gray-50">
+            <tr
+              class="bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50"
+            >
               <td class="w-4 p-4">
                 <div class="flex items-center">
                   <input
@@ -1192,10 +1272,16 @@
               </td>
 
               <td class="px-6 py-3 text-black text-xs">245</td>
-              <td class="px-6 py-3 text-black text-xs">John Smith</td>
-              <td class="px-6 py-3 text-black text-xs">23</td>
-              <td class="px-6 py-3 text-black text-xs">Male</td>
+              <td class="px-3 py-3 text-black text-xs">
+                <img
+                  src="./resourse/img/institute_logo.png"
+                  alt="Institute Logo"
+                  width="50"
+                />
+              </td>
+              <td class="px-6 py-3 text-black text-xs">ABC Institute</td>
               <td class="px-6 py-3 text-black text-xs">30.07.2024</td>
+              <td class="px-6 py-3 text-black text-xs">3 classes</td>
               <td class="px-6 py-3 text-black flex justify-start align-middle">
                 <a
                   href=""
@@ -1226,7 +1312,9 @@
               </td>
             </tr>
 
-            <tr class="bg-white border-b hover:bg-gray-50">
+            <tr
+              class="bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50"
+            >
               <td class="w-4 p-4">
                 <div class="flex items-center">
                   <input
@@ -1241,10 +1329,16 @@
               </td>
 
               <td class="px-6 py-3 text-black text-xs">245</td>
-              <td class="px-6 py-3 text-black text-xs">John Smith</td>
-              <td class="px-6 py-3 text-black text-xs">23</td>
-              <td class="px-6 py-3 text-black text-xs">Male</td>
+              <td class="px-3 py-3 text-black text-xs">
+                <img
+                  src="./resourse/img/institute_logo.png"
+                  alt="Institute Logo"
+                  width="50"
+                />
+              </td>
+              <td class="px-6 py-3 text-black text-xs">ABC Institute</td>
               <td class="px-6 py-3 text-black text-xs">30.07.2024</td>
+              <td class="px-6 py-3 text-black text-xs">3 classes</td>
               <td class="px-6 py-3 text-black flex justify-start align-middle">
                 <a
                   href=""
@@ -1275,7 +1369,9 @@
               </td>
             </tr>
 
-            <tr class="bg-white border-b hover:bg-gray-50">
+            <tr
+              class="bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50"
+            >
               <td class="w-4 p-4">
                 <div class="flex items-center">
                   <input
@@ -1290,10 +1386,16 @@
               </td>
 
               <td class="px-6 py-3 text-black text-xs">245</td>
-              <td class="px-6 py-3 text-black text-xs">John Smith</td>
-              <td class="px-6 py-3 text-black text-xs">23</td>
-              <td class="px-6 py-3 text-black text-xs">Male</td>
+              <td class="px-3 py-3 text-black text-xs">
+                <img
+                  src="./resourse/img/institute_logo.png"
+                  alt="Institute Logo"
+                  width="50"
+                />
+              </td>
+              <td class="px-6 py-3 text-black text-xs">ABC Institute</td>
               <td class="px-6 py-3 text-black text-xs">30.07.2024</td>
+              <td class="px-6 py-3 text-black text-xs">3 classes</td>
               <td class="px-6 py-3 text-black flex justify-start align-middle">
                 <a
                   href=""
@@ -1324,7 +1426,9 @@
               </td>
             </tr>
 
-            <tr class="bg-white border-b hover:bg-gray-50">
+            <tr
+              class="bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50"
+            >
               <td class="w-4 p-4">
                 <div class="flex items-center">
                   <input
@@ -1339,59 +1443,16 @@
               </td>
 
               <td class="px-6 py-3 text-black text-xs">245</td>
-              <td class="px-6 py-3 text-black text-xs">John Smith</td>
-              <td class="px-6 py-3 text-black text-xs">23</td>
-              <td class="px-6 py-3 text-black text-xs">Male</td>
+              <td class="px-3 py-3 text-black text-xs">
+                <img
+                  src="./resourse/img/institute_logo.png"
+                  alt="Institute Logo"
+                  width="50"
+                />
+              </td>
+              <td class="px-6 py-3 text-black text-xs">ABC Institute</td>
               <td class="px-6 py-3 text-black text-xs">30.07.2024</td>
-              <td class="px-6 py-3 text-black flex justify-start align-middle">
-                <a
-                  href=""
-                  class="bg-blue-300 rounded-full flex justify-center align-middle items-center w-9 h-9"
-                >
-                  <ion-icon
-                    name="call-outline"
-                    class="text-md text-primarycolor"
-                  ></ion-icon>
-                </a>
-                <a
-                  href=""
-                  class="bg-blue-300 rounded-full flex justify-center align-middle items-center w-9 h-9 ml-2"
-                >
-                  <ion-icon
-                    name="alert-circle-outline"
-                    class="text-xl"
-                  ></ion-icon>
-                </a>
-              </td>
-              <td class="px-6 py-3 text-black">
-                <a href="">
-                  <ion-icon
-                    name="alert-circle-outline"
-                    class="text-red-500 text-3xl"
-                  ></ion-icon>
-                </a>
-              </td>
-            </tr>
-
-            <tr class="bg-white border-b hover:bg-gray-50">
-              <td class="w-4 p-4">
-                <div class="flex items-center">
-                  <input
-                    id="checkbox-table-search-1"
-                    type="checkbox"
-                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
-                  />
-                  <label for="checkbox-table-search-1" class="sr-only"
-                    >checkbox</label
-                  >
-                </div>
-              </td>
-
-              <td class="px-6 py-3 text-black text-xs">245</td>
-              <td class="px-6 py-3 text-black text-xs">John Smith</td>
-              <td class="px-6 py-3 text-black text-xs">23</td>
-              <td class="px-6 py-3 text-black text-xs">Male</td>
-              <td class="px-6 py-3 text-black text-xs">30.07.2024</td>
+              <td class="px-6 py-3 text-black text-xs">3 classes</td>
               <td class="px-6 py-3 text-black flex justify-start align-middle">
                 <a
                   href=""
@@ -1437,35 +1498,36 @@
       </div>
 
       <div class="w-1/3 px-2">
-
-          <div class="w-full h-28 bg-white shadow-dshadow mb-2 px-2 py-1 rounded-sm">
-            <div class="flex items-center">
-              <ion-icon name="today-outline" class="text-3xl"></ion-icon>
-              <h1 class="font-bold underline">Upcoming Institutes Events</h1>
-            </div>
-
-            <div class="w-full mt-2">
-              <div class="flex justify-between">
-                <p class="text-sm">Date:</p>
-                <p class="text-sm">July, 20 2024</p>
-                <p class="text-sm">By ABC Institute</p>
-              </div>
-
-              <div class="flex justify-between">
-                <p class="text-sm">Date:</p>
-                <p class="text-sm">July, 20 2024</p>
-                <p class="text-sm">By ABC Institute</p>
-              </div>
-
-              <div class="flex justify-between">
-                <p class="text-sm">Date:</p>
-                <p class="text-sm">July, 20 2024</p>
-                <p class="text-sm">By ABC Institute</p>
-              </div>
-            </div>
+        <div
+          class="w-full h-28 bg-white shadow-dshadow mb-2 px-2 py-1 rounded-sm"
+        >
+          <div class="flex items-center">
+            <ion-icon name="today-outline" class="text-3xl"></ion-icon>
+            <h1 class="font-bold underline">Upcoming Institutes Events</h1>
           </div>
 
-        <div class="w-full  rounded-sm bg-white shadow-dshadow">
+          <div class="w-full mt-2">
+            <div class="flex justify-between">
+              <p class="text-sm">Date:</p>
+              <p class="text-sm">July, 20 2024</p>
+              <p class="text-sm">By ABC Institute</p>
+            </div>
+
+            <div class="flex justify-between">
+              <p class="text-sm">Date:</p>
+              <p class="text-sm">July, 20 2024</p>
+              <p class="text-sm">By ABC Institute</p>
+            </div>
+
+            <div class="flex justify-between">
+              <p class="text-sm">Date:</p>
+              <p class="text-sm">July, 20 2024</p>
+              <p class="text-sm">By ABC Institute</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full rounded-sm bg-white shadow-dshadow">
           <div class="flex justify-between p-3">
             <p>ID:456</p>
             <a
@@ -1517,10 +1579,12 @@
               <p>Male</p>
             </div>
 
-            
             <div class="flex my-1 ml-2 items-center text-sm">
               <p class="mr-2 font-bold">Verified:</p>
-              <ion-icon name="checkmark-circle-outline" class="text-primarycolor ml-2"></ion-icon>
+              <ion-icon
+                name="checkmark-circle-outline"
+                class="text-primarycolor ml-2"
+              ></ion-icon>
             </div>
 
             <div class="flex my-1 ml-2 items-center text-sm">
@@ -1535,17 +1599,21 @@
 
             <div class="flex my-1 ml-2 items-center text-sm">
               <p class="mr-2 font-bold">Address:</p>
-              <p>No 123, Education Street, Edu Township/p>
+              <p>No 123, Education Street, Edu Township/p></p>
             </div>
           </div>
 
           <div class="w-full ml-2 py-1">
             <h1 class="font-bold">NRC:</h1>
             <div class="flex justify-around items-center mt-2">
-              <div class="w-28 h-20 rounded-md bg-gray-400 flex justify-center items-center text-black">
+              <div
+                class="w-28 h-20 rounded-md bg-gray-400 flex justify-center items-center text-black"
+              >
                 front
               </div>
-              <div class="w-28 h-20 rounded-md bg-gray-400 flex justify-center items-center text-black">
+              <div
+                class="w-28 h-20 rounded-md bg-gray-400 flex justify-center items-center text-black"
+              >
                 back
               </div>
             </div>
@@ -1553,6 +1621,5 @@
         </div>
       </div>
     </div>
-
   </body>
 </html>
