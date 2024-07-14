@@ -304,14 +304,14 @@
             >
               <li>
                 <a
-                  href="#"
+                  href="userFeedback.php"
                   class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor"
                   >Users</a
                 >
               </li>
               <li>
                 <a
-                  href="#"
+                  href="instituteFeedback.php"
                   class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor"
                   >Institutes</a
                 >
@@ -595,7 +595,7 @@
     </aside>
 
     <nav
-      class=" bg-white shadow-dshadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50"
+      class=" bg-white shadow-shadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50"
       id="navbar"
     >
       <div

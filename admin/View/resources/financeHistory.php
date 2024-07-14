@@ -157,11 +157,11 @@
                     <ul id="dropdown-example" aria-checked="false"
                         class="hidden py-2 space-y-2 aria-[checked=true]:absolute aria-[checked=true]:left-16 aria-[checked=true]:pr-4 aria-[checked=true]:bottom-[-35px] bg-white aria-[checked=true]:shadow-dshadow rounded-md">
                         <li>
-                            <a href="#"
+                            <a href="userFeedback.php"
                                 class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor">Users</a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="instituteFeedback.php"
                                 class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor">Institutes</a>
                         </li>
                     </ul>
@@ -322,7 +322,7 @@
         </div>
     </aside>
 
-    <nav class=" bg-white shadow-dshadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50"
+    <nav class=" bg-white shadow-shadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50"
         id="navbar">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
             <div class="flex justify-between items-center w-96">

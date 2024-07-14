@@ -4,16 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Dashboard</title>
-    <!-- Calendar Link -->
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css' rel='stylesheet' />
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js'></script>
-
+    <title>User Feedback</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="../resources/css/output.css" rel="stylesheet">
     <script src="../resources/lib/jquery-3.7.1.js"></script>
-    <!-- Chart Js Link -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -30,7 +24,7 @@
             <ul class="space-y-1 font-medium">
                 <li>
                     <a href="adminDashboard.php"
-                        class="flex items-center p-2 text-gray-500 rounded-lg bg-primarycolor group">
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="w-5 h-5 transition duration-75" width="27" height="27" viewBox="0 0 27 27"
                             fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -44,12 +38,13 @@
                                 stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" />
                         </svg>
 
-                        <span class="ms-3 sideLabel text-white">Dashboard</span>
+                        <span class="ms-3 sideLabel group-hover:text-white">Dashboard</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="finance.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="finance.php"
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -113,7 +108,8 @@
                 </li>
 
                 <li>
-                    <a href="mailSystem.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="mailSystem.php"
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="21" viewBox="0 0 27 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -130,7 +126,7 @@
 
                 <li class="relative">
                     <a href="#"
-                        class="flex items-center w-full p-2 text-base text-gray-500 transition duration-75 rounded-lg group hover:bg-primarycolor"
+                        class="flex items-center w-full p-2 text-base text-gray-500 transition duration-75 rounded-lg group bg-primarycolor"
                         aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
                             width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -152,7 +148,7 @@
                         </svg>
 
                         <span
-                            class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap sideLabel group-hover:text-white">Feedback</span>
+                            class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap sideLabel text-white">Feedback</span>
                         <svg class="w-3 h-3 sideLabel" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 10 6">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -163,11 +159,11 @@
                         class="hidden py-2 space-y-2 aria-[checked=true]:absolute aria-[checked=true]:left-16 aria-[checked=true]:pr-4 aria-[checked=true]:bottom-[-35px] bg-white aria-[checked=true]:shadow-dshadow rounded-md">
                         <li>
                             <a href="userFeedback.php"
-                                class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor">Users</a>
+                                class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group text-primarycolor">Users</a>
                         </li>
                         <li>
                             <a href="instituteFeedback.php"
-                                class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor">Institutes</a>
+                                class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor">Institutes</a>
                         </li>
                     </ul>
                 </li>
@@ -351,7 +347,7 @@
                 </form>
             </div>
             <p class="bg-gradient-to-t from-[#92A3FF] to-[#00288E] text-transparent bg-clip-text font-bold text-lg">
-                Dashboard
+                User Feedback
             </p>
             <ul
                 class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
@@ -417,138 +413,115 @@
     </nav>
 
 
-    <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full" id="main"
+    <div class="absolute right-0 top-16 px-10 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full" id="main"
         aria-checked="false">
 
         <!-- code here -->
-           <!-- Dashboard Flex Container -->
-           <div class="flex mt-4 space-x-4">
-            <!-- Left Section (w-4/6) -->
-            <div class="w-4/6">
-                <div class="grid grid-cols-3 gap-4">
-                    <!-- Total Users -->
-                    <div
-                        class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
-                        <div>
-                            <div class="text-gray-700 text-left">Total <br> Users</div>
-                            <div class="text-2xl text-primary-main font-bold text-left">6,942</div>
+        <!-- Dashboard Flex Container -->
+        <div class="flex mt-4 space-x-4">
+            <div class="grid grid-cols-6 gap-6">
+                <!-- Total Feedback -->
+                <div
+                    class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
+                    <div class="text-primary-main text-left mb-3">Total Feedback</div>
+                    <div class="text-4xl text-dark-blue font-bold text-left">10</div>
+                </div>
+                <!-- Unread -->
+                <div
+                    class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
+                    <div class="text-primary-main text-left mb-3">Unread</div>
+                    <div class="text-4xl text-dark-blue font-bold text-left">5</div>
+                </div>
+                <!-- Read -->
+                <div
+                    class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
+                    <div class="text-primary-main text-left mb-3">Total Feedback</div>
+                    <div class="text-4xl text-dark-blue font-bold text-left">5</div>
+                </div>
+                <!-- Report -->
+                <div
+                    class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
+                    <div class="text-primary-main text-left mb-3">Report</div>
+                    <div class="text-4xl text-red-600 font-bold text-left">2</div>
+                </div>
+                <!-- Sort -->
+                <div class="col-span-2 bg-card-bg py-2 px-4 rounded-lg shadow-custom">
+                    <div class="flex">
+                        <div class="border-r pr-10">
+                            <h3 class="text-lg font-semibold text-primary-main">Sort</h3>
+                            <div>
+                                <label class="inline-flex items-center mt-1">
+                                    <input type="radio" name="sort" value="read" class="form-radio"
+                                        checked>
+                                    <span class="ml-2 text-sm">Read</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="sort" value="unread" class="form-radio">
+                                    <span class="ml-2 text-sm">Unread</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="sort" value="report" class="form-radio">
+                                    <span class="ml-2 text-sm">Report</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="inline-flex items-center">
+                                    <input type="radio" name="sort" value="replay" class="form-radio">
+                                    <span class="ml-2 text-sm">Replay</span>
+                                </label>
+                            </div>
                         </div>
-                        <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em"
-                                class="text-primary-main" viewBox="0 0 24 24" {...$$props}>
-                                <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="1.5"
-                                    d="M18 18.72a9.1 9.1 0 0 0 3.741-.479q.01-.12.01-.241a3 3 0 0 0-4.692-2.478m.94 3.197l.001.031q0 .337-.037.666A11.94 11.94 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6 6 0 0 1 6 18.719m12 0a5.97 5.97 0 0 0-.941-3.197m0 0A6 6 0 0 0 12 12.75a6 6 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72a9 9 0 0 0 3.74.477m.94-3.197a5.97 5.97 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0a3 3 0 0 1 6 0m6 3a2.25 2.25 0 1 1-4.5 0a2.25 2.25 0 0 1 4.5 0m-13.5 0a2.25 2.25 0 1 1-4.5 0a2.25 2.25 0 0 1 4.5 0" />
-                            </svg>
-                        </div>
-                    </div>
-                    <!-- Total Institutes -->
-                    <div
-                        class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
-                        <div>
-                            <div class="text-gray-700 text-left">Total <br> Institutes</div>
-                            <div class="text-2xl text-primary-main font-bold text-left">1,960</div>
-                        </div>
-                        <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em"
-                                class="text-primary-main" viewBox="0 0 24 24" {...$$props}>
-                                <g fill="none" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="1.5" color="currentColor">
-                                    <path
-                                        d="M2 2h14c1.886 0 2.828 0 3.414.586S20 4.114 20 6v6c0 1.886 0 2.828-.586 3.414S17.886 16 16 16H9m1-9.5h6M2 17v-4c0-.943 0-1.414.293-1.707S3.057 11 4 11h2m-4 6h4m-4 0v5m4-5v-6m0 6v5m0-11h6" />
-                                    <path d="M6 6.5a2 2 0 1 1-4 0a2 2 0 0 1 4 0" />
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
-                    <!-- Total Earnings -->
-                    <div
-                        class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
-                        <div>
-                            <div class="text-gray-700 text-left">Amount <br> Earnings</div>
-                            <div class="text-2xl text-primary-main font-bold text-left">$ 5000</div>
-                        </div>
-                        <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em"
-                                class="text-primary-main" viewBox="0 0 24 24" {...$$props}>
-                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
-                                    <path
-                                        d="M12 6v12m3-8.5C15 8.12 13.657 7 12 7S9 8.12 9 9.5s1.343 2.5 3 2.5s3 1.12 3 2.5s-1.343 2.5-3 2.5s-3-1.12-3-2.5" />
-                                    <path
-                                        d="M7 3.338A9.954 9.954 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5" />
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
-                    <!-- Weekly Visitors -->
-                    <div class="col-span-3 bg-card-bg p-4 rounded-lg shadow-custom">
-                        <div class="text-lg font-bold mb-2">Weekly Visitors Comparison</div>
-                        <!-- Bar Chart Placeholder -->
-                        <canvas id="bar-chart" class="h-64"></canvas>
-                    </div>
-
-                    <!-- Users, Institutes Pie Charts and Ad Slot -->
-                    <div class="col-span-3 flex justify-between space-x-4">
-                        <div class="w-2/4 bg-card-bg p-4 rounded-lg shadow-custom ">
-                            <div class="font-bold mb-2">Users</div>
-                            <!-- Users Pie Chart Placeholder -->
-                            <canvas id="users-pie-chart" class="h-40"></canvas>
-                        </div>
-                        <div class="w-2/4  bg-card-bg p-4 rounded-lg shadow-custom">
-                            <div class=" font-bold mb-2">Institutes</div>
-                            <!-- Institutes Pie Chart Placeholder -->
-                            <canvas id="institutes-pie-chart" class="h-40"></canvas>
-                        </div>
-                        <div class="w-5/6 bg-card-bg py-4 rounded-lg shadow-custom">
-                            <div class="font-bold mb-2 px-2">Upcoming Ad Slots</div>
-                            <!-- Upcoming Ad Slots Placeholder -->
-                            <div id="upcoming-ad-slots"></div>
+                        <div class="flex flex-col justify-center px-4">
+                            <label for="start-date" class="text-sm font-medium">Start Date</label>
+                            <input type="date" id="start-date"
+                                class="mt-1 mb-2 px-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-main">
+                            <label for="end-date" class="text-sm font-medium">End Date</label>
+                            <input type="date" id="end-date"
+                                class="mt-1 px-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-main">
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Right Section (w-2/6) -->
-            <div class="w-2/6">
-                <div class="grid grid-cols-1 gap-4">
-                    <!-- Calendar -->
-                    <div class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom">
-                        <!-- Calendar Placeholder -->
-                        <div id="calendar"></div>
-                        <div id="logos" class="flex justify-center items-center mt-4 space-x-2">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 1"
-                                class="logo rounded-full w-8 h-8" data-institute="1">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 2"
-                                class="logo rounded-full  w-8 h-8" data-institute="2">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 3"
-                                class="logo rounded-full  w-8 h-8" data-institute="3">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 2"
-                                class="logo rounded-full  w-8 h-8" data-institute="2">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 3"
-                                class="logo rounded-full  w-8 h-8" data-institute="3">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 3"
-                                class="logo rounded-full  w-8 h-8" data-institute="3">
-                        </div>
-                    </div>
-                    <!-- Top Clients -->
-                    <div class="col-span-1 bg-card-bg py-2 rounded-lg shadow-custom">
-                        <div class="text-xl font-bold mb-2 px-4">Top Clients</div>
-                        <!-- Top Clients Placeholder -->
-                        <div id="top-clients"></div>
-                    </div>
-                    <!-- For Recent Actions Later (Optional) -->
-                    <!-- <div class="col-span-1 bg-custom-bg p-4 rounded-lg shadow-custom"> -->
-                    <!-- <div class="text-xl font-bold mb-2">Recent Actions</div> -->
-                    <!-- Recent Actions Placeholder -->
-                    <!-- <div id="recent-actions"></div> -->
-                    <!-- </div> -->
+        </div>
+        <div class="rounded-lg py-6 w-full flex space-x-6">
+            <div class="w-4/6">
+                <!-- Report and feedback items container -->
+                <div id="report-feedback-container"></div>
+            </div>
+            <div class="w-2/6 bg-white p-6 rounded-lg shadow-md text-sm hidden " id="mailCard">
+                <h2 id="message-to" class="text-base font-semibold mb-2">To: abc@gmail.com</h2>
+                <h3 id="message-subject" class="font-semibold mb-4">Subject: Review Report Result</h3>
+                <div id="message-content" class="text-sm text-gray-700">
+                    <p>We hope this message finds you well.</p>
+                    <p>We are writing to inform you about the outcome of our assessment regarding the review reported by your institute.</p>
+                    <br>
+                    <p>After thoroughly evaluating the reported review, we have determined that it <span class="text-dark-blue font-semibold">does not infringe</span> on any guidelines and does not contain any inappropriate content.</p>
+                    <br>
+                    <p>We appreciate your understanding in this matter. Should you have any further questions or require additional assistance, please do not hesitate to contact us.</p>
+                    <br>
+                    <p>Thank you for your cooperation.</p>
+                    <p>Best regards,</p>
+                    <p>Myanmar Education Portal</p>
+                    <p>Admin</p>
                 </div>
+                <button class="bg-dark-blue text-white py-2 px-4 rounded-lg mt-4 flex items-center">
+                    <span>Send</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2.94 5.94a1 1 0 000 1.41l8.72 8.72a1 1 0 001.41-1.41l-8.72-8.72a1 1 0 00-1.41 0zm0 2.12a1 1 0 011.41 0l5.24 5.24-6.65 2.21a.75.75 0 01-.95-.95l2.21-6.65zm6.17 7.96l2.93-9.13 4.9 4.9-7.83 4.23z"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </div>
     </div>
 
-    <script src="js/adminDashboard.js"></script>
+    <script src="js/userFeedback.js"></script>
     <script src="js/sidebar.js"></script>
+   
 </body>
 
 </html>
