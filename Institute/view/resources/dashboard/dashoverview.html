@@ -3,66 +3,79 @@
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Dashboard Overview</title>
       <!-- Tailwind output css -->
       <link href="./../css/output.css" rel="stylesheet" />
    </head>   
-   <body>
+   <body class="bg-gray-300">
       
       <!-- Navbar -->
       <nav class="fixed top-0 z-10 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 duration-300">
          <div class="px-3 py-3 lg:px-5 lg:pl-3">
-         <div class="flex items-center justify-end">
-            
+         <div class="flex items-center justify-between">
+            <div class="ml-64 relative top-3 pl-3">
+               <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500  dark:border-gray-700 dark:text-gray-400">
+                  <li class="me-2 h-10">
+                     <a href="#" class="inline-block p-4 rounded-t-lg hover:dark:bg-gray-600 changes actives">Dashboard Overview</a>
+                  </li>
+                  <li class="me-2 h-10">  
+                     <a href="#" class="inline-block p-4 rounded-t-lg hover:dark:bg-gray-600 changes">Finance Overview</a>
+                  </li>
+               </ul>
+            </div>
+
             <div class="flex items-center">
                <div class="flex items-center">
-                  <button type="button" class="relative text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-10 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                     <ion-icon name="add-circle-outline" class="w-5 h-5 relative top-1 right-2"></ion-icon>
-                     Add New
-                  </button>
-                  <div class="grid grid-cols-3 gap-8 mx-14">
-                     <ion-icon id="modechanges" name="sunny-outline" class="w-6 h-6 cursor-pointer dark:text-white"></ion-icon>
-                     <svg class="w-6 h-6 cursor-pointer dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M427.68 351.43C402 320 383.87 304 383.87 217.35C383.87 138 343.35 109.73 310 96c-4.43-1.82-8.6-6-9.95-10.55C294.2 65.54 277.8 48 256 48s-38.21 17.55-44 37.47c-1.35 4.6-5.52 8.71-9.95 10.53c-33.39 13.75-73.87 41.92-73.87 121.35C128.13 304 110 320 84.32 351.43C73.68 364.45 83 384 101.61 384h308.88c18.51 0 27.77-19.61 17.19-32.57M320 384v16a64 64 0 0 1-128 0v-16"/></svg>
-                     <svg class="w-6 h-6 cursor-pointer dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.208 4.83q.68.21 1.3.54l1.833-1.1a1 1 0 0 1 1.221.15l1.018 1.018a1 1 0 0 1 .15 1.221l-1.1 1.833q.33.62.54 1.3l2.073.519a1 1 0 0 1 .757.97v1.438a1 1 0 0 1-.757.97l-2.073.519q-.21.68-.54 1.3l1.1 1.833a1 1 0 0 1-.15 1.221l-1.018 1.018a1 1 0 0 1-1.221.15l-1.833-1.1q-.62.33-1.3.54l-.519 2.073a1 1 0 0 1-.97.757h-1.438a1 1 0 0 1-.97-.757l-.519-2.073a7.5 7.5 0 0 1-1.3-.54l-1.833 1.1a1 1 0 0 1-1.221-.15L4.42 18.562a1 1 0 0 1-.15-1.221l1.1-1.833a7.5 7.5 0 0 1-.54-1.3l-2.073-.519A1 1 0 0 1 2 12.72v-1.438a1 1 0 0 1 .757-.97l2.073-.519q.21-.68.54-1.3L4.27 6.66a1 1 0 0 1 .15-1.221L5.438 4.42a1 1 0 0 1 1.221-.15l1.833 1.1q.62-.33 1.3-.54l.519-2.073A1 1 0 0 1 11.28 2h1.438a1 1 0 0 1 .97.757zM12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8"/></svg>
-                  </div>
-            </div>
-            <div class="flex items-center bg-slate-200 dark:bg-gray-700 rounded-lg cursor-pointer" data-dropdown-toggle="dropdown-user">
-               <div class="flex items-center mx-3">
-                  <div>
-                     <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
-                     <span class="sr-only">Open user menu</span>
-                     <img class="w-14 h-14 rounded-full select-none" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                  <div class="flex items-center">
+                     <button type="button" class="relative text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-10 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        <ion-icon name="add-circle-outline" class="w-5 h-5 relative top-1 right-2"></ion-icon>
+                        Add New
                      </button>
-                  </div>
-                  <div class="ml-3 pt-2 dark:text-white">
-                     <p class="text-base leading-none select-none">Education Portal</p>
-                     <p class="text-sm leading-none text-slate-500 select-none dark:text-white dark:text-opacity-50">Admin</p>
-                     <div class="flex pt-1">
-                        <svg class="w-4 h-4 mt-0.5 mr-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13.5a6.5 6.5 0 1 0 0-13a6.5 6.5 0 0 0 0 13"/><path d="M8.702 5.222a1.332 1.332 0 0 0-1.258-.889H6.412a1.19 1.19 0 0 0-.254 2.353l1.571.344a1.334 1.334 0 0 1-.285 2.637h-.888a1.334 1.334 0 0 1-1.258-.89M7 4.333V3m0 8V9.666"/></g></svg>
-                        <span class="select-none">1000</span>
+                     <div class="grid grid-cols-3 gap-8 mx-14">
+                        <ion-icon name="sunny-outline" class="w-6 h-6 cursor-pointer dark:text-white modechanges"></ion-icon>
+                        <svg class="w-6 h-6 cursor-pointer dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M427.68 351.43C402 320 383.87 304 383.87 217.35C383.87 138 343.35 109.73 310 96c-4.43-1.82-8.6-6-9.95-10.55C294.2 65.54 277.8 48 256 48s-38.21 17.55-44 37.47c-1.35 4.6-5.52 8.71-9.95 10.53c-33.39 13.75-73.87 41.92-73.87 121.35C128.13 304 110 320 84.32 351.43C73.68 364.45 83 384 101.61 384h308.88c18.51 0 27.77-19.61 17.19-32.57M320 384v16a64 64 0 0 1-128 0v-16"/></svg>
+                        <svg class="w-6 h-6 cursor-pointer dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.208 4.83q.68.21 1.3.54l1.833-1.1a1 1 0 0 1 1.221.15l1.018 1.018a1 1 0 0 1 .15 1.221l-1.1 1.833q.33.62.54 1.3l2.073.519a1 1 0 0 1 .757.97v1.438a1 1 0 0 1-.757.97l-2.073.519q-.21.68-.54 1.3l1.1 1.833a1 1 0 0 1-.15 1.221l-1.018 1.018a1 1 0 0 1-1.221.15l-1.833-1.1q-.62.33-1.3.54l-.519 2.073a1 1 0 0 1-.97.757h-1.438a1 1 0 0 1-.97-.757l-.519-2.073a7.5 7.5 0 0 1-1.3-.54l-1.833 1.1a1 1 0 0 1-1.221-.15L4.42 18.562a1 1 0 0 1-.15-1.221l1.1-1.833a7.5 7.5 0 0 1-.54-1.3l-2.073-.519A1 1 0 0 1 2 12.72v-1.438a1 1 0 0 1 .757-.97l2.073-.519q.21-.68.54-1.3L4.27 6.66a1 1 0 0 1 .15-1.221L5.438 4.42a1 1 0 0 1 1.221-.15l1.833 1.1q.62-.33 1.3-.54l.519-2.073A1 1 0 0 1 11.28 2h1.438a1 1 0 0 1 .97.757zM12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8"/></svg>
                      </div>
                   </div>
-                  <div class="flex items-center ml-6 text-2xl cursor-pointer dark:text-white">
-                     <ion-icon name="chevron-down-outline"></ion-icon>
-                  </div>
-                  <div id="dropdown-user" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-64 dark:bg-gray-700 dark:divide-gray-600">
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
-                           <li>
-                              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guide</a>
-                           </li>
-                           <li>
-                              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-                           </li>
-                           <li>
-                              <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Help Center</a>
-                           </li>
-                        </ul>
-                        <div class="py-2">
-                           <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+               </div>
+               <div class="flex items-center bg-slate-200 dark:bg-gray-700 rounded-lg cursor-pointer" data-dropdown-toggle="dropdown-user">
+                  <div class="flex items-center mx-3">
+                     <div>
+                        <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
+                        <span class="sr-only">Open user menu</span>
+                        <img class="w-14 h-14 rounded-full select-none" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                        </button>
+                     </div>
+                     <div class="ml-3 pt-2 dark:text-white">
+                        <p class="text-base leading-none select-none">Education Portal</p>
+                        <p class="text-sm leading-none text-slate-500 select-none dark:text-white dark:text-opacity-50">Admin</p>
+                        <div class="flex pt-1">
+                           <svg class="w-4 h-4 mt-0.5 mr-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13.5a6.5 6.5 0 1 0 0-13a6.5 6.5 0 0 0 0 13"/><path d="M8.702 5.222a1.332 1.332 0 0 0-1.258-.889H6.412a1.19 1.19 0 0 0-.254 2.353l1.571.344a1.334 1.334 0 0 1-.285 2.637h-.888a1.334 1.334 0 0 1-1.258-.89M7 4.333V3m0 8V9.666"/></g></svg>
+                           <span class="select-none">1000</span>
                         </div>
+                     </div>
+                     <div class="flex items-center ml-6 text-2xl cursor-pointer dark:text-white">
+                        <ion-icon name="chevron-down-outline"></ion-icon>
+                     </div>
+                     <div id="dropdown-user" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-64 dark:bg-gray-700 dark:divide-gray-600">
+                           <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+                              <li>
+                                 <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guide</a>
+                              </li>
+                              <li>
+                                 <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                              </li>
+                              <li>
+                                 <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Help Center</a>
+                              </li>
+                           </ul>
+                           <div class="py-2">
+                              <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+                           </div>
+                     </div>
                   </div>
                </div>
-               </div>
-         </div>
+            </div>
          </div>
       </nav>
       
@@ -198,8 +211,8 @@
          </div>
       </aside>
       
-      <!-- Data Area -->
-      <div class="pt-20 pb-6 px-5 ml-64 bg-gray-400 dark:bg-gray-800">
+      <!-- Data Area Dashboard Overview-->
+      <div class="block pt-20 pb-6 px-5 ml-64 bg-gray-300 dark:bg-gray-800 dashoverviews">
          <div class="pt-14 mb-4 dark:text-white cursor-pointer">
             <span>Day</span>
             <span class="mx-4">Week</span>
@@ -249,7 +262,7 @@
                </div>
             </div>
             <div class="bg-white col-span-4 row-span-4 rounded-lg px-4 py-2 dark:bg-gray-600 duration-500">
-               <h3 class="font-bold dark:text-white mb-3">Popular Classes</h3>
+               <h3 class="font-bold dark:text-white mb-3 mt-4">Popular Classes</h3>
                <div class="relative overflow-x-auto shadow-md dark:shadow-none sm:rounded-lg">
                   <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 duration-500 dark:text-gray-400">
@@ -442,19 +455,19 @@
                   </div>
                </div>
             </div>
-            <div class="bg-white col-span-4 row-span-3 rounded-lg px-4 py-2 dark:bg-gray-600 duration-300">
+            <div class="bg-white col-span-4 row-span-3 rounded-lg px-4 py-2 dark:bg-gray-600 duration-300 pt-14">
                <div>
                   <canvas id="trendingchart"></canvas>
                </div>
             </div>
             <div class="bg-white rounded-lg col-span-2 row-span-2 px-4 py-2 dark:bg-gray-600 duration-300">
-               <h3 class="text-black dark:text-white mb-8">Student Demographics by Age</h3>
+               <h3 class="text-black dark:text-white mb-8 mt-4">Student Demographics by Age</h3>
                <div class="demochart dark:text-white">
                   <canvas id="studemochart"></canvas>
                </div>
             </div>
             <div class="bg-white rounded-lg col-span-3 row-span-2 px-4 py-2 dark:bg-gray-600 duration-300">
-               <h3 class="text-black dark:text-white mb-4">Upcoming Event</h3>
+               <h3 class="text-black dark:text-white mb-4 mt-4">Upcoming Event</h3>
                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                   <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -524,7 +537,7 @@
                </div>
             </div>
             <div class="bg-white rounded-lg col-span-3 row-span-2 px-4 py-2 dark:bg-gray-600 duration-300">
-               <h3 class="font-bold dark:text-white mb-4">Top 5 Instructors</h3>
+               <h3 class="font-bold dark:text-white mb-4 mt-4">Top 5 Instructors</h3>
                <div class="relative overflow-x-auto shadow-md dark:shadow-none sm:rounded-lg">
                   <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 duration-500 dark:text-gray-400">
@@ -642,6 +655,535 @@
          </div>
       </div>
 
+      <!-- Data Area Finance Overview -->
+      <div class="hidden pt-20 pb-6 px-5 ml-64 bg-gray-300 dark:bg-gray-800 finaoverviews">
+         <div class="pt-14 mb-4 dark:text-white cursor-pointer">
+            <span>Day</span>
+            <span class="mx-4">Week</span>
+            <span class="currents underline">Month</span>
+            <span class="mx-4">Year</span>
+            <span>Custom</span>
+         </div>
+         <div class="grid grid-cols-8 gap-4">
+            <div class="col-span-4 grid grid-cols-3 gap-4">
+               <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500 flex items-center">
+                  <div class="w-full">
+                     <p class="text-xl mt-3 dark:text-white opacity-90">Total Revenue</p>
+                     <div class="flex justify-between">
+                        <p class="text-2xl font-bold mt-3 dark:text-white opacity-90">$50K</p>
+                        <div class="flex items-center text-green-500">
+                           <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42"/></svg>
+                           <span class="mt-3">+15%</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>   
+               <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500 flex items-center">
+                  <div class="w-full">
+                     <p class="text-xl mt-3 dark:text-white opacity-90">Net Profit</p>
+                     <div class="flex justify-between">
+                        <p class="text-2xl font-bold mt-3 dark:text-white opacity-90">$20K</p>
+                        <div class="flex items-center text-green-500">
+                           <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42"/></svg>
+                           <span class="mt-3">+10%</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500 flex items-center">
+                  <div class="w-full">
+                     <p class="text-xl mt-3 dark:text-white opacity-90">Average Revenue per Student</p>
+                     <div class="flex justify-between">
+                        <p class="text-2xl font-bold mt-3 dark:text-white opacity-90">$33.33</p>
+                        <div class="flex items-center text-green-500">
+                           <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42"/></svg>
+                           <span class="mt-3">+8%</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="bg-white col-span-4 row-span-4 rounded-lg px-4 py-2 dark:bg-gray-600 duration-500">
+               <h3 class="font-bold dark:text-white mb-3 mt-5">Recent Transactions</h3>
+               <div class="relative overflow-x-auto shadow-md dark:shadow-none sm:rounded-lg">
+                  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 duration-500 dark:text-gray-400">
+                        <tr>
+                              <th scope="col" class="px-6 py-3">
+                                 Date
+                              </th>
+                              <th scope="col" class="px-6 py-3">
+                                 Transaction ID
+                              </th>
+                              <th scope="col" class="px-6 py-3">
+                                 Description
+                              </th>
+                              <th scope="col" class="px-6 py-3">
+                                 Amount
+                              </th>
+                              <th scope="col" class="px-6 py-3">
+                                 Type
+                              </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <th scope="row" class="px-6 py-4 whitespace-nowrap">
+                              July 1, 2024
+                           </th>
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              TX12345
+                           </th>
+                           <td class="px-6 py-4 whitespace-wrap">
+                              Payment received from John Doe
+                           </td>
+                           <td class="px-6 py-4">
+                              100,000 MMK
+                           </td>
+                           <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                              Revenue
+                           </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <th scope="row" class="px-6 py-4 whitespace-nowrap">
+                              July 1, 2024
+                           </th>
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              TX12345
+                           </th>
+                           <td class="px-6 py-4 whitespace-wrap">
+                              Payment received from John Doe
+                           </td>
+                           <td class="px-6 py-4">
+                              100,000 MMK
+                           </td>
+                           <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                              Revenue
+                           </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <th scope="row" class="px-6 py-4 whitespace-nowrap">
+                              July 1, 2024
+                           </th>
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              TX12345
+                           </th>
+                           <td class="px-6 py-4 whitespace-wrap">
+                              Payment received from John Doe
+                           </td>
+                           <td class="px-6 py-4">
+                              100,000 MMK
+                           </td>
+                           <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                              Revenue
+                           </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <th scope="row" class="px-6 py-4 whitespace-nowrap">
+                              July 1, 2024
+                           </th>
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              TX12345
+                           </th>
+                           <td class="px-6 py-4 whitespace-wrap">
+                              Payment received from John Doe
+                           </td>
+                           <td class="px-6 py-4">
+                              100,000 MMK
+                           </td>
+                           <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                              Revenue
+                           </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <th scope="row" class="px-6 py-4 whitespace-nowrap">
+                              July 1, 2024
+                           </th>
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              TX12345
+                           </th>
+                           <td class="px-6 py-4 whitespace-wrap">
+                              Payment received from John Doe
+                           </td>
+                           <td class="px-6 py-4">
+                              100,000 MMK
+                           </td>
+                           <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                              Revenue
+                           </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <th scope="row" class="px-6 py-4 whitespace-nowrap">
+                              July 1, 2024
+                           </th>
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              TX12345
+                           </th>
+                           <td class="px-6 py-4 whitespace-wrap">
+                              Payment received from John Doe
+                           </td>
+                           <td class="px-6 py-4">
+                              100,000 MMK
+                           </td>
+                           <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                              Revenue
+                           </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <th scope="row" class="px-6 py-4 whitespace-nowrap">
+                              July 1, 2024
+                           </th>
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              TX12345
+                           </th>
+                           <td class="px-6 py-4 whitespace-wrap">
+                              Payment received from John Doe
+                           </td>
+                           <td class="px-6 py-4">
+                              100,000 MMK
+                           </td>
+                           <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                              Revenue
+                           </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <th scope="row" class="px-6 py-4 whitespace-nowrap">
+                              July 1, 2024
+                           </th>
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              TX12345
+                           </th>
+                           <td class="px-6 py-4 whitespace-wrap">
+                              Payment received from John Doe
+                           </td>
+                           <td class="px-6 py-4">
+                              100,000 MMK
+                           </td>
+                           <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                              Revenue
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <div class="flex justify-end ">
+                     <button class="bg-gray-200 px-5 py-2 rounded-xl my-5 text-blue-700 hover:bg-gray-400 dark:hover:bg-gray-800 dark:text-blue-600 dark:bg-gray-700 duration-500">See More ></button>
+                  </div>
+               </div>
+            </div>
+            <div class="bg-white col-span-4 row-span-3 rounded-lg px-4 py-2 dark:bg-gray-600 duration-300 pt-14">
+               <div>
+                  <canvas id="monthlyrevenuechart"></canvas>
+               </div>
+            </div>
+            <div class="bg-white rounded-lg col-span-4 row-span-2 px-4 py-2 dark:bg-gray-600 duration-300">
+               <h3 class="text-black dark:text-white mb-4 mt-5">Credit Points Usage</h3>
+               <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                              <th scope="col" class="px-6 py-4">
+                                 EVENT TITLE & TYPE
+                              </th>
+                              <th scope="col" class="px-6 py-4">
+                                 INSTRUCTOR
+                              </th>
+                              <th scope="col" class="px-6 py-4">
+                                 DATE/TIME
+                              </th>
+                              <th scope="col" class="px-6 py-4">
+                                 ACTION
+                              </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-wrap dark:text-white">
+                                 Understanding Cloud Computing in 2024 <span>(Webinar)</span>
+                              </th>
+                              <td class="px-6 py-4">
+                                 Mr.Matthwe Davis
+                              </td>
+                              <td class="px-6 py-4">
+                                 July 29, 2024 9:00 AM
+                              </td>
+                              <td class="px-6 py-4 underline text-blue-700">
+                                 View
+                              </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-wrap dark:text-white">
+                              Understanding Cloud Computing in 2024 <span>(Webinar)</span>
+                           </th>
+                           <td class="px-6 py-4">
+                              Mr.Matthwe Davis
+                           </td>
+                           <td class="px-6 py-4">
+                              July 29, 2024 9:00 AM
+                           </td>
+                           <td class="px-6 py-4 underline text-blue-700">
+                              View
+                           </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-wrap dark:text-white">
+                              Understanding Cloud Computing in 2024 <span>(Webinar)</span>
+                           </th>
+                           <td class="px-6 py-4">
+                              Mr.Matthwe Davis
+                           </td>
+                           <td class="px-6 py-4">
+                              July 29, 2024 9:00 AM
+                           </td>
+                           <td class="px-6 py-4 underline text-blue-700">
+                              View
+                           </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-wrap dark:text-white">
+                              Understanding Cloud Computing in 2024 <span>(Webinar)</span>
+                           </th>
+                           <td class="px-6 py-4">
+                              Mr.Matthwe Davis
+                           </td>
+                           <td class="px-6 py-4">
+                              July 29, 2024 9:00 AM
+                           </td>
+                           <td class="px-6 py-4 underline text-blue-700">
+                              View
+                           </td>
+                     </tr>
+                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-wrap dark:text-white">
+                           Understanding Cloud Computing in 2024 <span>(Webinar)</span>
+                        </th>
+                        <td class="px-6 py-4">
+                           Mr.Matthwe Davis
+                        </td>
+                        <td class="px-6 py-4">
+                           July 29, 2024 9:00 AM
+                        </td>
+                        <td class="px-6 py-4 underline text-blue-700">
+                           View
+                        </td>
+                     </tr>
+                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-wrap dark:text-white">
+                           Understanding Cloud Computing in 2024 <span>(Webinar)</span>
+                        </th>
+                        <td class="px-6 py-4">
+                           Mr.Matthwe Davis
+                        </td>
+                        <td class="px-6 py-4">
+                           July 29, 2024 9:00 AM
+                        </td>
+                        <td class="px-6 py-4 underline text-blue-700">
+                           View
+                        </td>
+                     </tr>
+                     </tbody>
+                  </table>
+               </div>
+               <div class="flex justify-end ">
+                  <button class="bg-gray-200 px-5 py-2 rounded-xl my-5 text-blue-700 hover:bg-gray-400 dark:hover:bg-gray-800 dark:text-blue-600 dark:bg-gray-700 duration-500">See More ></button>
+               </div>
+            </div>
+            <div class="bg-white rounded-lg col-span-4 row-span-2 px-4 py-2 dark:bg-gray-600 duration-300">
+               <h3 class="font-bold dark:text-white mb-4 mt-5">Discounts and Coupons Used</h3>
+               <div class="relative overflow-x-auto shadow-md dark:shadow-none sm:rounded-lg">
+                  <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 duration-500 dark:text-gray-400">
+                        <tr>
+                              <th scope="col" class="p-4 whitespace-nowrap">
+                                 Coupon Code
+                              </th>
+                              <th scope="col" class="px-6 py-3">
+                                 Discount Amount
+                              </th>
+                              <th scope="col" class="px-6 py-3">
+                                 Applied Date
+                              </th>
+                              <th scope="col" class="px-6 py-3">
+                                 Student Name
+                              </th>
+                              <th scope="col" class="px-6 py-3">
+                                 Class Name
+                              </th>
+                              <th scope="col" class="px-6 py-3">
+                                 Status
+                              </th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <td class="w-4 p-4">
+                              SVE50
+                           </td>
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              $30
+                           </th>
+                           <td class="px-6 py-4">
+                              July 1, 2024
+                           </td>
+                           <td class="px-6 py-4">
+                              John Doe
+                           </td>
+                           <td class="px-6 py-4">
+                              Data Science 101
+                           </td>
+                           <td class="px-6 py-4">
+                              Applied
+                           </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <td class="w-4 p-4">
+                              SVE50
+                           </td>
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              $30
+                           </th>
+                           <td class="px-6 py-4">
+                              July 1, 2024
+                           </td>
+                           <td class="px-6 py-4">
+                              John Doe
+                           </td>
+                           <td class="px-6 py-4">
+                              Data Science 101
+                           </td>
+                           <td class="px-6 py-4">
+                              Applied
+                           </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <td class="w-4 p-4">
+                              SVE50
+                           </td>
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              $30
+                           </th>
+                           <td class="px-6 py-4">
+                              July 1, 2024
+                           </td>
+                           <td class="px-6 py-4">
+                              John Doe
+                           </td>
+                           <td class="px-6 py-4">
+                              Data Science 101
+                           </td>
+                           <td class="px-6 py-4">
+                              Applied
+                           </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <td class="w-4 p-4">
+                              SVE50
+                           </td>
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              $30
+                           </th>
+                           <td class="px-6 py-4">
+                              July 1, 2024
+                           </td>
+                           <td class="px-6 py-4">
+                              John Doe
+                           </td>
+                           <td class="px-6 py-4">
+                              Data Science 101
+                           </td>
+                           <td class="px-6 py-4">
+                              Applied
+                           </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <td class="w-4 p-4">
+                              SVE50
+                           </td>
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              $30
+                           </th>
+                           <td class="px-6 py-4">
+                              July 1, 2024
+                           </td>
+                           <td class="px-6 py-4">
+                              John Doe
+                           </td>
+                           <td class="px-6 py-4">
+                              Data Science 101
+                           </td>
+                           <td class="px-6 py-4">
+                              Applied
+                           </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <td class="w-4 p-4">
+                              SVE50
+                           </td>
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              $30
+                           </th>
+                           <td class="px-6 py-4">
+                              July 1, 2024
+                           </td>
+                           <td class="px-6 py-4">
+                              John Doe
+                           </td>
+                           <td class="px-6 py-4">
+                              Data Science 101
+                           </td>
+                           <td class="px-6 py-4">
+                              Applied
+                           </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <td class="w-4 p-4">
+                              SVE50
+                           </td>
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              $30
+                           </th>
+                           <td class="px-6 py-4">
+                              July 1, 2024
+                           </td>
+                           <td class="px-6 py-4">
+                              John Doe
+                           </td>
+                           <td class="px-6 py-4">
+                              Data Science 101
+                           </td>
+                           <td class="px-6 py-4">
+                              Applied
+                           </td>
+                        </tr>
+                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                           <td class="w-4 p-4">
+                              SVE50
+                           </td>
+                           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                              $30
+                           </th>
+                           <td class="px-6 py-4">
+                              July 1, 2024
+                           </td>
+                           <td class="px-6 py-4">
+                              John Doe
+                           </td>
+                           <td class="px-6 py-4">
+                              Data Science 101
+                           </td>
+                           <td class="px-6 py-4">
+                              Applied
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <div class="flex justify-end">
+                     <button class="bg-gray-200 px-5 py-2 rounded-xl my-5 text-blue-700 hover:bg-gray-400 dark:hover:bg-gray-800 dark:text-blue-600 dark:bg-gray-700 duration-500">See More ></button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
       <!-- ionicons icons -->
       <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
       <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -653,7 +1195,9 @@
       <script src="./../lib/chart.js" type="text/javascript"></script>
       <!-- datatable -->
       <script src="./../lib/dataTables.js"></script>
+      <!-- darkmode lightmode js -->
+      <script src="./../js/darkandlight.js" type="text/javascript"></script>
       <!-- customjs -->
-      <script src="./../js/dashoard.js" type="text/javascript"></script>
+      <script src="./../js/dashoverview.js" type="text/javascript"></script>
    </body>
 </html>
