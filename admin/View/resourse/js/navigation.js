@@ -42,16 +42,6 @@ $("#sidebarControl").click(() => {
   }
 
 
-  // async function navigate(elemnt) {
-  //   let ID = elemnt.id
-  //   switch (ID) {
-  //     case 'dashboard':
-  //         $(`#${ID}`).attr('aria-active','true');
-  //         console.log(  $(`#${ID}`).children());
-  //       break;
-    
-  //     default:
-  //       break;
-  //   }
 
-  // }
+
+  // <link rel="stylesheet" href="css/style.css?<?=time()?>">
