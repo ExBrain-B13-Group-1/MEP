@@ -4,16 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Dashboard</title>
-    <!-- Calendar Link -->
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.css' rel='stylesheet' />
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js'></script>
-
+    <title>Finance History Purchased</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="../resources/css/output.css" rel="stylesheet">
     <script src="../resources/lib/jquery-3.7.1.js"></script>
-    <!-- Chart Js Link -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -30,7 +24,7 @@
             <ul class="space-y-1 font-medium">
                 <li>
                     <a href="adminDashboard.php"
-                        class="flex items-center p-2 text-gray-500 rounded-lg bg-primarycolor group">
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="w-5 h-5 transition duration-75" width="27" height="27" viewBox="0 0 27 27"
                             fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -44,12 +38,12 @@
                                 stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" />
                         </svg>
 
-                        <span class="ms-3 sideLabel text-white">Dashboard</span>
+                        <span class="ms-3 sideLabel group-hover:text-white">Dashboard</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="finance.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="finance.php" class="flex items-center p-2 text-gray-500 rounded-lg bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -57,7 +51,7 @@
                                 stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
 
-                        <span class="flex-1 ms-3 whitespace-nowrap sideLabel group-hover:text-white">Finance</span>
+                        <span class="flex-1 ms-3 whitespace-nowrap sideLabel text-white">Finance</span>
                     </a>
                 </li>
 
@@ -113,7 +107,8 @@
                 </li>
 
                 <li>
-                    <a href="mailSystem.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="mailSystem.php"
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="21" viewBox="0 0 27 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -351,7 +346,7 @@
                 </form>
             </div>
             <p class="bg-gradient-to-t from-[#92A3FF] to-[#00288E] text-transparent bg-clip-text font-bold text-lg">
-                Dashboard
+                Finance History
             </p>
             <ul
                 class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
@@ -421,134 +416,73 @@
         aria-checked="false">
 
         <!-- code here -->
-           <!-- Dashboard Flex Container -->
-           <div class="flex mt-4 space-x-4">
-            <!-- Left Section (w-4/6) -->
-            <div class="w-4/6">
-                <div class="grid grid-cols-3 gap-4">
-                    <!-- Total Users -->
-                    <div
-                        class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
-                        <div>
-                            <div class="text-gray-700 text-left">Total <br> Users</div>
-                            <div class="text-2xl text-primary-main font-bold text-left">6,942</div>
-                        </div>
-                        <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em"
-                                class="text-primary-main" viewBox="0 0 24 24" {...$$props}>
-                                <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="1.5"
-                                    d="M18 18.72a9.1 9.1 0 0 0 3.741-.479q.01-.12.01-.241a3 3 0 0 0-4.692-2.478m.94 3.197l.001.031q0 .337-.037.666A11.94 11.94 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6 6 0 0 1 6 18.719m12 0a5.97 5.97 0 0 0-.941-3.197m0 0A6 6 0 0 0 12 12.75a6 6 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72a9 9 0 0 0 3.74.477m.94-3.197a5.97 5.97 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0a3 3 0 0 1 6 0m6 3a2.25 2.25 0 1 1-4.5 0a2.25 2.25 0 0 1 4.5 0m-13.5 0a2.25 2.25 0 1 1-4.5 0a2.25 2.25 0 0 1 4.5 0" />
-                            </svg>
-                        </div>
+         
+        <!-- Go Back To Finance -->
+        <div class="text-right px-4 py-1">
+            <a href="finance.php" class="text-primary-main hover:underline">Back</a>
+        </div>
+        <div class="container mx-auto p-4">
+            <div class="flex justify-between items-center mb-4">
+                <div class="flex items-center space-x-4">
+                    <!-- Search & Filter -->
+                    <div class="relative">
+                        <input type="text" class="border border-dark-blue px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none" placeholder="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue" viewBox="0 0 24 24">
+                            <g fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="7" />
+                                <path stroke-linecap="round" d="M11 8a3 3 0 0 0-3 3m12 9l-3-3" />
+                            </g>
+                        </svg>
                     </div>
-                    <!-- Total Institutes -->
-                    <div
-                        class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
-                        <div>
-                            <div class="text-gray-700 text-left">Total <br> Institutes</div>
-                            <div class="text-2xl text-primary-main font-bold text-left">1,960</div>
-                        </div>
-                        <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em"
-                                class="text-primary-main" viewBox="0 0 24 24" {...$$props}>
-                                <g fill="none" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="1.5" color="currentColor">
-                                    <path
-                                        d="M2 2h14c1.886 0 2.828 0 3.414.586S20 4.114 20 6v6c0 1.886 0 2.828-.586 3.414S17.886 16 16 16H9m1-9.5h6M2 17v-4c0-.943 0-1.414.293-1.707S3.057 11 4 11h2m-4 6h4m-4 0v5m4-5v-6m0 6v5m0-11h6" />
-                                    <path d="M6 6.5a2 2 0 1 1-4 0a2 2 0 0 1 4 0" />
-                                </g>
-                            </svg>
-                        </div>
+                    <div class="relative">
+                        <button id="filter-button" class="border border-dark-blue px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none">Filter</button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue" viewBox="0 0 16 16" {...$$props}>
+                            <path fill="currentColor" d="M6 1a3 3 0 0 0-2.83 2H0v2h3.17a3.001 3.001 0 0 0 5.66 0H16V3H8.83A3 3 0 0 0 6 1M5 4a1 1 0 1 1 2 0a1 1 0 0 1-2 0m5 5a3 3 0 0 0-2.83 2H0v2h7.17a3.001 3.001 0 0 0 5.66 0H16v-2h-3.17A3 3 0 0 0 10 9m-1 3a1 1 0 1 1 2 0a1 1 0 0 1-2 0" />
+                        </svg>
                     </div>
-                    <!-- Total Earnings -->
-                    <div
-                        class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
-                        <div>
-                            <div class="text-gray-700 text-left">Amount <br> Earnings</div>
-                            <div class="text-2xl text-primary-main font-bold text-left">$ 5000</div>
-                        </div>
-                        <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em"
-                                class="text-primary-main" viewBox="0 0 24 24" {...$$props}>
-                                <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
-                                    <path
-                                        d="M12 6v12m3-8.5C15 8.12 13.657 7 12 7S9 8.12 9 9.5s1.343 2.5 3 2.5s3 1.12 3 2.5s-1.343 2.5-3 2.5s-3-1.12-3-2.5" />
-                                    <path
-                                        d="M7 3.338A9.954 9.954 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5" />
-                                </g>
-                            </svg>
-                        </div>
-                    </div>
-                    <!-- Weekly Visitors -->
-                    <div class="col-span-3 bg-card-bg p-4 rounded-lg shadow-custom">
-                        <div class="text-lg font-bold mb-2">Weekly Visitors Comparison</div>
-                        <!-- Bar Chart Placeholder -->
-                        <canvas id="bar-chart" class="h-64"></canvas>
-                    </div>
+                </div>
+            </div>
 
-                    <!-- Users, Institutes Pie Charts and Ad Slot -->
-                    <div class="col-span-3 flex justify-between space-x-4">
-                        <div class="w-2/4 bg-card-bg p-4 rounded-lg shadow-custom ">
-                            <div class="font-bold mb-2">Users</div>
-                            <!-- Users Pie Chart Placeholder -->
-                            <canvas id="users-pie-chart" class="h-40"></canvas>
-                        </div>
-                        <div class="w-2/4  bg-card-bg p-4 rounded-lg shadow-custom">
-                            <div class=" font-bold mb-2">Institutes</div>
-                            <!-- Institutes Pie Chart Placeholder -->
-                            <canvas id="institutes-pie-chart" class="h-40"></canvas>
-                        </div>
-                        <div class="w-5/6 bg-card-bg py-4 rounded-lg shadow-custom">
-                            <div class="font-bold mb-2 px-2">Upcoming Ad Slots</div>
-                            <!-- Upcoming Ad Slots Placeholder -->
-                            <div id="upcoming-ad-slots"></div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Start Table -->
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white shadow-md rounded-lg">
+                    <thead>
+                        <tr class="bg-gray-200 text-gray-600 text-left text-sm leading-normal">
+                            <th class="py-3 px-6">ID</th>
+                            <th class="py-3 px-6">Name</th>
+                            <th class="py-3 px-6">Date</th>
+                            <th class="py-3 px-6">Coin</th>
+                            <th class="py-3 px-6">Class Fee</th>
+                            <th class="py-3 px-6">Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body" class="text-gray-600 text-sm font-light">
+                        <!-- Rows will be inserted here by jQuery -->
+                    </tbody>
+                </table>
             </div>
-            <!-- Right Section (w-2/6) -->
-            <div class="w-2/6">
-                <div class="grid grid-cols-1 gap-4">
-                    <!-- Calendar -->
-                    <div class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom">
-                        <!-- Calendar Placeholder -->
-                        <div id="calendar"></div>
-                        <div id="logos" class="flex justify-center items-center mt-4 space-x-2">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 1"
-                                class="logo rounded-full w-8 h-8" data-institute="1">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 2"
-                                class="logo rounded-full  w-8 h-8" data-institute="2">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 3"
-                                class="logo rounded-full  w-8 h-8" data-institute="3">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 2"
-                                class="logo rounded-full  w-8 h-8" data-institute="2">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 3"
-                                class="logo rounded-full  w-8 h-8" data-institute="3">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 3"
-                                class="logo rounded-full  w-8 h-8" data-institute="3">
-                        </div>
-                    </div>
-                    <!-- Top Clients -->
-                    <div class="col-span-1 bg-card-bg py-2 rounded-lg shadow-custom">
-                        <div class="text-xl font-bold mb-2 px-4">Top Clients</div>
-                        <!-- Top Clients Placeholder -->
-                        <div id="top-clients"></div>
-                    </div>
-                    <!-- For Recent Actions Later (Optional) -->
-                    <!-- <div class="col-span-1 bg-custom-bg p-4 rounded-lg shadow-custom"> -->
-                    <!-- <div class="text-xl font-bold mb-2">Recent Actions</div> -->
-                    <!-- Recent Actions Placeholder -->
-                    <!-- <div id="recent-actions"></div> -->
-                    <!-- </div> -->
-                </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-4">
+                <nav aria-label="Page navigation">
+                    <ul id="pagination" class="inline-flex items-center -space-x-px">
+                        <!-- Pagination buttons will be inserted here by jQuery -->
+                    </ul>
+                </nav>
             </div>
+        </div>
+
+        <!-- For Detail Card -->
+        <div id="detail-view"
+            class="fixed bottom-0 right-0 m-4 px-10 py-5 bg-white border border-gray-300 rounded-lg shadow-lg hidden">
+            <!-- Detail content will be inserted here by jQuery -->
         </div>
     </div>
     </div>
 
-    <script src="js/adminDashboard.js"></script>
+    <script src="js/financeHistory.js"></script>
     <script src="js/sidebar.js"></script>
+  
 </body>
 
 </html>
