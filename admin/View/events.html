@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Navigation</title>
-    <link rel="stylesheet" href="./resourse/css/output.css" />
-    <script src="./resourse/lib/jquery.js"></script>
+    <link rel="stylesheet" href="./resources/css/output.css" />
+    <script src="./resources/lib/jquery.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
     <script
       type="module"
@@ -16,7 +16,7 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
 
-    <script src="./resourse/js/navigation.js" defer></script>
+    <script src="./resources/js/navigation.js" defer></script>
   </head>
   <body>
     <aside
@@ -30,7 +30,7 @@
       >
         <a href="/" class="flex items-center mb-5">
           <img
-            src="./resourse/img/LOGO.svg"
+            src="./resources/img/LOGO.svg"
             class="me-3 w-fit"
             alt="Flowbite Logo"
             id="brandLogo"
@@ -607,7 +607,7 @@
             class="flex items-center space-x-3 rtl:space-x-reverse mr-4"
           >
             <img
-              src="./resourse/img/sideopen.svg"
+              src="./resources/img/sideopen.svg"
               class="h-8"
               alt="Flowbite Logo"
               id="sidebarControl"
@@ -747,7 +747,7 @@
           <li class="ml-3">
             <div class="flex items-center bg-white rounded-full pr-2">
               <img
-                src="./resourse/img/profile.png"
+                src="./resources/img/profile.png"
                 alt="profile"
                 class="rounded-full"
                 height="100"
@@ -818,16 +818,17 @@
           </div>
         </form>
 
-        <div class="grid gap-2 mt-2 grid-cols-3 auto-rows-min relative">
+        <div class="grid gap-2 mt-2 grid-cols-3 grid-rows-2  grid-flow-row relative">
           <div
             key="1"
             id="event"
+            onclick="eventClick(this)"
             class="w-full  bg-white border border-gray-200 rounded-lg shadow-dshadow relative"
           >
-            <a href="#" >
+            <a href="#">
               <img
-                class="rounded-t-lg   object-contain"
-                src="./resourse/img/event.jpg"
+                class="rounded-t-lg   object-cover h-44 w-full"
+                src="./resources/img/event.jpg"
                 alt="event"
               />
             </a>
@@ -852,16 +853,17 @@
               <p class="text-green-600 ml-2">Ongoing</p>
             </div>
           </div>
-
+          
           <div
             key="2"
             id="event"
+            onclick="eventClick(this)"
             class="w-full bg-white border border-gray-200 rounded-lg shadow-dshadow relative"
           >
             <a href="#">
               <img
-                class="rounded-t-lg w-full"
-                src="./resourse/img/event.jpg"
+                class="rounded-t-lg object-cover h-44 w-full"
+                src="./resources/img/event.jpg"
                 alt="event"
               />
             </a>
@@ -890,12 +892,13 @@
           <div
             key="3"
             id="event"
+            onclick="eventClick(this)"
             class="w-full bg-white border border-gray-200 rounded-lg shadow-dshadow relative"
           >
             <a href="#">
               <img
-                class="rounded-t-lg w-full"
-                src="./resourse/img/event.jpg"
+                class="rounded-t-lg object-cover h-44 w-full"
+                src="./resources/img/event.jpg"
                 alt="event"
               />
             </a>
@@ -924,12 +927,13 @@
           <div
             key="4"
             id="event"
+            onclick="eventClick(this)"
             class="w-full bg-white border border-gray-200 rounded-lg shadow-dshadow relative"
           >
             <a href="#">
               <img
-                class="rounded-t-lg w-full"
-                src="./resourse/img/event.jpg"
+                class="rounded-t-lg object-cover h-44 w-full"
+                src="./resources/img/event.jpg"
                 alt="event"
               />
             </a>
@@ -958,12 +962,13 @@
           <div
             key="5"
             id="event"
+            onclick="eventClick(this)"
             class="w-full bg-white border border-gray-200 rounded-lg shadow-dshadow relative"
           >
             <a href="#">
               <img
-                class="rounded-t-lg w-full"
-                src="./resourse/img/event.jpg"
+                class="rounded-t-lg object-cover h-44 w-full"
+                src="./resources/img/event.jpg"
                 alt="event"
               />
             </a>
@@ -991,49 +996,62 @@
               aria-disabled="true"
               class="aria-[disabled=true]:block hidden absolute w-full h-full top-0 left-0 bg-gray-500/35 z-10 rounded-lg"
             ></div>
-          </div>
+          </div>	
         </div>
 
-        <!-- <div
-          class="absolute top-0 left-0 w-full h-[100%] bg-gray-800/50 py-2 flex justify-center items-center z-50"
+        <div
+        id="eventDetails"
+            onclick="eventClick(this)"
+            class="hidden absolute top-0 left-0 w-full  h-[100%] bg-gray-800/50 py-2 justify-center items-center z-50"
         >
           <div class="w-[60%] h-full bg-white rounded-md">
-            <div class="flex">
-              <div class="w-[80%]">
-                <img src="./resourse/img/event.jpg" alt="event" width="100%" height="fit"/>
+            <div class="flex justify-between p-3">
+              <div class="w-[80%] mr-2">
+                <img src="./resources/img/event.jpg" alt="event" width="100%" height="fit"/>
               </div>
               <div>
-                <div>
-                  <p>Type:</p>
-                  <p>Webinar</p>
+                <div class="flex my-2">
+                  <p class="text-sm font-bold mr-3">Type:</p>
+                  <p class="text-sm">Webinar</p>
                 </div>
 
-                <div>
-                  <p>Instructor:</p>
-                  <p>Dr.Emily White</p>
+                <div class="flex my-2">
+                  <p class="text-sm font-bold mr-3">Instructor:</p>
+                  <p class="text-sm">Dr.Emily White</p>
                 </div>
 
-                <div>
-                  <p>Date:</p>
-                  <p>July 20, 2024</p>
+                <div class="flex my-2">
+                  <p class="text-sm font-bold mr-3">Date:</p>
+                  <p class="text-sm">July 20, 2024</p>
                 </div>
 
-                <div>
-                  <p>Time:</p>
-                  <p>07:15 AM - 09:15 AM</p>
+                <div class="flex my-2">
+                  <p class="text-sm font-bold mr-3">Time:</p>
+                  <p class="text-sm">07:15 AM - 09:15 AM</p>
                 </div>
 
-                <div>
-                  <p>Register Link:</p>
+                <div class="flex my-2">
+                  <p class="text-sm font-bold mr-3">Register Link:</p>
                   <a
+                   class="text-sm underline text-blue-700"
                     href="https://docs.google.com/forms/d/1QWZsx-SnhzNW-hHgGllNuXs5g5cqgUnw3hZT3FClbVQ/edit"
                     >https://docs.google.com/forms/d/1QWZsx-SnhzNW-hHgGllNuXs5g5cqgUnw3hZT3FClbVQ/edit</a
                   >
                 </div>
               </div>
             </div>
+
+            <h1 class="font-bold text-xl ml-3">Understanding Cloud Computing in 2024 </h1>
+            <p class="text-sm ml-3">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio inventore vero eligendi fugit sit aspernatur voluptatibus quasi enim, ipsam dignissimos similique, architecto fuga? Iusto molestias dolorem odio nemo, libero at, veniam ab unde placeat voluptas est quae ducimus magni aperiam atque laborum aut provident ipsum repudiandae accusantium sint aspernatur? Rem, animi cum? Quasi reprehenderit beatae optio. Quasi, non. Perspiciatis quidem praesentium nulla cupiditate molestias consectetur laborum similique. Doloremque officiis dolorem adipisci aut, iste aliquam rem delectus ab commodi dolores assumenda iusto! Adipisci repellat architecto tenetur dicta officia. Itaque aliquid necessitatibus ullam blanditiis id, nobis, harum molestiae dolore molestias nemo quam recusandae, officia magni! Deserunt voluptas ab earum tempore unde obcaecati ea natus itaque doloribus minus qui reprehenderit, possimus accusantium sunt, nam aperiam nesciunt quis ducimus recusandae quae nemo. A ullam asperiores explicabo assumenda fuga unde rerum cupiditate, velit tempora animi? Fugiat, obcaecati! Maxime distinctio eaque, repudiandae repellat nesciunt magni at?
+            </p>
+
+            <div class="w-full flex justify-between items-center px-5 my-3">
+              <button class="border-2 border-primarycolor py-1 px-5 text-lg rounded-md text-primarycolor" id="eventCancel">Cancel</button>
+              <button class="bg-red-700 text-white py-1 px-5 text-lg rounded-md">Delete</button>
+            </div>
           </div>
-        </div> -->
+        </div>
       </div>
     </div>
   </body>

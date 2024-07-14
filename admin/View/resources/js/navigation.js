@@ -18,7 +18,7 @@ $("#sidebarControl").click(() => {
 
   function isCloseSideBar() {
     if ($("#logo-sidebar").attr("close") === "true") {
-      $("#brandLogo").attr("src", "./resourse/img/LOGOclose.svg");
+      $("#brandLogo").attr("src", "./resources/img/LOGOclose.svg");
       $("#navbar").css({ width: "93.5%",marginLeft:'5rem' });
       $(".sideLabel").css({ display: "none" });
       $(".sideLabel").parent().css({ justifyContent: "center" });
@@ -30,7 +30,7 @@ $("#sidebarControl").click(() => {
         width: "5%",
       });
     } else {
-      $("#brandLogo").attr("src", "./resourse/img/LOGO.svg");
+      $("#brandLogo").attr("src", "./resources/img/LOGO.svg");
       $("#navbar").css({ width: "83%",marginLeft:'14rem' });
       $(".sideLabel").css({ display: "block" });
       $("#main").attr("aria-checked", "false");
@@ -42,6 +42,14 @@ $("#sidebarControl").click(() => {
   }
 
 
+  $("#eventCancel").click(() => {
+    $("#eventDetails").fadeOut(100)
+  })
 
+
+function eventClick (element) {
+  console.log($(element).attr('key'));
+  $("#eventDetails").css({display:'flex'})
+}
 
   // <link rel="stylesheet" href="css/style.css?<?=time()?>">
