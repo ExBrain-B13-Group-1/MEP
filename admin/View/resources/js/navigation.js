@@ -52,4 +52,9 @@ function eventClick (element) {
   $("#eventDetails").css({display:'flex'})
 }
 
+
+function activeForm () {
+  console.log($('#faqInputForm').children());
+}
+
   // <link rel="stylesheet" href="css/style.css?<?=time()?>">

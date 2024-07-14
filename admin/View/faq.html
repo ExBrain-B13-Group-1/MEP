@@ -19,8 +19,6 @@
     <script src="./resources/js/navigation.js" defer></script>
   </head>
   <body>
-
-
     <aside
       id="logo-sidebar"
       close="false"
@@ -41,7 +39,7 @@
         <ul class="space-y-1 font-medium">
           <li>
             <a
-            href="./dashboard.php"
+              href="./dashboard.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -597,7 +595,7 @@
     </aside>
 
     <nav
-      class=" bg-white shadow-dshadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50"
+      class="bg-white shadow-dshadow border-gray-200 rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50"
       id="navbar"
     >
       <div
@@ -618,7 +616,7 @@
           <form class="w-96">
             <label
               for="default-search"
-              class="mb-2 text-sm font-medium text-gray-pr sr-only "
+              class="mb-2 text-sm font-medium text-gray-pr sr-only"
               >Search</label
             >
             <div class="relative">
@@ -626,7 +624,7 @@
                 class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
               >
                 <svg
-                  class="w-4 h-4  text-primarycolor"
+                  class="w-4 h-4 text-primarycolor"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -644,7 +642,7 @@
               <input
                 type="search"
                 id="default-search"
-                class="block w-full p-2 ps-10 text-sm text-gray-900 border bg-[#A0AFFF]/60 border-gray-300 rounded-lg  focus:ring-blue-500 focus:border-blue-500  "
+                class="block w-full p-2 ps-10 text-sm text-gray-900 border bg-[#A0AFFF]/60 border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Search Mockups, Logos..."
                 required
               />
@@ -657,7 +655,7 @@
           FAQ
         </p>
         <ul
-          class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white "
+          class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white"
         >
           <li class="mx-1">
             <a
@@ -778,13 +776,44 @@
       </div>
     </nav>
 
+    <div
+      class="p-3 absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]"
+      id="main"
+      aria-checked="false"
+    >
+      <h1 class="font-bold text-3xl mb-3">Frequently asked questions</h1>
+      <div class="px-10 ">
+        <div class="flex items-center text-primarycolor">
+          <ion-icon name="grid-outline" class="text-2xl mr-3"></ion-icon>
+          <p class="text-xl">General Questions</p>
+        </div>
 
-    <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full " id="main" aria-checked="false">
-        <h1>FAQ</h1>
-  
+          <div class="w-full mt-10 m-auto  border-b-2 border-gray-600 pb-4 px-20 bg-red-700 group/edit relative">
+            <form action="" id="faqInputForm">
+              <input
+              disabled
+                type="text"
+                name="question"
+                id="question"
+                class="w-full font-bold mb-2 p-2 text-lg"
+                value="How do I sign up for the online learning platform?"
+              />
+              <textarea
+              disabled
+                id="message"
+                rows="4"
+                class="text-start block w-full p-2 text-md text-gray-900 rounded-lg"
+              >You can sign up by visiting our website and clicking on the "Sign Up" button. Follow the prompts to create an account using your email address and a password.
+              </textarea>
+            </form>
+
+            <div class="invisible absolute  top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
+              <ion-icon name="create-outline" class="text-3xl my-3"></ion-icon>
+              <ion-icon name="remove-circle-outline" class="text-3xl my-3"></ion-icon>
+            </div>
+     
+        </div>
+      </div>
     </div>
-
-
-
   </body>
 </html>
