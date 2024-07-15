@@ -782,36 +782,433 @@
       aria-checked="false"
     >
       <h1 class="font-bold text-3xl mb-3">Frequently asked questions</h1>
-      <div class="px-10 ">
+      <div class="px-10 relative">
         <div class="flex items-center text-primarycolor">
           <ion-icon name="grid-outline" class="text-2xl mr-3"></ion-icon>
           <p class="text-xl">General Questions</p>
         </div>
 
-          <div class="w-full mt-10 m-auto  border-b-2 border-gray-600 pb-4 px-20 bg-red-700 group/edit relative">
+        <!--! User Faq -->
+        <div class="w-full px-28 pt-10">
+          <div
+            class="w-full mt-1 m-auto border-b-2 border-gray-300 pb-4 px-20 group/edit relative"
+          >
             <form action="" id="faqInputForm">
               <input
-              disabled
+                disabled
+                aria-disabled="true"
                 type="text"
                 name="question"
                 id="question"
-                class="w-full font-bold mb-2 p-2 text-lg"
+                class="w-full font-bold mb-2 p-2 bg-white text-lg aria-[disabled=false]:bg-gray-100"
                 value="How do I sign up for the online learning platform?"
               />
               <textarea
-              disabled
+                disabled
+                aria-disabled="true"
                 id="message"
-                rows="4"
-                class="text-start block w-full p-2 text-md text-gray-900 rounded-lg"
-              >You can sign up by visiting our website and clicking on the "Sign Up" button. Follow the prompts to create an account using your email address and a password.
+                rows="3"
+                class="text-start block w-full p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100"
+              >
+You can sign up by visiting our website and clicking on the "Sign Up" button. Follow the prompts to create an account using your email address and a password.
               </textarea>
             </form>
 
-            <div class="invisible absolute  top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
-              <ion-icon name="create-outline" class="text-3xl my-3"></ion-icon>
-              <ion-icon name="remove-circle-outline" class="text-3xl my-3"></ion-icon>
+            <div
+              class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible"
+            >
+              <ion-icon
+                name="create-outline"
+                class="text-3xl my-3 cursor-pointer"
+                onclick="faqEdite(this)"
+              ></ion-icon>
+              <ion-icon
+                name="remove-circle-outline"
+                class="text-3xl my-3 cursor-pointer"
+                id="faqRemove"
+              ></ion-icon>
             </div>
-     
+          </div>
+
+          <div
+            class="w-full mt-1 m-auto border-b-2 border-gray-300 pb-4 px-20 group/edit relative"
+          >
+            <form action="" id="faqInputForm">
+              <input
+                disabled
+                aria-disabled="true"
+                type="text"
+                name="question"
+                id="question"
+                class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100"
+                value="What types of courses are offered?"
+              />
+              <textarea
+                disabled
+                aria-disabled="true"
+                id="message"
+                rows="3"
+                class="text-start block w-full p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100"
+              >
+Our platform offers a wide range of courses, including subjects like Math, Science, English, History, and elective courses such as Music and Art.
+            </textarea
+              >
+            </form>
+
+            <div
+              class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible"
+            >
+              <ion-icon
+                name="create-outline"
+                class="text-3xl my-3 cursor-pointer"
+                onclick="faqEdite(this)"
+              ></ion-icon>
+              <ion-icon
+                name="remove-circle-outline"
+                class="text-3xl my-3 cursor-pointer"
+                id="faqRemove"
+              ></ion-icon>
+            </div>
+          </div>
+
+          <div
+            class="w-full mt-1 m-auto border-b-2 border-gray-300 pb-4 px-20 group/edit relative"
+          >
+            <form action="" id="faqInputForm">
+              <input
+                disabled
+                aria-disabled="true"
+                type="text"
+                name="question"
+                id="question"
+                class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100"
+                value="How are the courses delivered?"
+              />
+              <textarea
+                disabled
+                aria-disabled="true"
+                id="message"
+                rows="3"
+                class="text-start block w-full p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100"
+              >
+Courses are delivered through a combination of live virtual classes, pre-recorded video lessons, interactive quizzes, and downloadable resources.
+          </textarea
+              >
+            </form>
+
+            <div
+              class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible"
+            >
+              <ion-icon
+                name="create-outline"
+                class="text-3xl my-3 cursor-pointer"
+                onclick="faqEdite(this)"
+              ></ion-icon>
+              <ion-icon
+                name="remove-circle-outline"
+                class="text-3xl my-3 cursor-pointer"
+                id="faqRemove"
+              ></ion-icon>
+            </div>
+          </div>
+
+          <div
+            class="w-full mt-1 m-auto border-b-2 border-gray-300 pb-4 px-20 group/edit relative"
+          >
+            <form action="" id="faqInputForm">
+              <input
+                disabled
+                aria-disabled="true"
+                type="text"
+                name="question"
+                id="question"
+                class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100"
+                value="Can I access the platform on any device?"
+              />
+              <textarea
+                disabled
+                aria-disabled="true"
+                id="message"
+                rows="3"
+                class="text-start block w-full p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100"
+              >
+Yes, our platform is accessible on any device with internet connectivity, including laptops, tablets, and smartphones.
+        </textarea
+              >
+            </form>
+
+            <div
+              class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible"
+            >
+              <ion-icon
+                name="create-outline"
+                class="text-3xl my-3 cursor-pointer"
+                onclick="faqEdite(this)"
+              ></ion-icon>
+              <ion-icon
+                name="remove-circle-outline"
+                class="text-3xl my-3 cursor-pointer"
+                id="faqRemove"
+              ></ion-icon>
+            </div>
+          </div>
+
+          <div
+            class="w-full mt-1 m-auto border-b-2 border-gray-300 pb-4 px-20 group/edit relative"
+          >
+            <form action="" id="faqInputForm">
+              <input
+                disabled
+                aria-disabled="true"
+                type="text"
+                name="question"
+                id="question"
+                class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100"
+                value="Is there a mobile app available?"
+              />
+              <textarea
+                disabled
+                aria-disabled="true"
+                id="message"
+                rows="3"
+                class="text-start block w-full p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100"
+              >
+No, we currently developed for web version. Later we will for mobile platform.
+      </textarea
+              >
+            </form>
+
+            <div
+              class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible"
+            >
+              <ion-icon
+                name="create-outline"
+                class="text-3xl my-3 cursor-pointer"
+                onclick="faqEdite(this)"
+              ></ion-icon>
+              <ion-icon
+                name="remove-circle-outline"
+                class="text-3xl my-3 cursor-pointer"
+                id="faqRemove"
+              ></ion-icon>
+            </div>
+          </div>
+
+          <div
+            class="w-full mt-1 m-auto border-b-2 border-gray-300 pb-4 px-20 group/edit relative"
+          >
+            <form action="" id="faqInputForm">
+              <input
+                disabled
+                aria-disabled="true"
+                type="text"
+                name="question"
+                id="question"
+                class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100"
+                value="Is there a mobile app available?"
+              />
+              <textarea
+                disabled
+                aria-disabled="true"
+                id="message"
+                rows="3"
+                class="text-start block w-full p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100"
+              >
+No, we currently developed for web version. Later we will for mobile platform.
+    </textarea
+              >
+            </form>
+
+            <div
+              class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible"
+            >
+              <ion-icon
+                name="create-outline"
+                class="text-3xl my-3 cursor-pointer"
+                onclick="faqEdite(this)"
+              ></ion-icon>
+              <ion-icon
+                name="remove-circle-outline"
+                class="text-3xl my-3 cursor-pointer"
+                id="faqRemove"
+              ></ion-icon>
+            </div>
+          </div>
+
+          <div
+            class="w-full mt-1 m-auto border-b-2 border-gray-300 pb-4 px-20 group/edit relative"
+          >
+            <form action="" id="faqInputForm">
+              <input
+                disabled
+                aria-disabled="true"
+                type="text"
+                name="question"
+                id="question"
+                class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100"
+                value="How do I get technical support if I encounter an issue?"
+              />
+              <textarea
+                disabled
+                aria-disabled="true"
+                id="message"
+                rows="3"
+                class="text-start block w-full p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100"
+              >
+For technical support, you can visit our Help Center on the website or contact our support team via email or live chat.
+  </textarea
+              >
+            </form>
+
+            <div
+              class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible"
+            >
+              <ion-icon
+                name="create-outline"
+                class="text-3xl my-3 cursor-pointer"
+                onclick="faqEdite(this)"
+              ></ion-icon>
+              <ion-icon
+                name="remove-circle-outline"
+                class="text-3xl my-3 cursor-pointer"
+                id="faqRemove"
+              ></ion-icon>
+            </div>
+          </div>
+
+          <div
+            class="w-full mt-1 m-auto border-b-2 border-gray-300 pb-4 px-20 group/edit relative"
+          >
+            <form action="" id="faqInputForm">
+              <input
+                disabled
+                aria-disabled="true"
+                type="text"
+                name="question"
+                id="question"
+                class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100"
+                value="Are the Institute qualified?"
+              />
+              <textarea
+                disabled
+                aria-disabled="true"
+                id="message"
+                rows="3"
+                class="text-start block w-full p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100"
+              >
+Yes, all our Institute are highly qualified professionals with relevant teaching certifications and experience in their subject areas.
+  </textarea
+              >
+            </form>
+
+            <div
+              class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible"
+            >
+              <ion-icon
+                name="create-outline"
+                class="text-3xl my-3 cursor-pointer"
+                onclick="faqEdite(this)"
+              ></ion-icon>
+              <ion-icon
+                name="remove-circle-outline"
+                class="text-3xl my-3 cursor-pointer"
+                id="faqRemove"
+              ></ion-icon>
+            </div>
+          </div>
+
+          <div
+            class="w-full mt-1 m-auto border-b-2 border-gray-300 pb-4 px-20 group/edit relative"
+          >
+            <form action="" id="faqInputForm">
+              <input
+                disabled
+                aria-disabled="true"
+                type="text"
+                name="question"
+                id="question"
+                class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100"
+                value="Is there a fee for using the platform?"
+              />
+              <textarea
+                disabled
+                aria-disabled="true"
+                id="message"
+                rows="3"
+                class="text-start block w-full p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100"
+              >
+Yes, there is a fee structure depending on the courses you enroll in. We offer different subscription plans and payment options to suit your needs.
+  </textarea
+              >
+            </form>
+
+            <div
+              class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible"
+            >
+              <ion-icon
+                name="create-outline"
+                class="text-3xl my-3 cursor-pointer"
+                onclick="faqEdite(this)"
+              ></ion-icon>
+              <ion-icon
+                name="remove-circle-outline"
+                class="text-3xl my-3 cursor-pointer"
+                id="faqRemove"
+              ></ion-icon>
+            </div>
+          </div>
+
+          <div
+            class="w-full mt-1 m-auto border-b-2 border-gray-300 pb-4 px-20 group/edit relative"
+          >
+            <form action="" id="faqInputForm">
+              <input
+                disabled
+                aria-disabled="true"
+                type="text"
+                name="question"
+                id="question"
+                class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100"
+                value="Is there a fee for using the platform?"
+              />
+              <textarea
+                disabled
+                aria-disabled="true"
+                id="message"
+                rows="3"
+                class="text-start block w-full p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100"
+              >
+Yes, there is a fee structure depending on the courses you enroll in. We offer different subscription plans and payment options to suit your needs.
+  </textarea
+              >
+            </form>
+
+            <div
+              class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible"
+            >
+              <ion-icon
+                name="create-outline"
+                class="text-3xl my-3 cursor-pointer"
+                onclick="faqEdite(this)"
+              ></ion-icon>
+              <ion-icon
+                name="remove-circle-outline"
+                class="text-3xl my-3 cursor-pointer"
+                id="faqRemove"
+              ></ion-icon>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="fixed right-5 top-72 flex flex-col justify-center items-end"
+        >
+          <button class="font-semibold text-xl my-3 text-primarycolor">
+            User
+          </button>
+          <button class="font-semibold text-xl my-3 text-gray-400">
+            Institute
+          </button>
         </div>
       </div>
     </div>

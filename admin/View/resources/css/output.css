@@ -627,6 +627,30 @@ html {
   top: 4rem;
 }
 
+.top-10 {
+  top: 2.5rem;
+}
+
+.top-20 {
+  top: 5rem;
+}
+
+.top-60 {
+  top: 15rem;
+}
+
+.right-5 {
+  right: 1.25rem;
+}
+
+.top-52 {
+  top: 13rem;
+}
+
+.top-72 {
+  top: 18rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -1058,12 +1082,20 @@ html {
   flex-wrap: wrap;
 }
 
+.items-end {
+  align-items: flex-end;
+}
+
 .items-center {
   align-items: center;
 }
 
 .justify-start {
   justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-center {
@@ -1218,6 +1250,11 @@ html {
 .border-primarycolor {
   --tw-border-opacity: 1;
   border-color: rgb(68 96 239 / var(--tw-border-opacity));
+}
+
+.border-gray-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 
 .bg-\[\#A0AFFF\]\/20 {
@@ -1426,6 +1463,11 @@ html {
   padding-bottom: 1.25rem;
 }
 
+.px-28 {
+  padding-left: 7rem;
+  padding-right: 7rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -1448,6 +1490,10 @@ html {
 
 .ps-3 {
   padding-inline-start: 0.75rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
 }
 
 .text-left {
@@ -1511,6 +1557,10 @@ html {
 
 .font-medium {
   font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .uppercase {
@@ -1584,6 +1634,11 @@ html {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-gray-400 {
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -1718,6 +1773,11 @@ html {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.has-\[disabled\]\:bg-gray-300:has(disabled) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+
 .aria-\[checked\=true\]\:absolute[aria-checked=true] {
   position: absolute;
 }
@@ -1750,6 +1810,21 @@ html {
 .aria-\[warm\=true\]\:bg-orange-200[aria-warm=true] {
   --tw-bg-opacity: 1;
   background-color: rgb(254 215 170 / var(--tw-bg-opacity));
+}
+
+.aria-\[disabled\]\:bg-gray-300[aria-disabled] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+
+.aria-\[disabled\=false\]\:bg-gray-300[aria-disabled=false] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+
+.aria-\[disabled\=false\]\:bg-gray-100[aria-disabled=false] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
 .aria-\[checked\=true\]\:pr-4[aria-checked=true] {

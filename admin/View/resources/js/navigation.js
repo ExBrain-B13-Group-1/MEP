@@ -47,6 +47,22 @@ $("#sidebarControl").click(() => {
   })
 
 
+  $("#faqEdite").click(()=> {
+
+  })
+
+
+  function faqEdite (element) {
+    const faqForm = $(element).parent().parent().children()[0];
+    const inputQ = $(faqForm).children()[0]
+    const inputA = $(faqForm).children()[1]
+    inputQ.disabled = false;
+    $(inputQ).attr('aria-disabled',false)
+    inputA.disabled = false;
+    $(inputA).attr('aria-disabled',false)
+  }
+
+
 function eventClick (element) {
   console.log($(element).attr('key'));
   $("#eventDetails").css({display:'flex'})
