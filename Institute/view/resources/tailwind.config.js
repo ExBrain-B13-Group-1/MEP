@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     "./dashboard/**/*.{html,js,php}",
+    "./instructor/**/*.{html,js,php}",
     "./student/**/*.{html,js,php}",
     "./notification/**/*.{html,js,php}",
     "./setting/**/*.{html,js,php}",
