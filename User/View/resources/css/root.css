@@ -1,0 +1,10 @@
+:root {
+    --primary-color: #4460EF;
+    --primary-bg-color: #FFFFFF;
+    --minor-title-H4: 16px;
+    --font-color: #C2C2C2;
+}
+@font-face {
+    font-family: roboto;
+    src: url(../assets/fonts/Roboto-Regular.ttf);
+}
