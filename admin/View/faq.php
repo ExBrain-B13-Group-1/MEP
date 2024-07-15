@@ -781,7 +781,7 @@
       id="main"
       aria-checked="false"
     >
-      <h1 class="font-bold text-3xl  mb-3">Frequently asked questions</h1>
+      <h1 class="font-bold text-3xl mb-3">Frequently asked questions</h1>
       <div class="px-10 relative">
         <div class="flex items-center text-primarycolor mt-10">
           <ion-icon name="grid-outline" class="text-2xl mr-3"></ion-icon>
@@ -789,7 +789,7 @@
         </div>
 
         <!--! User Faq -->
-        <div id="faqUser" class="w-full  px-28 pt-10">
+        <div id="faqUser" class="w-full px-28 pt-10">
           <div
             class="w-full mt-1 m-auto border-b-2 border-gray-300 pb-4 px-20 group/edit relative"
           >
@@ -1221,7 +1221,8 @@ Yes, there is a fee structure depending on the courses you enroll in. We offer d
                 id="message"
                 rows="3"
                 class="text-start block w-full p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100"
-              >Institutions can benefit from features such as custom branding, dedicated portals for students and staff, administrative dashboards, and integration with existing systems.
+              >
+Institutions can benefit from features such as custom branding, dedicated portals for students and staff, administrative dashboards, and integration with existing systems.
               </textarea>
             </form>
 
@@ -1260,7 +1261,8 @@ Yes, there is a fee structure depending on the courses you enroll in. We offer d
                 id="message"
                 rows="3"
                 class="text-start block w-full p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100"
-              >Yes, our platform uses advanced security measures to protect your data and ensure the privacy and safety of all users.
+              >
+Yes, our platform uses advanced security measures to protect your data and ensure the privacy and safety of all users.
             </textarea
               >
             </form>
@@ -1300,7 +1302,8 @@ Yes, there is a fee structure depending on the courses you enroll in. We offer d
                 id="message"
                 rows="3"
                 class="text-start block w-full p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100"
-              >Our platform provides detailed reporting capabilities, allowing administrators to track student performance, attendance, and engagement.
+              >
+Our platform provides detailed reporting capabilities, allowing administrators to track student performance, attendance, and engagement.
           </textarea
               >
             </form>
@@ -1340,7 +1343,8 @@ Yes, there is a fee structure depending on the courses you enroll in. We offer d
                 id="message"
                 rows="3"
                 class="text-start block w-full p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100"
-              >To get started, contact our sales team to discuss your needs and schedule a demo. We will provide you with all the necessary information and support to begin using our platform.
+              >
+To get started, contact our sales team to discuss your needs and schedule a demo. We will provide you with all the necessary information and support to begin using our platform.
         </textarea
               >
             </form>
@@ -1380,7 +1384,8 @@ Yes, there is a fee structure depending on the courses you enroll in. We offer d
                 id="message"
                 rows="3"
                 class="text-start block w-full p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100"
-              >No, we currently developed for web version. Later we will for mobile platform.
+              >
+No, we currently developed for web version. Later we will for mobile platform.
       </textarea
               >
             </form>
@@ -1420,7 +1425,8 @@ Yes, there is a fee structure depending on the courses you enroll in. We offer d
                 id="message"
                 rows="3"
                 class="text-start block w-full p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100"
-              >For technical support, you can visit our Help Center on the website or contact our support team via email or live chat.
+              >
+For technical support, you can visit our Help Center on the website or contact our support team via email or live chat.
     </textarea
               >
             </form>
@@ -1440,16 +1446,23 @@ Yes, there is a fee structure depending on the courses you enroll in. We offer d
               ></ion-icon>
             </div>
           </div>
-
         </div>
 
         <div
           class="fixed right-5 top-72 flex flex-col justify-center items-end"
         >
-          <button aria-ative="true" class="font-semibold text-xl my-3 text-gray-400 aria-[ative=true]:text-primarycolor" onclick="faqSwitch(this,'user')">
+          <button
+            aria-ative="true"
+            class="font-semibold text-xl my-3 text-gray-400 aria-[ative=true]:text-primarycolor"
+            onclick="faqSwitch(this,'user')"
+          >
             User
           </button>
-          <button aria-ative="false"  class="font-semibold text-xl my-3 text-gray-400 aria-[ative=true]:text-primarycolor" onclick="faqSwitch(this,'institute')">
+          <button
+            aria-ative="false"
+            class="font-semibold text-xl my-3 text-gray-400 aria-[ative=true]:text-primarycolor"
+            onclick="faqSwitch(this,'institute')"
+          >
             Institute
           </button>
         </div>
