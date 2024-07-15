@@ -169,7 +169,7 @@
                 </li>
 
                 <li>
-                    <a href="#" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="page.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -323,7 +323,7 @@
         </div>
     </aside>
 
-    <nav class=" bg-white shadow-shadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50"
+    <nav class=" bg-white shadow-dshadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50"
         id="navbar">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
             <div class="flex justify-between items-center w-96">

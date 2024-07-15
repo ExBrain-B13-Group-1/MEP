@@ -321,7 +321,7 @@
 
           <li>
             <a
-              href="#"
+              href="page.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -595,7 +595,7 @@
     </aside>
 
     <nav
-      class=" bg-white shadow-shadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50"
+      class=" bg-white shadow-dshadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50"
       id="navbar"
     >
       <div

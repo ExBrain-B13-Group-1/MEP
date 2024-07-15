@@ -108,7 +108,7 @@
                 </li>
 
                 <li>
-                    <a href="#" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="../page.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14.4139 17.3911H0.889524C0.52337 17.3911 0.226562 17.6879 0.226562 18.0541V22.297C0.226562 22.6632 0.52337 22.96 0.889524 22.96H14.4139C14.78 22.96 15.0769 22.6632 15.0769 22.297V18.0541C15.0769 17.6879 14.78 17.3911 14.4139 17.3911ZM13.751 21.6341H1.55249V18.717H13.751V21.6341Z" fill="#A7A7A7" />
                             <path d="M23.5628 0.551758H0.889524C0.523371 0.551758 0.226562 0.848566 0.226562 1.21472V5.45767C0.226562 5.82383 0.523371 6.12064 0.889524 6.12064H23.5628C23.9289 6.12064 24.2258 5.82383 24.2258 5.45767V1.21472C24.2258 0.848566 23.9289 0.551758 23.5628 0.551758ZM22.8999 4.79471H1.55249V1.87768H22.8999V4.79471Z" fill="#A7A7A7" />
@@ -201,7 +201,7 @@
         </div>
     </aside>
 
-    <nav class=" bg-white shadow-shadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50" id="navbar">
+    <nav class=" bg-white shadow-dshadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50" id="navbar">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
             <div class="flex justify-between items-center w-96">
                 <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">

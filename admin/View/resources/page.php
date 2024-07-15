@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Finance History Purchased</title>
+    <title>User Feedback</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="../resources/css/output.css" rel="stylesheet">
     <script src="../resources/lib/jquery-3.7.1.js"></script>
@@ -43,7 +43,8 @@
                 </li>
 
                 <li>
-                    <a href="finance.php" class="flex items-center p-2 text-gray-500 rounded-lg bg-primarycolor group">
+                    <a href="finance.php"
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -51,7 +52,7 @@
                                 stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
 
-                        <span class="flex-1 ms-3 whitespace-nowrap sideLabel text-white">Finance</span>
+                        <span class="flex-1 ms-3 whitespace-nowrap sideLabel group-hover:text-white">Finance</span>
                     </a>
                 </li>
 
@@ -158,17 +159,17 @@
                         class="hidden py-2 space-y-2 aria-[checked=true]:absolute aria-[checked=true]:left-16 aria-[checked=true]:pr-4 aria-[checked=true]:bottom-[-35px] bg-white aria-[checked=true]:shadow-dshadow rounded-md">
                         <li>
                             <a href="userFeedback.php"
-                                class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor">Users</a>
+                                class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group text-primarycolor">Users</a>
                         </li>
                         <li>
                             <a href="instituteFeedback.php"
-                                class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor">Institutes</a>
+                                class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor">Institutes</a>
                         </li>
                     </ul>
                 </li>
 
                 <li>
-                    <a href="page.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="page.php" class="flex items-center p-2 text-gray-500 rounded-lg bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -197,7 +198,7 @@
                                 fill="#A7A7A7" />
                         </svg>
 
-                        <span class="flex-1 ms-3 whitespace-nowrap sideLabel group-hover:text-white">Pages</span>
+                        <span class="flex-1 ms-3 whitespace-nowrap sideLabel text-white">Pages</span>
                     </a>
                 </li>
 
@@ -346,7 +347,7 @@
                 </form>
             </div>
             <p class="bg-gradient-to-t from-[#92A3FF] to-[#00288E] text-transparent bg-clip-text font-bold text-lg">
-                Finance History
+                Edit Page
             </p>
             <ul
                 class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
@@ -412,77 +413,351 @@
     </nav>
 
 
-    <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full" id="main"
+    <div class="absolute right-0 top-16 px-10 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full" id="main"
         aria-checked="false">
 
         <!-- code here -->
-         
-        <!-- Go Back To Finance -->
-        <div class="text-right px-4 py-1">
-            <a href="finance.php" class="text-primary-main hover:underline">Back</a>
-        </div>
-        <div class="container mx-auto p-4">
-            <div class="flex justify-between items-center mb-4">
-                <div class="flex items-center space-x-4">
-                    <!-- Search & Filter -->
-                    <div class="relative">
-                        <input type="text" class="border border-dark-blue px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none" placeholder="Search">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue" viewBox="0 0 24 24">
-                            <g fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="11" cy="11" r="7" />
-                                <path stroke-linecap="round" d="M11 8a3 3 0 0 0-3 3m12 9l-3-3" />
-                            </g>
-                        </svg>
+        <div class=" bg-white p-4 overflow-y-auto no-scrollbar text-sm">
+            <!-- 4 Tabs (Home, About Us, Service, Payment) -->
+            <div class="border border-dark-blue px-2 py-1 rounded flex items-center w-full">
+                <div class="tabs w-full flex justify-between">
+                    <button class="tab-button bg-dark-blue text-white px-4 py-2 rounded w-2/6 mr-2">Home</button>
+                    <button class="tab-button text-gray-700 px-4 py-2 rounded w-2/6 mr-2">About Us</button>
+                    <button class="tab-button text-gray-700 px-4 py-2 rounded w-2/6">Service</button>
+                    <button class="tab-button text-gray-700 px-4 py-2 rounded w-2/6">Payment</button>
+                </div>
+            </div>
+
+            <!-- Home Content -->
+            <div id="home-content" class="tab-content space-y-4 mt-6">
+                <div class="grid grid-cols-4 space-x-3">
+                    <div class="space-y-2">
+                        <label for="slogan" class="block font-medium text-gray-700">Slogan</label>
+                        <input type="text" id="slogan"
+                            class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                            value="Join MEP: Your Path To Success">
                     </div>
-                    <div class="relative">
-                        <button id="filter-button" class="border border-dark-blue px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none">Filter</button>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue" viewBox="0 0 16 16" {...$$props}>
-                            <path fill="currentColor" d="M6 1a3 3 0 0 0-2.83 2H0v2h3.17a3.001 3.001 0 0 0 5.66 0H16V3H8.83A3 3 0 0 0 6 1M5 4a1 1 0 1 1 2 0a1 1 0 0 1-2 0m5 5a3 3 0 0 0-2.83 2H0v2h7.17a3.001 3.001 0 0 0 5.66 0H16v-2h-3.17A3 3 0 0 0 10 9m-1 3a1 1 0 1 1 2 0a1 1 0 0 1-2 0" />
-                        </svg>
+                    <div class="space-y-2">
+                        <label for="title" class="block font-medium text-gray-700">Title</label>
+                        <input type="text" id="title"
+                            class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                            value="Unlock Your Potential with MEP">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="description" class="block font-medium text-gray-700">Description</label>
+                        <textarea id="description" rows="5"
+                            class="w-full p-2 border border-gray-300 rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Empowering students and professionals</textarea>
+                    </div>
+                    <div class="flex space-x-2">
+                        <div class="space-y-2">
+                            <label for="users" class="block font-medium text-gray-700">Users</label>
+                            <input type="text" id="users"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                                value="20K+">
+                        </div>
+                        <div class="space-y-2">
+                            <label for="institutes" class="block font-medium text-gray-700">Institutes</label>
+                            <input type="text" id="institutes"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                                value="10K+">
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 gap-4 mt-4">
+                    <div class="space-y-2">
+                        <label for="slider1" class="block font-medium text-gray-700">Institute Slider 1</label>
+                        <input type="file" id="slider1" class="w-full p-2 border border-gray-300 rounded-md">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="slider2" class="block font-medium text-gray-700">Institute Slider 2</label>
+                        <input type="file" id="slider2" class="w-full p-2 border border-gray-300 rounded-md">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="slider3" class="block font-medium text-gray-700">Institute Slider 3</label>
+                        <input type="file" id="slider3" class="w-full p-2 border border-gray-300 rounded-md">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="slider4" class="block font-medium text-gray-700">Institute Slider 4</label>
+                        <input type="file" id="slider4" class="w-full p-2 border border-gray-300 rounded-md">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="slider5" class="block font-medium text-gray-700">Institute Slider 5</label>
+                        <input type="file" id="slider5" class="w-full p-2 border border-gray-300 rounded-md">
+                    </div>
+                    <div class="space-y-2">
+                        <label for="slider6" class="block font-medium text-gray-700">Institute Slider 6</label>
+                        <input type="file" id="slider6" class="w-full p-2 border border-gray-300 rounded-md">
+                    </div>
+                </div>
+                <button id="save-home"
+                    class="bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                    Save Changes
+                </button>
+
+            </div>
+
+            <!-- About Us Content -->
+            <div id="about-content" class="tab-content space-y-4 mt-6">
+                <div class="grid grid-cols-3 space-x-16">
+                    <div class="space-y-2">
+                        <div>
+                            <label for="slogan" class="block font-medium text-gray-700">Title</label>
+                            <input type="text" id="slogan"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                                value="About Us">
+                        </div>
+                        <div>
+                            <label for="description" class="block font-medium text-gray-700">Description</label>
+                            <textarea id="description" rows="8"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Welcome to MEP, your trusted partner in education and professional development. We are dedicated to empowering students and professionals through high-quality educational programs and resources.</textarea>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div>
+                            <label for="title" class="block font-medium text-gray-700">Title</label>
+                            <input type="text" id="title"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                                value="Helping People grow their careers, Everyday!">
+                        </div>
+                        <div>
+                            <label for="description" class="block font-medium text-gray-700">Description</label>
+                            <textarea id="description" rows="8"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Our platform offers a diverse range of courses and programs tailored to meet the needs of students and professionals alike. Whether you are looking to advance your career, acquire new skills, or explore new fields, MEP is here to guide you every step of the way.</textarea>
+                        </div>
+                    </div>
+                    <div class="flex space-x-2">
+                        <div class="space-y-2">
+                            <label for="slider1" class="block font-medium text-gray-700">Change About Us Photo</label>
+                            <input type="file" id="slider1" class="w-full p-2 border border-gray-300 rounded-md">
+                        </div>
+                    </div>
+                </div>
+                <button id="save-about"
+                    class="bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                    Save Changes
+                </button>
+
+            </div>
+
+            <!-- Service Content -->
+            <div id="service-content" class="tab-content space-y-4 mt-6">
+                <div class="w-1/3">
+                    <label for="slogan" class="block font-medium text-gray-700">Title</label>
+                    <input type="text" id="slogan"
+                        class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                        value="Reliable & High-Quality Service">
+                </div>
+                <div class="grid grid-cols-5 space-x-4">
+                    <div class="space-y-2">
+                        <div>
+                            <label for="slogan" class="block font-medium text-gray-700">Sub-Title</label>
+                            <input type="text" id="slogan"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                                value="Professional Courses">
+                        </div>
+                        <div>
+                            <label for="description" class="block font-medium text-gray-700">Description</label>
+                            <textarea id="description" rows="5"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Enhance your skills and knowledge with our expert-led professional courses in IT, Business, and Language Studies etc...</textarea>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div>
+                            <label for="title" class="block font-medium text-gray-700">Sub-Title</label>
+                            <input type="text" id="title"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                                value="workshops & Webinars">
+                        </div>
+                        <div>
+                            <label for="description" class="block font-medium text-gray-700">Description</label>
+                            <textarea id="description" rows="5"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Participate in interactive workshops and seminars led by industry experts to stay updated with the latest trends and best practices.</textarea>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div>
+                            <label for="title" class="block font-medium text-gray-700">Sub-Title</label>
+                            <input type="text" id="title"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                                value="24/7 Support">
+                        </div>
+                        <div>
+                            <label for="description" class="block font-medium text-gray-700">Description</label>
+                            <textarea id="description" rows="5"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Access round-the-clock assistance from our dedicated support team. Whether you need technical help, we’re here to help anytime.</textarea>
+                        </div>
+                    </div>
+                    <div class="space-y-2 pr-4 border-r-2">
+                        <h2 class="font-bold">Institute Premium Price</h2>
+                        <div class="my-2">
+                            <label for="title" class="block font-medium text-gray-700">For Business (Monthly)</label>
+                            <input type="text" id="title"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                                value="100,000 MMK">
+                        </div>
+                        <div class="my-2">
+                            <label for="title" class="block font-medium text-gray-700">For Enterprise (Yearly)</label>
+                            <input type="text" id="title"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                                value="10,00,000 MMK">
+                        </div>
+                        <div class="my-2">
+                            <label for="title" class="block font-medium text-gray-700">For 500 Coin</label>
+                            <input type="text" id="title"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                                value="25,000 MMK">
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <h2 class="font-bold">User Premium Price</h2>
+                        <div class="my-2">
+                            <label for="title" class="block font-medium text-gray-700">Pro</label>
+                            <input type="text" id="title"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                                value="500,00 MMK">
+                        </div>
+                        <div class="my-2">
+                            <label for="title" class="block font-medium text-gray-700">For 500 Coin</label>
+                            <input type="text" id="title"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                                value="10,000 MMK">
+                        </div>
+                    </div>
+                </div>
+                <hr class="w-3/5 border-1 border-gray-800">
+                <div class="grid grid-cols-5 space-x-4">
+                    <div class="space-y-2">
+                        <div>
+                            <label for="slogan" class="block font-medium text-gray-700">Sub-Title</label>
+                            <input type="text" id="slogan"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                                value="Media Promotion">
+                        </div>
+                        <div>
+                            <label for="description" class="block font-medium text-gray-700">Description</label>
+                            <textarea id="description" rows="5"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Boost your visibility with our media promotion services. Leverage our platform to reach a wider audience and enhance your brand's presence.</textarea>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div>
+                            <label for="title" class="block font-medium text-gray-700">Sub-Title</label>
+                            <input type="text" id="title"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                                value="Reports & Analysis">
+                        </div>
+                        <div>
+                            <label for="description" class="block font-medium text-gray-700">Description</label>
+                            <textarea id="description" rows="5"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Gain valuable insights with our detailed reports and analysis. Track your progress make data-driven decisions to optimize your circumstances.</textarea>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div>
+                            <label for="title" class="block font-medium text-gray-700">Sub-Title</label>
+                            <input type="text" id="title"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                                value="24/7 Support">
+                        </div>
+                        <div>
+                            <label for="description" class="block font-medium text-gray-700">Easy Payment</label>
+                            <textarea id="description" rows="5"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Enjoy hassle-free transactions with our easy payment system. Use coin payments to conveniently manage and pay for your promotion of classes.</textarea>
+                        </div>
+                    </div>
+                </div>
+                <button id="save-service"
+                    class="bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                    Save Changes
+                </button>
+
+            </div>
+
+            <!-- Payment Content -->
+            <div id="payment-content" class="tab-content mt-6">
+                <!-- Banking Payment Content -->
+                <h2 class="font-bold text-base">Banking</h2>
+                <div id="banking-container" class="grid grid-cols-4 space-x-4">
+                    <!-- Dynamic content -->
+                </div>
+                <br>
+                 <!-- Pay Payment Content -->
+                 <h2 class="font-bold text-base">Pay</h2>
+                 <div id="pay-container" class="grid grid-cols-4 space-x-4">
+                     <!-- Dynamic content -->
+                 </div>
+            </div>
+
+            <!-- Confirmation Modal -->
+            <div id="confirmModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+                <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+                    <h2 class="text-xl font-semibold mb-4">Confirm Changes</h2>
+                    <p>Are you sure you want to change number?</p>
+                    <div class="flex justify-end mt-4">
+                        <button type="button" id="cancelConfirm"
+                            class="mr-2 px-4 py-2 bg-gray-300 rounded-md text-gray-700 hover:bg-gray-400">Cancel</button>
+                        <button type="button" id="confirmChanges"
+                            class="px-4 py-2 bg-primary-main text-white rounded-md">Confirm</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Start Table -->
-            <div class="overflow-x-auto">
-                <table class="min-w-full bg-white shadow-md rounded-lg">
-                    <thead>
-                        <tr class="bg-gray-200 text-gray-600 text-left text-sm leading-normal">
-                            <th class="py-3 px-6">ID</th>
-                            <th class="py-3 px-6">Name</th>
-                            <th class="py-3 px-6">Date</th>
-                            <th class="py-3 px-6">Coin</th>
-                            <th class="py-3 px-6">Class Fee</th>
-                            <th class="py-3 px-6">Details</th>
-                        </tr>
-                    </thead>
-                    <tbody id="table-body" class="text-gray-600 text-sm font-light">
-                        <!-- Rows will be inserted here by jQuery -->
-                    </tbody>
-                </table>
+            <!-- Add Banking Modal -->
+            <div id="addBankModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+                <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+                    <h2 class="text-xl font-semibold mb-4">Add Banking Info</h2>
+                    <form>
+                        <div class="mb-4">
+                            <label for="bankImage" class="block text-sm font-medium text-gray-700">Banking Image</label>
+                            <input type="file" id="bankImage" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+                        </div>
+                        <div class="mb-4">
+                            <label for="accountNumber" class="block text-sm font-medium text-gray-700">Account
+                                Number</label>
+                            <input type="text" id="accountNumber"
+                                class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+                                placeholder="Enter account number">
+                        </div>
+                        <div class="flex justify-end">
+                            <button type="button" id="closeBankAddModal"
+                                class="mr-2 px-4 py-2 bg-gray-300 rounded-md text-gray-700 hover:bg-gray-400">Cancel</button>
+                            <button type="submit"
+                                class="px-4 py-2 bg-primary-main text-white rounded-md">Save</button>
+                        </div>
+                    </form>
+                </div>
             </div>
 
-            <!-- Pagination -->
-            <div class="flex justify-center mt-4">
-                <nav aria-label="Page navigation">
-                    <ul id="pagination" class="inline-flex items-center -space-x-px">
-                        <!-- Pagination buttons will be inserted here by jQuery -->
-                    </ul>
-                </nav>
+             <!-- Add Pay Modal -->
+             <div id="addPayModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+                <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+                    <h2 class="text-xl font-semibold mb-4">Add Pay Info</h2>
+                    <form>
+                        <div class="mb-4">
+                            <label for="payImage" class="block text-sm font-medium text-gray-700">Pay Image</label>
+                            <input type="file" id="payImage" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+                        </div>
+                        <div class="mb-4">
+                            <label for="phNumber" class="block text-sm font-medium text-gray-700">Phone
+                                Number</label>
+                            <input type="text" id="phNumber"
+                                class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+                                placeholder="Enter phone number">
+                        </div>
+                        <div class="flex justify-end">
+                            <button type="button" id="closePayAddModal"
+                                class="mr-2 px-4 py-2 bg-gray-300 rounded-md text-gray-700 hover:bg-gray-400">Cancel</button>
+                            <button type="submit"
+                                class="px-4 py-2 bg-primary-main text-white rounded-md">Save</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-
-        <!-- For Detail Card -->
-        <div id="detail-view"
-            class="fixed bottom-0 right-0 m-4 px-10 py-5 bg-white border border-gray-300 rounded-lg shadow-lg hidden">
-            <!-- Detail content will be inserted here by jQuery -->
-        </div>
-    </div>
     </div>
 
-    <script src="js/financeHistory.js"></script>
+    <script src="js/page.js"></script>
     <script src="js/sidebar.js"></script>
-  
 </body>
 
 </html>
