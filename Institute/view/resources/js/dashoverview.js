@@ -13,15 +13,23 @@ $(document).ready(function(){
         $('.changes').removeClass("actives");
         $(this).addClass('actives');
         console.log($(this).text());
-        if ($(this).text() === "Dashboard Overview") {
-            console.log("dash");
-            $('.dashoverviews').removeClass('hidden').addClass('block');
-            $('.finaoverviews').removeClass('block').addClass('hidden');
-        } else if ($(this).text() === "Finance Overview") {
-            console.log("fina");
-            $('.dashoverviews').removeClass('block').addClass('hidden');
-            $('.finaoverviews').removeClass('hidden').addClass('block');
-        }
+        const sections = {
+            "Dashboard Overview": ".dashoverviews",
+            "Finance Overview": ".finaoverviews"
+        };
+        
+        const selectedText = $(this).text();
+        const selectedSection = sections[selectedText];
+        
+        console.log(selectedText === "Dashboard Overview" ? "dash" : "fina");
+        
+        Object.values(sections).forEach(section => {
+            if (section === selectedSection) {
+                $(section).removeClass('hidden').addClass('block');
+            } else {
+                $(section).removeClass('block').addClass('hidden');
+            }
+        });
     });
 
 });

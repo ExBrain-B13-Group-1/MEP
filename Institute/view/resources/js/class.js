@@ -9,13 +9,10 @@ $(document).ready(function(){
         $(this).addClass('actives');
         console.log($(this).text());
         if ($(this).text() === "Class Lists") {
-            console.log("dash");
-            $('.classlists').removeClass('hidden').addClass('block');
-            $('.finishedclasses').removeClass('block').addClass('hidden');
+            window.location.href = './../class/classlist.html';
         } else if ($(this).text() === "Finished Classes") {
             console.log("fina");
-            $('.classlists').removeClass('block').addClass('hidden');
-            $('.finishedclasses').removeClass('hidden').addClass('block');
+            window.location.href = './../class/classlistfinished.html';
         }
     });
 
