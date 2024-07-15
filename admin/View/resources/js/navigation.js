@@ -73,4 +73,21 @@ function activeForm () {
   console.log($('#faqInputForm').children());
 }
 
+
+function faqSwitch (element,type) {
+  const userBtn = $(element).parent().children()[0]
+  const instBtn = $(element).parent().children()[1]
+  if(type === 'user') {
+    $("#faqInstitute").fadeOut(100)
+    $("#faqUser").fadeIn(100)
+    $(userBtn).attr('aria-ative',true)
+    $(instBtn).attr('aria-ative',false)
+  }else{
+    $("#faqUser").fadeOut(100)
+    $("#faqInstitute").fadeIn(100)
+    $(userBtn).attr('aria-ative',false)
+    $(instBtn).attr('aria-ative',true)
+  }
+}
+
   // <link rel="stylesheet" href="css/style.css?<?=time()?>">
