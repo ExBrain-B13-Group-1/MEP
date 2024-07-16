@@ -3,11 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<<< HEAD:admin/View/resources/mailSystem.php
     <title>Mail System</title>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="../resources/lib/jquery-3.7.1.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="../resources/css/output.css" rel="stylesheet">
+========
+    <title>Navigation</title>
+    <link rel="stylesheet" href="./resources/css/output.css" />
+    <script src="./resources/lib/jquery.js"></script>
+>>>>>>>> paing-sett-kyaw:admin/View/notification.php
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
     <script
       type="module"
@@ -17,8 +23,12 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+
+    <script src="./resources/js/navigation.js" defer></script>
   </head>
   <body>
+
+
     <aside
       id="logo-sidebar"
       close="false"
@@ -30,7 +40,11 @@
       >
         <a href="/" class="flex items-center mb-5">
           <img
+<<<<<<<< HEAD:admin/View/resources/mailSystem.php
             src="../resources/img/LOGO.svg"
+========
+            src="./resources/img/LOGO.svg"
+>>>>>>>> paing-sett-kyaw:admin/View/notification.php
             class="me-3 w-fit"
             alt="Flowbite Logo"
             id="brandLogo"
@@ -39,7 +53,11 @@
         <ul class="space-y-1 font-medium">
           <li>
             <a
+<<<<<<<< HEAD:admin/View/resources/mailSystem.php
               href="adminDashboard.php"
+========
+            href="./dashboard.php"
+>>>>>>>> paing-sett-kyaw:admin/View/notification.php
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -78,7 +96,11 @@
 
           <li>
             <a
+<<<<<<<< HEAD:admin/View/resources/mailSystem.php
               href="finance.php"
+========
+              href="./finance.php"
+>>>>>>>> paing-sett-kyaw:admin/View/notification.php
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -107,7 +129,7 @@
 
           <li>
             <a
-              href="#"
+              href="./userlists..php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -159,7 +181,7 @@
 
           <li>
             <a
-              href="#"
+              href="./institutelists.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -210,8 +232,13 @@
 
           <li>
             <a
+<<<<<<<< HEAD:admin/View/resources/mailSystem.php
               href="mailSystem.php"
               class="flex items-center p-2 text-gray-500 rounded-lg bg-primarycolor group"
+========
+              href="./mail.php"
+              class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
+>>>>>>>> paing-sett-kyaw:admin/View/notification.php
             >
               <svg
                 class="flex-shrink-0 w-5 h-5 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
@@ -304,14 +331,22 @@
             >
               <li>
                 <a
+<<<<<<<< HEAD:admin/View/resources/mailSystem.php
                   href="userFeedback.php"
+========
+                  href="./userfeedback.php"
+>>>>>>>> paing-sett-kyaw:admin/View/notification.php
                   class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor"
                   >Users</a
                 >
               </li>
               <li>
                 <a
+<<<<<<<< HEAD:admin/View/resources/mailSystem.php
                   href="instituteFeedback.php"
+========
+                  href="./institutefeedback.php"
+>>>>>>>> paing-sett-kyaw:admin/View/notification.php
                   class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor"
                   >Institutes</a
                 >
@@ -321,7 +356,11 @@
 
           <li>
             <a
+<<<<<<<< HEAD:admin/View/resources/mailSystem.php
               href="page.php"
+========
+              href="./pages.php"
+>>>>>>>> paing-sett-kyaw:admin/View/notification.php
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -375,7 +414,7 @@
 
           <li>
             <a
-              href="#"
+              href="./tools.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -404,7 +443,7 @@
 
           <li>
             <a
-              href="#"
+              href="./faq.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -533,7 +572,7 @@
         <ul class="space-y-1 absolute bottom-0 font-medium w-full pr-6">
           <li>
             <a
-              href="#"
+              href="./setting.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -607,7 +646,11 @@
             class="flex items-center space-x-3 rtl:space-x-reverse mr-4"
           >
             <img
+<<<<<<<< HEAD:admin/View/resources/mailSystem.php
               src="../resources/img/sideopen.svg"
+========
+              src="./resources/img/sideopen.svg"
+>>>>>>>> paing-sett-kyaw:admin/View/notification.php
               class="h-8"
               alt="Flowbite Logo"
               id="sidebarControl"
@@ -652,7 +695,11 @@
         <p
           class="bg-gradient-to-t from-[#92A3FF] to-[#00288E] text-transparent bg-clip-text font-bold text-lg"
         >
+<<<<<<<< HEAD:admin/View/resources/mailSystem.php
           Mail
+========
+          Notifications
+>>>>>>>> paing-sett-kyaw:admin/View/notification.php
         </p>
         <ul
           class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white "
@@ -747,7 +794,11 @@
           <li class="ml-3">
             <div class="flex items-center bg-white rounded-full pr-2">
               <img
+<<<<<<<< HEAD:admin/View/resources/mailSystem.php
                 src="../resources/img/profile.png"
+========
+                src="./resources/img/profile.png"
+>>>>>>>> paing-sett-kyaw:admin/View/notification.php
                 alt="profile"
                 class="rounded-full"
                 height="100"
@@ -777,6 +828,7 @@
     </nav>
 
 
+<<<<<<<< HEAD:admin/View/resources/mailSystem.php
     <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full" id="main" aria-checked="false">
      
       <!-- code here -->
@@ -866,5 +918,14 @@
 
     <script src="js/mailSystem.js"></script>
     <script src="js/sidebar.js"></script>
+========
+    <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full " id="main" aria-checked="false">
+        <h1>Notifications</h1>
+  
+    </div>
+
+
+
+>>>>>>>> paing-sett-kyaw:admin/View/notification.php
   </body>
 </html>
