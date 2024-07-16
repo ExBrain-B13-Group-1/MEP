@@ -1,14 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./dashboard/**/*.{html,js,php}",
-    "./instructor/**/*.{html,js,php}",
-    "./student/**/*.{html,js,php}",
-    "./notification/**/*.{html,js,php}",
-    "./setting/**/*.{html,js,php}",
+    "./Dashboard/**/*.{html,js,php}",
+    "./Instructor/**/*.{html,js,php}",
+    "./Student/**/*.{html,js,php}",
+    "./Notification/**/*.{html,js,php}",
+    "./Setting/**/*.{html,js,php}",
     "./js/**/*.{html,js,php}",
-    "./class/**/*.{html,js,php}",
-    "./history/**/*.{html,js,php}",
+    "./Class/**/*.{html,js,php}",
+    "./History/**/*.{html,js,php}",
     "./node_modules/flowbite/**/*.js"
   ],
   theme: {
