@@ -214,31 +214,78 @@
         
         <!-- Data Area Setting-->
         <div class="block pt-20 pb-6 px-6 ml-64  bg-gray-300 dark:bg-gray-800 dashoverviews">
-            <div class="h-screen grid grid-cols-8 gap-4">
+            <div class="h-screen grid grid-cols-10 gap-4">
 
                 <!-- General Component -->
-                <div class="block bg-white col-span-8 rounded-lg px-4 py-2 mt-16 dark:bg-gray-600 duration-500 generals">
-                    <p class="dark:text-white">General Sample Text</p>
-                    <!-- Code Here Bro Paing Sett Kyaw -->
+                <div class="block bg-white col-span-8 col-start-2 rounded-lg px-20 py-10 mt-16 dark:bg-gray-600 duration-500 generals">
+                    <h2 class="text-2xl font-bold dark:text-white mb-10 opacity-80">Institute Information</h2>
+                    <div class="grid grid-cols-3 gap-10">
+                        
+                        <div>
+                            <p class="opacity-70 text-xl dark:text-white dark:opacity-80 mb-5">Logo</p>
+                            <div class="flex items-center justify-center w-full">
+                                <label for="dropzone-file1" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50  dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                        <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                                        </svg>
+                                        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                                    </div>
+                                    <input id="dropzone-file1" type="file" class="hidden" />
+                                </label>
+                            </div> 
+                        </div>
+                        <div>
+                            <p class="opacity-70 text-xl dark:text-white dark:opacity-80 mb-5">Background Photo</p>
+                            <div class="flex items-center justify-center w-full">
+                                <label for="dropzone-file1" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50  dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                        <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                                        </svg>
+                                        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                                    </div>
+                                    <input id="dropzone-file1" type="file" class="hidden" />
+                                </label>
+                            </div> 
+                        </div>
+                        <div>
+                            <p class="opacity-70 text-xl dark:text-white dark:opacity-80 mb-5">Location</p>
+                            <div class="flex items-center justify-center w-full">
+                                <label for="dropzone-file1" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50  dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                        <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                                        </svg>
+                                        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                                    </div>
+                                    <input id="dropzone-file1" type="file" class="hidden" />
+                                </label>
+                            </div> 
+                        </div>
+                    </div>
 
                 </div>
 
                 <!-- Account & Security -->
-                <div class="hidden bg-white col-span-8 rounded-lg px-4 py-2 mt-16 dark:bg-gray-600 duration-500 accsecuritys">
+                <div class="hidden bg-white col-span-8 col-start-2 rounded-lg px-4 py-2 mt-16 dark:bg-gray-600 duration-500 accsecuritys">
                     <p class="dark:text-white">Account & Security Sample Text</p>
                     <!-- Code Here Bro Paing Sett Kyaw -->
 
                 </div>
 
                 <!-- Privacy & Policy -->
-                <div class="hidden bg-white col-span-8 rounded-lg px-4 py-2 mt-16 dark:bg-gray-600 duration-500 privacys">
+                <div class="hidden bg-white col-span-8 col-start-2 rounded-lg px-4 py-2 mt-16 dark:bg-gray-600 duration-500 privacys">
                     <p class="dark:text-white">Privacy & Policy Sample Text</p>
                     <!-- Code Here Bro Paing Sett Kyaw -->
 
                 </div>
 
                 <!-- Social Link -->
-                <div class="hidden bg-white col-span-8 rounded-lg px-4 py-2 mt-16 dark:bg-gray-600 duration-500 sociallinks">
+                <div class="hidden bg-white col-span-8 col-start-2 rounded-lg px-4 py-2 mt-16 dark:bg-gray-600 duration-500 sociallinks">
                     <p class="dark:text-white">Social Link Sample Text</p>
                     <!-- Code Here Bro Paing Sett Kyaw -->
 
