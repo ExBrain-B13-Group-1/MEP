@@ -337,7 +337,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../assets/service-background.png);
+  background-image: url(../img/service-background.png);
   border-radius: 5px;
 }
 .service-section-inner-wrapper{
