@@ -118,12 +118,12 @@ $(document).ready(function () {
              <div class="notification-item p-1 cursor-pointer" data-index="${index}">
                  <div>
                      <div class="flex justify-between items-start">
-                         <div class="font-bold text-lg">${notification.name}</div>
+                         <div class="font-bold text-base">${notification.name}</div>
                          <div class="text-gray-500 text-sm">${notification.time}</div>
                      </div>
                  </div>
-                 <div class="text-gray-500 text-base font-semibold">${notification.subject}</div>
-                 <p>${notification.content}</p>
+                 <div class="text-gray-500 text-sm font-semibold">${notification.subject}</div>
+                 <p class="text-xs">${notification.content}</p>
              </div>
              <hr class="border">
          `;
@@ -200,6 +200,31 @@ $(document).ready(function () {
          `;
     $("#email-details-container").html(emailHtml);
   }
+
+  // Only work in php file of script
+  // New Message button
+  // $("#new-message").on("click", function (e) {
+  //   e.preventDefault();  // Prevent default anchor behavior
+  //   $("#new-message-form").toggleClass("hidden");
+  //   // Toggle button styles
+  //   if ($("#new-message-form").hasClass("hidden")) {
+  //     $(this)
+  //       .removeClass("bg-dark-blue text-white")
+  //       .addClass("text-dark-blue bg-transparent");
+  //   } else {
+  //     $(this)
+  //       .removeClass("text-dark-blue bg-transparent")
+  //       .addClass("bg-dark-blue text-white");
+  //   }
+  // });
+
+  // Form of Cancel
+  // $("#cancel-button").on("click", function () {
+  //   $("#new-message-form").addClass("hidden");
+  //   $("#new-message")
+  //     .removeClass("bg-dark-blue text-white")
+  //     .addClass("text-dark-blue bg-transparent");
+  // });
 
   /* ............
        ............

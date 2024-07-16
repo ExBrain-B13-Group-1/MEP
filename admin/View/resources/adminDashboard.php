@@ -62,7 +62,7 @@
                 </li>
 
                 <li>
-                    <a href="#" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="userlists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -90,7 +90,7 @@
                 </li>
 
                 <li>
-                    <a href="#" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="institutelists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -207,7 +207,7 @@
                 </li>
 
                 <li>
-                    <a href="#" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="tools.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -220,7 +220,7 @@
                 </li>
 
                 <li>
-                    <a href="#" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="faq.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -297,7 +297,7 @@
 
             <ul class="space-y-1 absolute bottom-0 font-medium w-full pr-6">
                 <li>
-                    <a href="#" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="setting.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -482,7 +482,7 @@
                     </div>
                     <!-- Weekly Visitors -->
                     <div class="col-span-3 bg-card-bg p-4 rounded-lg shadow-custom">
-                        <div class="text-lg font-bold mb-2">Weekly Visitors Comparison</div>
+                        <div class="text-base font-bold mb-2">Weekly Visitors Comparison</div>
                         <!-- Bar Chart Placeholder -->
                         <canvas id="bar-chart" class="h-64"></canvas>
                     </div>
@@ -531,9 +531,9 @@
                     </div>
                     <!-- Top Clients -->
                     <div class="col-span-1 bg-card-bg py-2 rounded-lg shadow-custom">
-                        <div class="text-xl font-bold mb-2 px-4">Top Clients</div>
+                        <div class="text-base font-bold mb-2 px-4">Top Clients</div>
                         <!-- Top Clients Placeholder -->
-                        <div id="top-clients"></div>
+                        <div id="top-clients" class="text-sm"></div>
                     </div>
                     <!-- For Recent Actions Later (Optional) -->
                     <!-- <div class="col-span-1 bg-custom-bg p-4 rounded-lg shadow-custom"> -->
