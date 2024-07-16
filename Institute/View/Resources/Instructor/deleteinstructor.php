@@ -14,7 +14,7 @@
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
         <div class="flex items-center justify-between">
             <div class="ml-64 relative top-3 pl-3">
-                <p class="dark:text-white text-xl">Instructor List</p>
+                <p class="dark:text-white text-xl">Delete Instructor</p>
             </div>
 
             <div class="flex items-center">
@@ -79,11 +79,11 @@
                 </svg>  
             </button>
             <a href="javascript:void(0);" class="flex ms-2 md:me-24">
-            <img src="./../../../storage/meplogo.png" class="h-12 me-3" alt="MEP Logo" />
-            <div class="">
-                    <p class="text-base  font-semibold sm:text-base dark:text-white">Myanmar Education</p>
-                    <p class="text-xl font-black tracking-widest sm:text-3xl dark:text-white uppercase">Portal</p>
-            </div>
+                <img src="./../../../storage/meplogo.png" class="h-12 me-3" alt="MEP Logo" />
+                <div class="w-52">
+                    <p class="text-base font-semibold dark:text-white">Myanmar Education</p>
+                    <p class="text-2xl font-black tracking-widest sm:text-2xl dark:text-white uppercase">Portal</p>
+                </div>
             </a>
             </div>
             <ul class="space-y-2 font-medium">

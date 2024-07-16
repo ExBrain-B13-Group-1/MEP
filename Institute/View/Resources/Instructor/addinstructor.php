@@ -30,14 +30,14 @@
             <div class="flex items-center bg-slate-200 dark:bg-gray-700 rounded-lg cursor-pointer" data-dropdown-toggle="dropdown-user">
                 <div class="flex items-center mx-3">
                     <div>
-                        <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
+                        <button type="button" class="flex text-base bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
                         <span class="sr-only">Open user menu</span>
                         <img class="w-14 h-14 rounded-full select-none" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
                         </button>
                     </div>
                     <div class="ml-3 pt-2 dark:text-white">
                         <p class="text-base leading-none select-none">Education Portal</p>
-                        <p class="text-sm leading-none text-slate-500 select-none dark:text-white dark:text-opacity-50">Admin</p>
+                        <p class="text-base leading-none text-slate-500 select-none dark:text-white dark:text-opacity-50">Admin</p>
                         <div class="flex pt-1">
                         <svg class="w-4 h-4 mt-0.5 mr-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13.5a6.5 6.5 0 1 0 0-13a6.5 6.5 0 0 0 0 13"/><path d="M8.702 5.222a1.332 1.332 0 0 0-1.258-.889H6.412a1.19 1.19 0 0 0-.254 2.353l1.571.344a1.334 1.334 0 0 1-.285 2.637h-.888a1.334 1.334 0 0 1-1.258-.89M7 4.333V3m0 8V9.666"/></g></svg>
                         <span class="select-none">1000</span>
@@ -47,7 +47,7 @@
                         <ion-icon name="chevron-down-outline"></ion-icon>
                     </div>
                     <div id="dropdown-user" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-64 dark:bg-gray-700 dark:divide-gray-600">
-                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+                        <ul class="py-2 text-base text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
                             <li>
                                 <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guide</a>
                             </li>
@@ -59,7 +59,7 @@
                             </li>
                         </ul>
                         <div class="py-2">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+                            <a href="#" class="block px-4 py-2 text-base text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -72,18 +72,18 @@
     <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform-translate-x-full bg-white border-r border-gray-200 sm:translate-x-0  dark:border-gray-700 duration-300" aria-label="Sidebar">
         <div class="h-full px-3 overflow-y-auto bg-white dark:bg-gray-800 duration-300">
             <div class="flex items-center justify-start rtl:justify-end mb-9 mt-5">
-            <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+            <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-base text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
                 <span class="sr-only">Open sidebar</span>
                 <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
                 </svg>  
             </button>
             <a href="javascript:void(0);" class="flex ms-2 md:me-24">
-            <img src="./../../../storage/meplogo.png" class="h-12 me-3" alt="MEP Logo" />
-            <div class="">
-                    <p class="text-sm  font-semibold sm:text-sm dark:text-white">Myanmar Education</p>
-                    <p class="text-xl font-black tracking-widest sm:text-3xl dark:text-white uppercase">Portal</p>
-            </div>
+                <img src="./../../../storage/meplogo.png" class="h-12 me-3" alt="MEP Logo" />
+                <div class="w-52">
+                    <p class="text-base font-semibold dark:text-white">Myanmar Education</p>
+                    <p class="text-2xl font-black tracking-widest sm:text-2xl dark:text-white uppercase">Portal</p>
+                </div>
             </a>
             </div>
             <ul class="space-y-2 font-medium">
@@ -177,7 +177,7 @@
                 <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <svg class="w-5 h-5  text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M14.5 18q-1.05 0-1.775-.725T12 15.5t.725-1.775T14.5 13t1.775.725T17 15.5t-.725 1.775T14.5 18M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V2h2v2h8V2h2v2h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5z"/></svg>
                     <span class="flex-1 ms-3 whitespace-nowrap">Notification</span>
-                    <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
+                    <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-base font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
                 </a>
             </li>
 
@@ -212,15 +212,15 @@
                             <div class="pl-5">
                                 <div class="mt-4">
                                     <label for="fullname" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Full Name</label>
-                                    <input type="text" id="fullname" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Title" required />
+                                    <input type="text" id="fullname" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Full Name" required />
                                 </div>
                                 <div class="mt-4">
                                     <label for="professional" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Position (Professional)</label>
-                                    <input type="text" id="professional" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Title" required />
+                                    <input type="text" id="professional" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Professional" required />
                                 </div>
                                 <div class="mt-4">
                                     <label for="email" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Email</label>
-                                    <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Title" required />
+                                    <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Email" required />
                                 </div>
                                 <div class="mt-4 relative">
                                     <label for="fullname" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Full Name</label>
@@ -250,11 +250,11 @@
                                     <div class="flex gap-10">
                                         <div>
                                             <input id="male" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                            <label for="male" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Male</label>
+                                            <label for="male" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Male</label>
                                         </div>
                                         <div>
                                             <input checked id="female" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                            <label for="female" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Female</label>
+                                            <label for="female" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Female</label>
                                         </div>
                                     </div>
                                 </div>
@@ -331,7 +331,9 @@
 
                             <div class="mt-4 pl-5">
                                 <label for="skills" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Skills</label>
-                                <input type="skills" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                                <div class="tags-input-container flex flex-wrap border border-gray-300 dark:border-gray-600 p-2 rounded" id="tags-input-container">
+                                    <input type="text" id="tags-input" class="tags-input outline-none flex-grow bg-white dark:bg-gray-700 text-black dark:text-white border-0 focus:outline-none focus:ring-0" placeholder="Add a skill">
+                                </div>
                             </div>
                             
                             <div class="mt-4 pl-5">
@@ -344,10 +346,10 @@
                                 <input type="text" id="Portfolio" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="https://example.com" required />
                             </div>
 
-                            <div class="mt-10 pl-5">
+                            <div class="mt-10 pl-5 pb-5">
                                 <div class="grid grid-cols-2 gap-14">
                                     <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
-                                    <button type="submit" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Save Instructor</button>
+                                    <button type="submit" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Save Instructor</button>
                                 </div>
                             </div>
                         </div>
