@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+
     $('.modechanges').on("click",()=>{
         updateChartColors();
     });
@@ -27,5 +28,19 @@ $(document).ready(function(){
             }
         });
     });
-    
+
+    function togglePasswordVisibility(toggleId, inputId) {
+        $(`#${toggleId}`).on('click', function () {
+            const passwordField = $(`#${inputId}`);
+            const type = passwordField.attr('type') === 'password' ? 'text' : 'password';
+            passwordField.attr('type', type);
+            const iconName = type === 'password' ? 'eye-off-outline' : 'eye-outline';
+            $(this).attr('name', iconName);
+        });
+    }
+
+    togglePasswordVisibility('toggle-password-cur', 'cur-password');
+    togglePasswordVisibility('toggle-password-new', 'new-password');
+    togglePasswordVisibility('toggle-password-confirm', 'confirm-password');
+
 });

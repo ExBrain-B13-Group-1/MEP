@@ -214,15 +214,19 @@
         
         <!-- Data Area Setting-->
         <div class="block pt-20 pb-6 px-6 ml-64  bg-gray-300 dark:bg-gray-800 dashoverviews">
-            <div class="h-screen grid grid-cols-10 gap-4">
+            <div class="grid grid-cols-10 gap-4">
 
                 <!-- General Component -->
-                <div class="block bg-white col-span-8 col-start-2 rounded-lg px-20 py-10 mt-16 dark:bg-gray-600 duration-500 generals">
-                    <h2 class="text-2xl font-bold dark:text-white mb-10 opacity-80">Institute Information</h2>
+                <div class="hidden bg-white col-span-8 col-start-2 rounded-lg px-20 py-10 mt-16 dark:bg-gray-600 duration-500 generals">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-2xl font-bold dark:text-white mb-5 opacity-80">Institute Information</h2>
+                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-6 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit</button>
+                    </div>
                     <form action="" method="">
-                        <div class="grid grid-cols-3 gap-10">
+                        <div class="grid grid-cols-2 gap-20">
+                            <!-- left -->
                             <div>
-                                <p class="opacity-70 text-xl dark:text-white dark:opacity-80 mb-5">Logo</p>
+                                <p class="opacity-70 text-xl dark:text-white dark:opacity-80 mb-2 font-medium">Logo</p>
                                 <div class="flex items-center justify-center w-full">
                                     <label for="dropzone-file1" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50  dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                                         <div class="flex flex-col items-center justify-center pt-5 pb-6">
@@ -235,28 +239,10 @@
                                         <input id="dropzone-file1" type="file" class="hidden" />
                                     </label>
                                 </div>
-                                <div class="mb-6">
-                                    <label for="default-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Default input</label>
-                                    <input type="text" id="default-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                </div>
                             </div>
+                            <!-- right -->
                             <div>
-                                <p class="opacity-70 text-xl dark:text-white dark:opacity-80 mb-5">Background Photo</p>
-                                <div class="flex items-center justify-center w-full">
-                                    <label for="dropzone-file1" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50  dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                            <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
-                                            </svg>
-                                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                                            <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-                                        </div>
-                                        <input id="dropzone-file1" type="file" class="hidden" />
-                                    </label>
-                                </div> 
-                            </div>
-                            <div>
-                                <p class="opacity-70 text-xl dark:text-white dark:opacity-80 mb-5">Location</p>
+                                <p class="opacity-70 text-xl dark:text-white dark:opacity-80 mb-2 font-medium">Background Photo</p>
                                 <div class="flex items-center justify-center w-full">
                                     <label for="dropzone-file1" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50  dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                                         <div class="flex flex-col items-center justify-center pt-5 pb-6">
@@ -271,14 +257,87 @@
                                 </div> 
                             </div>
                         </div>
+                        <div class="grid grid-cols-2 gap-20">
+                            <div class="mb-6 mt-8">
+                                <label for="institute_name" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Institute Name</label>
+                                <input type="text" id="institute_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            </div>
+                        </div>
+                        <h2 class="text-2xl font-bold dark:text-white mb-5 mt-6 opacity-80">Institute Information</h2>
+                        <div class="grid grid-cols-2 gap-20">
+                            <div>
+                                <div class="mb-6 mt-0">
+                                    <label for="email" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Email</label>
+                                    <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                </div>
+                                <div class="mb-6 mt-0">
+                                    <label for="phone" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Phone</label>
+                                    <input type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                </div>
+                            </div>
+                            <div>
+                                <div class="mb-6 mt-0">
+                                    <label for="website" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Website</label>
+                                    <input type="text" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                                </div>
+                                <div class="mb-6 mt-0">
+                                    <label for="address" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Address</label>
+                                    <input type="text" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                </div>
+                            </div>
+                        </div>
                     </form>
 
                 </div>
 
                 <!-- Account & Security -->
-                <div class="hidden bg-white col-span-8 col-start-2 rounded-lg px-4 py-2 mt-16 dark:bg-gray-600 duration-500 accsecuritys">
-                    <p class="dark:text-white">Account & Security Sample Text</p>
-                    <!-- Code Here Bro Paing Sett Kyaw -->
+                <div class="block bg-white col-span-8 col-start-2 rounded-lg px-4 py-2 mt-16 dark:bg-gray-600 duration-500 accsecuritys">
+                    
+                    <div class="grid grid-cols-3 gap-20 px-28 py-20">
+                        <div class="col-span-1">
+                            <h1 class="text-3xl mb-14 dark:text-white">Change Password</h1>
+                            <div class="mb-10 ">
+                                <label for="cur-password" class="block mb-2 text-xl font-medium text-gray-900 dark:text-white opacity-65">Current Password</label>
+                                <div class="relative">
+                                    <input type="password" id="cur-password" class="bg-gray-50 border border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="•••••••••" required />
+                                    <ion-icon id="toggle-password-cur" name="eye-off-outline" class="dark:text-white absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"></ion-icon>
+                                </div>
+                            </div> 
+                            <div class="mb-10 ">
+                                <label for="new-password" class="block mb-2 text-xl font-medium text-gray-900 dark:text-white opacity-65">New Password</label>
+                                <div class="relative">
+                                    <input type="password" id="new-password" class="bg-gray-50 border border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="•••••••••" required />
+                                    <ion-icon id="toggle-password-new" name="eye-off-outline" class="dark:text-white absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"></ion-icon>
+                                </div>
+                            </div> 
+                            <div class="mb-10 ">
+                                <label for="confirm-password" class="block mb-2 text-xl font-medium text-gray-900 dark:text-white opacity-65">Confirm Password</label>
+                                <div class="relative">
+                                    <input type="password" id="confirm-password" class="bg-gray-50 border border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="•••••••••" required />
+                                    <ion-icon id="toggle-password-confirm" name="eye-off-outline" class="dark:text-white absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"></ion-icon>
+                                </div>
+                            </div> 
+                            <div class="mt-14">
+                                <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-10 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Save</button>
+                            </div>
+                        </div>
+
+                        <div class="col-span-2">
+                            <h1 class="text-3xl mb-14 dark:text-white">Security</h1>
+                            <div class="grid grid-col-10 gap-5 bg-gray-700 rounded-xl px-5 py-10">
+                                <div class="col-span-1">
+                                    <svg class="w-10 h-10 text-blue-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M16 8V7a4 4 0 0 0-4-4v0a4 4 0 0 0-4 4v1"/><path fill="currentColor" fill-rule="evenodd" d="M3.879 7.879C3 8.757 3 10.172 3 13v1c0 3.771 0 5.657 1.172 6.828C5.343 22 7.229 22 11 22h2c3.771 0 5.657 0 6.828-1.172C21 19.657 21 17.771 21 14v-1c0-2.828 0-4.243-.879-5.121C19.243 7 17.828 7 15 7H9c-2.828 0-4.243 0-5.121.879M12 15a1 1 0 1 0 0-2a1 1 0 0 0 0 2m3-1a3.001 3.001 0 0 1-2 2.83V19h-2v-2.17A3.001 3.001 0 1 1 15 14" clip-rule="evenodd"/></g></svg>
+                                </div>
+                                <div class="col-span-8 col-start-2">
+                                    <h1>Two Factory Authentication</h1>
+                                    <p>Two-factor authentication adds an additional layer of security to your accout by requiring more than just a password to sign in.</p>
+                                </div>
+                                <div class="col-span-1 col-start-9">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -310,6 +369,8 @@
         <script src="./../lib/chart.js" type="text/javascript"></script>
         <!-- datatable -->
         <script src="./../lib/dataTables.js"></script>
+        <!-- leaflet map -->
+        <script src="./../lib/map/leaflet.js"></script>
         <!-- darkmode lightmode js -->
         <script src="./../js/darkandlight.js" type="text/javascript"></script>
         <!-- customjs -->
