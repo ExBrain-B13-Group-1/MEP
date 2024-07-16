@@ -546,7 +546,7 @@
                         </button>
                     </div>
                     <div class="relative">
-                        <img src="/Institute/storage/profile1.svg" alt="profile1" >
+                        <img src="./../../../storage/profile1.svg" alt="profile1" >
                         <div class="absolute top-0 right-0 w-5 h-5 rounded-full bg-blue-700 flex justify-center items-center">
                             <ion-icon name="checkmark-outline" class="text-white"></ion-icon>
                         </div>

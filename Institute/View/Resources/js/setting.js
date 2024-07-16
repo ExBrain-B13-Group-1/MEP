@@ -25,6 +25,7 @@ $(document).ready(function(){
                 $(section).removeClass('hidden').addClass('block');
             } else {
                 $(section).removeClass('block').addClass('hidden');
+                $('.generaledits').removeClass("block").addClass("hidden");
             }
         });
     });
@@ -42,5 +43,25 @@ $(document).ready(function(){
     togglePasswordVisibility('toggle-password-cur', 'cur-password');
     togglePasswordVisibility('toggle-password-new', 'new-password');
     togglePasswordVisibility('toggle-password-confirm', 'confirm-password');
+
+
+    $('#edit').on("click",()=>{
+        // console.log('hay');
+        $('.generals').removeClass("block").addClass("hidden");
+        $('.generaledits').removeClass("hidden").addClass("block");
+    });
+
+    $('.cancels').on("click",()=>{
+        // console.log("hay");
+        $('.generals').removeClass("hidden").addClass("block");
+        $('.generaledits').removeClass("block").addClass("hidden");
+    });
+
+    $('.saves').on("click",(e)=>{
+        // console.log("hay");
+        e.preventDefault();
+        $('.generals').removeClass("hidden").addClass("block");
+        $('.generaledits').removeClass("block").addClass("hidden");
+    });
 
 });
