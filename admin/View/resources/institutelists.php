@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Navigation</title>
-    <link rel="stylesheet" href="./resources/css/output.css" />
-    <script src="./resources/lib/jquery.js"></script>
+    <link rel="stylesheet" href="./css/output.css" />
+    <script src="./lib/jquery.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
     <script
       type="module"
@@ -16,7 +16,7 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
 
-    <script src="./resources/js/navigation.js" defer></script>
+    <script src="./js/navigation.js" defer></script>
   </head>
   <body>
     <aside
@@ -30,7 +30,7 @@
       >
         <a href="/" class="flex items-center mb-5">
           <img
-            src="./resources/img/LOGO.svg"
+            src="./img/LOGO.svg"
             class="me-3 w-fit"
             alt="Flowbite Logo"
             id="brandLogo"
@@ -607,7 +607,7 @@
             class="flex items-center space-x-3 rtl:space-x-reverse mr-4"
           >
             <img
-              src="./resources/img/sideopen.svg"
+              src="./img/sideopen.svg"
               class="h-8"
               alt="Flowbite Logo"
               id="sidebarControl"
@@ -747,7 +747,7 @@
           <li class="ml-3">
             <div class="flex items-center bg-white rounded-full pr-2">
               <img
-                src="./resources/img/profile.png"
+                src="./img/profile.png"
                 alt="profile"
                 class="rounded-full"
                 height="100"
@@ -1104,7 +1104,7 @@
               <td class="px-6 py-3 text-black text-xs">245</td>
               <td class="px-3 py-3 text-black text-xs">
                 <img
-                  src="./resources/img/institute_logo.png"
+                  src="./img/institute_logo.png"
                   alt="Institute Logo"
                   width="50"
                 />
@@ -1160,64 +1160,7 @@
               <td class="px-6 py-3 text-black text-xs">245</td>
               <td class="px-3 py-3 text-black text-xs">
                 <img
-                  src="./resources/img/institute_logo.png"
-                  alt="Institute Logo"
-                  width="50"
-                />
-              </td>
-              <td class="px-6 py-3 text-black text-xs">ABC Institute</td>
-              <td class="px-6 py-3 text-black text-xs">30.07.2024</td>
-              <td class="px-6 py-3 text-black text-xs">3 classes</td>
-              <td class="px-6 py-3 text-black flex justify-start align-middle">
-                <a
-                  href=""
-                  class="bg-blue-300 rounded-full flex justify-center align-middle items-center w-9 h-9"
-                >
-                  <ion-icon
-                    name="call-outline"
-                    class="text-md text-primarycolor"
-                  ></ion-icon>
-                </a>
-                <a
-                  href=""
-                  class="bg-blue-300 rounded-full flex justify-center align-middle items-center w-9 h-9 ml-2"
-                >
-                  <ion-icon
-                    name="alert-circle-outline"
-                    class="text-xl"
-                  ></ion-icon>
-                </a>
-              </td>
-              <td class="px-6 py-3 text-black">
-                <a href="">
-                  <ion-icon
-                    name="alert-circle-outline"
-                    class="text-red-500 text-3xl"
-                  ></ion-icon>
-                </a>
-              </td>
-            </tr>
-
-            <tr
-              class="bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50"
-            >
-              <td class="w-4 p-4">
-                <div class="flex items-center">
-                  <input
-                    id="checkbox-table-search-1"
-                    type="checkbox"
-                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
-                  />
-                  <label for="checkbox-table-search-1" class="sr-only"
-                    >checkbox</label
-                  >
-                </div>
-              </td>
-
-              <td class="px-6 py-3 text-black text-xs">245</td>
-              <td class="px-3 py-3 text-black text-xs">
-                <img
-                  src="./resources/img/institute_logo.png"
+                  src="./img/institute_logo.png"
                   alt="Institute Logo"
                   width="50"
                 />
@@ -1274,7 +1217,7 @@
               <td class="px-6 py-3 text-black text-xs">245</td>
               <td class="px-3 py-3 text-black text-xs">
                 <img
-                  src="./resources/img/institute_logo.png"
+                  src="./img/institute_logo.png"
                   alt="Institute Logo"
                   width="50"
                 />
@@ -1331,7 +1274,7 @@
               <td class="px-6 py-3 text-black text-xs">245</td>
               <td class="px-3 py-3 text-black text-xs">
                 <img
-                  src="./resources/img/institute_logo.png"
+                  src="./img/institute_logo.png"
                   alt="Institute Logo"
                   width="50"
                 />
@@ -1388,7 +1331,7 @@
               <td class="px-6 py-3 text-black text-xs">245</td>
               <td class="px-3 py-3 text-black text-xs">
                 <img
-                  src="./resources/img/institute_logo.png"
+                  src="./img/institute_logo.png"
                   alt="Institute Logo"
                   width="50"
                 />
@@ -1445,7 +1388,64 @@
               <td class="px-6 py-3 text-black text-xs">245</td>
               <td class="px-3 py-3 text-black text-xs">
                 <img
-                  src="./resources/img/institute_logo.png"
+                  src="./img/institute_logo.png"
+                  alt="Institute Logo"
+                  width="50"
+                />
+              </td>
+              <td class="px-6 py-3 text-black text-xs">ABC Institute</td>
+              <td class="px-6 py-3 text-black text-xs">30.07.2024</td>
+              <td class="px-6 py-3 text-black text-xs">3 classes</td>
+              <td class="px-6 py-3 text-black flex justify-start align-middle">
+                <a
+                  href=""
+                  class="bg-blue-300 rounded-full flex justify-center align-middle items-center w-9 h-9"
+                >
+                  <ion-icon
+                    name="call-outline"
+                    class="text-md text-primarycolor"
+                  ></ion-icon>
+                </a>
+                <a
+                  href=""
+                  class="bg-blue-300 rounded-full flex justify-center align-middle items-center w-9 h-9 ml-2"
+                >
+                  <ion-icon
+                    name="alert-circle-outline"
+                    class="text-xl"
+                  ></ion-icon>
+                </a>
+              </td>
+              <td class="px-6 py-3 text-black">
+                <a href="">
+                  <ion-icon
+                    name="alert-circle-outline"
+                    class="text-red-500 text-3xl"
+                  ></ion-icon>
+                </a>
+              </td>
+            </tr>
+
+            <tr
+              class="bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50"
+            >
+              <td class="w-4 p-4">
+                <div class="flex items-center">
+                  <input
+                    id="checkbox-table-search-1"
+                    type="checkbox"
+                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+                  />
+                  <label for="checkbox-table-search-1" class="sr-only"
+                    >checkbox</label
+                  >
+                </div>
+              </td>
+
+              <td class="px-6 py-3 text-black text-xs">245</td>
+              <td class="px-3 py-3 text-black text-xs">
+                <img
+                  src="./img/institute_logo.png"
                   alt="Institute Logo"
                   width="50"
                 />
@@ -1540,7 +1540,7 @@
 
           <div class="flex justify-center items-center w-full flex-col">
             <img
-              src="./resources/img/profile.png"
+              src="./img/profile.png"
               alt="profile"
               width="60"
               class="rounded-full border-2 border-primarycolor"

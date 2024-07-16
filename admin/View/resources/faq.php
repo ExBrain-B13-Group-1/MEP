@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Navigation</title>
-    <link rel="stylesheet" href="./resources/css/output.css" />
-    <script src="./resources/lib/jquery.js"></script>
+    <link rel="stylesheet" href="./css/output.css" />
+    <script src="./lib/jquery.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
     <script
       type="module"
@@ -16,7 +16,7 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
 
-    <script src="./resources/js/navigation.js" defer></script>
+    <script src="./js/navigation.js" defer></script>
   </head>
   <body>
     <aside
@@ -30,7 +30,7 @@
       >
         <a href="/" class="flex items-center mb-5">
           <img
-            src="./resources/img/LOGO.svg"
+            src="./img/LOGO.svg"
             class="me-3 w-fit"
             alt="Flowbite Logo"
             id="brandLogo"
@@ -607,7 +607,7 @@
             class="flex items-center space-x-3 rtl:space-x-reverse mr-4"
           >
             <img
-              src="./resources/img/sideopen.svg"
+              src="./img/sideopen.svg"
               class="h-8"
               alt="Flowbite Logo"
               id="sidebarControl"
@@ -747,7 +747,7 @@
           <li class="ml-3">
             <div class="flex items-center bg-white rounded-full pr-2">
               <img
-                src="./resources/img/profile.png"
+                src="./img/profile.png"
                 alt="profile"
                 class="rounded-full"
                 height="100"

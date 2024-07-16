@@ -22,7 +22,7 @@ $("#sidebarControl").click(() => {
 
 function isCloseSideBar() {
   if ($("#logo-sidebar").attr("close") === "true") {
-    $("#brandLogo").attr("src", "./resources/img/LOGOclose.svg");
+    $("#brandLogo").attr("src", "./img/LOGOclose.svg");
     $("#navbar").css({ width: "93.5%", marginLeft: "5rem" });
     $(".sideLabel").css({ display: "none" });
     $(".sideLabel").parent().css({ justifyContent: "center" });
@@ -34,7 +34,7 @@ function isCloseSideBar() {
       width: "5%",
     });
   } else {
-    $("#brandLogo").attr("src", "./resources/img/LOGO.svg");
+    $("#brandLogo").attr("src", "./img/LOGO.svg");
     $("#navbar").css({ width: "83%", marginLeft: "14rem" });
     $(".sideLabel").css({ display: "block" });
     $("#main").attr("aria-checked", "false");
