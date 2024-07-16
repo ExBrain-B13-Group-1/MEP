@@ -2,6 +2,10 @@
   margin: 0;
   font-family: roboto;
 }
+body{
+  width: 100%;
+  overflow-x: hidden;
+}
 /* Start of Navbar and footer */
 nav {
   background-color: var(--primary-color);
@@ -474,8 +478,11 @@ nav {
 .plans-pricing-section{
   margin-top: 5vh;
   margin-bottom: 5vh;
+}
+.plans-pricing-container{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .plans-pricing-header{
   font-weight: bold;
@@ -487,13 +494,19 @@ nav {
   background: linear-gradient(to right,#1330C2, #6B0485);
   background-clip: text; 
   -webkit-text-fill-color: transparent;
-  text-decoration-color: blue;
   font-size: 1.5em;
 }
+.pricing-wrapper-container{
+  gap: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 .pricing-card {
+  margin-top: 3vh;
   position: relative;
-  width: 340px;
-  height: 450px;
+  width: 360px;
+  height: 475px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -501,52 +514,43 @@ nav {
   overflow: hidden; /* Ensure that content doesn't overflow the card */
 }
 
-.card-header {
+.card-header-container {
   background: #3366ff;
   width: 289px;
   color: #fff;
   border-radius: 10px;
   padding: 20px 0;
   position: relative;
-  z-index: 1; /* Ensure this is on top */
+  z-index: 1;
+  box-shadow: 0px 2px 10px 3px #00000036;
 }
-
-.card-header h2 {
-  margin: 0;
-  font-size: 1.5em;
+.card-header{
+  font-size: 1.1em;
+  color: black;
+  margin-bottom: 5px;
 }
-
-.price {
-  margin: 5px 0;
-  font-size: 1.25em;
+.included-text{
+  text-align: left;
+}
+.card-price{
+  font-size: 1.7em;
   font-weight: bold;
+  margin-bottom: 5px;
 }
-
-.card-content {
-  position: relative;
-  top: -30px; /* Adjust this value to move it up or down */
-  z-index: 2; /* Ensure this is above the card header */
-  background: #fff;
-  border-radius: 10px;
-  padding-top: 40px; /* Adjust padding to make space for content */
-}
-
-.subtitle {
-  margin: 0;
-  font-size: 14px;
-  background: #3366ff;
-  color: #fff;
-  padding: 5px 20px;
-  border-radius: 20px;
-  display: inline-block;
-  margin-top: -20px; /* Adjust this value to move it up or down */
+.card-subtitle{
+  font-size: 1em;
+  color: var(--font-color);
 }
 .card-details{
+  font-weight: bold;
+  width: 300px;
   position: absolute;
   border-radius: 5px;
-  height: 338px;
+  display: flex;
+  justify-content: center;
+  height: 370px;
   padding: 25px;
-  margin-top: 70px;
+  margin-top: 50px;
   box-shadow: 1px 2px 3px 0px #00000036;
 }
 .card-features {
@@ -557,16 +561,18 @@ nav {
 
 .card-features li {
   margin: 10px 0;
+  display: flex;
+  flex-direction: row;
   text-align: left;
-  padding-left: 25px;
-  position: relative;
+  align-items: center;
+  width: 289px;
 }
-
+.card-text{
+  margin-left: 10px;
+}
 .card-features span {
   color: #3366ff;
   font-size: 1.25em;
-  position: absolute;
-  left: 0;
 }
 
 .card-footer {
@@ -580,7 +586,7 @@ nav {
 
 .purchase-button {
   width: 289px;
-  background: #3366ff;
+  background: #1330C2;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -592,6 +598,97 @@ nav {
 
 .purchase-button:hover {
   background: #264d99;
+}
+/* End of Plans and Pricing */
+/* Start of Compare all features Section */
+.compare-all-features-header{
+  width: fit-content;
+  font-weight: bold;
+  background: linear-gradient(to right,#1330C2, #6B0485);
+  background-clip: text; 
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5em;
+}
+/* End of Compare all features Section */
+/* Start of Contact Us Section */
+.contact-us-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+.contact-us-wrapper{
+  margin-left: 3vh;
+  margin-right: 3vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-us-inner-wrapper{
+  padding: 20px;
+}
+.name-row-input{
+  display: flex;
+}
+.inputs{
+  margin-bottom: 2vh;
+}
+.input-boxes{
+  width: 100%;
+  height: 3vh;
+  text-indent: 10px;
+  border: none;
+  background-color: #F3F3F3;
+  border-radius: 5px;
+}
+.name-row-input{
+  gap: 20px;
+}
+.message-input-box{
+  padding-top: 10px;
+  height: 150px;
+  box-sizing: border-box;
+}
+.contact-us-header{
+  width: fit-content;
+  font-weight: bold;
+  background: linear-gradient(to right,#1330C2, #6B0485);
+  background-clip: text; 
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5em;
+  margin-bottom: 3vh;
+}
+.contact-us-description-left-container{
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 2px 3px 0px #00000036;
+  width: 100%;
+}
+.send-btn{
+  color: var(--primary-bg-color);
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  width: 20%;
+  background-color: var(--primary-color);
+  margin-bottom: 20px;
+}
+.send-img{
+  width: 0.5vw;
+}
+.colored-top{
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  width: 100%;
+  height: 10px;
+  background-color: #8D9FFF;
+  box-shadow: 1px 2px 3px 0px #00000036;
+}
+.contact-us-description-right-container{
+  
 }
 /* Start of Footer */
 footer {
