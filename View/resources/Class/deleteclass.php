@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Class List</title>
+        <title>Class - Delete Class</title>
         <!-- Tailwind output css -->
         <link href="./../css/output.css" rel="stylesheet" />
     </head>   
@@ -80,7 +80,7 @@
                 </button>
                 <a href="javascript:void(0);" class="flex ms-2 md:me-24">
                 <img src="./../../../storages/meplogo.png" class="h-12 me-3" alt="MEP Logo" />
-                <div class="">
+                <div class="w-52">
                         <p class="text-base  font-semibold sm:text-base dark:text-white">Myanmar Education</p>
                         <p class="text-xl font-black tracking-widest sm:text-3xl dark:text-white uppercase">Portal</p>
                 </div>
