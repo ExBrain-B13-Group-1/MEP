@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Class List Finished</title>
+        <title>Class - Delete Class</title>
         <!-- Tailwind output css -->
         <link href="./../css/output.css" rel="stylesheet" />
     </head>   
@@ -13,15 +13,8 @@
         <nav class="fixed top-0 z-10 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 duration-300">
             <div class="px-3 py-3 lg:px-5 lg:pl-3">
             <div class="flex items-center justify-between">
-                <div class="ml-64 relative top-3 pl-3">
-                <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500  dark:border-gray-700 dark:text-gray-400">
-                    <li class="me-2 h-10">
-                        <a href="#" class="inline-block p-4 rounded-t-lg hover:dark:bg-gray-600 changes">Class Lists</a>
-                    </li>
-                    <li class="me-2 h-10">  
-                        <a href="#" class="inline-block p-4 rounded-t-lg hover:dark:bg-gray-600 changes actives">Finished Classes</a>
-                    </li>
-                </ul>
+                <div class="ml-64 relative top-1 pl-3">
+                    <p class="text-xl font-bold dark:text-white dark:opacity-80">Delete Class</p>
                 </div>
 
                 <div class="flex items-center">
@@ -37,14 +30,14 @@
                 <div class="flex items-center bg-slate-200 dark:bg-gray-700 rounded-lg cursor-pointer" data-dropdown-toggle="dropdown-user">
                     <div class="flex items-center mx-3">
                         <div>
-                            <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
+                            <button type="button" class="flex text-base bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
                             <span class="sr-only">Open user menu</span>
                             <img class="w-14 h-14 rounded-full select-none" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
                             </button>
                         </div>
                         <div class="ml-3 pt-2 dark:text-white">
                             <p class="text-base leading-none select-none">Education Portal</p>
-                            <p class="text-sm leading-none text-slate-500 select-none dark:text-white dark:text-opacity-50">Admin</p>
+                            <p class="text-base leading-none text-slate-500 select-none dark:text-white dark:text-opacity-50">Admin</p>
                             <div class="flex pt-1">
                             <svg class="w-4 h-4 mt-0.5 mr-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13.5a6.5 6.5 0 1 0 0-13a6.5 6.5 0 0 0 0 13"/><path d="M8.702 5.222a1.332 1.332 0 0 0-1.258-.889H6.412a1.19 1.19 0 0 0-.254 2.353l1.571.344a1.334 1.334 0 0 1-.285 2.637h-.888a1.334 1.334 0 0 1-1.258-.89M7 4.333V3m0 8V9.666"/></g></svg>
                             <span class="select-none">1000</span>
@@ -54,7 +47,7 @@
                             <ion-icon name="chevron-down-outline"></ion-icon>
                         </div>
                         <div id="dropdown-user" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-64 dark:bg-gray-700 dark:divide-gray-600">
-                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+                            <ul class="py-2 text-base text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
                                 <li>
                                     <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guide</a>
                                 </li>
@@ -66,7 +59,7 @@
                                 </li>
                             </ul>
                             <div class="py-2">
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+                                <a href="#" class="block px-4 py-2 text-base text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
                             </div>
                         </div>
                     </div>
@@ -79,7 +72,7 @@
         <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform-translate-x-full bg-white border-r border-gray-200 sm:translate-x-0  dark:border-gray-700 duration-300" aria-label="Sidebar">
             <div class="h-full px-3 overflow-y-auto bg-white dark:bg-gray-800 duration-300">
                 <div class="flex items-center justify-start rtl:justify-end mb-9 mt-5">
-                <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-base text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
                     <span class="sr-only">Open sidebar</span>
                     <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
@@ -87,8 +80,8 @@
                 </button>
                 <a href="javascript:void(0);" class="flex ms-2 md:me-24">
                 <img src="./../../../storages/meplogo.png" class="h-12 me-3" alt="MEP Logo" />
-                <div class="">
-                        <p class="text-sm  font-semibold sm:text-sm dark:text-white">Myanmar Education</p>
+                <div class="w-52">
+                        <p class="text-base  font-semibold sm:text-base dark:text-white">Myanmar Education</p>
                         <p class="text-xl font-black tracking-widest sm:text-3xl dark:text-white uppercase">Portal</p>
                 </div>
                 </a>
@@ -184,7 +177,7 @@
                     <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <svg class="w-5 h-5  text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M14.5 18q-1.05 0-1.775-.725T12 15.5t.725-1.775T14.5 13t1.775.725T17 15.5t-.725 1.775T14.5 18M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V2h2v2h8V2h2v2h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5z"/></svg>
                         <span class="flex-1 ms-3 whitespace-nowrap">Notification</span>
-                        <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
+                        <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-base font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
                     </a>
                 </li>
 
@@ -207,26 +200,26 @@
             </div>
         </aside>
         
-        <!-- Data Area Class List Finished-->
+        <!-- Data Area Class List-->
         <div class="block pt-20 px-5 ml-64 bg-gray-300 dark:bg-gray-800 classlists">
             <div class="grid grid-cols-8 gap-4 mt-10">
                 <div class="bg-white col-span-8 rounded-lg px-4 py-2 dark:bg-gray-600 duration-500">
                         <div class="w-full h-20 flex relative">
                             <form class="w-1/4 mt-4">   
-                                <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                                <label for="default-search" class="mb-2 text-base font-medium text-gray-900 sr-only dark:text-white">Search</label>
                                 <div class="relative">
                                     <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                                         </svg>
                                     </div>
-                                    <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
-                                    <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                                    <input type="search" id="default-search" class="block w-full p-4 ps-10 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
+                                    <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                                 </div>
                             </form>
 
                             <div class="h-full mt-4 ml-10 relative top-1.5"> 
-                                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Filter 
+                                <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Filter 
                                     <svg class="w-4 h-4 ml-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M22 18.605a.75.75 0 0 1-.75.75h-5.1a2.93 2.93 0 0 1-5.66 0H2.75a.75.75 0 1 1 0-1.5h7.74a2.93 2.93 0 0 1 5.66 0h5.1a.75.75 0 0 1 .75.75m0-13.21a.75.75 0 0 1-.75.75H18.8a2.93 2.93 0 0 1-5.66 0H2.75a.75.75 0 1 1 0-1.5h10.39a2.93 2.93 0 0 1 5.66 0h2.45a.74.74 0 0 1 .75.75m0 6.6a.74.74 0 0 1-.75.75H9.55a2.93 2.93 0 0 1-5.66 0H2.75a.75.75 0 1 1 0-1.5h1.14a2.93 2.93 0 0 1 5.66 0h11.7a.75.75 0 0 1 .75.75"/></svg>
                                 </button>
                             </div>
@@ -248,11 +241,11 @@
                                         <div class="grid grid-cols-2 gap-8">
                                             <div>
                                                 <label for="from" class="block">From</label>
-                                                <input type="text" id="from" class="w-20 h-10 py-3 text-sm dark:bg-gray-600 rounded-md"/>
+                                                <input type="text" id="from" class="w-20 h-10 py-3 text-base dark:bg-gray-600 rounded-md"/>
                                             </div>
                                             <div>
                                                 <label for="from" class="block">To</label>
-                                                <input type="text" id="from" class="w-20 h-10 py-3 text-sm dark:bg-gray-600 rounded-md"/>
+                                                <input type="text" id="from" class="w-20 h-10 py-3 text-base dark:bg-gray-600 rounded-md"/>
                                             </div>
                                         </div>
                                     </div>
@@ -313,7 +306,7 @@
                         </div>
                         <div class="relative overflow-x-auto shadow-md dark:shadow-none sm:rounded-lg">
                             <!-- ClassList Table -->
-                            <table class=" w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
+                            <table class=" w-full text-base text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
                                 <thead class="text-xs text-gray-700 uppercase bg-gray-400 dark:bg-gray-700 duration-500 dark:text-gray-400">
                                     <th scope="col" class="p-4">
                                         ID
@@ -343,7 +336,7 @@
                                         ENROLLMENT DEADLINE
                                     </th>
                                     <th scope="col" class="px-6 py-3">
-                                        DETAILS
+                                        DELETE CLASS
                                     </th>
                                 </thead>
                                 <tbody>
@@ -363,7 +356,7 @@
                                         <td class="px-6 py-4">
                                             31/8/2024
                                         </td>
-                                        <td class="px-6 py-4">
+                                        <td class="px-6 py-4 text-green-500">
                                             Active
                                         </td>
                                         <td class="px-6 py-4">
@@ -375,8 +368,8 @@
                                         <td class="px-6 py-4">
                                             20/6/2024
                                         </td>
-                                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                            View
+                                        <td class="px-6 py-4 underline text-red-600 cursor-pointer">
+                                            <ion-icon name="trash-outline" class="w-5 h-5 ml-5"></ion-icon>
                                         </td>
                                     </tr>
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -395,7 +388,7 @@
                                         <td class="px-6 py-4">
                                             31/8/2024
                                         </td>
-                                        <td class="px-6 py-4">
+                                        <td class="px-6 py-4 text-green-500">
                                             Active
                                         </td>
                                         <td class="px-6 py-4">
@@ -407,8 +400,8 @@
                                         <td class="px-6 py-4">
                                             20/6/2024
                                         </td>
-                                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                            View
+                                        <td class="px-6 py-4 underline text-red-600 cursor-pointer">
+                                            <ion-icon name="trash-outline" class="w-5 h-5 ml-5"></ion-icon>
                                         </td>
                                     </tr>
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -427,7 +420,7 @@
                                         <td class="px-6 py-4">
                                             31/8/2024
                                         </td>
-                                        <td class="px-6 py-4">
+                                        <td class="px-6 py-4 text-green-500">
                                             Active
                                         </td>
                                         <td class="px-6 py-4">
@@ -439,8 +432,8 @@
                                         <td class="px-6 py-4">
                                             20/6/2024
                                         </td>
-                                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                            View
+                                        <td class="px-6 py-4 underline text-red-600 cursor-pointer">
+                                            <ion-icon name="trash-outline" class="w-5 h-5 ml-5"></ion-icon>
                                         </td>
                                     </tr>
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -459,7 +452,7 @@
                                         <td class="px-6 py-4">
                                             31/8/2024
                                         </td>
-                                        <td class="px-6 py-4">
+                                        <td class="px-6 py-4 text-green-500">
                                             Active
                                         </td>
                                         <td class="px-6 py-4">
@@ -471,8 +464,8 @@
                                         <td class="px-6 py-4">
                                             20/6/2024
                                         </td>
-                                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                            View
+                                        <td class="px-6 py-4 underline text-red-600 cursor-pointer">
+                                            <ion-icon name="trash-outline" class="w-5 h-5 ml-5"></ion-icon>
                                         </td>
                                     </tr>
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -491,7 +484,7 @@
                                         <td class="px-6 py-4">
                                             31/8/2024
                                         </td>
-                                        <td class="px-6 py-4">
+                                        <td class="px-6 py-4 text-green-500">
                                             Active
                                         </td>
                                         <td class="px-6 py-4">
@@ -503,8 +496,8 @@
                                         <td class="px-6 py-4">
                                             20/6/2024
                                         </td>
-                                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                            View
+                                        <td class="px-6 py-4 underline text-red-600 cursor-pointer">
+                                            <ion-icon name="trash-outline" class="w-5 h-5 ml-5"></ion-icon>
                                         </td>
                                     </tr>
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -523,7 +516,7 @@
                                         <td class="px-6 py-4">
                                             31/8/2024
                                         </td>
-                                        <td class="px-6 py-4">
+                                        <td class="px-6 py-4 text-green-500">
                                             Active
                                         </td>
                                         <td class="px-6 py-4">
@@ -535,8 +528,8 @@
                                         <td class="px-6 py-4">
                                             20/6/2024
                                         </td>
-                                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                            View
+                                        <td class="px-6 py-4 underline text-red-600 cursor-pointer">
+                                            <ion-icon name="trash-outline" class="w-5 h-5 ml-5"></ion-icon>
                                         </td>
                                     </tr>
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -555,7 +548,7 @@
                                         <td class="px-6 py-4">
                                             31/8/2024
                                         </td>
-                                        <td class="px-6 py-4">
+                                        <td class="px-6 py-4 text-green-500">
                                             Active
                                         </td>
                                         <td class="px-6 py-4">
@@ -567,8 +560,8 @@
                                         <td class="px-6 py-4">
                                             20/6/2024
                                         </td>
-                                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                            View
+                                        <td class="px-6 py-4 underline text-red-600 cursor-pointer">
+                                            <ion-icon name="trash-outline" class="w-5 h-5 ml-5"></ion-icon>
                                         </td>
                                     </tr>
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -587,7 +580,7 @@
                                         <td class="px-6 py-4">
                                             31/8/2024
                                         </td>
-                                        <td class="px-6 py-4">
+                                        <td class="px-6 py-4 text-green-500">
                                             Active
                                         </td>
                                         <td class="px-6 py-4">
@@ -599,8 +592,8 @@
                                         <td class="px-6 py-4">
                                             20/6/2024
                                         </td>
-                                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                            View
+                                        <td class="px-6 py-4 underline text-red-600 cursor-pointer">
+                                            <ion-icon name="trash-outline" class="w-5 h-5 ml-5"></ion-icon>
                                         </td>
                                     </tr>
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -619,7 +612,7 @@
                                         <td class="px-6 py-4">
                                             31/8/2024
                                         </td>
-                                        <td class="px-6 py-4">
+                                        <td class="px-6 py-4 text-green-500">
                                             Active
                                         </td>
                                         <td class="px-6 py-4">
@@ -631,8 +624,8 @@
                                         <td class="px-6 py-4">
                                             20/6/2024
                                         </td>
-                                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                            View
+                                        <td class="px-6 py-4 underline text-red-600 cursor-pointer">
+                                            <ion-icon name="trash-outline" class="w-5 h-5 ml-5"></ion-icon>
                                         </td>
                                     </tr>
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -651,7 +644,7 @@
                                         <td class="px-6 py-4">
                                             31/8/2024
                                         </td>
-                                        <td class="px-6 py-4">
+                                        <td class="px-6 py-4 text-green-500">
                                             Active
                                         </td>
                                         <td class="px-6 py-4">
@@ -663,8 +656,8 @@
                                         <td class="px-6 py-4">
                                             20/6/2024
                                         </td>
-                                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                            View
+                                        <td class="px-6 py-4 underline text-red-600 cursor-pointer">
+                                            <ion-icon name="trash-outline" class="w-5 h-5 ml-5"></ion-icon>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -712,11 +705,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Data Area Finished Class Details -->
-        <div>
-            <!-- optional -->
-        </div>
         
         <!-- ionicons icons -->
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -734,4 +722,4 @@
         <!-- customjs -->
         <script src="./../js/class.js" type="text/javascript"></script>
     </body>
-</html>
+    </html>
