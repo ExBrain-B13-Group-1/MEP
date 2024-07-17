@@ -10246,7 +10246,7 @@
 	
 	
 		/**
-		 * Enable or disable state saving. When enabled HTML5 `localstoragess` will be
+		 * Enable or disable state saving. When enabled HTML5 `localStorage` will be
 		 * used to save table display information such as pagination information,
 		 * display length, filtering and sorting. As such when the end user reloads
 		 * the page the display display will match what thy had previously set up.
@@ -10336,13 +10336,13 @@
 	
 		/**
 		 * Load the table state. With this function you can define from where, and how, the
-		 * state of a table is loaded. By default DataTables will load from `localstoragess`
+		 * state of a table is loaded. By default DataTables will load from `localStorage`
 		 * but you might wish to use a server-side database or cookies.
 		 */
 		"fnStateLoadCallback": function ( settings ) {
 			try {
 				return JSON.parse(
-					(settings.iStateDuration === -1 ? sessionstoragess : localstoragess).getItem(
+					(settings.iStateDuration === -1 ? sessionstoragess : localStorage).getItem(
 						'DataTables_'+settings.sInstance+'_'+location.pathname
 					)
 				);
@@ -10371,12 +10371,12 @@
 	
 		/**
 		 * Save the table state. This function allows you to define where and how the state
-		 * information for the table is stored By default DataTables will use `localstoragess`
+		 * information for the table is stored By default DataTables will use `localStorage`
 		 * but you might wish to use a server-side database or cookies.
 		 */
 		"fnStateSaveCallback": function ( settings, data ) {
 			try {
-				(settings.iStateDuration === -1 ? sessionstoragess : localstoragess).setItem(
+				(settings.iStateDuration === -1 ? sessionstoragess : localStorage).setItem(
 					'DataTables_'+settings.sInstance+'_'+location.pathname,
 					JSON.stringify( data )
 				);

@@ -36,7 +36,7 @@ $(document).ready(function(){
 
 
 function updateChartColors() {
-    const labelColor = localstoragess.getItem("labelColor");
+    const labelColor = localStorage.getItem("labelColor");
     trendingChartInstance.options.plugins.legend.labels.color = labelColor;
     trendingChartInstance.options.plugins.title.color = labelColor;
     trendingChartInstance.options.scales.x.ticks.color = labelColor;
@@ -71,24 +71,24 @@ const trendingChartInstance = new Chart(trendingChart, {
         plugins: {
             legend: {
                 labels: {
-                    color: localstoragess.getItem("labelColor")
+                    color: localStorage.getItem("labelColor")
                 }
             },
             title: {
                 display: true,
                 text: 'Monthly Enrollment Trends',
-                color: localstoragess.getItem("labelColor")
+                color: localStorage.getItem("labelColor")
             }
         },
         scales: {
             x: {
                 ticks: {
-                    color: localstoragess.getItem("labelColor")  
+                    color: localStorage.getItem("labelColor")  
                 }
             },
             y: {
                 ticks: {
-                    color: localstoragess.getItem("labelColor")
+                    color: localStorage.getItem("labelColor")
                 }
             }
         }
@@ -123,7 +123,7 @@ const stuDemoChartInstance = new Chart(stuDemoChart, {
                 position: 'bottom',
                 align: 'center',
                 labels: {
-                    color: localstoragess.getItem("labelColor") 
+                    color: localStorage.getItem("labelColor") 
                 }
             },
             tooltip: {
@@ -159,24 +159,24 @@ const monthlyRevenueInstance = new Chart(monthlyRevenue, {
         plugins: {
             legend: {
                 labels: {
-                    color: localstoragess.getItem("labelColor")
+                    color: localStorage.getItem("labelColor")
                 }
             },
             title: {
                 display: true,
                 text: 'Monthly Enrollment Trends',
-                color: localstoragess.getItem("labelColor")
+                color: localStorage.getItem("labelColor")
             }
         },
         scales: {
             x: {
                 ticks: {
-                    color: localstoragess.getItem("labelColor")  
+                    color: localStorage.getItem("labelColor")  
                 }
             },
             y: {
                 ticks: {
-                    color: localstoragess.getItem("labelColor")
+                    color: localStorage.getItem("labelColor")
                 }
             }
         }

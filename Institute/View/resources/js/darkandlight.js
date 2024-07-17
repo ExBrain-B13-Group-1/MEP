@@ -3,7 +3,7 @@
 $(document).ready(function(){
 
     const modeChange = $(".modechanges");
-    const savedMode = localstoragess.getItem("isDark");
+    const savedMode = localStorage.getItem("isDark");
     console.log(savedMode);
 
     function updateMode() {
@@ -12,8 +12,8 @@ $(document).ready(function(){
         const labelColor = isDark ? "#ffffff" : "#000000";
         console.log(labelColor);
 
-        localstoragess.setItem("isDark", mode);
-        localstoragess.setItem("labelColor", labelColor);
+        localStorage.setItem("isDark", mode);
+        localStorage.setItem("labelColor", labelColor);
 
         isDark ? $(modeChange).attr("name", "moon-outline") : $(modeChange).attr("name", "sunny-outline");
     }

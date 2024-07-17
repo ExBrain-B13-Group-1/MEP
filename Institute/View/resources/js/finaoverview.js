@@ -1,6 +1,6 @@
 
 function updateChartColors() {
-    const labelColor = localstoragess.getItem("labelColor");
+    const labelColor = localStorage.getItem("labelColor");
     console.log(labelColor);
     monthlyRevenueInstance.options.plugins.legend.labels.color = labelColor;
     monthlyRevenueInstance.options.plugins.title.color = labelColor;
@@ -26,24 +26,24 @@ const monthlyRevenueInstance = new Chart(getChart, {
         plugins: {
             legend: {
                 labels: {
-                    color: localstoragess.getItem("labelColor")
+                    color: localStorage.getItem("labelColor")
                 }
             },
             title: {
                 display: true,
                 text: 'Monthly Enrollment Trends',
-                color: localstoragess.getItem("labelColor")
+                color: localStorage.getItem("labelColor")
             }
         },
         scales: {
             x: {
                 ticks: {
-                    color: localstoragess.getItem("labelColor")  
+                    color: localStorage.getItem("labelColor")  
                 }
             },
             y: {
                 ticks: {
-                    color: localstoragess.getItem("labelColor")
+                    color: localStorage.getItem("labelColor")
                 }
             }
         }
