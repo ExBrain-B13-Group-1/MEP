@@ -252,7 +252,7 @@
                                 <ion-icon name="print-outline" class="w-6 h-6 dark:text-gray-400 hover:dark:text-gray-200 cursor-pointer mt-2"></ion-icon>
                             </div>
                         </div>
-                        <div class="max-w-2xl h-[80vh] mx-auto bg-white dark:bg-gray-600 p-6 overflow-y-auto border-2 border-gray-300 dark:border-gray-500">
+                        <div class="max-w-2xl h-[80vh] mx-auto bg-white dark:bg-gray-600 p-6 overflow-y-auto hide-scrollbar border-2 border-gray-300 dark:border-gray-500">
                             <div class="px-2 py-4 grid grid-cols-3 gap-20 text-base mb-4 rounded bg-cyan-900 text-gray-200 dark:bg-blue-500 dark:text-white">
                                 <div class="col-span-1">Time</div>
                                 <div class="col-span-2">Title</div>

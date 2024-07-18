@@ -18,6 +18,14 @@ module.exports = {
       fontFamily: {
         customFont: ['Lato', "sans-serif"],
       },
+      // Adding new utilities for scrollbar hiding
+    scrollbarHide: {
+      '&::-webkit-scrollbar': {
+        display: 'none',
+      },
+      '-ms-overflow-style': 'none',
+        'scrollbar-width': 'none',
+      },
     },
   },
   plugins: [

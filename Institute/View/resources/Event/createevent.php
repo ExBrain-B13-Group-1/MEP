@@ -304,7 +304,7 @@
                                 <button id="addBtn" class="bg-blue-700 text-white px-10 py-2 rounded">Add</button>
                             </div>
                         </div>
-                        <div class="max-w-2xl h-[60vh] mx-auto bg-white dark:bg-gray-600 p-6 overflow-y-auto border-2 border-gray-300 dark:border-gray-500">
+                        <div class="max-w-2xl h-[60vh] mx-auto bg-white dark:bg-gray-600 p-6 overflow-y-auto hide-scrollbar border-2 border-gray-300 dark:border-gray-500">
                             <div class="px-2 py-4 flex justify-between items-center text-base mb-4 rounded bg-cyan-900 text-gray-200 dark:bg-blue-500 dark:text-white">
                                 <div>Time / Title</div>
                                 <div class="flex gap-12">
