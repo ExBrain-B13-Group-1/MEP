@@ -1,4 +1,5 @@
 
+
 $("#eventCancel").click(() => {
   $("#eventDetails").fadeOut(100);
 });
@@ -143,3 +144,15 @@ function closeAccountSecurity () {
  $(recovery).fadeOut()
 }
 // <link rel="stylesheet" href="css/style.css?<?=time()?>">
+
+ $(".insitute_check").click(() => {
+  console.log('hi');
+ })
+
+function check(){
+  console.log('hi');
+}
+
+$( "#insttituteTable tbody" ).on( "click", "tr", function() {
+  console.log( $( this ).text() );
+});
