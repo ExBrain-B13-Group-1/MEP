@@ -272,8 +272,9 @@
     <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full" id="main" aria-checked="false">
 
         <!-- code here -->
-        <div class="text-right px-4 py-1">
-            <a href="financeHistory.php" class="text-primary-main hover:underline">History Purchased</a>
+        <div class="text-right px-4 py-2">
+            <a href="financeHistory.php"
+                class="px-3 py-2 bg-primary-main text-white rounded text-xs ">History Purchased</a>
         </div>
         <!-- Cards -->
         <div class="grid grid-cols-3 gap-4 mb-4 mt-10 px-4">

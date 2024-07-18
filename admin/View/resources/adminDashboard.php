@@ -420,7 +420,7 @@
     <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full" id="main"
         aria-checked="false">
 
-        <!-- code here -->
+       <!-- code here -->
            <!-- Dashboard Flex Container -->
            <div class="flex mt-4 space-x-4">
             <!-- Left Section (w-4/6) -->
@@ -431,7 +431,7 @@
                         class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
                         <div>
                             <div class="text-gray-700 text-left">Total <br> Users</div>
-                            <div class="text-2xl text-primary-main font-bold text-left">6,942</div>
+                            <div id="total-users" class="text-2xl text-primary-main font-bold text-left"></div>
                         </div>
                         <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em"
@@ -447,7 +447,7 @@
                         class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
                         <div>
                             <div class="text-gray-700 text-left">Total <br> Institutes</div>
-                            <div class="text-2xl text-primary-main font-bold text-left">1,960</div>
+                            <div id="total-institutes" class="text-2xl text-primary-main font-bold text-left"></div>
                         </div>
                         <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em"
@@ -466,7 +466,7 @@
                         class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
                         <div>
                             <div class="text-gray-700 text-left">Amount <br> Earnings</div>
-                            <div class="text-2xl text-primary-main font-bold text-left">$ 5000</div>
+                            <div class="text-2xl text-primary-main font-bold text-left">$ <span id="amount"></span></div>
                         </div>
                         <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em"

@@ -416,8 +416,8 @@
     <div class="absolute right-0 top-16 px-10 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full" id="main"
         aria-checked="false">
 
-        <!-- code here -->
-        <div class=" bg-white p-4 overflow-y-auto no-scrollbar text-sm">
+         <!-- code here -->
+         <div class=" bg-white p-4 overflow-y-auto no-scrollbar text-sm">
             <!-- 4 Tabs (Home, About Us, Service, Payment) -->
             <div class="border border-dark-blue px-2 py-1 rounded flex items-center w-full">
                 <div class="tabs w-full flex justify-between">
@@ -430,7 +430,7 @@
 
             <!-- Home Content -->
             <div id="home-content" class="tab-content space-y-4 mt-6">
-                <div class="grid grid-cols-4 space-x-3">
+                <div class="grid grid-cols-3 space-x-3">
                     <div class="space-y-2">
                         <label for="slogan" class="block font-medium text-gray-700">Slogan</label>
                         <input type="text" id="slogan"
@@ -442,11 +442,6 @@
                         <input type="text" id="title"
                             class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
                             value="Unlock Your Potential with MEP">
-                    </div>
-                    <div class="space-y-2">
-                        <label for="description" class="block font-medium text-gray-700">Description</label>
-                        <textarea id="description" rows="5"
-                            class="w-full p-2 border border-gray-300 rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Empowering students and professionals</textarea>
                     </div>
                     <div class="flex space-x-2">
                         <div class="space-y-2">
@@ -463,30 +458,89 @@
                         </div>
                     </div>
                 </div>
+                <div class="space-y-2">
+                    <label for="description" class="block font-medium text-gray-700">Description</label>
+                    <textarea id="description" rows="5"
+                        class="w-full p-2 border border-gray-300 rounded-md text-xs resize-none no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Empowering students and professionals</textarea>
+                </div>
                 <div class="grid grid-cols-3 gap-4 mt-4">
                     <div class="space-y-2">
-                        <label for="slider1" class="block font-medium text-gray-700">Institute Slider 1</label>
-                        <input type="file" id="slider1" class="w-full p-2 border border-gray-300 rounded-md">
+                        <label for="slider1" class="block font-medium text-gray-700">Change About Us Photo</label>
+                        <label class="block">
+                            <span class="sr-only">Choose profile photo</span>
+                            <input id="slider1" type="file" class="block w-full text-sm text-slate-500
+                              file:mr-4 file:py-2 file:px-4
+                              file:rounded-md file:border-0
+                              file:text-sm file:font-semibold
+                              file:bg-dark-blue/80 file:text-white
+                              hover:file:bg-dark-blue
+                            "/>
+                          </label>
                     </div>
                     <div class="space-y-2">
-                        <label for="slider2" class="block font-medium text-gray-700">Institute Slider 2</label>
-                        <input type="file" id="slider2" class="w-full p-2 border border-gray-300 rounded-md">
+                        <label for="slider2" class="block font-medium text-gray-700">Change About Us Photo</label>
+                        <label class="block">
+                            <span class="sr-only">Choose profile photo</span>
+                            <input id="slider2" type="file" class="block w-full text-sm text-slate-500
+                              file:mr-4 file:py-2 file:px-4
+                              file:rounded-md file:border-0
+                              file:text-sm file:font-semibold
+                              file:bg-dark-blue/80 file:text-white
+                              hover:file:bg-dark-blue
+                            "/>
+                          </label>
                     </div>
                     <div class="space-y-2">
-                        <label for="slider3" class="block font-medium text-gray-700">Institute Slider 3</label>
-                        <input type="file" id="slider3" class="w-full p-2 border border-gray-300 rounded-md">
+                        <label for="slider3" class="block font-medium text-gray-700">Change About Us Photo</label>
+                        <label class="block">
+                            <span class="sr-only">Choose profile photo</span>
+                            <input id="slider3" type="file" class="block w-full text-sm text-slate-500
+                              file:mr-4 file:py-2 file:px-4
+                              file:rounded-md file:border-0
+                              file:text-sm file:font-semibold
+                              file:bg-dark-blue/80 file:text-white
+                              hover:file:bg-dark-blue
+                            "/>
+                          </label>
                     </div>
                     <div class="space-y-2">
-                        <label for="slider4" class="block font-medium text-gray-700">Institute Slider 4</label>
-                        <input type="file" id="slider4" class="w-full p-2 border border-gray-300 rounded-md">
+                        <label for="slider4" class="block font-medium text-gray-700">Change About Us Photo</label>
+                        <label class="block">
+                            <span class="sr-only">Choose profile photo</span>
+                            <input id="slider4" type="file" class="block w-full text-sm text-slate-500
+                              file:mr-4 file:py-2 file:px-4
+                              file:rounded-md file:border-0
+                              file:text-sm file:font-semibold
+                              file:bg-dark-blue/80 file:text-white
+                              hover:file:bg-dark-blue
+                            "/>
+                          </label>
                     </div>
                     <div class="space-y-2">
-                        <label for="slider5" class="block font-medium text-gray-700">Institute Slider 5</label>
-                        <input type="file" id="slider5" class="w-full p-2 border border-gray-300 rounded-md">
+                        <label for="slider5" class="block font-medium text-gray-700">Change About Us Photo</label>
+                        <label class="block">
+                            <span class="sr-only">Choose profile photo</span>
+                            <input id="slider5" type="file" class="block w-full text-sm text-slate-500
+                              file:mr-4 file:py-2 file:px-4
+                              file:rounded-md file:border-0
+                              file:text-sm file:font-semibold
+                              file:bg-dark-blue/80 file:text-white
+                              hover:file:bg-dark-blue
+                            "/>
+                          </label>
                     </div>
                     <div class="space-y-2">
-                        <label for="slider6" class="block font-medium text-gray-700">Institute Slider 6</label>
-                        <input type="file" id="slider6" class="w-full p-2 border border-gray-300 rounded-md">
+                        <label for="slider6" class="block font-medium text-gray-700">Change About Us Photo</label>
+                        <label class="block">
+                            <span class="sr-only">Choose profile photo</span>
+                            <input id="slider6" type="file" class="block w-full text-sm text-slate-500
+                              file:mr-4 file:py-2 file:px-4
+                              file:rounded-md file:border-0
+                              file:text-sm file:font-semibold
+                              file:bg-dark-blue/80 file:text-white
+                              hover:file:bg-dark-blue
+                            "/>
+                          </label>
                     </div>
                 </div>
                 <button id="save-home"
@@ -507,8 +561,8 @@
                         </div>
                         <div>
                             <label for="description" class="block font-medium text-gray-700">Description</label>
-                            <textarea id="description" rows="8"
-                                class="w-full p-2 border border-gray-300 rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Welcome to MEP, your trusted partner in education and professional development. We are dedicated to empowering students and professionals through high-quality educational programs and resources.</textarea>
+                            <textarea id="description" rows="9"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs resize-none no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Welcome to MEP, your trusted partner in education and professional development. We are dedicated to empowering students and professionals through high-quality educational programs and resources.</textarea>
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -520,14 +574,23 @@
                         </div>
                         <div>
                             <label for="description" class="block font-medium text-gray-700">Description</label>
-                            <textarea id="description" rows="8"
-                                class="w-full p-2 border border-gray-300 rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Our platform offers a diverse range of courses and programs tailored to meet the needs of students and professionals alike. Whether you are looking to advance your career, acquire new skills, or explore new fields, MEP is here to guide you every step of the way.</textarea>
+                            <textarea id="description" rows="9"
+                                class="w-full p-2 border border-gray-300 rounded-md text-xs resize-none no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Our platform offers a diverse range of courses and programs tailored to meet the needs of students and professionals alike. Whether you are looking to advance your career, acquire new skills, or explore new fields, MEP is here to guide you every step of the way.</textarea>
                         </div>
                     </div>
                     <div class="flex space-x-2">
                         <div class="space-y-2">
-                            <label for="slider1" class="block font-medium text-gray-700">Change About Us Photo</label>
-                            <input type="file" id="slider1" class="w-full p-2 border border-gray-300 rounded-md">
+                            <label for="aboutus" class="block font-medium text-gray-700">Change About Us Photo</label>
+                            <label class="block">
+                                <span class="sr-only">Choose profile photo</span>
+                                <input id="aboutus" type="file" class="block w-full text-sm text-slate-500
+                                  file:mr-4 file:py-2 file:px-4
+                                  file:rounded-md file:border-0
+                                  file:text-sm file:font-semibold
+                                  file:bg-dark-blue/80 file:text-white
+                                  hover:file:bg-dark-blue
+                                "/>
+                              </label>
                         </div>
                     </div>
                 </div>
@@ -548,7 +611,7 @@
                 </div>
                 <div class="grid grid-cols-5 space-x-4">
                     <div class="space-y-2">
-                        <div>
+                        <div class="mb-3">
                             <label for="slogan" class="block font-medium text-gray-700">Sub-Title</label>
                             <input type="text" id="slogan"
                                 class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
@@ -556,12 +619,12 @@
                         </div>
                         <div>
                             <label for="description" class="block font-medium text-gray-700">Description</label>
-                            <textarea id="description" rows="5"
+                            <textarea id="description" rows="7"
                                 class="w-full p-2 border border-gray-300 rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Enhance your skills and knowledge with our expert-led professional courses in IT, Business, and Language Studies etc...</textarea>
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <div>
+                        <div class="mb-3">
                             <label for="title" class="block font-medium text-gray-700">Sub-Title</label>
                             <input type="text" id="title"
                                 class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
@@ -569,12 +632,12 @@
                         </div>
                         <div>
                             <label for="description" class="block font-medium text-gray-700">Description</label>
-                            <textarea id="description" rows="5"
+                            <textarea id="description" rows="7"
                                 class="w-full p-2 border border-gray-300 rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Participate in interactive workshops and seminars led by industry experts to stay updated with the latest trends and best practices.</textarea>
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <div>
+                        <div class="mb-3">
                             <label for="title" class="block font-medium text-gray-700">Sub-Title</label>
                             <input type="text" id="title"
                                 class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
@@ -582,7 +645,7 @@
                         </div>
                         <div>
                             <label for="description" class="block font-medium text-gray-700">Description</label>
-                            <textarea id="description" rows="5"
+                            <textarea id="description" rows="7"
                                 class="w-full p-2 border border-gray-300 rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Access round-the-clock assistance from our dedicated support team. Whether you need technical help, we’re here to help anytime.</textarea>
                         </div>
                     </div>
@@ -626,7 +689,7 @@
                 <hr class="w-3/5 border-1 border-gray-800">
                 <div class="grid grid-cols-5 space-x-4">
                     <div class="space-y-2">
-                        <div>
+                        <div class="mb-3">
                             <label for="slogan" class="block font-medium text-gray-700">Sub-Title</label>
                             <input type="text" id="slogan"
                                 class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
@@ -634,12 +697,12 @@
                         </div>
                         <div>
                             <label for="description" class="block font-medium text-gray-700">Description</label>
-                            <textarea id="description" rows="5"
+                            <textarea id="description" rows="7"
                                 class="w-full p-2 border border-gray-300 rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Boost your visibility with our media promotion services. Leverage our platform to reach a wider audience and enhance your brand's presence.</textarea>
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <div>
+                        <div class="mb-3">
                             <label for="title" class="block font-medium text-gray-700">Sub-Title</label>
                             <input type="text" id="title"
                                 class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
@@ -647,12 +710,12 @@
                         </div>
                         <div>
                             <label for="description" class="block font-medium text-gray-700">Description</label>
-                            <textarea id="description" rows="5"
+                            <textarea id="description" rows="7"
                                 class="w-full p-2 border border-gray-300 rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Gain valuable insights with our detailed reports and analysis. Track your progress make data-driven decisions to optimize your circumstances.</textarea>
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <div>
+                        <div class="mb-3">
                             <label for="title" class="block font-medium text-gray-700">Sub-Title</label>
                             <input type="text" id="title"
                                 class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
@@ -660,7 +723,7 @@
                         </div>
                         <div>
                             <label for="description" class="block font-medium text-gray-700">Easy Payment</label>
-                            <textarea id="description" rows="5"
+                            <textarea id="description" rows="7"
                                 class="w-full p-2 border border-gray-300 rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Enjoy hassle-free transactions with our easy payment system. Use coin payments to conveniently manage and pay for your promotion of classes.</textarea>
                         </div>
                     </div>
@@ -707,14 +770,14 @@
                     <h2 class="text-xl font-semibold mb-4">Add Banking Info</h2>
                     <form>
                         <div class="mb-4">
-                            <label for="bankImage" class="block text-sm font-medium text-gray-700">Banking Image</label>
-                            <input type="file" id="bankImage" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+                            <label for="BankAccountName" class="block text-sm font-medium text-gray-700">Banking Account Name</label>
+                            <input type="text" id="BankAccountName" class="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
                         </div>
                         <div class="mb-4">
                             <label for="accountNumber" class="block text-sm font-medium text-gray-700">Account
                                 Number</label>
                             <input type="text" id="accountNumber"
-                                class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+                                class="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
                                 placeholder="Enter account number">
                         </div>
                         <div class="flex justify-end">
@@ -733,14 +796,14 @@
                     <h2 class="text-xl font-semibold mb-4">Add Pay Info</h2>
                     <form>
                         <div class="mb-4">
-                            <label for="payImage" class="block text-sm font-medium text-gray-700">Pay Image</label>
-                            <input type="file" id="payImage" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+                            <label for="payAccountName" class="block text-sm font-medium text-gray-700">Account Name</label>
+                            <input type="text" id="payAccountName" class="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
                         </div>
                         <div class="mb-4">
                             <label for="phNumber" class="block text-sm font-medium text-gray-700">Phone
                                 Number</label>
                             <input type="text" id="phNumber"
-                                class="mt-1 p-2 border border-gray-300 rounded-md w-full"
+                                class="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
                                 placeholder="Enter phone number">
                         </div>
                         <div class="flex justify-end">

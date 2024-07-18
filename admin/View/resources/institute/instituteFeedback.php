@@ -416,7 +416,7 @@
     <div class="absolute right-0 top-16 px-10 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full" id="main"
         aria-checked="false">
 
-        <!-- code here -->
+         <!-- code here -->
         <!-- Dashboard Flex Container -->
         <div class="flex mt-4 space-x-4">
             <div class="grid grid-cols-6 gap-6">
@@ -451,8 +451,7 @@
                             <h3 class="text-lg font-semibold text-primary-main">Sort</h3>
                             <div>
                                 <label class="inline-flex items-center mt-1">
-                                    <input type="radio" name="sort" value="read" class="form-radio"
-                                        checked>
+                                    <input type="radio" name="sort" value="read" class="form-radio" checked>
                                     <span class="ml-2 text-sm">Read</span>
                                 </label>
                             </div>
@@ -491,17 +490,27 @@
             <div class="w-4/6">
                 <!-- Report and feedback items container -->
                 <div id="report-feedback-container"></div>
+                <!-- Pagination -->
+                <div class="flex justify-center mt-8">
+                    <ul id="pagination-controls" class="inline-flex list-none items-center -space-x-px">
+
+                    </ul>
+                </div>
             </div>
             <div class="w-2/6 bg-white p-6 rounded-lg shadow-md text-sm hidden " id="mailCard">
                 <h2 id="message-to" class="text-base font-semibold mb-2">To: abc@gmail.com</h2>
                 <h3 id="message-subject" class="font-semibold mb-4">Subject: Review Report Result</h3>
                 <div id="message-content" class="text-sm text-gray-700">
                     <p>We hope this message finds you well.</p>
-                    <p>We are writing to inform you about the outcome of our assessment regarding the review reported by your institute.</p>
+                    <p>We are writing to inform you about the outcome of our assessment regarding the review reported by
+                        your institute.</p>
                     <br>
-                    <p>After thoroughly evaluating the reported review, we have determined that it <span class="text-dark-blue font-semibold">does not infringe</span> on any guidelines and does not contain any inappropriate content.</p>
+                    <p>After thoroughly evaluating the reported review, we have determined that it <span
+                            class="text-dark-blue font-semibold">does not infringe</span> on any guidelines and does not
+                        contain any inappropriate content.</p>
                     <br>
-                    <p>We appreciate your understanding in this matter. Should you have any further questions or require additional assistance, please do not hesitate to contact us.</p>
+                    <p>We appreciate your understanding in this matter. Should you have any further questions or require
+                        additional assistance, please do not hesitate to contact us.</p>
                     <br>
                     <p>Thank you for your cooperation.</p>
                     <p>Best regards,</p>
@@ -510,8 +519,10 @@
                 </div>
                 <button class="bg-dark-blue text-white py-2 px-4 rounded-lg mt-4 flex items-center">
                     <span>Send</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M2.94 5.94a1 1 0 000 1.41l8.72 8.72a1 1 0 001.41-1.41l-8.72-8.72a1 1 0 00-1.41 0zm0 2.12a1 1 0 011.41 0l5.24 5.24-6.65 2.21a.75.75 0 01-.95-.95l2.21-6.65zm6.17 7.96l2.93-9.13 4.9 4.9-7.83 4.23z"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path
+                            d="M2.94 5.94a1 1 0 000 1.41l8.72 8.72a1 1 0 001.41-1.41l-8.72-8.72a1 1 0 00-1.41 0zm0 2.12a1 1 0 011.41 0l5.24 5.24-6.65 2.21a.75.75 0 01-.95-.95l2.21-6.65zm6.17 7.96l2.93-9.13 4.9 4.9-7.83 4.23z" />
                     </svg>
                 </button>
             </div>

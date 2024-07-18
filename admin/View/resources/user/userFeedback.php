@@ -274,22 +274,26 @@
         <div class="flex mt-4 space-x-4">
             <div class="grid grid-cols-6 gap-6">
                 <!-- Total Feedback -->
-                <div class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
+                <div
+                    class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
                     <div class="text-primary-main text-left mb-3">Total Feedback</div>
                     <div class="text-4xl text-dark-blue font-bold text-left">10</div>
                 </div>
                 <!-- Unread -->
-                <div class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
+                <div
+                    class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
                     <div class="text-primary-main text-left mb-3">Unread</div>
                     <div class="text-4xl text-dark-blue font-bold text-left">5</div>
                 </div>
                 <!-- Read -->
-                <div class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
+                <div
+                    class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
                     <div class="text-primary-main text-left mb-3">Total Feedback</div>
                     <div class="text-4xl text-dark-blue font-bold text-left">5</div>
                 </div>
                 <!-- Report -->
-                <div class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
+                <div
+                    class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
                     <div class="text-primary-main text-left mb-3">Report</div>
                     <div class="text-4xl text-red-600 font-bold text-left">2</div>
                 </div>
@@ -300,7 +304,8 @@
                             <h3 class="text-lg font-semibold text-primary-main">Sort</h3>
                             <div>
                                 <label class="inline-flex items-center mt-1">
-                                    <input type="radio" name="sort" value="read" class="form-radio" checked>
+                                    <input type="radio" name="sort" value="read" class="form-radio"
+                                        checked>
                                     <span class="ml-2 text-sm">Read</span>
                                 </label>
                             </div>
@@ -325,9 +330,11 @@
                         </div>
                         <div class="flex flex-col justify-center px-4">
                             <label for="start-date" class="text-sm font-medium">Start Date</label>
-                            <input type="date" id="start-date" class="mt-1 mb-2 px-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-main">
+                            <input type="date" id="start-date"
+                                class="mt-1 mb-2 px-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-main">
                             <label for="end-date" class="text-sm font-medium">End Date</label>
-                            <input type="date" id="end-date" class="mt-1 px-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-main">
+                            <input type="date" id="end-date"
+                                class="mt-1 px-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-main">
                         </div>
                     </div>
                 </div>
@@ -337,6 +344,12 @@
             <div class="w-4/6">
                 <!-- Report and feedback items container -->
                 <div id="report-feedback-container"></div>
+                <!-- Pagination -->
+                <div  class="flex justify-center mt-8">
+                    <ul id="pagination-controls" class="inline-flex list-none items-center -space-x-px">
+    
+                    </ul>
+                </div>
             </div>
             <div class="w-2/6 bg-white p-6 rounded-lg shadow-md text-sm hidden " id="mailCard">
                 <h2 id="message-to" class="text-base font-semibold mb-2">To: abc@gmail.com</h2>
@@ -357,7 +370,7 @@
                 <button class="bg-dark-blue text-white py-2 px-4 rounded-lg mt-4 flex items-center">
                     <span>Send</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M2.94 5.94a1 1 0 000 1.41l8.72 8.72a1 1 0 001.41-1.41l-8.72-8.72a1 1 0 00-1.41 0zm0 2.12a1 1 0 011.41 0l5.24 5.24-6.65 2.21a.75.75 0 01-.95-.95l2.21-6.65zm6.17 7.96l2.93-9.13 4.9 4.9-7.83 4.23z" />
+                        <path d="M2.94 5.94a1 1 0 000 1.41l8.72 8.72a1 1 0 001.41-1.41l-8.72-8.72a1 1 0 00-1.41 0zm0 2.12a1 1 0 011.41 0l5.24 5.24-6.65 2.21a.75.75 0 01-.95-.95l2.21-6.65zm6.17 7.96l2.93-9.13 4.9 4.9-7.83 4.23z"/>
                     </svg>
                 </button>
             </div>
