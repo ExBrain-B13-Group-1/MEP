@@ -56,7 +56,8 @@
                 </li>
 
                 <li>
-                    <a href="userlists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="userlists.php"
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -84,7 +85,8 @@
                 </li>
 
                 <li>
-                    <a href="institutelists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="institutelists.php"
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -168,7 +170,8 @@
                 </li>
 
                 <li>
-                    <a href="page.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="page.php"
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -202,7 +205,8 @@
                 </li>
 
                 <li>
-                    <a href="tools.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="tools.php"
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -215,7 +219,8 @@
                 </li>
 
                 <li>
-                    <a href="faq.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="faq.php"
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -292,7 +297,8 @@
 
             <ul class="space-y-1 absolute bottom-0 font-medium w-full pr-6">
                 <li>
-                    <a href="setting.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="setting.php"
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -416,18 +422,22 @@
         aria-checked="false">
 
         <!-- code here -->
-         
-        <!-- Go Back To Finance -->
-        <div class="text-right px-4 py-1">
-            <a href="finance.php" class="text-primary-main hover:underline">Back</a>
-        </div>
         <div class="container mx-auto p-4">
+            <!-- Go Back To Finance -->
+            <div class="mb-4">
+                <a href="finance.php"
+                    class="px-3 py-2 bg-primary-main text-white rounded text-xs ">Back</a>
+            </div>
             <div class="flex justify-between items-center mb-4">
                 <div class="flex items-center space-x-4">
                     <!-- Search & Filter -->
                     <div class="relative">
-                        <input type="text" class="border border-dark-blue px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none" placeholder="Search">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue" viewBox="0 0 24 24">
+                        <input type="text"
+                            class="border border-dark-blue px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none"
+                            placeholder="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em"
+                            class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue"
+                            viewBox="0 0 24 24">
                             <g fill="none" stroke="currentColor" stroke-width="2">
                                 <circle cx="11" cy="11" r="7" />
                                 <path stroke-linecap="round" d="M11 8a3 3 0 0 0-3 3m12 9l-3-3" />
@@ -435,12 +445,66 @@
                         </svg>
                     </div>
                     <div class="relative">
-                        <button id="filter-button" class="border border-dark-blue px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none">Filter</button>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue" viewBox="0 0 16 16" {...$$props}>
-                            <path fill="currentColor" d="M6 1a3 3 0 0 0-2.83 2H0v2h3.17a3.001 3.001 0 0 0 5.66 0H16V3H8.83A3 3 0 0 0 6 1M5 4a1 1 0 1 1 2 0a1 1 0 0 1-2 0m5 5a3 3 0 0 0-2.83 2H0v2h7.17a3.001 3.001 0 0 0 5.66 0H16v-2h-3.17A3 3 0 0 0 10 9m-1 3a1 1 0 1 1 2 0a1 1 0 0 1-2 0" />
+                        <button id="filter-button" data-dropdown-toggle="dropdown"
+                            class="border border-dark-blue px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none">Filter</button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                            class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue"
+                            viewBox="0 0 16 16" {...$$props}>
+                            <path fill="currentColor"
+                                d="M6 1a3 3 0 0 0-2.83 2H0v2h3.17a3.001 3.001 0 0 0 5.66 0H16V3H8.83A3 3 0 0 0 6 1M5 4a1 1 0 1 1 2 0a1 1 0 0 1-2 0m5 5a3 3 0 0 0-2.83 2H0v2h7.17a3.001 3.001 0 0 0 5.66 0H16v-2h-3.17A3 3 0 0 0 10 9m-1 3a1 1 0 1 1 2 0a1 1 0 0 1-2 0" />
                         </svg>
                     </div>
                 </div>
+            </div>
+
+             <!-- Dropdown menu -->
+             <div id="dropdown" class="relative z-10 hidden bg-white divide-y rounded-lg shadow border-2  w-auto ">               
+                <form class=" px-10">
+                    <p class="text-right mt-6 text-red-500 mb-5 cursor-pointer">Clear</p>
+                    <div class="flex items-center justify-between">
+                        <p class="mt-6">CID :</p>
+                        <div class="grid grid-cols-2 gap-8">
+                            <div>
+                                <label for="from" class="block">From</label>
+                                <input type="text" id="from" class="w-20 h-6 py-2 text-sm bg-gray-100 focus:outline-none  rounded-md"/>
+                            </div>
+                            <div>
+                                <label for="from" class="block">To</label>
+                                <input type="text" id="from" class="w-20 h-6 py-2 text-sm bg-gray-100 focus:outline-none rounded-md"/>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="flex items-center justify-between mt-3 pb-7">
+                        <p class="mt-1">Coin Amount :</p>
+                        <div class="grid grid-cols-2 gap-8 ">
+                            <div>
+                                <select name="coin" id="" class="w-20 h-10 bg-gray-100 focus:outline-none  rounded-md">
+                                    <option value="">Min</option>
+                                    <option value="">50000</option>
+                                    <option value="">100000</option>
+                                    <option value="">200000</option>
+                                    <option value="">300000</option>
+                                </select>   
+                            </div>
+                            <div>
+                                <select name="coin" id="" class="w-20 h-10 bg-gray-100 focus:outline-none rounded-md">
+                                    <option value="">Max</option>
+                                    <option value="">100000</option>
+                                    <option value="">200000</option>
+                                    <option value="">300000</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-10 mb-4 mt-3">
+                        <button type="button" class="w-full focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
+                        <button type="button" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Apply</button>
+                    </div>
+
+                </form>
             </div>
 
             <!-- Start Table -->
@@ -463,7 +527,7 @@
             </div>
 
             <!-- Pagination -->
-            <div class="flex justify-center mt-4">
+            <div class="flex justify-center mt-6">
                 <nav aria-label="Page navigation">
                     <ul id="pagination" class="inline-flex items-center -space-x-px">
                         <!-- Pagination buttons will be inserted here by jQuery -->
@@ -482,7 +546,7 @@
 
     <script src="js/financeHistory.js"></script>
     <script src="js/sidebar.js"></script>
-  
+
 </body>
 
 </html>

@@ -137,7 +137,7 @@ $(document).ready(function () {
     },
   ];
 
-  const ROWPERPAGE = 10;
+  const ROWPERPAGE = 5;
   let currentPage = 1;
   const totalPages = Math.ceil(data.length / ROWPERPAGE);
 
@@ -171,7 +171,7 @@ $(document).ready(function () {
     // Add Previous Button
     if (currentPage > 1) {
       pagination.append(
-        '<li><a href="#" class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white text-sm" data-page="' +
+        '<li><a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray rounded-l" data-page="' +
           (currentPage - 1) +
           '"><ion-icon name="chevron-back-outline"></ion-icon></a></li>'
       );
@@ -181,23 +181,17 @@ $(document).ready(function () {
     for (let i = 1; i <= totalPages; i++) {
       const activeClass =
         i === currentPage
-          ? "bg-primary-main text-white rounded-full text-sm font-semibold"
-          : "text-gray-500 bg-white text-sm";
+          ? "text-blue-600 border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700"
+          : "text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray";
       pagination.append(
-        '<li><a href="#" class="px-3 py-2 leading-tight mx-1 ' +
-          activeClass +
-          '" data-page="' +
-          i +
-          '">' +
-          i +
-          "</a></li>"
+        `<li><a href="#" class="flex items-center justify-center px-4 h-10 leading-tight border ${activeClass}" data-page="${i}">${i}</a></li>`
       );
     }
 
     // Add Next Button
     if (currentPage < totalPages) {
       pagination.append(
-        '<li><a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white text-sm" data-page="' +
+        '<li><a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray rounded-r" data-page="' +
           (currentPage + 1) +
           '"><ion-icon name="chevron-forward-outline"></ion-icon></a></li>'
       );

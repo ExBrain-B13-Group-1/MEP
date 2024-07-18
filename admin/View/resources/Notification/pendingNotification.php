@@ -282,7 +282,7 @@
             </div>
 
             <!-- Institute Notifications -->
-            <div id="institute-content" class="tab-content flex-1 overflow-y-auto no-scrollbar px-4">
+            <div id="institute-content" class="tab-content flex-1 overflow-y-auto no-scrollbar px-4 mt-5">
                 <div class="bg-white p-4 rounded-lg shadow">
                     <div class="text-lg font-bold mb-4">Institute Requested Approval Pending</div>
                     <div class="space-y-4" id="institute-notification-list">

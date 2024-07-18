@@ -57,7 +57,8 @@
                 </li>
 
                 <li>
-                    <a href="userlists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="userlists.php"
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -85,7 +86,8 @@
                 </li>
 
                 <li>
-                    <a href="institutelists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="institutelists.php"
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -169,7 +171,8 @@
                 </li>
 
                 <li>
-                    <a href="page.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="page.php"
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -203,7 +206,8 @@
                 </li>
 
                 <li>
-                    <a href="tools.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="tools.php"
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -216,7 +220,8 @@
                 </li>
 
                 <li>
-                    <a href="faq.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="faq.php"
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -293,7 +298,8 @@
 
             <ul class="space-y-1 absolute bottom-0 font-medium w-full pr-6">
                 <li>
-                    <a href="setting.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="setting.php"
+                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -451,8 +457,7 @@
                             <h3 class="text-lg font-semibold text-primary-main">Sort</h3>
                             <div>
                                 <label class="inline-flex items-center mt-1">
-                                    <input type="radio" name="sort" value="read" class="form-radio"
-                                        checked>
+                                    <input type="radio" name="sort" value="read" class="form-radio" checked>
                                     <span class="ml-2 text-sm">Read</span>
                                 </label>
                             </div>
@@ -491,17 +496,27 @@
             <div class="w-4/6">
                 <!-- Report and feedback items container -->
                 <div id="report-feedback-container"></div>
+                <!-- Pagination -->
+                <div class="flex justify-center mt-8">
+                    <ul id="pagination-controls" class="inline-flex list-none items-center -space-x-px">
+
+                    </ul>
+                </div>
             </div>
             <div class="w-2/6 bg-white p-6 rounded-lg shadow-md text-sm hidden " id="mailCard">
                 <h2 id="message-to" class="text-base font-semibold mb-2">To: abc@gmail.com</h2>
                 <h3 id="message-subject" class="font-semibold mb-4">Subject: Review Report Result</h3>
                 <div id="message-content" class="text-sm text-gray-700">
                     <p>We hope this message finds you well.</p>
-                    <p>We are writing to inform you about the outcome of our assessment regarding the review reported by your institute.</p>
+                    <p>We are writing to inform you about the outcome of our assessment regarding the review reported by
+                        your institute.</p>
                     <br>
-                    <p>After thoroughly evaluating the reported review, we have determined that it <span class="text-dark-blue font-semibold">does not infringe</span> on any guidelines and does not contain any inappropriate content.</p>
+                    <p>After thoroughly evaluating the reported review, we have determined that it <span
+                            class="text-dark-blue font-semibold">does not infringe</span> on any guidelines and does not
+                        contain any inappropriate content.</p>
                     <br>
-                    <p>We appreciate your understanding in this matter. Should you have any further questions or require additional assistance, please do not hesitate to contact us.</p>
+                    <p>We appreciate your understanding in this matter. Should you have any further questions or require
+                        additional assistance, please do not hesitate to contact us.</p>
                     <br>
                     <p>Thank you for your cooperation.</p>
                     <p>Best regards,</p>
@@ -510,8 +525,10 @@
                 </div>
                 <button class="bg-dark-blue text-white py-2 px-4 rounded-lg mt-4 flex items-center">
                     <span>Send</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M2.94 5.94a1 1 0 000 1.41l8.72 8.72a1 1 0 001.41-1.41l-8.72-8.72a1 1 0 00-1.41 0zm0 2.12a1 1 0 011.41 0l5.24 5.24-6.65 2.21a.75.75 0 01-.95-.95l2.21-6.65zm6.17 7.96l2.93-9.13 4.9 4.9-7.83 4.23z"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path
+                            d="M2.94 5.94a1 1 0 000 1.41l8.72 8.72a1 1 0 001.41-1.41l-8.72-8.72a1 1 0 00-1.41 0zm0 2.12a1 1 0 011.41 0l5.24 5.24-6.65 2.21a.75.75 0 01-.95-.95l2.21-6.65zm6.17 7.96l2.93-9.13 4.9 4.9-7.83 4.23z" />
                     </svg>
                 </button>
             </div>
@@ -521,7 +538,7 @@
 
     <script src="js/instituteFeedback.js"></script>
     <script src="js/sidebar.js"></script>
-   
+
 </body>
 
 </html>

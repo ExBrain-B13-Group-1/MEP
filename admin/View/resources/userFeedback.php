@@ -491,6 +491,12 @@
             <div class="w-4/6">
                 <!-- Report and feedback items container -->
                 <div id="report-feedback-container"></div>
+                <!-- Pagination -->
+                <div  class="flex justify-center mt-8">
+                    <ul id="pagination-controls" class="inline-flex list-none items-center -space-x-px">
+    
+                    </ul>
+                </div>
             </div>
             <div class="w-2/6 bg-white p-6 rounded-lg shadow-md text-sm hidden " id="mailCard">
                 <h2 id="message-to" class="text-base font-semibold mb-2">To: abc@gmail.com</h2>
