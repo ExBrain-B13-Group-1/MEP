@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit Instructor</title>
+    <title>Event - Create Event</title>
     <!-- Tailwind output css -->
     <link href="./../css/output.css" rel="stylesheet" />
 </head>
@@ -16,7 +16,7 @@
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
             <div class="flex items-center justify-between">
                 <div class="ml-64 relative top-2 pl-3">
-                    <p class="text-xl dark:text-white">Edit Instructor</p>
+                    <p class="text-xl dark:text-white">Create Event</p>
                 </div>
 
                 <div class="flex items-center">
@@ -36,14 +36,14 @@
                     <div class="flex items-center bg-slate-200 dark:bg-gray-700 rounded-lg cursor-pointer" data-dropdown-toggle="dropdown-user">
                         <div class="flex items-center mx-3">
                             <div>
-                                <button type="button" class="flex text-base bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
+                                <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
                                     <span class="sr-only">Open user menu</span>
                                     <img class="w-14 h-14 rounded-full select-none" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
                                 </button>
                             </div>
                             <div class="ml-3 pt-2 dark:text-white">
                                 <p class="text-base leading-none select-none">Education Portal</p>
-                                <p class="text-base leading-none text-slate-500 select-none dark:text-white dark:text-opacity-50">Admin</p>
+                                <p class="text-sm leading-none text-slate-500 select-none dark:text-white dark:text-opacity-50">Admin</p>
                                 <div class="flex pt-1">
                                     <svg class="w-4 h-4 mt-0.5 mr-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
                                         <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -58,7 +58,7 @@
                                 <ion-icon name="chevron-down-outline"></ion-icon>
                             </div>
                             <div id="dropdown-user" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-64 dark:bg-gray-700 dark:divide-gray-600">
-                                <ul class="py-2 text-base text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
                                     <li>
                                         <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guide</a>
                                     </li>
@@ -70,7 +70,7 @@
                                     </li>
                                 </ul>
                                 <div class="py-2">
-                                    <a href="#" class="block px-4 py-2 text-base text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
                                 </div>
                             </div>
                         </div>
@@ -233,70 +233,156 @@
     </aside>
 
     <!-- Data Area Class List-->
-    <div class="block pt-20 pb-8 px-5 ml-64 bg-gray-300 dark:bg-gray-800">
-        <div class="grid grid-cols-10 gap-7 mt-10 ">
-            <div class="bg-white col-span-8 col-start-2 rounded-lg px-4 py-2 dark:bg-gray-700 duration-500">
-                <form action="" method="" class="px-20 py-10">
-                    <div class="grid grid-cols-2 gap-20">
-                        <!-- left -->
-                        <div>
-                            <h1 class="text-xl mb-5 mt-5 dark:text-white font-bold">Instructor Information</h1>
-                            <div class="pl-5">
-                                <div class="mt-4">
-                                    <img src="./../../..//instructor.jpg" class="w-full" alt="instructor" />
+    <div class="block pt-10 pb-8 px-5 ml-64 bg-gray-300 dark:bg-gray-800">
+        <div class="grid grid-cols-10 gap-0 mt-20">
+            <div class="bg-white col-span-10 rounded-lg dark:bg-gray-700 duration-500">
+
+                <div class="grid grid-cols-10">
+                    <!-- Event Information -->
+                    <div class="col-span-6 px-6 py-5">
+                        <div class="grid grid-cols-2 gap-5">
+                            <div>
+                                <form action="" method="" class="px-10">
+                                    <div>
+                                        <h1 class="text-xl mb-5 mt-5 dark:text-white font-bold">Event Information</h1>
+                                        <div class="pl-5">
+                                            <div>
+                                                <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="event-photo">Event Photo</label>
+                                                <input class="block w-full text-base text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="event-photo" type="file" required>
+                                            </div>
+                                            <div class="mt-4">
+                                                <label for="event-title" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Event Title</label>
+                                                <input type="text" id="event-title" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Title" required />
+                                            </div>
+                                            <div class="mt-4">
+                                                <label for="event-type" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Event Type</label>
+                                                <div class="grid grid-cols-4 gap-3">
+                                                    <select id="event-type" class="opacity-60 dark:opacity-50 col-span-3 bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                                        <option selected disabled>Select Event Type</option>
+                                                        <option value="">Webinar</option>
+                                                        <option value="">Workshops</option>
+                                                        <option value="">Guest lectures</option>
+                                                    </select>
+                                                    <button type="button" class="h-full w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</button>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4">
+                                                <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Instructor / Presenter</label>
+                                                <div class="tags-input-container flex flex-wrap border border-gray-300 dark:border-gray-600 py-1 px-2 rounded" id="tags-input-container">
+                                                    <input type="text" id="tags-input" class="tags-input outline-none flex-grow bg-white dark:bg-gray-700 text-black dark:text-white border-0 focus:outline-none focus:ring-0" placeholder="Add Speaker">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="pt-1">
+                                <form action="">
+                                    <div class="mt-16 mb-4">
+                                        <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="datepicker-autohide2">Date</label>
+                                        <div class="relative max-w-sm">
+                                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                                                </svg>
+                                            </div>
+                                            <input id="datepicker-autohide2" datepicker datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
+                                        </div>
+                                    </div>
+                                    <div class="mr-16 pr-1.5">
+                                        <div class="grid grid-cols-2 gap-5 mb-4">
+                                            <div>
+                                                <label for="start-time" class="block mb-2 text-base font-medium text-gray-900 dark:text-white dark:opacity-80">From</label>
+                                                <div class="relative">
+                                                    <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
+                                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd" />
+                                                        </svg>
+                                                    </div>
+                                                    <input type="time" id="start-time" class="dark:opacity-50 bg-gray-50 border leading-none border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min="00:00" max="24:00" value="00:00" required />
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label for="end-time" class="block mb-2 text-base font-medium text-gray-900 dark:text-white dark:opacity-80">To</label>
+                                                <div class="relative">
+                                                    <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
+                                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd" />
+                                                        </svg>
+                                                    </div>
+                                                    <input type="time" id="end-time" class="dark:opacity-50 bg-gray-50 border leading-none border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min="00:00" max="24:00" value="00:00" required />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mr-16 pr-1.5">
+                                        <label for="reg-form-link" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Register Form Link</label>
+                                        <input type="text" id="reg-form-link" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Title" required />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="mx-14 px-1 mb-5">
+                            <label for="event-description" class="block mt-5 mb-2 text-base font-medium text-gray-900 dark:text-white">Description</label>
+                            <textarea id="event-description" rows="8" class="resize-none block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write event description here..."></textarea>
+                        </div>
+                    </div>
+                    <!-- Agenda/Schedule -->
+                    <div class="col-span-4 pr-20 pt-8">
+                        <!-- Agenda/Schedule -->
+                        <div class="max-w-2xl mx-auto mb-4 ">
+                            <div class="flex justify-between items-center">
+                                <h2 class="text-xl font-bold dark:text-gray-200">Agenda/Schedule</h2>
+                                <button id="addBtn" class="bg-blue-700 text-white px-10 py-2 rounded">Add</button>
+                            </div>
+                        </div>
+                        <div class="max-w-2xl h-[60vh] mx-auto bg-white dark:bg-gray-600 p-6 overflow-y-auto hide-scrollbar border-2 border-gray-300 dark:border-gray-500">
+                            <div class="px-2 py-4 flex justify-between items-center text-base mb-4 rounded bg-cyan-900 text-gray-200 dark:bg-blue-500 dark:text-white">
+                                <div>Time / Title</div>
+                                <div class="flex gap-12">
+                                    <div class="cursor-pointer">Edit</div>
+                                    <div class="cursor-pointer">Delete</div>
                                 </div>
-                                <div class="mt-5">
-                                    <h1 class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85">Software Engineer</h1>
-                                    <div class="opacity-50 dark:text-white dark:opacity-50">example@gmail.com</div>
-                                    <span class="opacity-50 dark:text-white dark:opacity-50">+95 97612345678</span>
+                            </div>
+                            <div id="agendaContainer" class="space-y-4">
+                                <!-- Dynamic rows will be added here -->
+                                <div class="flex justify-between items-center dark:bg-gray-700 p-2 rounded shadow">
+
                                 </div>
-                                <div class="mt-5">
-                                    <h1 class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85">Biography</h1>
-                                    <div class="opacity-50 dark:text-white dark:opacity-50 text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+                            </div>
+                        </div>
+                        <!-- Modal for Add/Edit -->
+                        <div id="modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center invisible">
+                            <div class="bg-white p-6 rounded shadow-lg w-[30vw]">
+                                <h3 id="modalTitle" class="text-lg font-bold mb-4">Add Item</h3>
+                                <div class="mb-4">
+                                    <label class="block text-sm font-bold mb-2">Time</label>
+                                    <input id="timeInput" type="text" class="w-full border border-gray-300 px-4 py-2 rounded">
                                 </div>
-                                <div class="mt-5">
-                                    <h1 class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85">Biography</h1>
-                                    <div class="opacity-50 dark:text-white dark:opacity-50 text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+                                <div class="mb-4">
+                                    <label class="block text-sm font-bold mb-2">Title</label>
+                                    <input id="titleInput" type="text" class="w-full border border-gray-300 px-4 py-2 rounded">
+                                </div>
+                                <div id="error" class="text-red-500 mb-4 invisible">Please fill in both fields.</div>
+                                <div class="grid grid-cols-2 gap-5 justify-between ">
+                                    <button id="cancelBtn" class="bg-gray-300 text-gray-700 px-6 py-2 rounded">Cancel</button>
+                                    <button id="saveBtn" class="bg-blue-500 text-white px-6 py-2 rounded">Save</button>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- right -->
-                        <div class="pl-5">
-                            <div class="mt-1 flex justify-end">
-                                <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit Instructor</button>
-                            </div>
-                            <div class="mt-20">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Full Name :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60">John Doe</span>
-                            </div>
-                            <div class="mt-4">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Date of Birth :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60">21 / 7 /1995</span>
-                            </div>
-                            <div class="mt-4">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Gender :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60">Male</span>
-                            </div>
-                            <div class="mt-4">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Skill :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60">Javascript, Java, Python, ...</span>
-                            </div>
-                            <div class="mt-4 border-b pb-10">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Address :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60">No.977, Yone Gyi, Hleden, Yangon</span>
-                            </div>
-                            <div class="mt-4 pt-8">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">LinkedIn :</span> <span class="text-xl opacity-50  dark:opacity-60 text-blue-800 dark:text-blue-400">https://linkedin/profile/johndow345</span>
-                            </div>
-                            <div class="mt-4">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Portfolio :</span> <span class="text-xl opacity-50 dark:opacity-60 text-blue-800 dark:text-blue-400">https://example.com</span>
-                            </div>
-                            <div class="mt-12">
-                                <h1 class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85">Experience</h1>
-                                <div class="opacity-50 dark:text-white dark:opacity-50 text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
-                            </div>
+                        <div class="grid grid-cols-2 gap-40 justify-between mt-10 pt-[15px]">
+                            <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
+                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Publish</button>
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
+
+
+
 
 
     <!-- ionicons icons -->
@@ -313,7 +399,7 @@
     <!-- darkmode lightmode js -->
     <script src="./../js/darkandlight.js" type="text/javascript"></script>
     <!-- customjs -->
-    <script src="./../js/instructor.js" type="text/javascript"></script>
+    <script src="./../js/event.js" type="text/javascript"></script>
 </body>
 
 </html>

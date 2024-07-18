@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit Instructor</title>
+    <title>Event - View Event</title>
     <!-- Tailwind output css -->
     <link href="./../css/output.css" rel="stylesheet" />
 </head>
@@ -16,7 +16,7 @@
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
             <div class="flex items-center justify-between">
                 <div class="ml-64 relative top-2 pl-3">
-                    <p class="text-xl dark:text-white">Edit Instructor</p>
+                    <p class="text-xl dark:text-white">View Event</p>
                 </div>
 
                 <div class="flex items-center">
@@ -36,14 +36,14 @@
                     <div class="flex items-center bg-slate-200 dark:bg-gray-700 rounded-lg cursor-pointer" data-dropdown-toggle="dropdown-user">
                         <div class="flex items-center mx-3">
                             <div>
-                                <button type="button" class="flex text-base bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
+                                <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
                                     <span class="sr-only">Open user menu</span>
                                     <img class="w-14 h-14 rounded-full select-none" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
                                 </button>
                             </div>
                             <div class="ml-3 pt-2 dark:text-white">
                                 <p class="text-base leading-none select-none">Education Portal</p>
-                                <p class="text-base leading-none text-slate-500 select-none dark:text-white dark:text-opacity-50">Admin</p>
+                                <p class="text-sm leading-none text-slate-500 select-none dark:text-white dark:text-opacity-50">Admin</p>
                                 <div class="flex pt-1">
                                     <svg class="w-4 h-4 mt-0.5 mr-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
                                         <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -58,7 +58,7 @@
                                 <ion-icon name="chevron-down-outline"></ion-icon>
                             </div>
                             <div id="dropdown-user" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-64 dark:bg-gray-700 dark:divide-gray-600">
-                                <ul class="py-2 text-base text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
                                     <li>
                                         <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guide</a>
                                     </li>
@@ -70,7 +70,7 @@
                                     </li>
                                 </ul>
                                 <div class="py-2">
-                                    <a href="#" class="block px-4 py-2 text-base text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
                                 </div>
                             </div>
                         </div>
@@ -233,70 +233,74 @@
     </aside>
 
     <!-- Data Area Class List-->
-    <div class="block pt-20 pb-8 px-5 ml-64 bg-gray-300 dark:bg-gray-800">
-        <div class="grid grid-cols-10 gap-7 mt-10 ">
-            <div class="bg-white col-span-8 col-start-2 rounded-lg px-4 py-2 dark:bg-gray-700 duration-500">
-                <form action="" method="" class="px-20 py-10">
-                    <div class="grid grid-cols-2 gap-20">
-                        <!-- left -->
-                        <div>
-                            <h1 class="text-xl mb-5 mt-5 dark:text-white font-bold">Instructor Information</h1>
-                            <div class="pl-5">
-                                <div class="mt-4">
-                                    <img src="./../../..//instructor.jpg" class="w-full" alt="instructor" />
+    <div class="pt-32 px-6 ml-64 flex justify-between">
+        <h2 class="text-xl font-bold dark:text-gray-200 mt-4">Event Information</h2>
+        <button id="addBtn" class="bg-blue-700 text-white px-10 py-2.5 rounded mb-4">Edit Event</button>
+    </div>
+    <div class="block px-6 pb-8 ml-64 bg-gray-300 dark:bg-gray-800">
+        <div class="grid grid-cols-10 gap-0">
+            <div class="bg-white col-span-10 rounded-lg dark:bg-gray-700 duration-500">
+                <div class="grid grid-cols-10">
+                    <!-- Event Information -->
+                    <div class="col-span-6 px-6 py-5">
+                        <div class="grid grid-cols-2 gap-5">
+                            <div class="mx-14 px-1 mb-5 mt-8">
+                                <img src="./../../../storages/cloud.jpg" alt="cloud">
+                            </div>
+                            <div class="pt-8 pr-9">
+                                <div class="flex mb-2 pb-0.5">
+                                    <span class="dark:text-gray-50 font-bold">Type :</span> <span class="dark:text-gray-400 ml-5 text-gray-500">Webinar</span>
                                 </div>
-                                <div class="mt-5">
-                                    <h1 class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85">Software Engineer</h1>
-                                    <div class="opacity-50 dark:text-white dark:opacity-50">example@gmail.com</div>
-                                    <span class="opacity-50 dark:text-white dark:opacity-50">+95 97612345678</span>
+                                <div class="flex mb-2 pb-0.5">
+                                    <span class="dark:text-gray-50 font-bold">Instructor :</span> <span class="dark:text-gray-400 ml-5 text-gray-500">Dr.Emily White</span>
                                 </div>
-                                <div class="mt-5">
-                                    <h1 class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85">Biography</h1>
-                                    <div class="opacity-50 dark:text-white dark:opacity-50 text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+                                <div class="flex mb-2 pb-0.5">
+                                    <span class="dark:text-gray-50 font-bold">Date :</span> <span class="dark:text-gray-400 ml-5 text-gray-500">July 29, 2024</span>
                                 </div>
-                                <div class="mt-5">
-                                    <h1 class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85">Biography</h1>
-                                    <div class="opacity-50 dark:text-white dark:opacity-50 text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+                                <div class="flex mb-2 pb-0.5">
+                                    <span class="dark:text-gray-50 font-bold">Time :</span> <span class="dark:text-gray-400 ml-5 text-gray-500">9:00 AM - 11:00 AM</span>
+                                </div>
+                                <div>
+                                    <p class="dark:text-gray-50 font-bold block">Register Link :</p>
+                                    <p class="dark:text-blue-500 text-blue-700 underline "> https://docs.google.com/forms/d/1QWZsx-SnhzNW-hHgGllNuXs5g5cqgUnw3hZT3FClbVQ/edit</p>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- right -->
-                        <div class="pl-5">
-                            <div class="mt-1 flex justify-end">
-                                <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit Instructor</button>
-                            </div>
-                            <div class="mt-20">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Full Name :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60">John Doe</span>
-                            </div>
-                            <div class="mt-4">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Date of Birth :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60">21 / 7 /1995</span>
-                            </div>
-                            <div class="mt-4">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Gender :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60">Male</span>
-                            </div>
-                            <div class="mt-4">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Skill :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60">Javascript, Java, Python, ...</span>
-                            </div>
-                            <div class="mt-4 border-b pb-10">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Address :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60">No.977, Yone Gyi, Hleden, Yangon</span>
-                            </div>
-                            <div class="mt-4 pt-8">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">LinkedIn :</span> <span class="text-xl opacity-50  dark:opacity-60 text-blue-800 dark:text-blue-400">https://linkedin/profile/johndow345</span>
-                            </div>
-                            <div class="mt-4">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Portfolio :</span> <span class="text-xl opacity-50 dark:opacity-60 text-blue-800 dark:text-blue-400">https://example.com</span>
-                            </div>
-                            <div class="mt-12">
-                                <h1 class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85">Experience</h1>
-                                <div class="opacity-50 dark:text-white dark:opacity-50 text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+                        <div class="mx-14 px-1 mb-5">
+                            <h2 class="text-xl font-bold dark:text-gray-200 mt-5 mb-3">Understanding Cloud Computing in 2024</h2>
+                            <div class="dark:text-gray-400">
+                                <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                <p class="text-justify my-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                             </div>
                         </div>
                     </div>
-                </form>
+                    <!-- Agenda/Schedule -->
+                    <div class="col-span-4 pr-20 pt-5">
+                        <!-- Agenda/Schedule -->
+                        <div class="flex justify-between items-center mb-2 mt-5">
+                            <div class="text-base dark:text-gray-400">Agenda/Schedule</div>
+                            <div>
+                                <ion-icon name="print-outline" class="w-6 h-6 dark:text-gray-400 hover:dark:text-gray-200 cursor-pointer mt-2"></ion-icon>
+                            </div>
+                        </div>
+                        <div class="max-w-2xl h-[80vh] mx-auto bg-white dark:bg-gray-600 p-6 overflow-y-auto hide-scrollbar border-2 border-gray-300 dark:border-gray-500">
+                            <div class="px-2 py-4 grid grid-cols-3 gap-20 text-base mb-4 rounded bg-cyan-900 text-gray-200 dark:bg-blue-500 dark:text-white">
+                                <div class="col-span-1">Time</div>
+                                <div class="col-span-2">Title</div>
+                            </div>
+                            <div id="agenda">
+                                <!-- Agenda/Schedule -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+
+
 
 
     <!-- ionicons icons -->
@@ -313,7 +317,7 @@
     <!-- darkmode lightmode js -->
     <script src="./../js/darkandlight.js" type="text/javascript"></script>
     <!-- customjs -->
-    <script src="./../js/instructor.js" type="text/javascript"></script>
+    <script src="./../js/event.js" type="text/javascript"></script>
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Instructor</title>
+    <title>Event List</title>
     <!-- Tailwind output css -->
     <link href="./../css/output.css" rel="stylesheet" />
 </head>
@@ -16,7 +16,7 @@
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
             <div class="flex items-center justify-between">
                 <div class="ml-64 relative top-3 pl-3">
-                    <p class="dark:text-white text-xl">Instructor List</p>
+                    <p class="dark:text-white text-xl font-bold">Event List</p>
                 </div>
 
                 <div class="flex items-center">
@@ -36,14 +36,14 @@
                     <div class="flex items-center bg-slate-200 dark:bg-gray-700 rounded-lg cursor-pointer" data-dropdown-toggle="dropdown-user">
                         <div class="flex items-center mx-3">
                             <div>
-                                <button type="button" class="flex text-base bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
+                                <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
                                     <span class="sr-only">Open user menu</span>
                                     <img class="w-14 h-14 rounded-full select-none" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
                                 </button>
                             </div>
                             <div class="ml-3 pt-2 dark:text-white">
                                 <p class="text-base leading-none select-none">Education Portal</p>
-                                <p class="text-base leading-none text-slate-500 select-none dark:text-white dark:text-opacity-50">Admin</p>
+                                <p class="text-sm leading-none text-slate-500 select-none dark:text-white dark:text-opacity-50">Admin</p>
                                 <div class="flex pt-1">
                                     <svg class="w-4 h-4 mt-0.5 mr-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
                                         <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -58,7 +58,7 @@
                                 <ion-icon name="chevron-down-outline"></ion-icon>
                             </div>
                             <div id="dropdown-user" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-64 dark:bg-gray-700 dark:divide-gray-600">
-                                <ul class="py-2 text-base text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+                                <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
                                     <li>
                                         <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guide</a>
                                     </li>
@@ -70,7 +70,7 @@
                                     </li>
                                 </ul>
                                 <div class="py-2">
-                                    <a href="#" class="block px-4 py-2 text-base text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
                                 </div>
                             </div>
                         </div>
@@ -232,350 +232,333 @@
         </div>
     </aside>
 
-    <!-- Data Area Instructor List-->
-    <div class="pt-20 px-5 ml-64 bg-gray-300 dark:bg-gray-800 mb-8">
+    <!-- Data Area Class List-->
+    <div class="block pt-20 px-5 ml-64 bg-gray-300 dark:bg-gray-800 classlists">
         <div class="grid grid-cols-8 gap-4 mt-10">
-            <div class="bg-white col-span-6 rounded-lg px-4 py-2 dark:bg-gray-600 duration-300">
-                <div class="w-full h-20 flex relative">
-                    <form class="w-1/4 mt-4">
-                        <label for="default-search" class="mb-2 text-base font-medium text-gray-900 sr-only dark:text-white">Search</label>
+            <div class="bg-white col-span-8 rounded-lg px-4 py-2 dark:bg-gray-600 duration-300">
+                <div class="w-full h-20 flex justify-between">
+                    <div class="flex items-center mb-4 gap-5">
+                        <ul class="flex flex-wrap -mb-px">
+                            <li class="me-2">
+                                <a href="#" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg dark:text-gray-300 hover:text-gray-600 hover:border-gray-300 dark:hover:text-white">All</a>
+                            </li>
+                            <li class="me-2">
+                                <a href="#" class="inline-block p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500" aria-current="page">Webinars</a>
+                            </li>
+                            <li class="me-2">
+                                <a href="#" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg dark:text-gray-300 hover:text-gray-600 hover:border-gray-300 dark:hover:text-white">Workshops</a>
+                            </li>
+                            <li class="me-2">
+                                <a href="#" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg  dark:text-gray-300 hover:text-gray-600 hover:border-gray-300 dark:hover:text-white">Guest lectures</a>
+                            </li>
+                            <li class="me-2">
+                                <a href="#" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg  dark:text-gray-300 hover:text-gray-600 hover:border-gray-300 dark:hover:text-white">Other</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <form class="w-1/4 mt-2">
+                        <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                 <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                                 </svg>
                             </div>
-                            <input type="search" id="default-search" class="block w-full p-4 ps-10 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
-                            <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                            <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
+                            <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                         </div>
                     </form>
-
-                    <div class="h-full mt-4 ml-10 relative top-2">
-                        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-2 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Filter
-                            <svg class="w-4 h-4 ml-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M22 18.605a.75.75 0 0 1-.75.75h-5.1a2.93 2.93 0 0 1-5.66 0H2.75a.75.75 0 1 1 0-1.5h7.74a2.93 2.93 0 0 1 5.66 0h5.1a.75.75 0 0 1 .75.75m0-13.21a.75.75 0 0 1-.75.75H18.8a2.93 2.93 0 0 1-5.66 0H2.75a.75.75 0 1 1 0-1.5h10.39a2.93 2.93 0 0 1 5.66 0h2.45a.74.74 0 0 1 .75.75m0 6.6a.74.74 0 0 1-.75.75H9.55a2.93 2.93 0 0 1-5.66 0H2.75a.75.75 0 1 1 0-1.5h1.14a2.93 2.93 0 0 1 5.66 0h11.7a.75.75 0 0 1 .75.75" />
-                            </svg>
-                        </button>
-                    </div>
-
-                    <div class="h-full mt-4 ml-10 absolute top-1.5 right-0">
-                        <button type="button" class="relative text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-10 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                            <ion-icon name="add-circle-outline" class="w-5 h-5 relative top-1 right-2"></ion-icon>
-                            Add New Instructor
-                        </button>
-                    </div>
-
-                    <!-- Dropdown menu -->
-                    <div id="dropdown" class="relative z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow border-2 dark:border-gray-600 w-auto dark:bg-gray-700">
-
-                        <form class="dark:text-white px-10">
-                            <p class="text-right mt-6 text-red-500 mb-5 cursor-pointer">Clear</p>
-                            <div class="flex items-center justify-between">
-                                <p class="mt-6">ID :</p>
-                                <div class="grid grid-cols-2 gap-8">
-                                    <div>
-                                        <label for="from" class="block">From</label>
-                                        <input type="text" id="from" class="w-20 h-10 py-3 text-base dark:bg-gray-600 rounded-md" />
-                                    </div>
-                                    <div>
-                                        <label for="to" class="block">To</label>
-                                        <input type="text" id="to" class="w-20 h-10 py-3 text-base dark:bg-gray-600 rounded-md" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center justify-between">
-                                <p class="mt-4 mr-5">Instructor :</p>
-                                <div class="grid grid-cols-2 mt-3">
-                                    <select name="instructor" id="" class="w-48 col-span-2 dark:bg-gray-600 rounded-md">
-                                        <option selected disabled>Select Instructor</option>
-                                        <option value="">Instructor 1</option>
-                                        <option value="">Instructor 2</option>
-                                        <option value="">Instructor 3</option>
-                                        <option value="">Instructor 4</option>
-                                        <option value="">Instructor 5</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center justify-between">
-                                <p class="mt-4 mr-5">Email :</p>
-                                <div class="grid grid-cols-2 mt-3">
-                                    <input type="email" id="email" class="w-48 col-span-2 dark:bg-gray-600 rounded-md" placeholder="example@gmail.com" />
-                                </div>
-                            </div>
-
-                            <div class="flex items-center justify-between">
-                                <p class="mt-4 mr-5">Phone :</p>
-                                <div class="grid grid-cols-2 mt-3">
-                                    <input type="text" class="w-48 col-span-2 dark:bg-gray-600 rounded-md" placeholder="0976XXXXXXXX" />
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-10 mb-5 mt-8">
-                                <button type="button" class="w-full focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
-                                <button type="button" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Apply</button>
-                            </div>
-
-                        </form>
-                    </div>
                 </div>
 
                 <div class="relative overflow-x-auto shadow-md dark:shadow-none sm:rounded-lg ">
                     <!-- ClassList Table -->
-                    <table class=" w-full text-base text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
+                    <table class=" w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-400 dark:bg-gray-700 duration-500 dark:text-gray-400">
                             <th scope="col" class="p-4">
-                                ID
+                                No
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                FULLNAME
+                                EVENT TITLE
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                GENDER
+                                TYPE
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                EMAIL
+                                INSTRUCTOR/PRESENTER
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                PHONE
+                                DATE
                             </th>
                             <th scope="col" class="px-6 py-3 ">
-                                DETAILS
+                                TIME
                             </th>
                             <th scope="col" class="px-6 py-3 ">
-                                EDIT
+                                ACTION
+                            </th>
+                            <th scope="col" class="px-6 py-3 ">
+                                DELETE
                             </th>
                         </thead>
                         <tbody>
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <td class="w-4 p-4">
-                                    S123456
+                                    1
                                 </td>
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
+                                    Understanding Cloud Computing in 2024
                                 </th>
                                 <td class="px-6 py-4">
-                                    Male
+                                    Webinar
                                 </td>
                                 <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
+                                    Dr. Emily White
                                 </td>
                                 <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
+                                    July 20, 2024
+                                </td>
+                                <td class="px-6 py-4">
+                                    07:15 AM to 09:15 AM
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
                                     Details
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
+                                    <ion-icon name="trash-outline" class="text-red-600 w-5 h-5"></ion-icon>
                                 </td>
                             </tr>
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <td class="w-4 p-4">
-                                    S123456
+                                    2
                                 </td>
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
+                                    Understanding Cloud Computing in 2024
                                 </th>
                                 <td class="px-6 py-4">
-                                    Male
+                                    Webinar
                                 </td>
                                 <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
+                                    Dr. Emily White
                                 </td>
                                 <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
+                                    July 20, 2024
+                                </td>
+                                <td class="px-6 py-4">
+                                    07:15 AM to 09:15 AM
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
                                     Details
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
+                                    <ion-icon name="trash-outline" class="text-red-600 w-5 h-5"></ion-icon>
                                 </td>
                             </tr>
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <td class="w-4 p-4">
-                                    S123456
+                                    3
                                 </td>
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
+                                    Understanding Cloud Computing in 2024
                                 </th>
                                 <td class="px-6 py-4">
-                                    Male
+                                    Webinar
                                 </td>
                                 <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
+                                    Dr. Emily White
                                 </td>
                                 <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
+                                    July 20, 2024
+                                </td>
+                                <td class="px-6 py-4">
+                                    07:15 AM to 09:15 AM
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
                                     Details
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
+                                    <ion-icon name="trash-outline" class="text-red-600 w-5 h-5"></ion-icon>
                                 </td>
                             </tr>
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <td class="w-4 p-4">
-                                    S123456
+                                    4
                                 </td>
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
+                                    Understanding Cloud Computing in 2024
                                 </th>
                                 <td class="px-6 py-4">
-                                    Male
+                                    Webinar
                                 </td>
                                 <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
+                                    Dr. Emily White
                                 </td>
                                 <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
+                                    July 20, 2024
+                                </td>
+                                <td class="px-6 py-4">
+                                    07:15 AM to 09:15 AM
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
                                     Details
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
+                                    <ion-icon name="trash-outline" class="text-red-600 w-5 h-5"></ion-icon>
                                 </td>
                             </tr>
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <td class="w-4 p-4">
-                                    S123456
+                                    5
                                 </td>
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
+                                    Understanding Cloud Computing in 2024
                                 </th>
                                 <td class="px-6 py-4">
-                                    Male
+                                    Webinar
                                 </td>
                                 <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
+                                    Dr. Emily White
                                 </td>
                                 <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
+                                    July 20, 2024
+                                </td>
+                                <td class="px-6 py-4">
+                                    07:15 AM to 09:15 AM
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
                                     Details
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
+                                    <ion-icon name="trash-outline" class="text-red-600 w-5 h-5"></ion-icon>
                                 </td>
                             </tr>
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <td class="w-4 p-4">
-                                    S123456
+                                    6
                                 </td>
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
+                                    Understanding Cloud Computing in 2024
                                 </th>
                                 <td class="px-6 py-4">
-                                    Male
+                                    Webinar
                                 </td>
                                 <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
+                                    Dr. Emily White
                                 </td>
                                 <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
+                                    July 20, 2024
+                                </td>
+                                <td class="px-6 py-4">
+                                    07:15 AM to 09:15 AM
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
                                     Details
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
+                                    <ion-icon name="trash-outline" class="text-red-600 w-5 h-5"></ion-icon>
                                 </td>
                             </tr>
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <td class="w-4 p-4">
-                                    S123456
+                                    7
                                 </td>
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
+                                    Understanding Cloud Computing in 2024
                                 </th>
                                 <td class="px-6 py-4">
-                                    Male
+                                    Webinar
                                 </td>
                                 <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
+                                    Dr. Emily White
                                 </td>
                                 <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
+                                    July 20, 2024
+                                </td>
+                                <td class="px-6 py-4">
+                                    07:15 AM to 09:15 AM
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
                                     Details
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
+                                    <ion-icon name="trash-outline" class="text-red-600 w-5 h-5"></ion-icon>
                                 </td>
                             </tr>
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <td class="w-4 p-4">
-                                    S123456
+                                    8
                                 </td>
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
+                                    Understanding Cloud Computing in 2024
                                 </th>
                                 <td class="px-6 py-4">
-                                    Male
+                                    Webinar
                                 </td>
                                 <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
+                                    Dr. Emily White
                                 </td>
                                 <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
+                                    July 20, 2024
+                                </td>
+                                <td class="px-6 py-4">
+                                    07:15 AM to 09:15 AM
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
                                     Details
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
+                                    <ion-icon name="trash-outline" class="text-red-600 w-5 h-5"></ion-icon>
                                 </td>
                             </tr>
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <td class="w-4 p-4">
-                                    S123456
+                                    9
                                 </td>
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
+                                    Understanding Cloud Computing in 2024
                                 </th>
                                 <td class="px-6 py-4">
-                                    Male
+                                    Webinar
                                 </td>
                                 <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
+                                    Dr. Emily White
                                 </td>
                                 <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
+                                    July 20, 2024
+                                </td>
+                                <td class="px-6 py-4">
+                                    07:15 AM to 09:15 AM
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
                                     Details
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
+                                    <ion-icon name="trash-outline" class="text-red-600 w-5 h-5"></ion-icon>
                                 </td>
                             </tr>
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <td class="w-4 p-4">
-                                    S123456
+                                    10
                                 </td>
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
+                                    Understanding Cloud Computing in 2024
                                 </th>
                                 <td class="px-6 py-4">
-                                    Male
+                                    Webinar
                                 </td>
                                 <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
+                                    Dr. Emily White
                                 </td>
                                 <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
+                                    July 20, 2024
+                                </td>
+                                <td class="px-6 py-4">
+                                    07:15 AM to 09:15 AM
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
                                     Details
                                 </td>
                                 <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
+                                    <ion-icon name="trash-outline" class="text-red-600 w-5 h-5"></ion-icon>
                                 </td>
                             </tr>
                         </tbody>
@@ -620,84 +603,10 @@
                     </div>
                 </div>
             </div>
-
-
-            <!-- instructor detail card -->
-
-            <div class="bg-white col-span-2 rounded-lg px-10 pt-10 dark:bg-gray-600 duration-300 mr-5 relative py-10">
-                <div class="flex items-center gap-5">
-                    <div class="absolute top-0 right-0 pt-3 pr-5">
-                        <button type="button" class="px-2 py-2 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-base w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-500 dark:hover:text-white">
-                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                            </svg>
-                            <span class="sr-only">Close modal</span>
-                        </button>
-                    </div>
-                    <div class="relative">
-                        <img src="./../../../storages/profile1.svg" alt="profile1">
-                        <div class="absolute top-0 right-0 w-5 h-5 rounded-full bg-blue-700 flex justify-center items-center">
-                            <ion-icon name="checkmark-outline" class="text-white"></ion-icon>
-                        </div>
-
-                    </div>
-                    <div class="dark:text-white">
-                        <h3 class="font-black">Mr.Daniel Brown</h3>
-                        <span class="dark:opacity-60">Senior Software Engineer</span>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <h3 class="text-red-600 dark:text-white mt-8 mb-3 font-black">Content Information</h3>
-                        <ion-icon name="mail-outline" class="w-5 h-5 relative top-1 mr-2 dark:text-white opacity-60"></ion-icon> <span class="text-blue-700 dark:text-blue-400">deniaelbrown334@gmail.com</span>
-                    </div>
-                    <div>
-                        <ion-icon name="call-outline" class="w-5 h-5 relative top-1 mr-2 dark:text-white opacity-60"></ion-icon> <span class="dark:text-white mr-2 opacity-80">(+95)</span><span class="dark:text-white opacity-80">976XXXXXXXX</span>
-                    </div>
-                    <div>
-                        <ion-icon name="logo-linkedin" class="w-5 h-5 relative top-1 mr-2 dark:text-white opacity-60"></ion-icon> <span class="text-blue-700 dark:text-blue-400">https://linkedin/profile/danielbrown</span>
-                    </div>
-                </div>
-                <div class="mt-3">
-                    <h3 class="text-red-600 dark:text-white mt-5 mb-3 font-black">Biography</h3>
-                    <p class="dark:text-white dark:opacity-80">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                </div>
-                <div class="mt-3">
-                    <h3 class="text-red-600 dark:text-white mt-5 mb-3 font-black">Skill</h3>
-                    <div>
-                        <p class="dark:text-white dark:opacity-80 inline ">Programming Languages :</p> <span class="dark:text-blue-400 text-blue-700">Javascript, Python, Java, C++</span>
-                    </div>
-                    <div>
-                        <p class="dark:text-white dark:opacity-80 inline">Framework :</p> <span class="dark:text-blue-400 text-blue-700">React, NodeJS, Django, Spring</span>
-                    </div>
-                    <div>
-                        <p class="dark:text-white dark:opacity-80 inline">Tools & Technologies :</p> <span class="dark:text-blue-400 text-blue-700">Docker, Kubernetes, AWS, Git</span>
-                    </div>
-                </div>
-
-                <div class="mt-3">
-                    <h3 class="text-red-600 dark:text-white mt-5 mb-3 font-black inline">Experience : </h3> <span class="dark:text-blue-400 text-blue-700">10 years</span>
-                </div>
-
-                <div>
-                    <div>
-                        <h3 class="text-red-600 dark:text-white mt-5 mb-3 font-black">Address</h3>
-                        <p class="dark:text-white mr-2 opacity-80">No.977, Yone Gyi Str, Hleden, Yangon</p>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-red-600 dark:text-white mt-5 mb-3 font-black">Related Class (ID) </h3>
-                    <ul class="text-blue-700 dark:text-blue-400 list-inside list-disc">
-                        <li>C123</li>
-                        <li>C321</li>
-                        <li>C321</li>
-                    </ul>
-                </div>
-
-            </div>
         </div>
     </div>
+
+    <!-- Data Area Finished Classes -->
 
 
     <!-- ionicons icons -->
@@ -714,7 +623,7 @@
     <!-- darkmode lightmode js -->
     <script src="./../js/darkandlight.js" type="text/javascript"></script>
     <!-- customjs -->
-    <script src="./../js/instructor.js" type="text/javascript"></script>
+    <script src="./../js/student.js" type="text/javascript"></script>
 </body>
 
 </html>
