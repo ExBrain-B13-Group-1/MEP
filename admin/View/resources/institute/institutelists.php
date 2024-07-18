@@ -12,6 +12,7 @@
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
   <script src="../../resources/js/navigation.js" defer></script>
+  <script src="../../resources/js/sidebar.js" defer></script>
 </head>
 
 <body>
@@ -206,7 +207,7 @@
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
       <div class="flex justify-between items-center w-96">
         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
-          <img src="../../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
+          <img src="../../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" route='institute' />
         </a>
         <form class="w-96">
           <label for="default-search" class="mb-2 text-sm font-medium text-gray-pr sr-only">Search</label>

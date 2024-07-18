@@ -17,11 +17,11 @@
     <aside id="logo-sidebar" close="false" class="fixed z-40 w-52 h-screen transition-transform translate-x-full sm:translate-x-0 float-left" aria-label="Sidebar">
         <div class="h-full px-3 py-4 shadow-dshadow bg-white rounded-tr-md rounded-br-md relative">
             <a href="/" class="flex items-center mb-5">
-                <img src="../resources/img/LOGO.svg" class="me-3 w-fit" alt="Flowbite Logo" id="brandLogo" />
+                <img src="../../resources/img/LOGO.svg" class="me-3 w-fit" alt="Flowbite Logo" id="brandLogo" />
             </a>
             <ul class="space-y-1 font-medium">
                 <li>
-                    <a href="adminDashboard.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="../adminDashboard.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="w-5 h-5 transition duration-75" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.6172 13.6483C13.6172 12.8233 14.286 12.1545 15.111 12.1545H24.0736C24.8986 12.1545 25.5674 12.8233 25.5674 13.6483V24.1048C25.5674 24.9298 24.8986 25.5985 24.0736 25.5985H15.111C14.286 25.5985 13.6172 24.9298 13.6172 24.1048V13.6483Z" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" />
                             <path d="M1.56641 3.09863C1.56641 2.27021 2.2352 1.59863 3.06018 1.59863H7.54151C8.36649 1.59863 9.03529 2.27021 9.03529 3.09863V24.0986C9.03529 24.9271 8.36649 25.5986 7.54151 25.5986H3.06018C2.2352 25.5986 1.56641 24.9271 1.56641 24.0986V3.09863Z" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" />
@@ -205,7 +205,7 @@
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
             <div class="flex justify-between items-center w-96">
                 <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
-                    <img src="../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
+                    <img src="../../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" route='user' />
                 </a>
                 <form class="w-96">
                     <label for="default-search" class="mb-2 text-sm font-medium text-gray-pr sr-only ">Search</label>
@@ -252,7 +252,7 @@
                 </li>
                 <li class="ml-3">
                     <div class="flex items-center bg-white rounded-full pr-2">
-                        <img src="../resources/img/profile.png" alt="profile" class="rounded-full" height="100" />
+                        <img src="../../resources/img/profile.png" alt="profile" class="rounded-full" height="100" />
                         <div class="mx-3">
                             <p class="text-sm font-bold">John Smith</p>
                             <p class="text-[11px] m-0">Admin</p>

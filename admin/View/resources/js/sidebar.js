@@ -14,12 +14,18 @@ $("#sidebarControl").click(() => {
             transform: "rotate(180deg)",
         });
     }
-    isCloseSideBar();
+    console.log($("#sidebarControl").attr('route'));
+    isCloseSideBar($("#sidebarControl").attr('route'));
 });
 
-function isCloseSideBar() {
+function isCloseSideBar(type) {
+    const ROUTE = ['finance','user','institute']
+    
+    let colseLogoURL = ROUTE.includes(type) ? "../../resources/img/LOGOclose.svg" : "../resources/img/LOGOclose.svg"
+    let openLogoURL = ROUTE.includes(type) ? "../../resources/img/LOGO.svg" : "../resources/img/LOGO.svg"
+    console.log(colseLogoURL,openLogoURL);
     if ($("#logo-sidebar").attr("close") === "true") {
-        $("#brandLogo").attr("src", "../../admin/View/resources/img/LOGOclose.svg");
+        $("#brandLogo").attr("src", colseLogoURL);
         $("#navbar").css({
             width: "93.5%",
             marginLeft: '5rem'
@@ -38,7 +44,8 @@ function isCloseSideBar() {
             width: "5%",
         });
     } else {
-        $("#brandLogo").attr("src", "../../admin/View/resources/img/LOGO.svg");
+
+        $("#brandLogo").attr("src", openLogoURL);
         $("#navbar").css({
             width: "83%",
             marginLeft: '14rem'

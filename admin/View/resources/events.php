@@ -17,6 +17,7 @@
     ></script>
 
     <script src="../resources/js/navigation.js" defer></script>
+    <script src="../resources/js/sidebar.js" defer></script>
   </head>
   <body>
     <aside
