@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
   // Sample Data
   const notifications = [
     {
@@ -197,12 +198,8 @@ $(document).ready(function () {
       $("#chat-messages").append(messageHtml);
       $("#chat-input").val("");
 
-      // Scroll to the bottom of the chat
-      // console.log($('#chat-messages'));
-      // console.log($("#chat-messages")[0].offsetTop);
-      // console.log($("#chat-messages")[0].clientHeight);
-      // console.log($("#chat-messages")[0].offsetHeight);
-      $("#chat-messages").scrollTop($("#chat-messages")[0].scrollHeight);
+      // Scroll to the bottom   of the chat  
+      $('#chat-container').scrollTop($('#chat-container')[0].scrollHeight);
     }
   });
 
