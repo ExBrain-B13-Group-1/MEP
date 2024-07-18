@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit Instructor</title>
+    <title>Event - Create Event</title>
     <!-- Tailwind output css -->
     <link href="./../css/output.css" rel="stylesheet" />
 </head>   
@@ -14,7 +14,7 @@
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
         <div class="flex items-center justify-between">
             <div class="ml-64 relative top-2 pl-3">
-                <p class="text-xl dark:text-white">Edit Instructor</p>
+                <p class="text-xl dark:text-white">Create Event</p>
             </div>
 
             <div class="flex items-center">
@@ -30,14 +30,14 @@
             <div class="flex items-center bg-slate-200 dark:bg-gray-700 rounded-lg cursor-pointer" data-dropdown-toggle="dropdown-user">
                 <div class="flex items-center mx-3">
                     <div>
-                        <button type="button" class="flex text-base bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
+                        <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
                         <span class="sr-only">Open user menu</span>
                         <img class="w-14 h-14 rounded-full select-none" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
                         </button>
                     </div>
                     <div class="ml-3 pt-2 dark:text-white">
                         <p class="text-base leading-none select-none">Education Portal</p>
-                        <p class="text-base leading-none text-slate-500 select-none dark:text-white dark:text-opacity-50">Admin</p>
+                        <p class="text-sm leading-none text-slate-500 select-none dark:text-white dark:text-opacity-50">Admin</p>
                         <div class="flex pt-1">
                         <svg class="w-4 h-4 mt-0.5 mr-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13.5a6.5 6.5 0 1 0 0-13a6.5 6.5 0 0 0 0 13"/><path d="M8.702 5.222a1.332 1.332 0 0 0-1.258-.889H6.412a1.19 1.19 0 0 0-.254 2.353l1.571.344a1.334 1.334 0 0 1-.285 2.637h-.888a1.334 1.334 0 0 1-1.258-.89M7 4.333V3m0 8V9.666"/></g></svg>
                         <span class="select-none">1000</span>
@@ -47,7 +47,7 @@
                         <ion-icon name="chevron-down-outline"></ion-icon>
                     </div>
                     <div id="dropdown-user" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-64 dark:bg-gray-700 dark:divide-gray-600">
-                        <ul class="py-2 text-base text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
                             <li>
                                 <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guide</a>
                             </li>
@@ -59,7 +59,7 @@
                             </li>
                         </ul>
                         <div class="py-2">
-                            <a href="#" class="block px-4 py-2 text-base text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
                         </div>
                     </div>
                 </div>
@@ -72,19 +72,19 @@
     <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform-translate-x-full bg-white border-r border-gray-200 sm:translate-x-0  dark:border-gray-700 duration-300" aria-label="Sidebar">
         <div class="h-full px-3 overflow-y-auto bg-white dark:bg-gray-800 duration-300">
             <div class="flex items-center justify-start rtl:justify-end mb-9 mt-5">
-                <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-base text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-                    <span class="sr-only">Open sidebar</span>
-                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
-                    </svg>  
-                </button>
-                <a href="javascript:void(0);" class="flex ms-2 md:me-24">
-                    <img src="./../../../storages/" class="h-12 me-3" alt="MEP Logo" />
-                    <div class="w-52">
-                        <p class="text-base font-semibold dark:text-white">Myanmar Education</p>
-                        <p class="text-2xl font-black tracking-widest sm:text-2xl dark:text-white uppercase">Portal</p>
-                    </div>
-                </a>
+            <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                <span class="sr-only">Open sidebar</span>
+                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+                </svg>  
+            </button>
+            <a href="javascript:void(0);" class="flex ms-2 md:me-24">
+            <img src="./../../../storages/meplogo.png" class="h-12 me-3" alt="MEP Logo" />
+            <div class="">
+                    <p class="text-sm  font-semibold sm:text-sm dark:text-white">Myanmar Education</p>
+                    <p class="text-xl font-black tracking-widest sm:text-3xl dark:text-white uppercase">Portal</p>
+            </div>
+            </a>
             </div>
             <ul class="space-y-2 font-medium">
             <li>
@@ -115,7 +115,7 @@
                         <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Class Lists</a>
                         </li>
                         <li>
-                        <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Create a New Class</a>
+                        <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Create Event</a>
                         </li>
                         <li>
                         <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Delete Class</a>
@@ -177,7 +177,7 @@
                 <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                     <svg class="w-5 h-5  text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M14.5 18q-1.05 0-1.775-.725T12 15.5t.725-1.775T14.5 13t1.775.725T17 15.5t-.725 1.775T14.5 18M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V2h2v2h8V2h2v2h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5z"/></svg>
                     <span class="flex-1 ms-3 whitespace-nowrap">Notification</span>
-                    <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-base font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
+                    <span class="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
                 </a>
             </li>
 
@@ -201,161 +201,156 @@
     </aside>
     
     <!-- Data Area Class List-->
-    <div class="block pt-20 pb-8 px-5 ml-64 bg-gray-300 dark:bg-gray-800">
-        <div class="grid grid-cols-10 gap-7 mt-10 ">
-            <div class="bg-white col-span-8 col-start-2 rounded-lg px-4 py-2 dark:bg-gray-700 duration-500">
-                <form action="" method="" class="px-10">
-                    <div class="grid grid-cols-2 gap-10">
-                        <!-- left -->
-                        <div>
-                            <h1 class="text-xl mb-5 mt-5 dark:text-white font-bold">Personal Information</h1>
-                            <div class="pl-5">
-                                <div class="mt-4">
-                                    <label for="fullname" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Full Name</label>
-                                    <input type="text" id="fullname" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Full Name" required />
-                                </div>
-                                <div class="mt-4">
-                                    <label for="professional" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Position (Professional)</label>
-                                    <input type="text" id="professional" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Professional" required />
-                                </div>
-                                <div class="mt-4">
-                                    <label for="email" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Email</label>
-                                    <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Email" required />
-                                </div>
-                                <div class="mt-4 relative">
-                                    <label for="fullname" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Full Name</label>
-                                    <select name="phone" id="phone" class="absolute left-3 top-9 h-9 rounded-xl dark:bg-gray-600 dark:text-white">
-                                        <option value="myan" class="h-9">+95</option>
-                                        <option value="1" class="h-9">+111</option>
-                                        <option value="2" class="h-9">+44</option>
-                                        <option value="3" class="h-9">+34</option>
-                                        <option value="4" class="h-9">+91</option>
-                                        <option value="5" class="h-9">+15</option>
-                                    </select>
-                                    <input type="text" id="fullname" class="bg-gray-50 border pl-28 border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="976XXXXXXXX" required />
-                                </div>
-                                <div class="mt-4">
-                                    <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="datepicker-autohide4">Date of Birth</label>
-                                    <div class="relative">
-                                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
-                                            </svg>
-                                        </div>
-                                        <input id="datepicker-autohide4" datepicker datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
-                                    </div>        
-                                </div>
-                                <div class="mt-4">
-                                    <p class="dark:text-white dark:opacity-80 mb-3">Gender</p>
-                                    <div class="flex gap-10">
-                                        <div>
-                                            <input id="male" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                            <label for="male" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Male</label>
-                                        </div>
-                                        <div>
-                                            <input checked id="female" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                            <label for="female" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Female</label>
+    <div class="block pt-10 pb-8 px-5 ml-64 bg-gray-300 dark:bg-gray-800">
+        <div class="grid grid-cols-10 gap-0 mt-20">
+            <div class="bg-white col-span-10 rounded-lg dark:bg-gray-700 duration-500">
+                
+                <div class="grid grid-cols-10">
+                    <!-- Event Information -->
+                    <div class="col-span-6 px-6 py-5">
+                        <div class="grid grid-cols-2 gap-5">
+                            <div>
+                                <form action="" method="" class="px-10">
+                                    <div>
+                                        <h1 class="text-xl mb-5 mt-5 dark:text-white font-bold">Event Information</h1>
+                                        <div class="pl-5">
+                                            <div>
+                                                <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="event-photo">Event Photo</label>
+                                                <input class="block w-full text-base text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="event-photo" type="file" required>
+                                            </div>
+                                            <div class="mt-4">
+                                                <label for="event-title" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Event Title</label>
+                                                <input type="text" id="event-title" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Title" required />
+                                            </div>
+                                            <div class="mt-4">
+                                                <label for="event-type" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Event Type</label>
+                                                <div class="grid grid-cols-4 gap-3">
+                                                    <select id="event-type" class="opacity-60 dark:opacity-50 col-span-3 bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                                        <option selected disabled>Select Event Type</option>
+                                                        <option value="">Webinar</option>
+                                                        <option value="">Workshops</option>
+                                                        <option value="">Guest lectures</option>
+                                                    </select>
+                                                    <button type="button" class="h-full w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</button>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4">
+                                                <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Instructor / Presenter</label>
+                                                <div class="tags-input-container flex flex-wrap border border-gray-300 dark:border-gray-600 py-1 px-2 rounded" id="tags-input-container">
+                                                    <input type="text" id="tags-input" class="tags-input outline-none flex-grow bg-white dark:bg-gray-700 text-black dark:text-white border-0 focus:outline-none focus:ring-0" placeholder="Add Speaker">
+                                                </div>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="pt-1">
+                                <form action="">
+                                    <div class="mt-16 mb-4">
+                                        <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="datepicker-autohide2">Date</label>
+                                        <div class="relative max-w-sm">
+                                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                                                </svg>
+                                            </div>
+                                            <input id="datepicker-autohide2" datepicker datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <h1 class="text-xl mb-5 mt-10 dark:text-white font-bold">Content Information</h1>
-                            <div class="mt-4 pl-5">
-                                <label for="address" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Address</label>
-                                <input type="text" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="No. ,Street, Township, Yangon" required />
-                            </div>
-                            <div class="mt-4 pl-5">
-                                <label for="region" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">State/Region</label>
-                                <select id="region" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    <option selected disabled>Select State/Region</option>
-                                    <option value="ayeyarwady">Ayeyarwady</option>
-                                    <option value="bago">Bago</option>
-                                    <option value="chin">Chin</option>
-                                    <option value="kachin">Kachin</option>
-                                    <option value="kayah">Kayah</option>
-                                    <option value="kayin">Kayin</option>
-                                    <option value="magway">Magway</option>
-                                    <option value="mandalay">Mandalay</option>
-                                    <option value="mon">Mon</option>
-                                    <option value="rakhine">Rakhine</option>
-                                    <option value="sagaing">Sagaing</option>
-                                    <option value="shan">Shan</option>
-                                    <option value="tanintharyi">Tanintharyi</option>
-                                    <option value="yangon">Yangon</option>
-                                </select>
-                            </div>
-                            <div class="mt-4 pl-5 mb-7">
-                                <label for="region" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">City</label>
-                                <select id="region" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    <option selected disabled>Select City in Yangon</option>
-                                    <option value="dagon">Dagon</option>
-                                    <option value="hlaing">Hlaing</option>
-                                    <option value="kamayut">Kamayut</option>
-                                    <option value="kyauktada">Kyauktada</option>
-                                    <option value="lanmadaw">Lanmadaw</option>
-                                    <option value="latha">Latha</option>
-                                    <option value="mayangone">Mayangone</option>
-                                    <option value="mingaladon">Mingaladon</option>
-                                    <option value="mingalartaungnyunt">Mingalartaungnyunt</option>
-                                    <option value="north_dagon">North Dagon</option>
-                                    <option value="south_dagon">South Dagon</option>
-                                    <option value="pabedan">Pabedan</option>
-                                    <option value="sanchaung">Sanchaung</option>
-                                    <option value="tamwe">Tamwe</option>
-                                    <option value="thaketa">Thaketa</option>
-                                    <option value="thingangyun">Thingangyun</option>
-                                    <option value="yangon_downtown">Yangon Downtown</option>
-                                </select>
+                                    <div class="mr-16 pr-1.5">
+                                        <div class="grid grid-cols-2 gap-5 mb-4">
+                                            <div>
+                                                <label for="start-time" class="block mb-2 text-base font-medium text-gray-900 dark:text-white dark:opacity-80">From</label>
+                                                <div class="relative">
+                                                    <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
+                                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+                                                        </svg>
+                                                    </div>
+                                                    <input type="time" id="start-time" class="dark:opacity-50 bg-gray-50 border leading-none border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min="00:00" max="24:00" value="00:00" required />
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <label for="end-time" class="block mb-2 text-base font-medium text-gray-900 dark:text-white dark:opacity-80">To</label>
+                                                <div class="relative">
+                                                    <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
+                                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                                            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+                                                        </svg>
+                                                    </div>
+                                                    <input type="time" id="end-time" class="dark:opacity-50 bg-gray-50 border leading-none border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min="00:00" max="24:00" value="00:00" required />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mr-16 pr-1.5">
+                                        <label for="reg-form-link" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Register Form Link</label>
+                                        <input type="text" id="reg-form-link" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Title" required />
+                                    </div>
+                                </form>
                             </div>
                         </div>
-
-                        <!-- right -->
-                        <div class="pr-5">
-                            <h1 class="text-xl mb-5 mt-5 dark:text-white font-bold">Professional Information</h1>
-                            <div class="pl-5">
-                                <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="user_avatar">Class Profile Photo</label>
-                                <input class="block w-full text-base text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
-                            </div>
-                            <div class="mt-4 pl-5">                                
-                                <label for="bio" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Bio</label>
-                                <textarea id="bio" rows="4" class="resize-none block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write biography...." required></textarea>
-                            </div>
-                            <div class="mt-4 pl-5">                                
-                                <label for="education" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Education</label>
-                                <textarea id="education" rows="4" class="resize-none block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write education background...." required></textarea>
-                            </div>
-                            <div class="mt-4 pl-5">                                
-                                <label for="experience" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Experience</label>
-                                <textarea id="experience" rows="4" class="resize-none block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write experience...." required></textarea>
-                            </div>
-
-                            <div class="mt-4 pl-5">
-                                <label for="skills" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Skills</label>
-                                <input type="skills" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
-                            </div>
-                            
-                            <div class="mt-4 pl-5">
-                                <label for="linkedin" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">LinkedIn</label>
-                                <input type="linkedin" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="https://linkedin/profile/johndoe123" required />
-                            </div>
-
-                            <div class="mt-4 pl-5">
-                                <label for="Portfolio" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Portfolio</label>
-                                <input type="text" id="Portfolio" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="https://example.com" required />
-                            </div>
-
-                            <div class="mt-10 pl-5 pb-5">
-                                <div class="grid grid-cols-2 gap-14">
-                                    <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
-                                    <button type="submit" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Save Change</button>
-                                </div>
-                            </div>
+                        <div class="mx-14 px-1 mb-5">
+                            <label for="event-description" class="block mt-5 mb-2 text-base font-medium text-gray-900 dark:text-white">Description</label>
+                            <textarea id="event-description" rows="8" class="resize-none block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write event description here..."></textarea>
                         </div>
                     </div>
-                </form>
+                    <!-- Agenda/Schedule -->
+                    <div class="col-span-4 pr-20 pt-8">   
+                        <!-- Agenda/Schedule -->
+                        <div class="max-w-2xl mx-auto mb-4 ">
+                            <div class="flex justify-between items-center">
+                                <h2 class="text-xl font-bold dark:text-gray-200">Agenda/Schedule</h2>
+                                <button id="addBtn" class="bg-blue-700 text-white px-10 py-2 rounded">Add</button>
+                            </div>
+                        </div>
+                        <div class="max-w-2xl h-[60vh] mx-auto bg-white dark:bg-gray-600 p-6 overflow-y-auto border-2 border-gray-300 dark:border-gray-500">
+                            <div class="px-2 py-4 flex justify-between items-center text-base mb-4 rounded bg-cyan-900 text-gray-200 dark:bg-blue-500 dark:text-white">
+                                <div>Time / Title</div>
+                                <div class="flex gap-12">
+                                    <div class="cursor-pointer">Edit</div>
+                                    <div class="cursor-pointer">Delete</div>
+                                </div>
+                            </div>                            
+                            <div id="agendaContainer" class="space-y-4">
+                                <!-- Dynamic rows will be added here -->
+                                <div class="flex justify-between items-center dark:bg-gray-700 p-2 rounded shadow">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal for Add/Edit -->
+                        <div id="modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center invisible">
+                            <div class="bg-white p-6 rounded shadow-lg w-[30vw]">
+                                <h3 id="modalTitle" class="text-lg font-bold mb-4">Add Item</h3>
+                                <div class="mb-4">
+                                    <label class="block text-sm font-bold mb-2">Time</label>    
+                                    <input id="timeInput" type="text" class="w-full border border-gray-300 px-4 py-2 rounded">
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-sm font-bold mb-2">Title</label>
+                                    <input id="titleInput" type="text" class="w-full border border-gray-300 px-4 py-2 rounded">
+                                </div>
+                                <div id="error" class="text-red-500 mb-4 invisible">Please fill in both fields.</div>
+                                <div class="grid grid-cols-2 gap-5 justify-between ">
+                                    <button id="cancelBtn" class="bg-gray-300 text-gray-700 px-6 py-2 rounded">Cancel</button>
+                                    <button id="saveBtn" class="bg-blue-500 text-white px-6 py-2 rounded">Save</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-40 justify-between mt-10 pt-[15px]">   
+                            <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
+                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Publish</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+
+
     
     
     <!-- ionicons icons -->
@@ -372,6 +367,6 @@
     <!-- darkmode lightmode js -->
     <script src="./../js/darkandlight.js" type="text/javascript"></script>
     <!-- customjs -->
-    <script src="./../js/instructor.js" type="text/javascript"></script>
+    <script src="./../js/event.js" type="text/javascript"></script>
 </body>
 </html>

@@ -318,15 +318,15 @@
                             </div>
                             <div class="mt-4 pl-5">                                
                                 <label for="bio" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Bio</label>
-                                <textarea id="bio" rows="4" class="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write biography...." required></textarea>
+                                <textarea id="bio" rows="4" class="resize-none block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write biography...." required></textarea>
                             </div>
                             <div class="mt-4 pl-5">                                
                                 <label for="education" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Education</label>
-                                <textarea id="education" rows="4" class="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write education background...." required></textarea>
+                                <textarea id="education" rows="4" class="resize-none block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write education background...." required></textarea>
                             </div>
                             <div class="mt-4 pl-5">                                
                                 <label for="experience" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Experience</label>
-                                <textarea id="experience" rows="4" class="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write experience...." required></textarea>
+                                <textarea id="experience" rows="4" class="resize-none block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write experience...." required></textarea>
                             </div>
 
                             <div class="mt-4 pl-5">

@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./Dashboard/**/*.{html,js,php}",
     "./Common/**/*.{html,js,php}",
+    "./Event/**/*.{html,js,php}",
     "./Instructor/**/*.{html,js,php}",
     "./Student/**/*.{html,js,php}",
     "./Notification/**/*.{html,js,php}",
