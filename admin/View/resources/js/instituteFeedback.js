@@ -1,4 +1,4 @@
-// *********** Use in instituteFeedback.php ***********
+// *********** Use in institute/instituteFeedback.php ***********
 
 $(document).ready(function () {
   /* Start HPP Code 

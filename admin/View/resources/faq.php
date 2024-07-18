@@ -78,7 +78,7 @@
 
           <li>
             <a
-              href="./finance.php"
+              href="./finance/finance.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -107,7 +107,7 @@
 
           <li>
             <a
-              href="./userlists.php"
+              href="./user/userlists.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -159,7 +159,7 @@
 
           <li>
             <a
-              href="./institutelists.php"
+              href="./institute/institutelists.php"
               class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group"
             >
               <svg
@@ -304,14 +304,14 @@
             >
               <li>
                 <a
-                  href="./userFeedback.php"
+                  href="./user/userFeedback.php"
                   class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor"
                   >Users</a
                 >
               </li>
               <li>
                 <a
-                  href="./institutefeedback.php"
+                  href="./institute/instituteFeedback.php"
                   class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor"
                   >Institutes</a
                 >

@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Feedback</title>
+    <title>Institute Feedback</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="../resources/css/output.css" rel="stylesheet">
-    <script src="../resources/lib/jquery-3.7.1.js"></script>
+    <link href="../../resources/css/output.css" rel="stylesheet">
+    <script src="../../resources/lib/jquery-3.7.1.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -19,7 +19,7 @@
         aria-label="Sidebar">
         <div class="h-full px-3 py-4 shadow-dshadow bg-white rounded-tr-md rounded-br-md relative">
             <a href="/" class="flex items-center mb-5">
-                <img src="../resources/img/LOGO.svg" class="me-3 w-fit" alt="Flowbite Logo" id="brandLogo" />
+                <img src="../../resources/img/LOGO.svg" class="me-3 w-fit" alt="Flowbite Logo" id="brandLogo" />
             </a>
             <ul class="space-y-1 font-medium">
                 <li>
@@ -43,7 +43,7 @@
                 </li>
 
                 <li>
-                    <a href="finance.php"
+                    <a href="../finance/finance.php"
                         class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +57,7 @@
                 </li>
 
                 <li>
-                    <a href="userlists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="../user/userlists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -85,7 +85,7 @@
                 </li>
 
                 <li>
-                    <a href="institutelists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="../institute/institutelists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -108,7 +108,7 @@
                 </li>
 
                 <li>
-                    <a href="mailSystem.php"
+                    <a href="../mailSystem.php"
                         class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="21" viewBox="0 0 27 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -158,18 +158,18 @@
                     <ul id="dropdown-example" aria-checked="false"
                         class="hidden py-2 space-y-2 aria-[checked=true]:absolute aria-[checked=true]:left-16 aria-[checked=true]:pr-4 aria-[checked=true]:bottom-[-35px] bg-white aria-[checked=true]:shadow-dshadow rounded-md">
                         <li>
-                            <a href="userFeedback.php"
-                                class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group text-primarycolor">Users</a>
+                            <a href="../user/userFeedback.php"
+                                class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor">Users</a>
                         </li>
                         <li>
-                            <a href="instituteFeedback.php"
-                                class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor">Institutes</a>
+                            <a href="../institute/instituteFeedback.php"
+                                class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group text-primarycolor">Institutes</a>
                         </li>
                     </ul>
                 </li>
 
                 <li>
-                    <a href="page.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="../page.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -203,7 +203,7 @@
                 </li>
 
                 <li>
-                    <a href="tools.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="../tools.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -216,7 +216,7 @@
                 </li>
 
                 <li>
-                    <a href="faq.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="../faq.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -293,7 +293,7 @@
 
             <ul class="space-y-1 absolute bottom-0 font-medium w-full pr-6">
                 <li>
-                    <a href="setting.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="../setting.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -328,7 +328,7 @@
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
             <div class="flex justify-between items-center w-96">
                 <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
-                    <img src="../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
+                    <img src="../../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
                 </a>
                 <form class="w-96">
                     <label for="default-search" class="mb-2 text-sm font-medium text-gray-pr sr-only ">Search</label>
@@ -347,7 +347,7 @@
                 </form>
             </div>
             <p class="bg-gradient-to-t from-[#92A3FF] to-[#00288E] text-transparent bg-clip-text font-bold text-lg">
-                User Feedback
+                Institute Feedback
             </p>
             <ul
                 class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
@@ -397,7 +397,7 @@
                 </li>
                 <li class="ml-3">
                     <div class="flex items-center bg-white rounded-full pr-2">
-                        <img src="../resources/img/profile.png" alt="profile" class="rounded-full" height="100" />
+                        <img src="../../resources/img/profile.png" alt="profile" class="rounded-full" height="100" />
                         <div class="mx-3">
                             <p class="text-sm font-bold">John Smith</p>
                             <p class="text-[11px] m-0">Admin</p>
@@ -519,8 +519,8 @@
     </div>
     </div>
 
-    <script src="js/userFeedback.js"></script>
-    <script src="js/sidebar.js"></script>
+    <script src="../js/instituteFeedback.js"></script>
+    <script src="../js/sidebar.js"></script>
    
 </body>
 

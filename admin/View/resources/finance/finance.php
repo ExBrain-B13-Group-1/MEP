@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pending Notifications</title>
+    <title>Finance</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="../css/output.css" rel="stylesheet">
-    <script src="../lib/jquery-3.7.1.js"></script>
+    <link href="../../resources/css/output.css" rel="stylesheet">
+    <script src="../../resources/lib/jquery-3.7.1.js"></script>
+    <!-- Chart Js Link -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -17,28 +19,28 @@
     <aside id="logo-sidebar" close="false" class="fixed z-40 w-52 h-screen transition-transform translate-x-full sm:translate-x-0 float-left" aria-label="Sidebar">
         <div class="h-full px-3 py-4 shadow-dshadow bg-white rounded-tr-md rounded-br-md relative">
             <a href="/" class="flex items-center mb-5">
-                <img src="../img/LOGO.svg" class="me-3 w-fit" alt="Flowbite Logo" id="brandLogo" />
+                <img src="../../resources/img/LOGO.svg" class="me-3 w-fit" alt="Flowbite Logo" id="brandLogo" />
             </a>
             <ul class="space-y-1 font-medium">
                 <li>
-                    <a href="../adminDashboard.php" class="flex items-center p-2 text-gray-500 rounded-lg bg-primarycolor group">
+                    <a href="../adminDashboard.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="w-5 h-5 transition duration-75" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.6172 13.6483C13.6172 12.8233 14.286 12.1545 15.111 12.1545H24.0736C24.8986 12.1545 25.5674 12.8233 25.5674 13.6483V24.1048C25.5674 24.9298 24.8986 25.5985 24.0736 25.5985H15.111C14.286 25.5985 13.6172 24.9298 13.6172 24.1048V13.6483Z" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" />
                             <path d="M1.56641 3.09863C1.56641 2.27021 2.2352 1.59863 3.06018 1.59863H7.54151C8.36649 1.59863 9.03529 2.27021 9.03529 3.09863V24.0986C9.03529 24.9271 8.36649 25.5986 7.54151 25.5986H3.06018C2.2352 25.5986 1.56641 24.9271 1.56641 24.0986V3.09863Z" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" />
                             <path d="M13.6172 3.09241C13.6172 2.26743 14.286 1.59863 15.111 1.59863H24.0736C24.8986 1.59863 25.5674 2.26743 25.5674 3.09241V6.07996C25.5674 6.90494 24.8986 7.57374 24.0736 7.57374H15.111C14.286 7.57374 13.6172 6.90494 13.6172 6.07996V3.09241Z" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" />
                         </svg>
 
-                        <span class="ms-3 sideLabel text-white">Dashboard</span>
+                        <span class="ms-3 sideLabel group-hover:text-white">Dashboard</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="../finance/finance.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="../finance/finance.php" class="flex items-center p-2 text-gray-500 rounded-lg bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.5599 6.05162C20.3599 3.33295 16.9963 1.59473 13.2266 1.59473C6.59915 1.59473 1.22656 6.96731 1.22656 13.5947C1.22656 16.0615 1.97092 18.3546 3.2473 20.2614M25.2266 13.5947C25.2266 20.2222 19.854 25.5947 13.2266 25.5947C11.8412 25.5947 10.5107 25.3599 9.27259 24.9281M13.2266 18.9281H14.5599C15.4488 18.9281 17.2266 18.3947 17.2266 16.2614C17.2266 14.1281 15.4488 13.5947 14.5599 13.5947H11.8932C11.0043 13.5947 9.22656 13.0614 9.22656 10.9281C9.22656 8.79473 11.0043 8.26139 11.8932 8.26139H13.2266M13.2266 18.9281H9.22656M13.2266 18.9281V21.5947M13.2266 8.26139H17.2266M13.2266 8.26139V5.59473" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
 
-                        <span class="flex-1 ms-3 whitespace-nowrap sideLabel group-hover:text-white">Finance</span>
+                        <span class="flex-1 ms-3 whitespace-nowrap sideLabel text-white">Finance</span>
                     </a>
                 </li>
 
@@ -205,7 +207,7 @@
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
             <div class="flex justify-between items-center w-96">
                 <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
-                    <img src="../img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
+                    <img src="../../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
                 </a>
                 <form class="w-96">
                     <label for="default-search" class="mb-2 text-sm font-medium text-gray-pr sr-only ">Search</label>
@@ -220,7 +222,7 @@
                 </form>
             </div>
             <p class="bg-gradient-to-t from-[#92A3FF] to-[#00288E] text-transparent bg-clip-text font-bold text-lg">
-                Pending Notifications 
+                Finance
             </p>
             <ul class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
                 <li class="mx-1">
@@ -242,7 +244,7 @@
                     </a>
                 </li>
                 <li class="mx-1">
-                    <a href="pendingNotification.php" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                    <a href="Notification/pendingNotification.php" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                         <svg width="30" height="33" viewBox="0 0 30 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8.72435 26.2614H4.19194C2.51219 26.2614 1.67232 26.2614 1.49561 26.1311C1.29709 25.9847 1.24858 25.8983 1.22708 25.6529C1.20795 25.4343 1.7227 24.5929 2.75223 22.9102C3.81519 21.1727 4.71778 18.643 4.71778 15.0614C4.71778 13.0811 5.56156 11.1819 7.06348 9.78166C8.56542 8.38139 10.6025 7.59473 12.7265 7.59473C14.8506 7.59473 16.8876 8.38139 18.3895 9.78166C19.8916 11.1819 20.7353 13.0811 20.7353 15.0614C20.7353 18.643 21.6379 21.1727 22.7009 22.9102C23.7303 24.5929 24.2451 25.4343 24.2261 25.6529C24.2046 25.8983 24.156 25.9847 23.9575 26.1311C23.7808 26.2614 22.9409 26.2614 21.2612 26.2614H16.7309M8.72435 26.2614L8.72216 27.5947C8.72216 29.8039 10.515 31.5947 12.7265 31.5947C14.9382 31.5947 16.7309 29.8039 16.7309 27.5947V26.2614M8.72435 26.2614H16.7309" stroke="#4460EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             <circle cx="21.2266" cy="8.59473" r="8" fill="#FF5E5E" />
@@ -252,7 +254,7 @@
                 </li>
                 <li class="ml-3">
                     <div class="flex items-center bg-white rounded-full pr-2">
-                        <img src="../img/profile.png" alt="profile" class="rounded-full" height="100" />
+                        <img src="../../resources/img/profile.png" alt="profile" class="rounded-full" height="100" />
                         <div class="mx-3">
                             <p class="text-sm font-bold">John Smith</p>
                             <p class="text-[11px] m-0">Admin</p>
@@ -270,113 +272,81 @@
     <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full" id="main" aria-checked="false">
 
         <!-- code here -->
-        <div class="flex h-full">
-            <!-- User Notifications -->
-            <div id="user-content" class="tab-content active flex-1 overflow-y-auto no-scrollbar px-4 mt-5">
-                <div class="bg-white p-4 rounded-lg shadow">
-                    <div class="text-lg font-bold mb-4">New User Requested Approval Pending</div>
-                    <div class="space-y-4" id="user-notification-list">
-                        <!-- New User Notifications will be appended here dynamically -->
-                    </div>
+        <div class="text-right px-4 py-1">
+            <a href="financeHistory.php" class="text-primary-main hover:underline">History Purchased</a>
+        </div>
+        <!-- Cards -->
+        <div class="grid grid-cols-3 gap-4 mb-4 mt-10 px-4">
+            <!-- Total Income -->
+            <div class="bg-white shadow-custom-finance rounded-lg flex flex-col justify-between h-full text-right relative">
+                <div class="bg-blue-light-bg w-14 h-14 flex justify-center items-center rounded absolute -top-7 left-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2.3em" height="2.3em" class="text-primary-main" viewBox="0 0 24 24" {...$$props}>
+                        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
+                            <path d="M12 6v12m3-8.5C15 8.12 13.657 7 12 7S9 8.12 9 9.5s1.343 2.5 3 2.5s3 1.12 3 2.5s-1.343 2.5-3 2.5s-3-1.12-3-2.5" />
+                            <path d="M7 3.338A9.954 9.954 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="px-4 pt-2">
+                    <h2 class="text-lg font-semibold">Total Income</h2>
+                    <p class="text-xs mb-3">2023-2024</p>
+                    <p class="text-sm text-green-500">+12% Last Month</p>
+                </div>
+                <div class="w-full bg-primary-main text-white px-4 py-2 mt-1 rounded-b-lg">
+                    <p class="text-xl font-bold">$100,000,000</p>
                 </div>
             </div>
-
-            <!-- Institute Notifications -->
-            <div id="institute-content" class="tab-content flex-1 overflow-y-auto no-scrollbar px-4">
-                <div class="bg-white p-4 rounded-lg shadow">
-                    <div class="text-lg font-bold mb-4">Institute Requested Approval Pending</div>
-                    <div class="space-y-4" id="institute-notification-list">
-                        <!-- Institute notifications will be appended here dynamically -->
-                    </div>
+            <!-- Income by User -->
+            <div class="bg-white shadow-custom-finance rounded-lg flex flex-col justify-between h-full text-right relative">
+                <div class="bg-[#C8EBE2] w-14 h-14 flex justify-center items-center rounded absolute -top-7 left-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" class="text-[#1B5F4E]" viewBox="0 0 24 24" {...$$props}>
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.1 9.1 0 0 0 3.741-.479q.01-.12.01-.241a3 3 0 0 0-4.692-2.478m.94 3.197l.001.031q0 .337-.037.666A11.94 11.94 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6 6 0 0 1 6 18.719m12 0a5.97 5.97 0 0 0-.941-3.197m0 0A6 6 0 0 0 12 12.75a6 6 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72a9 9 0 0 0 3.74.477m.94-3.197a5.97 5.97 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0a3 3 0 0 1 6 0m6 3a2.25 2.25 0 1 1-4.5 0a2.25 2.25 0 0 1 4.5 0m-13.5 0a2.25 2.25 0 1 1-4.5 0a2.25 2.25 0 0 1 4.5 0" />
+                    </svg>
+                </div>
+                <div class="px-4 pt-2">
+                    <h2 class="text-lg font-semibold">Income by User</h2>
+                    <p class="text-xs mb-3">2023-2024</p>
+                    <p class="text-sm text-red-500">-2% Last Month</p>
+                </div>
+                <div class="w-full bg-[#1B5F4E] text-white px-4 py-2 mt-1 rounded-b-lg">
+                    <p class="text-xl font-bold">$100,000,000</p>
                 </div>
             </div>
-
-            <!-- Modal For Cancel Or Confirm -->
-            <div id="confirmation-modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
-                <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
-                    <h2 class="text-xl font-bold mb-4" id="modal-title"></h2>
-                    <p id="modal-message" class="mb-4"></p>
-                    <div class="flex justify-end">
-                        <button class="bg-gray-500 text-white px-4 py-2 rounded mr-2" id="cancel-button">Cancel</button>
-                        <button class="bg-primary-main text-white px-4 py-2 rounded" id="confirm-button">Confirm</button>
-                    </div>
+            <!-- Income by Institute -->
+            <div class="bg-white shadow-custom-finance rounded-lg flex flex-col justify-between h-full text-right relative">
+                <div class="bg-[#F5EFB9] w-14 h-14 flex justify-center items-center rounded absolute -top-7 left-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" class="text-[#C9B926]" viewBox="0 0 24 24" {...$$props}>
+                        <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor">
+                            <path d="M2 2h14c1.886 0 2.828 0 3.414.586S20 4.114 20 6v6c0 1.886 0 2.828-.586 3.414S17.886 16 16 16H9m1-9.5h6M2 17v-4c0-.943 0-1.414.293-1.707S3.057 11 4 11h2m-4 6h4m-4 0v5m4-5v-6m0 6v5m0-11h6" />
+                            <path d="M6 6.5a2 2 0 1 1-4 0a2 2 0 0 1 4 0" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="px-4 pt-2">
+                    <h2 class="text-lg font-semibold">Income by Institute</h2>
+                    <p class="text-xs mb-3">2023-2024</p>
+                    <p class="text-sm text-green-500">+14% Last Month</p>
+                </div>
+                <div class="w-full bg-[#E0CE2C] text-white px-4 py-2 mt-1 rounded-b-lg">
+                    <p class="text-xl font-bold">$100,000,000</p>
                 </div>
             </div>
-
-            <!-- Tabs -->
-            <div class="flex flex-col justify-center space-y-4 border-l border-gray-400 px-4">
-                <button id="user-tab" class="tab-button  text-dark-blue font-bold text-xl px-4 py-2 rounded">User
-                    <span class="px-2 py-1 rounded-full text-sm bg-red-500 text-white relative bottom-3">3</span></button>
-                <button id="institute-tab" class="tab-button  text-gray-700 px-4 py-2 rounded">Institute <span class="px-2 py-1 rounded-full text-sm bg-red-500 text-white relative bottom-3">5</span></button>
-            </div>
-
         </div>
 
-
+        <!-- Chart -->
+        <div id="chart-container" class="bg-white shadow-lg rounded-lg py-4 px-20 mx-4 ">
+            <div id="year-controls" class="flex justify-end items-center mb-4">
+                <button id="prev-year" class="p-2 rounded transform transition-transform duration-200 hover:scale-110">&lt;</button>
+                <span id="current-year" class="mx-4 text-lg font-bold">2024</span>
+                <button id="next-year" class="p-2 rounded transform transition-transform duration-200 hover:scale-110">&gt;</button>
+            </div>
+            <canvas id="financeChart"></canvas>
+        </div>
     </div>
     </div>
 
-    <script src="../js/registeredNoti.js"></script>
-   <script>
-    
-$("#sidebarControl").click(() => {
-    if ($("#logo-sidebar").attr("close") === "true") {
-        $("#dropdown-example").attr("aria-checked", "false");
-        $("#logo-sidebar").attr("close", "false");
-
-        $("#sidebarControl").css({
-            transform: "rotate(0)",
-        });
-    } else {
-        $("#logo-sidebar").attr("close", "true");
-        $("#dropdown-example").attr("aria-checked", "true");
-        $("#sidebarControl").css({
-            transform: "rotate(180deg)",
-        });
-    }
-    isCloseSideBar();
-});
-
-function isCloseSideBar() {
-    if ($("#logo-sidebar").attr("close") === "true") {
-        $("#brandLogo").attr("src", "../img/LOGOclose.svg");
-        $("#navbar").css({
-            width: "93.5%",
-            marginLeft: '5rem'
-        });
-        $(".sideLabel").css({
-            display: "none"
-        });
-        $(".sideLabel").parent().css({
-            justifyContent: "center"
-        });
-        $("#main").attr("aria-checked", "true");
-        $("#brandLogo").css({
-            size: "100",
-        });
-        $("#logo-sidebar").css({
-            width: "5%",
-        });
-    } else {
-        $("#brandLogo").attr("src", "../img/LOGO.svg");
-        $("#navbar").css({
-            width: "83%",
-            marginLeft: '14rem'
-        });
-        $(".sideLabel").css({
-            display: "block"
-        });
-        $("#main").attr("aria-checked", "false");
-        $(".sideLabel").parent().css({
-            justifyContent: "start"
-        });
-        $("#logo-sidebar").css({
-            width: "15.5%",
-        });
-    }
-}
-
-   </script>
+    <script src="../js/finance.js"></script>
+    <script src="../js/sidebar.js"></script>
 </body>
 
 </html>

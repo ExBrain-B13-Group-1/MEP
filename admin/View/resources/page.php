@@ -43,7 +43,7 @@
                 </li>
 
                 <li>
-                    <a href="finance.php"
+                    <a href="finance/finance.php"
                         class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +57,7 @@
                 </li>
 
                 <li>
-                    <a href="userlists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="user/userlists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -85,7 +85,7 @@
                 </li>
 
                 <li>
-                    <a href="institutelists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="institute/institutelists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -158,11 +158,11 @@
                     <ul id="dropdown-example" aria-checked="false"
                         class="hidden py-2 space-y-2 aria-[checked=true]:absolute aria-[checked=true]:left-16 aria-[checked=true]:pr-4 aria-[checked=true]:bottom-[-35px] bg-white aria-[checked=true]:shadow-dshadow rounded-md">
                         <li>
-                            <a href="userFeedback.php"
+                            <a href="user/userFeedback.php"
                                 class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group text-primarycolor">Users</a>
                         </li>
                         <li>
-                            <a href="instituteFeedback.php"
+                            <a href="institute/instituteFeedback.php"
                                 class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor">Institutes</a>
                         </li>
                     </ul>

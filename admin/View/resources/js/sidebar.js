@@ -19,7 +19,7 @@ $("#sidebarControl").click(() => {
 
 function isCloseSideBar() {
     if ($("#logo-sidebar").attr("close") === "true") {
-        $("#brandLogo").attr("src", "../../../admin/View/resources/img/LOGOclose.svg");
+        $("#brandLogo").attr("src", "../../admin/View/resources/img/LOGOclose.svg");
         $("#navbar").css({
             width: "93.5%",
             marginLeft: '5rem'
@@ -38,7 +38,7 @@ function isCloseSideBar() {
             width: "5%",
         });
     } else {
-        $("#brandLogo").attr("src", "../../../admin/View/resources/img/LOGO.svg");
+        $("#brandLogo").attr("src", "../../admin/View/resources/img/LOGO.svg");
         $("#navbar").css({
             width: "83%",
             marginLeft: '14rem'

@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Institute Feedback</title>
+    <title>Finance History Purchased</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="../resources/css/output.css" rel="stylesheet">
-    <script src="../resources/lib/jquery-3.7.1.js"></script>
+    <link href="../../resources/css/output.css" rel="stylesheet">
+    <script src="../../resources/lib/jquery-3.7.1.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -19,11 +19,11 @@
         aria-label="Sidebar">
         <div class="h-full px-3 py-4 shadow-dshadow bg-white rounded-tr-md rounded-br-md relative">
             <a href="/" class="flex items-center mb-5">
-                <img src="../resources/img/LOGO.svg" class="me-3 w-fit" alt="Flowbite Logo" id="brandLogo" />
+                <img src="../../resources/img/LOGO.svg" class="me-3 w-fit" alt="Flowbite Logo" id="brandLogo" />
             </a>
             <ul class="space-y-1 font-medium">
                 <li>
-                    <a href="adminDashboard.php"
+                    <a href="../adminDashboard.php"
                         class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="w-5 h-5 transition duration-75" width="27" height="27" viewBox="0 0 27 27"
                             fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,8 +43,7 @@
                 </li>
 
                 <li>
-                    <a href="finance.php"
-                        class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="../finance/finance.php" class="flex items-center p-2 text-gray-500 rounded-lg bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -52,12 +51,12 @@
                                 stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
 
-                        <span class="flex-1 ms-3 whitespace-nowrap sideLabel group-hover:text-white">Finance</span>
+                        <span class="flex-1 ms-3 whitespace-nowrap sideLabel text-white">Finance</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="userlists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="../user/userlists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -85,7 +84,7 @@
                 </li>
 
                 <li>
-                    <a href="institutelists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="../institute/institutelists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -108,7 +107,7 @@
                 </li>
 
                 <li>
-                    <a href="mailSystem.php"
+                    <a href="../mailSystem.php"
                         class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="21" viewBox="0 0 27 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -126,7 +125,7 @@
 
                 <li class="relative">
                     <a href="#"
-                        class="flex items-center w-full p-2 text-base text-gray-500 transition duration-75 rounded-lg group bg-primarycolor"
+                        class="flex items-center w-full p-2 text-base text-gray-500 transition duration-75 rounded-lg group hover:bg-primarycolor"
                         aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white"
                             width="25" height="22" viewBox="0 0 25 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -148,7 +147,7 @@
                         </svg>
 
                         <span
-                            class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap sideLabel text-white">Feedback</span>
+                            class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap sideLabel group-hover:text-white">Feedback</span>
                         <svg class="w-3 h-3 sideLabel" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 10 6">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -158,18 +157,18 @@
                     <ul id="dropdown-example" aria-checked="false"
                         class="hidden py-2 space-y-2 aria-[checked=true]:absolute aria-[checked=true]:left-16 aria-[checked=true]:pr-4 aria-[checked=true]:bottom-[-35px] bg-white aria-[checked=true]:shadow-dshadow rounded-md">
                         <li>
-                            <a href="userFeedback.php"
+                            <a href="../user/userFeedback.php"
                                 class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor">Users</a>
                         </li>
                         <li>
-                            <a href="instituteFeedback.php"
-                                class="flex items-center w-full p-2 transition duration-75 rounded-lg pl-11 group text-primarycolor">Institutes</a>
+                            <a href="../institute/instituteFeedback.php"
+                                class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor">Institutes</a>
                         </li>
                     </ul>
                 </li>
 
                 <li>
-                    <a href="page.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="../page.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -203,7 +202,7 @@
                 </li>
 
                 <li>
-                    <a href="tools.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="../tools.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -216,7 +215,7 @@
                 </li>
 
                 <li>
-                    <a href="faq.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="../faq.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -293,7 +292,7 @@
 
             <ul class="space-y-1 absolute bottom-0 font-medium w-full pr-6">
                 <li>
-                    <a href="setting.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                    <a href="../setting.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -328,7 +327,7 @@
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
             <div class="flex justify-between items-center w-96">
                 <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
-                    <img src="../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
+                    <img src="../../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
                 </a>
                 <form class="w-96">
                     <label for="default-search" class="mb-2 text-sm font-medium text-gray-pr sr-only ">Search</label>
@@ -347,7 +346,7 @@
                 </form>
             </div>
             <p class="bg-gradient-to-t from-[#92A3FF] to-[#00288E] text-transparent bg-clip-text font-bold text-lg">
-                Institute Feedback
+                Finance History
             </p>
             <ul
                 class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
@@ -397,7 +396,7 @@
                 </li>
                 <li class="ml-3">
                     <div class="flex items-center bg-white rounded-full pr-2">
-                        <img src="../resources/img/profile.png" alt="profile" class="rounded-full" height="100" />
+                        <img src="../../resources/img/profile.png" alt="profile" class="rounded-full" height="100" />
                         <div class="mx-3">
                             <p class="text-sm font-bold">John Smith</p>
                             <p class="text-[11px] m-0">Admin</p>
@@ -413,115 +412,77 @@
     </nav>
 
 
-    <div class="absolute right-0 top-16 px-10 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full" id="main"
+    <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full" id="main"
         aria-checked="false">
 
         <!-- code here -->
-        <!-- Dashboard Flex Container -->
-        <div class="flex mt-4 space-x-4">
-            <div class="grid grid-cols-6 gap-6">
-                <!-- Total Feedback -->
-                <div
-                    class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
-                    <div class="text-primary-main text-left mb-3">Total Feedback</div>
-                    <div class="text-4xl text-dark-blue font-bold text-left">10</div>
-                </div>
-                <!-- Unread -->
-                <div
-                    class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
-                    <div class="text-primary-main text-left mb-3">Unread</div>
-                    <div class="text-4xl text-dark-blue font-bold text-left">5</div>
-                </div>
-                <!-- Read -->
-                <div
-                    class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
-                    <div class="text-primary-main text-left mb-3">Total Feedback</div>
-                    <div class="text-4xl text-dark-blue font-bold text-left">5</div>
-                </div>
-                <!-- Report -->
-                <div
-                    class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
-                    <div class="text-primary-main text-left mb-3">Report</div>
-                    <div class="text-4xl text-red-600 font-bold text-left">2</div>
-                </div>
-                <!-- Sort -->
-                <div class="col-span-2 bg-card-bg py-2 px-4 rounded-lg shadow-custom">
-                    <div class="flex">
-                        <div class="border-r pr-10">
-                            <h3 class="text-lg font-semibold text-primary-main">Sort</h3>
-                            <div>
-                                <label class="inline-flex items-center mt-1">
-                                    <input type="radio" name="sort" value="read" class="form-radio"
-                                        checked>
-                                    <span class="ml-2 text-sm">Read</span>
-                                </label>
-                            </div>
-                            <div>
-                                <label class="inline-flex items-center">
-                                    <input type="radio" name="sort" value="unread" class="form-radio">
-                                    <span class="ml-2 text-sm">Unread</span>
-                                </label>
-                            </div>
-                            <div>
-                                <label class="inline-flex items-center">
-                                    <input type="radio" name="sort" value="report" class="form-radio">
-                                    <span class="ml-2 text-sm">Report</span>
-                                </label>
-                            </div>
-                            <div>
-                                <label class="inline-flex items-center">
-                                    <input type="radio" name="sort" value="replay" class="form-radio">
-                                    <span class="ml-2 text-sm">Replay</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-center px-4">
-                            <label for="start-date" class="text-sm font-medium">Start Date</label>
-                            <input type="date" id="start-date"
-                                class="mt-1 mb-2 px-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-main">
-                            <label for="end-date" class="text-sm font-medium">End Date</label>
-                            <input type="date" id="end-date"
-                                class="mt-1 px-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-main">
-                        </div>
+         
+        <!-- Go Back To Finance -->
+        <div class="text-right px-4 py-1">
+            <a href="finance.php" class="text-primary-main hover:underline">Back</a>
+        </div>
+        <div class="container mx-auto p-4">
+            <div class="flex justify-between items-center mb-4">
+                <div class="flex items-center space-x-4">
+                    <!-- Search & Filter -->
+                    <div class="relative">
+                        <input type="text" class="border border-dark-blue px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none" placeholder="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue" viewBox="0 0 24 24">
+                            <g fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="7" />
+                                <path stroke-linecap="round" d="M11 8a3 3 0 0 0-3 3m12 9l-3-3" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="relative">
+                        <button id="filter-button" class="border border-dark-blue px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none">Filter</button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue" viewBox="0 0 16 16" {...$$props}>
+                            <path fill="currentColor" d="M6 1a3 3 0 0 0-2.83 2H0v2h3.17a3.001 3.001 0 0 0 5.66 0H16V3H8.83A3 3 0 0 0 6 1M5 4a1 1 0 1 1 2 0a1 1 0 0 1-2 0m5 5a3 3 0 0 0-2.83 2H0v2h7.17a3.001 3.001 0 0 0 5.66 0H16v-2h-3.17A3 3 0 0 0 10 9m-1 3a1 1 0 1 1 2 0a1 1 0 0 1-2 0" />
+                        </svg>
                     </div>
                 </div>
             </div>
+
+            <!-- Start Table -->
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white shadow-md rounded-lg">
+                    <thead>
+                        <tr class="bg-gray-200 text-gray-600 text-left text-sm leading-normal">
+                            <th class="py-3 px-6">ID</th>
+                            <th class="py-3 px-6">Name</th>
+                            <th class="py-3 px-6">Date</th>
+                            <th class="py-3 px-6">Coin</th>
+                            <th class="py-3 px-6">Class Fee</th>
+                            <th class="py-3 px-6">Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body" class="text-gray-600 text-sm font-light">
+                        <!-- Rows will be inserted here by jQuery -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-center mt-4">
+                <nav aria-label="Page navigation">
+                    <ul id="pagination" class="inline-flex items-center -space-x-px">
+                        <!-- Pagination buttons will be inserted here by jQuery -->
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div class="rounded-lg py-6 w-full flex space-x-6">
-            <div class="w-4/6">
-                <!-- Report and feedback items container -->
-                <div id="report-feedback-container"></div>
-            </div>
-            <div class="w-2/6 bg-white p-6 rounded-lg shadow-md text-sm hidden " id="mailCard">
-                <h2 id="message-to" class="text-base font-semibold mb-2">To: abc@gmail.com</h2>
-                <h3 id="message-subject" class="font-semibold mb-4">Subject: Review Report Result</h3>
-                <div id="message-content" class="text-sm text-gray-700">
-                    <p>We hope this message finds you well.</p>
-                    <p>We are writing to inform you about the outcome of our assessment regarding the review reported by your institute.</p>
-                    <br>
-                    <p>After thoroughly evaluating the reported review, we have determined that it <span class="text-dark-blue font-semibold">does not infringe</span> on any guidelines and does not contain any inappropriate content.</p>
-                    <br>
-                    <p>We appreciate your understanding in this matter. Should you have any further questions or require additional assistance, please do not hesitate to contact us.</p>
-                    <br>
-                    <p>Thank you for your cooperation.</p>
-                    <p>Best regards,</p>
-                    <p>Myanmar Education Portal</p>
-                    <p>Admin</p>
-                </div>
-                <button class="bg-dark-blue text-white py-2 px-4 rounded-lg mt-4 flex items-center">
-                    <span>Send</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M2.94 5.94a1 1 0 000 1.41l8.72 8.72a1 1 0 001.41-1.41l-8.72-8.72a1 1 0 00-1.41 0zm0 2.12a1 1 0 011.41 0l5.24 5.24-6.65 2.21a.75.75 0 01-.95-.95l2.21-6.65zm6.17 7.96l2.93-9.13 4.9 4.9-7.83 4.23z"/>
-                    </svg>
-                </button>
-            </div>
+
+        <!-- For Detail Card -->
+        <div id="detail-view"
+            class="fixed bottom-0 right-0 m-4 px-10 py-5 bg-white border border-gray-300 rounded-lg shadow-lg hidden">
+            <!-- Detail content will be inserted here by jQuery -->
         </div>
     </div>
     </div>
 
-    <script src="js/instituteFeedback.js"></script>
-    <script src="js/sidebar.js"></script>
-   
+    <script src="../js/financeHistory.js"></script>
+    <script src="../js/sidebar.js"></script>
+  
 </body>
 
 </html>

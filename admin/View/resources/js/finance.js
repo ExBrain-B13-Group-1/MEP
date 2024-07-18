@@ -1,4 +1,4 @@
-// *********** Use in finance.php ***********
+// *********** Use in finance/finance.php ***********
 
 $(document).ready(function () {
   /* Start HPP Code 
