@@ -269,26 +269,26 @@
   </nav>
 
   <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%] h-[90%] flex p-3" id="main" aria-checked="false">
-    <div class="w-[25%] h-full flex justify-start items-center border-r-2 border-gray-200 mr-2">
-      <div class="flex flex-col justify-center items-start w-fit" id="settingMenuContainer">
-        <button aria-active="true" class="text-xl my-3 text-gray-400 aria-[active=true]:text-2xl aria-[active=true]:text-primarycolor" onclick="settingMenu('general')">
+    <div class="w-[20%] h-full flex justify-start items-center border-r-2 border-gray-200 mr-2">
+      <div class="flex flex-col justify-center text-lg items-start w-fit" id="settingMenuContainer">
+        <button aria-active="true" class="my-3 text-gray-400 aria-[active=true]:text-xl aria-[active=true]:text-primarycolor" onclick="settingMenu('general')">
           General
         </button>
-        <button aria-active="false" class="text-xl my-3 text-gray-400 aria-[active=true]:text-2xl aria-[active=true]:text-primarycolor" onclick="settingMenu('account')">
+        <button aria-active="false" class="my-3 text-gray-400 aria-[active=true]:text-xl aria-[active=true]:text-primarycolor" onclick="settingMenu('account')">
           Account & Security
         </button>
-        <button aria-active="false" class="text-xl my-3 text-gray-400 aria-[active=true]:text-2xl aria-[active=true]:text-primarycolor" onclick="settingMenu('privacy')">
+        <button aria-active="false" class="my-3 text-gray-400 aria-[active=true]:text-xl aria-[active=true]:text-primarycolor" onclick="settingMenu('privacy')">
           Privacy & Policy
         </button>
-        <button aria-active="false" class="text-xl my-3 text-gray-400 aria-[active=true]:text-2xl aria-[active=true]:text-primarycolor" onclick="settingMenu('themes')">
+        <button aria-active="false" class="my-3 text-gray-400 aria-[active=true]:text-xl aria-[active=true]:text-primarycolor" onclick="settingMenu('themes')">
           Themes & Link Change
         </button>
-        <button aria-active="false" class="text-xl my-3 text-gray-400 aria-[active=true]:text-2xl aria-[active=true]:text-primarycolor" onclick="settingMenu('maintenance')">
+        <button aria-active="false" class="my-3 text-gray-400 aria-[active=true]:text-xl aria-[active=true]:text-primarycolor" onclick="settingMenu('maintenance')">
           Maintenance
         </button>
       </div>
     </div>
-    <div class="w-[75%] h-full overflow-y-auto">
+    <div class="w-[80%] h-full overflow-y-auto">
       <!--! General -->
       <div class="w-full" id="generalSetting">
         <div class="p-3">

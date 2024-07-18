@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    font-family: roboto;
+}
+@font-face {
+    font-family: roboto;
+    src: url(assets/fonts/Roboto-Regular.ttf);
+}
+.details-container{
+    display: flex;
+    justify-content: center;
+    background-color: yellowgreen;
+}
+.class-details-main{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    width: 80%;
+}
+.page-navigation{
+    display: flex;
+    vertical-align: middle;
+}
+.main-container{
+    margin-top: 4vh;
+    display: flex;
+    justify-content: space-between;
+}
+.left-details-container{
+    width: 33%;
+}
+.left-details-container img{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    display: block;
+}
+.details-text{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+.details-fee{
+    font-weight: bold;
+    font-size: 0.8em;
+    margin-left: 2vh;
+}
+.image-enroll-btn{
+    color: var(--primary-bg-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 0.8em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: 2vh;
+    background-color: var(--primary-color);
+}
+
+/* end of left details container */
+/* start of right details container */
+.right-details-container{
+    border: 1px solid white;
+    color: var(--primary-bg-color);
+    width: 63%;
+}
+.details-title{
+    margin-bottom: 10px;
+}
+.details-body-text{
+    margin-bottom: 10px;
+}
+.institute{
+    margin-bottom: 5px;
+}
+.rating{
+    display: flex;
+    margin-bottom: 10px;
+}
+.star-icons{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.total-ratings{
+    margin-right: 5px;
+}
+.instructor{
+    margin-bottom: 5px;
+}
+.start-date-container,.end-date-container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+.start-date-value,.end-date-value{
+    margin-left: 5px;
+}
+.end-date-container{
+    margin-bottom: 15px;
+}
+.deadline-container{
+    display: flex;
+}
+.deadline{
+    margin-left: 5px;
+}
+.coupon-container{
+    margin-top: 15px;
+    border: 1px solid white;
+    display: flex;
+    width: 345px;
+    height: 40.07px;
+}
+.coupon-code{
+    width: 70%;
+}
+.apply-coupon{
+    width: 30%;
+}
+/* end of right-details container */
+/* Start of Description-container */
+.middle-container{
+    display: flex;
+    justify-content: center;
+}
+.description-container{
+    margin-top: 2vh;
+    width: 80%;
+}
+/* End of Description container */
+.enrolled-classes{
+    display: flex;
+    justify-content: center;
+}
+.enrolled-classes-container{
+    margin-top: 4vh;
+    width: 80%;
+}
+.enrolled-classes-details{
+    border: 1px solid black;
+    display: flex;
+    height: 100px;
+}
+.enrolled-classes-image-container img{
+    height: 100%;
+}  
+.enrolled-classes-text{
+    display: flex;
+    flex-direction: column;
+}
+.enrolled-classes-details-instructor,.enrolled-classes-details-start-date,.enrolled-classes-details-end-date{
+    display: flex;
+    flex-direction: row;
+}
