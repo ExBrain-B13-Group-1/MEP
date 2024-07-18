@@ -5,6 +5,16 @@ $(document).ready(function () {
          .............. 
          ..............*/
 
+  // Thousand Separator Format
+  function formatAmount(amount) {
+    return amount.toLocaleString();
+  }
+
+  // Format the numbers
+  $("#total-institutes").text(formatAmount(1960));
+  $("#total-users").text(formatAmount(6942));
+  $("#amount").text(formatAmount(5000));
+  
   // Bar Chart Fpr Weekly Visitors
   const barCtx = document.getElementById("bar-chart").getContext("2d");
   console.log(barCtx);
@@ -220,15 +230,9 @@ $(document).ready(function () {
 
   // Sample Data For Institute's Ad Progress
   var subscriptions = {
-    1: [
-      { title: "Limit", start: "2024-07-01", end: "2024-07-12" },
-    ],
-    2: [
-      { title: "Limit", start: "2024-07-01", end: "2024-07-31" },
-    ],
-    3: [
-      { title: "Limit", start: "2024-07-15", end: "2024-07-20" },
-    ],
+    1: [{ title: "Limit", start: "2024-07-01", end: "2024-07-12" }],
+    2: [{ title: "Limit", start: "2024-07-01", end: "2024-07-31" }],
+    3: [{ title: "Limit", start: "2024-07-15", end: "2024-07-20" }],
   };
 
   // Make logo a little big when got clicked

@@ -269,8 +269,8 @@
 
     <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full" id="main" aria-checked="false">
 
-        <!-- code here -->
-        <div class="flex h-full">
+  <!-- code here -->
+  <div class="flex h-full">
             <!-- User Notifications -->
             <div id="user-content" class="tab-content active flex-1 overflow-y-auto no-scrollbar px-4 mt-5">
                 <div class="bg-white p-4 rounded-lg shadow">
@@ -282,7 +282,7 @@
             </div>
 
             <!-- Institute Notifications -->
-            <div id="institute-content" class="tab-content flex-1 overflow-y-auto no-scrollbar px-4">
+            <div id="institute-content" class="tab-content flex-1 overflow-y-auto no-scrollbar px-4 mt-5">
                 <div class="bg-white p-4 rounded-lg shadow">
                     <div class="text-lg font-bold mb-4">Institute Requested Approval Pending</div>
                     <div class="space-y-4" id="institute-notification-list">
@@ -311,11 +311,8 @@
             </div>
 
         </div>
-
-
     </div>
     </div>
-
     <script src="../js/registeredNoti.js"></script>
    <script>
     
