@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.4.6 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.4 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -1116,6 +1116,10 @@ html {
   bottom: 0px;
 }
 
+.bottom-2 {
+  bottom: 0.5rem;
+}
+
 .bottom-2\.5 {
   bottom: 0.625rem;
 }
@@ -1130,6 +1134,10 @@ html {
 
 .end-0 {
   inset-inline-end: 0px;
+}
+
+.end-2 {
+  inset-inline-end: 0.5rem;
 }
 
 .end-2\.5 {
@@ -1404,6 +1412,10 @@ html {
   margin-left: 16rem;
 }
 
+.mr-0 {
+  margin-right: 0px;
+}
+
 .mr-0\.5 {
   margin-right: 0.125rem;
 }
@@ -1628,6 +1640,10 @@ html {
   height: 85vh;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .h-full {
   height: 100%;
 }
@@ -1696,6 +1712,10 @@ html {
   width: 1rem;
 }
 
+.w-40 {
+  width: 10rem;
+}
+
 .w-48 {
   width: 12rem;
 }
@@ -1726,14 +1746,6 @@ html {
 
 .w-full {
   width: 100%;
-}
-
-.w-3\/4 {
-  width: 75%;
-}
-
-.w-40 {
-  width: 10rem;
 }
 
 .max-w-2xl {
@@ -2286,7 +2298,7 @@ html {
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
-  
+
 .bg-opacity-90 {
   --tw-bg-opacity: 0.9;
 }
@@ -2301,6 +2313,11 @@ html {
 
 .bg-center {
   background-position: center;
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .p-1 {
@@ -2447,6 +2464,10 @@ html {
   padding-bottom: 2rem;
 }
 
+.pb-0 {
+  padding-bottom: 0px;
+}
+
 .pb-0\.5 {
   padding-bottom: 0.125rem;
 }
@@ -2475,6 +2496,10 @@ html {
   padding-bottom: 2rem;
 }
 
+.pe-3 {
+  padding-inline-end: 0.75rem;
+}
+
 .pe-3\.5 {
   padding-inline-end: 0.875rem;
 }
@@ -2501,6 +2526,10 @@ html {
 
 .pl-5 {
   padding-left: 1.25rem;
+}
+
+.pr-1 {
+  padding-right: 0.25rem;
 }
 
 .pr-1\.5 {
@@ -3593,6 +3622,15 @@ html {
     margin-inline-end: 6rem;
   }
 
+  .md\:ms-2 {
+    margin-inline-start: 0.5rem;
+  }
+
+  .md\:space-x-2 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+  }
 
   .md\:space-y-7 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
