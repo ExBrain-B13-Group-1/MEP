@@ -4635,6 +4635,11 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.dark\:focus\:border-white:focus:is(.dark *) {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
 .dark\:focus\:ring-blue-800:focus:is(.dark *) {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(30 64 175 / var(--tw-ring-opacity));
@@ -4648,6 +4653,11 @@ body {
 .dark\:focus\:ring-red-900:focus:is(.dark *) {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(127 29 29 / var(--tw-ring-opacity));
+}
+
+.dark\:focus\:ring-white:focus:is(.dark *) {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity));
 }
 
 .group:hover .dark\:group-hover\:text-white:is(.dark *) {
@@ -4676,6 +4686,16 @@ body {
 }
 
 .aria-\[ative\=true\]\:dark\:text-primarycolor:is(.dark *)[aria-ative=true] {
+  --tw-text-opacity: 1;
+  color: rgb(68 96 239 / var(--tw-text-opacity));
+}
+
+.dark\:aria-\[active\=true\]\:text-primarycolor[aria-active=true]:is(.dark *) {
+  --tw-text-opacity: 1;
+  color: rgb(68 96 239 / var(--tw-text-opacity));
+}
+
+.aria-\[active\=true\]\:dark\:text-primarycolor:is(.dark *)[aria-active=true] {
   --tw-text-opacity: 1;
   color: rgb(68 96 239 / var(--tw-text-opacity));
 }
