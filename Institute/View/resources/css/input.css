@@ -9,7 +9,11 @@
 }
 
 .currents{
-  color: blue;
+  color: rgb(28, 100, 242);
+}
+
+.current-pages{
+  color: rgb(28, 100, 242);
 }
 
 .demochart{

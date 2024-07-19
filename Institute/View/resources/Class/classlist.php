@@ -9,7 +9,7 @@
         <link href="./../css/output.css" rel="stylesheet" />
     </head>
 
-    <body class="bg-gray-300 dark:bg-gray-800">
+    <body class=" dark:bg-gray-800">
 
         <!-- Navbar -->
         <nav class="fixed top-0 z-10 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 duration-300">

@@ -16,8 +16,16 @@ $(document).ready(function(){
         console.log('hay');
         // view details
         // sample prototype path change
-        // window.location.href = ""
+        window.location.href = "./../Class/viewdetailscalss.php";
         // fetch will be here 
+    });
+
+    $('#class-photo').change(function() {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $('#preview_photo').attr('src', e.target.result).removeClass('hidden');
+        };
+        reader.readAsDataURL(this.files[0]);
     });
 
 });

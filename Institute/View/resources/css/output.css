@@ -1276,9 +1276,19 @@ html {
   margin: 0.25rem;
 }
 
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
 .mx-14 {
   margin-left: 3.5rem;
   margin-right: 3.5rem;
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .mx-3 {
@@ -1358,6 +1368,10 @@ html {
   margin-inline-end: 0.5rem;
 }
 
+.me-2\.5 {
+  margin-inline-end: 0.625rem;
+}
+
 .me-3 {
   margin-inline-end: 0.75rem;
 }
@@ -1426,6 +1440,10 @@ html {
   margin-inline-start: 0px;
 }
 
+.ms-1 {
+  margin-inline-start: 0.25rem;
+}
+
 .ms-2 {
   margin-inline-start: 0.5rem;
 }
@@ -1488,6 +1506,10 @@ html {
 
 .mt-6 {
   margin-top: 1.5rem;
+}
+
+.mt-7 {
+  margin-top: 1.75rem;
 }
 
 .mt-8 {
@@ -1580,6 +1602,10 @@ html {
 
 .h-9 {
   height: 2.25rem;
+}
+
+.h-\[50vh\] {
+  height: 50vh;
 }
 
 .h-\[55vh\] {
@@ -1700,6 +1726,14 @@ html {
 
 .w-full {
   width: 100%;
+}
+
+.w-3\/4 {
+  width: 75%;
+}
+
+.w-40 {
+  width: 10rem;
 }
 
 .max-w-2xl {
@@ -1928,6 +1962,12 @@ html {
   --tw-space-x-reverse: 0;
   margin-right: calc(-1px * var(--tw-space-x-reverse));
   margin-left: calc(-1px * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -2246,7 +2286,7 @@ html {
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
-
+  
 .bg-opacity-90 {
   --tw-bg-opacity: 0.9;
 }
@@ -2411,6 +2451,10 @@ html {
   padding-bottom: 0.125rem;
 }
 
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
 }
@@ -2529,6 +2573,10 @@ html {
 
 .pt-32 {
   padding-top: 8rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
 }
 
 .pt-5 {
@@ -2869,7 +2917,11 @@ html {
 }
 
 .currents{
-  color: blue;
+  color: rgb(28, 100, 242);
+}
+
+.current-pages{
+  color: rgb(28, 100, 242);
 }
 
 .demochart{
@@ -3540,6 +3592,7 @@ html {
   .md\:me-24 {
     margin-inline-end: 6rem;
   }
+
 
   .md\:space-y-7 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
