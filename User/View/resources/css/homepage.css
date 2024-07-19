@@ -118,6 +118,9 @@ nav {
   justify-content: center;
   width: 1300px;
 }
+/* .slogan-text-container{
+  margin-left: 3vh;
+} */
 .slogan-header {
   font-size: 48px;
   margin-bottom: 2vh;
@@ -284,6 +287,7 @@ nav {
 }
 /* End of Latest pick container */
 /* Start of Splide Library Code */
+
 .splide__pagination {
   counter-reset: pagination-num;
 }
@@ -601,6 +605,12 @@ nav {
 }
 /* End of Plans and Pricing */
 /* Start of Compare all features Section */
+.compare-all-features-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .compare-all-features-header{
   width: fit-content;
   font-weight: bold;
@@ -609,12 +619,37 @@ nav {
   -webkit-text-fill-color: transparent;
   font-size: 1.5em;
 }
+.table-header{
+  font-size: 1em !important;
+  color: var(--primary-color);
+  font-weight: lighter;
+}
+.table-fee{
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.table-header-row{
+  display: flex;
+  gap: 5vw;
+}
+.btn{
+  border: 1px solid;
+  border-color: var(--primary-color);
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 15px;
+  background: transparent;
+  color: var(--primary-color);
+}
+.btn:hover{
+  cursor: pointer;
+  background: var(--primary-color);
+  color: var(--primary-bg-color);
+}
 /* End of Compare all features Section */
 /* Start of Contact Us Section */
 .contact-us-section{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-bottom: 5vh;
 }
 .contact-us-wrapper{
@@ -626,8 +661,8 @@ nav {
   align-items: center;
 }
 .contact-us-inner-wrapper{
+  padding-top: 30px;
   width: 90%;
-  padding: 20px;
 }
 .name-row-input{
   display: flex;
@@ -648,8 +683,7 @@ nav {
 }
 .message-input-box{
   padding-top: 10px;
-  height: 150px;
-  box-sizing: border-box;
+  height: 300px;
 }
 .contact-us-header{
   width: fit-content;
@@ -706,9 +740,9 @@ nav {
   padding: 5px;
   border: none;
   border-radius: 5px;
-  width: 20%;
-  background-color: var(--primary-color);
+  width: 15%;
   margin-bottom: 20px;
+  background-color: var(--primary-color);
 }
 .send-img{
   width: 0.5vw;
