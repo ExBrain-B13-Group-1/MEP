@@ -1,4 +1,7 @@
-
+const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+const themeToggleBtn = document.getElementById('theme-toggle');
+let dark;
 $("#sidebarControl").click(() => {
     if ($("#logo-sidebar").attr("close") === "true") {
         $("#dropdown-example").attr("aria-checked", "false");
@@ -14,18 +17,19 @@ $("#sidebarControl").click(() => {
             transform: "rotate(180deg)",
         });
     }
-    console.log($("#sidebarControl").attr('route'));
     isCloseSideBar($("#sidebarControl").attr('route'));
 });
 
 function isCloseSideBar(type) {
     const ROUTE = ['finance','user','institute']
+    let openImageOne = dark  ? "../../resources/img/LOGOwhite.svg" : '../../resources/img/LOGO.svg'
+    let openImageTwo = dark  ? "../resources/img/LOGOwhite.svg": "../resources/img/LOGO.svg"
     
-    let colseLogoURL = ROUTE.includes(type) ? "../../resources/img/LOGOclose.svg" : "../resources/img/LOGOclose.svg"
-    let openLogoURL = ROUTE.includes(type) ? "../../resources/img/LOGO.svg" : "../resources/img/LOGO.svg"
-    console.log(colseLogoURL,openLogoURL);
+    let closeLogoURL = ROUTE.includes(type) ? "../../resources/img/LOGOclose.svg" : "../resources/img/LOGOclose.svg"
+    let openLogoURL = ROUTE.includes(type) ? openImageOne: openImageTwo
+    console.log(openImageOne,openImageTwo);
     if ($("#logo-sidebar").attr("close") === "true") {
-        $("#brandLogo").attr("src", colseLogoURL);
+        $("#brandLogo").attr("src", closeLogoURL);
         $("#navbar").css({
             width: "93.5%",
             marginLeft: '5rem'
@@ -65,13 +69,14 @@ function isCloseSideBar(type) {
 (() => {
   if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark');
+    dark=true
 } else {
     document.documentElement.classList.remove('dark')
+    dark=false
 }
 })()
 
-var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
-var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
 
 // Change the icons inside the button based on previous settings
 if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -80,7 +85,6 @@ if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localS
     themeToggleDarkIcon.classList.remove('hidden');
 }
 
-var themeToggleBtn = document.getElementById('theme-toggle');
 
 themeToggleBtn.addEventListener('click', function() {
 
@@ -93,9 +97,11 @@ themeToggleBtn.addEventListener('click', function() {
         if (localStorage.getItem('color-theme') === 'light') {
             document.documentElement.classList.add('dark');
             localStorage.setItem('color-theme', 'dark');
+            dark=true
         } else {
             document.documentElement.classList.remove('dark');
             localStorage.setItem('color-theme', 'light');
+            dark=false
         }
 
     // if NOT set via local storage previously
@@ -103,57 +109,13 @@ themeToggleBtn.addEventListener('click', function() {
         if (document.documentElement.classList.contains('dark')) {
             document.documentElement.classList.remove('dark');
             localStorage.setItem('color-theme', 'light');
+            dark=false
         } else {
             document.documentElement.classList.add('dark');
             localStorage.setItem('color-theme', 'dark');
+            dark=true
         }
     }
     
 });
 
-
-
-// $(document).ready(function () {
-//   const modeChange = $(".modechanges");
-//   const savedMode = localStorage.getItem("isDark");
-
-//   function updateMode() {
-//     const isDark = $("html").hasClass("dark");
-//     const mode = isDark ? "true" : "false";
-//     const labelColor = isDark ? "#ffffff" : "#000000";
-
-//     localStorage.setItem("isDark", mode);
-//     localStorage.setItem("labelColor", labelColor);
-
-//     $(modeChange).attr("name", isDark ? "moon-outline" : "sunny-outline");
-//     updateSidebarLinkColors();
-//   }
-
-//   function updateSidebarLinkColors() {
-//     $(".sidebarlinks").each(function () {
-//       $(this).removeClass("sidebar-dark-currents sidebar-light-currents");
-//       if (localStorage.getItem("isDark") === "true") {
-//         if ($(this).hasClass("active")) {
-//           $(this).addClass("sidebar-dark-currents");
-//         }
-//       } else {
-//         if ($(this).hasClass("active")) {
-//           $(this).addClass("sidebar-light-currents");
-//         }
-//       }
-//     });
-//   }
-
-//   if (savedMode === "true") {
-//     $("html").addClass("dark");
-//   } else {
-//     $("html").removeClass("dark");
-//   }
-
-//   updateMode();
-
-//   modeChange.on("click", function () {
-//     $("html").toggleClass("dark");
-//     updateMode();
-//   });
-// });
