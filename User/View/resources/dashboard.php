@@ -1,28 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/user-class-details.css">
-    <link rel="stylesheet" href="./css/root.css">
-    <link rel="stylesheet" href="../components/component-root.css">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Document</title>
     <link href="./css/output.css" rel="stylesheet">
     <link href="./css/navbar.css" rel="stylesheet">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="./lib/jquery-3.7.1.js"></script>
     <script src="./js/navbar.js" defer></script>
-    <title>Document</title>
 </head>
-
-<body>
-    <!-- Navigation bar -->
+<body class="bg-bgColor">
+    
+<!-- Navigation bar -->
 <nav class="bg-white  fixed w-[95%] z-20 top-0 right-0 left-0 m-auto my-2 border-b border-gray-200 rounded-xl ">
     <div class="max-w-screen-xl flex items-center justify-between mx-auto px-4 ">
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse my-2">
@@ -32,10 +23,10 @@
     <div class="flex  items-center justify-center   bg-gray-200 rounded-xl" id="navbar-sticky">
       <ul class=" flex justify-between items-center  font-medium  space-x-10 ">
         <li>
-          <a href="./dashboard.php"  id="userDashboard" class="block py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor" >Dashboard</a>
+          <a href="./dashboard.php" aria-active="true" id="userDashboard" class="block py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor" >Dashboard</a>
         </li>
         <li>
-          <a href="./user-class-details.php" aria-active="true" id="userClass" class="block py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Class</a>
+          <a href="./user-class-details.php" id="userClass" class="block py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Class</a>
         </li>
         <li>
           <a href="./schedule.php" id="userSchedule" class="block py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Schedule</a>
@@ -96,142 +87,5 @@
   </nav>
 
   <!--! Start Code Here -->
-    <div class="details-container">
-        <div class="class-details-main">
-            <div class="page-navigation">
-                Development > Web Development > Javascript
-            </div>
-            <div class="main-container">
-                <div class="left-details-container">
-                    <img src="assets/Mitsubishi.jpg" alt="">
-                    <div class="details-text">
-                        <p class="details-fee">250,000 MMK</p>
-                        <button class="image-enroll-btn">Enroll Now</button>
-                    </div>
-                </div>
-                <div class="right-details-container">
-                    <h1 class="details-title">Javascript for Beginners</h1>
-                    <p class="details-body-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum natus explicabo laboriosam!
-                        Esse animi nemo rerum voluptas inventore. Harum sint inventore culpa esse illum officia veniam
-                        commodi necessitatibus quae voluptate?
-                    </p>
-                    <p class="institute">Institute - <a href="" class="institute-link">Global Code Institute</a></p>
-                    <div class="rating">4.5
-                        <div class="star-icons">
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                            <ion-icon name="star"></ion-icon>
-                        </div>
-                        <a href="" class="total-ratings">(301 ratings)</a>
-                        <p class="student-enrolled">301 students</p>
-                    </div>
-                    <p class="instructor">Instructor - <a href="">Matthew Davis</a></p>
-                    <div class="start-date-container">
-                        <p>Start Date -
-                        <p class="start-date-value">21 / 7 / 2024</p>
-                        </p>
-                    </div>
-                    <div class="end-date-container">
-                        <p>End Date -
-                        <p class="end-date-value">25 / 12 / 2024</p>
-                        </p>
-                    </div>
-                    <div class="deadline-container">
-                        <p>Enrollment Deadline - </p>
-                        <p class="deadline">20 / 7 /2024</p>
-                    </div>
-                    <div class="coupon-container">
-                        <input type="text" class="coupon-code" placeholder="Enter Coupon">
-                        <button class="apply-coupon">Apply</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="middle-container">
-        <div class="description-container">
-            <h1 class="description">
-                Description
-            </h1>
-            <div class="description-details">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda deserunt cupiditate optio, cum iste
-                molestias nam harum eveniet consequatur expedita, ea maiores? Hic deserunt mollitia eum dolor soluta
-                alias consectetur!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda deserunt cupiditate optio, cum iste
-                molestias nam harum eveniet consequatur expedita, ea maiores? Hic deserunt mollitia eum dolor soluta
-                alias consectetur!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda deserunt cupiditate optio, cum iste
-                molestias nam harum eveniet consequatur expedita, ea maiores? Hic deserunt mollitia eum dolor soluta
-                alias consectetur!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda deserunt cupiditate optio, cum iste
-                molestias nam harum eveniet consequatur expedita, ea maiores? Hic deserunt mollitia eum dolor soluta
-                alias consectetur!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda deserunt cupiditate optio, cum iste
-                molestias nam harum eveniet consequatur expedita, ea maiores? Hic deserunt mollitia eum dolor soluta
-                alias consectetur!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda deserunt cupiditate optio, cum iste
-                molestias nam harum eveniet consequatur expedita, ea maiores? Hic deserunt mollitia eum dolor soluta
-                alias consectetur!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda deserunt cupiditate optio, cum iste
-                molestias nam harum eveniet consequatur expedita, ea maiores? Hic deserunt mollitia eum dolor soluta
-                alias consectetur!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda deserunt cupiditate optio, cum iste
-                molestias nam harum eveniet consequatur expedita, ea maiores? Hic deserunt mollitia eum dolor soluta
-                alias consectetur!
-            </div>
-        </div>
-    </div>
-    <div class="enrolled-classes">
-        <div class="enrolled-classes-container">
-            <h1 class="enrolled-header">
-                Students also enrolled
-            </h1>
-            <div class="enrolled-classes-details">
-                <div class="enrolled-classes-image-container">
-                    <img src="../Project Ed User/assets/Mitsubishi.jpg" alt="">
-                </div>
-                <div class="enrolled-classes-text">
-                    <div class="enrolled-classes-details-header">
-                        Javascript - The Complete Guide 2024 (Beginner + Advanced)
-                    </div>
-                    <div class="enrolled-classes-details-instructor">
-                        <p>Instructor -</p>
-                        <div class="enrolled-classes-details-instructor-name">Matthe Davis</div>
-                    </div>
-                    <div class="enrolled-classes-details-duration">
-                        <div class="enrolled-classes-details-start-date">
-                            <p>Start Date -</p>
-                            <div class="enrolled-classes-details-start-date-value">21 / 07 / 2024</div>
-                        </div>
-                        <div class="enrolled-classes-details-end-date">
-                            <p>End Date -</p>
-                            <div class="enrolled-classes-details-end-date-value">25 / 07 / 2024</div>
-                        </div>
-                    </div>
-                    <div class="enrolled-classes-details-deadline">
-                        <p>Enrollment Deadline -</p>
-                        <div class="enrolled-classes-details-deadline-value">20 / 07 / 2024
-                        </div>
-                    </div>
-                </div>
-                <div class="enrolled-classes-rating">
-                    <div class="enrolled-classes-rating-value">4.5</div>
-                    <ion-icon name="star"></ion-icon>
-                </div>
-                <div class="enrolled-student-count">
-                    <ion-icon name="people"></ion-icon>
-                    <div class="enrolled-student-count-value">1,521</div>
-                </div>
-                <div class="enrolled-details-fee">
-                    <div class="enrolled-details-fee-value">150,000 MMK</div>
-                    <button class="enrolled-details-btn">Enroll</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
-
 </html>
