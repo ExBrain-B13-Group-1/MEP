@@ -62,49 +62,98 @@ function isCloseSideBar(type) {
         });
     }
 }
+(() => {
+  if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+} else {
+    document.documentElement.classList.remove('dark')
+}
+})()
 
+var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
-$(document).ready(function () {
-  const modeChange = $(".modechanges");
-  const savedMode = localStorage.getItem("isDark");
+// Change the icons inside the button based on previous settings
+if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    themeToggleLightIcon.classList.remove('hidden');
+} else {
+    themeToggleDarkIcon.classList.remove('hidden');
+}
 
-  function updateMode() {
-    const isDark = $("html").hasClass("dark");
-    const mode = isDark ? "true" : "false";
-    const labelColor = isDark ? "#ffffff" : "#000000";
+var themeToggleBtn = document.getElementById('theme-toggle');
 
-    localStorage.setItem("isDark", mode);
-    localStorage.setItem("labelColor", labelColor);
+themeToggleBtn.addEventListener('click', function() {
 
-    $(modeChange).attr("name", isDark ? "moon-outline" : "sunny-outline");
-    updateSidebarLinkColors();
-  }
+    // toggle icons inside button
+    themeToggleDarkIcon.classList.toggle('hidden');
+    themeToggleLightIcon.classList.toggle('hidden');
 
-  function updateSidebarLinkColors() {
-    $(".sidebarlinks").each(function () {
-      $(this).removeClass("sidebar-dark-currents sidebar-light-currents");
-      if (localStorage.getItem("isDark") === "true") {
-        if ($(this).hasClass("active")) {
-          $(this).addClass("sidebar-dark-currents");
+    // if set via local storage previously
+    if (localStorage.getItem('color-theme')) {
+        if (localStorage.getItem('color-theme') === 'light') {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('color-theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('color-theme', 'light');
         }
-      } else {
-        if ($(this).hasClass("active")) {
-          $(this).addClass("sidebar-light-currents");
+
+    // if NOT set via local storage previously
+    } else {
+        if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('color-theme', 'light');
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('color-theme', 'dark');
         }
-      }
-    });
-  }
-
-  if (savedMode === "true") {
-    $("html").addClass("dark");
-  } else {
-    $("html").removeClass("dark");
-  }
-
-  updateMode();
-
-  modeChange.on("click", function () {
-    $("html").toggleClass("dark");
-    updateMode();
-  });
+    }
+    
 });
+
+
+
+// $(document).ready(function () {
+//   const modeChange = $(".modechanges");
+//   const savedMode = localStorage.getItem("isDark");
+
+//   function updateMode() {
+//     const isDark = $("html").hasClass("dark");
+//     const mode = isDark ? "true" : "false";
+//     const labelColor = isDark ? "#ffffff" : "#000000";
+
+//     localStorage.setItem("isDark", mode);
+//     localStorage.setItem("labelColor", labelColor);
+
+//     $(modeChange).attr("name", isDark ? "moon-outline" : "sunny-outline");
+//     updateSidebarLinkColors();
+//   }
+
+//   function updateSidebarLinkColors() {
+//     $(".sidebarlinks").each(function () {
+//       $(this).removeClass("sidebar-dark-currents sidebar-light-currents");
+//       if (localStorage.getItem("isDark") === "true") {
+//         if ($(this).hasClass("active")) {
+//           $(this).addClass("sidebar-dark-currents");
+//         }
+//       } else {
+//         if ($(this).hasClass("active")) {
+//           $(this).addClass("sidebar-light-currents");
+//         }
+//       }
+//     });
+//   }
+
+//   if (savedMode === "true") {
+//     $("html").addClass("dark");
+//   } else {
+//     $("html").removeClass("dark");
+//   }
+
+//   updateMode();
+
+//   modeChange.on("click", function () {
+//     $("html").toggleClass("dark");
+//     updateMode();
+//   });
+// });
