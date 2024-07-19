@@ -11,8 +11,8 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-  <script src="../../resources/js/navigation.js" defer></script>
   <script src="../../resources/js/sidebar.js" defer></script>
+  <script src="../../resources/js/institute.js" defer></script>
 </head>
 
 <body>
@@ -305,9 +305,9 @@
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
               </button>
               <!-- Dropdown menu -->
-              <div class="w-96 z-10 hidden px-5 text-center bg-white divide-y divide-gray-100 rounded-lg shadow-dshadow" id="dropdownRadioEvent">
+              <div class="w-96 z-10 hidden px-5 py-3 text-center bg-white divide-y divide-gray-100 rounded-lg shadow-dshadow" id="dropdownRadioEvent">
                 <h1 class=" font-bold my-2">Recent Events</h1>
-                <div>
+                <div class="my-4">
                   <div class="flex justify-around items-center text-sm my-2">
                     <p class="mx-2">Date: 27/ 07/ 2024</p>
                     <p class="mx-2">ABC Institute</p>
@@ -326,7 +326,7 @@
                     <div class="w-4 h-4 bg-orange-600 rounded-full"></div>
                   </div>
                 </div>
-                  <button class="bg-primarycolor text-white px-3 py-1 rounded-md my-3">View More</button>
+                  <a href="../events.php" class="bg-primarycolor text-white px-3 py-3 rounded-md my-6">View More</a>
               </div>
             </div>
             <div class="mx-3">
@@ -417,11 +417,9 @@
           </div>
         </div>
       </div>
-      <table class="w-full text-sm text-left rtl:text-right text-gray-500" >
+      <table class="w-full text-sm text-left rtl:text-right text-gray-500" id="instituteTable">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
           <tr>
-            <th scope="col" class="p-4">
-            </th>
             <th scope="col" class="px-6 py-3 font-bold text-md">ID</th>
             <th scope="col" class="px-6 py-3 font-bold text-md">Logo</th>
             <th scope="col" class="px-6 py-3 font-bold text-md">
@@ -435,14 +433,8 @@
             <th scope="col" class="px-6 py-3 font-bold text-md">Warn</th>
           </tr>
         </thead>
-        <tbody id="insttituteTable">
-          <tr onclick="check()" aria-warm="true" class="cursor-pointer bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-300">
-            <td class="w-4 p-4" >
-              <div class="flex items-center" >
-                <input  id="instituteID" type="radio" value="" name="default-radio" class="insitute_check cursor-pointer w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              </div>
-            </td>
-
+        <tbody >
+          <tr id="1243305338" aria-warm="true" class="cursor-pointer bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-300">
             <td class="px-6 py-3 text-black text-md">245</td>
             <td class="px-3 py-3 text-black text-xs">
               <img src="../../resources/img/institute_logo.png" alt="Institute Logo" width="50" />
@@ -464,12 +456,83 @@
               </a>
             </td>
           </tr>
-          <tr class="bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50">
-            <td class="w-4 p-4">
-              <div class="flex items-center">
-                <input id="default-radio-1" type="radio" value="" name="default-radio" class="insitute_check cursor-pointer w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              </div>
+          <tr id="124330fd38" class="cursor-pointer bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50">
+
+
+            <td class="px-6 py-3 text-black text-md">246</td>
+            <td class="px-3 py-3 text-black text-md">
+              <img src="../../resources/img/institute_logo.png" alt="Institute Logo" width="50" />
             </td>
+            <td class="px-6 py-3 text-black text-md">ABC Institute</td>
+            <td class="px-6 py-3 text-black text-md">30.07.2024</td>
+            <td class="px-6 py-3 text-black text-md">3 classes</td>
+            <td class="px-6 py-3 text-black flex justify-start align-middle">
+              <a href="" class="bg-primarycolor/20 rounded-full flex justify-center align-middle items-center w-9 h-9">
+                <ion-icon name="call-outline" class="text-md text-primarycolor"></ion-icon>
+              </a>
+              <a href="" class="bg-primarycolor/20 rounded-full flex justify-center align-middle items-center w-9 h-9 ml-2">
+                <ion-icon name="mail-outline" class="text-xl text-primarycolor"></ion-icon>
+              </a>
+            </td>
+            <td class="px-6 py-3 text-black">
+              <a href="">
+                <ion-icon name="alert-circle-outline" class="text-red-500 text-3xl"></ion-icon>
+              </a>
+            </td>
+          </tr>
+
+          <tr id="124er05338" class="cursor-pointer bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50">
+   
+
+            <td class="px-6 py-3 text-black text-md">247</td>
+            <td class="px-3 py-3 text-black text-md">
+              <img src="../../resources/img/institute_logo.png" alt="Institute Logo" width="50" />
+            </td>
+            <td class="px-6 py-3 text-black text-md">ABC Institute</td>
+            <td class="px-6 py-3 text-black text-md">30.07.2024</td>
+            <td class="px-6 py-3 text-black text-md">3 classes</td>
+            <td class="px-6 py-3 text-black flex justify-start align-middle">
+              <a href="" class="bg-primarycolor/20 rounded-full flex justify-center align-middle items-center w-9 h-9">
+                <ion-icon name="call-outline" class="text-md text-primarycolor"></ion-icon>
+              </a>
+              <a href="" class="bg-primarycolor/20 rounded-full flex justify-center align-middle items-center w-9 h-9 ml-2">
+                <ion-icon name="mail-outline" class="text-xl text-primarycolor"></ion-icon>
+              </a>
+            </td>
+            <td class="px-6 py-3 text-black">
+              <a href="">
+                <ion-icon name="alert-circle-outline" class="text-red-500 text-3xl"></ion-icon>
+              </a>
+            </td>
+          </tr>
+
+          <tr id="12ssd05338" class="cursor-pointer bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50">
+
+
+            <td class="px-6 py-3 text-black text-md">212</td>
+            <td class="px-3 py-3 text-black text-md">
+              <img src="../../resources/img/institute_logo.png" alt="Institute Logo" width="50" />
+            </td>
+            <td class="px-6 py-3 text-black text-md">ABC Institute</td>
+            <td class="px-6 py-3 text-black text-md">30.07.2024</td>
+            <td class="px-6 py-3 text-black text-md">3 classes</td>
+            <td class="px-6 py-3 text-black flex justify-start align-middle">
+              <a href="" class="bg-primarycolor/20 rounded-full flex justify-center align-middle items-center w-9 h-9">
+                <ion-icon name="call-outline" class="text-md text-primarycolor"></ion-icon>
+              </a>
+              <a href="" class="bg-primarycolor/20 rounded-full flex justify-center align-middle items-center w-9 h-9 ml-2">
+                <ion-icon name="mail-outline" class="text-xl text-primarycolor"></ion-icon>
+              </a>
+            </td>
+            <td class="px-6 py-3 text-black">
+              <a href="">
+                <ion-icon name="alert-circle-outline" class="text-red-500 text-3xl"></ion-icon>
+              </a>
+            </td>
+          </tr>
+
+          <tr id="12ere05338" class="cursor-pointer bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50">
+    
 
             <td class="px-6 py-3 text-black text-md">245</td>
             <td class="px-3 py-3 text-black text-md">
@@ -493,14 +556,10 @@
             </td>
           </tr>
 
-          <tr class="bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50">
-            <td class="w-4 p-4">
-              <div class="flex items-center">
-                <input id="default-radio-1" type="radio" value="" name="default-radio" class="insitute_check cursor-pointer w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              </div>
-            </td>
+          <tr id="124saw5338" class="cursor-pointer bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50">
+ 
 
-            <td class="px-6 py-3 text-black text-md">245</td>
+            <td class="px-6 py-3 text-black text-md">233</td>
             <td class="px-3 py-3 text-black text-md">
               <img src="../../resources/img/institute_logo.png" alt="Institute Logo" width="50" />
             </td>
@@ -522,101 +581,9 @@
             </td>
           </tr>
 
-          <tr class="bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50">
-            <td class="w-4 p-4">
-              <div class="flex items-center">
-                <input id="default-radio-1" type="radio" value="" name="default-radio" class="insitute_check w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              </div>
-            </td>
+          <tr id="1243saw338" class="cursor-pointer bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50">
 
-            <td class="px-6 py-3 text-black text-md">245</td>
-            <td class="px-3 py-3 text-black text-md">
-              <img src="../../resources/img/institute_logo.png" alt="Institute Logo" width="50" />
-            </td>
-            <td class="px-6 py-3 text-black text-md">ABC Institute</td>
-            <td class="px-6 py-3 text-black text-md">30.07.2024</td>
-            <td class="px-6 py-3 text-black text-md">3 classes</td>
-            <td class="px-6 py-3 text-black flex justify-start align-middle">
-              <a href="" class="bg-primarycolor/20 rounded-full flex justify-center align-middle items-center w-9 h-9">
-                <ion-icon name="call-outline" class="text-md text-primarycolor"></ion-icon>
-              </a>
-              <a href="" class="bg-primarycolor/20 rounded-full flex justify-center align-middle items-center w-9 h-9 ml-2">
-                <ion-icon name="mail-outline" class="text-xl text-primarycolor"></ion-icon>
-              </a>
-            </td>
-            <td class="px-6 py-3 text-black">
-              <a href="">
-                <ion-icon name="alert-circle-outline" class="text-red-500 text-3xl"></ion-icon>
-              </a>
-            </td>
-          </tr>
-
-          <tr class="bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50">
-            <td class="w-4 p-4">
-              <div class="flex items-center">
-                <input id="default-radio-1" type="radio" value="" name="default-radio" class="insitute_check cursor-pointer w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              </div>
-            </td>
-
-            <td class="px-6 py-3 text-black text-md">245</td>
-            <td class="px-3 py-3 text-black text-md">
-              <img src="../../resources/img/institute_logo.png" alt="Institute Logo" width="50" />
-            </td>
-            <td class="px-6 py-3 text-black text-md">ABC Institute</td>
-            <td class="px-6 py-3 text-black text-md">30.07.2024</td>
-            <td class="px-6 py-3 text-black text-md">3 classes</td>
-            <td class="px-6 py-3 text-black flex justify-start align-middle">
-              <a href="" class="bg-primarycolor/20 rounded-full flex justify-center align-middle items-center w-9 h-9">
-                <ion-icon name="call-outline" class="text-md text-primarycolor"></ion-icon>
-              </a>
-              <a href="" class="bg-primarycolor/20 rounded-full flex justify-center align-middle items-center w-9 h-9 ml-2">
-                <ion-icon name="mail-outline" class="text-xl text-primarycolor"></ion-icon>
-              </a>
-            </td>
-            <td class="px-6 py-3 text-black">
-              <a href="">
-                <ion-icon name="alert-circle-outline" class="text-red-500 text-3xl"></ion-icon>
-              </a>
-            </td>
-          </tr>
-
-          <tr class="bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50">
-            <td class="w-4 p-4">
-              <div class="flex items-center">
-                <input id="default-radio-1" type="radio" value="" name="default-radio" class="insitute_check cursor-pointer w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              </div>
-            </td>
-
-            <td class="px-6 py-3 text-black text-md">245</td>
-            <td class="px-3 py-3 text-black text-md">
-              <img src="../../resources/img/institute_logo.png" alt="Institute Logo" width="50" />
-            </td>
-            <td class="px-6 py-3 text-black text-md">ABC Institute</td>
-            <td class="px-6 py-3 text-black text-md">30.07.2024</td>
-            <td class="px-6 py-3 text-black text-md">3 classes</td>
-            <td class="px-6 py-3 text-black flex justify-start align-middle">
-              <a href="" class="bg-primarycolor/20 rounded-full flex justify-center align-middle items-center w-9 h-9">
-                <ion-icon name="call-outline" class="text-md text-primarycolor"></ion-icon>
-              </a>
-              <a href="" class="bg-primarycolor/20 rounded-full flex justify-center align-middle items-center w-9 h-9 ml-2">
-                <ion-icon name="mail-outline" class="text-xl text-primarycolor"></ion-icon>
-              </a>
-            </td>
-            <td class="px-6 py-3 text-black">
-              <a href="">
-                <ion-icon name="alert-circle-outline" class="text-red-500 text-3xl"></ion-icon>
-              </a>
-            </td>
-          </tr>
-
-          <tr class="bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50">
-            <td class="w-4 p-4">
-              <div class="flex items-center">
-                <input id="default-radio-1" type="radio" value="" name="default-radio" class="insitute_check cursor-pointer w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-              </div>
-            </td>
-
-            <td class="px-6 py-3 text-black text-md">245</td>
+            <td class="px-6 py-3 text-black text-md">257</td>
             <td class="px-3 py-3 text-black text-md">
               <img src="../../resources/img/institute_logo.png" alt="Institute Logo" width="50" />
             </td>
@@ -686,9 +653,9 @@
 
 
 
-      <div class="w-96 rounded-md p-3 bg-white shadow-dshadow absolute top-10 right-3">
+      <div class="hidden w-96 rounded-md p-3 bg-white shadow-dshadow absolute top-10 right-3" id="instituteBox">
         <div class="flex justify-between p-3">
-          <p>ID:456</p>
+          <p>ID: <span id="instituteID"></span> </p>
           <a href="#" class="w-6 h-6 bg-blue-300 rounded-full flex justify-center items-center">
             <ion-icon name="diamond-outline" class="text-blue-700"></ion-icon>
           </a>
@@ -696,7 +663,7 @@
 
         <div class="flex justify-center items-center w-full flex-col">
           <img src="../../resources/img/profile.png" alt="profile" width="60" class="rounded-full border-2 border-primarycolor" />
-          <h1 class="text-primarycolor font-bold mt-2">John Smith</h1>
+          <h1 class="text-primarycolor font-bold mt-2" id="instituteName"></h1>
           <a href="#" class="text-primarycolor underline">Register Form</a>
           <div class="flex mt-3">
             <a href="" class="bg-primarycolor/60 rounded-full flex justify-center align-middle items-center w-9 h-9">
@@ -709,12 +676,6 @@
         </div>
 
         <div class=" my-3">
-          <div class=" my-2 ml-2  text-sm">
-            <p class="mr-2 font-bold">About</p>
-            <p class="block">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore, natus architecto officiis cupiditate ex dicta commodi inventore magni nostrum at fugit, porro ut iusto dolor veritatis possimus, distinctio recusandae.
-            </p>
-          </div>
 
           <div class="flex my-2 ml-2 items-center text-sm">
             <p class="mr-2 font-bold">Status:</p>
@@ -724,6 +685,16 @@
               </div>
             </p>
           </div>
+
+          
+          <div class=" my-2 ml-2  text-sm">
+            <p class="mr-2 font-bold">About</p>
+            <p class="block">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore, natus architecto officiis cupiditate ex dicta commodi inventore magni nostrum at fugit, porro ut iusto dolor veritatis possimus, distinctio recusandae.
+            </p>
+          </div>
+
+
 
           <div class="flex my-2 ml-2 items-center text-sm">
             <p class="mr-2 font-bold">Registered Date:</p>
@@ -750,7 +721,10 @@
             </p>
           </div>
         </div>
-
+        
+          <button class="bg-primarycolor px-3 py-1 text-white rounded-md ml-3" id="closeInstituteBox">
+            Close
+          </button>
 
       </div>
     </div>
