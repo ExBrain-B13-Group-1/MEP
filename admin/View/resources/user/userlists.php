@@ -393,7 +393,7 @@
       </div>
 
       <table class="w-full text-sm text-left rtl:text-right " id="userTable">
-        <thead class="text-xs  uppercase bg-gray-50 dark:bg-gray-700">
+        <thead class="text-xs  uppercase bg-gray-50 dark:bg-gray-600">
           <tr>
             <th scope="col" class="px-6 py-3 font-bold text-md">ID</th>
             <th scope="col" class="px-6 py-3 font-bold text-md">Name</th>
