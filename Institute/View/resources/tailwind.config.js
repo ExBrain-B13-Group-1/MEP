@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    "./Auth/**/*.{html,js,php}",
     "./Dashboard/**/*.{html,js,php}",
     "./Common/**/*.{html,js,php}",
     "./Event/**/*.{html,js,php}",
@@ -18,8 +19,11 @@ module.exports = {
       fontFamily: {
         customFont: ['Lato', "sans-serif"],
       },
+      backgroundImage: {
+        'custom-bg': "url('../../../storages/loginBg.png')",
+      },
       // Adding new utilities for scrollbar hiding
-    scrollbarHide: {
+      scrollbarHide: {
       '&::-webkit-scrollbar': {
         display: 'none',
       },
