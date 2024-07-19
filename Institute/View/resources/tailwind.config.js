@@ -23,7 +23,7 @@ module.exports = {
         'custom-bg': "url('../../../storages/loginBg.png')",
       },
       // Adding new utilities for scrollbar hiding
-    scrollbarHide: {
+      scrollbarHide: {
       '&::-webkit-scrollbar': {
         display: 'none',
       },

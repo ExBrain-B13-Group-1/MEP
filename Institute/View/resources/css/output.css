@@ -1638,6 +1638,10 @@ html {
   width: 0.5rem;
 }
 
+.w-2\/3 {
+  width: 66.666667%;
+}
+
 .w-2\/6 {
   width: 33.333333%;
 }
@@ -1956,6 +1960,12 @@ html {
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
+.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+}
+
 .divide-y > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0;
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
@@ -2237,6 +2247,22 @@ html {
   --tw-bg-opacity: 0.5;
 }
 
+.bg-opacity-90 {
+  --tw-bg-opacity: 0.9;
+}
+
+.bg-custom-bg {
+  background-image: url('../../../storages/loginBg.png');
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
 .p-1 {
   padding: 0.25rem;
 }
@@ -2376,8 +2402,9 @@ html {
   padding-bottom: 1.25rem;
 }
 
-.pb-0 {
-  padding-bottom: 0px;
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pb-0\.5 {
@@ -2430,10 +2457,6 @@ html {
 
 .pl-5 {
   padding-left: 1.25rem;
-}
-
-.pr-1 {
-  padding-right: 0.25rem;
 }
 
 .pr-1\.5 {
@@ -2621,6 +2644,11 @@ html {
   color: rgb(68 96 239 / var(--tw-text-opacity));
 }
 
+.text-\[\#BDBDBD\] {
+  --tw-text-opacity: 1;
+  color: rgb(189 189 189 / var(--tw-text-opacity));
+}
+
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -2659,6 +2687,11 @@ html {
 .text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+
+.text-gray-300 {
+  --tw-text-opacity: 1;
+  color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
 .text-gray-400 {
@@ -2871,6 +2904,16 @@ html {
   border-radius: 8px;
 }
 
+.placeholder\:text-\[\#BDBDBD\]::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(189 189 189 / var(--tw-text-opacity));
+}
+
+.placeholder\:text-\[\#BDBDBD\]::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(189 189 189 / var(--tw-text-opacity));
+}
+
 .after\:absolute::after {
   content: var(--tw-content);
   position: absolute;
@@ -2983,6 +3026,10 @@ html {
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-opacity-90:hover {
+  --tw-bg-opacity: 0.9;
 }
 
 .hover\:text-black:hover {

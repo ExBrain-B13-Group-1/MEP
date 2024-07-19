@@ -288,7 +288,7 @@
                         later.</p>
                     <!-- Redirect Back Login Page -->
                     <div class="flex justify-center mt-6">
-                        <a href="login.html" class="py-2 px-4 bg-[#4460EF] text-white font-bold rounded-md hover:bg-opacity-90 duration-75">Finish</a>
+                        <a href="login.php" class="py-2 px-4 bg-[#4460EF] text-white font-bold rounded-md hover:bg-opacity-90 duration-75">Finish</a>
                     </div>
                 </div>
             </div>
