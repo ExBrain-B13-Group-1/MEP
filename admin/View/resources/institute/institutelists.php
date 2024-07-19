@@ -205,7 +205,7 @@
 
   <nav class="bg-white shadow-dshadow border-gray-200 rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50" id="navbar">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
-      <div class="flex justify-between items-center w-96" >
+      <div class="flex justify-between items-center w-96">
         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
           <img src="../../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" route='institute' />
         </a>
@@ -326,7 +326,7 @@
                     <div class="w-4 h-4 bg-orange-600 rounded-full"></div>
                   </div>
                 </div>
-                  <a href="../events.php" class="bg-primarycolor text-white px-3 py-3 rounded-md my-6">View More</a>
+                <a href="../events.php" class="bg-primarycolor text-white px-3 py-3 rounded-md my-6">View More</a>
               </div>
             </div>
             <div class="mx-3">
@@ -342,51 +342,51 @@
                 <form class="text-black px-6">
                   <p class="text-right mt-6 text-red-500 mb-5 cursor-pointer">Clear</p>
                   <div class="flex items-center justify-between">
-                      <p class="mt-6">ID :</p>
-                      <div class="grid grid-cols-2 gap-8">
-                          <div>
-                              <label for="from" class="block">From</label>
-                              <input type="text" id="from" class="w-20 h-10 py-3 text-base bg-white border border-gray-300 rounded-md"/>
-                          </div>
-                          <div>
-                              <label for="to" class="block">To</label>
-                              <input type="text" id="to" class="w-20 h-10 py-3 text-base bg-white border border-gray-30 rounded-md"/>
-                          </div>
+                    <p class="mt-6">ID :</p>
+                    <div class="grid grid-cols-2 gap-8">
+                      <div>
+                        <label for="from" class="block">From</label>
+                        <input type="text" id="from" class="w-20 h-10 py-3 text-base bg-white border border-gray-300 rounded-md" />
                       </div>
-                  </div>
-                  
-                  <div class="flex items-center justify-between">
-                      <p class="mt-4 mr-5">Average Reviews :</p>
-                      <div class="grid grid-cols-2 mt-3">
-                          <select name="instructor" id="" class="w-48 col-span-2 p-2 bg-white border border-gray-30 rounded-md">
-                              <option selected disabled>Review Range</option>
-                              <option value="">1 ~ 2</option>
-                              <option value="">2 ~ 3</option>
-                              <option value="">3 ~ 4</option>
-                              <option value="">4 ~ 5</option>
-                          </select>
+                      <div>
+                        <label for="to" class="block">To</label>
+                        <input type="text" id="to" class="w-20 h-10 py-3 text-base bg-white border border-gray-30 rounded-md" />
                       </div>
+                    </div>
                   </div>
 
                   <div class="flex items-center justify-between">
-                      <p class="mt-4 mr-5">Registered Date :</p>
-                      <div class="grid grid-rows-2 mt-3 gap-3">
-                          <input type="text" onfocus="(this.type='date')"  onblur="(this.type='text')" id="startDate" class="w-48 col-span-2  p-2 bg-white border border-gray-30 rounded-md" placeholder="From"/>
-                          <input type="text" onfocus="(this.type='date')"  onblur="(this.type='text')" id="endDate" class="w-48 col-span-2  p-2 bg-white border border-gray-30 rounded-md" placeholder="To"/>
-                      </div>
+                    <p class="mt-4 mr-5">Average Reviews :</p>
+                    <div class="grid grid-cols-2 mt-3">
+                      <select name="instructor" id="" class="w-48 col-span-2 p-2 bg-white border border-gray-30 rounded-md">
+                        <option selected disabled>Review Range</option>
+                        <option value="">1 ~ 2</option>
+                        <option value="">2 ~ 3</option>
+                        <option value="">3 ~ 4</option>
+                        <option value="">4 ~ 5</option>
+                      </select>
+                    </div>
                   </div>
 
                   <div class="flex items-center justify-between">
-                      <p class="mt-4 mr-5">Total Classes :</p>
-                      <div class="grid grid-cols-2 mt-3">
-                        <select name="instructor" id="" class="w-48 col-span-2 p-2 bg-white border border-gray-30 rounded-md">
-                            <option selected disabled>Class</option>
-                            <option value="">1 ~ 10</option>
-                            <option value="">10 ~ 20</option>
-                            <option value="">20 ~ 30</option>
-                            <option value="">30 ~ 40</option>
-                            <option value="">40 ~ 50</option>
-                        </select>
+                    <p class="mt-4 mr-5">Registered Date :</p>
+                    <div class="grid grid-rows-2 mt-3 gap-3">
+                      <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="startDate" class="w-48 col-span-2  p-2 bg-white border border-gray-30 rounded-md" placeholder="From" />
+                      <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="endDate" class="w-48 col-span-2  p-2 bg-white border border-gray-30 rounded-md" placeholder="To" />
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between">
+                    <p class="mt-4 mr-5">Total Classes :</p>
+                    <div class="grid grid-cols-2 mt-3">
+                      <select name="instructor" id="" class="w-48 col-span-2 p-2 bg-white border border-gray-30 rounded-md">
+                        <option selected disabled>Class</option>
+                        <option value="">1 ~ 10</option>
+                        <option value="">10 ~ 20</option>
+                        <option value="">20 ~ 30</option>
+                        <option value="">30 ~ 40</option>
+                        <option value="">40 ~ 50</option>
+                      </select>
                     </div>
                   </div>
 
@@ -395,23 +395,23 @@
                     <div class="flex items-center mb-4">
                       <input checked id="banned" type="checkbox" value="" class="w-4 h-4 text-red-600 bg-gray-100 border-gray-300 rounded focus:ring-red-500  focus:ring-2 ">
                       <label for="banned" class="ms-2 text-sm font-medium  text-red-500">Banned</label>
-                  </div>
+                    </div>
 
-                  <div class="flex items-center mb-4">
-                    <input checked id="warned" type="checkbox" value="" class="w-4 h-4 text-orange-500 bg-gray-100 border-gray-300 rounded focus:ring-orange-500 focus:ring-2 ">
-                    <label for="warned" class="ms-2 text-sm font-medium text-orange-500 ">Warned</label>
-                </div>
-                
+                    <div class="flex items-center mb-4">
+                      <input checked id="warned" type="checkbox" value="" class="w-4 h-4 text-orange-500 bg-gray-100 border-gray-300 rounded focus:ring-orange-500 focus:ring-2 ">
+                      <label for="warned" class="ms-2 text-sm font-medium text-orange-500 ">Warned</label>
+                    </div>
+
                     <!-- Warned Radio Button -->
-     
-                  </div>
-                  
-                  <div class="grid grid-cols-2 gap-10 mb-5 mt-1">
-                      <button type="button" class="w-full focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
-                      <button type="button" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Apply</button>
+
                   </div>
 
-              </form>
+                  <div class="grid grid-cols-2 gap-10 mb-5 mt-1">
+                    <button type="button" class="w-full focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
+                    <button type="button" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Apply</button>
+                  </div>
+
+                </form>
               </div>
             </div>
           </div>
@@ -433,7 +433,7 @@
             <th scope="col" class="px-6 py-3 font-bold text-md">Warn</th>
           </tr>
         </thead>
-        <tbody >
+        <tbody>
           <tr id="1243305338" aria-warm="true" class="cursor-pointer bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-300">
             <td class="px-6 py-3 text-black text-md">245</td>
             <td class="px-3 py-3 text-black text-xs">
@@ -482,7 +482,7 @@
           </tr>
 
           <tr id="124er05338" class="cursor-pointer bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50">
-   
+
 
             <td class="px-6 py-3 text-black text-md">247</td>
             <td class="px-3 py-3 text-black text-md">
@@ -532,7 +532,7 @@
           </tr>
 
           <tr id="12ere05338" class="cursor-pointer bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50">
-    
+
 
             <td class="px-6 py-3 text-black text-md">245</td>
             <td class="px-3 py-3 text-black text-md">
@@ -557,7 +557,7 @@
           </tr>
 
           <tr id="124saw5338" class="cursor-pointer bg-white group-warm aria-[warm=true]:bg-orange-200 border-b hover:bg-gray-50">
- 
+
 
             <td class="px-6 py-3 text-black text-md">233</td>
             <td class="px-3 py-3 text-black text-md">
@@ -610,41 +610,41 @@
             <td colspan="8" class="border-gray-300 border-t text-center">
               <div class="flex justify-center">
                 <nav aria-label="Page navigation example">
-                    <ul class="flex items-center -space-x-px h-10 text-base my-1">
-                        <li>
-                            <a href="#" class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 ">
-                            <span class="sr-only">Previous</span>
-                            <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-                            </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">1</a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">2</a>
-                        </li>
-                        <li>
-                            <a href="#" aria-current="page" class="z-10 flex items-center justify-center px-4 h-10 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 ">3</a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">4</a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">5</a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 ">
-                            <span class="sr-only">Next</span>
-                            <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-                            </svg>
-                            </a>
-                        </li>
-                    </ul>
+                  <ul class="flex items-center -space-x-px h-10 text-base my-1">
+                    <li>
+                      <a href="#" class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 ">
+                        <span class="sr-only">Previous</span>
+                        <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">1</a>
+                    </li>
+                    <li>
+                      <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">2</a>
+                    </li>
+                    <li>
+                      <a href="#" aria-current="page" class="z-10 flex items-center justify-center px-4 h-10 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 ">3</a>
+                    </li>
+                    <li>
+                      <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">4</a>
+                    </li>
+                    <li>
+                      <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ">5</a>
+                    </li>
+                    <li>
+                      <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 ">
+                        <span class="sr-only">Next</span>
+                        <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
                 </nav>
-            </div>
+              </div>
             </td>
           </tr>
         </tfoot>
@@ -680,13 +680,13 @@
           <div class="flex my-2 ml-2 items-center text-sm">
             <p class="mr-2 font-bold">Status:</p>
             <p>
-              <div class="w-full bg-gray-200 rounded-full h-2.5  ">
-                <div class="bg-yellow-400 h-2.5 rounded-full " style="width: 45%"></div>
-              </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5  ">
+              <div class="bg-yellow-400 h-2.5 rounded-full " style="width: 45%"></div>
+            </div>
             </p>
           </div>
 
-          
+
           <div class=" my-2 ml-2  text-sm">
             <p class="mr-2 font-bold">About</p>
             <p class="block">
@@ -721,10 +721,10 @@
             </p>
           </div>
         </div>
-        
-          <button class="bg-primarycolor px-3 py-1 text-white rounded-md ml-3" id="closeInstituteBox">
-            Close
-          </button>
+
+        <button class="bg-primarycolor px-3 py-1 text-white rounded-md ml-3" id="closeInstituteBox">
+          Close
+        </button>
 
       </div>
     </div>

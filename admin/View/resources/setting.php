@@ -430,11 +430,13 @@
         </div>
 
         <h1 class="my-3 font-semibold">Security</h1>
-        <div class="w-[95%] h-fit m-auto bg-[#A0AFFF]/20 flex justify-start items-center p-2 rounded">
-          <svg width="29" height="32" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="w-[95%] h-fit m-auto bg-[#A0AFFF]/20 flex justify-between items-center p-2 rounded">
+          <div class="flex justify-start items-center">
+             <svg width="29" height="32" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M16.4217 7.96911V6.70595C16.4217 3.91564 14.1594 1.65332 11.369 1.65332C8.57872 1.65332 6.31641 3.91564 6.31641 6.70595V7.96911" stroke="#1237F2" stroke-width="2" stroke-linecap="round" />
             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.11035 7.81637C3.57628e-05 8.92542 0 10.7128 0 14.285V15.5482C0 20.3115 -3.7645e-06 22.6939 1.48042 24.173C2.95958 25.6534 5.3419 25.6534 10.1053 25.6534H12.6316C17.3949 25.6534 19.7773 25.6534 21.2564 24.173C22.7368 22.6939 22.7368 20.3115 22.7368 15.5482V14.285C22.7368 10.7128 22.7368 8.92542 21.6265 7.81637C20.5174 6.70605 18.7301 6.70605 15.1579 6.70605H7.57895C4.00674 6.70605 2.2194 6.70605 1.11035 7.81637ZM11.3684 16.8113C12.0657 16.8113 12.6316 16.2454 12.6316 15.5482C12.6316 14.8509 12.0657 14.285 11.3684 14.285C10.6712 14.285 10.1053 14.8509 10.1053 15.5482C10.1053 16.2454 10.6712 16.8113 11.3684 16.8113ZM15.1579 15.5482C15.1579 17.1978 14.1032 18.6012 12.6316 19.1216V21.864H10.1053V19.1216C8.63369 18.6012 7.57895 17.1978 7.57895 15.5482C7.57895 13.4551 9.27537 11.7587 11.3684 11.7587C13.4615 11.7587 15.1579 13.4551 15.1579 15.5482Z" fill="#1237F2" />
           </svg>
+          
           <div class="ml-4">
             <h1 class="font-semibold">Two Factory Authentication</h1>
             <p class="text-sm text-gray-400">
@@ -443,8 +445,10 @@
               in.
             </p>
           </div>
+          </div>
+         
 
-          <label class="inline-flex items-center cursor-pointer ml-2">
+          <label class="inline-flex items-center cursor-pointer">
             <input type="checkbox" value="" class="sr-only peer" id="checkboxAccSetting" onclick="openAccountSecurity('2fa')" />
             <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-5 after:h-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
           </label>
@@ -469,7 +473,7 @@
 
         <div id="securityContainer" class="hidden absolute top-0 left-0 w-full h-full bg-gray-400/50 justify-center items-center">
           <!--! Two Factor Authentication -->
-          <div class="hidden w-[70%] h-[90%] bg-white rounded-md p-4">
+          <div class="hidden w-[70%] bg-white rounded-md p-4">
             <h1 class="font-semibold my-2">Setup authenticator app</h1>
             <p class="text-sm text-gray-400">
               Autheneticator apps and browser extensions like 1Password,
@@ -507,7 +511,7 @@
           </div>
 
           <!--! Recovery Codes -->
-          <div class="hidden w-[70%] h-[90%] bg-white rounded-md p-4">
+          <div class="hidden w-[70%]  bg-white rounded-md p-4">
             <h1 class="font-semibold my-2">Download your recovery codes</h1>
             <p class="text-sm text-gray-400">
               You can use recovery codes as a second factor to authenticate in
@@ -694,15 +698,15 @@ This Privacy Policy describes how [Myanmar Education Portall] ("we," "us," or "o
       </div>
 
       <!--! Maintenance -->
-      <div class="w-full hidden" id="maintenanceSetting">
-        <div class="my-3 flex justify-between items-center px-3">
-          <h1 class="font-semibold">Scope Maintenance</h1>
+      <div class="w-full hidden pt-14" id="maintenanceSetting">
+        <div class="my-5 flex  justify-between items-center px-3">
+          <h1 class="font-semibold text-xl">Scope Maintenance</h1>
           <label class="inline-flex items-center cursor-pointer ml-2">
             <input type="checkbox" value="" class="sr-only peer" id="checkboxAccSetting" />
             <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-5 after:h-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
           </label>
         </div>
-        <div class="w-[95%] h-fit m-auto bg-[#A0AFFF]/20">
+        <div class=" h-fit m-auto bg-[#A0AFFF]/20">
           <form action="">
             <div class="grid gap-6 grid-cols-4 p-3">
               <div>
@@ -755,87 +759,7 @@ This Privacy Policy describes how [Myanmar Education Portall] ("we," "us," or "o
           </div>
         </div>
 
-        <div class="mt-6 mb-2 flex justify-between items-center px-3">
-          <h1 class="font-semibold">Single Page Maintenance</h1>
-          <label class="inline-flex items-center cursor-pointer ml-2">
-            <input type="checkbox" value="" class="sr-only peer" id="checkboxAccSetting" />
-            <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-5 after:h-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-          </label>
-        </div>
-        <div class="w-[95%] h-fit m-auto bg-[#A0AFFF]/20">
-          <form action="">
-            <div class="grid gap-6 grid-cols-3 p-3">
-              <div>
-                <select id="scope" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                  <option selected>Select Scope</option>
-                  <option value="US">user</option>
-                  <option value="CA">institute</option>
-                </select>
-              </div>
-              <div>
-                <input type="datetime-local" id="startDate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Start Date" required />
-              </div>
-              <div>
-                <select id="assign" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                  <option selected>Select Assign</option>
-                  <option value="US">paing sett kyaw</option>
-                  <option value="CA">saw phyo naing</option>
-                  <option value="FR">hset paing phyo</option>
-                  <option value="FR">thiha thwin</option>
-                </select>
-              </div>
-              <div>
-                <select id="selectPage" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                  <option selected>Select Page</option>
-                  <option value="US">login screen</option>
-                  <option value="CA">home screen</option>
-                  <option value="FR">dashboard</option>
-                  <option value="FR">events</option>
-                </select>
-              </div>
-              <div>
-                <input type="datetime-local" id="startDate" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Start Date" required />
-              </div>
-              <div class="flex justify-center items-end">
-                <button class="w-full h-fit text-white py-2 rounded-md bg-primarycolor">
-                  ADD
-                </button>
-              </div>
-            </div>
-          </form>
-
-          <div class="relative overflow-x-auto">
-            <table class="w-full text-sm text-left rtl:text-right text-gray-500">
-              <thead class="text-xs text-gray-900 uppercase border-b-2 border-gray-300">
-                <tr class="text-xs">
-                  <th scope="col" class="px-6 py-3">Scope</th>
-                  <th scope="col" class="px-6 py-3">Page</th>
-                  <th scope="col" class="px-6 py-3">Start Time</th>
-                  <th scope="col" class="px-6 py-3">End Time</th>
-
-                  <th scope="col" class="px-6 py-3">Assign By</th>
-                  <th scope="col" class="px-6 py-3">Created By</th>
-                  <th scope="col" class="px-6 py-3">Created Time</th>
-                  <th scope="col" class="px-6 py-3"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="text-xs">
-                  <td class="px-6 py-4">Institute</td>
-                  <td class="px-6 py-4">Login</td>
-                  <td class="px-6 py-4">23/ 06/ 2024 6:00 PM</td>
-                  <td class="px-6 py-4">23/ 06/ 2024 6:00 PM</td>
-                  <td class="px-6 py-4">Hset Paing</td>
-                  <td class="px-6 py-4">Paing Sett Kyaw</td>
-                  <td class="px-6 py-4">23/ 06/ 2024 6:00 PM</td>
-                  <td class="px-6 py-4">
-                    <ion-icon name="remove-circle-outline" class="align-middle text-xl cursor-pointer"></ion-icon>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+      
       </div>
     </div>
   </div>
