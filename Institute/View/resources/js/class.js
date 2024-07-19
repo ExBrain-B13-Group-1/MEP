@@ -1,9 +1,5 @@
 $(document).ready(function(){
 
-    $('.modechanges').on("click",()=>{
-        updateChartColors();
-    });
-
     $('.changes').on('click', function() {
         $('.changes').removeClass("actives");
         $(this).addClass('actives');
@@ -16,4 +12,15 @@ $(document).ready(function(){
         }
     });
 
+    $('.class-views').on("click",function(){
+        console.log('hay');
+        // view details
+        // sample prototype path change
+        // window.location.href = ""
+        // fetch will be here 
+    });
+
 });
+
+
+console.log("hay");

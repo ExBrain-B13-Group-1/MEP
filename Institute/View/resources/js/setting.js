@@ -13,7 +13,6 @@ $(document).ready(function(){
         const sections = {
             "General": ".generals",
             "Account & Security": ".accsecuritys",
-            "Privacy & Policy": ".privacys",
             "Social Link": ".sociallinks"
         };
         

@@ -24,9 +24,6 @@
                             <a href="#" class="inline-block p-4 rounded-t-lg hover:dark:bg-gray-600 changes">Account & Security</a>
                         </li>
                         <li class="me-2 h-10">
-                            <a href="#" class="inline-block p-4 rounded-t-lg hover:dark:bg-gray-600 changes">Privacy & Policy</a>
-                        </li>
-                        <li class="me-2 h-10">
                             <a href="#" class="inline-block p-4 rounded-t-lg hover:dark:bg-gray-600 changes">Social Link</a>
                         </li>
                     </ul>
@@ -101,7 +98,7 @@
                         <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
                     </svg>
                 </button>
-                <a href="javascript:void(0);" class="flex ms-2 md:me-24">
+                <a href="./dashoverview.php" class="flex ms-2 md:me-24">
                     <img src="./../../../storages/meplogo.png" class="h-12 me-3" alt="MEP Logo" />
                     <div class="">
                         <p class="text-sm  font-semibold sm:text-sm dark:text-white">Myanmar Education</p>
@@ -111,8 +108,8 @@
             </div>
             <ul class="space-y-2 font-medium h-[80vh] flex flex-col justify-between sidebar-uls ">
                 <div>
-                    <li class="mb-1.5 sidebarlinks">
-                        <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#d9dffc] dark:hover:bg-gray-700 group">
+                    <li class="mb-1.5 sidebarlinks" click-page="dashboard">
+                        <a href="javascript:void(0);" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#d9dffc] dark:hover:bg-gray-700 group">
                             <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
                                 <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
                                 <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
@@ -132,13 +129,13 @@
                             </svg>
                         </button>
                         <ul id="dropdown-class" class="hidden py-2 space-y-2">
-                            <li class="sidebarlinks">
+                            <li class="sidebarlinks" click-page="class-lists">
                                 <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-[#d9dffc] dark:text-white dark:hover:bg-gray-700">Class Lists</a>
                             </li>
-                            <li class="sidebarlinks">
+                            <li class="sidebarlinks" click-page="create-new-class">
                                 <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-[#d9dffc] dark:text-white dark:hover:bg-gray-700">Create a New Class</a>
                             </li>
-                            <li class="sidebarlinks">
+                            <li class="sidebarlinks" click-page="delete-class">
                                 <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-[#d9dffc] dark:text-white dark:hover:bg-gray-700">Delete Class</a>
                             </li>
                         </ul>
@@ -155,19 +152,19 @@
                             </svg>
                         </button>
                         <ul id="dropdown-instructor" class="hidden py-2 space-y-2">
-                            <li class="sidebarlinks">
+                            <li class="sidebarlinks" click-page="instructor-list">
                                 <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-[#d9dffc] dark:text-white dark:hover:bg-gray-700">Instructor List</a>
                             </li>
-                            <li class="sidebarlinks">
+                            <li class="sidebarlinks" click-page="add-instructor">
                                 <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-[#d9dffc] dark:text-white dark:hover:bg-gray-700">Add Instructor</a>
                             </li>
-                            <li class="sidebarlinks">
+                            <li class="sidebarlinks" click-page="delete-instructor">
                                 <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-[#d9dffc] dark:text-white dark:hover:bg-gray-700">Delete Instructor</a>
                             </li>
                         </ul>
                     </li>
 
-                    <li class="mb-1.5 sidebarlinks">
+                    <li class="mb-1.5 sidebarlinks" click-page="student-list">
                         <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#d9dffc] dark:hover:bg-gray-700 group">
                             <svg class="w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
                                 <path fill="currentColor" d="m226.53 56.41l-96-32a8 8 0 0 0-5.06 0l-96 32A8 8 0 0 0 24 64v80a8 8 0 0 0 16 0V75.1l33.59 11.19a64 64 0 0 0 20.65 88.05c-18 7.06-33.56 19.83-44.94 37.29a8 8 0 1 0 13.4 8.74C77.77 197.25 101.57 184 128 184s50.23 13.25 65.3 36.37a8 8 0 0 0 13.4-8.74c-11.38-17.46-27-30.23-44.94-37.29a64 64 0 0 0 20.65-88l44.12-14.7a8 8 0 0 0 0-15.18ZM176 120a48 48 0 1 1-86.65-28.45l36.12 12a8 8 0 0 0 5.06 0l36.12-12A47.9 47.9 0 0 1 176 120" />
@@ -187,16 +184,16 @@
                             </svg>
                         </button>
                         <ul id="dropdown-event" class="hidden py-2 space-y-2">
-                            <li class="sidebarlinks">
+                            <li class="sidebarlinks" click-page="event-list">
                                 <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-[#d9dffc] dark:text-white dark:hover:bg-gray-700">Event Lists</a>
                             </li>
-                            <li class="sidebarlinks">
+                            <li class="sidebarlinks" click-page="create-event">
                                 <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-[#d9dffc] dark:text-white dark:hover:bg-gray-700">Create Event</a>
                             </li>
                         </ul>
                     </li>
 
-                    <li class="mb-1.5 sidebarlinks">
+                    <li class="mb-1.5 sidebarlinks" click-page="history">
                         <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#d9dffc] dark:hover:bg-gray-700 group">
                             <svg class="w-5 h-5  text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <g fill="none">
@@ -211,7 +208,7 @@
                 </div>
 
                 <div>
-                    <li class="border-t border-t-gray-400 dark:border-t-gray-500 pt-5 mb-1.5 sidebarlinks">
+                    <li class="border-t border-t-gray-400 dark:border-t-gray-500 pt-5 mb-1.5 sidebarlinks" click-page="notification">
                         <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#d9dffc] dark:hover:bg-gray-700 group">
                             <svg class="w-5 h-5  text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M14.5 18q-1.05 0-1.775-.725T12 15.5t.725-1.775T14.5 13t1.775.725T17 15.5t-.725 1.775T14.5 18M5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V2h2v2h8V2h2v2h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5z" />
@@ -221,7 +218,7 @@
                         </a>
                     </li>
 
-                    <li class="mb-1.5 sidebarlinks">
+                    <li class="mb-1.5 sidebarlinks" click-page="setting">
                         <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#d9dffc] dark:hover:bg-gray-700 group">
                             <svg class="w-5 h-5  text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                 <path fill="currentColor" d="M11.078 0c.294 0 .557.183.656.457l.706 1.957q.379.094.654.192q.3.107.78.33l1.644-.87a.7.7 0 0 1 .832.131l1.446 1.495c.192.199.246.49.138.744l-.771 1.807q.191.352.308.604q.126.273.312.76l1.797.77c.27.115.437.385.419.674l-.132 2.075a.69.69 0 0 1-.46.605l-1.702.605q-.073.352-.154.606a9 9 0 0 1-.298.774l.855 1.89a.68.68 0 0 1-.168.793l-1.626 1.452a.7.7 0 0 1-.796.096l-1.676-.888a7 7 0 0 1-.81.367l-.732.274l-.65 1.8a.7.7 0 0 1-.64.457L9.11 20a.7.7 0 0 1-.669-.447l-.766-2.027a15 15 0 0 1-.776-.29a10 10 0 0 1-.618-.293l-1.9.812a.7.7 0 0 1-.755-.133L2.22 16.303a.68.68 0 0 1-.155-.783l.817-1.78a10 10 0 0 1-.302-.644a14 14 0 0 1-.3-.811L.49 11.74a.69.69 0 0 1-.49-.683l.07-1.921a.69.69 0 0 1 .392-.594L2.34 7.64q.13-.478.23-.748a9 9 0 0 1 .314-.712L2.07 4.46a.68.68 0 0 1 .15-.79l1.404-1.326a.7.7 0 0 1 .75-.138l1.898.784q.314-.209.572-.344q.307-.162.824-.346l.66-1.841A.7.7 0 0 1 8.984 0zm-1.054 7.019c-1.667 0-3.018 1.335-3.018 2.983s1.351 2.984 3.018 2.984s3.017-1.336 3.017-2.984s-1.35-2.983-3.017-2.983" />
@@ -230,7 +227,7 @@
                         </a>
                     </li>
 
-                    <li class="mb-1.5">
+                    <li class="mb-1.5" click-page="logout">
                         <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#d9dffc] dark:hover:bg-gray-700 group">
                             <svg class="w-5 h-5  text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path fill="currentColor" fill-rule="evenodd" d="M16.125 12a.75.75 0 0 0-.75-.75H4.402l1.961-1.68a.75.75 0 1 0-.976-1.14l-3.5 3a.75.75 0 0 0 0 1.14l3.5 3 a.75.75 0 1 0 .976-1.14l-1.96-1.68h10.972a.75.75 0 0 0 .75-.75" clip-rule="evenodd" />
@@ -473,12 +470,6 @@
 
             </div>
 
-            <!-- Privacy & Policy -->
-            <div class="hidden bg-white col-span-8 col-start-2 rounded-lg px-4 py-2 mt-16 dark:bg-gray-600 duration-500 privacys">
-                <p class="dark:text-white">Privacy & Policy Sample Text</p>
-                <!-- Code Here Bro Paing Sett Kyaw -->
-            </div>
-
             <!-- Social Link -->
             <div class="hidden bg-white col-span-8 col-start-2 rounded-lg px-24 py-16 mt-16 dark:bg-gray-600 duration-500 sociallinks">
                 <h2 class="text-2xl font-bold dark:text-white mb-5 opacity-80">Social Links</h2>
@@ -520,8 +511,8 @@
     <script src="./../lib/chart.js" type="text/javascript"></script>
     <!-- datatable -->
     <script src="./../lib/dataTables.js"></script>
-    <!-- leaflet map -->
-    <script src="./../lib/map/leaflet.js"></script>
+    <!-- path -->
+    <script src="./../js/path.js" type="text/javascript"></script>
     <!-- darkmode lightmode js -->
     <script src="./../js/darkandlight.js" type="text/javascript"></script>
     <!-- customjs -->

@@ -43,22 +43,4 @@ $(document).ready(function(){
         updateMode();
     });
 
-    $('.sidebarlinks').click(function() {
-        $('.sidebarlinks').removeClass('active');
-        $(this).addClass('active');
-        updateSidebarLinkColors();
-    });
-
-    $('[data-collapse-toggle]').click(function() {
-        // Get the ID of the dropdown this toggle controls
-        var dropdownId = $(this).attr('aria-controls');
-
-        // Toggle the current dropdown and hide others
-        $('#' + dropdownId).toggle();
-        $('[data-collapse-toggle]').not(this).each(function() {
-            var otherDropdownId = $(this).attr('aria-controls');
-            $('#' + otherDropdownId).hide();
-        });
-    });
-
 });
