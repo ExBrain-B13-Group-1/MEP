@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    "./Auth/**/*.{html,js,php}",
     "./Dashboard/**/*.{html,js,php}",
     "./Common/**/*.{html,js,php}",
     "./Instructor/**/*.{html,js,php}",
@@ -16,6 +17,9 @@ module.exports = {
     extend: {
       fontFamily: {
         customFont: ['Lato', "sans-serif"],
+      },
+      backgroundImage: {
+        'custom-bg': "url('../../../storages/loginBg.png')",
       },
     },
   },
