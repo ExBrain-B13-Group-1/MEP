@@ -321,88 +321,81 @@
                 </svg>
               </button>
               <!-- Dropdown menu -->
-              <table class="table-fixed border-separate border-spacing-2 z-10 hidden px-5 bg-white divide-y divide-gray-100 rounded-lg shadow-dshadow" id="dropdownRadio">
-                <tbody>
-                  <tr>
-                    <td class="w-32">ID:</td>
-                    <td class="flex w-56">
-                      <input type="text" name="from" id="from" placeholder="from" class="w-full border border-gray-400" />
-                      <input type="text" name="to" id="to" placeholder="to" class="w-full border border-gray-400" />
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="w-32">Age Range:</td>
-                    <td class="w-56">
-                      <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-black border border-gray-400 font-medium rounded-sm text-sm px-5 w-full py-1 text-center inline-flex items-center" type="button">
-                        Dropdown button
-                        <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
-                        </svg>
-                      </button>
-
-                      <!-- Dropdown menu -->
-                      <div id="dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
-                        <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownDefaultButton">
-                          <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">13 ~ 18</a>
-                          </li>
-                          <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">18 ~ 25</a>
-                          </li>
-                          <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">25 ~ 40</a>
-                          </li>
-                          <li>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">40 ~ 50</a>
-                          </li>
-                        </ul>
+                      <div class="w-[28rem] z-10 hidden px-5 bg-white divide-y divide-gray-100 rounded-lg shadow-dshadow" id="dropdownRadio">
+                <form class="text-black px-6">
+                  <p class="text-right mt-6 text-red-500 mb-5 cursor-pointer">Clear</p>
+                  <div class="flex items-center justify-between">
+                    <p class="mt-6">ID :</p>
+                    <div class="grid grid-cols-2 gap-8">
+                      <div>
+                        <label for="from" class="block">From</label>
+                        <input type="text" id="from" class="w-20 h-10 py-3 text-base bg-white border border-gray-300 rounded-md" />
                       </div>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="w-32">Registered Date :</td>
-                    <td class="w-56">
-                      <input type="date" name="from_date" id="fromDate" class="w-full border border-gray-400" placeholder="From" />
-                      <input type="date" name="to_date" id="toDate" class="w-full border border-gray-400" placeholder="to" />
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="w-32">Enrolled Classes:</td>
-                    <td class="w-56 flex">
-                      <input type="text" name="from" id="from" placeholder="from" class="w-full border border-gray-400" />
-                      <input type="text" name="to" id="to" placeholder="to" class="w-full border border-gray-400" />
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td colspan="2" class="px-3">
-                      <div class="flex justify-center">
-                        <button class="bg-orange-400 rounded-md px-1 mx-2 shadow-dshadow">
-                          By Warning
-                        </button>
-                        <button class="bg-red-400 rounded-md px-1 mx-2 shadow-dshadow">
-                          By Banned
-                        </button>
+                      <div>
+                        <label for="to" class="block">To</label>
+                        <input type="text" id="to" class="w-20 h-10 py-3 text-base bg-white border border-gray-30 rounded-md" />
                       </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="2" class="px-3">
-                      <div class="flex justify-around">
-                        <button class="border border-gray-300 rounded-md w-32">
-                          Cancel
-                        </button>
-                        <button class="bg-primarycolor text-white rounded-md w-32">
-                          Apply
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between">
+                    <p class="mt-4 mr-5">Average Reviews :</p>
+                    <div class="grid grid-cols-2 mt-3">
+                      <select name="instructor" id="" class="w-48 col-span-2 p-2 bg-white border border-gray-30 rounded-md">
+                        <option selected disabled>Review Range</option>
+                        <option value="">1 ~ 2</option>
+                        <option value="">2 ~ 3</option>
+                        <option value="">3 ~ 4</option>
+                        <option value="">4 ~ 5</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between">
+                    <p class="mt-4 mr-5">Registered Date :</p>
+                    <div class="grid grid-rows-2 mt-3 gap-3">
+                      <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="startDate" class="w-48 col-span-2  p-2 bg-white border border-gray-30 rounded-md" placeholder="From" />
+                      <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="endDate" class="w-48 col-span-2  p-2 bg-white border border-gray-30 rounded-md" placeholder="To" />
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between">
+                    <p class="mt-4 mr-5">Total Classes :</p>
+                    <div class="grid grid-cols-2 mt-3">
+                      <select name="instructor" id="" class="w-48 col-span-2 p-2 bg-white border border-gray-30 rounded-md">
+                        <option selected disabled>Class</option>
+                        <option value="">1 ~ 10</option>
+                        <option value="">10 ~ 20</option>
+                        <option value="">20 ~ 30</option>
+                        <option value="">30 ~ 40</option>
+                        <option value="">40 ~ 50</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-10 mb-2 mt-3">
+                    <!-- Banned Radio Button -->
+                    <div class="flex items-center mb-4">
+                      <input checked id="banned" type="checkbox" value="" class="w-4 h-4 text-red-600 bg-gray-100 border-gray-300 rounded focus:ring-red-500  focus:ring-2 ">
+                      <label for="banned" class="ms-2 text-sm font-medium  text-red-500">Banned</label>
+                    </div>
+
+                    <div class="flex items-center mb-4">
+                      <input checked id="warned" type="checkbox" value="" class="w-4 h-4 text-orange-500 bg-gray-100 border-gray-300 rounded focus:ring-orange-500 focus:ring-2 ">
+                      <label for="warned" class="ms-2 text-sm font-medium text-orange-500 ">Warned</label>
+                    </div>
+
+                    <!-- Warned Radio Button -->
+
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-10 mb-5 mt-1">
+                    <button type="button" class="w-full focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
+                    <button type="button" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Apply</button>
+                  </div>
+
+                </form>
+              </div>
             </div>
           </div>
         </div>
