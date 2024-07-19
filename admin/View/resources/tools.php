@@ -268,50 +268,24 @@
     </div>
   </nav>
 
-  <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%] flex py-5" id="main" aria-checked="false">
-    <div class="w-2/4 h-auto p-2 border-r-2 border-gray-300">
-      <div class="w-full my-10">
-        <h1 class="font-bold text-2xl my-6">All Tools</h1>
-        <div class="flex">
-          <div class="cursor-pointer w-40 h-40 bg-[#A0AFFF]/20 mx-2 rounded-md flex justify-center items-center text-primarycolor">
-            Coupon
-          </div>
-          <div class="w-40 h-40 bg-gray-400 mx-2 rounded-md flex
-            justify-center items-center text-gray-700"">Coming Soon...
-          </div>
-        </div>
-      </div>
-      <div class=" w-full">
-            <h1 class="font-bold text-2xl my-6">History</h1>
-            <div class="relative overflow-x-auto sm:rounded-lg">
-              <table class="w-full text-sm text-left rtl:text-right text-gray-500">
-                <thead class="text-xs text-gray-700 uppercase border-b-2 border-gray-300 mb-3">
-                  <tr>
-                    <th scope="col" class="px-6 py-3">Tool</th>
-                    <th scope="col" class="px-6 py-3">Creacted Date / Time</th>
-                    <th scope="col" class="px-6 py-3">Created by</th>
-                    <th scope="col" class="px-6 py-3"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="odd:bg-primarycolor/50 even:bg-primarycolor/70 text-white">
-                    <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
-                      Coupon
-                    </th>
-                    <td class="px-6 py-4">25 / 06 / 2024 7:40 PM</td>
-                    <td class="px-6 py-4">Paing Sett Kyaw</td>
-                    <td class="px-6 py-4">
-                      <ion-icon name="remove-circle-outline" class="text-2xl"></ion-icon>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+  <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%] grid grid-rows-2  py-5" id="main" aria-checked="false">
+      <div class="grid grid-cols-2 gap-2">
+    
+        <div class="w-full h-auto p-2 border-r-2 border-gray-300">
+          <div class="w-full my-5">
+            <h1 class="font-bold text-2xl mb-6">All Tools</h1>
+            <div class="flex">
+              <div class="cursor-pointer w-40 h-40 bg-[#A0AFFF]/20 mx-2 rounded-md flex justify-center items-center text-primarycolor">
+                Coupon
+              </div>
+              <div class="w-40 h-40 bg-gray-400 mx-2 rounded-md flex
+                justify-center items-center text-gray-700"">Coming Soon...
+              </div>
             </div>
           </div>
         </div>
-        <div class="w-2/4 h-auto px-1 py-3 ml-1">
-          <div class="w-full mt-10">
-            <h1 class="font-bold text-2xl mt-4 mb-2">Coupon Generator</h1>
+        <div class="w-full mt-5">
+            <h1 class="font-bold text-2xl mb-5">Coupon Generator</h1>
             <form class="px-20">
               <div class="grid gap-4 mb-6 md:grid-cols-2">
                 <div>
@@ -341,39 +315,44 @@
                 </div>
               </div>
             </form>
-          </div>
-          <div class="w-full">
+        </div>
+      </div>
+      <div class="w-full">
             <h1 class="font-bold text-2xl my-2">Coupon History</h1>
             <div class="relative overflow-x-auto sm:rounded-lg">
               <table class="w-full text-xs text-left rtl:text-right text-gray-500">
                 <thead class="text-xs text-gray-700 uppercase border-b-2 border-gray-300 mb-3">
                   <tr>
+                    <th scope="col" class="px-6 py-3">Tool</th>
                     <th scope="col" class="px-6 py-3">Code</th>
-                    <th scope="col" class="px-6 py-3">start Date</th>
+                    <th scope="col" class="px-6 py-3">Start Date</th>
                     <th scope="col" class="px-6 py-3">End Date</th>
                     <th scope="col" class="px-6 py-3">Percentage</th>
                     <th scope="col" class="px-6 py-3">Limited</th>
+                    <th scope="col" class="px-6 py-3">Created Date/Time</th>
+                    <th scope="col" class="px-6 py-3">Created By</th>
                     <th scope="col" class="px-6 py-3"></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr class="odd:bg-primarycolor/45 even:bg-primarycolor/75 text-white">
-                    <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
-                      D2PDCE
-                    </th>
+                    <td class="px-6 py-4">Coupon</td>
+                    <td class="px-6 py-4">D2PDCE</td>
                     <td class="px-6 py-4">25/ 06/ 2024</td>
                     <td class="px-6 py-4">25/ 06/ 2024</td>
                     <td class="px-6 py-4">10</td>
                     <td class="px-6 py-4">500</td>
+                    <td class="px-6 py-4">25 / 06 / 2024 7:40 PM</td>  
+                    <td class="px-6 py-4">Paing Sett Kyaw</td>  
                     <td class="px-6 py-4">
-                      <ion-icon name="close-circle-outline" class="text-lg cursor-pointer"></ion-icon>
+                      <ion-icon name="close-circle-outline" class="text-2xl cursor-pointer hover:text-red-500"></ion-icon>
                     </td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
-        </div>
+  </div>
 </body>
 
 </html>

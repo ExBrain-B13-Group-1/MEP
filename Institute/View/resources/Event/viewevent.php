@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Class - Create New Class</title>
+    <title>Event - View Event</title>
     <!-- Tailwind output css -->
     <link href="./../css/output.css" rel="stylesheet" />
 </head>
@@ -16,7 +16,7 @@
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
             <div class="flex items-center justify-between">
                 <div class="ml-64 relative top-2 pl-3">
-                    <p class="text-xl dark:text-white">Create New Class</p>
+                    <p class="text-xl dark:text-white">View Event</p>
                 </div>
 
                 <div class="flex items-center">
@@ -233,204 +233,74 @@
     </aside>
 
     <!-- Data Area Class List-->
-    <div class="block pt-20 pb-8 px-5 ml-64 bg-gray-300 dark:bg-gray-800">
-        <div class="grid grid-cols-10 gap-7 mt-10 ">
-            <div class="bg-white col-span-8 col-start-2 rounded-lg px-4 py-2 dark:bg-gray-700 duration-500">
-                <form action="" method="" class="px-10">
-                    <div class="grid grid-cols-2 gap-10">
-                        <!-- left -->
-                        <div>
-                            <h1 class="text-xl mb-5 mt-5 dark:text-white font-bold">Class Information</h1>
-                            <div class="pl-5">
-                                <div>
-                                    <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="user_avatar">Class Profile Photo</label>
-                                    <input class="block w-full text-base text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
-                                </div>
-                                <div class="mt-4">
-                                    <label for="classtitle" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Class Title</label>
-                                    <input type="text" id="classtitle" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Title" required />
-                                </div>
-                                <div class="mt-4">
-                                    <label for="description" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Description</label>
-                                    <textarea id="description" rows="4" class="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none" placeholder="Write class description...." required></textarea>
-                                </div>
-                                <div class="mt-4">
-                                    <label for="categories" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Category</label>
-                                    <select id="categories" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                        <option selected disabled>Choose Category</option>
-                                        <option value="">IT/Hardware</option>
-                                        <option value="">Bussiness</option>
-                                        <option value="">Telecommunication</option>
-                                        <option value="">Accounting</option>
-                                        <option value="">Painting</option>
-                                        <option value="">Digital Marketing</option>
-                                        <option value="">Other</option>
-                                    </select>
-                                </div>
-
+    <div class="pt-32 px-6 ml-64 flex justify-between">
+        <h2 class="text-xl font-bold dark:text-gray-200 mt-4">Event Information</h2>
+        <button id="addBtn" class="bg-blue-700 text-white px-10 py-2.5 rounded mb-4">Edit Event</button>
+    </div>
+    <div class="block px-6 pb-8 ml-64 bg-gray-300 dark:bg-gray-800">
+        <div class="grid grid-cols-10 gap-0">
+            <div class="bg-white col-span-10 rounded-lg dark:bg-gray-700 duration-500">
+                <div class="grid grid-cols-10">
+                    <!-- Event Information -->
+                    <div class="col-span-6 px-6 py-5">
+                        <div class="grid grid-cols-2 gap-5">
+                            <div class="mx-14 px-1 mb-5 mt-8">
+                                <img src="./../../../storages/cloud.jpg" alt="cloud">
                             </div>
-                            <h1 class="text-xl mb-5 mt-10 dark:text-white font-bold">Schedule and Duration</h1>
-                            <div class="pl-5">
-                                <div class="grid grid-cols-2 gap-5">
-                                    <div>
-                                        <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="datepicker-autohide1">Start Date</label>
-                                        <div class="relative max-w-sm">
-                                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
-                                                </svg>
-                                            </div>
-                                            <input id="datepicker-autohide1" datepicker datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="datepicker-autohide2">End Date</label>
-                                        <div class="relative max-w-sm">
-                                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
-                                                </svg>
-                                            </div>
-                                            <input id="datepicker-autohide2" datepicker datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
-                                        </div>
-                                    </div>
+                            <div class="pt-8 pr-9">
+                                <div class="flex mb-2 pb-0.5">
+                                    <span class="dark:text-gray-50 font-bold">Type :</span> <span class="dark:text-gray-400 ml-5 text-gray-500">Webinar</span>
                                 </div>
-                            </div>
-                            <div class="mt-5 mb-5 pl-5">
-                                <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Class Schedule</label>
-                                <div class="flex items-center mb-4 gap-5">
-                                    <div class="flex items-center">
-                                        <input checked id="mon" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="mon" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Mon</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input id="tue" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="tue" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Tue</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input id="wed" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="wed" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Wed</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input checked id="thu" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="thu" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Thu</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input id="fri" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="fri" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Fri</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input id="sat" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="sat" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Sat</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input id="sun" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="sun" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Sun</label>
-                                    </div>
+                                <div class="flex mb-2 pb-0.5">
+                                    <span class="dark:text-gray-50 font-bold">Instructor :</span> <span class="dark:text-gray-400 ml-5 text-gray-500">Dr.Emily White</span>
                                 </div>
-                            </div>
-                            <div class="grid grid-cols-2 gap-5 mb-8 pl-5">
-                                <div>
-                                    <label for="start-time" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">Start time:</label>
-                                    <div class="relative">
-                                        <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
-                                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                                <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd" />
-                                            </svg>
-                                        </div>
-                                        <input type="time" id="start-time" class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min="00:00" max="24:00" value="00:00" required />
-                                    </div>
+                                <div class="flex mb-2 pb-0.5">
+                                    <span class="dark:text-gray-50 font-bold">Date :</span> <span class="dark:text-gray-400 ml-5 text-gray-500">July 29, 2024</span>
+                                </div>
+                                <div class="flex mb-2 pb-0.5">
+                                    <span class="dark:text-gray-50 font-bold">Time :</span> <span class="dark:text-gray-400 ml-5 text-gray-500">9:00 AM - 11:00 AM</span>
                                 </div>
                                 <div>
-                                    <label for="end-time" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">End time:</label>
-                                    <div class="relative">
-                                        <div class="absolute inset-y-0 end-0 top-0 flex items-center pe-3.5 pointer-events-none">
-                                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                                                <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd" />
-                                            </svg>
-                                        </div>
-                                        <input type="time" id="end-time" class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min="00:00" max="24:00" value="00:00" required />
-                                    </div>
+                                    <p class="dark:text-gray-50 font-bold block">Register Link :</p>
+                                    <p class="dark:text-blue-500 text-blue-700 underline "> https://docs.google.com/forms/d/1QWZsx-SnhzNW-hHgGllNuXs5g5cqgUnw3hZT3FClbVQ/edit</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- right -->
-                        <div class="pr-5">
-                            <h1 class="text-xl mb-5 mt-5 dark:text-white font-bold">Instructor Information</h1>
-                            <div class="mt-4 pl-5">
-                                <label for="instructor" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Instructor</label>
-                                <div class="grid grid-cols-4 gap-3">
-                                    <select id="instructor" class="col-span-3 bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                                        <option selected disabled>Choose Instructor</option>
-                                        <option value="US">Mg Mg</option>
-                                        <option value="CA">Zaw Zaw</option>
-                                        <option value="FR">Kyaw Kyaw</option>
-                                        <option value="DE">Tun Tun</option>
-                                        <option value="DE">Aung Aung</option>
-                                        <option value="DE">Hla Hla</option>
-                                        <option value="DE">Nu Nu</option>
-                                    </select>
-                                    <button type="button" class="h-full w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</button>
-                                </div>
-                            </div>
-                            <h1 class="text-xl mb-5 mt-8 dark:text-white font-bold">Pricing and Enrollment</h1>
-                            <div class="mt-4 pl-5">
-                                <label for="classfee" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Class Fee</label>
-                                <input type="text" id="classfee" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 10,000 MMK" required />
-                            </div>
-                            <div class="mt-4 pl-5">
-                                <label for="maxenrollment" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Maximum Enrollment</label>
-                                <input type="text" id="maxenrollment" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 25" required />
-                            </div>
-                            <div class="mt-4 pl-5">
-                                <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="datepicker-autohide3">Enrollment Deadline</label>
-                                <div class="relative">
-                                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
-                                        </svg>
-                                    </div>
-                                    <input id="datepicker-autohide3" datepicker datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
-                                </div>
-                            </div>
-                            <div class="mt-4 pl-5">
-                                <label for="creditpoint" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Credit Point</label>
-                                <div class="relative">
-                                    <div class="relative">
-                                        <svg class="w-5 h-5 absolute left-3 top-3 dark:text-white opacity-60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                                            <g fill="currentColor">
-                                                <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z" />
-                                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
-                                                <path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
-                                            </g>
-                                        </svg>
-                                        <input type="text" id="creditpoint" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 25" required />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-4 pl-5">
-                                <label for="coupon" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Coupon Code</label>
-                                <select id="coupon" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    <option selected disabled>Choose Coupon</option>
-                                    <option value="5">HUEI34I 5%OFF</option>
-                                    <option value="10">JLOEO33 10%OFF</option>
-                                    <option value="15">DSEJE42 15%OFF</option>
-                                    <option value="25">YRGIIR2 25%OFF</option>
-                                    <option value="50">RYGNT32 50%OFF</option>
-                                </select>
-                            </div>
-                            <div class="mt-10 pl-5">
-                                <div class="grid grid-cols-2 gap-14">
-                                    <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
-                                    <button type="submit" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Publish</button>
-                                </div>
+                        <div class="mx-14 px-1 mb-5">
+                            <h2 class="text-xl font-bold dark:text-gray-200 mt-5 mb-3">Understanding Cloud Computing in 2024</h2>
+                            <div class="dark:text-gray-400">
+                                <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                <p class="text-justify my-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                             </div>
                         </div>
                     </div>
-                </form>
+                    <!-- Agenda/Schedule -->
+                    <div class="col-span-4 pr-20 pt-5">
+                        <!-- Agenda/Schedule -->
+                        <div class="flex justify-between items-center mb-2 mt-5">
+                            <div class="text-base dark:text-gray-400">Agenda/Schedule</div>
+                            <div>
+                                <ion-icon name="print-outline" class="w-6 h-6 dark:text-gray-400 hover:dark:text-gray-200 cursor-pointer mt-2"></ion-icon>
+                            </div>
+                        </div>
+                        <div class="max-w-2xl h-[80vh] mx-auto bg-white dark:bg-gray-600 p-6 overflow-y-auto hide-scrollbar border-2 border-gray-300 dark:border-gray-500">
+                            <div class="px-2 py-4 grid grid-cols-3 gap-20 text-base mb-4 rounded bg-cyan-900 text-gray-200 dark:bg-blue-500 dark:text-white">
+                                <div class="col-span-1">Time</div>
+                                <div class="col-span-2">Title</div>
+                            </div>
+                            <div id="agenda">
+                                <!-- Agenda/Schedule -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+
+
 
 
     <!-- ionicons icons -->
@@ -449,7 +319,7 @@
     <!-- darkmode lightmode js -->
     <script src="./../js/darkandlight.js" type="text/javascript"></script>
     <!-- customjs -->
-    <script src="./../js/class.js" type="text/javascript"></script>
+    <script src="./../js/event.js" type="text/javascript"></script>
 </body>
 
 </html>

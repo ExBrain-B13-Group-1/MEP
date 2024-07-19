@@ -11,7 +11,7 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-  <script src="../../resources/js/navigation.js" defer></script>
+  <script src="../../resources/js/user.js" defer></script>
   <script src="../../resources/js/sidebar.js" defer></script>
 </head>
 
@@ -268,8 +268,9 @@
     </div>
   </nav>
 
-  <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%] flex my-auto" id="main" aria-checked="false">
+  <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%] my-auto" id="main" aria-checked="false">
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-full rounded-md">
+      
       <div class="pb-4 bg-white rounded-tr-md rounded-tl-md">
         <div class="relative mt-1 flex justify-start items-center">
           <div class="flex items-center m-4 mr-1">
@@ -407,7 +408,8 @@
           </div>
         </div>
       </div>
-      <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+
+      <table class="w-full text-sm text-left rtl:text-right text-gray-500" id="userTable">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50">
           <tr>
             <th scope="col" class="p-4">
@@ -634,10 +636,9 @@
           </tr>
         </tfoot>
       </table>
-    </div>
 
-    <div class="w-1/3 p-2">
-      <div class="w-full h-full rounded-sm bg-white shadow-dshadow">
+
+      <div class="hidden w-96  rounded-md p-3 bg-white shadow-dshadow" id="userBox">
         <div class="flex justify-between p-3">
           <p>ID:456</p>
           <a href="#" class="w-6 h-6 bg-blue-300 rounded-full flex justify-center items-center">
@@ -703,6 +704,10 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="w-1/3 p-2">
+
     </div>
     
   </div>

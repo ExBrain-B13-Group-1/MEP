@@ -1,4 +1,5 @@
 
+
 $("#eventCancel").click(() => {
   $("#eventDetails").fadeOut(100);
 });
@@ -143,3 +144,4 @@ function closeAccountSecurity () {
  $(recovery).fadeOut()
 }
 // <link rel="stylesheet" href="css/style.css?<?=time()?>">
+

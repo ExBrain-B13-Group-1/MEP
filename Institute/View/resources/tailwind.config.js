@@ -4,6 +4,7 @@ module.exports = {
     "./Auth/**/*.{html,js,php}",
     "./Dashboard/**/*.{html,js,php}",
     "./Common/**/*.{html,js,php}",
+    "./Event/**/*.{html,js,php}",
     "./Instructor/**/*.{html,js,php}",
     "./Student/**/*.{html,js,php}",
     "./Notification/**/*.{html,js,php}",
@@ -20,6 +21,14 @@ module.exports = {
       },
       backgroundImage: {
         'custom-bg': "url('../../../storages/loginBg.png')",
+      },
+      // Adding new utilities for scrollbar hiding
+    scrollbarHide: {
+      '&::-webkit-scrollbar': {
+        display: 'none',
+      },
+      '-ms-overflow-style': 'none',
+        'scrollbar-width': 'none',
       },
     },
   },
