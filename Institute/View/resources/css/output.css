@@ -1602,6 +1602,10 @@ html {
   height: 80vh;
 }
 
+.h-\[85vh\] {
+  height: 85vh;
+}
+
 .h-full {
   height: 100%;
 }
@@ -2464,6 +2468,10 @@ html {
 
 .pt-20 {
   padding-top: 5rem;
+}
+
+.pt-24 {
+  padding-top: 6rem;
 }
 
 .pt-3 {

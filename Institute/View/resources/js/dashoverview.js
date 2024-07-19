@@ -2,8 +2,8 @@ const trendingChart = document.getElementById("trendingchart");
 const stuDemoChart = document.getElementById("studemochart");
 const monthlyRevenue = document.getElementById('monthlyrevenuechart');
 
-
 $(document).ready(function(){
+
 
     $('.modechanges').on("click",()=>{
         updateChartColors();
