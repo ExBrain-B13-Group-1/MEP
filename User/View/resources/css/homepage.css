@@ -626,6 +626,7 @@ nav {
   align-items: center;
 }
 .contact-us-inner-wrapper{
+  width: 90%;
   padding: 20px;
 }
 .name-row-input{
@@ -659,13 +660,46 @@ nav {
   font-size: 1.5em;
   margin-bottom: 3vh;
 }
+.contact-us-description-container{
+  display: flex;
+  width: 1300px;
+  gap: 2vw;
+}
 .contact-us-description-left-container{
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-shadow: 1px 2px 3px 0px #00000036;
-  width: 100%;
+  width: 50%;
+}
+.contact-us-description-right-container{
+  width: 30%;
+}
+.contact-us-description-right-header{
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.contact-us-description-right-text{
+  margin-bottom: 10px;
+}
+.contact-us-description-right-information-header{
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.contact-us-description-right-information-email,.contact-us-description-right-right-information-phone{
+  display: flex;
+  align-items: center;
+  line-height: 1.5em;
+}
+.email-icon,.phone-icon{
+  color: var(--primary-color);
+  margin-right: 10px;
+}
+.contact-us-description-right-image{
+  margin-top: 30px;
 }
 .send-btn{
   color: var(--primary-bg-color);
@@ -686,9 +720,6 @@ nav {
   height: 10px;
   background-color: #8D9FFF;
   box-shadow: 1px 2px 3px 0px #00000036;
-}
-.contact-us-description-right-container{
-  
 }
 /* Start of Footer */
 footer {
