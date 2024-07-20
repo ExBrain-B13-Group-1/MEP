@@ -44,3 +44,14 @@ function navigation(type, elemnt) {
       break;
   }
 }
+
+
+function menuForMobile () {
+  if($('#menuList').attr('isOpen') === 'true'){
+    $('#menuList').css({display:'none'})
+    $('#menuList').attr('isOpen',false) 
+  }else{
+    $('#menuList').css({display:'block'})
+    $('#menuList').attr('isOpen',true) 
+  }
+}
