@@ -1,30 +1,37 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: roboto;
 }
-body{
+
+body {
     width: 100%;
     overflow: hidden;
     color: black;
 }
-.course-search-header-section{
+
+/* Start of Course Search Section */
+.course-search-header-section {
     margin: auto;
     margin-top: 5vh;
     width: 60%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 3vh;
 }
-.course-search-header{
+
+.course-search-header {
     font-weight: bold;
     font-size: var(--small-header-font-size);
 }
-.catergory-search{
+
+.catergory-search {
     width: 20%;
     position: relative;
 }
-.catergory-search select{
+
+.catergory-search select {
     padding: 10px;
     border: 1px solid black;
     border-radius: 3px;
@@ -32,6 +39,7 @@ body{
     appearance: none;
     padding-left: 20px;
 }
+
 .catergory-search:after {
     content: "";
     border-width: 5px;
@@ -44,3 +52,124 @@ body{
     bottom: 15px;
     border-radius: 2px;
 }
+
+/* End of Course Search Section */
+/* Start of Tabs Section */
+.tabs-section {
+    margin: auto;
+    width: 60%;
+    display: flex;
+    font-weight: bold;
+    gap: 2vw;
+    border-bottom: 1px solid black;
+}
+
+.tabs {
+    cursor: pointer;
+}
+
+.clicked {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+}
+/* End of Tabs Section */
+/* Start of Tabs Slides */
+.tabs-slider{
+    margin: auto;
+    width: 60%;
+}
+.splide__slide{
+    display: flex;
+    justify-content: space-between;
+}
+.card-container{
+    margin-top: 3vh;
+    border-radius: 10px;
+    width: 23%;
+    border: 0.5px solid grey;
+    border-top: none;
+}
+.card-container:hover{
+    cursor: pointer;
+}
+.card-container img{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.card-details{
+    padding: 10px;
+}
+.card-header{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.card-header-text{
+    opacity: 0.5;
+    margin-bottom: 10px;
+}
+.card-rating{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.card-rating-value{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.card-rating-icons{
+    color: #FFB800;
+}
+.card-rating-count-value{
+    opacity: 0.7;
+}
+.card-start-date,.card-end-date{
+    display: flex;
+    gap: 10px;
+}
+.card-dead-line{
+    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    color: #FF0000;
+    margin-bottom: 10px;
+}
+.card-dead-line-value{
+    color: black;
+}
+.card-fee{
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    align-items: center;
+}
+.card-fee-value{
+    font-size: 1.1em;
+}
+.card-enroll{
+    font-weight: lighter;
+    color: white;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    width: 25%;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+}
+/* Start of Splide Library Code */
+.splide__pagination__page is-active{
+    display: none !important;
+}
+.splide__pagination__page{
+    display: none !important;
+}
+.splide__pagination {
+    counter-reset: pagination-num;
+}
+
+.splide__pagination__page:before {
+    counter-increment: pagination-num;
+    content: counter(pagination-num);
+}
+
+/* End of Splide library Code */

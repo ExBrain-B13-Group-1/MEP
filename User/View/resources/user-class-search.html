@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/user-class-search.css">
     <link rel="stylesheet" href="../resources/css/root.css">
+    <link rel="stylesheet" href="../resources/lib/splide.min.css">
+    <script src="../resources/lib/splide.min.js"></script>
+    <script src="../resources/lib/jquery-3.7.1.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,11 +18,8 @@
         rel="stylesheet">
     <link href="./css/output.css" rel="stylesheet">
     <link href="./css/navbar.css" rel="stylesheet">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="./lib/jquery-3.7.1.js"></script>
-    <script src="./js/navbar.js" defer></script>
-    <title>Document</title>
+    <script src="../resources/js/user-class-search.js"></script>
+    <title>Class Search</title>
 </head>
 
 <body>
@@ -130,6 +130,221 @@
                 <option value="development">Development</option>
                 <option value="driving">Driving</option>
             </select>
+        </div>
+    </div>
+    <div class="tabs-section">
+        <div class="most-popular tabs clicked">Most Popular</div>
+        <div class="new tabs">New</div>
+        <div class="Trending tabs">Trending</div>
+    </div>
+    <div class="tabs-slider">
+        <div class="splide" role="group" aria-label="Splide Basic HTML Example" id="classesSplide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <div class="card-container">
+                            <img src="../resources/img/classes-pic.png" alt="">
+                            <div class="card-details">
+                                <div class="card-header">Javascript for Beginners</div>
+                                <div class="card-header-text">Global Code Institute</div>
+                                <div class="card-instructor">Matthwe Davis</div>
+                                <div class="card-rating">
+                                    <div class="card-rating-value">4.5</div>
+                                    <div class="card-rating-icons">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                    </div>
+                                    <div class="card-rating-count-value">(301)</div>
+                                </div>
+                                <div class="card-start-date">
+                                    Start Date -
+                                    <div class="card-start-date-value">21 / 7 / 2024</div>
+                                </div>
+                                <div class="card-end-date">
+                                    End Date -
+                                    <div class="card-start-date-value">25 / 7 / 2024</div>
+                                </div>
+                                <div class="card-dead-line">
+                                    Enrollment Deadline -
+                                    <div class="card-dead-line-value">20 / 7 / 2024</div>
+                                </div>
+                                <div class="card-fee">
+                                    <div class="card-fee-value">250,000 MMK</div>
+                                    <button class="card-enroll">Enroll</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-container">
+                            <img src="../resources/img/classes-pic.png" alt="">
+                            <div class="card-details">
+                                <div class="card-header">Javascript for Beginners</div>
+                                <div class="card-header-text">Global Code Institute</div>
+                                <div class="card-instructor">Matthwe Davis</div>
+                                <div class="card-rating">
+                                    <div class="card-rating-value">4.5</div>
+                                    <div class="card-rating-icons">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                    </div>
+                                    <div class="card-rating-count-value">(301)</div>
+                                </div>
+                                <div class="card-start-date">
+                                    Start Date -
+                                    <div class="card-start-date-value">21 / 7 / 2024</div>
+                                </div>
+                                <div class="card-end-date">
+                                    End Date -
+                                    <div class="card-start-date-value">25 / 7 / 2024</div>
+                                </div>
+                                <div class="card-dead-line">
+                                    Enrollment Deadline -
+                                    <div class="card-dead-line-value">20 / 7 / 2024</div>
+                                </div>
+                                <div class="card-fee">
+                                    <div class="card-fee-value">250,000 MMK</div>
+                                    <button class="card-enroll">Enroll</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-container">
+                            <img src="../resources/img/classes-pic.png" alt="">
+                            <div class="card-details">
+                                <div class="card-header">Javascript for Beginners</div>
+                                <div class="card-header-text">Global Code Institute</div>
+                                <div class="card-instructor">Matthwe Davis</div>
+                                <div class="card-rating">
+                                    <div class="card-rating-value">4.5</div>
+                                    <div class="card-rating-icons">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                    </div>
+                                    <div class="card-rating-count-value">(301)</div>
+                                </div>
+                                <div class="card-start-date">
+                                    Start Date -
+                                    <div class="card-start-date-value">21 / 7 / 2024</div>
+                                </div>
+                                <div class="card-end-date">
+                                    End Date -
+                                    <div class="card-start-date-value">25 / 7 / 2024</div>
+                                </div>
+                                <div class="card-dead-line">
+                                    Enrollment Deadline -
+                                    <div class="card-dead-line-value">20 / 7 / 2024</div>
+                                </div>
+                                <div class="card-fee">
+                                    <div class="card-fee-value">250,000 MMK</div>
+                                    <button class="card-enroll">Enroll</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-container">
+                            <img src="../resources/img/classes-pic.png" alt="">
+                            <div class="card-details">
+                                <div class="card-header">Javascript for Beginners</div>
+                                <div class="card-header-text">Global Code Institute</div>
+                                <div class="card-instructor">Matthwe Davis</div>
+                                <div class="card-rating">
+                                    <div class="card-rating-value">4.5</div>
+                                    <div class="card-rating-icons">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                    </div>
+                                    <div class="card-rating-count-value">(301)</div>
+                                </div>
+                                <div class="card-start-date">
+                                    Start Date -
+                                    <div class="card-start-date-value">21 / 7 / 2024</div>
+                                </div>
+                                <div class="card-end-date">
+                                    End Date -
+                                    <div class="card-start-date-value">25 / 7 / 2024</div>
+                                </div>
+                                <div class="card-dead-line">
+                                    Enrollment Deadline -
+                                    <div class="card-dead-line-value">20 / 7 / 2024</div>
+                                </div>
+                                <div class="card-fee">
+                                    <div class="card-fee-value">250,000 MMK</div>
+                                    <button class="card-enroll">Enroll</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="card-container">
+                            <img src="../resources/img/classes-pic.png" alt="">
+                            <div class="card-details">
+                                <div class="card-header">Javascript for Beginners</div>
+                                <div class="card-header-text">Global Code Institute</div>
+                                <div class="card-instructor">Matthwe Davis</div>
+                                <div class="card-rating">
+                                    <div class="card-rating-value">4.5</div>
+                                    <div class="card-rating-icons">
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                        <ion-icon name="star"></ion-icon>
+                                    </div>
+                                    <div class="card-rating-count-value">(301)</div>
+                                </div>
+                                <div class="card-start-date">
+                                    Start Date -
+                                    <div class="card-start-date-value">21 / 7 / 2024</div>
+                                </div>
+                                <div class="card-end-date">
+                                    End Date -
+                                    <div class="card-start-date-value">25 / 7 / 2024</div>
+                                </div>
+                                <div class="card-dead-line">
+                                    Enrollment Deadline -
+                                    <div class="card-dead-line-value">20 / 7 / 2024</div>
+                                </div>
+                                <div class="card-fee">
+                                    <div class="card-fee-value">250,000 MMK</div>
+                                    <button class="card-enroll">Enroll</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">Slide 04</li>
+                    <li class="splide__slide">Slide 05</li>
+                    <li class="splide__slide">Slide 06</li>
+                    <li class="splide__slide">Slide 07</li>
+                    <li class="splide__slide">Slide 08</li>
+                    <li class="splide__slide">Slide 09</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="popular-instructors-section">
+        <div class="popular-instructors-header">Popular Instructors</div>
+        <div class="popular-instructors-text">These real-world experts are highly rated by learners like you.</div>
+        <div class="splide" role="group" aria-label="Splide Basic HTML Example" id="instructorSplide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <div class="instructor-card-container">
+                            <img src="../resources/img/instructor.png" alt="">
+                        </div>
+                    </li>
+                    <li class="splide__slide">Slide 02</li>
+                    <li class="splide__slide">Slide 03</li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>
