@@ -270,8 +270,8 @@
                 <div class="flex items-center space-x-4">
                     <!-- Search & Filter -->
                     <div class="relative">
-                        <input type="text" class="border border-dark-blue px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none" placeholder="Search">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue" viewBox="0 0 24 24">
+                        <input type="text" class="border border-dark-blue dark:border-gray-700 dark:bg-gray-600 dark:text-white px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none" placeholder="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue dark:text-white/80" viewBox="0 0 24 24">
                             <g fill="none" stroke="currentColor" stroke-width="2">
                                 <circle cx="11" cy="11" r="7" />
                                 <path stroke-linecap="round" d="M11 8a3 3 0 0 0-3 3m12 9l-3-3" />
@@ -279,8 +279,8 @@
                         </svg>
                     </div>
                     <div class="relative">
-                        <button id="filter-button" data-dropdown-toggle="dropdown" class="border border-dark-blue px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none">Filter</button>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue" viewBox="0 0 16 16" {...$$props}>
+                        <button id="filter-button" data-dropdown-toggle="dropdown" class="border border-dark-blue dark:border-gray-700 dark:bg-gray-600 dark:text-white px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none">Filter</button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue dark:text-white" viewBox="0 0 16 16" {...$$props}>
                             <path fill="currentColor" d="M6 1a3 3 0 0 0-2.83 2H0v2h3.17a3.001 3.001 0 0 0 5.66 0H16V3H8.83A3 3 0 0 0 6 1M5 4a1 1 0 1 1 2 0a1 1 0 0 1-2 0m5 5a3 3 0 0 0-2.83 2H0v2h7.17a3.001 3.001 0 0 0 5.66 0H16v-2h-3.17A3 3 0 0 0 10 9m-1 3a1 1 0 1 1 2 0a1 1 0 0 1-2 0" />
                         </svg>
                     </div>
@@ -288,29 +288,29 @@
             </div>
 
             <!-- Dropdown menu -->
-            <div id="dropdown" class="relative z-10 hidden bg-white divide-y rounded-lg shadow border-2  w-auto ">
+            <div id="dropdown" class="relative z-10 hidden bg-white dark:bg-gray-700 dark:text-white divide-y rounded-lg shadow border-2 dark:border-gray-500  w-auto ">
                 <form class=" px-10">
                     <p class="text-right mt-6 text-red-500 mb-5 cursor-pointer">Clear</p>
-                    <div class="flex items-center justify-between">
+                    <div class="flex items-center justify-between space-x-6">
                         <p class="mt-6">CID :</p>
                         <div class="grid grid-cols-2 gap-8">
                             <div>
                                 <label for="from" class="block">From</label>
-                                <input type="text" id="from" class="w-20 h-6 py-2 text-sm bg-gray-100 focus:outline-none  rounded-md" />
+                                <input type="text" id="from" class="w-20 h-10 py-2 text-sm bg-gray-100 dark:bg-gray-500 focus:outline-none  rounded-md" />
                             </div>
                             <div>
                                 <label for="from" class="block">To</label>
-                                <input type="text" id="from" class="w-20 h-6 py-2 text-sm bg-gray-100 focus:outline-none rounded-md" />
+                                <input type="text" id="from" class="w-20 h-10 py-2 text-sm bg-gray-100 dark:bg-gray-500 focus:outline-none rounded-md" />
                             </div>
                         </div>
                     </div>
 
 
                     <div class="flex items-center justify-between mt-3 pb-7">
-                        <p class="mt-1">Coin Amount :</p>
+                        <p class="mt-1">Coin :</p>
                         <div class="grid grid-cols-2 gap-8 ">
                             <div>
-                                <select name="coin" id="" class="w-20 h-10 bg-gray-100 focus:outline-none  rounded-md">
+                                <select name="coin" id="" class="w-20 h-10 bg-gray-100 dark:bg-gray-500 focus:outline-none  rounded-md">
                                     <option value="">Min</option>
                                     <option value="">50000</option>
                                     <option value="">100000</option>
@@ -319,7 +319,7 @@
                                 </select>
                             </div>
                             <div>
-                                <select name="coin" id="" class="w-20 h-10 bg-gray-100 focus:outline-none rounded-md">
+                                <select name="coin" id="" class="w-20 h-10 bg-gray-100 dark:bg-gray-500 focus:outline-none rounded-md">
                                     <option value="">Max</option>
                                     <option value="">100000</option>
                                     <option value="">200000</option>
@@ -339,9 +339,9 @@
 
             <!-- Start Table -->
             <div class="overflow-x-auto">
-                <table class="min-w-full bg-white shadow-md rounded-lg">
+                <table class="min-w-full bg-white dark:bg-gray-700 dark:text-white shadow-md rounded-lg">
                     <thead>
-                        <tr class="bg-gray-200 text-gray-600 text-left text-sm leading-normal">
+                        <tr class="bg-gray-200 dark:bg-gray-600 dark:text-white/90 text-gray-600 text-left text-sm leading-normal">
                             <th class="py-3 px-6">ID</th>
                             <th class="py-3 px-6">Name</th>
                             <th class="py-3 px-6">Date</th>
@@ -350,7 +350,7 @@
                             <th class="py-3 px-6">Details</th>
                         </tr>
                     </thead>
-                    <tbody id="table-body" class="text-gray-600 text-sm font-light">
+                    <tbody id="table-body" class="text-gray-800 dark:text-white/80 text-sm font-light">
                         <!-- Rows will be inserted here by jQuery -->
                     </tbody>
                 </table>
@@ -367,7 +367,7 @@
         </div>
 
         <!-- For Detail Card -->
-        <div id="detail-view" class="fixed bottom-0 right-0 m-4 px-10 py-5 bg-white border border-gray-300 rounded-lg shadow-lg hidden">
+        <div id="detail-view" class="fixed bottom-0 right-0 m-4 px-10 py-5 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 dark:text-white rounded-lg shadow-lg hidden">
             <!-- Detail content will be inserted here by jQuery -->
         </div>
     </div>

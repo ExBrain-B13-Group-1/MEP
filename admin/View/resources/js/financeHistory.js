@@ -10,7 +10,7 @@ $(document).ready(function () {
     {
       id: "C131",
       name: "ABC Institute",
-      logo: "../../storages/instituteLogo.png",
+      logo: "../../../storages/instituteLogo.png",
       date: "21/6/2024",
       coin: "50,000",
       fee: "100,000 MMK",
@@ -18,7 +18,7 @@ $(document).ready(function () {
     {
       id: "C032",
       name: "XYZ Institute",
-      logo: "../../storages/instituteLogo.png",
+      logo: "../../../storages/instituteLogo.png",
       date: "21/6/2024",
       coin: "100,000",
       fee: "200,000 MMK",
@@ -26,7 +26,7 @@ $(document).ready(function () {
     {
       id: "C103",
       name: "DEF Institute",
-      logo: "../../storages/instituteLogo.png",
+      logo: "../../../storages/instituteLogo.png",
       date: "21/6/2024",
       coin: "50,000",
       fee: "100,000 MMK",
@@ -34,7 +34,7 @@ $(document).ready(function () {
     {
       id: "C134",
       name: "UIV Institute",
-      logo: "../../storages/instituteLogo.png",
+      logo: "../../../storages/instituteLogo.png",
       date: "21/6/2024",
       coin: "30,000",
       fee: "150,000 MMK",
@@ -42,7 +42,7 @@ $(document).ready(function () {
     {
       id: "C135",
       name: "ABC Institute",
-      logo: "../../storages/instituteLogo.png",
+      logo: "../../../storages/instituteLogo.png",
       date: "21/6/2024",
       coin: "50,000",
       fee: "100,000 MMK",
@@ -50,7 +50,7 @@ $(document).ready(function () {
     {
       id: "C036",
       name: "XYZ Institute",
-      logo: "../../storages/instituteLogo.png",
+      logo: "../../../storages/instituteLogo.png",
       date: "21/6/2024",
       coin: "100,000",
       fee: "200,000 MMK",
@@ -58,7 +58,7 @@ $(document).ready(function () {
     {
       id: "C107",
       name: "DEF Institute",
-      logo: "../../storages/instituteLogo.png",
+      logo: "../../../storages/instituteLogo.png",
       date: "21/6/2024",
       coin: "50,000",
       fee: "100,000 MMK",
@@ -66,7 +66,7 @@ $(document).ready(function () {
     {
       id: "C138",
       name: "UIV Institute",
-      logo: "../../storages/instituteLogo.png",
+      logo: "../../../storages/instituteLogo.png",
       date: "21/6/2024",
       coin: "30,000",
       fee: "150,000 MMK",
@@ -74,7 +74,7 @@ $(document).ready(function () {
     {
       id: "C139",
       name: "ABC Institute",
-      logo: "../../storages/instituteLogo.png",
+      logo: "../../../storages/instituteLogo.png",
       date: "21/6/2024",
       coin: "50,000",
       fee: "100,000 MMK",
@@ -82,7 +82,7 @@ $(document).ready(function () {
     {
       id: "C030",
       name: "XYZ Institute",
-      logo: "../../storages/instituteLogo.png",
+      logo: "../../../storages/instituteLogo.png",
       date: "21/6/2024",
       coin: "100,000",
       fee: "200,000 MMK",
@@ -90,7 +90,7 @@ $(document).ready(function () {
     {
       id: "C111",
       name: "DEF Institute",
-      logo: "../../storages/instituteLogo.png",
+      logo: "../../../storages/instituteLogo.png",
       date: "21/6/2024",
       coin: "50,000",
       fee: "100,000 MMK",
@@ -98,7 +98,7 @@ $(document).ready(function () {
     {
       id: "C122",
       name: "UIV Institute",
-      logo: "../../storages/instituteLogo.png",
+      logo: "../../../storages/instituteLogo.png",
       date: "21/6/2024",
       coin: "30,000",
       fee: "150,000 MMK",
@@ -106,7 +106,7 @@ $(document).ready(function () {
     {
       id: "C133",
       name: "ABC Institute",
-      logo: "../../storages/instituteLogo.png",
+      logo: "../../../storages/instituteLogo.png",
       date: "21/6/2024",
       coin: "50,000",
       fee: "100,000 MMK",
@@ -114,7 +114,7 @@ $(document).ready(function () {
     {
       id: "C044",
       name: "XYZ Institute",
-      logo: "../../storages/instituteLogo.png",
+      logo: "../../../storages/instituteLogo.png",
       date: "21/6/2024",
       coin: "100,000",
       fee: "200,000 MMK",
@@ -122,7 +122,7 @@ $(document).ready(function () {
     {
       id: "C105",
       name: "DEF Institute",
-      logo: "../../storages/instituteLogo.png",
+      logo: "../../../storages/instituteLogo.png",
       date: "21/6/2024",
       coin: "50,000",
       fee: "100,000 MMK",
@@ -130,7 +130,7 @@ $(document).ready(function () {
     {
       id: "C130",
       name: "UIV Institute",
-      logo: "../../storages/instituteLogo.png",
+      logo: "../../../storages/instituteLogo.png",
       date: "21/6/2024",
       coin: "30,000",
       fee: "150,000 MMK",
@@ -150,13 +150,13 @@ $(document).ready(function () {
     const paginatedData = data.slice(start, end);
     paginatedData.forEach((row) => {
       const tr = `
-                           <tr class="border-b border-gray-200 hover:bg-gray-100 cursor-pointer" data-id="${row.id}">
+                           <tr class="border-b border-gray-200 dark:border-gray-500 hover:bg-gray-100 hover:dark:bg-gray-600 cursor-pointer" data-id="${row.id}">
                                <td class="py-3 px-6">${row.id}</td>
                                <td class="py-3 px-6">${row.name}</td>
                                <td class="py-3 px-6">${row.date}</td>
                                <td class="py-3 px-6">${row.coin}</td>
                                <td class="py-3 px-6">${row.fee}</td>
-                               <td class="py-3 px-6 text-blue-500">View</td>
+                               <td class="py-3 px-6 text-blue-500 dark:text-blue-400">View</td>
                            </tr>
                        `;
       tbody.append(tr);
@@ -171,33 +171,25 @@ $(document).ready(function () {
     // Add Previous Button
     if (currentPage > 1) {
       pagination.append(
-        '<li><a href="#" class="px-3 py-2 ml-0 leading-tight text-gray-500 bg-white text-sm" data-page="' +
+        '<li><a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white rounded-l" data-page="' +
           (currentPage - 1) +
           '"><ion-icon name="chevron-back-outline"></ion-icon></a></li>'
       );
     }
-
-    // Add Page Numbers
     for (let i = 1; i <= totalPages; i++) {
       const activeClass =
         i === currentPage
-          ? "bg-primary-main text-white rounded-full text-sm font-semibold"
-          : "text-gray-500 bg-white text-sm";
+          ? "z-10 flex items-center justify-center px-4 h-10 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+          : "flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white";
       pagination.append(
-        '<li><a href="#" class="px-3 py-2 leading-tight mx-1 ' +
-          activeClass +
-          '" data-page="' +
-          i +
-          '">' +
-          i +
-          "</a></li>"
+        `<li><a href="#" class="flex items-center justify-center px-4 h-10 leading-tight border ${activeClass}" data-page="${i}">${i}</a></li>`
       );
     }
 
     // Add Next Button
     if (currentPage < totalPages) {
       pagination.append(
-        '<li><a href="#" class="px-3 py-2 leading-tight text-gray-500 bg-white text-sm" data-page="' +
+        '<li><a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white rounded-r" data-page="' +
           (currentPage + 1) +
           '"><ion-icon name="chevron-forward-outline"></ion-icon></a></li>'
       );
@@ -232,11 +224,11 @@ $(document).ready(function () {
                            <div>Coin: ${row.coin}</div>
                         </div>
                       </div>
-                       <div class="text-[#A82525] text-sm mb-1 font-semibold">Contact Information</div>
-                       <div class="text-xs flex items-center space-x-1"><ion-icon name="mail-outline"></ion-icon><span class="text-primary-main">example@mail.com</span></div>
-                       <div class="text-xs flex items-center space-x-1"><ion-icon name="call-outline"></ion-icon><span class="text-primary-main">+95 976XXXXXX</span></div>
-                       <div class="text-xs flex items-center space-x-1"><ion-icon name="logo-linkedin"></ion-icon><span class="text-primary-main">https://linkedin</span></div>
-                       <div class="text-[#A82525] text-sm mt-4 mb-1 font-semibold">Bill Invoice Detail</div>
+                       <div class="text-[#A82525] dark:text-red-500 text-sm mb-1 font-semibold">Contact Information</div>
+                       <div class="text-xs flex items-center space-x-1"><ion-icon name="mail-outline"></ion-icon><span class="text-primary-main dark:text-[#9aabff]">example@mail.com</span></div>
+                       <div class="text-xs flex items-center space-x-1"><ion-icon name="call-outline"></ion-icon><span class="text-primary-main dark:text-[#9aabff]">+95 976XXXXXX</span></div>
+                       <div class="text-xs flex items-center space-x-1"><ion-icon name="logo-linkedin"></ion-icon><span class="text-primary-main dark:text-[#9aabff]">https://linkedin</span></div>
+                       <div class="text-[#A82525] dark:text-red-500 text-sm mt-4 mb-1 font-semibold">Bill Invoice Detail</div>
                        <div class="text-sm">Customer ID: 12343123DBER23</div>
                        <div class="text-sm">Invoice ID: 10,000</div>
                        <div class="text-sm">Coin Amount: ${row.coin}</div>

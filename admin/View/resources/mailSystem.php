@@ -271,7 +271,7 @@
 
     <div class="flex h-screen">
       <!-- Sidebar -->
-      <div class="w-1/5 text-black h-full p-4 text-sm">
+      <div class="w-1/5 text-black dark:text-white h-full p-4 text-sm">
         <br>
         <ul>
           <li class="mb-2"><a href="#" class="block p-2 text-white bg-dark-blue rounded">
@@ -288,27 +288,27 @@
           <li class="mb-2"><a href="#" class="block p-2">
               <ion-icon name="trash-outline" class="w-5 h-5 relative top-1 mr-1"></ion-icon>
               Trash</a></li>
-          <li id="new-message" class="mb-2 text-dark-blue bg-transparent border border-dark-blue rounded flex items-center"><a href="#" class="block p-2">
+          <li id="new-message" class="mb-2 text-dark-blue dark:text-[#9aabff] bg-transparent border border-dark-blue dark:border-[#9aabff] rounded flex items-center"><a href="#" class="block p-2">
               <ion-icon name="add-circle-outline" class="w-5 h-5 relative top-1 mr-1"></ion-icon>
               New Message</a></li>
         </ul>
       </div>
 
       <!-- New Message Form -->
-      <div id="new-message-form" class="hidden fixed bottom-0 right-10 w-full max-w-md bg-white p-6 rounded-lg shadow-lg">
+      <div id="new-message-form" class="hidden fixed bottom-0 right-10 w-full max-w-md bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
         <div class="flex items-center justify-between mb-4">
           <div class="flex-1 mr-2">
             <label for="to" class="block text-sm font-medium text-gray-700">To:</label>
-            <input type="text" id="to" class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            <input type="text" id="to" class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-500 bg-gray-200 dark:bg-gray-600 dark:text-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
           </div>
           <div class="mx-2 relative">
             <!-- <hr class="w-full border-gray-300"> -->
-            <span class="mx-2 text-gray-500 my-4 absolute -left-4 -top-4">or</span>
+            <span class="mx-2 text-gray-500 dark:text-gray-400 my-4 absolute -left-4 -top-4">or</span>
             <!-- <hr class="w-full border-gray-300"> -->
           </div>
           <div class="flex-1 ml-2">
             <label for="scope" class="block text-sm font-medium text-gray-700">Scope:</label>
-            <select id="scope" class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            <select id="scope" class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-500 bg-gray-200 dark:bg-gray-600 dark:text-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
               <option>Select Scope</option>
               <option value="all">All</option>
               <option value="users">Users</option>
@@ -319,12 +319,12 @@
         <!-- Subject -->
         <div class="mb-4">
           <label for="subject" class="block text-sm font-medium text-gray-700">Subject:</label>
-          <input type="text" id="subject" class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+          <input type="text" id="subject" class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-500 bg-gray-200 dark:bg-gray-600 dark:text-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
         </div>
         <!-- Comment -->
         <div class="mb-4">
           <label for="comment" class="block text-sm font-medium text-gray-700">Comment:</label>
-          <textarea id="comment" rows="4" class="mt-1 block w-full px-3 py-2 border border-gray-300 bg-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+          <textarea id="comment" rows="4" class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-500 bg-gray-200 dark:bg-gray-600 dark:text-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
         </div>
         <!-- Send, Calendar, Cancel -->
         <div class="flex items-center justify-end">
@@ -337,24 +337,24 @@
           <label for="schedule-date" class="flex items-center px-4 py-2 bg-dark-blue text-white rounded-md mr-2 cursor-pointer">
             <input type="date" id="schedule-date" class="bg-dark-blue text-white focus:outline-none">
           </label>
-          <button id="cancel-button" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md">Cancel</button>
+          <button id="cancel-button" class="px-4 py-2 bg-gray-200 text-gray-700 dark:bg-gray-500 dark:text-white rounded-md">Cancel</button>
         </div>
       </div>
 
       <!-- Main Content -->
       <div class="flex-1 flex flex-col text-sm">
         <!-- Navbar -->
-        <div class="px-4 bg-white shadow flex justify-between items-center">
-          <div class="text-xl font-semibold">Inbox</div>
+        <div class="px-4 bg-white dark:bg-gray-700 shadow flex justify-between items-center">
+          <div class="text-xl font-semibold mt-3 dark:text-white">Inbox</div>
         </div>
 
         <div class="flex-1 flex overflow-hidden ">
           <!-- Middle Column -->
-          <div class="w-1/2 bg-white p-4 overflow-y-auto no-scrollbar text-sm">
+          <div class="w-1/2 bg-white dark:bg-gray-700 p-4 overflow-y-auto no-scrollbar text-sm">
             <div class="mb-4">
               <div class="relative">
-                <input type="text" class="border border-dark-blue px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none" placeholder="Search">
-                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue" viewBox="0 0 24 24">
+                <input type="text" class="border border-dark-blue dark:text-white dark:border-gray-600 dark:bg-gray-600 px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none" placeholder="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue dark:text-gray-300" viewBox="0 0 24 24">
                   <g fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="11" cy="11" r="7" />
                     <path stroke-linecap="round" d="M11 8a3 3 0 0 0-3 3m12 9l-3-3" />
@@ -363,32 +363,32 @@
               </div>
             </div>
             <!-- 3 Tabs (User, Institute, Others) -->
-            <div class="border border-dark-blue px-2 py-1 rounded flex items-center w-full">
+            <div class="border border-dark-blue dark:border-gray-500 px-2 py-1 rounded flex items-center w-full">
               <div class="tabs w-full flex justify-between">
-                <button class="tab-button bg-dark-blue text-white px-4 py-2 rounded w-2/6 mr-2">User</button>
-                <button class="tab-button text-gray-700 px-4 py-2 rounded w-2/6 mr-2">Institute</button>
-                <button class="tab-button text-gray-700 px-4 py-2 rounded w-2/6">Others</button>
+                <button class="tab-button bg-dark-blue text-white dark:text-white px-4 py-2 rounded w-2/6 mr-2">User</button>
+                <button class="tab-button text-gray-700 dark:text-white px-4 py-2 rounded w-2/6 mr-2">Institute</button>
+                <button class="tab-button text-gray-700 dark:text-white px-4 py-2 rounded w-2/6">Others</button>
               </div>
             </div>
 
             <!-- User Sent Mail -->
-            <div id="user-content" class="tab-content active space-y-4 mt-3">
+            <div id="user-content" class="tab-content active space-y-4 mt-3 dark:text-white">
               <!-- Notifications will be dynamically added here -->
             </div>
 
             <!-- Institute Sent Mail -->
-            <div id="institute-content" class="tab-content space-y-4 mt-3">
+            <div id="institute-content" class="tab-content space-y-4 mt-3 dark:text-white">
               <!-- Notifications will be dynamically added here -->
             </div>
 
             <!-- Others Sent Mail -->
-            <div id="others-content" class="tab-content space-y-4 mt-3">
+            <div id="others-content" class="tab-content space-y-4 mt-3 dark:text-white">
               <!-- Notifications will be dynamically added here -->
             </div>
           </div>
 
           <!-- Right Column -->
-          <div id="email-details-container" class="w-1/2 bg-white p-4 overflow-y-auto no-scrollbar">
+          <div id="email-details-container" class="w-1/2 bg-white dark:bg-gray-700 dark:text-white p-4 overflow-y-auto no-scrollbar">
             <!-- Email details will be dynamically added here -->
           </div>
 
@@ -414,7 +414,7 @@
 
   $('#cancel-button').on('click', function() {
     $('#new-message-form').addClass('hidden');
-    $('#new-message').removeClass("bg-dark-blue text-white").addClass("text-dark-blue bg-transparent");
+    $('#new-message').removeClass("bg-dark-blue text-white").addClass("text-dark-blue  bg-transparent");
   });
 });
   </script>

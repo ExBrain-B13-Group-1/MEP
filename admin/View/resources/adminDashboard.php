@@ -273,7 +273,7 @@
             <div class="w-4/6">
                 <div class="grid grid-cols-3 gap-4">
                     <!-- Total Users -->
-                    <div class="col-span-1 bg-card-bg dark:bg-gray-600 p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
+                    <div class="col-span-1 bg-card-bg dark:bg-gray-700 p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
                         <div>
                             <div class="text-gray-700 dark:text-white text-left">Total <br> Users</div>
                             <div id="total-users" class="text-2xl text-primary-main dark:text-white font-bold text-left"></div>
@@ -285,13 +285,13 @@
                         </div>
                     </div>
                     <!-- Total Institutes -->
-                    <div class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
+                    <div class="col-span-1 bg-card-bg p-4 dark:bg-gray-700 rounded-lg shadow-custom text-center flex justify-between items-center">
                         <div>
-                            <div class="text-gray-700 text-left">Total <br> Institutes</div>
-                            <div id="total-institutes" class="text-2xl text-primary-main font-bold text-left"></div>
+                            <div class="text-gray-700 dark:text-white text-left">Total <br> Institutes</div>
+                            <div id="total-institutes" class="text-2xl text-primary-main dark:text-white font-bold text-left"></div>
                         </div>
                         <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" class="text-primary-main" viewBox="0 0 24 24" {...$$props}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" class="text-primary-main dark:text-white" viewBox="0 0 24 24" {...$$props}>
                                 <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor">
                                     <path d="M2 2h14c1.886 0 2.828 0 3.414.586S20 4.114 20 6v6c0 1.886 0 2.828-.586 3.414S17.886 16 16 16H9m1-9.5h6M2 17v-4c0-.943 0-1.414.293-1.707S3.057 11 4 11h2m-4 6h4m-4 0v5m4-5v-6m0 6v5m0-11h6" />
                                     <path d="M6 6.5a2 2 0 1 1-4 0a2 2 0 0 1 4 0" />
@@ -300,13 +300,13 @@
                         </div>
                     </div>
                     <!-- Total Earnings -->
-                    <div class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
+                    <div class="col-span-1 bg-card-bg p-4 dark:bg-gray-700 rounded-lg shadow-custom text-center flex justify-between items-center">
                         <div>
-                            <div class="text-gray-700 text-left">Amount <br> Earnings</div>
-                            <div class="text-2xl text-primary-main font-bold text-left">$ <span id="amount"></span></div>
+                            <div class="text-gray-700 dark:text-white text-left">Amount <br> Earnings</div>
+                            <div class="text-2xl text-primary-main dark:text-white font-bold text-left">$ <span id="amount"></span></div>
                         </div>
                         <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" class="text-primary-main" viewBox="0 0 24 24" {...$$props}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" class="text-primary-main dark:text-white" viewBox="0 0 24 24" {...$$props}>
                                 <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
                                     <path d="M12 6v12m3-8.5C15 8.12 13.657 7 12 7S9 8.12 9 9.5s1.343 2.5 3 2.5s3 1.12 3 2.5s-1.343 2.5-3 2.5s-3-1.12-3-2.5" />
                                     <path d="M7 3.338A9.954 9.954 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5" />
@@ -315,28 +315,28 @@
                         </div>
                     </div>
                     <!-- Weekly Visitors -->
-                    <div class="col-span-3 bg-card-bg p-4 rounded-lg shadow-custom">
-                        <div class="text-base font-bold mb-2">Weekly Visitors Comparison</div>
+                    <div class="col-span-3 bg-card-bg dark:bg-gray-700 p-4 rounded-lg shadow-custom">
+                        <div class="text-base dark:text-white font-bold mb-2">Weekly Visitors Comparison</div>
                         <!-- Bar Chart Placeholder -->
                         <canvas id="bar-chart" class="h-64"></canvas>
                     </div>
 
                     <!-- Users, Institutes Pie Charts and Ad Slot -->
                     <div class="col-span-3 flex justify-between space-x-4">
-                        <div class="w-2/4 bg-card-bg p-4 rounded-lg shadow-custom ">
-                            <div class="font-bold mb-2">Users</div>
+                        <div class="w-2/4 bg-card-bg dark:bg-gray-700 p-4 rounded-lg shadow-custom ">
+                            <div class="font-bold mb-2 dark:text-white">Users</div>
                             <!-- Users Pie Chart Placeholder -->
                             <canvas id="users-pie-chart" class="h-40"></canvas>
                         </div>
-                        <div class="w-2/4  bg-card-bg p-4 rounded-lg shadow-custom">
-                            <div class=" font-bold mb-2">Institutes</div>
+                        <div class="w-2/4  bg-card-bg dark:bg-gray-700 p-4 rounded-lg shadow-custom">
+                            <div class=" font-bold mb-2 dark:text-white">Institutes</div>
                             <!-- Institutes Pie Chart Placeholder -->
                             <canvas id="institutes-pie-chart" class="h-40"></canvas>
                         </div>
-                        <div class="w-5/6 bg-card-bg py-4 rounded-lg shadow-custom">
-                            <div class="font-bold mb-2 px-2">Upcoming Ad Slots</div>
+                        <div class="w-5/6 bg-card-bg dark:bg-gray-700 py-4 rounded-lg shadow-custom">
+                            <div class="font-bold mb-2 px-2 dark:text-white">Upcoming Ad Slots</div>
                             <!-- Upcoming Ad Slots Placeholder -->
-                            <div id="upcoming-ad-slots"></div>
+                            <div id="upcoming-ad-slots" class="dark:text-white"></div>
                         </div>
                     </div>
                 </div>
@@ -345,9 +345,9 @@
             <div class="w-2/6">
                 <div class="grid grid-cols-1 gap-4">
                     <!-- Calendar -->
-                    <div class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom">
+                    <div class="col-span-1 bg-card-bg dark:bg-gray-700 p-4 rounded-lg shadow-custom">
                         <!-- Calendar Placeholder -->
-                        <div id="calendar"></div>
+                        <div id="calendar" class="dark:text-white"></div>
                         <div id="logos" class="flex justify-center items-center mt-4 space-x-2">
                             <img src="../../storages/instituteLogo.png" alt="Institute 1" class="logo rounded-full w-8 h-8" data-institute="1">
                             <img src="../../storages/instituteLogo.png" alt="Institute 2" class="logo rounded-full  w-8 h-8" data-institute="2">
@@ -358,10 +358,10 @@
                         </div>
                     </div>
                     <!-- Top Clients -->
-                    <div class="col-span-1 bg-card-bg py-2 rounded-lg shadow-custom">
-                        <div class="text-base font-bold mb-2 px-4">Top Clients</div>
+                    <div class="col-span-1 bg-card-bg dark:bg-gray-700 py-2 rounded-lg shadow-custom">
+                        <div class="text-base font-bold mb-2 px-4 dark:text-white">Top Clients</div>
                         <!-- Top Clients Placeholder -->
-                        <div id="top-clients" class="text-sm"></div>
+                        <div id="top-clients" class="text-sm dark:text-white"></div>
                     </div>
                     <!-- For Recent Actions Later (Optional) -->
                     <!-- <div class="col-span-1 bg-custom-bg p-4 rounded-lg shadow-custom"> -->

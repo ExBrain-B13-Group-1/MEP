@@ -65,7 +65,7 @@ $(document).ready(function () {
   // Create Banking Card
   const generateBankingCard = (data) => {
     return `
-             <div class="space-y-2 bg-white shadow-md rounded-lg overflow-hidden my-4 p-3">
+             <div class="space-y-2 bg-white dark:bg-gray-600 shadow-md rounded-lg overflow-hidden my-4 p-3">
                  <div class="px-2 bg-thin-bg relative">
                      <div class="w-full h-24">
                          <img src="${data.bankLogo}" alt="Bank Logo">
@@ -75,9 +75,9 @@ $(document).ready(function () {
                      </div>
                  </div>
                  <div>
-                     <label for="account-number" class="block font-medium text-gray-700">Account Number</label>
+                     <label for="account-number" class="block font-medium text-gray-700 dark:text-white/90">Account Number</label>
                      <input type="text" id="account-number"
-                         class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                         class="w-full p-2 border border-gray-300 dark:bg-gray-500 dark:border-gray-500 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
                          value="${data.accountNumber}">
                  </div>
                  <button class="save-pay bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
@@ -90,7 +90,7 @@ $(document).ready(function () {
   // Create Pay Card
   const generatePayCard = (data) => {
     return `
-             <div class="space-y-2 bg-white shadow-md rounded-lg overflow-hidden my-4 p-3">
+             <div class="space-y-2 bg-white dark:bg-gray-600 shadow-md rounded-lg overflow-hidden my-4 p-3">
                  <div class="px-2 bg-thin-bg relative">
                      <div class="w-full h-24">
                          <img src="${data.payLogo}" alt="Pay Logo" class="w-20 h-20">
@@ -100,9 +100,9 @@ $(document).ready(function () {
                      </div>
                  </div>
                  <div>
-                     <label for="phone-number" class="block font-medium text-gray-700">Phone Number</label>
+                     <label for="phone-number" class="block font-medium text-gray-700 dark:text-white/90">Phone Number</label>
                      <input type="text" id="phone-number"
-                         class="w-full p-2 border border-gray-300 rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
+                         class="w-full p-2 border border-gray-300 dark:bg-gray-500 dark:border-gray-500 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg"
                          value="${data.phNumber}">
                  </div>
                  <button class="save-pay bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
@@ -122,7 +122,7 @@ $(document).ready(function () {
   bankingContainer.append(`
              <div class="space-y-2 flex items-center justify-center">
                  <button id="addButtonBanking"
-                     class=" w-20 h-20 border outline-dashed hover:bg-thin-hover-bg rounded-full text-lg font-bold text-dark-blue">
+                     class=" w-20 h-20 border outline-dashed hover:bg-thin-hover-bg rounded-full text-lg font-bold text-dark-blue dark:text-[#9aabff]">
                      + ADD
                  </button>
              </div>
@@ -135,7 +135,7 @@ $(document).ready(function () {
   payContainer.append(`
              <div class="space-y-2 flex items-center justify-center">
                  <button id="addButtonPay"
-                     class=" w-20 h-20 border outline-dashed hover:bg-thin-hover-bg rounded-full text-lg font-bold text-dark-blue">
+                     class=" w-20 h-20 border outline-dashed hover:bg-thin-hover-bg rounded-full text-lg font-bold text-dark-blue dark:text-[#9aabff]">
                      + ADD
                  </button>
              </div>

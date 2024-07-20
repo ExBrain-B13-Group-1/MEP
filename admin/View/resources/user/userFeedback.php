@@ -266,33 +266,33 @@
             <div class="grid grid-cols-6 gap-6">
                 <!-- Total Feedback -->
                 <div
-                    class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
-                    <div class="text-primary-main text-left mb-3">Total Feedback</div>
-                    <div class="text-4xl text-dark-blue font-bold text-left">10</div>
+                    class="col-span-1 bg-card-bg dark:bg-gray-700 p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
+                    <div class="text-primary-main dark:text-white text-left mb-3">Total Feedback</div>
+                    <div class="text-4xl text-dark-blue dark:text-white font-bold text-left">10</div>
                 </div>
                 <!-- Unread -->
                 <div
-                    class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
-                    <div class="text-primary-main text-left mb-3">Unread</div>
-                    <div class="text-4xl text-dark-blue font-bold text-left">5</div>
+                    class="col-span-1 bg-card-bg dark:bg-gray-700 p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
+                    <div class="text-primary-main dark:text-white text-left mb-3">Unread</div>
+                    <div class="text-4xl text-dark-blue dark:text-white font-bold text-left">5</div>
                 </div>
                 <!-- Read -->
                 <div
-                    class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
-                    <div class="text-primary-main text-left mb-3">Total Feedback</div>
-                    <div class="text-4xl text-dark-blue font-bold text-left">5</div>
+                    class="col-span-1 bg-card-bg dark:bg-gray-700 p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
+                    <div class="text-primary-main dark:text-white text-left mb-3">Total Feedback</div>
+                    <div class="text-4xl text-dark-blue dark:text-white font-bold text-left">5</div>
                 </div>
                 <!-- Report -->
                 <div
-                    class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
-                    <div class="text-primary-main text-left mb-3">Report</div>
-                    <div class="text-4xl text-red-600 font-bold text-left">2</div>
+                    class="col-span-1 bg-card-bg dark:bg-gray-700 p-4 rounded-lg shadow-custom text-center flex flex-col justify-around items-center">
+                    <div class="text-primary-main dark:text-white text-left mb-3">Report</div>
+                    <div class="text-4xl text-red-600  font-bold text-left">2</div>
                 </div>
                 <!-- Sort -->
-                <div class="col-span-2 bg-card-bg py-2 px-4 rounded-lg shadow-custom">
+                <div class="col-span-2 bg-card-bg dark:bg-gray-700 dark:text-white/90 py-2 px-4 rounded-lg shadow-custom">
                     <div class="flex">
                         <div class="border-r pr-10">
-                            <h3 class="text-lg font-semibold text-primary-main">Sort</h3>
+                            <h3 class="text-lg font-semibold text-primary-main dark:text-white">Sort</h3>
                             <div>
                                 <label class="inline-flex items-center mt-1">
                                     <input type="radio" name="sort" value="read" class="form-radio"
@@ -322,10 +322,10 @@
                         <div class="flex flex-col justify-center px-4">
                             <label for="start-date" class="text-sm font-medium">Start Date</label>
                             <input type="date" id="start-date"
-                                class="mt-1 mb-2 px-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-main">
+                                class="mt-1 mb-2 px-2 border border-gray-300 dark:text-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-main">
                             <label for="end-date" class="text-sm font-medium">End Date</label>
                             <input type="date" id="end-date"
-                                class="mt-1 px-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-main">
+                                class="mt-1 px-2 border border-gray-300 dark:text-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-main">
                         </div>
                     </div>
                 </div>
@@ -342,10 +342,11 @@
                     </ul>
                 </div>
             </div>
-            <div class="w-2/6 bg-white p-6 rounded-lg shadow-md text-sm hidden " id="mailCard">
+            <!-- Reply Mail Format -->
+            <div class="w-2/6 bg-white dark:bg-gray-700 dark:text-white/90 p-6 rounded-lg shadow-md text-sm hidden " id="mailCard">
                 <h2 id="message-to" class="text-base font-semibold mb-2">To: abc@gmail.com</h2>
                 <h3 id="message-subject" class="font-semibold mb-4">Subject: Review Report Result</h3>
-                <div id="message-content" class="text-sm text-gray-700">
+                <div id="message-content" class="text-sm text-gray-700 dark:text-gray-200">
                     <p>We hope this message finds you well.</p>
                     <p>We are writing to inform you about the outcome of our assessment regarding the review reported by your institute.</p>
                     <br>

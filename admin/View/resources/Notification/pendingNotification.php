@@ -6,29 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pending Notifications</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="../css/output.css" rel="stylesheet">
-    <script src="../lib/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="../../resources/css/output.css" />
+    <script src="../../resources/lib/jquery.js"></script>
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../../resources/js/sidebar.js" defer></script>
 </head>
 
-<body>
+<body class="bg-white dark:bg-slate-800">
     <aside id="logo-sidebar" close="false" class="fixed z-40 w-52 h-screen transition-transform translate-x-full sm:translate-x-0 float-left" aria-label="Sidebar">
-        <div class="h-full px-3 py-4 shadow-dshadow bg-white rounded-tr-md rounded-br-md relative">
+        <div class="h-full px-3 py-4 shadow-dshadow bg-white dark:bg-gray-700 rounded-tr-md rounded-br-md relative">
             <a href="/" class="flex items-center mb-5">
-                <img src="../img/LOGO.svg" class="me-3 w-fit" alt="Flowbite Logo" id="brandLogo" />
+                <img src="../../resources/img/LOGO.svg" class="me-3 w-fit" alt="Flowbite Logo" id="brandLogo" />
             </a>
             <ul class="space-y-1 font-medium">
                 <li>
-                    <a href="../adminDashboard.php" class="flex items-center p-2 text-gray-500 rounded-lg bg-primarycolor group">
+                    <a href="../adminDashboard.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group bg-primarycolor">
                         <svg class="w-5 h-5 transition duration-75" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.6172 13.6483C13.6172 12.8233 14.286 12.1545 15.111 12.1545H24.0736C24.8986 12.1545 25.5674 12.8233 25.5674 13.6483V24.1048C25.5674 24.9298 24.8986 25.5985 24.0736 25.5985H15.111C14.286 25.5985 13.6172 24.9298 13.6172 24.1048V13.6483Z" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" />
                             <path d="M1.56641 3.09863C1.56641 2.27021 2.2352 1.59863 3.06018 1.59863H7.54151C8.36649 1.59863 9.03529 2.27021 9.03529 3.09863V24.0986C9.03529 24.9271 8.36649 25.5986 7.54151 25.5986H3.06018C2.2352 25.5986 1.56641 24.9271 1.56641 24.0986V3.09863Z" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" />
                             <path d="M13.6172 3.09241C13.6172 2.26743 14.286 1.59863 15.111 1.59863H24.0736C24.8986 1.59863 25.5674 2.26743 25.5674 3.09241V6.07996C25.5674 6.90494 24.8986 7.57374 24.0736 7.57374H15.111C14.286 7.57374 13.6172 6.90494 13.6172 6.07996V3.09241Z" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" />
                         </svg>
 
-                        <span class="ms-3 sideLabel text-white">Dashboard</span>
+                        <span class="ms-3 sideLabel group-hover:text-white text-white">Dashboard</span>
                     </a>
                 </li>
 
@@ -57,6 +58,7 @@
                     </a>
                 </li>
 
+
                 <li>
                     <a href="../institute/institutelists.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -73,7 +75,7 @@
 
                 <li>
                     <a href="../mailSystem.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
-                        <svg class="flex-shrink-0 w-5 h-5 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" width="27" height="21" viewBox="0 0 27 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" width="27" height="21" viewBox="0 0 27 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M22.2266 1.09473H4.22656C2.56971 1.09473 1.22656 2.43787 1.22656 4.09473V16.0947C1.22656 17.7516 2.56971 19.0947 4.22656 19.0947H22.2266C23.8834 19.0947 25.2266 17.7516 25.2266 16.0947V4.09473C25.2266 2.43787 23.8834 1.09473 22.2266 1.09473Z" stroke="#A7A7A7" stroke-width="2" />
                             <path d="M1.22656 5.59473L11.8856 10.9239C12.7301 11.3462 13.723 11.3462 14.5675 10.9239L25.2266 5.59473" stroke="#A7A7A7" stroke-width="2" />
                         </svg>
@@ -97,7 +99,7 @@
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                         </svg>
                     </a>
-                    <ul id="dropdown-example" aria-checked="false" class="hidden py-2 space-y-2 aria-[checked=true]:absolute aria-[checked=true]:left-16 aria-[checked=true]:pr-4 aria-[checked=true]:bottom-[-35px] bg-white aria-[checked=true]:shadow-dshadow rounded-md">
+                    <ul id="dropdown-example" aria-checked="false" class="hidden dark:bg-gray-700 py-2 space-y-2 aria-[checked=true]:absolute aria-[checked=true]:left-16 aria-[checked=true]:pr-4 aria-[checked=true]:bottom-[-35px] bg-white aria-[checked=true]:shadow-dshadow rounded-md">
                         <li>
                             <a href="../user/userFeedback.php" class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor">Users</a>
                         </li>
@@ -201,37 +203,28 @@
         </div>
     </aside>
 
-    <nav class=" bg-white shadow-dshadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50" id="navbar">
+    <nav class="bg-white dark:bg-gray-700 shadow-dshadow border-gray-200 rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50" id="navbar">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
-            <div class="flex justify-between items-center w-96">
-                <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
-                    <img src="../img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
-                </a>
-                <form class="w-96">
-                    <label for="default-search" class="mb-2 text-sm font-medium text-gray-pr sr-only ">Search</label>
-                    <div class="relative">
-                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                            <svg class="w-4 h-4  text-primarycolor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                            </svg>
-                        </div>
-                        <input type="search" id="default-search" class="block w-full p-2 ps-10 text-sm text-gray-900 border bg-[#A0AFFF]/60 border-gray-300 rounded-lg  focus:ring-blue-500 focus:border-blue-500  " placeholder="Search Mockups, Logos..." required />
-                    </div>
-                </form>
-            </div>
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
+                <img src="../../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" route="user" />
+            </a>
+
             <p class="bg-gradient-to-t from-[#92A3FF] to-[#00288E] text-transparent bg-clip-text font-bold text-lg">
-                Pending Notifications 
+                Pending Notifications
             </p>
-            <ul class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
+            <ul class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border dark:bg-gray-700 border-gray-100 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
                 <li class="mx-1">
-                    <a href="#" class="block py-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">
-                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M27.7766 13.9333H26.3556C25.5537 13.9333 24.9056 14.4538 24.9056 15.0947C24.9056 15.7342 25.5537 16.2533 26.3556 16.2533H27.7766C28.577 16.2533 29.2266 15.7356 29.2266 15.0947C29.2266 14.4553 28.5755 13.9333 27.7766 13.9333ZM14.7266 7.11973C13.6784 7.11647 12.6399 7.32053 11.6708 7.72016C10.7018 8.11979 9.82133 8.7071 9.08013 9.44829C8.33893 10.1895 7.75162 11.0699 7.35199 12.039C6.95237 13.008 6.74831 14.0465 6.75156 15.0947C6.75156 19.5187 10.3026 23.0697 14.7266 23.0697C19.1491 23.0697 22.7016 19.5187 22.7016 15.0947C22.7016 10.6708 19.1476 7.11973 14.7266 7.11973ZM14.7266 20.8947C11.5206 20.8947 8.92656 18.2978 8.92656 15.0947C8.92656 11.8888 11.5206 9.29473 14.7266 9.29473C16.2648 9.29473 17.7401 9.9058 18.8278 10.9935C19.9155 12.0812 20.5266 13.5565 20.5266 15.0947C20.5266 16.633 19.9155 18.1082 18.8278 19.1959C17.7401 20.2837 16.2648 20.8947 14.7266 20.8947ZM4.57656 15.0947C4.57656 14.4553 3.92551 13.9333 3.12656 13.9333H1.67656C0.874713 13.9333 0.226562 14.4538 0.226562 15.0947C0.226562 15.7342 0.874713 16.2533 1.67656 16.2533H3.12656C3.92551 16.2533 4.57656 15.7342 4.57656 15.0947ZM14.7266 4.94473C15.366 4.94473 15.8851 4.29658 15.8851 3.49473V2.04473C15.8851 1.24288 15.366 0.594727 14.7266 0.594727C14.0857 0.594727 13.5651 1.24288 13.5651 2.04473V3.49473C13.5651 4.29658 14.0857 4.94473 14.7266 4.94473ZM14.7266 25.2447C14.0857 25.2447 13.5651 25.8929 13.5651 26.6947V28.1447C13.5651 28.9466 14.0857 29.5947 14.7266 29.5947C15.366 29.5947 15.8851 28.9466 15.8851 28.1447V26.6947C15.8851 25.8929 15.366 25.2447 14.7266 25.2447ZM25.4058 6.05543C25.9728 5.48848 26.0641 4.66198 25.6117 4.20958C25.1593 3.75718 24.3314 3.84998 23.7673 4.41693L22.7523 5.43048C22.1854 5.99743 22.094 6.82393 22.5464 7.27633C22.9988 7.72873 23.8268 7.63593 24.3923 7.06898L25.4058 6.05543ZM5.06086 23.1176L4.04586 24.134C3.47891 24.701 3.38756 25.5246 3.83996 25.977C4.29236 26.4294 5.12031 26.3395 5.68436 25.7725L6.69936 24.759C7.26631 24.192 7.35766 23.3655 6.90526 22.9117C6.45286 22.4578 5.62491 22.5535 5.06086 23.1176ZM5.68581 4.41548C5.12031 3.84853 4.29236 3.75573 3.83996 4.20813C3.38756 4.66053 3.48036 5.48848 4.04441 6.05543L5.05941 7.06898C5.62636 7.63593 6.45141 7.72873 6.90381 7.27633C7.35621 6.82393 7.26486 5.99598 6.69936 5.43048L5.68581 4.41548ZM22.7509 24.7604L23.7659 25.774C24.3328 26.3409 25.1579 26.4308 25.6103 25.9813C26.0627 25.5289 25.9713 24.701 25.4044 24.1355L24.3908 23.1219C23.8239 22.555 22.9974 22.4622 22.5435 22.9146C22.0897 23.367 22.1839 24.1935 22.7509 24.7604Z" fill="#808080" />
+                    <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400   focus:outline-none   rounded-lg text-sm p-2.5">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                         </svg>
-                    </a>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
                 </li>
                 <li class="mx-1">
-                    <a href="#" class="block py-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">
+                    <a href="#" class="block py-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0" aria-current="page">
                         <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.22656 19.5947C1.22656 12.9673 6.59956 7.59473 13.2266 7.59473C19.8536 7.59473 25.2266 12.9673 25.2266 19.5947V27.2312C25.2266 28.5017 25.2266 29.1362 25.0376 29.6432C24.7331 30.4577 24.0896 31.1012 23.2751 31.4057C22.7681 31.5947 22.1336 31.5947 20.8631 31.5947H13.2266C6.59956 31.5947 1.22656 26.2217 1.22656 19.5947Z" stroke="#4460EF" stroke-width="2" />
                             <path d="M8.22656 17.5947H18.2266" stroke="#4460EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -242,7 +235,7 @@
                     </a>
                 </li>
                 <li class="mx-1">
-                    <a href="pendingNotification.php" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                    <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
                         <svg width="30" height="33" viewBox="0 0 30 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8.72435 26.2614H4.19194C2.51219 26.2614 1.67232 26.2614 1.49561 26.1311C1.29709 25.9847 1.24858 25.8983 1.22708 25.6529C1.20795 25.4343 1.7227 24.5929 2.75223 22.9102C3.81519 21.1727 4.71778 18.643 4.71778 15.0614C4.71778 13.0811 5.56156 11.1819 7.06348 9.78166C8.56542 8.38139 10.6025 7.59473 12.7265 7.59473C14.8506 7.59473 16.8876 8.38139 18.3895 9.78166C19.8916 11.1819 20.7353 13.0811 20.7353 15.0614C20.7353 18.643 21.6379 21.1727 22.7009 22.9102C23.7303 24.5929 24.2451 25.4343 24.2261 25.6529C24.2046 25.8983 24.156 25.9847 23.9575 26.1311C23.7808 26.2614 22.9409 26.2614 21.2612 26.2614H16.7309M8.72435 26.2614L8.72216 27.5947C8.72216 29.8039 10.515 31.5947 12.7265 31.5947C14.9382 31.5947 16.7309 29.8039 16.7309 27.5947V26.2614M8.72435 26.2614H16.7309" stroke="#4460EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             <circle cx="21.2266" cy="8.59473" r="8" fill="#FF5E5E" />
@@ -251,8 +244,8 @@
                     </a>
                 </li>
                 <li class="ml-3">
-                    <div class="flex items-center bg-white rounded-full pr-2">
-                        <img src="../img/profile.png" alt="profile" class="rounded-full" height="100" />
+                    <div class="flex items-center bg-white dark:bg-gray-700 dark:text-white rounded-full pr-2">
+                        <img src="../../resources/img/profile.png" alt="profile" class="rounded-full" height="100" />
                         <div class="mx-3">
                             <p class="text-sm font-bold">John Smith</p>
                             <p class="text-[11px] m-0">Admin</p>
@@ -269,11 +262,11 @@
 
     <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full" id="main" aria-checked="false">
 
-  <!-- code here -->
-  <div class="flex h-full">
+        <!-- code here -->
+        <div class="flex h-full">
             <!-- User Notifications -->
             <div id="user-content" class="tab-content active flex-1 overflow-y-auto no-scrollbar px-4 mt-5">
-                <div class="bg-white p-4 rounded-lg shadow">
+                <div class="bg-white dark:bg-gray-700 dark:text-white p-4 rounded-lg shadow">
                     <div class="text-lg font-bold mb-4">New User Requested Approval Pending</div>
                     <div class="space-y-4" id="user-notification-list">
                         <!-- New User Notifications will be appended here dynamically -->
@@ -283,7 +276,7 @@
 
             <!-- Institute Notifications -->
             <div id="institute-content" class="tab-content flex-1 overflow-y-auto no-scrollbar px-4 mt-5">
-                <div class="bg-white p-4 rounded-lg shadow">
+                <div class="bg-white dark:bg-gray-700 dark:text-white p-4 rounded-lg shadow">
                     <div class="text-lg font-bold mb-4">Institute Requested Approval Pending</div>
                     <div class="space-y-4" id="institute-notification-list">
                         <!-- Institute notifications will be appended here dynamically -->
@@ -292,12 +285,12 @@
             </div>
 
             <!-- Modal For Cancel Or Confirm -->
-            <div id="confirmation-modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
-                <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
+            <div id="confirmation-modal" class="fixed inset-0 bg-gray-800 dark:text-white bg-opacity-50 flex items-center justify-center hidden">
+                <div class="bg-white dark:bg-gray-600 p-6 rounded-lg shadow-lg max-w-md w-full">
                     <h2 class="text-xl font-bold mb-4" id="modal-title"></h2>
                     <p id="modal-message" class="mb-4"></p>
                     <div class="flex justify-end">
-                        <button class="bg-gray-500 text-white px-4 py-2 rounded mr-2" id="cancel-button">Cancel</button>
+                        <button class="bg-gray-500 dark:bg-gray-400 text-white px-4 py-2 rounded mr-2" id="cancel-button">Cancel</button>
                         <button class="bg-primary-main text-white px-4 py-2 rounded" id="confirm-button">Confirm</button>
                     </div>
                 </div>
@@ -305,9 +298,9 @@
 
             <!-- Tabs -->
             <div class="flex flex-col justify-center space-y-4 border-l border-gray-400 px-4 w-52">
-                <button id="user-tab" class="tab-button  text-dark-blue font-bold text-xl px-4 py-2 rounded">User
+                <button id="user-tab" class="tab-button  text-dark-blue dark:text-[#9aabff] font-bold text-xl px-4 py-2 rounded">User
                     <span class="px-2 py-1 rounded-full text-sm bg-red-500 text-white relative bottom-3">3</span></button>
-                <button id="institute-tab" class="tab-button  text-gray-700 px-4 py-2 rounded">Institute 
+                <button id="institute-tab" class="tab-button  text-gray-700 dark:text-gray-400 px-4 py-2 rounded">Institute
                     <span class="px-2 py-1 rounded-full text-sm bg-red-500 text-white relative bottom-3">5</span></button>
             </div>
 
@@ -315,66 +308,64 @@
     </div>
     </div>
     <script src="../js/registeredNoti.js"></script>
-   <script>
-    
-$("#sidebarControl").click(() => {
-    if ($("#logo-sidebar").attr("close") === "true") {
-        $("#dropdown-example").attr("aria-checked", "false");
-        $("#logo-sidebar").attr("close", "false");
+    <script>
+        $("#sidebarControl").click(() => {
+            if ($("#logo-sidebar").attr("close") === "true") {
+                $("#dropdown-example").attr("aria-checked", "false");
+                $("#logo-sidebar").attr("close", "false");
 
-        $("#sidebarControl").css({
-            transform: "rotate(0)",
+                $("#sidebarControl").css({
+                    transform: "rotate(0)",
+                });
+            } else {
+                $("#logo-sidebar").attr("close", "true");
+                $("#dropdown-example").attr("aria-checked", "true");
+                $("#sidebarControl").css({
+                    transform: "rotate(180deg)",
+                });
+            }
+            isCloseSideBar();
         });
-    } else {
-        $("#logo-sidebar").attr("close", "true");
-        $("#dropdown-example").attr("aria-checked", "true");
-        $("#sidebarControl").css({
-            transform: "rotate(180deg)",
-        });
-    }
-    isCloseSideBar();
-});
 
-function isCloseSideBar() {
-    if ($("#logo-sidebar").attr("close") === "true") {
-        $("#brandLogo").attr("src", "../img/LOGOclose.svg");
-        $("#navbar").css({
-            width: "93.5%",
-            marginLeft: '5rem'
-        });
-        $(".sideLabel").css({
-            display: "none"
-        });
-        $(".sideLabel").parent().css({
-            justifyContent: "center"
-        });
-        $("#main").attr("aria-checked", "true");
-        $("#brandLogo").css({
-            size: "100",
-        });
-        $("#logo-sidebar").css({
-            width: "5%",
-        });
-    } else {
-        $("#brandLogo").attr("src", "../img/LOGO.svg");
-        $("#navbar").css({
-            width: "83%",
-            marginLeft: '14rem'
-        });
-        $(".sideLabel").css({
-            display: "block"
-        });
-        $("#main").attr("aria-checked", "false");
-        $(".sideLabel").parent().css({
-            justifyContent: "start"
-        });
-        $("#logo-sidebar").css({
-            width: "15.5%",
-        });
-    }
-}
-
-   </script>
+        function isCloseSideBar() {
+            if ($("#logo-sidebar").attr("close") === "true") {
+                $("#brandLogo").attr("src", "../img/LOGOclose.svg");
+                $("#navbar").css({
+                    width: "93.5%",
+                    marginLeft: '5rem'
+                });
+                $(".sideLabel").css({
+                    display: "none"
+                });
+                $(".sideLabel").parent().css({
+                    justifyContent: "center"
+                });
+                $("#main").attr("aria-checked", "true");
+                $("#brandLogo").css({
+                    size: "100",
+                });
+                $("#logo-sidebar").css({
+                    width: "5%",
+                });
+            } else {
+                $("#brandLogo").attr("src", "../img/LOGO.svg");
+                $("#navbar").css({
+                    width: "83%",
+                    marginLeft: '14rem'
+                });
+                $(".sideLabel").css({
+                    display: "block"
+                });
+                $("#main").attr("aria-checked", "false");
+                $(".sideLabel").parent().css({
+                    justifyContent: "start"
+                });
+                $("#logo-sidebar").css({
+                    width: "15.5%",
+                });
+            }
+        }
+    </script>
 </body>
 
 </html>
