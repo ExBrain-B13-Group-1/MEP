@@ -3,6 +3,8 @@
     --primary-bg-color: #FFFFFF;
     --minor-title-H4: 16px;
     --font-color: #C2C2C2;
+    --header-font-size: 2em;
+    --small-header-font-size: 1.5em;
 }
 @font-face {
     font-family: roboto;

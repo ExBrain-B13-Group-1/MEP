@@ -101,7 +101,7 @@ nav {
     background: linear-gradient(#4460ef, #0922a2);
     padding-left: 3vh;
     align-items: start;
-    line-height: 1.5em;
+    line-height: var(--header-font-size);
     padding-bottom: 1vh;
     transition: max-height 0.5s ease;
     display: flex; /* Show right-nav when .show class is added */
@@ -119,15 +119,12 @@ nav {
   justify-content: center;
   width: 1300px;
 }
-/* .slogan-text-container{
-  margin-left: 3vh;
-} */
 .slogan-header {
-  font-size: 48px;
+  font-size: var(--header-font-size);
   margin-bottom: 2vh;
 }
 .slogan-header-top {
-  font-weight: 400;
+  font-weight: bold;
 }
 .slogan-header-bottom {
   font-weight: bold;
@@ -170,7 +167,7 @@ nav {
   align-items: center;
 }
 .block-values {
-  font-size: 30px;
+  font-size: var(--header-font-size);
   font-weight: bold;
   color: var(--primary-color);
 }
@@ -186,7 +183,7 @@ nav {
 }
 .latest-pick-header{
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: var(--header-font-size);
   display: flex;
   margin-bottom: 3vh;
 }
@@ -224,7 +221,7 @@ nav {
   text-decoration: underline;
   text-underline-offset: 5px;
   text-decoration-color: var(--primary-color);
-  font-size: 1.5em;
+  font-size: var(--header-font-size);
 }
 .advert-slot-one-info-rating{
   display: flex;
@@ -313,7 +310,7 @@ nav {
   font-weight: bold;
   margin-top: 30px;
   margin-bottom: 20px;
-  font-size: 1.5em;
+  font-size: var(--header-font-size);
 }
 .about-us-description{
   text-align: center;
@@ -328,7 +325,7 @@ nav {
 }
 .about-us-body-description-header,.about-us-body-description-header-colored{
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: var(--header-font-size);
   margin-bottom: 10px;
 }
 .about-us-body-description-header-colored{
@@ -340,6 +337,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 .service-section-wrapper{
   width: 1300px;
@@ -348,6 +346,7 @@ nav {
   align-items: center;
   background-image: url(../img/service-background.png);
   border-radius: 5px;
+  flex-wrap: wrap;
 }
 .service-section-inner-wrapper{
   margin: 50px;
@@ -357,7 +356,7 @@ nav {
   flex-direction: column;
 }
 .service-section-header{
-  font-size: 1.5em;
+  font-size: var(--header-font-size);
   font-weight: bold;
   margin-bottom: 5px;
 }
@@ -365,7 +364,7 @@ nav {
   background: linear-gradient(to right,#1330C2, #6B0485);
   background-clip: text; 
   -webkit-text-fill-color: transparent;
-  font-size: 1.5em;
+  font-size: var(--header-font-size);
   font-weight: bold;
 }
 .service-section-body{
@@ -427,7 +426,7 @@ nav {
   color: var(--primary-bg-color);
 }
 .clients-love-left-header{
-  font-size: 1.5em;
+  font-size: var(--header-font-size);
   margin-bottom: 2vh;
 }
 .clients-love-left-description{
@@ -491,7 +490,7 @@ nav {
 }
 .plans-pricing-header{
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: var(--header-font-size);
 }
 #plans{
   font-weight: bold;
@@ -499,7 +498,7 @@ nav {
   background: linear-gradient(to right,#1330C2, #6B0485);
   background-clip: text; 
   -webkit-text-fill-color: transparent;
-  font-size: 1.5em;
+  font-size: var(--header-font-size);
 }
 .pricing-wrapper-container{
   gap: 30px;
@@ -619,7 +618,7 @@ nav {
   background: linear-gradient(to right, #1330C2, #6B0485);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 1.5em;
+  font-size: var(--header-font-size);
   margin-bottom: 3vh;
 }
 
@@ -651,7 +650,7 @@ table {
 }
 
 .table-fee {
-  font-size: 1.5em;
+  font-size: var(--small-header-font-size);
   margin-bottom: 10px;
 }
 
@@ -720,7 +719,7 @@ table {
   background: linear-gradient(to right,#1330C2, #6B0485);
   background-clip: text; 
   -webkit-text-fill-color: transparent;
-  font-size: 1.5em;
+  font-size: var(--header-font-size);
   margin-bottom: 3vh;
 }
 .contact-us-description-container{
@@ -740,7 +739,7 @@ table {
   width: 30%;
 }
 .contact-us-description-right-header{
-  font-size: 1.5em;
+  font-size: var(--header-font-size);
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -748,14 +747,14 @@ table {
   margin-bottom: 10px;
 }
 .contact-us-description-right-information-header{
-  font-size: 1.5em;
+  font-size: var(--header-font-size);
   font-weight: bold;
   margin-bottom: 10px;
 }
 .contact-us-description-right-information-email,.contact-us-description-right-right-information-phone{
   display: flex;
   align-items: center;
-  line-height: 1.5em;
+  line-height: var(--header-font-size);
 }
 .email-icon,.phone-icon{
   color: var(--primary-color);
@@ -826,9 +825,13 @@ footer {
 .email {
   width: 387px;
   padding-left: 10px;
+  background-color: var(--font-color);
 }
 .subscribe {
+  font-weight: bold;
   height: 52px;
+  padding-left: 10px;
+  padding-right: 10px;
   background-color: var(--primary-bg-color);
   color: var(--primary-color);
 }
