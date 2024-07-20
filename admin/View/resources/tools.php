@@ -15,9 +15,9 @@
   <script src="../resources/js/sidebar.js" defer></script>
 </head>
 
-<body>
+<body class="bg-white dark:bg-slate-800">
   <aside id="logo-sidebar" close="false" class="fixed z-40 w-52 h-screen transition-transform translate-x-full sm:translate-x-0 float-left" aria-label="Sidebar">
-    <div class="h-full px-3 py-4 shadow-dshadow bg-white rounded-tr-md rounded-br-md relative">
+    <div class="h-full px-3 py-4 shadow-dshadow bg-white dark:bg-gray-700 rounded-tr-md rounded-br-md relative">
       <a href="/" class="flex items-center mb-5">
         <img src="../resources/img/LOGO.svg" class="me-3 w-fit" alt="Flowbite Logo" id="brandLogo" />
       </a>
@@ -99,7 +99,7 @@
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
             </svg>
           </a>
-          <ul id="dropdown-example" aria-checked="false" class="hidden py-2 space-y-2 aria-[checked=true]:absolute aria-[checked=true]:left-16 aria-[checked=true]:pr-4 aria-[checked=true]:bottom-[-35px] bg-white aria-[checked=true]:shadow-dshadow rounded-md">
+          <ul id="dropdown-example" aria-checked="false" class="hidden dark:bg-gray-700 py-2 space-y-2 aria-[checked=true]:absolute aria-[checked=true]:left-16 aria-[checked=true]:pr-4 aria-[checked=true]:bottom-[-35px] bg-white aria-[checked=true]:shadow-dshadow rounded-md">
             <li>
               <a href="./user/userFeedback.php" class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor">Users</a>
             </li>
@@ -203,34 +203,25 @@
     </div>
   </aside>
 
-  <nav class="bg-white shadow-dshadow border-gray-200 rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50" id="navbar">
+  <nav class="bg-white dark:bg-gray-700 shadow-dshadow border-gray-200 rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50" id="navbar">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
-      <div class="flex justify-between items-center w-96">
-        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
-          <img src="../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
-        </a>
-        <form class="w-96">
-          <label for="default-search" class="mb-2 text-sm font-medium text-gray-pr sr-only">Search</label>
-          <div class="relative">
-            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-              <svg class="w-4 h-4 text-primarycolor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-              </svg>
-            </div>
-            <input type="search" id="default-search" class="block w-full p-2 ps-10 text-sm text-gray-900 border bg-[#A0AFFF]/60 border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Search Mockups, Logos..." required />
-          </div>
-        </form>
-      </div>
+      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
+        <img src="../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
+      </a>
+
       <p class="bg-gradient-to-t from-[#92A3FF] to-[#00288E] text-transparent bg-clip-text font-bold text-lg">
         Tools
       </p>
-      <ul class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+      <ul class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 dark:bg-gray-700 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
         <li class="mx-1">
-          <a href="#" class="block py-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M27.7766 13.9333H26.3556C25.5537 13.9333 24.9056 14.4538 24.9056 15.0947C24.9056 15.7342 25.5537 16.2533 26.3556 16.2533H27.7766C28.577 16.2533 29.2266 15.7356 29.2266 15.0947C29.2266 14.4553 28.5755 13.9333 27.7766 13.9333ZM14.7266 7.11973C13.6784 7.11647 12.6399 7.32053 11.6708 7.72016C10.7018 8.11979 9.82133 8.7071 9.08013 9.44829C8.33893 10.1895 7.75162 11.0699 7.35199 12.039C6.95237 13.008 6.74831 14.0465 6.75156 15.0947C6.75156 19.5187 10.3026 23.0697 14.7266 23.0697C19.1491 23.0697 22.7016 19.5187 22.7016 15.0947C22.7016 10.6708 19.1476 7.11973 14.7266 7.11973ZM14.7266 20.8947C11.5206 20.8947 8.92656 18.2978 8.92656 15.0947C8.92656 11.8888 11.5206 9.29473 14.7266 9.29473C16.2648 9.29473 17.7401 9.9058 18.8278 10.9935C19.9155 12.0812 20.5266 13.5565 20.5266 15.0947C20.5266 16.633 19.9155 18.1082 18.8278 19.1959C17.7401 20.2837 16.2648 20.8947 14.7266 20.8947ZM4.57656 15.0947C4.57656 14.4553 3.92551 13.9333 3.12656 13.9333H1.67656C0.874713 13.9333 0.226562 14.4538 0.226562 15.0947C0.226562 15.7342 0.874713 16.2533 1.67656 16.2533H3.12656C3.92551 16.2533 4.57656 15.7342 4.57656 15.0947ZM14.7266 4.94473C15.366 4.94473 15.8851 4.29658 15.8851 3.49473V2.04473C15.8851 1.24288 15.366 0.594727 14.7266 0.594727C14.0857 0.594727 13.5651 1.24288 13.5651 2.04473V3.49473C13.5651 4.29658 14.0857 4.94473 14.7266 4.94473ZM14.7266 25.2447C14.0857 25.2447 13.5651 25.8929 13.5651 26.6947V28.1447C13.5651 28.9466 14.0857 29.5947 14.7266 29.5947C15.366 29.5947 15.8851 28.9466 15.8851 28.1447V26.6947C15.8851 25.8929 15.366 25.2447 14.7266 25.2447ZM25.4058 6.05543C25.9728 5.48848 26.0641 4.66198 25.6117 4.20958C25.1593 3.75718 24.3314 3.84998 23.7673 4.41693L22.7523 5.43048C22.1854 5.99743 22.094 6.82393 22.5464 7.27633C22.9988 7.72873 23.8268 7.63593 24.3923 7.06898L25.4058 6.05543ZM5.06086 23.1176L4.04586 24.134C3.47891 24.701 3.38756 25.5246 3.83996 25.977C4.29236 26.4294 5.12031 26.3395 5.68436 25.7725L6.69936 24.759C7.26631 24.192 7.35766 23.3655 6.90526 22.9117C6.45286 22.4578 5.62491 22.5535 5.06086 23.1176ZM5.68581 4.41548C5.12031 3.84853 4.29236 3.75573 3.83996 4.20813C3.38756 4.66053 3.48036 5.48848 4.04441 6.05543L5.05941 7.06898C5.62636 7.63593 6.45141 7.72873 6.90381 7.27633C7.35621 6.82393 7.26486 5.99598 6.69936 5.43048L5.68581 4.41548ZM22.7509 24.7604L23.7659 25.774C24.3328 26.3409 25.1579 26.4308 25.6103 25.9813C26.0627 25.5289 25.9713 24.701 25.4044 24.1355L24.3908 23.1219C23.8239 22.555 22.9974 22.4622 22.5435 22.9146C22.0897 23.367 22.1839 24.1935 22.7509 24.7604Z" fill="#808080" />
+          <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400   focus:outline-none   rounded-lg text-sm p-2.5">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
             </svg>
-          </a>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+            </svg>
+          </button>
         </li>
         <li class="mx-1">
           <a href="#" class="block py-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">
@@ -253,7 +244,7 @@
           </a>
         </li>
         <li class="ml-3">
-          <div class="flex items-center bg-white rounded-full pr-2">
+          <div class="flex items-center bg-white dark:bg-gray-700 dark:text-white rounded-full pr-2">
             <img src="../resources/img/profile.png" alt="profile" class="rounded-full" height="100" />
             <div class="mx-3">
               <p class="text-sm font-bold">John Smith</p>
@@ -268,90 +259,90 @@
     </div>
   </nav>
 
-  <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%] grid grid-rows-2  py-5" id="main" aria-checked="false">
-      <div class="grid grid-cols-2 gap-2">
-    
-        <div class="w-full h-auto p-2 border-r-2 border-gray-300">
-          <div class="w-full my-5">
-            <h1 class="font-bold text-2xl mb-6">All Tools</h1>
-            <div class="flex">
-              <div class="cursor-pointer w-40 h-40 bg-[#A0AFFF]/20 mx-2 rounded-md flex justify-center items-center text-primarycolor">
-                Coupon
-              </div>
-              <div class="w-40 h-40 bg-gray-400 mx-2 rounded-md flex
-                justify-center items-center text-gray-700"">Coming Soon...
-              </div>
+  <div class="absolute right-0 top-16 text-slate-800 dark:text-white aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%] grid grid-rows-2  py-5" id="main" aria-checked="false">
+    <div class="grid grid-cols-2 gap-2">
+
+      <div class="w-full h-auto p-2 border-r-2 border-gray-300">
+        <div class="w-full my-5">
+          <h1 class="font-bold text-2xl mb-6">All Tools</h1>
+          <div class="flex">
+            <div class="cursor-pointer w-40 h-40 bg-[#A0AFFF]/20 mx-2 rounded-md flex justify-center items-center text-primarycolor">
+              Coupon
+            </div>
+            <div class="w-40 h-40 bg-gray-400 mx-2 rounded-md flex
+                justify-center items-center ">Coming Soon...
             </div>
           </div>
-        </div>
-        <div class="w-full mt-5">
-            <h1 class="font-bold text-2xl mb-5">Coupon Generator</h1>
-            <form class="px-20">
-              <div class="grid gap-4 mb-6 md:grid-cols-2">
-                <div>
-                  <label for="first_name" class="block text-xs font-medium text-gray-900">Coupon Code</label>
-                  <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="D2PDCE" disabled />
-                </div>
-                <div>
-                  <label for="last_name" class="block text-xs font-medium text-gray-900">Promotion Percentage</label>
-                  <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="10" required />
-                </div>
-                <div>
-                  <label for="company" class="block text-xs font-medium text-gray-900">Start Date</label>
-                  <input type="date" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="25/06/2024" required />
-                </div>
-                <div>
-                  <label for="phone" class="block text-xs font-medium text-gray-900">End Date</label>
-                  <input type="date" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="25/06/2024" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
-                </div>
-                <div>
-                  <label for="website" class="block text-xs font-medium text-gray-900">Limited</label>
-                  <input type="number" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="500" required />
-                </div>
-                <div class="relative">
-                  <button type="submit" class="absolute bottom-0 w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
-                    Submit
-                  </button>
-                </div>
-              </div>
-            </form>
         </div>
       </div>
-      <div class="w-full">
-            <h1 class="font-bold text-2xl my-2">Coupon History</h1>
-            <div class="relative overflow-x-auto sm:rounded-lg">
-              <table class="w-full text-xs text-left rtl:text-right text-gray-500">
-                <thead class="text-xs text-gray-700 uppercase border-b-2 border-gray-300 mb-3">
-                  <tr>
-                    <th scope="col" class="px-6 py-3">Tool</th>
-                    <th scope="col" class="px-6 py-3">Code</th>
-                    <th scope="col" class="px-6 py-3">Start Date</th>
-                    <th scope="col" class="px-6 py-3">End Date</th>
-                    <th scope="col" class="px-6 py-3">Percentage</th>
-                    <th scope="col" class="px-6 py-3">Limited</th>
-                    <th scope="col" class="px-6 py-3">Created Date/Time</th>
-                    <th scope="col" class="px-6 py-3">Created By</th>
-                    <th scope="col" class="px-6 py-3"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="odd:bg-primarycolor/45 even:bg-primarycolor/75 text-white">
-                    <td class="px-6 py-4">Coupon</td>
-                    <td class="px-6 py-4">D2PDCE</td>
-                    <td class="px-6 py-4">25/ 06/ 2024</td>
-                    <td class="px-6 py-4">25/ 06/ 2024</td>
-                    <td class="px-6 py-4">10</td>
-                    <td class="px-6 py-4">500</td>
-                    <td class="px-6 py-4">25 / 06 / 2024 7:40 PM</td>  
-                    <td class="px-6 py-4">Paing Sett Kyaw</td>  
-                    <td class="px-6 py-4">
-                      <ion-icon name="close-circle-outline" class="text-2xl cursor-pointer hover:text-red-500"></ion-icon>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+      <div class="w-full mt-5">
+        <h1 class="font-bold text-2xl mb-5">Coupon Generator</h1>
+        <form class="px-20">
+          <div class="grid gap-4 mb-6 md:grid-cols-2">
+            <div>
+              <label for="first_name" class="block text-xs font-medium ">Coupon Code</label>
+              <input type="text" id="first_name" class="bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="D2PDCE" disabled />
+            </div>
+            <div>
+              <label for="last_name" class="block text-xs font-medium ">Promotion Percentage</label>
+              <input type="text" id="last_name" class="bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="10" required />
+            </div>
+            <div>
+              <label for="company" class="block text-xs font-medium ">Start Date</label>
+              <input type="date" id="company" class="bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="25/06/2024" required />
+            </div>
+            <div>
+              <label for="phone" class="block text-xs font-medium ">End Date</label>
+              <input type="date" id="phone" class="bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="25/06/2024" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
+            </div>
+            <div>
+              <label for="website" class="block text-xs font-medium ">Limited</label>
+              <input type="number" id="website" class="bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="500" required />
+            </div>
+            <div class="relative">
+              <button type="submit" class="absolute bottom-0 w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                Submit
+              </button>
             </div>
           </div>
+        </form>
+      </div>
+    </div>
+    <div class="w-full">
+      <h1 class="font-bold text-2xl my-2">Coupon History</h1>
+      <div class="relative overflow-x-auto sm:rounded-lg">
+        <table class="w-full text-xs text-left rtl:text-right text-gray-500">
+          <thead class="text-xs text-gray-700 dark:text-white uppercase border-b-2 border-gray-300 mb-3">
+            <tr>
+              <th scope="col" class="px-6 py-3">Tool</th>
+              <th scope="col" class="px-6 py-3">Code</th>
+              <th scope="col" class="px-6 py-3">Start Date</th>
+              <th scope="col" class="px-6 py-3">End Date</th>
+              <th scope="col" class="px-6 py-3">Percentage</th>
+              <th scope="col" class="px-6 py-3">Limited</th>
+              <th scope="col" class="px-6 py-3">Created Date/Time</th>
+              <th scope="col" class="px-6 py-3">Created By</th>
+              <th scope="col" class="px-6 py-3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="odd:bg-primarycolor/45 even:bg-primarycolor/75 text-white">
+              <td class="px-6 py-4">Coupon</td>
+              <td class="px-6 py-4">D2PDCE</td>
+              <td class="px-6 py-4">25/ 06/ 2024</td>
+              <td class="px-6 py-4">25/ 06/ 2024</td>
+              <td class="px-6 py-4">10</td>
+              <td class="px-6 py-4">500</td>
+              <td class="px-6 py-4">25 / 06 / 2024 7:40 PM</td>
+              <td class="px-6 py-4">Paing Sett Kyaw</td>
+              <td class="px-6 py-4">
+                <ion-icon name="close-circle-outline" class="text-2xl cursor-pointer hover:text-red-500"></ion-icon>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </body>
 

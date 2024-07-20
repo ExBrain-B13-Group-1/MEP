@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.4.6 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.4 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -1116,6 +1116,10 @@ html {
   bottom: 0px;
 }
 
+.bottom-2 {
+  bottom: 0.5rem;
+}
+
 .bottom-2\.5 {
   bottom: 0.625rem;
 }
@@ -1130,6 +1134,10 @@ html {
 
 .end-0 {
   inset-inline-end: 0px;
+}
+
+.end-2 {
+  inset-inline-end: 0.5rem;
 }
 
 .end-2\.5 {
@@ -1276,9 +1284,19 @@ html {
   margin: 0.25rem;
 }
 
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
 .mx-14 {
   margin-left: 3.5rem;
   margin-right: 3.5rem;
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .mx-3 {
@@ -1358,6 +1376,10 @@ html {
   margin-inline-end: 0.5rem;
 }
 
+.me-2\.5 {
+  margin-inline-end: 0.625rem;
+}
+
 .me-3 {
   margin-inline-end: 0.75rem;
 }
@@ -1388,6 +1410,10 @@ html {
 
 .ml-64 {
   margin-left: 16rem;
+}
+
+.mr-0 {
+  margin-right: 0px;
 }
 
 .mr-0\.5 {
@@ -1424,6 +1450,10 @@ html {
 
 .ms-0 {
   margin-inline-start: 0px;
+}
+
+.ms-1 {
+  margin-inline-start: 0.25rem;
 }
 
 .ms-2 {
@@ -1488,6 +1518,10 @@ html {
 
 .mt-6 {
   margin-top: 1.5rem;
+}
+
+.mt-7 {
+  margin-top: 1.75rem;
 }
 
 .mt-8 {
@@ -1578,6 +1612,10 @@ html {
   height: 2.25rem;
 }
 
+.h-\[50vh\] {
+  height: 50vh;
+}
+
 .h-\[55vh\] {
   height: 55vh;
 }
@@ -1596,6 +1634,10 @@ html {
 
 .h-\[85vh\] {
   height: 85vh;
+}
+
+.h-auto {
+  height: auto;
 }
 
 .h-full {
@@ -1660,6 +1702,10 @@ html {
 
 .w-4 {
   width: 1rem;
+}
+
+.w-40 {
+  width: 10rem;
 }
 
 .w-48 {
@@ -1920,6 +1966,12 @@ html {
   --tw-space-x-reverse: 0;
   margin-right: calc(-1px * var(--tw-space-x-reverse));
   margin-left: calc(-1px * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.space-x-1 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -2260,6 +2312,11 @@ html {
   background-position: center;
 }
 
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .p-1 {
   padding: 0.25rem;
 }
@@ -2404,8 +2461,16 @@ html {
   padding-bottom: 2rem;
 }
 
+.pb-0 {
+  padding-bottom: 0px;
+}
+
 .pb-0\.5 {
   padding-bottom: 0.125rem;
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem;
 }
 
 .pb-10 {
@@ -2426,6 +2491,10 @@ html {
 
 .pb-8 {
   padding-bottom: 2rem;
+}
+
+.pe-3 {
+  padding-inline-end: 0.75rem;
 }
 
 .pe-3\.5 {
@@ -2454,6 +2523,10 @@ html {
 
 .pl-5 {
   padding-left: 1.25rem;
+}
+
+.pr-1 {
+  padding-right: 0.25rem;
 }
 
 .pr-1\.5 {
@@ -2526,6 +2599,10 @@ html {
 
 .pt-32 {
   padding-top: 8rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
 }
 
 .pt-5 {
@@ -2866,7 +2943,11 @@ html {
 }
 
 .currents{
-  color: blue;
+  color: rgb(28, 100, 242);
+}
+
+.current-pages{
+  color: rgb(28, 100, 242);
 }
 
 .demochart{
@@ -3536,6 +3617,16 @@ html {
 @media (min-width: 768px) {
   .md\:me-24 {
     margin-inline-end: 6rem;
+  }
+
+  .md\:ms-2 {
+    margin-inline-start: 0.5rem;
+  }
+
+  .md\:space-x-2 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .md\:space-y-7 > :not([hidden]) ~ :not([hidden]) {
