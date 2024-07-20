@@ -2,37 +2,41 @@
     margin: 0;
     font-family: roboto;
 }
-@font-face {
-    font-family: roboto;
-    src: url(assets/fonts/Roboto-Regular.ttf);
-}
+
 .details-container{
     display: flex;
     justify-content: center;
-    background-color: yellowgreen;
+    background: linear-gradient(to right, #000000, #666666 );
 }
 .class-details-main{
     margin-top: 5vh;
     margin-bottom: 5vh;
-    width: 80%;
+    width: 60%;
 }
 .page-navigation{
+    margin-top: 3vh;
+    opacity: 0.5;
     display: flex;
-    vertical-align: middle;
+    color: #97A8FF;
 }
 .main-container{
     margin-top: 4vh;
     display: flex;
     justify-content: space-between;
+    align-items: stretch;
 }
 .left-details-container{
-    width: 33%;
+    width: 30%;
+    flex-grow: 1;
+    margin-right: 30px;
 }
 .left-details-container img{
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     width: 100%;
     display: block;
+    height: auto;
+    flex-grow: 1;
 }
 .details-text{
     border-bottom-left-radius: 5px;
@@ -58,26 +62,39 @@
     padding-right: 15px;
     padding-left: 15px;
     margin-right: 2vh;
-    background-color: var(--primary-color);
+    background-color: #0922A2;
 }
 
 /* end of left details container */
 /* start of right details container */
 .right-details-container{
-    border: 1px solid white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
     color: var(--primary-bg-color);
     width: 63%;
+    flex-grow: 1;
 }
 .details-title{
+    font-size: 2em;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 .details-body-text{
+    font-size: 1em;
     margin-bottom: 10px;
 }
 .institute{
     margin-bottom: 5px;
 }
+.institute-link{
+    color: #97A8FF;
+    text-decoration: underline;
+}
 .rating{
+    color: #FFB800;
     display: flex;
     margin-bottom: 10px;
 }
@@ -86,10 +103,18 @@
     margin-right: 5px;
 }
 .total-ratings{
+    color: #97A8FF;
     margin-right: 5px;
+}
+.student-enrolled{
+    color: white;
 }
 .instructor{
     margin-bottom: 5px;
+}
+.instructor-link{
+    color: #97A8FF;
+    text-decoration: underline;
 }
 .start-date-container,.end-date-container{
     display: flex;
@@ -105,20 +130,27 @@
 .deadline-container{
     display: flex;
 }
+.deadline-header{
+    color: #97A8FF;
+}
 .deadline{
     margin-left: 5px;
 }
 .coupon-container{
     margin-top: 15px;
-    border: 1px solid white;
     display: flex;
     width: 345px;
     height: 40.07px;
 }
 .coupon-code{
+    background-color: transparent;
+    border: 1px solid white;
+    border-right: 0;
+    text-indent: 10px;
     width: 70%;
 }
 .apply-coupon{
+    background-color: var(--primary-color);
     width: 30%;
 }
 /* end of right-details container */
@@ -127,26 +159,45 @@
     display: flex;
     justify-content: center;
 }
+.description-header{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 1vh;
+}
 .description-container{
     margin-top: 2vh;
-    width: 80%;
+    width: 60%;
 }
 /* End of Description container */
+/* Start of Enrolled Classes */
 .enrolled-classes{
     display: flex;
     justify-content: center;
 }
 .enrolled-classes-container{
     margin-top: 4vh;
-    width: 80%;
+    width: 60%;
+}
+.enrolled-header{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 1vh;
 }
 .enrolled-classes-details{
-    border: 1px solid black;
     display: flex;
-    height: 100px;
+    height: 150px;
+    justify-content: space-between;
+}
+.enrolled-classes-details-duration{
+    display: flex;
+    gap: 20px;
+}
+.enrolled-classes-image-container{
+    display: flex;
+    gap: 20px;
 }
 .enrolled-classes-image-container img{
-    height: 100%;
+    height: 60%;
 }  
 .enrolled-classes-text{
     display: flex;
@@ -155,4 +206,32 @@
 .enrolled-classes-details-instructor,.enrolled-classes-details-start-date,.enrolled-classes-details-end-date{
     display: flex;
     flex-direction: row;
+    gap: 10px;
+}
+.enrolled-classes-details-header{
+    font-weight: bold;
+}
+.enrolled-classes-details-instructor-name{
+    color: var(--primary-color);
+}
+.enrolled-classes-details-start-date-value,.enrolled-classes-details-end-date-value,.enrolled-classes-details-deadline-value{
+    font-weight: bold;
+}
+.enrollment-deadline{
+    color: #FF0000;
+}
+.enrolled-classes-details-deadline{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.rating-wrapper{
+    font-weight: bold;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+.enrolled-star{
+    color: ;
 }
