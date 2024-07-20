@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  padding: 0;
   font-family: roboto;
 }
 body{
@@ -605,33 +606,61 @@ nav {
 }
 /* End of Plans and Pricing */
 /* Start of Compare all features Section */
-.compare-all-features-section{
+.compare-all-features-section {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.compare-all-features-header{
+
+.compare-all-features-header {
   width: fit-content;
   font-weight: bold;
-  background: linear-gradient(to right,#1330C2, #6B0485);
-  background-clip: text; 
+  background: linear-gradient(to right, #1330C2, #6B0485);
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 1.5em;
+  margin-bottom: 3vh;
 }
-.table-header{
+
+.compare-all-features-table {
+  box-shadow: 1px 1px 20px 0px #00000036;
+  border-radius: 10px;
+  padding-left: 20px;
+  width: 100%;
+  margin-bottom: 5vh;
+}
+table {
+  margin-left: 3vh;
+  margin-right: 3vh;
+  border-collapse: collapse;
+}
+.table-header-row th {
+  padding: 10px; 
+}
+.colored-row{
+  background-color:#F2F2F2;
+}
+.individual-rows td{
+  border-top: 1px solid #00000036;
+}
+.table-header {
   font-size: 1em !important;
   color: var(--primary-color);
   font-weight: lighter;
 }
-.table-fee{
+
+.table-fee {
   font-size: 1.5em;
   margin-bottom: 10px;
 }
-.table-header-row{
-  display: flex;
-  gap: 5vw;
+
+.individual-rows th, .individual-rows td{
+  padding: 20px;
+  text-align: center;
+  width: 15vw;
 }
+
 .btn{
   border: 1px solid;
   border-color: var(--primary-color);
@@ -647,6 +676,7 @@ nav {
   background: var(--primary-color);
   color: var(--primary-bg-color);
 }
+
 /* End of Compare all features Section */
 /* Start of Contact Us Section */
 .contact-us-section{
