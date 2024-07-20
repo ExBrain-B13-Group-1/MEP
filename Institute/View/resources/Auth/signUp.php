@@ -16,17 +16,40 @@
             height: 20px;
         }
 
-        .form-step {
-            transform: translateX(100%);
-            transition: transform 0.5s;
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
 
-        .form-step.active {
-            transform: translateX(0);
+        .upload-area {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background-color: #f7f7f7;
         }
 
-        .form-step.prev {
-            transform: translateX(-100%);
+        #uploaded-image-front,
+        #uploaded-image-back,
+        #uploaded-image-business {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .upload-text {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            pointer-events: none;
         }
     </style>
 </head>
@@ -134,33 +157,38 @@
                         </div>
                         <!-- Free Space -->
                         <div></div>
-                        <!-- NRC Verification Upload -->
+                        <!-- NRC Verification Upload (Front) -->
                         <div>
                             <label class="text-white text-sm">NRC Verification * </label>
                             <p class="text-red-500 text-sm">Please Also Upload Your NRC Information</p>
-                            <div class="flex justify-between">
-                                <!-- Front Side Upload -->
-                                <div>
-                                    <label class="block text-white mb-2">Front Side</label>
-                                    <input type="file" class="hidden" id="upload-front" required>
-                                    <label for="upload-front" class="cursor-pointer inline-block px-6 py-2 bg-white text-[#4460EF] font-bold rounded-md border border-gray-800 hover:bg-opacity-90 transition duration-75">Upload
-                                        Here</label>
-                                    <!-- Image Preview -->
-                                    <div class="mt-6" id="preview-front">
-                                        <img id="preview-image-front" src="#" alt="Front-side Preview" class="hidden rounded-md w-32 h-32">
-                                        <div id="file-name-front" class="mt-2 text-sm text-white"></div>
+                            <!-- Front Side Upload -->
+                            <div class="w-full">
+                                <label class="block text-white mb-2">Front Side *</label>
+                                <div class="mb-6">
+                                    <div class="upload-area rounded-md" id="upload-area-front">
+                                        <input type="file" id="file-input-front" accept="image/*" required class="hidden">
+                                        <img id="uploaded-image-front" alt="Uploaded Image">
+                                        <div id="upload-text-front" class="upload-text text-center">
+                                            <ion-icon name="cloud-upload-outline" class="text-2xl text-gray-500"></ion-icon>
+                                            <p class="text-gray-400 text-sm">Upload Here (Front) </p>
+                                        </div>
                                     </div>
                                 </div>
-                                <!-- Back Side Upload -->
-                                <div>
-                                    <label class="block text-white mb-2">Back Side</label>
-                                    <input type="file" class="hidden" id="upload-back" required>
-                                    <label for="upload-back" class="cursor-pointer inline-block px-6 py-2 bg-white text-[#4460EF] font-bold rounded-md border border-gray-800 hover:bg-opacity-90 transition duration-75">Upload
-                                        Here</label>
-                                    <!-- Image Preview -->
-                                    <div class="mt-6" id="preview-back">
-                                        <img id="preview-image-back" src="#" alt="Back-side Preview" class="hidden rounded-md w-32 h-32">
-                                        <div id="file-name-back" class="mt-2 text-sm text-white"></div>
+                            </div>
+                        </div>
+                        <!-- NRC Verification Upload (Back) -->
+                        <div class="mt-10">
+                            <!-- Back Side Upload -->
+                            <div class="w-full">
+                                <label class="block text-white mb-3">Back Side *</label>
+                                <div class="mb-6">
+                                    <div class="upload-area rounded-md" id="upload-area-back">
+                                        <input type="file" id="file-input-back" accept="image/*" required class="hidden">
+                                        <img id="uploaded-image-back" alt="Uploaded Image">
+                                        <div id="upload-text-back" class="upload-text text-center">
+                                            <ion-icon name="cloud-upload-outline" class="text-2xl text-gray-500"></ion-icon>
+                                            <p class="text-gray-400 text-sm">Upload Here (Back) </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -182,24 +210,26 @@
                     <div class="grid grid-cols-2 gap-x-20 gap-y-4">
                         <!-- Business License Verification Upload -->
                         <div>
-                            <label class="text-white text-lg">Business License Verification * </label>
-                            <p class="text-red-500 text-sm mb-2">Please Also Upload Your Business License</p>
-                            <div class="flex items-start">
-                                <input type="file" class="hidden" id="upload-license" required>
-                                <label for="upload-license" class="cursor-pointer inline-block px-6 py-2 bg-white text-[#4460EF] font-bold rounded-md border border-gray-800 hover:bg-opacity-90 transition duration-75">Upload
-                                    Here</label>
-                                &nbsp;&nbsp;&nbsp;
-                                <!-- Image Preview -->
-                                <div id="preview-license">
-                                    <img id="preview-image-license" src="#" alt="license Preview" class="hidden rounded-md w-32 h-24">
-                                    <div id="file-name-license" class="mt-2 text-sm text-white"></div>
+                            <!-- Business License Upload -->
+                            <div class="w-full">
+                                <label class="block text-white text-lg">Business License Verification * </label>
+                                <p class="text-red-500 text-sm mb-2">Please Also Upload Your Business License</p>
+                                <div class="mb-2">
+                                    <div class="upload-area rounded-md" id="upload-area-business">
+                                        <input type="file" id="file-input-business" accept="image/*" required class="hidden">
+                                        <img id="uploaded-image-business" alt="Uploaded Image">
+                                        <div id="upload-text-business" class="upload-text text-center">
+                                            <ion-icon name="cloud-upload-outline" class="text-2xl text-gray-500"></ion-icon>
+                                            <p class="text-gray-400 text-sm">Upload Here</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Related Major Programs -->
                         <div>
                             <label class="text-white text-lg">Related Major Programs Offered</label>
-                            <div class="flex flex-col space-y-2 mt-2 w-2/3">
+                            <div class="flex flex-col space-y-2 mt-4 w-2/3">
                                 <div class="flex flex-row justify-between">
                                     <label class="text-white text-sm flex items-center space-x-2">
                                         <input type="checkbox" name="programs" value="IT" class="hpp-checkbox">
@@ -248,7 +278,7 @@
                                 <label class="block mb-2 text-[#BDBDBD] text-sm" for="facilities">Facilities - Library etc. (Optional)</label>
                                 <input id="facilities" multiple class="block w-full text-base text-gray-900 rounded-lg cursor-pointer bg-gray-50 focus:outline-none focus:ring-1 focus:ring-blue-light-bg" aria-describedby="user_avatar_help" id="user_avatar" type="file">
                             </div>
-                           
+
                         </div>
                         <!-- Brief Introduction about Institute -->
                         <div>
@@ -295,6 +325,7 @@
         </div>
     </div>
 
+    <script src="../js/fileUpload.js"></script>
     <script src="../js/formStep.js"></script>
 </body>
 

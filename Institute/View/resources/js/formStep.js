@@ -7,15 +7,8 @@ $(document).ready(function () {
      ..............*/
 
   handleFileUpload("#upload-logo", "#preview-image-logo", "#file-name-logo");
-  handleFileUpload("#upload-front", "#preview-image-front", "#file-name-front");
-  handleFileUpload("#upload-back", "#preview-image-back", "#file-name-back");
-  handleFileUpload(
-    "#upload-license",
-    "#preview-image-license",
-    "#file-name-license"
-  );
 
-  // Function for handling file upload (logo, nrc front, nrc back, business license)
+  // Function for handling file upload (logo)
   function handleFileUpload(inputId, previewImageId, fileNameId) {
     $(inputId).on("change", function (event) {
       const file = event.target.files[0];

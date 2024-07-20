@@ -220,7 +220,7 @@
                 </form>
             </div>
             <p class="bg-gradient-to-t from-[#92A3FF] to-[#00288E] text-transparent bg-clip-text font-bold text-lg">
-                Pending Notifications
+                Pending Notifications 
             </p>
             <ul class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
                 <li class="mx-1">
@@ -269,11 +269,11 @@
 
     <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full" id="main" aria-checked="false">
 
-        <!-- code here -->
-        <div class="flex h-full">
+  <!-- code here -->
+  <div class="flex h-full">
             <!-- User Notifications -->
-            <div id="user-content" class="tab-content active flex-1 overflow-y-auto no-scrollbar px-4  mt-5">
-                <div class="bg-white p-4 rounded-lg shadow mx-10">
+            <div id="user-content" class="tab-content active flex-1 overflow-y-auto no-scrollbar px-4 mt-5">
+                <div class="bg-white p-4 rounded-lg shadow">
                     <div class="text-lg font-bold mb-4">New User Requested Approval Pending</div>
                     <div class="space-y-4" id="user-notification-list">
                         <!-- New User Notifications will be appended here dynamically -->
@@ -304,74 +304,77 @@
             </div>
 
             <!-- Tabs -->
-            <div class="absolute top-10 right-0 flex flex-col justify-end items-end space-y-4  px-4">
+            <div class="flex flex-col justify-center space-y-4 border-l border-gray-400 px-4 w-52">
                 <button id="user-tab" class="tab-button  text-dark-blue font-bold text-xl px-4 py-2 rounded">User
                     <span class="px-2 py-1 rounded-full text-sm bg-red-500 text-white relative bottom-3">3</span></button>
-                <button id="institute-tab" class="tab-button  text-gray-700 px-4 py-2 rounded">Institute <span class="px-2 py-1 rounded-full text-sm bg-red-500 text-white relative bottom-3">5</span></button>
+                <button id="institute-tab" class="tab-button  text-gray-700 px-4 py-2 rounded">Institute 
+                    <span class="px-2 py-1 rounded-full text-sm bg-red-500 text-white relative bottom-3">5</span></button>
             </div>
 
         </div>
     </div>
     </div>
     <script src="../js/registeredNoti.js"></script>
-    <script>
-        $("#sidebarControl").click(() => {
-            if ($("#logo-sidebar").attr("close") === "true") {
-                $("#dropdown-example").attr("aria-checked", "false");
-                $("#logo-sidebar").attr("close", "false");
+   <script>
+    
+$("#sidebarControl").click(() => {
+    if ($("#logo-sidebar").attr("close") === "true") {
+        $("#dropdown-example").attr("aria-checked", "false");
+        $("#logo-sidebar").attr("close", "false");
 
-                $("#sidebarControl").css({
-                    transform: "rotate(0)",
-                });
-            } else {
-                $("#logo-sidebar").attr("close", "true");
-                $("#dropdown-example").attr("aria-checked", "true");
-                $("#sidebarControl").css({
-                    transform: "rotate(180deg)",
-                });
-            }
-            isCloseSideBar();
+        $("#sidebarControl").css({
+            transform: "rotate(0)",
         });
+    } else {
+        $("#logo-sidebar").attr("close", "true");
+        $("#dropdown-example").attr("aria-checked", "true");
+        $("#sidebarControl").css({
+            transform: "rotate(180deg)",
+        });
+    }
+    isCloseSideBar();
+});
 
-        function isCloseSideBar() {
-            if ($("#logo-sidebar").attr("close") === "true") {
-                $("#brandLogo").attr("src", "../img/LOGOclose.svg");
-                $("#navbar").css({
-                    width: "93.5%",
-                    marginLeft: '5rem'
-                });
-                $(".sideLabel").css({
-                    display: "none"
-                });
-                $(".sideLabel").parent().css({
-                    justifyContent: "center"
-                });
-                $("#main").attr("aria-checked", "true");
-                $("#brandLogo").css({
-                    size: "100",
-                });
-                $("#logo-sidebar").css({
-                    width: "5%",
-                });
-            } else {
-                $("#brandLogo").attr("src", "../img/LOGO.svg");
-                $("#navbar").css({
-                    width: "83%",
-                    marginLeft: '14rem'
-                });
-                $(".sideLabel").css({
-                    display: "block"
-                });
-                $("#main").attr("aria-checked", "false");
-                $(".sideLabel").parent().css({
-                    justifyContent: "start"
-                });
-                $("#logo-sidebar").css({
-                    width: "15.5%",
-                });
-            }
-        }
-    </script>
+function isCloseSideBar() {
+    if ($("#logo-sidebar").attr("close") === "true") {
+        $("#brandLogo").attr("src", "../img/LOGOclose.svg");
+        $("#navbar").css({
+            width: "93.5%",
+            marginLeft: '5rem'
+        });
+        $(".sideLabel").css({
+            display: "none"
+        });
+        $(".sideLabel").parent().css({
+            justifyContent: "center"
+        });
+        $("#main").attr("aria-checked", "true");
+        $("#brandLogo").css({
+            size: "100",
+        });
+        $("#logo-sidebar").css({
+            width: "5%",
+        });
+    } else {
+        $("#brandLogo").attr("src", "../img/LOGO.svg");
+        $("#navbar").css({
+            width: "83%",
+            marginLeft: '14rem'
+        });
+        $(".sideLabel").css({
+            display: "block"
+        });
+        $("#main").attr("aria-checked", "false");
+        $(".sideLabel").parent().css({
+            justifyContent: "start"
+        });
+        $("#logo-sidebar").css({
+            width: "15.5%",
+        });
+    }
+}
+
+   </script>
 </body>
 
 </html>

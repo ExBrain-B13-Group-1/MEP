@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verification Form</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <link href="../../resources/css/output.css" rel="stylesheet">
     <script src="../../resources/lib/jquery-3.7.1.js"></script>
     <style>
@@ -13,6 +14,41 @@
         .hpp-radio {
             width: 20px;
             height: 20px;
+        }
+
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .upload-area {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background-color: #f7f7f7;
+        }
+
+        #uploaded-image-front,
+        #uploaded-image-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .upload-text {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            pointer-events: none;
         }
     </style>
 </head>
@@ -59,50 +95,58 @@
                                 </label>
                             </div>
                         </div>
-                        <!-- NRC Verification Upload -->
+                        <!-- NRC Verification Upload (Front) -->
                         <div>
                             <label class="text-white text-sm">NRC Verification * </label>
                             <p class="text-red-500 text-sm">Please Also Upload Your NRC Information</p>
-                            <div class="flex justify-between">
-                                <!-- Front Side Upload -->
-                                <div>
-                                    <label class="block text-white mb-2">Front Side</label>
-                                    <input type="file" class="hidden" id="upload-front" required>
-                                    <label for="upload-front" class="cursor-pointer inline-block px-6 py-2 bg-white text-primary-main font-bold rounded-md border border-gray-800 hover:bg-opacity-90 transition duration-75">Upload
-                                        Here</label>
-                                    <!-- Image Preview -->
-                                    <div class="mt-6" id="preview-front">
-                                        <img id="preview-image-front" src="#" alt="Front-side Preview" class="hidden rounded-md w-32 h-32">
-                                        <div id="file-name-front" class="mt-2 text-sm text-white"></div>
-                                    </div>
-                                </div>
-                                <!-- Back Side Upload -->
-                                <div>
-                                    <label class="block text-white mb-2">Back Side</label>
-                                    <input type="file" class="hidden" id="upload-back" required>
-                                    <label for="upload-back" class="cursor-pointer inline-block px-6 py-2 bg-white text-primary-main font-bold rounded-md border border-gray-800 hover:bg-opacity-90 transition duration-75">Upload
-                                        Here</label>
-                                    <!-- Image Preview -->
-                                    <div class="mt-6" id="preview-back">
-                                        <img id="preview-image-back" src="#" alt="Back-side Preview" class="hidden rounded-md w-32 h-32">
-                                        <div id="file-name-back" class="mt-2 text-sm text-white"></div>
+                            <!-- Front Side Upload -->
+                            <div class="w-full">
+                                <label class="block text-white mb-2">Front Side *</label>
+                                <div class="mb-6">
+                                    <div class="upload-area rounded-md" id="upload-area-front">
+                                        <input type="file" id="file-input-front" accept="image/*" required class="hidden">
+                                        <img id="uploaded-image-front" alt="Uploaded Image">
+                                        <div id="upload-text-front" class="upload-text text-center">
+                                            <ion-icon name="cloud-upload-outline" class="text-2xl text-gray-500"></ion-icon>
+                                            <p class="text-gray-400 text-sm">Upload Here (Front) </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Agree Terms & Conditions -->
-                    <div class="mb-2">
-                        <label class="inline-flex items-center">
-                            <input type="checkbox" id="agree-terms" class="form-checkbox hpp-checkbox">
-                            <span class="ml-2 text-white text-sm">Agree Terms & Conditions</span>
-                        </label>
-                    </div>
-                    <!-- 2 Buttons (Back, Enroll) -->
-                    <div class="flex justify-between">
-                        <button type="button" class="py-2 px-4 bg-white text-primary-main font-bold rounded-md hover:bg-opacity-90 duration-75"><a href="#">Back</a></button>
-                        <button type="submit" id="submit-button" class="py-2 px-4 bg-white text-primary-main font-bold rounded-md opacity-50 cursor-not-allowed duration-75" disabled>Verify</button>
-                    </div>
+                        <!-- NRC Verification Upload (Back) -->
+                        <div class="mt-10">
+                            <!-- Back Side Upload -->
+                            <div class="w-full">
+                                <label class="block text-white mb-3">Back Side *</label>
+                                <div class="mb-6">
+                                    <div class="upload-area rounded-md" id="upload-area-back">
+                                        <input type="file" id="file-input-back" accept="image/*" required class="hidden">
+                                        <img id="uploaded-image-back" alt="Uploaded Image">
+                                        <div id="upload-text-back" class="upload-text text-center">
+                                            <ion-icon name="cloud-upload-outline" class="text-2xl text-gray-500"></ion-icon>
+                                            <p class="text-gray-400 text-sm">Upload Here (Back) </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Agree Terms & Conditions -->
+                        <div class="mb-2">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" id="agree-terms" class="form-checkbox hpp-checkbox">
+                                <span class="ml-2 text-white text-sm">Agree Terms & Conditions</span>
+                            </label>
+                        </div>
+                        <!-- Empty Div -->
+                        <div></div>
+                        <!-- 2 Buttons (Back, Enroll) -->
+                        <div class="flex">
+                            <button type="button" class="py-2 px-4 bg-white text-primary-main font-bold rounded-md hover:bg-opacity-90 duration-75"><a href="../dashboard.php">Back</a></button>
+                        </div>
+                        <div class="flex justify-end">
+                            <button type="submit" id="submit-button" class="py-2 px-4 bg-white text-primary-main font-bold rounded-md opacity-50 cursor-not-allowed duration-75" disabled>Verify</button>
+                        </div>
                 </form>
             </div>
 
@@ -131,8 +175,8 @@
         </div>
     </div>
 
+    <script src="../js/fileUpload.js"></script>
     <script src="../js/formStep.js"></script>
-
 </body>
 
 </html>
