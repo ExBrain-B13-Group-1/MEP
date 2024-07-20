@@ -1,36 +1,41 @@
-*{
+* {
     margin: 0;
     font-family: roboto;
 }
 
-.details-container{
+.details-container {
     display: flex;
     justify-content: center;
-    background: linear-gradient(to right, #000000, #666666 );
+    background: linear-gradient(to right, #000000, #666666);
 }
-.class-details-main{
+
+.class-details-main {
     margin-top: 5vh;
     margin-bottom: 5vh;
     width: 60%;
 }
-.page-navigation{
+
+.page-navigation {
     margin-top: 3vh;
     opacity: 0.5;
     display: flex;
-    color: #97A8FF;
+    color: #97a8ff;
 }
-.main-container{
+
+.main-container {
     margin-top: 4vh;
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
+    flex-wrap: wrap;
 }
-.left-details-container{
+
+.left-details-container {
     width: 30%;
     flex-grow: 1;
     margin-right: 30px;
 }
-.left-details-container img{
+
+.left-details-container img {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     width: 100%;
@@ -38,7 +43,8 @@
     height: auto;
     flex-grow: 1;
 }
-.details-text{
+
+.details-text {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     height: 5vh;
@@ -47,12 +53,14 @@
     align-items: center;
     background-color: white;
 }
-.details-fee{
+
+.details-fee {
     font-weight: bold;
     font-size: 0.8em;
     margin-left: 2vh;
 }
-.image-enroll-btn{
+
+.image-enroll-btn {
     color: var(--primary-bg-color);
     border: none;
     border-radius: 5px;
@@ -62,12 +70,12 @@
     padding-right: 15px;
     padding-left: 15px;
     margin-right: 2vh;
-    background-color: #0922A2;
+    background-color: #0922a2;
 }
 
 /* end of left details container */
 /* start of right details container */
-.right-details-container{
+.right-details-container {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -77,161 +85,354 @@
     width: 63%;
     flex-grow: 1;
 }
-.details-title{
+
+.details-title {
     font-size: 2em;
     font-weight: bold;
     margin-bottom: 10px;
 }
-.details-body-text{
+
+.details-body-text {
     font-size: 1em;
     margin-bottom: 10px;
 }
-.institute{
+
+.institute {
     margin-bottom: 5px;
 }
-.institute-link{
-    color: #97A8FF;
+
+.institute-link {
+    color: #97a8ff;
     text-decoration: underline;
 }
-.rating{
-    color: #FFB800;
+
+.rating {
+    color: #ffb800;
     display: flex;
     margin-bottom: 10px;
 }
-.star-icons{
+
+.star-icons {
     margin-left: 5px;
     margin-right: 5px;
 }
-.total-ratings{
-    color: #97A8FF;
+
+.total-ratings {
+    color: #97a8ff;
     margin-right: 5px;
 }
-.student-enrolled{
+
+.student-enrolled {
     color: white;
 }
-.instructor{
+
+.instructor {
     margin-bottom: 5px;
 }
-.instructor-link{
-    color: #97A8FF;
+
+.instructor-link {
+    color: #97a8ff;
     text-decoration: underline;
 }
-.start-date-container,.end-date-container{
+
+.start-date-container,
+.end-date-container {
     display: flex;
     flex-direction: row;
     margin-bottom: 5px;
 }
-.start-date-value,.end-date-value{
+
+.start-date-value,
+.end-date-value {
     margin-left: 5px;
 }
-.end-date-container{
+
+.end-date-container {
     margin-bottom: 15px;
 }
-.deadline-container{
+
+.deadline-container {
     display: flex;
 }
-.deadline-header{
-    color: #97A8FF;
+
+.deadline-header {
+    color: #97a8ff;
 }
-.deadline{
+
+.deadline {
     margin-left: 5px;
 }
-.coupon-container{
+
+.coupon-container {
     margin-top: 15px;
     display: flex;
     width: 345px;
     height: 40.07px;
 }
-.coupon-code{
+
+.coupon-code {
     background-color: transparent;
     border: 1px solid white;
     border-right: 0;
     text-indent: 10px;
     width: 70%;
 }
-.apply-coupon{
+
+.apply-coupon {
     background-color: var(--primary-color);
     width: 30%;
 }
+
 /* end of right-details container */
 /* Start of Description-container */
-.middle-container{
+.middle-container {
     display: flex;
     justify-content: center;
 }
-.description-header{
+
+.description-header {
     font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 1vh;
 }
-.description-container{
+
+.description-container {
     margin-top: 2vh;
     width: 60%;
 }
+
 /* End of Description container */
 /* Start of Enrolled Classes */
-.enrolled-classes{
+.enrolled-classes {
     display: flex;
     justify-content: center;
 }
-.enrolled-classes-container{
+
+.enrolled-classes-container {
     margin-top: 4vh;
     width: 60%;
 }
-.enrolled-header{
+
+.enrolled-header {
     font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 1vh;
 }
-.enrolled-classes-details{
+
+.enrolled-classes-details {
+    position: relative;
     display: flex;
-    height: 150px;
+    height: 100px;
     justify-content: space-between;
 }
-.enrolled-classes-details-duration{
+
+.enrolled-classes-details-duration {
     display: flex;
     gap: 20px;
 }
-.enrolled-classes-image-container{
+
+.enrolled-classes-image-container {
     display: flex;
     gap: 20px;
 }
-.enrolled-classes-image-container img{
-    height: 60%;
-}  
-.enrolled-classes-text{
+
+.enrolled-classes-image-container img {
+    height: 100%;
+}
+
+.enrolled-classes-text {
     display: flex;
     flex-direction: column;
 }
-.enrolled-classes-details-instructor,.enrolled-classes-details-start-date,.enrolled-classes-details-end-date{
+
+.enrolled-classes-details-instructor,
+.enrolled-classes-details-start-date,
+.enrolled-classes-details-end-date {
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
-.enrolled-classes-details-header{
+
+.enrolled-classes-details-header {
     font-weight: bold;
 }
-.enrolled-classes-details-instructor-name{
+
+.enrolled-classes-details-instructor-name {
     color: var(--primary-color);
 }
-.enrolled-classes-details-start-date-value,.enrolled-classes-details-end-date-value,.enrolled-classes-details-deadline-value{
+
+.enrolled-classes-details-start-date-value,
+.enrolled-classes-details-end-date-value,
+.enrolled-classes-details-deadline-value {
     font-weight: bold;
 }
-.enrollment-deadline{
-    color: #FF0000;
+
+.enrollment-deadline {
+    color: #ff0000;
 }
-.enrolled-classes-details-deadline{
+
+.enrolled-classes-details-deadline {
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
-.rating-wrapper{
+
+.enrolled-classes-rating {
     font-weight: bold;
     display: flex;
     gap: 5px;
-    align-items: center;
     justify-content: center;
 }
-.enrolled-star{
-    color: ;
+
+.enrolled-star {
+    padding-top: 2px;
+    color: #ffb800;
 }
+
+.enrolled-student-count {
+    display: flex;
+    gap: 5px;
+    font-weight: bold;
+}
+
+.enrolled-count {
+    padding-top: 2px;
+}
+
+.enrolled-details-fee {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.enrolled-details-fee-value {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.enrolled-details-btn {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    background-color: #0922a2;
+}
+.enrolled-show-more{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+.enrolled-show-more:hover{
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+}
+/* End of Enrolled Classes */
+/* Start of Institute Informations */
+.institute-information-section{
+    margin: auto;
+    width: 60%;
+}
+.institute-information-header{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.institute-information-details{
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+    margin-bottom: 3vh;
+}
+.institute-name{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.institute-location{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.institute-location-google-maps{
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.institute-information-contacts{
+    display: flex;
+    flex-direction: column;
+    line-height: 2em;
+    margin-bottom: 3vh;
+}
+.institute-info-rows{
+    opacity: 0.7;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+.institute-information-contacts-website-value{
+    color: var(--primary-color);
+}
+.institute-information-description{
+    margin-bottom: 5vh;
+}
+/* End of Institute Informations */
+/* Start of Instructor Informations */
+.instructor-information-section{
+    width: 60%;
+    margin: auto;
+}
+.instructor-information-header{
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-bottom: 3vh;
+}
+.instructor-information-details-header{
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+.occupation{
+    font-weight: bold;
+    opacity: 0.7;
+    margin-bottom: 3vh;
+}
+.instructor-information-details-inner-container{
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    gap: 2vw;
+    margin-bottom: 3vh;
+}
+.instructor-information-details-inner-container-right-container{
+    display: flex;
+    flex-direction: column;
+}
+.instructor-info-rows,.instructor-inner-info-rows{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.instructor-info-rows{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.instructor-info-header{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 1vh;
+}
+.instructor-info-description{
+    margin-bottom: 3vh;
+}
+/* End of Instructor Informations */

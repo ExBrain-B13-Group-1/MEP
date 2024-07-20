@@ -662,8 +662,7 @@ table {
 }
 
 .btn{
-  border: 1px solid;
-  border-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
