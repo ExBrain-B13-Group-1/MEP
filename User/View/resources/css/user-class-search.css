@@ -6,7 +6,6 @@
 
 body {
     width: 100%;
-    overflow: hidden;
     color: black;
 }
 
@@ -14,7 +13,7 @@ body {
 .course-search-header-section {
     margin: auto;
     margin-top: 5vh;
-    width: 60%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,7 +56,7 @@ body {
 /* Start of Tabs Section */
 .tabs-section {
     margin: auto;
-    width: 60%;
+    width: 80%;
     display: flex;
     font-weight: bold;
     gap: 2vw;
@@ -76,7 +75,7 @@ body {
 /* Start of Tabs Slides */
 .tabs-slider{
     margin: auto;
-    width: 60%;
+    width: 80%;
 }
 .splide__slide{
     display: flex;
@@ -93,6 +92,7 @@ body {
     cursor: pointer;
 }
 .card-container img{
+    width: 100%;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
@@ -156,6 +156,7 @@ body {
     border-radius: 5px;
     background-color: var(--primary-color);
 }
+/* End of Tabs-Slider */
 /* Start of Splide Library Code */
 .splide__pagination__page is-active{
     display: none !important;
@@ -173,3 +174,97 @@ body {
 }
 
 /* End of Splide library Code */
+/* Start of Popular Instructors Section*/
+.popular-instructors-section{
+    width: 80%;
+    margin: auto;
+}
+.popular-instructors-header{
+    margin-top: 3vh;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.popular-instructors-text{
+    margin-bottom: 3vh;
+}
+#instructorSplide{
+    margin-bottom: 3vh;
+}
+.instructor-card-container{
+    border-radius: 10px;
+    width: 23%;
+    border: 0.5px solid grey;
+}
+.instructor-card-container img{
+    height: 6vh;
+}
+.instructor-inner-wrapper{
+    gap: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.instructor-card-details{
+    display: flex;
+    flex-direction: column;
+}
+.instructor-card-details-header{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.instructor-card-details-text{
+    opacity: 0.7;
+    margin-bottom: 5px;
+}
+.instructor-rating{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.instructor-rating-value{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.instructor-rating-icon{
+    color: #FFB800;
+}
+.instructor-rating-text{
+    opacity: 0.7;
+}
+.instructor-student-count{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.instructor-student-count-value{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.instructor-student-count-text{
+    opacity: 0.7;
+}
+.instructor-classes{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.instructor-classes-value{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.instructor-classes-text{
+    opacity: 0.7;
+}
+@media only screen and (max-width: 1660px) {
+    .instructor-inner-wrapper{
+        gap: 20px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+/* End of Popular Instructor Section */
+/* Start of Courses Search Section */
