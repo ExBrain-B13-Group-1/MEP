@@ -64,7 +64,7 @@
       <div id="menuList" isOpen="false" class="hidden md:flex absolute md:static top-16 right-0 left-0 mx-24 md:mx-auto  md:items-center md:justify-center bg-gray-200 rounded-xl" id="navbar-default">
         <ul class="flex  flex-col md:flex-row   justify-between items-center  font-medium  md:space-x-10 p-3 md:p-0">
           <li>
-            <a href="./dashboard.php"  id="userDashboard" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Dashboard</a>
+            <a href="./dashboard.php" id="userDashboard" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Dashboard</a>
           </li>
           <li>
             <a href="./user-class-details.php" id="userClass" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Class</a>
@@ -200,7 +200,67 @@
                             English, History, and elective courses such as Music and Art.</p>
                         </div>
                       </div>
-                      <!-- Add more accordion items as needed -->
+                      <!-- Accordion Item 3 -->
+                      <div>
+                        <div class="accordion-button flex justify-between items-center w-full p-4 bg-primaryColor/10 rounded-lg">
+                          <span class="text-base">How are the courses delivered?</span>
+                          <span class="icon text-3xl">+</span>
+                        </div>
+                        <div class="accordion-content mt-2 p-4 bg-primaryColor/5 rounded-lg hidden">
+                          <p>Courses are delivered through a combination of live virtual classes, pre-recorded video lessons, interactive quizzes, and downloadable resources.</p>
+                        </div>
+                      </div>
+                      <!-- Accordion Item 4 -->
+                      <div>
+                        <div class="accordion-button flex justify-between items-center w-full p-4 bg-primaryColor/10 rounded-lg">
+                          <span class="text-base">Can I access the platform on any device?</span>
+                          <span class="icon text-3xl">+</span>
+                        </div>
+                        <div class="accordion-content mt-2 p-4 bg-primaryColor/5 rounded-lg hidden">
+                          <p>Yes, our platform is accessible on any device with internet connectivity, including laptops, tablets, and smartphones.</p>
+                        </div>
+                      </div>
+                      <!-- Accordion Item 5 -->
+                      <div>
+                        <div class="accordion-button flex justify-between items-center w-full p-4 bg-primaryColor/10 rounded-lg">
+                          <span class="text-base">Is there a mobile app available?</span>
+                          <span class="icon text-3xl">+</span>
+                        </div>
+                        <div class="accordion-content mt-2 p-4 bg-primaryColor/5 rounded-lg hidden">
+                          <p>No, we currently developed for web version. Later we will for mobile platform.</p>
+                        </div>
+                      </div>
+                      <!-- Accordion Item 6 -->
+                      <div>
+                        <div class="accordion-button flex justify-between items-center w-full p-4 bg-primaryColor/10 rounded-lg">
+                          <span class="text-base">How do I get technical support if I encounter an issue?</span>
+                          <span class="icon text-3xl">+</span>
+                        </div>
+                        <div class="accordion-content mt-2 p-4 bg-primaryColor/5 rounded-lg hidden">
+                          <p>For technical support, you can visit our Help Center on the website or contact our support team via email or live chat.</p>
+                        </div>
+                      </div>
+                      <!-- Accordion Item 7 -->
+                      <div>
+                        <div class="accordion-button flex justify-between items-center w-full p-4 bg-primaryColor/10 rounded-lg">
+                          <span class="text-base">Are the Institute qualified?</span>
+                          <span class="icon text-3xl">+</span>
+                        </div>
+                        <div class="accordion-content mt-2 p-4 bg-primaryColor/5 rounded-lg hidden">
+                          <p>Yes, all our Institute are highly qualified professionals with relevant teaching certifications and experience in their subject areas.</p>
+                        </div>
+                      </div>
+                      <!-- Accordion Item 8 -->
+                      <div>
+                        <div class="accordion-button flex justify-between items-center w-full p-4 bg-primaryColor/10 rounded-lg">
+                          <span class="text-base">Is there a fee for using the platform?</span>
+                          <span class="icon text-3xl">+</span>
+                        </div>
+                        <div class="accordion-content mt-2 p-4 bg-primaryColor/5 rounded-lg hidden">
+                          <p>Yes, there is a fee structure depending on the courses you enroll in. We offer different subscription plans and payment options to suit your needs.</p>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
                 </div>
