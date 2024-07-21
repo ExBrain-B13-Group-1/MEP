@@ -99,7 +99,7 @@
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
             </svg>
           </a>
-          <ul id="dropdown-example" aria-checked="false" class="hidden py-2 space-y-2 aria-[checked=true]:absolute aria-[checked=true]:left-16 aria-[checked=true]:pr-4 aria-[checked=true]:bottom-[-35px] dark:bg-gray-700 bg-white aria-[checked=true]:shadow-dshadow rounded-md">
+          <ul id="dropdown-example" aria-checked="false" class="hidden py-2 space-y-2 aria-[checked=true]:absolute aria-[checked=true]:left-16 aria-[checked=true]:pr-4 aria-[checked=true]:bottom-[-35px] bg-white aria-[checked=true]:shadow-dshadow rounded-md">
             <li>
               <a href="./user/userFeedback.php" class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor">Users</a>
             </li>
@@ -236,7 +236,7 @@
           </a>
         </li>
         <li class="mx-1">
-          <a href="Notification/pendingNotification.php" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+          <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
             <svg width="30" height="33" viewBox="0 0 30 33" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8.72435 26.2614H4.19194C2.51219 26.2614 1.67232 26.2614 1.49561 26.1311C1.29709 25.9847 1.24858 25.8983 1.22708 25.6529C1.20795 25.4343 1.7227 24.5929 2.75223 22.9102C3.81519 21.1727 4.71778 18.643 4.71778 15.0614C4.71778 13.0811 5.56156 11.1819 7.06348 9.78166C8.56542 8.38139 10.6025 7.59473 12.7265 7.59473C14.8506 7.59473 16.8876 8.38139 18.3895 9.78166C19.8916 11.1819 20.7353 13.0811 20.7353 15.0614C20.7353 18.643 21.6379 21.1727 22.7009 22.9102C23.7303 24.5929 24.2451 25.4343 24.2261 25.6529C24.2046 25.8983 24.156 25.9847 23.9575 26.1311C23.7808 26.2614 22.9409 26.2614 21.2612 26.2614H16.7309M8.72435 26.2614L8.72216 27.5947C8.72216 29.8039 10.515 31.5947 12.7265 31.5947C14.9382 31.5947 16.7309 29.8039 16.7309 27.5947V26.2614M8.72435 26.2614H16.7309" stroke="#4460EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               <circle cx="21.2266" cy="8.59473" r="8" fill="#FF5E5E" />

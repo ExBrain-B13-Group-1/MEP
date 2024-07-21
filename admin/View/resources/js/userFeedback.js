@@ -10,7 +10,7 @@ $(document).ready(function () {
                  <p>We hope this message finds you well.</p>
                  <p>We are writing to inform you about the outcome of our assessment regarding the review reported by you.</p>
                  <br>
-                 <p>After thoroughly evaluating the reported review, we have determined that it <span class="text-dark-blue dark:text-[#9aabff] font-semibold">does not infringe</span> on any guidelines and does not contain any inappropriate course.</p>
+                 <p>After thoroughly evaluating the reported review, we have determined that it <span class="text-dark-blue font-semibold">does not infringe</span> on any guidelines and does not contain any inappropriate course.</p>
                  <br>
                  <p>We appreciate your understanding in this matter. Should you have any further questions or require additional assistance, please do not hesitate to contact us.</p>
                  <br>
@@ -40,7 +40,7 @@ $(document).ready(function () {
     {
       type: "report",
       email: "john@gmail.com",
-      profile: "../../../storages/user1.jpg",
+      profile: "../../storages/user1.jpg",
       name: "John Smith",
       date: "July 18, 2024",
       content:
@@ -50,7 +50,7 @@ $(document).ready(function () {
     {
       type: "report",
       email: "johndoe@gmail.com",
-      profile: "../../../storages/user1.jpg",
+      profile: "../../storages/user1.jpg",
       name: "John Doe",
       date: "July 18, 2024",
       content:
@@ -60,7 +60,7 @@ $(document).ready(function () {
     {
       type: "feedback",
       email: "jj@gmail.com",
-      profile: "../../../storages/user1.jpg",
+      profile: "../../storages/user1.jpg",
       name: "John Jep",
       date: "July 18, 2024",
       content:
@@ -69,7 +69,7 @@ $(document).ready(function () {
     {
       type: "feedback",
       email: "jj@gmail.com",
-      profile: "../../../storages/user1.jpg",
+      profile: "../../storages/user1.jpg",
       name: "John Jep",
       date: "July 18, 2024",
       content:
@@ -78,7 +78,7 @@ $(document).ready(function () {
     {
       type: "feedback",
       email: "jj@gmail.com",
-      profile: "../../../storages/user1.jpg",
+      profile: "../../storages/user1.jpg",
       name: "John Jep",
       date: "July 18, 2024",
       content:
@@ -87,7 +87,7 @@ $(document).ready(function () {
     {
       type: "report",
       email: "john@gmail.com",
-      profile: "../../../storages/user1.jpg",
+      profile: "../../storages/user1.jpg",
       name: "John Smith",
       date: "July 18, 2024",
       content:
@@ -105,7 +105,7 @@ $(document).ready(function () {
     const reportButtons = `
     <div class="flex flex-col justify-center">
       <button class="bg-thin-bg px-4 py-2 rounded text-sm flex items-center transition duration-100 transform hover:scale-105 verify-button">
-        <ion-icon name="checkmark-done-circle-outline" class="text-lg mr-2 text-primary-main dark:text-[#9aabff]"></ion-icon>
+        <ion-icon name="checkmark-done-circle-outline" class="text-lg mr-2 text-primary-main"></ion-icon>
         Normal
       </button>
       <div class="w-2 h-2"></div>
@@ -117,7 +117,7 @@ $(document).ready(function () {
   `;
 
     return `
-    <div class="bg-gray-100 dark:bg-gray-700  dark:text-white/90 p-4 rounded-lg mb-4 report-item cursor-pointer" data-type="${
+    <div class="bg-gray-100 p-4 rounded-lg mb-4 report-item cursor-pointer" data-type="${
       data.type
     }" data-email="${data.email}" data-user="${data.name}">
       <div class="grid grid-cols-5 my-2">
@@ -133,13 +133,13 @@ $(document).ready(function () {
             }" class="w-12 h-12 rounded-full"></div>
             <div>
               <p class="font-semibold">${data.name}</p>
-              <p class="text-sm text-gray-600 dark:text-gray-400">${data.date}</p>
+              <p class="text-sm text-gray-600">${data.date}</p>
             </div>
           </div>
           <p class="mt-1">${data.content}</p>
           ${
             data.link
-              ? `<p class="text-blue-500 dark:text-blue-400 mt-1">Reported Post Link: <a href="${data.link}">${data.link}</a></p>`
+              ? `<p class="text-blue-500 mt-1">Reported Post Link: <a href="${data.link}">${data.link}</a></p>`
               : ""
           }
         </div>
@@ -174,7 +174,7 @@ $(document).ready(function () {
     // Add Previous Button
     if (currentPage > 1) {
       pagination.append(
-        '<li><a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white rounded-l" data-page="' +
+        '<li><a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray rounded-l" data-page="' +
           (currentPage - 1) +
           '"><ion-icon name="chevron-back-outline"></ion-icon></a></li>'
       );
@@ -182,16 +182,17 @@ $(document).ready(function () {
     for (let i = 1; i <= totalPages; i++) {
       const activeClass =
         i === currentPage
-          ? "z-10 flex items-center justify-center px-4 h-10 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
-          : "flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white";
+          ? "z-10 flex items-center justify-center px-4 h-10 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700"
+          : "flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray";
       pagination.append(
         `<li><a href="#" class="flex items-center justify-center px-4 h-10 leading-tight border ${activeClass}" data-page="${i}">${i}</a></li>`
       );
     }
+
     // Add Next Button
     if (currentPage < totalPages) {
       pagination.append(
-        '<li><a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white rounded-r" data-page="' +
+        '<li><a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray rounded-r" data-page="' +
           (currentPage + 1) +
           '"><ion-icon name="chevron-forward-outline"></ion-icon></a></li>'
       );

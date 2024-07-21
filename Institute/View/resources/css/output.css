@@ -1588,6 +1588,10 @@ html {
   height: 0.75rem;
 }
 
+.h-32 {
+  height: 8rem;
+}
+
 .h-4 {
   height: 1rem;
 }
@@ -1698,6 +1702,10 @@ html {
 
 .w-3\/4 {
   width: 75%;
+}
+
+.w-32 {
+  width: 8rem;
 }
 
 .w-4 {
@@ -2134,11 +2142,6 @@ html {
 .border-blue-300 {
   --tw-border-opacity: 1;
   border-color: rgb(164 202 254 / var(--tw-border-opacity));
-}
-
-.border-blue-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(63 131 248 / var(--tw-border-opacity));
 }
 
 .border-blue-600 {

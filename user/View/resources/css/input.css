@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@media (max-width: 768px) {
+    #default-carousel:hover .institute-imgs {
+        filter: brightness(60%) blur(5px);
+    }
+
+    #default-carousel:hover .institute-infos {
+        position: absolute;
+        left: 10px;
+        top: 0;
+    }
+}
+

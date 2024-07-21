@@ -19,9 +19,9 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 
-<body class="bg-white dark:bg-slate-800">
+<body>
     <aside id="logo-sidebar" close="false" class="fixed z-40 w-52 h-screen transition-transform translate-x-full sm:translate-x-0 float-left" aria-label="Sidebar">
-        <div class="h-full px-3 py-4 shadow-dshadow bg-white dark:bg-gray-700 rounded-tr-md rounded-br-md relative">
+        <div class="h-full px-3 py-4 shadow-dshadow bg-white rounded-tr-md rounded-br-md relative">
             <a href="/" class="flex items-center mb-5">
                 <img src="../resources/img/LOGO.svg" class="me-3 w-fit" alt="Flowbite Logo" id="brandLogo" />
             </a>
@@ -103,7 +103,7 @@
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                         </svg>
                     </a>
-                    <ul id="dropdown-example" aria-checked="false" class="hidden py-2 space-y-2 aria-[checked=true]:absolute aria-[checked=true]:left-16 aria-[checked=true]:pr-4 aria-[checked=true]:bottom-[-35px] dark:bg-gray-700 bg-white aria-[checked=true]:shadow-dshadow rounded-md">
+                    <ul id="dropdown-example" aria-checked="false" class="hidden py-2 space-y-2 aria-[checked=true]:absolute aria-[checked=true]:left-16 aria-[checked=true]:pr-4 aria-[checked=true]:bottom-[-35px] bg-white aria-[checked=true]:shadow-dshadow rounded-md">
                         <li>
                             <a href="user/userFeedback.php" class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor">Users</a>
                         </li>
@@ -207,25 +207,30 @@
         </div>
     </aside>
 
-    <nav class=" bg-white dark:bg-gray-700 shadow-dshadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50" id="navbar">
+    <nav class=" bg-white shadow-dshadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50" id="navbar">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
+            <div class="flex justify-between items-center w-96">
                 <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
                     <img src="../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
                 </a>
-
+                <form class="w-96">
+                    <label for="default-search" class="mb-2 text-sm font-medium text-gray-pr sr-only ">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4  text-primarycolor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                        </div>
+                        <input type="search" id="default-search" class="block w-full p-2 ps-10 text-sm text-gray-900 border bg-[#A0AFFF]/60 border-gray-300 rounded-lg  focus:ring-blue-500 focus:border-blue-500  " placeholder="Search Mockups, Logos..." required />
+                    </div>
+                </form>
+            </div>
             <p class="bg-gradient-to-t from-[#92A3FF] to-[#00288E] text-transparent bg-clip-text font-bold text-lg">
                 Dashboard
             </p>
-            <ul class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg dark:bg-gray-700 bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
+            <ul class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
                 <li class="mx-1">
-                <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400   focus:outline-none   rounded-lg text-sm p-2.5">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-            </svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
-            </svg>
-          </button>
+                    <ion-icon name="sunny-outline" class="w-6 h-6 cursor-pointer text-black modechanges"></ion-icon>
                 </li>
                 <li class="mx-1">
                     <a href="#" class="block py-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">
@@ -248,7 +253,7 @@
                     </a>
                 </li>
                 <li class="ml-3">
-                    <div class="flex items-center bg-white dark:bg-gray-700 dark:text-white rounded-full pr-2">
+                    <div class="flex items-center bg-white rounded-full pr-2">
                         <img src="../resources/img/profile.png" alt="profile" class="rounded-full" height="100" />
                         <div class="mx-3">
                             <p class="text-sm font-bold">John Smith</p>
@@ -273,25 +278,25 @@
             <div class="w-4/6">
                 <div class="grid grid-cols-3 gap-4">
                     <!-- Total Users -->
-                    <div class="col-span-1 bg-card-bg dark:bg-gray-700 p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
+                    <div class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
                         <div>
-                            <div class="text-gray-700 dark:text-white text-left">Total <br> Users</div>
-                            <div id="total-users" class="text-2xl text-primary-main dark:text-white font-bold text-left"></div>
+                            <div class="text-gray-700 text-left">Total <br> Users</div>
+                            <div id="total-users" class="text-2xl text-primary-main font-bold text-left"></div>
                         </div>
                         <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" class="text-primary-main dark:text-white" viewBox="0 0 24 24" {...$$props}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" class="text-primary-main" viewBox="0 0 24 24" {...$$props}>
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.1 9.1 0 0 0 3.741-.479q.01-.12.01-.241a3 3 0 0 0-4.692-2.478m.94 3.197l.001.031q0 .337-.037.666A11.94 11.94 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6 6 0 0 1 6 18.719m12 0a5.97 5.97 0 0 0-.941-3.197m0 0A6 6 0 0 0 12 12.75a6 6 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72a9 9 0 0 0 3.74.477m.94-3.197a5.97 5.97 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0a3 3 0 0 1 6 0m6 3a2.25 2.25 0 1 1-4.5 0a2.25 2.25 0 0 1 4.5 0m-13.5 0a2.25 2.25 0 1 1-4.5 0a2.25 2.25 0 0 1 4.5 0" />
                             </svg>
                         </div>
                     </div>
                     <!-- Total Institutes -->
-                    <div class="col-span-1 bg-card-bg p-4 dark:bg-gray-700 rounded-lg shadow-custom text-center flex justify-between items-center">
+                    <div class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
                         <div>
-                            <div class="text-gray-700 dark:text-white text-left">Total <br> Institutes</div>
-                            <div id="total-institutes" class="text-2xl text-primary-main dark:text-white font-bold text-left"></div>
+                            <div class="text-gray-700 text-left">Total <br> Institutes</div>
+                            <div id="total-institutes" class="text-2xl text-primary-main font-bold text-left"></div>
                         </div>
                         <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" class="text-primary-main dark:text-white" viewBox="0 0 24 24" {...$$props}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" class="text-primary-main" viewBox="0 0 24 24" {...$$props}>
                                 <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor">
                                     <path d="M2 2h14c1.886 0 2.828 0 3.414.586S20 4.114 20 6v6c0 1.886 0 2.828-.586 3.414S17.886 16 16 16H9m1-9.5h6M2 17v-4c0-.943 0-1.414.293-1.707S3.057 11 4 11h2m-4 6h4m-4 0v5m4-5v-6m0 6v5m0-11h6" />
                                     <path d="M6 6.5a2 2 0 1 1-4 0a2 2 0 0 1 4 0" />
@@ -300,13 +305,13 @@
                         </div>
                     </div>
                     <!-- Total Earnings -->
-                    <div class="col-span-1 bg-card-bg p-4 dark:bg-gray-700 rounded-lg shadow-custom text-center flex justify-between items-center">
+                    <div class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
                         <div>
-                            <div class="text-gray-700 dark:text-white text-left">Amount <br> Earnings</div>
-                            <div class="text-2xl text-primary-main dark:text-white font-bold text-left">$ <span id="amount"></span></div>
+                            <div class="text-gray-700 text-left">Amount <br> Earnings</div>
+                            <div class="text-2xl text-primary-main font-bold text-left">$ <span id="amount"></span></div>
                         </div>
                         <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" class="text-primary-main dark:text-white" viewBox="0 0 24 24" {...$$props}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" class="text-primary-main" viewBox="0 0 24 24" {...$$props}>
                                 <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
                                     <path d="M12 6v12m3-8.5C15 8.12 13.657 7 12 7S9 8.12 9 9.5s1.343 2.5 3 2.5s3 1.12 3 2.5s-1.343 2.5-3 2.5s-3-1.12-3-2.5" />
                                     <path d="M7 3.338A9.954 9.954 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5" />
@@ -315,28 +320,28 @@
                         </div>
                     </div>
                     <!-- Weekly Visitors -->
-                    <div class="col-span-3 bg-card-bg dark:bg-gray-700 p-4 rounded-lg shadow-custom">
-                        <div class="text-base dark:text-white font-bold mb-2">Weekly Visitors Comparison</div>
+                    <div class="col-span-3 bg-card-bg p-4 rounded-lg shadow-custom">
+                        <div class="text-base font-bold mb-2">Weekly Visitors Comparison</div>
                         <!-- Bar Chart Placeholder -->
                         <canvas id="bar-chart" class="h-64"></canvas>
                     </div>
 
                     <!-- Users, Institutes Pie Charts and Ad Slot -->
                     <div class="col-span-3 flex justify-between space-x-4">
-                        <div class="w-2/4 bg-card-bg dark:bg-gray-700 p-4 rounded-lg shadow-custom ">
-                            <div class="font-bold mb-2 dark:text-white">Users</div>
+                        <div class="w-2/4 bg-card-bg p-4 rounded-lg shadow-custom ">
+                            <div class="font-bold mb-2">Users</div>
                             <!-- Users Pie Chart Placeholder -->
                             <canvas id="users-pie-chart" class="h-40"></canvas>
                         </div>
-                        <div class="w-2/4  bg-card-bg dark:bg-gray-700 p-4 rounded-lg shadow-custom">
-                            <div class=" font-bold mb-2 dark:text-white">Institutes</div>
+                        <div class="w-2/4  bg-card-bg p-4 rounded-lg shadow-custom">
+                            <div class=" font-bold mb-2">Institutes</div>
                             <!-- Institutes Pie Chart Placeholder -->
                             <canvas id="institutes-pie-chart" class="h-40"></canvas>
                         </div>
-                        <div class="w-5/6 bg-card-bg dark:bg-gray-700 py-4 rounded-lg shadow-custom">
-                            <div class="font-bold mb-2 px-2 dark:text-white">Upcoming Ad Slots</div>
+                        <div class="w-5/6 bg-card-bg py-4 rounded-lg shadow-custom">
+                            <div class="font-bold mb-2 px-2">Upcoming Ad Slots</div>
                             <!-- Upcoming Ad Slots Placeholder -->
-                            <div id="upcoming-ad-slots" class="dark:text-white"></div>
+                            <div id="upcoming-ad-slots"></div>
                         </div>
                     </div>
                 </div>
@@ -345,9 +350,9 @@
             <div class="w-2/6">
                 <div class="grid grid-cols-1 gap-4">
                     <!-- Calendar -->
-                    <div class="col-span-1 bg-card-bg dark:bg-gray-700 p-4 rounded-lg shadow-custom">
+                    <div class="col-span-1 bg-card-bg p-4 rounded-lg shadow-custom">
                         <!-- Calendar Placeholder -->
-                        <div id="calendar" class="dark:text-white"></div>
+                        <div id="calendar"></div>
                         <div id="logos" class="flex justify-center items-center mt-4 space-x-2">
                             <img src="../../storages/instituteLogo.png" alt="Institute 1" class="logo rounded-full w-8 h-8" data-institute="1">
                             <img src="../../storages/instituteLogo.png" alt="Institute 2" class="logo rounded-full  w-8 h-8" data-institute="2">
@@ -358,10 +363,10 @@
                         </div>
                     </div>
                     <!-- Top Clients -->
-                    <div class="col-span-1 bg-card-bg dark:bg-gray-700 py-2 rounded-lg shadow-custom">
-                        <div class="text-base font-bold mb-2 px-4 dark:text-white">Top Clients</div>
+                    <div class="col-span-1 bg-card-bg py-2 rounded-lg shadow-custom">
+                        <div class="text-base font-bold mb-2 px-4">Top Clients</div>
                         <!-- Top Clients Placeholder -->
-                        <div id="top-clients" class="text-sm dark:text-white"></div>
+                        <div id="top-clients" class="text-sm"></div>
                     </div>
                     <!-- For Recent Actions Later (Optional) -->
                     <!-- <div class="col-span-1 bg-custom-bg p-4 rounded-lg shadow-custom"> -->

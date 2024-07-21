@@ -14,28 +14,11 @@ $(document).ready(function () {
   $("#total-institutes").text(formatAmount(1960));
   $("#total-users").text(formatAmount(6942));
   $("#amount").text(formatAmount(5000));
-
-  // Function to determine if dark mode is active
-  function isDarkMode() {
-    return $("html").hasClass("dark");
-  }
-
-  // Function to get the current text color based on the theme
-  function getChartTextColor() {
-    return isDarkMode() ? "white" : "black";
-  }
-
-  // Function to update chart options based on theme
-  function updateChart(chart) {
-    chart.options.scales.x.ticks.color = getChartTextColor();
-    chart.options.scales.y.ticks.color = getChartTextColor();
-    chart.options.plugins.legend.labels.color = getChartTextColor();
-    chart.update();
-  }
-
-  // Initialize the bar chart
-  const barCtx = $("#bar-chart")[0].getContext("2d");
-  const barChart = new Chart(barCtx, {
+  
+  // Bar Chart Fpr Weekly Visitors
+  const barCtx = document.getElementById("bar-chart").getContext("2d");
+  console.log(barCtx);
+  new Chart(barCtx, {
     type: "bar",
     data: {
       labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -55,93 +38,49 @@ $(document).ready(function () {
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      scales: {
-        x: {
-          ticks: {
-            color: getChartTextColor(), // Text color for X-axis
-          },
-        },
-        y: {
-          ticks: {
-            color: getChartTextColor(), // Text color for Y-axis
-          },
-        },
-      },
-      plugins: {
-        legend: {
-          labels: {
-            color: getChartTextColor(), // Text color for legend
-          },
-        },
-      },
     },
   });
 
-  // Update the bar chart when the theme changes
-  new MutationObserver(function () {
-    updateChart(barChart);
-  }).observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ["class"],
+  // Pie Chart For Users
+  const usersPieCtx = document
+    .getElementById("users-pie-chart")
+    .getContext("2d");
+  new Chart(usersPieCtx, {
+    type: "pie",
+    data: {
+      labels: ["Premium", "Regular"],
+      datasets: [
+        {
+          data: [58.9, 41.1],
+          backgroundColor: ["#FF6384", "#36A2EB"],
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+    },
   });
 
-  // Function to initialize a pie chart with dynamic text color
-  function initializePieChart(elementId, data) {
-    const ctx = document.getElementById(elementId).getContext("2d");
-    return new Chart(ctx, {
-      type: "pie",
-      data: data,
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            labels: {
-              color: getChartTextColor(), // Text color for legend
-            },
-          },
+  // Pie Chart For Institutes
+  const institutesPieCtx = document
+    .getElementById("institutes-pie-chart")
+    .getContext("2d");
+  new Chart(institutesPieCtx, {
+    type: "pie",
+    data: {
+      labels: ["Premium", "Regular"],
+      datasets: [
+        {
+          data: [58.9, 41.1],
+          backgroundColor: ["#FF6384", "#36A2EB"],
         },
-      },
-    });
-  }
-
-  // Initialize the Users Pie Chart
-  const usersPieData = {
-    labels: ["Premium", "Regular"],
-    datasets: [
-      {
-        data: [58.9, 41.1],
-        backgroundColor: ["#FF6384", "#36A2EB"],
-      },
-    ],
-  };
-  const usersPieChart = initializePieChart("users-pie-chart", usersPieData);
-
-  // Initialize the Institutes Pie Chart
-  const institutesPieData = {
-    labels: ["Premium", "Regular"],
-    datasets: [
-      {
-        data: [58.9, 41.1],
-        backgroundColor: ["#FF6384", "#36A2EB"],
-      },
-    ],
-  };
-  const institutesPieChart = initializePieChart(
-    "institutes-pie-chart",
-    institutesPieData
-  );
-
-  // Update the pie charts when the theme changes
-  new MutationObserver(function () {
-    usersPieChart.options.plugins.legend.labels.color = getChartTextColor();
-    institutesPieChart.options.plugins.legend.labels.color =
-      getChartTextColor();
-    usersPieChart.update();
-    institutesPieChart.update();
-  }).observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ["class"],
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+    },
   });
 
   //Sample Data For Ad Slots
