@@ -117,7 +117,7 @@ nav {
   display: flex;
   margin: auto;
   justify-content: center;
-  width: 1300px;
+  width: 80%;
 }
 .slogan-header {
   font-size: var(--header-font-size);
@@ -152,8 +152,7 @@ nav {
 }
 .information-blocks {
   display: flex;
-  justify-content: space-between;
-  width: 70%;
+  gap: 1vw;
 }
 .info-block {
   width: 121px;
@@ -171,6 +170,27 @@ nav {
   font-weight: bold;
   color: var(--primary-color);
 }
+.slogan-text-container{
+  width: 50%;
+}
+.slogan-img-container{
+  width: 50%;
+}
+.slogan-img-container img{
+  width: 100%;
+}
+@media only screen and (max-width: 1100px) {
+  .slogan-container{
+    flex-direction: column;
+    gap: 3vh;
+  }
+  .slogan-text-container{
+    width: 100%;
+  }
+  .slogan-img-container{
+    width: 100%;
+  }
+}
 /* End of Slogan Container */
 
 /* Start of Latest pick container */
@@ -180,6 +200,8 @@ nav {
   align-items: center;
   flex-direction: column;
   margin-bottom: 3vh;
+  margin: auto;
+  width: 80%;
 }
 .latest-pick-header{
   font-weight: bold;
@@ -201,14 +223,14 @@ nav {
 .advert-slots-images{
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  height: 500px;
+  width: 30vw;
 }
 .advert-slot-one-info-container{
-  width: 600px;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 20px;
   background-color: #ecefff;
+  width: 50vw;
 }
 .advert-slot-one-info-head-container{
   display: flex;
@@ -283,6 +305,9 @@ nav {
 .view-detail:hover{
   cursor: pointer;
 }
+@media only screen and (max-width: 1440px) {
+  
+}
 /* End of Latest pick container */
 /* Start of Splide Library Code */
 
@@ -314,7 +339,6 @@ nav {
 }
 .about-us-description{
   text-align: center;
-  width: 1200px;
 }
 .about-us-body-container{
   display: flex;
@@ -331,22 +355,42 @@ nav {
 .about-us-body-description-header-colored{
   color: var(--primary-color);
 }
+.about-us-description-media-screen{
+  display: none;
+}
+@media only screen and (max-width: 1220px) {
+  .about-us-description{
+    display: none;
+  }
+  .about-us-body-description{
+    display: none;
+  }
+  .about-us-description-media-screen{
+    display: flex;
+    text-align: center;
+    width: 80%;
+    margin-bottom: 3vh;
+  }
+}
 /* End of About Us Container */
 /* Start of Service Section */
 .service-section{
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  flex-direction: row;
+  width: 80%;
+  margin: auto;
+  flex-wrap: wrap;
+  margin-bottom: 3vh;
 }
 .service-section-wrapper{
-  width: 1300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../img/service-background.png);
+  background: linear-gradient(to bottom, rgba(82, 102, 214, 0.2), rgba(0, 0, 0, 0));
   border-radius: 5px;
-  flex-wrap: wrap;
+  flex-basis: 70%;
 }
 .service-section-inner-wrapper{
   margin: 50px;
@@ -370,17 +414,12 @@ nav {
 .service-section-body{
   margin-top: 5vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   text-align: center;
   align-items: center;
   justify-content: space-around;
   gap: 50px;
-}
-.service-section-body-top,.service-section-body-bottom{
-  display: flex;
-  gap: 50px;
-  justify-content: space-between;
-  text-align: center;
 }
 .top-image{
   margin-top: 20px;
@@ -405,6 +444,12 @@ nav {
   padding-right: 20px;
   height: 100px;
   margin-bottom: 20px;
+}
+@media only screen and (max-width: 1220px) {
+  .service-section-body{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 /* End of Service Section */
 /* Start of Clients love Section */
@@ -476,6 +521,16 @@ nav {
 }
 .clients-love-description{
   margin-bottom: 5px;
+}
+@media only screen and (max-width: 1220px) {
+  .clients-love-container{
+    flex-direction: column;
+  }
+  .clients-love-left-container{
+    width: 100%;
+    padding-bottom: 4vh;
+    transition: 0.8s ease;
+  }
 }
 /* End of Clients Love Section */
 /* Start of Plans and Pricing */
@@ -603,6 +658,11 @@ nav {
 .purchase-button:hover {
   background: #264d99;
 }
+@media only screen and (max-width: 1220px) {
+  .pricing-wrapper-container{
+    flex-direction: column;
+  }
+}
 /* End of Plans and Pricing */
 /* Start of Compare all features Section */
 .compare-all-features-section {
@@ -724,7 +784,6 @@ table {
 }
 .contact-us-description-container{
   display: flex;
-  width: 1300px;
   gap: 2vw;
 }
 .contact-us-description-left-container{
@@ -783,8 +842,18 @@ table {
   background-color: #8D9FFF;
   box-shadow: 1px 2px 3px 0px #00000036;
 }
+@media only screen and (max-width: 1200px) {
+  .contact-us-description-container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-us-description-left-container,.contact-us-description-right-container{
+    width: 80%;
+  }
+}
+/* End of Contact Us Section */
 /* Start of Footer */
-footer {
+.footer-flex-container {
   background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
@@ -844,12 +913,13 @@ footer {
   height: 50px;
 }
 .footer-bottom {
+  background-color: var(--primary-color);
   color: var(--font-color);
   font-size: var(--minor-title-H4);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 3vh;
+  padding-bottom: 1vh;
 }
 .left-side {
   margin-left: 3vh;
@@ -874,5 +944,58 @@ footer {
 .footer-list {
   color: white !important;
   text-decoration: none;
+}
+.third-row{
+  display: none;
+}
+@media only screen and (max-width: 1070px) {
+  .footer-flex-container{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-first-row{
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 3vh;
+  }
+  .footer-second-row{
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .subscribe-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .subscribe{
+    width: 10vw;
+  }
+  .email{
+    width: 25vw;
+  }
+  .footer-text{
+    font-size: 1.3em;
+  }
+  .navigate-text{
+    font-size: 1.2em;
+  }
+  .right-container{
+    display: none;
+  }
+  .third-row{
+    padding-right: 3vh;
+    display: flex;
+    gap: 3vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .footer-menu{
+    padding-left: 3vh;
+    flex-direction: column;
+    gap: 1vh;
+    align-items: flex-start;
+  }
 }
 /* End of Footer */

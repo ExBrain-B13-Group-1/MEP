@@ -13,7 +13,7 @@ body {
 .course-search-header-section {
     margin: auto;
     margin-top: 5vh;
-    width: 80%;
+    width: 70%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -56,7 +56,7 @@ body {
 /* Start of Tabs Section */
 .tabs-section {
     margin: auto;
-    width: 80%;
+    width: 70%;
     display: flex;
     font-weight: bold;
     gap: 2vw;
@@ -71,83 +71,102 @@ body {
     color: var(--primary-color);
     border-bottom: 1px solid var(--primary-color);
 }
+
 /* End of Tabs Section */
 /* Start of Tabs Slides */
-.tabs-slider{
+.tabs-slider {
     margin: auto;
-    width: 80%;
+    width: 70%;
 }
-.splide__slide{
+
+.splide__slide {
     display: flex;
     justify-content: space-between;
 }
-.card-container{
+
+.card-container {
     margin-top: 3vh;
     border-radius: 10px;
     width: 23%;
     border: 0.5px solid grey;
     border-top: none;
 }
-.card-container:hover{
+
+.card-container:hover {
     cursor: pointer;
 }
-.card-container img{
+
+.card-container img {
     width: 100%;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
 }
-.card-details{
+
+.card-details {
     padding: 10px;
 }
-.card-header{
+
+.card-header {
     font-size: 1.1em;
     font-weight: bold;
 }
-.card-header-text{
+
+.card-header-text {
     opacity: 0.5;
     margin-bottom: 10px;
 }
-.card-rating{
+
+.card-rating {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
 }
-.card-rating-value{
+
+.card-rating-value {
     font-size: 1.1em;
     font-weight: bold;
 }
-.card-rating-icons{
-    color: #FFB800;
+
+.card-rating-icons {
+    color: #ffb800;
 }
-.card-rating-count-value{
+
+.card-rating-count-value {
     opacity: 0.7;
 }
-.card-start-date,.card-end-date{
+
+.card-start-date,
+.card-end-date {
     display: flex;
     gap: 10px;
 }
-.card-dead-line{
+
+.card-dead-line {
     gap: 10px;
     display: flex;
     flex-direction: row;
-    color: #FF0000;
+    color: #ff0000;
     margin-bottom: 10px;
 }
-.card-dead-line-value{
+
+.card-dead-line-value {
     color: black;
 }
-.card-fee{
+
+.card-fee {
     display: flex;
     justify-content: space-between;
     font-weight: bold;
     align-items: center;
 }
-.card-fee-value{
+
+.card-fee-value {
     font-size: 1.1em;
 }
-.card-enroll{
+
+.card-enroll {
     font-weight: lighter;
     color: white;
     padding-top: 3px;
@@ -156,14 +175,17 @@ body {
     border-radius: 5px;
     background-color: var(--primary-color);
 }
+
 /* End of Tabs-Slider */
 /* Start of Splide Library Code */
-.splide__pagination__page is-active{
+.splide__pagination__page is-active {
     display: none !important;
 }
-.splide__pagination__page{
+
+.splide__pagination__page {
     display: none !important;
 }
+
 .splide__pagination {
     counter-reset: pagination-num;
 }
@@ -175,96 +197,300 @@ body {
 
 /* End of Splide library Code */
 /* Start of Popular Instructors Section*/
-.popular-instructors-section{
-    width: 80%;
+.popular-instructors-section {
+    width: 70%;
     margin: auto;
 }
-.popular-instructors-header{
+
+.popular-instructors-header {
     margin-top: 3vh;
     font-weight: bold;
     font-size: 1.5em;
 }
-.popular-instructors-text{
+
+.popular-instructors-text {
     margin-bottom: 3vh;
 }
-#instructorSplide{
+
+#instructorSplide {
     margin-bottom: 3vh;
 }
-.instructor-card-container{
+
+.instructor-card-container {
     border-radius: 10px;
     width: 23%;
     border: 0.5px solid grey;
 }
-.instructor-card-container img{
+
+.instructor-card-container img {
     height: 6vh;
 }
-.instructor-inner-wrapper{
-    gap: 20px;
+
+.instructor-inner-wrapper {
+    justify-content: space-around;
     padding: 20px;
     display: flex;
     flex-direction: row;
 }
-.instructor-card-details{
+
+.instructor-card-details {
     display: flex;
     flex-direction: column;
 }
-.instructor-card-details-header{
+
+.instructor-card-details-header {
     font-size: 1.1em;
     font-weight: bold;
 }
-.instructor-card-details-text{
+
+.instructor-card-details-text {
     opacity: 0.7;
     margin-bottom: 5px;
 }
-.instructor-rating{
+
+.instructor-rating {
     display: flex;
     gap: 10px;
     align-items: center;
     margin-bottom: 5px;
 }
-.instructor-rating-value{
+
+.instructor-rating-value {
     font-size: 1.1em;
     font-weight: bold;
 }
-.instructor-rating-icon{
-    color: #FFB800;
+
+.instructor-rating-icon {
+    color: #ffb800;
 }
-.instructor-rating-text{
+
+.instructor-rating-text {
     opacity: 0.7;
 }
-.instructor-student-count{
+
+.instructor-student-count {
     display: flex;
     gap: 10px;
     align-items: center;
 }
-.instructor-student-count-value{
+
+.instructor-student-count-value {
     font-size: 1.1em;
     font-weight: bold;
 }
-.instructor-student-count-text{
+
+.instructor-student-count-text {
     opacity: 0.7;
 }
-.instructor-classes{
+
+.instructor-classes {
     display: flex;
     gap: 10px;
     align-items: center;
 }
-.instructor-classes-value{
+
+.instructor-classes-value {
     font-size: 1.1em;
     font-weight: bold;
 }
-.instructor-classes-text{
+
+.instructor-classes-text {
     opacity: 0.7;
 }
+
 @media only screen and (max-width: 1660px) {
-    .instructor-inner-wrapper{
-        gap: 20px;
+    .instructor-inner-wrapper {
         padding: 20px;
         display: flex;
         align-items: center;
-        justify-content: center;
         flex-direction: column;
     }
 }
+
 /* End of Popular Instructor Section */
 /* Start of Courses Search Section */
+.courses-search-section {
+    width: 70%;
+    margin: auto;
+}
+
+.courses-search-top-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 3vh;
+    align-items: center;
+}
+
+.courses-search-header {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.courses-search-search-box {
+    border-radius: 5px;
+    width: 20%;
+    padding: 5px;
+    text-indent: 10px;
+    border: 1px solid black;
+}
+
+.courses-search-filter-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3vh;
+}
+
+.courses-search-filter-inner-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 40%;
+}
+
+.courses-search-filter-btn {
+    gap: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.courses-search-filter-sort-by-drop-down {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 3px;
+    border: 1px solid black;
+    padding-left: 15px;
+    width: 12vw;
+    height: 7vh;
+    position: relative;
+}
+
+.courses-search-filter-sort-by-drop-down select {
+    font-weight: bold;
+    appearance: none;
+}
+
+.courses-search-filter-sort-by-drop-down:after {
+    content: "";
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: #222;
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    border-radius: 2px;
+}
+
+.courses-search-filter-clear {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+}
+
+.courses-search-filter-results {
+    display: flex;
+    gap: 5px;
+    opacity: 0.7;
+}
+
+/* End of Courses Search Section */
+/* Start of Main Search Section */
+/* Start of Main Search Left Container */
+.main-search-section {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.main-search-left-container {
+    display: flex;
+    flex-direction: column;
+    width: 18vw;
+}
+
+.choose-container {
+    border-top: 1px solid grey;
+    margin-bottom: 3vh;
+}
+
+.choose-header {
+    margin-top: 2vh;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 2vh;
+}
+
+.inner-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.rating-box,
+.institute-box {
+    padding-left: 1vw;
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.institute-box {
+    font-weight: bold;
+}
+
+.institute-box input {
+    width: 20px;
+    height: 20px;
+}
+
+.main-search-choose-rating-icons {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    color: #ffb800;
+}
+
+.rating-text,
+.main-search-choose-rating-count {
+    opacity: 0.7;
+}
+
+.main-search-choose-institute-name {
+    font-size: 1.3em;
+    font-weight: 400;
+}
+
+.institute-wrapper,.available-classes-wrapper {
+    gap: 2vh;
+}
+.main-search-choose-institutes-header{
+    /* to add vector */
+}
+.institute-wrapper,.available-classes-wrapper{
+    height: 170px;
+    overflow: hidden;
+    transition-delay: 450ms;
+    transition: height 0.8s ease;
+}
+.active-wrapper{
+    height: 85%;
+}
+.see-more{
+    margin-top: 1vh;
+    padding-left: 1vw;
+    color: var(--primary-color);
+}
+/* End of Main Search Left Container*/
+/* Start of Main Search Right Container */
