@@ -181,9 +181,11 @@
               <td class="h-ful relative">
                 <p class="text-xs absolute -top-2 right-2 text-white font-medium">08 PM</p>
               </td>
-              <td class="h-full flex flex-col p-2  bg-[#7382D2]">
-                <p class="text-xs">Front End Course</p>
+              <td class="h-full  bg-[#7382D2]">
+                <div class="w-full h-full flex flex-col ">
+        <p class="text-xs">Front End Course</p>
                 <p class="text-[.6rem] mt-2">08:00AM - 12:00PM </p>
+                </div>
               </td>
               <td class="h-full  border-t border-white"></td>
               <td class="h-full  border-t border-white"></td>
