@@ -736,7 +736,7 @@
                             <div class="flex justify-center items-center md:mt-8 mt-4 absolute md:-top-24 -top-14 left-1/2 -translate-x-1/2">
                                 <div class="md:w-80 md:h-24 w-60 h-20 rounded-xl bg-indigo-800 flex flex-col justify-center items-center shadow-lg">
                                     <p class="text-gray-400 md:text-base text-sm">500 Coins</p>
-                                    <h1 class="text-white font-semibold md:text-2xl text-xl">10,00 MMK</h1>
+                                    <h1 class="text-white font-semibold md:text-2xl text-xl">10,000 MMK</h1>
                                     <small class="text-gray-200 text-xs">Unlimited buy</small>
                                 </div>
                             </div>  
