@@ -1331,8 +1331,8 @@ video {
   height: 23vh;
 }
 
-.h-\[35vh\] {
-  height: 35vh;
+.h-\[32vh\] {
+  height: 32vh;
 }
 
 .h-\[50vh\] {
@@ -1357,6 +1357,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[31vh\] {
+  height: 31vh;
 }
 
 .min-h-80 {
@@ -4248,7 +4252,7 @@ video {
 
   #default-carousel:hover .institute-infos {
     position: absolute;
-    left: 10px;
+    left: 25px;
     top: 0;
   }
 }

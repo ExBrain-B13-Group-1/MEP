@@ -10,8 +10,8 @@
     
     #default-carousel:hover .institute-infos {
         position: absolute;
-        left: 10px;
-        top: 0;
+        left: 25px;
+        top: 0; 
     }
 }
 

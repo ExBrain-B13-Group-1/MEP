@@ -121,7 +121,7 @@
                 <span class="md:text-2xl text-xl relative md:bottom-2 font-semibold tracking-wider text-blue-700">Latest Pick</span>
             </div>
         </div>
-        <div id="default-carousel" class="relative w-full md:h-[67vh] h-[35vh] md:mb-32 md:px-20 px-10" data-carousel="slide">
+        <div id="default-carousel" class="relative w-full md:h-[67vh] h-[31vh] md:mb-32 md:px-20 px-10" data-carousel="slide">
             <!-- Carousel wrapper -->
             <div class="relative h-56 overflow-hidden -z-10 rounded-lg md:h-[60vh]">
                 <!-- Item 1 -->
