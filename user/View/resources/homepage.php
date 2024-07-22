@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>MEP - Home</title>
     <!-- Swiper Slider css1 js1 -->
     <link rel="stylesheet" href="./lib/swiper-bundle.min.css" type="text/css" />
+    <!-- AOS scroll animation css1 js1 -->
+    <link rel="stylesheet" href="./lib/aos.css" type="text/css">
     <!-- Tailwind output css -->
     <link href="./css/output.css" rel="stylesheet" />
 </head>
@@ -532,7 +534,7 @@
             <div class="flex flex-col gap-7">
                 <div class="flex justify-center items-center">
                     <div class="flex flex-col items-center">
-                        <div class="w-[90%] h-auto bg-gray-50 rounded-lg grid md:grid-cols-4 grid-cols-3 md:px-0 px-2">
+                        <div class="md:w-[90%] w-[100%] h-auto bg-gray-50 rounded-lg grid md:grid-cols-4 grid-cols-3 md:px-0 px-2">
                             <div class="md:col-span-1 col-span-3 flex md:flex-col items-center justify-center">
                                 <img src="../../storages/clients-love1.png" class="w-[60px] md:my-2" alt="client-love1">
                                 <h1 class="md:text-base md:mx-0 mx-3 font-semibold">XYZ Institute</h1>
@@ -573,7 +575,7 @@
                 </div>
                 <div class="flex justify-center items-center md:mb-0 mb-1">
                     <div class="flex flex-col items-center">
-                        <div class="w-[90%] h-auto bg-gray-50 rounded-lg grid md:grid-cols-4 grid-cols-3 md:px-0 px-2">
+                        <div class="md:w-[90%] w-[100%] h-auto bg-gray-50 rounded-lg grid md:grid-cols-4 grid-cols-3 md:px-0 px-2">
                             <div class="md:col-span-1 col-span-3 flex md:flex-col items-center justify-center">
                                 <img src="../../storages/clients-love1.png" class="w-[60px] md:my-2" alt="client-love2">
                                 <h1 class="md:text-base md:mx-0 mx-3 font-semibold">XYZ Institute</h1>
@@ -788,17 +790,17 @@
         <div class="flex justify-between relative">
             <div>
                 <div class="flex flex-col justify-start md:mt-[149px] mt-[2px] md:pt-[0px] pt-[130px] md:gap-[30px] gap-[30px] items-start absolute md:left-10 z-10 md:pl-0 pl-5 md:pr-0 pr-3 md:bg-transparent bg-gray-50">
-                    <div>Class</div>
+                    <div class="md:mt-[5px]">Class</div>
                     <div class="md:mt-[1px]">Chat</div>
-                    <div class="md:mt-[2px]">Event</div>
-                    <div class="md:mt-[2px]">Consultations</div>
+                    <div class="md:mt-[1px]">Event</div>
+                    <div class="md:mt-[1px]">Consultations</div>
                     <div class="md:mt-[2px]">Coupons</div>
                     <div class="md:mt-[2px]">Slots</div>
-                    <div class="md:mt-[2px]">SEO</div>
+                    <div class="md:mt-[0px]">SEO</div>
                 </div>
             </div>
             <div class="relative overflow-x-auto sm:rounded-lg border-2 shadow-lg w-full">
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500 border-3 md:ml-0 ml-24">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 border-3 md:ml-0 ml-28">
                         <tbody>
                             <tr class="border-b">
                                 <td class="px-6 py-4 md:w-72 w-0">
@@ -1047,7 +1049,7 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
             <!-- left -->
-            <div class="h-[60vh] border-2 border-gray-400 rounded-lg">
+            <div class="md:h-[60vh] h-[55vh] border-2 border-gray-400 rounded-lg">
                 <div class="col-span-2 bg-indigo-500 md:h-3 h-2 rounded-tl-sm rounded-tr-sm"></div>
                 <form action="" method="" class="md:px-5 md:py-5 px-3 py-3">  
                     <div class="grid grid-cols-2 gap-5">
@@ -1071,7 +1073,7 @@
                             <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Message</label>
                             <textarea name="message" id="message" rows="8" class="w-full resize-none bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" placeholder="Write message....."></textarea>   
                         </div>
-                        <div class="col-span-2 flex justify-center md:mt-4">
+                        <div class="col-span-2 flex justify-center md:mt-4 mt-3">
                             <button id="send-message" class="ml-2 bg-[#4460EF] text-white py-2 px-10 rounded-md flex items-center space-x-4">
                                 Send
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="inline ml-1" viewBox="0 0 24 24">
@@ -1113,12 +1115,12 @@
             <div class="grid grid-cols-12">
                 <div class="text-center md:text-left mb-4 md:mb-0 col-span-3">
                     <a href="https://flowbite.com/" class="flex items-start md:items-center justify-start space-x-3 rtl:space-x-reverse mb-4 md:mb-0">
-                        <img src="./../../../storages/logo-white.svg" class="h-10" alt="Flowbite Logo">
+                        <img src="./../../../storages/logo-white.svg" class="h-12" alt="Flowbite Logo">
                     </a>
-                    <p class="mt-2 md:text-sm text-xs hidden md:block">“Join MEP, Your Path To Success”</p>
+                    <p class="mt-2 md:text-lg text-xs hidden md:block">“Join MEP, Your Path To Success”</p>
                     <div class="block md:hidden">
                         <div class="flex flex-col items-start space-y-1.5">
-                            <a href="home" class="text-white md:text-lg text-sm">Home</a>
+                            <a href="home" class="text-white md:text-lg text-sm hover:text-blue-400">Home</a>
                             <a href="about-us" class="text-white md:text-lg text-sm">About</a>
                             <a href="services" class="text-white">Services</a>
                             <a href="price-plan" class="text-white">Price Plan</a>
@@ -1128,11 +1130,11 @@
                 </div>
                 <div class="my-0 text-center col-span-7">
                     <div class="hidden md:flex justify-center md:space-x-32 mb-6">
-                        <a href="home" class="text-white">Home</a>
-                        <a href="about-us" class="text-white">About</a>
-                        <a href="services" class="text-white">Services</a>
-                        <a href="price-plan" class="text-white">Price Plan</a>
-                        <a href="contact-us" class="text-white">Contact Us</a>
+                        <a href="home" class="text-white md:text-lg text-sm hover:text-blue-400">Home</a>
+                        <a href="about-us" class="text-white md:text-lg text-sm hover:text-blue-400">About</a>
+                        <a href="services" class="text-white md:text-lg text-sm hover:text-blue-400">Services</a>
+                        <a href="price-plan" class="text-white md:text-lg text-sm hover:text-blue-400">Price Plan</a>
+                        <a href="contact-us" class="text-white md:text-lg text-sm hover:text-blue-400">Contact Us</a>
                     </div>
                     <div>
                         <p class="mt-3 md:text-sm text-xs block md:hidden md:mb-8 mb-10">“Join MEP, Your Path To Success”</p>
@@ -1178,10 +1180,12 @@
     <script src="./lib/flowbite.min.js" type="text/javascript"></script>
     <!-- swiper slider css1 js1 -->
     <script src="./lib/swiper-bundle.min.js" type="text/javascript"></script>
+    <!-- aos scroll animation css1 js1 -->
+    <script src="./lib/swiper-bundle.min.js" type="text/javascript"></script>
     <!-- jQuery -->
     <script src="./lib/jquery-3.7.1.js" type="text/javascript"></script>
     <!-- customjs -->
-    <script src="./js/homepage_spn.js" type="text/javascript"></script>
+    <script src="./js/homepage.js" type="text/javascript"></script>
 </body>
 
 </html>
