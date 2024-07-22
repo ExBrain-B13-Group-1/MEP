@@ -5,27 +5,6 @@ $(document).ready(function () {
   /* Start HPP Code 
      .............. 
      ..............*/
-     
-  handleFileUpload("#upload-front", "#preview-image-front", "#file-name-front");
-  handleFileUpload("#upload-back", "#preview-image-back", "#file-name-back");
-
-   // Function for handling file upload (nrc front & back)
-  function handleFileUpload(inputId, previewImageId, fileNameId) {
-    $(inputId).on("change", function (event) {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          $(previewImageId).attr("src", e.target.result).removeClass("hidden");
-        };
-        reader.readAsDataURL(file);
-        $(fileNameId).text(file.name);
-      } else {
-        $(previewImageId).attr("src", "#").addClass("hidden");
-        $(fileNameId).text("");
-      }
-    });
-  }
 
   // For Verification Page Submit
   $("#verifyForm").submit(function (event) {

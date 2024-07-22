@@ -8,11 +8,11 @@ $(document).ready(function () {
   // User Tab & Institute Tab
   $(".tab-button").click(function () {
     $(".tab-button")
-      .removeClass("text-dark-blue font-bold text-xl")
-      .addClass("text-gray-700");
+      .removeClass("text-dark-blue dark:text-[#9aabff] font-bold text-xl")
+      .addClass("text-gray-700 dark:text-gray-400");
     $(this)
-      .removeClass("text-gray-700")
-      .addClass("text-dark-blue font-bold text-xl");
+      .removeClass("text-gray-700 dark:text-gray-400")
+      .addClass("text-dark-blue dark:text-[#9aabff] font-bold text-xl");
     $(".tab-content").removeClass("active").addClass("hidden");
     if (this.id === "user-tab") {
       $("#user-content").removeClass("hidden").addClass("active");
@@ -139,14 +139,14 @@ $(document).ready(function () {
                     <img src="${notification.photo}" alt="User Avatar" class="rounded-full w-16 h-16 mr-4">
                     <div>
                         <div class="font-bold">${notification.name}</div>
-                        <div class="text-gray-500 text-sm">${notification.date}</div>
-                        <div class="text-gray-500 text-sm">${notification.time}</div>
+                        <div class="text-gray-500 dark:text-gray-400 text-sm">${notification.date}</div>
+                        <div class="text-gray-500 dark:text-gray-400 text-sm">${notification.time}</div>
                     </div>
                 </div>
                 <div class="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" {...$$props}>
 <path fill="currentColor" d="m12 15.577l-3.539-3.538l.708-.72L11.5 13.65V5h1v8.65l2.33-2.33l.709.719zM5 19v-4.038h1V18h12v-3.038h1V19z" /></svg>
-                    <a href="${notification.formLink}" class="text-dark-blue underline mr-32">
+                    <a href="${notification.formLink}" class="text-dark-blue dark:text-[#9aabff] underline mr-32">
                     Validation Form</a>
                     <div class="flex flex-col">
                         <button class="bg-primary-main text-white px-4 py-2 rounded text-sm flex items-center transition duration-100 transform hover:scale-105 verify-button">

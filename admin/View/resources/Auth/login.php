@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="../resources/css/output.css" rel="stylesheet">
+    <link href="../../resources/css/output.css" rel="stylesheet">
 </head>
 
 <body class="bg-custom-bg bg-cover bg-center min-h-screen">
     <div class="flex items-center justify-center min-h-screen">
         <div class="py-8 px-8 bg-primary-main bg-opacity-90 rounded-lg shadow-xl">
-            <img src="../../../storages/logo-white.svg" class="mx-auto mb-5" alt="logo">
+            <img src="../../../../storages/logo-white.svg" class="mx-auto mb-5" alt="logo">
 
             <!-- Login Form For Back-End -->
-            <form action="adminDashboard.php" class="space-y-4 md:space-y-7">
+            <form action="../adminDashboard.php" class="space-y-4 md:space-y-7">
                 <!-- Email -->
                 <div>
                     <input type="email" id="email" placeholder="Email"

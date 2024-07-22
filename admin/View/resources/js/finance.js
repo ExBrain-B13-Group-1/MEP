@@ -1,14 +1,49 @@
-// *********** Use in finance/finance.php ***********
-
 $(document).ready(function () {
   /* Start HPP Code 
          .............. 
          ..............*/
 
+  // Thousand Separator Format
+  function formatAmount(amount) {
+    return "$ " + amount.toLocaleString();
+  }
+
+  $("#total-income").text(formatAmount(100000000));
+  $("#income-user").text(formatAmount(100000000));
+  $("#income-institute").text(formatAmount(100000000));
+
   // Get Current Year
   var currentYear = new Date().getFullYear();
 
   $("#current-year").text(currentYear);
+
+  $("#prev-year").click(function () {
+    currentYear--;
+    updateChartData();
+  });
+
+  $("#next-year").click(function () {
+    currentYear++;
+    updateChartData();
+  });
+
+  // Function to determine if dark mode is active
+  function isDarkMode() {
+    return $("html").hasClass("dark");
+  }
+
+  // Function to get the current text color based on the theme
+  function getChartTextColor() {
+    return isDarkMode() ? "white" : "black";
+  }
+
+  // Function to update chart options based on theme
+  function updateChart(chart) {
+    chart.options.scales.x.ticks.color = getChartTextColor();
+    chart.options.scales.y.ticks.color = getChartTextColor();
+    chart.options.plugins.legend.labels.color = getChartTextColor();
+    chart.update();
+  }
 
   // Get Sample Data
   function getChartData(year) {
@@ -66,39 +101,50 @@ $(document).ready(function () {
 
   var ctx = document.getElementById("financeChart").getContext("2d");
 
-  // Finance Chart
+  // Initialize the finance chart
   var financeChart = new Chart(ctx, {
     type: "line",
     data: getChartData(currentYear),
     options: {
       scales: {
+        x: {
+          ticks: {
+            color: getChartTextColor(), // Text color for X-axis
+          },
+        },
         y: {
           beginAtZero: true,
           ticks: {
             stepSize: 25,
             max: 100,
+            color: getChartTextColor(), // Text color for Y-axis
+          },
+        },
+      },
+      plugins: {
+        legend: {
+          labels: {
+            color: getChartTextColor(), // Text color for legend
           },
         },
       },
     },
   });
 
-  $("#prev-year").click(function () {
-    currentYear--;
-    updateChart();
-  });
-
-  $("#next-year").click(function () {
-    currentYear++;
-    updateChart();
-  });
-
-  // Update Chart Back Depends On Year
-  function updateChart() {
+  // Update the finance chart data when the year changes
+  function updateChartData() {
     $("#current-year").text(currentYear);
     financeChart.data = getChartData(currentYear);
-    financeChart.update();
+    updateChart(financeChart); // Ensure the chart is updated with the correct colors
   }
+
+  // Update the finance chart when the theme changes
+  new MutationObserver(function () {
+    updateChart(financeChart);
+  }).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["class"],
+  });
 
   /* ............
          ............
