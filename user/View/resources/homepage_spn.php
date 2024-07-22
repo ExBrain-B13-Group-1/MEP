@@ -50,7 +50,7 @@
                             <a href="#" class="block w-full text-center py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Price Plan</a>
                         </li>
                         <li class="flex items-center justify-center mt-5 md:mt-0">
-                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Join Now</button>
+                            <button type="button" id="joinnow-btn" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Join Now</button>
                         </li>
                     </ul>
                 </div>
@@ -522,7 +522,7 @@
     <!-- End Service Section -->
 
     <!-- Start Client Love Section -->
-    <section class="md:px-32 px-5 md:mx-0 mx-5 pt-10 md:pb-24 pb-10 md:pt-20 bg-indigo-500 rounded-lg md:h-[73vh]">
+    <section class="md:px-32 px-5 md:mx-0 mx-5 pt-10 md:pb-24 pb-10 md:pt-20 bg-indigo-500 rounded-lg md:h-[64vh]">
         <div class="grid grid-cols-1 md:grid-cols-2 md:gap-20 gap-10 h-full">
             <div class="flex flex-col justify-center items-start">
                 <h1 class="md:text-2xl text-xl font-semibold text-gray-100">Clients Love</h1> 
@@ -683,7 +683,7 @@
                                 </div>
                             </div>  
                             <div class="flex justify-start md:px-16 md:mt-3 md:pt-14 pt-14 px-10">
-                                <ul class="space-y-4 text-left text-gray-800 flex flex-col gap-2">
+                                <ul class="space-y-4 text-left text-gray-800 flex flex-col gap-1">
                                     <p class="md:pl-6">Everything in Basic and :</p>
                                     <li class="flex items-center space-x-3 rtl:space-x-reverse">
                                         <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
@@ -798,7 +798,7 @@
                 </div>
             </div>
             <div class="relative overflow-x-auto sm:rounded-lg border-2 shadow-lg w-full">
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500 border-3 md:ml-0 ml-24">
+                <table class="w-full text-sm text-left rtl:text-right text-gray-500 border-3 md:ml-0 ml-28">
                         <tbody>
                             <tr class="border-b">
                                 <td class="px-6 py-4 md:w-72 w-0">
@@ -1047,10 +1047,10 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
             <!-- left -->
-            <div class="h-[60vh] border-2 border-gray-400 rounded-lg">
+            <div class="md:h-[60vh] h-[55vh] border-2 border-gray-400 rounded-lg">
                 <div class="col-span-2 bg-indigo-500 md:h-3 h-2 rounded-tl-sm rounded-tr-sm"></div>
                 <form action="" method="" class="md:px-5 md:py-5 px-3 py-3">  
-                    <div class="grid grid-cols-2 gap-5">
+                    <div class="grid grid-cols-2 gap-5">    
                         <div>
                             <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900">First name</label>
                             <input type="text" id="first_name" class="bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="John" required />
@@ -1071,7 +1071,7 @@
                             <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Message</label>
                             <textarea name="message" id="message" rows="8" class="w-full resize-none bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" placeholder="Write message....."></textarea>   
                         </div>
-                        <div class="col-span-2 flex justify-center md:mt-4">
+                        <div class="col-span-2 flex justify-center md:mt-4 mt-3">
                             <button id="send-message" class="ml-2 bg-[#4460EF] text-white py-2 px-10 rounded-md flex items-center space-x-4">
                                 Send
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="inline ml-1" viewBox="0 0 24 24">
@@ -1118,28 +1118,28 @@
                     <p class="mt-2 md:text-sm text-xs hidden md:block">“Join MEP, Your Path To Success”</p>
                     <div class="block md:hidden">
                         <div class="flex flex-col items-start space-y-1.5">
-                            <a href="home" class="text-white md:text-lg text-sm">Home</a>
-                            <a href="about-us" class="text-white md:text-lg text-sm">About</a>
-                            <a href="services" class="text-white">Services</a>
-                            <a href="price-plan" class="text-white">Price Plan</a>
-                            <a href="contact-us" class="text-white">Contact Us</a>
+                            <a href="home" class="text-white md:text-lg text-sm hover:text-blue-400">Home</a>
+                            <a href="about-us" class="text-white md:text-lg text-sm hover:text-blue-400">About</a>
+                            <a href="services" class="text-white md:text-lg text-sm hover:text-blue-400">Services</a>
+                            <a href="price-plan" class="text-white md:text-lg text-sm hover:text-blue-400">Price Plan</a>
+                            <a href="contact-us" class="text-white md:text-lg text-sm hover:text-blue-400">Contact Us</a>
                         </div>
                     </div>
                 </div>
                 <div class="my-0 text-center col-span-7">
-                    <div class="hidden md:flex justify-center md:space-x-32 mb-6">
-                        <a href="home" class="text-white">Home</a>
-                        <a href="about-us" class="text-white">About</a>
-                        <a href="services" class="text-white">Services</a>
-                        <a href="price-plan" class="text-white">Price Plan</a>
-                        <a href="contact-us" class="text-white">Contact Us</a>
+                    <div class="invisible md:visible md:flex justify-center md:space-x-20 mb-6">
+                        <a href="home" class="text-white hover:text-blue-400">Home</a>
+                        <a href="about-us" class="text-white hover:text-blue-400">About</a>
+                        <a href="services" class="text-white hover:text-blue-400">Services</a>
+                        <a href="price-plan" class="text-white hover:text-blue-400">Price Plan</a>
+                        <a href="contact-us" class="text-white hover:text-blue-400">Contact Us</a>
                     </div>
                     <div>
-                        <p class="mt-3 md:text-sm text-xs block md:hidden md:mb-8 mb-10">“Join MEP, Your Path To Success”</p>
-                        <p class="md:text-lg text-sm font-semibold md:mb-2 mb-3 md:mt-10 ">Navigate Your Future with Us</p>
+                        <p class="md:mt-3 -mt-16 md:text-sm text-xs block md:hidden md:mb-8 mb-10">“Join MEP, Your Path To Success”</p>
+                        <p class="md:text-lg text-sm font-semibold md:mb-2 mb-3 md:mt-10 -mt-2">Navigate Your Future with Us</p>
                         <div class="grid grid-cols-1 md:grid-cols-2">
                             <div class="col-span-2 justify-center md:mt-5">
-                                <input type="email" class="px-2 md:py-3 py-2.5 md:w-60 w-40 md:mb-0 mb-4 rounded-l-md md:rounded-r-none rounded-r-lg text-black focus:outline-none focus:ring-1 mr-1" placeholder="email">
+                                <input type="email" class="px-2 md:py-3 py-2.5 md:w-60 w-40 md:mb-0 mb-2 rounded-l-md md:rounded-r-none rounded-r-lg text-black focus:outline-none focus:ring-1 mr-1" placeholder="email">
                                 <button class="bg-white text-blue-600 px-4 md:py-3 py-2.5 rounded-r-md md:rounded-l-none rounded-l-lg">Subscribe</button>
                             </div>
                         </div>

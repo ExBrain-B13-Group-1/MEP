@@ -1136,6 +1136,42 @@ video {
   margin-top: 2px;
 }
 
+.ml-40 {
+  margin-left: 10rem;
+}
+
+.ml-28 {
+  margin-left: 7rem;
+}
+
+.-mt-8 {
+  margin-top: -2rem;
+}
+
+.-mt-20 {
+  margin-top: -5rem;
+}
+
+.-mt-16 {
+  margin-top: -4rem;
+}
+
+.-mt-5 {
+  margin-top: -1.25rem;
+}
+
+.-mt-4 {
+  margin-top: -1rem;
+}
+
+.-mt-3 {
+  margin-top: -0.75rem;
+}
+
+.-mt-2 {
+  margin-top: -0.5rem;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -1339,10 +1375,6 @@ video {
   height: 50vh;
 }
 
-.h-\[60vh\] {
-  height: 60vh;
-}
-
 .h-\[80vh\] {
   height: 80vh;
 }
@@ -1357,6 +1389,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[55vh\] {
+  height: 55vh;
 }
 
 .min-h-80 {
@@ -3399,6 +3435,14 @@ video {
   padding-top: 130px;
 }
 
+.pl-20 {
+  padding-left: 5rem;
+}
+
+.pl-40 {
+  padding-left: 10rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -4379,6 +4423,31 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.hover\:text-blue-800:hover {
+  --tw-text-opacity: 1;
+  color: rgb(30 64 175 / var(--tw-text-opacity));
+}
+
+.hover\:text-red-800:hover {
+  --tw-text-opacity: 1;
+  color: rgb(153 27 27 / var(--tw-text-opacity));
+}
+
+.hover\:text-blue-700:hover {
+  --tw-text-opacity: 1;
+  color: rgb(29 78 216 / var(--tw-text-opacity));
+}
+
+.hover\:text-blue-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
+.hover\:text-blue-400:hover {
+  --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity));
+}
+
 .hover\:underline:hover {
   text-decoration-line: underline;
 }
@@ -4825,6 +4894,34 @@ video {
     height: 100%;
   }
 
+  .md\:h-\[70vh\] {
+    height: 70vh;
+  }
+
+  .md\:h-\[68vh\] {
+    height: 68vh;
+  }
+
+  .md\:h-\[66vh\] {
+    height: 66vh;
+  }
+
+  .md\:h-\[65vh\] {
+    height: 65vh;
+  }
+
+  .md\:h-\[64vh\] {
+    height: 64vh;
+  }
+
+  .md\:h-\[63vh\] {
+    height: 63vh;
+  }
+
+  .md\:h-\[62vh\] {
+    height: 62vh;
+  }
+
   .md\:w-10 {
     width: 2.5rem;
   }
@@ -4993,6 +5090,12 @@ video {
     --tw-space-y-reverse: 0;
     margin-top: calc(1.75rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(1.75rem * var(--tw-space-y-reverse));
+  }
+
+  .md\:space-x-20 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(5rem * var(--tw-space-x-reverse));
+    margin-left: calc(5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .md\:overflow-y-auto {

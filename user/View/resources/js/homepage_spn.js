@@ -39,3 +39,15 @@ window.addEventListener('resize', function() {
 });
 
 window.addEventListener('load', initSwiper);
+
+
+$(document).ready(function(){
+    // console.log("hay");
+    $('#joinnow-btn').on('click',()=>{
+      window.location.href = "http://localhost/MEP/user/View/resources/Auth/login.php";
+    }); 
+});
+
+
+
+
