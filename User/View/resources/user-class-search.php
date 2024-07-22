@@ -89,7 +89,7 @@
 
                 <div class="relative">
                     <div id="userProfile" aria-isOpen="false"
-                        class="flex justify-center items-center cursor-pointer hover:text-primaryColor">
+                        class="flex justify-center items-center cursor-pointer hover:text-primaryColor user-profile-drop-down">
                         <img src="./img/profile.png" alt="profile" class="rounded-full mr-2 " width="30">
                         <ion-icon name="chevron-down-outline" class="text-lg r"></ion-icon>
                     </div>
@@ -117,7 +117,28 @@
             </div>
         </div>
     </nav>
-
+    <div class="user-drop-down-container">
+        <div class="top-drop-down">
+            <div class="user-drop-down-person drop-down-containers">
+                <ion-icon name="person-circle-outline"></ion-icon>
+                <div class="user-drop-down-person-text">Profile Edit</div>
+            </div>
+            <div class="user-drop-down-setting drop-down-containers">
+                <ion-icon name="settings-outline"></ion-icon>
+                <div class="user-drop-down-settings-text">Account Setting</div>
+            </div>
+        </div>
+        <div class="bottom-drop-down">
+            <div class="user-drop-down-help drop-down-containers">
+                <ion-icon name="help-circle-outline"></ion-icon>
+                <div class="user-drop-down-help-text">Help Center</div>
+            </div>
+            <div class="user-drop-down-log-out drop-down-containers">
+                <ion-icon name="log-out-outline"></ion-icon>
+                <div class="user-drop-down-log-out-text">Log Out</div>
+            </div>
+        </div>
+    </div>
     <!--! Start Code Here -->
     <div class="course-search-header-section">
         <div class="course-search-header-container">
@@ -624,8 +645,358 @@
                 <button class="see-more" id="seeMoreClassButton">See more</button>
             </div>
         </div>
-        <div class="main-search-right-container">Hello</div>
+        <div class="main-search-right-container">
+            <div class="img-container">
+                <div class="main-search-class-card">
+                    <img src="../resources/img/classes-pic.png" alt="">
+                    <div class="main-search-details">
+                        <div class="main-search-header">Javascript for Beginners</div>
+                        <div class="main-search-institute-name">Tech Innovators Academy</div>
+                        <div class="main-search-rating">
+                            <div class="main-search-rating-value">4.5</div>
+                            <div class="main-search-rating-icons">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
+                            <div class="main-search-rating-count">
+                                (<span class="main-search-rating-count-value">301</span>)
+                            </div>
+                        </div>
+                        <div class="main-search-start-date">
+                            <div class="main-search-start-date-text">Start Date - </div>
+                            <div class="main-search-start-date-value">21 / 7 / 2024</div>
+                        </div>
+                        <div class="main-search-end-date">
+                            <div class="main-search-end-date-text">End Date - </div>
+                            <div class="main-search-end-date-value">25 / 7 / 2024</div>
+                        </div>
+                        <div class="main-search-deadline-date">
+                            <div class="main-search-deadline-date-text">Enrollment Deadline - </div>
+                            <div class="main-search-deadline-date-value">30 / 7 / 2024</div>
+                        </div>
+                    </div>
+                    <div class="main-search-fee">
+                        <div class="main-search-fee-amount">250,000 MMK</div>
+                        <button class="main-search-enroll">Enroll</button>
+                    </div>
+                </div>
+                <div class="main-search-class-card">
+                    <img src="../resources/img/classes-pic.png" alt="">
+                    <div class="main-search-details">
+                        <div class="main-search-header">Javascript for Beginners</div>
+                        <div class="main-search-institute-name">Tech Innovators Academy</div>
+                        <div class="main-search-rating">
+                            <div class="main-search-rating-value">4.5</div>
+                            <div class="main-search-rating-icons">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
+                            <div class="main-search-rating-count">
+                                (<span class="main-search-rating-count-value">301</span>)
+                            </div>
+                        </div>
+                        <div class="main-search-start-date">
+                            <div class="main-search-start-date-text">Start Date - </div>
+                            <div class="main-search-start-date-value">21 / 7 / 2024</div>
+                        </div>
+                        <div class="main-search-end-date">
+                            <div class="main-end-date-text">End Date - </div>
+                            <div class="main-end-date-value">25 / 7 / 2024</div>
+                        </div>
+                        <div class="main-search-deadline-date">
+                            <div class="main-search-deadline-date-text">Enrollment Deadline - </div>
+                            <div class="main-search-deadline-date-value">30 / 7 / 2024</div>
+                        </div>
+                    </div>
+                    <div class="main-search-fee">
+                        <div class="main-search-fee-amount">250,000 MMK</div>
+                        <button class="main-search-enroll">Enroll</button>
+                    </div>
+                </div>
+                <div class="main-search-class-card">
+                    <img src="../resources/img/classes-pic.png" alt="">
+                    <div class="main-search-details">
+                        <div class="main-search-header">Javascript for Beginners</div>
+                        <div class="main-search-institute-name">Tech Innovators Academy</div>
+                        <div class="main-search-rating">
+                            <div class="main-search-rating-value">4.5</div>
+                            <div class="main-search-rating-icons">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
+                            <div class="main-search-rating-count">
+                                (<span class="main-search-rating-count-value">301</span>)
+                            </div>
+                        </div>
+                        <div class="main-search-start-date">
+                            <div class="main-search-start-date-text">Start Date - </div>
+                            <div class="main-search-start-date-value">21 / 7 / 2024</div>
+                        </div>
+                        <div class="main-search-end-date">
+                            <div class="main-end-date-text">End Date - </div>
+                            <div class="main-end-date-value">25 / 7 / 2024</div>
+                        </div>
+                        <div class="main-search-deadline-date">
+                            <div class="main-search-deadline-date-text">Enrollment Deadline - </div>
+                            <div class="main-search-deadline-date-value">30 / 7 / 2024</div>
+                        </div>
+                    </div>
+                    <div class="main-search-fee">
+                        <div class="main-search-fee-amount">250,000 MMK</div>
+                        <button class="main-search-enroll">Enroll</button>
+                    </div>
+                </div>
+                <div class="main-search-class-card">
+                    <img src="../resources/img/classes-pic.png" alt="">
+                    <div class="main-search-details">
+                        <div class="main-search-header">Javascript for Beginners</div>
+                        <div class="main-search-institute-name">Tech Innovators Academy</div>
+                        <div class="main-search-rating">
+                            <div class="main-search-rating-value">4.5</div>
+                            <div class="main-search-rating-icons">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
+                            <div class="main-search-rating-count">
+                                (<span class="main-search-rating-count-value">301</span>)
+                            </div>
+                        </div>
+                        <div class="main-search-start-date">
+                            <div class="main-search-start-date-text">Start Date - </div>
+                            <div class="main-search-start-date-value">21 / 7 / 2024</div>
+                        </div>
+                        <div class="main-search-end-date">
+                            <div class="main-end-date-text">End Date - </div>
+                            <div class="main-end-date-value">25 / 7 / 2024</div>
+                        </div>
+                        <div class="main-search-deadline-date">
+                            <div class="main-search-deadline-date-text">Enrollment Deadline - </div>
+                            <div class="main-search-deadline-date-value">30 / 7 / 2024</div>
+                        </div>
+                    </div>
+                    <div class="main-search-fee">
+                        <div class="main-search-fee-amount">250,000 MMK</div>
+                        <button class="main-search-enroll">Enroll</button>
+                    </div>
+                </div>
+                <div class="main-search-class-card">
+                    <img src="../resources/img/classes-pic.png" alt="">
+                    <div class="main-search-details">
+                        <div class="main-search-header">Javascript for Beginners</div>
+                        <div class="main-search-institute-name">Tech Innovators Academy</div>
+                        <div class="main-search-rating">
+                            <div class="main-search-rating-value">4.5</div>
+                            <div class="main-search-rating-icons">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
+                            <div class="main-search-rating-count">
+                                (<span class="main-search-rating-count-value">301</span>)
+                            </div>
+                        </div>
+                        <div class="main-search-start-date">
+                            <div class="main-search-start-date-text">Start Date - </div>
+                            <div class="main-search-start-date-value">21 / 7 / 2024</div>
+                        </div>
+                        <div class="main-search-end-date">
+                            <div class="main-end-date-text">End Date - </div>
+                            <div class="main-end-date-value">25 / 7 / 2024</div>
+                        </div>
+                        <div class="main-search-deadline-date">
+                            <div class="main-search-deadline-date-text">Enrollment Deadline - </div>
+                            <div class="main-search-deadline-date-value">30 / 7 / 2024</div>
+                        </div>
+                    </div>
+                    <div class="main-search-fee">
+                        <div class="main-search-fee-amount">250,000 MMK</div>
+                        <button class="main-search-enroll">Enroll</button>
+                    </div>
+                </div>
+                <div class="main-search-class-card">
+                    <img src="../resources/img/classes-pic.png" alt="">
+                    <div class="main-search-details">
+                        <div class="main-search-header">Javascript for Beginners</div>
+                        <div class="main-search-institute-name">Tech Innovators Academy</div>
+                        <div class="main-search-rating">
+                            <div class="main-search-rating-value">4.5</div>
+                            <div class="main-search-rating-icons">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
+                            <div class="main-search-rating-count">
+                                (<span class="main-search-rating-count-value">301</span>)
+                            </div>
+                        </div>
+                        <div class="main-search-start-date">
+                            <div class="main-search-start-date-text">Start Date - </div>
+                            <div class="main-search-start-date-value">21 / 7 / 2024</div>
+                        </div>
+                        <div class="main-search-end-date">
+                            <div class="main-end-date-text">End Date - </div>
+                            <div class="main-end-date-value">25 / 7 / 2024</div>
+                        </div>
+                        <div class="main-search-deadline-date">
+                            <div class="main-search-deadline-date-text">Enrollment Deadline - </div>
+                            <div class="main-search-deadline-date-value">30 / 7 / 2024</div>
+                        </div>
+                    </div>
+                    <div class="main-search-fee">
+                        <div class="main-search-fee-amount">250,000 MMK</div>
+                        <button class="main-search-enroll">Enroll</button>
+                    </div>
+                </div>
+                <div class="main-search-class-card">
+                    <img src="../resources/img/classes-pic.png" alt="">
+                    <div class="main-search-details">
+                        <div class="main-search-header">Javascript for Beginners</div>
+                        <div class="main-search-institute-name">Tech Innovators Academy</div>
+                        <div class="main-search-rating">
+                            <div class="main-search-rating-value">4.5</div>
+                            <div class="main-search-rating-icons">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
+                            <div class="main-search-rating-count">
+                                (<span class="main-search-rating-count-value">301</span>)
+                            </div>
+                        </div>
+                        <div class="main-search-start-date">
+                            <div class="main-search-start-date-text">Start Date - </div>
+                            <div class="main-search-start-date-value">21 / 7 / 2024</div>
+                        </div>
+                        <div class="main-search-end-date">
+                            <div class="main-end-date-text">End Date - </div>
+                            <div class="main-end-date-value">25 / 7 / 2024</div>
+                        </div>
+                        <div class="main-search-deadline-date">
+                            <div class="main-search-deadline-date-text">Enrollment Deadline - </div>
+                            <div class="main-search-deadline-date-value">30 / 7 / 2024</div>
+                        </div>
+                    </div>
+                    <div class="main-search-fee">
+                        <div class="main-search-fee-amount">250,000 MMK</div>
+                        <button class="main-search-enroll">Enroll</button>
+                    </div>
+                </div>
+                <div class="main-search-class-card">
+                    <img src="../resources/img/classes-pic.png" alt="">
+                    <div class="main-search-details">
+                        <div class="main-search-header">Javascript for Beginners</div>
+                        <div class="main-search-institute-name">Tech Innovators Academy</div>
+                        <div class="main-search-rating">
+                            <div class="main-search-rating-value">4.5</div>
+                            <div class="main-search-rating-icons">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
+                            <div class="main-search-rating-count">
+                                (<span class="main-search-rating-count-value">301</span>)
+                            </div>
+                        </div>
+                        <div class="main-search-start-date">
+                            <div class="main-search-start-date-text">Start Date - </div>
+                            <div class="main-search-start-date-value">21 / 7 / 2024</div>
+                        </div>
+                        <div class="main-search-end-date">
+                            <div class="main-end-date-text">End Date - </div>
+                            <div class="main-end-date-value">25 / 7 / 2024</div>
+                        </div>
+                        <div class="main-search-deadline-date">
+                            <div class="main-search-deadline-date-text">Enrollment Deadline - </div>
+                            <div class="main-search-deadline-date-value">30 / 7 / 2024</div>
+                        </div>
+                    </div>
+                    <div class="main-search-fee">
+                        <div class="main-search-fee-amount">250,000 MMK</div>
+                        <button class="main-search-enroll">Enroll</button>
+                    </div>
+                </div>
+            </div>
+            <div class="pagination">
+                <div>&lt;</div> <!-- Left arrow -->
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>&gt;</div> <!-- Right arrow -->
+            </div>
+        </div>
     </div>
+    <footer>
+        <div class="footer-flex-container">
+            <div class="footer-first-row">
+                <div class="footer-logo">
+                    <img src="../resources/img/logo.png" alt="Myanmar Education Portal">
+                </div>
+                <div class="footer-menu">
+                    <a href="" class="home footer-list">Home</a>
+                    <a href="" class="about footer-list">About</a>
+                    <a href="" class="services footer-list">Services</a>
+                    <a href="" class="contact-us footer-list">Contact Us</a>
+                    <a href="" class="price-plan footer-list">Price Plan</a>
+                </div>
+            </div>
+            <div class="footer-second-row">
+                <div class="left-container">
+                    <div class="footer-text">"Join MEP , Your Path To Success"</div>
+                </div>
+                <div class="middle-container">
+                    <div class="middle-wrap-container">
+                        <p class="navigate-text">Navigate Your Future with Us</p>
+                        <div class="subscribe-container">
+                            <input type="text" placeholder="email" class="email">
+                            <button class="subscribe">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-container">
+                    <img src="../resources/img/facebook.png" alt="">
+                    <img src="../resources/img/instagram.png" alt="">
+                    <img src="../resources/img/twitter.png" alt="">
+                </div>
+            </div>
+            <div class="third-row">
+                <img src="../resources/img/facebook.png" alt="">
+                <img src="../resources/img/instagram.png" alt="">
+                <img src="../resources/img/twitter.png" alt="">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="left-side">
+                <p>Myanmar Education Portal © 2024</p>
+            </div>
+            <div class="right-side">
+                <p>Privacy Policy</p>
+                <p>Feedback</p>
+                <p>FaQ</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

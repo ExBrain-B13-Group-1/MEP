@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/user-class-details.css">
     <link rel="stylesheet" href="../resources/css/root.css">
+    <link rel="stylesheet" href="../resources/lib/splide.min.css">
+    <script src="../resources/lib/splide.min.js"></script>
+    <script src="../resources/lib/jquery-3.7.1.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,16 +18,13 @@
         rel="stylesheet">
     <link href="./css/output.css" rel="stylesheet">
     <link href="./css/navbar.css" rel="stylesheet">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="./lib/jquery-3.7.1.js"></script>
-    <script src="./js/navbar.js" defer></script>
-    <title>Document</title>
+    <script src="../resources/js/user-class-details.js"></script>
+    <title>Class Details</title>
 </head>
 
 <body>
     <!-- Navigation bar -->
-    <nav class="bg-white  fixed w-[100%] z-20 top-0 right-0 left-0">
+    <nav class="bg-white w-[100%] z-20 top-0 right-0 left-0">
         <div class=" flex items-center justify-between mx-auto px-4 ">
             <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse my-2">
                 <img src="./img/LOGO.svg" class="h-8" alt="MEP Logo">
@@ -89,7 +89,7 @@
 
                 <div class="relative">
                     <div id="userProfile" aria-isOpen="false"
-                        class="flex justify-center items-center cursor-pointer hover:text-primaryColor">
+                        class="flex justify-center items-center cursor-pointer hover:text-primaryColor user-profile-drop-down">
                         <img src="./img/profile.png" alt="profile" class="rounded-full mr-2 " width="30">
                         <ion-icon name="chevron-down-outline" class="text-lg r"></ion-icon>
                     </div>
@@ -117,7 +117,28 @@
             </div>
         </div>
     </nav>
-
+    <div class="user-drop-down-container">
+        <div class="top-drop-down">
+            <div class="user-drop-down-person drop-down-containers">
+                <ion-icon name="person-circle-outline"></ion-icon>
+                <div class="user-drop-down-person-text">Profile Edit</div>
+            </div>
+            <div class="user-drop-down-setting drop-down-containers">
+                <ion-icon name="settings-outline"></ion-icon>
+                <div class="user-drop-down-settings-text">Account Setting</div>
+            </div>
+        </div>
+        <div class="bottom-drop-down">
+            <div class="user-drop-down-help drop-down-containers">
+                <ion-icon name="help-circle-outline"></ion-icon>
+                <div class="user-drop-down-help-text">Help Center</div>
+            </div>
+            <div class="user-drop-down-log-out drop-down-containers">
+                <ion-icon name="log-out-outline"></ion-icon>
+                <div class="user-drop-down-log-out-text">Log Out</div>
+            </div>
+        </div>
+    </div>
     <!--! Start Code Here -->
     <div class="details-container">
         <div class="class-details-main">
@@ -349,6 +370,56 @@
             </div>
         </div>
     </div>
+    <footer>
+        <div class="footer-flex-container">
+            <div class="footer-first-row">
+                <div class="footer-logo">
+                    <img src="../resources/img/logo.png" alt="Myanmar Education Portal">
+                </div>
+                <div class="footer-menu">
+                    <a href="" class="home footer-list">Home</a>
+                    <a href="" class="about footer-list">About</a>
+                    <a href="" class="services footer-list">Services</a>
+                    <a href="" class="contact-us footer-list">Contact Us</a>
+                    <a href="" class="price-plan footer-list">Price Plan</a>
+                </div>
+            </div>
+            <div class="footer-second-row">
+                <div class="left-container">
+                    <div class="footer-text">"Join MEP , Your Path To Success"</div>
+                </div>
+                <div class="middle-container">
+                    <div class="middle-wrap-container">
+                        <p class="navigate-text">Navigate Your Future with Us</p>
+                        <div class="subscribe-container">
+                            <input type="text" placeholder="email" class="email">
+                            <button class="subscribe">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-container">
+                    <img src="../resources/img/facebook.png" alt="">
+                    <img src="../resources/img/instagram.png" alt="">
+                    <img src="../resources/img/twitter.png" alt="">
+                </div>
+            </div>
+            <div class="third-row">
+                <img src="../resources/img/facebook.png" alt="">
+                <img src="../resources/img/instagram.png" alt="">
+                <img src="../resources/img/twitter.png" alt="">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="left-side">
+                <p>Myanmar Education Portal © 2024</p>
+            </div>
+            <div class="right-side">
+                <p>Privacy Policy</p>
+                <p>Feedback</p>
+                <p>FaQ</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

@@ -81,9 +81,6 @@ nav {
 
 .right-nav-col {
   display: none;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
 }
 
 @media screen and (max-width: 1000px) {
@@ -95,7 +92,7 @@ nav {
   }
 
   .right-nav-col.show {
-    max-height: 173px;
+    max-height: 215px;
     display: flex;
     flex-direction: column;
     background: linear-gradient(#4460ef, #0922a2);
@@ -103,8 +100,7 @@ nav {
     align-items: start;
     line-height: var(--header-font-size);
     padding-bottom: 1vh;
-    transition: max-height 0.5s ease;
-    display: flex; /* Show right-nav when .show class is added */
+    display: flex;
   }
   .join-now {
     margin-top: 5px;
