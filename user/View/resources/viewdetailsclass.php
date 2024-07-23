@@ -94,7 +94,7 @@
                                 <p>Account Setting</p>
                             </a>
 
-                            <a class="flex items-center hover:text-primaryColor cursor-pointer">
+                            <a href="./Auth/login.php" class="flex items-center hover:text-primaryColor cursor-pointer">
                                 <ion-icon name="log-out-outline" class="text-lg mx-2 my-2"></ion-icon>
                                 <p>Logout</p>
                             </a>

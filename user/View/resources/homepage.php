@@ -51,8 +51,8 @@
                         <li class="flex items-center justify-center">
                             <a href="#" class="block w-full text-center py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Price Plan</a>
                         </li>
-                        <li class="flex items-center justify-center mt-5 md:mt-0">
-                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Join Now</button>
+                        <li class="flex items-center justify-center mt-5 md:mt-0" >
+                            <button type="button" id="join-now-btn"  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Join Now</button>
                         </li>
                     </ul>
                 </div>
@@ -78,7 +78,7 @@
                     <h1 class="md:text-5xl text-2xl font-semibold text-blue-700 md:mb-3 mb-2">With MEP</h1>
                     <p class="text-base md:text-lg mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt deleniti expedita, architecto quia nam beatae voluptatem quasi! Repellat assumenda iste aliquam praesentium veniam inventore quis, eveniet corporis excepturi porro debitis.</p>
                     <div class="flex justify-end md:mt-5 lg:mb-12">
-                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-xl text-base px-5 py-3 me-2 md:mb-10 mb-0 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Get Started</button>
+                        <button id="get-started-btn" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-xl text-base px-5 py-3 me-2 md:mb-10 mb-0 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Get Started</button>
                     </div>
                 </div>  
             </div>
@@ -1176,13 +1176,13 @@
     <!-- ionicons icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <!-- flowbite -->
+    <!-- flowbite js1-->
     <script src="./lib/flowbite.min.js" type="text/javascript"></script>
     <!-- swiper slider css1 js1 -->
     <script src="./lib/swiper-bundle.min.js" type="text/javascript"></script>
     <!-- aos scroll animation css1 js1 -->
     <script src="./lib/swiper-bundle.min.js" type="text/javascript"></script>
-    <!-- jQuery -->
+    <!-- jQuery js1-->
     <script src="./lib/jquery-3.7.1.js" type="text/javascript"></script>
     <!-- customjs -->
     <script src="./js/homepage.js" type="text/javascript"></script>
