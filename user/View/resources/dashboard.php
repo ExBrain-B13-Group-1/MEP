@@ -16,7 +16,7 @@
 
 <body class="bg-bgColor">
   <!-- Navigation bar -->
-  <nav class="bg-white fixed w-[95%] z-20 top-0 right-0 left-0 m-auto my-2 border-b border-gray-200 rounded-xl">
+  <nav class="bg-white fixed w-[95%] z-50 top-0 right-0 left-0 m-auto my-2 border-b border-gray-200 rounded-xl">
     <div class="max-w-screen-xl flex items-center justify-between mx-auto px-4 relative">
       <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse my-2">
         <img src="./img/LOGO.svg" class="h-8" alt="MEP Logo" />
@@ -97,9 +97,9 @@
   </nav>
 
   <!--! Start Code Here -->
-  <div class="m-auto h-full gap-2 grid grid-cols-2 grid-rows-3 md:grid-rows-1 md:grid-cols-6 mt-16 w-[95%]">
-    <div class="md:h-full w-full md:w-auto col-span-2 md:bg-white rounded-lg">
-      <div class="flex flex-col p-3 bg-white rounded-lg self-center">
+  <div class="m-auto md:h-full  gap-2 grid grid-cols-2 grid-rows-2 md:grid-rows-1 md:grid-cols-6 mt-16 w-[95%]">
+    <div class="md:h-full w-full md:w-auto col-span-4  md:col-span-2 md:bg-white rounded-lg">
+      <div class="flex flex-col p-3 bg-white rounded-lg self-center mt-2 mb-16 md:mt-0 md:mb-16 h-64">
         <h1 class="font-medium text-lg md:text-2xl my-2">Progress statistics</h1>
         <div class="flex justify-start items-center my-3">
           <p class="text-4xl font-medium">58%</p>
@@ -126,7 +126,7 @@
           </div>
         </div>
 
-        <div class="flex bg-bgColor/25 justify-around items-center px-5 py-3 rounded-lg">
+        <div class="flex bg-[#EBECFF] justify-around items-center px-5 py-3 rounded-lg">
           <div class="flex justify-center items-center flex-col">
             <div class="w-11 h-11 rounded-full flex justify-center items-center bg-violet-600">
               <ion-icon name="time-outline" class="text-white text-xl"></ion-icon>
@@ -153,7 +153,7 @@
         </div>
       </div>
 
-      <div class="relative p-3">
+      <div class="relative p-3 bg-primaryColor md:bg-white rounded-lg">
         <h1 class="mb-5 font-medium text-xl">Events</h1>
 
         <div id="controls-carousel" class="w-full" data-carousel="static">
@@ -292,7 +292,7 @@
           </div>
           <!-- Slider controls -->
           <button type="button" class="absolute top-0 right-12 z-30 flex items-center justify-center  px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 ">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full md:bg-white/30 ">
               <svg class="w-4 h-4 text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
               </svg>
@@ -300,7 +300,7 @@
             </span>
           </button>
           <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center  px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 ">
+            <span class="inline-flex items-center justify-center w-10 h-10 rounded-full md:bg-white/30 ">
               <svg class="w-4 h-4 text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
               </svg>
@@ -317,7 +317,7 @@
 
           <div id="controls-carousel" class="w-full " data-carousel="static">
             <!-- Carousel wrapper -->
-            <div class="relative h-60  overflow-hidden">
+            <div class="relative h-60 overflow-hidden">
               <!-- Item 1 -->
               <div class="hidden duration-700 ease-in-out " data-carousel-item="active">
                 <div class="w-full h-full flex justify-start items-center">
@@ -327,7 +327,7 @@
                     <h1 class="font-medium mb-3">ABC Telecom</h1>
                     <p class="text-gray-300 text-sm">Instructors</p>
                     <div class="flex justify-start items-center my-2">
-                      <img src="./img/profile.png" alt="profile">
+                      <img src="./img/profile.png" alt="profile" width="40">
                       <p class="ml-2">Saw Phyo Naing</p>
                     </div>
                     <hr class="mb-3">
@@ -344,13 +344,13 @@
 
                   </div>
 
-                  <div class="bg-bgColor/55 w-full h-full mx-2 rounded-lg p-3">
+                  <div class="bg-bgColor/55 hidden md:block w-full h-full mx-2 rounded-lg p-3">
                     <h1 class="font-semibold mb-3">UI UX Class</h1>
                     <p class="text-sm text-gray-200">Instiute</p>
                     <h1 class="font-medium mb-3">ABC Telecom</h1>
                     <p class="text-gray-300 text-sm">Instructors</p>
                     <div class="flex justify-start items-center my-2">
-                      <img src="./img/profile.png" alt="profile">
+                      <img src="./img/profile.png" alt="profile" width="40">
                       <p class="ml-2">Saw Phyo Naing</p>
                     </div>
                     <hr class="mb-3">
@@ -367,13 +367,13 @@
 
                   </div>
 
-                  <div class="bg-bgColor/55 w-full h-full mx-2 rounded-lg p-3">
+                  <div class="bg-bgColor/55 hidden md:block w-full h-full mx-2 rounded-lg p-3">
                     <h1 class="font-semibold mb-3">UI UX Class</h1>
                     <p class="text-sm text-gray-200">Instiute</p>
                     <h1 class="font-medium mb-3">ABC Telecom</h1>
                     <p class="text-gray-300 text-sm">Instructors</p>
                     <div class="flex justify-start items-center my-2">
-                      <img src="./img/profile.png" alt="profile">
+                      <img src="./img/profile.png" alt="profile" width="40">
                       <p class="ml-2">Saw Phyo Naing</p>
                     </div>
                     <hr class="mb-3">
@@ -401,7 +401,7 @@
                     <h1 class="font-medium mb-3">ABC Telecom</h1>
                     <p class="text-gray-300 text-sm">Instructors</p>
                     <div class="flex justify-start items-center my-2">
-                      <img src="./img/profile.png" alt="profile">
+                      <img src="./img/profile.png" alt="profile" width="40">
                       <p class="ml-2">Saw Phyo Naing</p>
                     </div>
                     <hr class="mb-3">
@@ -418,13 +418,13 @@
 
                   </div>
 
-                  <div class="bg-bgColor/55 w-full h-full mx-2 rounded-lg p-3">
+                  <div class="bg-bgColor/55 hidden md:block w-full h-full mx-2 rounded-lg p-3">
                     <h1 class="font-semibold mb-3">UI UX Class</h1>
                     <p class="text-sm text-gray-200">Instiute</p>
                     <h1 class="font-medium mb-3">ABC Telecom</h1>
                     <p class="text-gray-300 text-sm">Instructors</p>
                     <div class="flex justify-start items-center my-2">
-                      <img src="./img/profile.png" alt="profile">
+                      <img src="./img/profile.png" alt="profile" width="40">
                       <p class="ml-2">Saw Phyo Naing</p>
                     </div>
                     <hr class="mb-3">
@@ -441,13 +441,13 @@
 
                   </div>
 
-                  <div class="bg-bgColor/55 w-full h-full mx-2 rounded-lg p-3">
+                  <div class="bg-bgColor/55 hidden md:block w-full h-full mx-2 rounded-lg p-3">
                     <h1 class="font-semibold mb-3">UI UX Class</h1>
                     <p class="text-sm text-gray-200">Instiute</p>
                     <h1 class="font-medium mb-3">ABC Telecom</h1>
                     <p class="text-gray-300 text-sm">Instructors</p>
                     <div class="flex justify-start items-center my-2">
-                      <img src="./img/profile.png" alt="profile">
+                      <img src="./img/profile.png" alt="profile" width="40">
                       <p class="ml-2">Saw Phyo Naing</p>
                     </div>
                     <hr class="mb-3">
@@ -475,7 +475,7 @@
                     <h1 class="font-medium mb-3">ABC Telecom</h1>
                     <p class="text-gray-300 text-sm">Instructors</p>
                     <div class="flex justify-start items-center my-2">
-                      <img src="./img/profile.png" alt="profile">
+                      <img src="./img/profile.png" alt="profile" width="40">
                       <p class="ml-2">Saw Phyo Naing</p>
                     </div>
                     <hr class="mb-3">
@@ -492,13 +492,13 @@
 
                   </div>
 
-                  <div class="bg-bgColor/55 w-full h-full mx-2 rounded-lg p-3">
+                  <div class="bg-bgColor/55 hidden md:block w-full h-full mx-2 rounded-lg p-3">
                     <h1 class="font-semibold mb-3">UI UX Class</h1>
                     <p class="text-sm text-gray-200">Instiute</p>
                     <h1 class="font-medium mb-3">ABC Telecom</h1>
                     <p class="text-gray-300 text-sm">Instructors</p>
                     <div class="flex justify-start items-center my-2">
-                      <img src="./img/profile.png" alt="profile">
+                      <img src="./img/profile.png" alt="profile" width="40">
                       <p class="ml-2">Saw Phyo Naing</p>
                     </div>
                     <hr class="mb-3">
@@ -562,7 +562,7 @@
                     <h1 class="font-medium">Front-end Class</h1>
 
                     <div class="absolute bottom-2 flex justify-start items-center">
-                      <img src="./img/profile.png" alt="profile">
+                      <img src="./img/profile.png" alt="profile" width="40">
                       <div class="ml-3">
                         <h1 class="font-semibold">Hset Paing Phyo</h1>
                         <p class="text-ms text-gray-500">Instructor</p>
@@ -575,7 +575,7 @@
                     <h1 class="font-medium">Front-end Class</h1>
 
                     <div class="absolute bottom-2 flex justify-start items-center">
-                      <img src="./img/profile.png" alt="profile">
+                      <img src="./img/profile.png" alt="profile" width="40">
                       <div class="ml-3">
                         <h1 class="font-semibold">Hset Paing Phyo</h1>
                         <p class="text-ms text-gray-300">Instructor</p>
@@ -594,7 +594,7 @@
                     <h1 class="font-medium">Front-end Class</h1>
 
                     <div class="absolute bottom-2 flex justify-start items-center">
-                      <img src="./img/profile.png" alt="profile">
+                      <img src="./img/profile.png" alt="profile" width="40">
                       <div class="ml-3">
                         <h1 class="font-semibold">Hset Paing Phyo</h1>
                         <p class="text-ms text-gray-500">Instructor</p>
@@ -607,7 +607,7 @@
                     <h1 class="font-medium">Front-end Class</h1>
 
                     <div class="absolute bottom-2 flex justify-start items-center">
-                      <img src="./img/profile.png" alt="profile">
+                      <img src="./img/profile.png" alt="profile" width="40">
                       <div class="ml-3">
                         <h1 class="font-semibold">Hset Paing Phyo</h1>
                         <p class="text-ms text-gray-500">Instructor</p>
@@ -628,7 +628,7 @@
                     <h1 class="font-medium">Front-end Class</h1>
 
                     <div class="absolute bottom-2 flex justify-start items-center">
-                      <img src="./img/profile.png" alt="profile">
+                      <img src="./img/profile.png" alt="profile" width="40">
                       <div class="ml-3">
                         <h1 class="font-semibold">Hset Paing Phyo</h1>
                         <p class="text-ms text-gray-500">Instructor</p>
@@ -641,7 +641,7 @@
                     <h1 class="font-medium">Front-end Class</h1>
 
                     <div class="absolute bottom-2 flex justify-start items-center">
-                      <img src="./img/profile.png" alt="profile">
+                      <img src="./img/profile.png" alt="profile" width="40">
                       <div class="ml-3">
                         <h1 class="font-semibold">Hset Paing Phyo</h1>
                         <p class="text-ms text-gray-300">Instructor</p>
@@ -660,7 +660,7 @@
                     <h1 class="font-medium">Front-end Class</h1>
 
                     <div class="absolute bottom-2 flex justify-start items-center">
-                      <img src="./img/profile.png" alt="profile">
+                      <img src="./img/profile.png" alt="profile" width="40">
                       <div class="ml-3">
                         <h1 class="font-semibold">Hset Paing Phyo</h1>
                         <p class="text-ms text-gray-500">Instructor</p>
@@ -673,7 +673,7 @@
                     <h1 class="font-medium">Front-end Class</h1>
 
                     <div class="absolute bottom-2 flex justify-start items-center">
-                      <img src="./img/profile.png" alt="profile">
+                      <img src="./img/profile.png" alt="profile" width="40">
                       <div class="ml-3">
                         <h1 class="font-semibold">Hset Paing Phyo</h1>
                         <p class="text-ms text-gray-500">Instructor</p>

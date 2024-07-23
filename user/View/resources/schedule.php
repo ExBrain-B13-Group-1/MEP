@@ -10,6 +10,7 @@
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="./lib/jquery-3.7.1.js"></script>
   <script src="./js/navbar.js" defer></script>
+  <script src="./js/schedule.js" defer></script>
 </head>
 
 <body class="bg-bgColor">
@@ -101,7 +102,7 @@
   <!--! Start Code Here -->
 
   <div class="m-auto h-full gap-2 grid grid-cols-3 mt-16 w-[95%]">
-    <div class="col-span-2 ">
+    <div class="col-span-2 md:block hidden">
       <div class="flex justify-between items-center bg-primaryColor w-80 text-white py-2 px-1 rounded-md">
         <ion-icon name="chevron-back-circle-outline" class="text-4xl"></ion-icon>
         <p class="text-xl">
@@ -305,12 +306,30 @@
         </table>
       </div>
     </div>
-    <div class="bg-white">
-      <div class="flex justify-between items-center p-3">
-        <h1 class="font-bold text-3xl">Today Tasks</h1>
+    <div class="md:bg-white w-full col-span-3 md:col-span-1 mt-5 md:mt-0 rounded-lg">
+      <div class="md:hidden bg-bgColor my-2 flex justify-center items-center text-white" id="todayTime">
+        <div class="flex flex-col justify-center items-center ">
+          <p class="text-sm font-medium">Saturday</p>
+          <h1 class="font-bold text-5xl my-2">06.07</h1>
+          <h1 class="font-bold text-4xl">July</h1>
+        </div>
+        <hr class="rotate-90 border  w-16">
+        <div class="font-medium">
+          <p>10:00 PM</p>
+          <p>Yangon</p>
+        </div>
+      </div>
+      <div class="flex justify-between items-center p-3 bg-white rounded-t-lg">
+        <h1 class="font-bold text-3xl md:block hidden">Today Tasks</h1>
+        <div class="md:hidden flex">
+          <button aria-active="true" class="py-2 px-4 aria-[active=true]:bg-primaryColor rounded-lg aria-[active=true]:text-white mx-2 text-primaryColor aria-[active=false]:border border-primaryColor bg-white" onclick="todyView(this)">Today</button>
+          <button aria-active="false" class="py-2 px-4 aria-[active=true]:text-white aria-[active=true]:bg-primaryColor bg-white rounded-lg text-primaryColor aria-[active=false]:border border-primaryColor mx-2" onclick="weekView(this)">Week</button>
+        </div>
         <ion-icon name="add-circle-outline" class="text-2xl bg-gray-400 rounded-full p-2 text-white"></ion-icon>
       </div>
-      <div class="w-full h-[80vh] overflow-y-scroll no-scrollbar p-3">
+
+      <!--! today schedule view -->
+      <div class=" w-full h-[80vh] bg-white overflow-y-scroll no-scrollbar p-3" id="todaySchedule">
         <div class="bg-[#7382D2] rounded-md p-2 text-white my-2">
           <div class="flex justify-between items-center">
             <h1 class="text-2xl font-medium">Front-end Class</h1>
@@ -320,9 +339,9 @@
             </div>
           </div>
           <div class="w-20 h-14  relative mt-3">
-            <img src="./img/profile.png" alt="profile" class="absolute top-0 right-0 z-0 drop-shadow-m mt-3d">
-            <img src="./img/profile.png" alt="profile" class="absolute top-0 right-5 z-10 drop-shadow-m mt-3d">
-            <img src="./img/profile.png" alt="profile" class="absolute top-0 right-10 z-20 drop-shadow-md">
+            <img src="./img/profile.png" width="40" alt="profile" class="absolute top-0 right-0 z-0 drop-shadow-m mt-3d">
+            <img src="./img/profile.png" width="40" alt="profile" class="absolute top-0 right-5 z-10 drop-shadow-m mt-3d">
+            <img src="./img/profile.png" width="40" alt="profile" class="absolute top-0 right-10 z-20 drop-shadow-md">
           </div>
           <div class="flex justify-between items-center">
             <div class="text-start">
@@ -349,9 +368,9 @@
             </div>
           </div>
           <div class="w-20 h-14  relative mt-3">
-            <img src="./img/profile.png" alt="profile" class="absolute top-0 right-0 z-0 drop-shadow-m mt-3d">
-            <img src="./img/profile.png" alt="profile" class="absolute top-0 right-5 z-10 drop-shadow-m mt-3d">
-            <img src="./img/profile.png" alt="profile" class="absolute top-0 right-10 z-20 drop-shadow-md">
+            <img src="./img/profile.png" width="40" alt="profile" class="absolute top-0 right-0 z-0 drop-shadow-m mt-3d">
+            <img src="./img/profile.png" width="40" alt="profile" class="absolute top-0 right-5 z-10 drop-shadow-m mt-3d">
+            <img src="./img/profile.png" width="40" alt="profile" class="absolute top-0 right-10 z-20 drop-shadow-md">
           </div>
           <div class="flex justify-between items-center">
             <div class="text-start">
@@ -378,9 +397,9 @@
             </div>
           </div>
           <div class="w-20 h-14  relative mt-3">
-            <img src="./img/profile.png" alt="profile" class="absolute top-0 right-0 z-0 drop-shadow-m mt-3d">
-            <img src="./img/profile.png" alt="profile" class="absolute top-0 right-5 z-10 drop-shadow-m mt-3d">
-            <img src="./img/profile.png" alt="profile" class="absolute top-0 right-10 z-20 drop-shadow-md">
+            <img src="./img/profile.png" width="40" alt="profile" class="absolute top-0 right-0 z-0 drop-shadow-m mt-3d">
+            <img src="./img/profile.png" width="40" alt="profile" class="absolute top-0 right-5 z-10 drop-shadow-m mt-3d">
+            <img src="./img/profile.png" width="40" alt="profile" class="absolute top-0 right-10 z-20 drop-shadow-md">
           </div>
           <div class="flex justify-between items-center">
             <div class="text-start">
@@ -407,9 +426,9 @@
             </div>
           </div>
           <div class="w-20 h-14  relative mt-3">
-            <img src="./img/profile.png" alt="profile" class="absolute top-0 right-0 z-0 drop-shadow-m mt-3d">
-            <img src="./img/profile.png" alt="profile" class="absolute top-0 right-5 z-10 drop-shadow-m mt-3d">
-            <img src="./img/profile.png" alt="profile" class="absolute top-0 right-10 z-20 drop-shadow-md">
+            <img src="./img/profile.png" width="40" alt="profile" class="absolute top-0 right-0 z-0 drop-shadow-m mt-3d">
+            <img src="./img/profile.png" width="40" alt="profile" class="absolute top-0 right-5 z-10 drop-shadow-m mt-3d">
+            <img src="./img/profile.png" width="40" alt="profile" class="absolute top-0 right-10 z-20 drop-shadow-md">
           </div>
           <div class="flex justify-between items-center">
             <div class="text-start">
@@ -427,6 +446,122 @@
           </div>
         </div>
 
+      </div>
+
+      <!--! week schedule view -->
+      <div class="hidden" id="weekSchedule">
+        <div class="py-2 flex justify-around items-center bg-white">
+          <div class="text-gray-400 font-medium">23~30</div>
+          <div class="text-gray-400 font-medium">30~06</div>
+          <div class="flex justify-center items-center">
+            <ion-icon name="chevron-back-outline" class="text-3xl"></ion-icon>
+            <p class="mx-2">06~13</p>
+            <ion-icon name="chevron-forward-outline" class="text-3xl"></ion-icon>
+          </div>
+          <div class="text-gray-400 font-medium">13~20</div>
+          <div class="text-gray-400 font-medium">20~27</div>
+        </div>
+        <div class="md:hidden w-full h-[80vh] bg-white overflow-y-scroll no-scrollbar p-3">
+          <div class="bg-[#7382D2] rounded-md p-2 text-white my-2 flex justify-start">
+            <div class="flex justify-between flex-col items-start mr-6">
+              <p class="text-md font-medium">Saturday</p>
+              <h1 class="text-3xl font-medium my-2">06</h1>
+              <h1 class="text-3xl font-medium">July</h1>
+            </div>
+            <div class="flex justify-start items-center py-2">
+              <div class="h-full border-l border-white pl-1 mx-1">
+                <p>3 pm</p>
+                <div class="text-xs bg-[#3A4AA3]/50 p-1 rounded-sm my-1">Front-end class</div>
+              </div>
+              <div class="h-full border-l border-white pl-1 mx-1">
+                <p>5 pm</p>
+              </div>
+              <div class="h-full border-l border-white pl-1 mx-1">
+                <p>6 pm</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="bg-[#7382D2] rounded-md p-2 text-white my-2 flex justify-start">
+            <div class="flex justify-between flex-col items-start mr-6">
+              <p class="text-md font-medium">Saturday</p>
+              <h1 class="text-3xl font-medium my-2">06</h1>
+              <h1 class="text-3xl font-medium">July</h1>
+            </div>
+            <div class="flex justify-start items-center py-2">
+              <div class="h-full border-l border-white pl-1 mx-1">
+                <p>3 pm</p>
+                <div class="text-xs bg-[#3A4AA3]/50 p-1 rounded-sm my-1">Front-end class</div>
+              </div>
+              <div class="h-full border-l border-white pl-1 mx-1">
+                <p>5 pm</p>
+              </div>
+              <div class="h-full border-l border-white pl-1 mx-1">
+                <p>6 pm</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="bg-[#7382D2] rounded-md p-2 text-white my-2 flex justify-start">
+            <div class="flex justify-between flex-col items-start mr-6">
+              <p class="text-md font-medium">Saturday</p>
+              <h1 class="text-3xl font-medium my-2">06</h1>
+              <h1 class="text-3xl font-medium">July</h1>
+            </div>
+            <div class="flex justify-start items-center py-2">
+              <div class="h-full border-l border-white pl-1 mx-1">
+                <p>3 pm</p>
+                <div class="text-xs bg-[#3A4AA3]/50 p-1 rounded-sm my-1">Front-end class</div>
+              </div>
+              <div class="h-full border-l border-white pl-1 mx-1">
+                <p>5 pm</p>
+              </div>
+              <div class="h-full border-l border-white pl-1 mx-1">
+                <p>6 pm</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="bg-[#7382D2] rounded-md p-2 text-white my-2 flex justify-start">
+            <div class="flex justify-between flex-col items-start mr-6">
+              <p class="text-md font-medium">Saturday</p>
+              <h1 class="text-3xl font-medium my-2">06</h1>
+              <h1 class="text-3xl font-medium">July</h1>
+            </div>
+            <div class="flex justify-start items-center py-2">
+              <div class="h-full border-l border-white pl-1 mx-1">
+                <p>3 pm</p>
+                <div class="text-xs bg-[#3A4AA3]/50 p-1 rounded-sm my-1">Front-end class</div>
+              </div>
+              <div class="h-full border-l border-white pl-1 mx-1">
+                <p>5 pm</p>
+              </div>
+              <div class="h-full border-l border-white pl-1 mx-1">
+                <p>6 pm</p>
+              </div>
+            </div>
+          </div>
+  
+          <div class="bg-[#7382D2] rounded-md p-2 text-white my-2 flex justify-start">
+            <div class="flex justify-between flex-col items-start mr-6">
+              <p class="text-md font-medium">Saturday</p>
+              <h1 class="text-3xl font-medium my-2">06</h1>
+              <h1 class="text-3xl font-medium">July</h1>
+            </div>
+            <div class="flex justify-start items-center py-2">
+              <div class="h-full border-l border-white pl-1 mx-1">
+                <p>3 pm</p>
+                <div class="text-xs bg-[#3A4AA3]/50 p-1 rounded-sm my-1">Front-end class</div>
+              </div>
+              <div class="h-full border-l border-white pl-1 mx-1">
+                <p>5 pm</p>
+              </div>
+              <div class="h-full border-l border-white pl-1 mx-1">
+                <p>6 pm</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

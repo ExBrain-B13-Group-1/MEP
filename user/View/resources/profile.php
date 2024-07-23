@@ -2,34 +2,34 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <link href="./css/output.css" rel="stylesheet">
-  <link href="./css/navbar.css" rel="stylesheet">
+  <link href="./css/output.css" rel="stylesheet" />
+  <link href="./css/navbar.css" rel="stylesheet" />
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="./lib/jquery-3.7.1.js"></script>
   <script src="./js/navbar.js" defer></script>
+  <script src="./js/profile.js" defer></script>
 </head>
 
 <body class="bg-bgColor">
-
   <!-- Navigation bar -->
-  <nav class="bg-white  fixed w-[95%] z-20 top-0 right-0 left-0 m-auto my-2 border-b border-gray-200 rounded-xl  ">
-    <div class="max-w-screen-xl flex  items-center justify-between mx-auto px-4 relative">
+  <nav class="bg-white fixed w-[95%] z-20 top-0 right-0 left-0 m-auto my-2 border-b border-gray-200 rounded-xl">
+    <div class="max-w-screen-xl flex items-center justify-between mx-auto px-4 relative">
       <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse my-2">
-        <img src="./img/LOGO.svg" class="h-8" alt="MEP Logo">
+        <img src="./img/LOGO.svg" class="h-8" alt="MEP Logo" />
       </a>
 
-      <button onclick="menuForMobile()" data-collapse-toggle="navbar-default" type="button" class="inline-flex  text-primaryColor hover:text-slate-800 flex-col  items-center p-2 w-10 mx-3 h-full justify-center text-sm rounded-lg md:hidden  " aria-controls="navbar-default" aria-expanded="false">
-        <p class=" font-bold ">Profile</p>
+      <button onclick="menuForMobile()" data-collapse-toggle="navbar-default" type="button" class="inline-flex text-primaryColor hover:text-slate-800 flex-col items-center p-2 w-10 mx-3 h-full justify-center text-sm rounded-lg md:hidden" aria-controls="navbar-default" aria-expanded="false">
+        <p class="font-bold">Profile</p>
       </button>
 
-      <div id="menuList" isOpen="false" class="hidden md:flex absolute md:static top-16 right-0 left-0 mx-24 md:mx-auto  md:items-center md:justify-center bg-gray-200 rounded-xl" id="navbar-default">
-        <ul class="flex  flex-col md:flex-row   justify-between items-center  font-medium  md:space-x-10 p-3 md:p-0">
+      <div id="menuList" isOpen="false" class="hidden md:flex absolute md:static top-16 right-0 left-0 mx-24 md:mx-auto md:items-center md:justify-center bg-gray-200 rounded-xl" id="navbar-default">
+        <ul class="flex flex-col md:flex-row justify-between items-center font-medium md:space-x-10 p-3 md:p-0">
           <li>
-            <a href="./dashboard.php"  id="userDashboard" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Dashboard</a>
+            <a href="./dashboard.php" id="userDashboard" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Dashboard</a>
           </li>
           <li>
             <a href="./class.php" id="userClass" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Class</a>
@@ -52,7 +52,6 @@
             <path d="M5.48699 11.8763C6.09304 11.8763 6.58434 11.385 6.58434 10.779C6.58434 10.1729 6.09304 9.68164 5.48699 9.68164C4.88095 9.68164 4.38965 10.1729 4.38965 10.779C4.38965 11.385 4.88095 11.8763 5.48699 11.8763Z" fill="#33363F" stroke="#33363F" stroke-linecap="round" />
             <path d="M17.7088 6.41767C19.2049 6.41767 20.4177 5.20488 20.4177 3.70883C20.4177 2.21279 19.2049 1 17.7088 1C16.2128 1 15 2.21279 15 3.70883C15 5.20488 16.2128 6.41767 17.7088 6.41767Z" fill="#EF0000" stroke="#EF0000" />
           </svg>
-
         </a>
 
         <a href="./notification.php">
@@ -65,8 +64,8 @@
 
         <div class="relative">
           <div id="userProfile" aria-isOpen="false" class="flex justify-center items-center cursor-pointer hover:text-primaryColor">
-            <img src="./img/profile.png" alt="profile" class="rounded-full mr-2 " width="30">
-            <ion-icon name="chevron-down-outline" class="text-lg "></ion-icon>
+            <img src="./img/profile.png" alt="profile" class="rounded-full mr-2" width="30" />
+            <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
           </div>
 
           <div id="profileMenu" class="hidden absolute bottom-0 right-0 bg-white w-44 rounded-lg p-3 translate-y-52 translate-x-4">
@@ -90,7 +89,6 @@
               <ion-icon name="log-out-outline" class="text-lg mx-2 my-2"></ion-icon>
               <p>Logout</p>
             </a>
-
           </div>
         </div>
       </div>
@@ -98,6 +96,127 @@
   </nav>
 
   <!--! Start Code Here -->
+  <div class="m-auto h-full flex mt-16 w-[80%] bg-white py-2 rounded-md">
+    <div class="w-[20%]">
+      <div class="m-5 text-center flex justify-center items-center">
+        <img src="./img/profile.png" alt="profile" width="90" />
+      </div>
+      <div class="mt-4 pl-10 flex justify-center space-y-3 items-start flex-col" id="profileSetting">
+        <button aria-active="true" class="aria-[active=true]:bg-primaryColor aria-[active=true]:text-white w-full text-start p-2 rounded-md" onclick="profileMenu('general')">
+          Profile
+        </button>
+        <button aria-active="false" class="aria-[active=true]:bg-primaryColor aria-[active=true]:text-white w-full text-start p-2 rounded-md" onclick="profileMenu('photo')">
+          Photo
+        </button>
+        <button aria-active="false" class="aria-[active=true]:bg-primaryColor aria-[active=true]:text-white w-full text-start p-2 rounded-md" onclick="profileMenu('account')">
+          Account Security
+        </button>
+        <button class=" text-red-500 w-full text-start p-2 rounded-md">
+          Logout
+        </button>
+      </div>
+    </div>
+    <div class="w-[80%] h-full">
+      <!--! profile section -->
+      <div class=" w-full h-auto px-28" id="profileSection">
+        <div class="w-full text-center p-4">
+          <h1 class="font-bold text-xl">Profile</h1>
+          <p>Add Information about yourself</p>
+        </div>
+        <div>
+          <form>
+            <h1>Basics</h1>
+            <div class="grid gap-6 mb-20">
+              <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="First Name" required />
+              <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Last Name" required />
+              <input type="text" id="headline" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Headline" required />
+            </div>
+
+            <h1>Portfolio Links & Socail links</h1>
+            <div class="grid gap-6 mb-6">
+              <input type="url" id="portfolio" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Portfolio Website" required />
+              <input type="url" id="facebook" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Facebook" required />
+              <input type="url" id="instagram" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Instagram" required />
+              <input type="url" id="twiiter" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Twitter" required />
+              <input type="url" id="telegram" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Telegram" required />
+            </div>
+            <div class="text-end">
+              <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center d">
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!--! Photo section -->
+      <div class="hidden w-full h-auto px-28" id="photoSection">
+        <div class="w-full text-center p-4">
+          <h1 class="font-bold text-xl">Profile</h1>
+          <p>
+            Add a nice photo of yourself for your profile.Add a nice photo of
+            yourself for your profile.
+          </p>
+        </div>
+        <div>
+          <form action="#">
+            <div class="flex items-center justify-center w-full mb-6">
+              <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                  <svg class="w-8 h-8 mb-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                  </svg>
+                  <p class="mb-2 text-sm text-gray-500">
+                    <span class="font-semibold">Click to upload</span> or drag
+                    and drop
+                  </p>
+                  <p class="text-xs text-gray-500">
+                    SVG, PNG, JPG or GIF (MAX. 800x400px)
+                  </p>
+                </div>
+                <input id="dropzone-file" type="file" class="hidden" />
+              </label>
+            </div>
+            <div class="text-end">
+              <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center d">
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!--! Account Security section -->
+      <div class="hidden w-full h-auto px-28" id="accountSection">
+        <div class="w-full text-center p-4">
+          <h1 class="font-bold text-xl">Profile</h1>
+          <p>
+            Add a nice photo of yourself for your profile.Add a nice photo of
+            yourself for your profile.
+          </p>
+        </div>
+
+        <form action="#">
+          <h1>Basics</h1>
+          <div class="grid gap-6 mb-20">
+            <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter Email" required />
+          </div>
+
+          <h1>Password</h1>
+          <div class="grid gap-6 mb-10">
+            <input type="password" id="old_password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter current password" required />
+            <input type="password" id="new_password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter new password" required />
+            <input type="password" id="retype_password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Re-type new password" required />
+          </div>
+          <div class="text-end">
+            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center d">
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
