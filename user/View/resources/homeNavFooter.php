@@ -131,7 +131,7 @@
                         <img src="../../storages/logo-white.svg" class="h-10" alt="Flowbite Logo">
                     </a>
                     <p class="mt-2 text-sm hidden md:block">“Join MEP, Your Path To Success”</p>
-                    <div class="flex flex-col space-y-2 items-start block md:hidden">
+                    <div class="flex flex-col space-y-2 items-start visible md:invisible">
                         <a href="home" class="text-white hover-underline-animation nav-link">Home</a>
                         <a href="about-us" class="text-white hover-underline-animation nav-link">About</a>
                         <a href="services" class="text-white hover-underline-animation nav-link">Services</a>
@@ -140,8 +140,8 @@
                     </div>
                 </div>
                 <div class="my-0 text-center col-span-7 relative right-5">
-                    <div class="flex hidden md:block lg:space-x-14 md:space-x-8 mb-6 space-y-4 md:space-y-0">
-                        <a href="home" class="text-white hover-underline-animation nav-link">Home</a>
+                    <div class="flex invisible md:visible lg:space-x-14 md:space-x-8 mb-6 space-y-4 md:space-y-0">
+                        <a href="home" class="text-white">Home</a>
                         <a href="about-us" class="text-white hover-underline-animation nav-link">About</a>
                         <a href="services" class="text-white hover-underline-animation nav-link">Services</a>
                         <a href="price-plan" class="text-white hover-underline-animation nav-link">Price Plan</a>
@@ -152,7 +152,7 @@
                         <p class="text-lg font-semibold mb-2">Navigate Your Future with Us</p>
                         <div class="flex justify-center mt-2">
                             <input type="email" class="p-2 rounded-l-md text-black focus:outline-none focus:ring-1 mr-1" placeholder="email">
-                            <button class="bg-white text-[#4460EF] px-4 rounded-r-md">Subscribe</button>
+                            <button class="bg-white text-[#4460EF] hover:text-white hover:bg-blue-600 px-4 rounded-r-md">Subscribe</button>
                         </div>
                     </div>
                 </div>
