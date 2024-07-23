@@ -96,29 +96,29 @@
   </nav>
 
   <!--! Start Code Here -->
-  <div class="m-auto h-full flex mt-16 w-[80%] bg-white py-2 rounded-md">
-    <div class="w-[20%]">
+  <div class="m-auto h-full flex flex-col md:flex-row mt-16 w-[95%] md:w-[80%] mb-6 md:mb-2 bg-white py-2 rounded-md">
+    <div class="w-full md:w-[20%]">
       <div class="m-5 text-center flex justify-center items-center">
         <img src="./img/profile.png" alt="profile" width="90" />
       </div>
-      <div class="mt-4 pl-10 flex justify-center space-y-3 items-start flex-col" id="profileSetting">
-        <button aria-active="true" class="aria-[active=true]:bg-primaryColor aria-[active=true]:text-white w-full text-start p-2 rounded-md" onclick="profileMenu('general')">
+      <div class="mt-4 px-2 md:pl-10 flex justify-center space-x-2 md:space-x-0 md:space-y-3 items-center md:items-start flex-row md:flex-col" id="profileSetting">
+        <button aria-active="true" class="text-sm md:text-base aria-[active=true]:bg-primaryColor aria-[active=true]:text-white w-full text-center md:text-start p-2 rounded-md" onclick="profileMenu('general')">
           Profile
         </button>
-        <button aria-active="false" class="aria-[active=true]:bg-primaryColor aria-[active=true]:text-white w-full text-start p-2 rounded-md" onclick="profileMenu('photo')">
+        <button aria-active="false" class="text-sm md:text-base aria-[active=true]:bg-primaryColor aria-[active=true]:text-white w-full text-center md:text-start p-2 rounded-md" onclick="profileMenu('photo')">
           Photo
         </button>
-        <button aria-active="false" class="aria-[active=true]:bg-primaryColor aria-[active=true]:text-white w-full text-start p-2 rounded-md" onclick="profileMenu('account')">
+        <button aria-active="false" class="text-sm md:text-base aria-[active=true]:bg-primaryColor aria-[active=true]:text-white w-full text-center md:text-start p-2 rounded-md" onclick="profileMenu('account')">
           Account Security
         </button>
-        <button class=" text-red-500 w-full text-start p-2 rounded-md">
+        <button class=" text-sm md:text-base text-red-500 w-full text-center md:text-start p-2 rounded-md">
           Logout
         </button>
       </div>
     </div>
-    <div class="w-[80%] h-full">
+    <div class="w-full md:w-[80%] h-full">
       <!--! profile section -->
-      <div class=" w-full h-auto px-28" id="profileSection">
+      <div class=" w-full h-auto px-3 md:px-28" id="profileSection">
         <div class="w-full text-center p-4">
           <h1 class="font-bold text-xl">Profile</h1>
           <p>Add Information about yourself</p>
@@ -150,7 +150,7 @@
       </div>
 
       <!--! Photo section -->
-      <div class="hidden w-full h-auto px-28" id="photoSection">
+      <div class="hidden w-full h-auto px-3 md:px-28" id="photoSection">
         <div class="w-full text-center p-4">
           <h1 class="font-bold text-xl">Profile</h1>
           <p>
@@ -187,7 +187,7 @@
       </div>
 
       <!--! Account Security section -->
-      <div class="hidden w-full h-auto px-28" id="accountSection">
+      <div class="hidden w-full h-auto px-3 md:px-28" id="accountSection">
         <div class="w-full text-center p-4">
           <h1 class="font-bold text-xl">Profile</h1>
           <p>
