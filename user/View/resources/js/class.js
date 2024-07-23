@@ -53,7 +53,8 @@ ${Array(Math.floor(5 - rating))
       startDate: "21/7/2024",
       endDate: "25/12/2024",
       deadline: "20/7/2024",
-      price: "250,000 MMK (500 Coins)",
+      price: "250,000 MMK",
+      coin: 500,
       image: "../../storages/classPhoto.png",
     },
     {
@@ -66,7 +67,8 @@ ${Array(Math.floor(5 - rating))
       startDate: "10/8/2024",
       endDate: "15/12/2024",
       deadline: "5/8/2024",
-      price: "300,000 MMK (600 Coins)",
+      price: "250,000 MMK",
+      coin: 500,
       image: "../../storages/classPhoto.png",
     },
     {
@@ -79,7 +81,8 @@ ${Array(Math.floor(5 - rating))
       startDate: "21/7/2024",
       endDate: "25/12/2024",
       deadline: "20/7/2024",
-      price: "250,000 MMK (500 Coins)",
+      price: "250,000 MMK",
+      coin: 500,
       image: "../../storages/classPhoto.png",
     },
     {
@@ -92,7 +95,8 @@ ${Array(Math.floor(5 - rating))
       startDate: "10/8/2024",
       endDate: "15/12/2024",
       deadline: "5/8/2024",
-      price: "300,000 MMK (600 Coins)",
+      price: "250,000 MMK",
+      coin: 500,
       image: "../../storages/classPhoto.png",
     },
     {
@@ -105,7 +109,8 @@ ${Array(Math.floor(5 - rating))
       startDate: "21/7/2024",
       endDate: "25/12/2024",
       deadline: "20/7/2024",
-      price: "250,000 MMK (500 Coins)",
+      price: "250,000 MMK",
+      coin: 500,
       image: "../../storages/classPhoto.png",
     },
     {
@@ -118,7 +123,8 @@ ${Array(Math.floor(5 - rating))
       startDate: "10/8/2024",
       endDate: "15/12/2024",
       deadline: "5/8/2024",
-      price: "300,000 MMK (600 Coins)",
+      price: "250,000 MMK",
+      coin: 500,
       image: "../../storages/classPhoto.png",
     },
     {
@@ -131,7 +137,8 @@ ${Array(Math.floor(5 - rating))
       startDate: "21/7/2024",
       endDate: "25/12/2024",
       deadline: "20/7/2024",
-      price: "250,000 MMK (500 Coins)",
+      price: "250,000 MMK",
+      coin: 500,
       image: "../../storages/classPhoto.png",
     },
     {
@@ -144,7 +151,8 @@ ${Array(Math.floor(5 - rating))
       startDate: "10/8/2024",
       endDate: "15/12/2024",
       deadline: "5/8/2024",
-      price: "300,000 MMK (600 Coins)",
+      price: "250,000 MMK",
+      coin: 500,
       image: "../../storages/classPhoto.png",
     },
     {
@@ -157,7 +165,8 @@ ${Array(Math.floor(5 - rating))
       startDate: "21/7/2024",
       endDate: "25/12/2024",
       deadline: "20/7/2024",
-      price: "250,000 MMK (500 Coins)",
+      price: "250,000 MMK",
+      coin: 500,
       image: "../../storages/classPhoto.png",
     },
     {
@@ -170,7 +179,8 @@ ${Array(Math.floor(5 - rating))
       startDate: "10/8/2024",
       endDate: "15/12/2024",
       deadline: "5/8/2024",
-      price: "300,000 MMK (600 Coins)",
+      price: "250,000 MMK",
+      coin: 500,
       image: "../../storages/classPhoto.png",
     },
     // Add more data as needed
@@ -187,7 +197,9 @@ ${Array(Math.floor(5 - rating))
       const courseHTML = `
         <div class="flex justify-between border-b-2 py-5 cursor-pointer" data-id="${
           course.id
-        }" onclick="window.location.href='viewdetailsclass.php?id=${course.id}'">
+        }" onclick="window.location.href='viewdetailsclass.php?id=${
+        course.id
+      }'">
             <div class="flex justify-between items-start space-x-4 ">
                 <div>
                     <img src="${
@@ -216,7 +228,11 @@ ${Array(Math.floor(5 - rating))
                 </div>
             </div>
             <div class="flex flex-col justify-between">
-                <p class="text-base font-bold">${course.price}</p>
+             <div class="md:mt-2 text-gray-600">
+                                <svg class="inline font-bold md:w-6 md:h-6 w-4 h-4 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <span class="inline font-bold text-base relative md:top-0 top-0.5 mb-2">100</span>
+                                 <p class="text-base font-bold">${course.price}</p>
+                            </div>             
                 <button class="bg-primaryColor text-white px-2 py-1 rounded mt-2">Enroll</button>
             </div>
         </div>
@@ -287,7 +303,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "21/7/2024",
         endDate: "25/12/2024",
         deadline: "20/7/2024",
-        price: "250,000 MMK (500 Coins)",
+        price: "250,000 MMK",
+        coin: 500,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -300,7 +317,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "10/8/2024",
         endDate: "15/12/2024",
         deadline: "15/8/2024",
-        price: "300,000 MMK (600 Coins)",
+        price: "300,000 MMK",
+        coin: 600,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -313,7 +331,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "1/8/2024",
         endDate: "20/12/2024",
         deadline: "30/7/2024",
-        price: "270,000 MMK (540 Coins)",
+        price: "270,000 MMK",
+        coin: 540,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -326,7 +345,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "5/9/2024",
         endDate: "10/1/2025",
         deadline: "11/9/2024",
-        price: "350,000 MMK (700 Coins)",
+        price: "350,000 MMK",
+        coin: 700,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -339,7 +359,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "15/8/2024",
         endDate: "30/11/2024",
         deadline: "10/8/2024",
-        price: "280,000 MMK (560 Coins)",
+        price: "280,000 MMK",
+        coin: 650,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -352,7 +373,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "20/8/2024",
         endDate: "15/12/2024",
         deadline: "15/8/2024",
-        price: "320,000 MMK (640 Coins)",
+        price: "320,000 MMK",
+        coin: 650,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -365,7 +387,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "25/7/2024",
         endDate: "30/11/2024",
         deadline: "20/7/2024",
-        price: "290,000 MMK (580 Coins)",
+        price: "290,000 MMK",
+        coin: 580,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -378,7 +401,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "1/9/2024",
         endDate: "15/12/2024",
         deadline: "25/8/2024",
-        price: "260,000 MMK (520 Coins)",
+        price: "260,000 MMK",
+        coin: 520,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -391,7 +415,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "10/8/2024",
         endDate: "20/12/2024",
         deadline: "5/8/2024",
-        price: "310,000 MMK (620 Coins)",
+        price: "310,000 MMK",
+        coin: 620,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -404,7 +429,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "15/7/2024",
         endDate: "30/11/2024",
         deadline: "10/7/2024",
-        price: "280,000 MMK (560 Coins)",
+        price: "280,000 MMK",
+        coin: 560,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -417,7 +443,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "1/8/2024",
         endDate: "30/12/2024",
         deadline: "25/7/2024",
-        price: "270,000 MMK (540 Coins)",
+        price: "270,000 MMK",
+        coin: 540,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -430,7 +457,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "10/9/2024",
         endDate: "20/1/2025",
         deadline: "5/9/2024",
-        price: "320,000 MMK (640 Coins)",
+        price: "320,000 MMK",
+        coin: 640,
         image: "../../storages/classPhoto.png",
       },
     ],
@@ -445,7 +473,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "01/9/2024",
         endDate: "30/12/2024",
         deadline: "31/8/2024",
-        price: "350,000 MMK (700 Coins)",
+        price: "350,000 MMK",
+        coin: 700,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -458,7 +487,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "01/10/2024",
         endDate: "30/12/2024",
         deadline: "25/9/2024",
-        price: "370,000 MMK (740 Coins)",
+        price: "370,000 MMK",
+        coin: 740,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -471,7 +501,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "05/9/2024",
         endDate: "15/12/2024",
         deadline: "30/8/2024",
-        price: "330,000 MMK (660 Coins)",
+        price: "330,000 MMK",
+        coin: 660,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -484,7 +515,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "10/9/2024",
         endDate: "20/12/2024",
         deadline: "5/9/2024",
-        price: "340,000 MMK (680 Coins)",
+        price: "340,000 MMK",
+        coin: 680,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -497,7 +529,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "15/10/2024",
         endDate: "31/12/2024",
         deadline: "10/10/2024",
-        price: "360,000 MMK (720 Coins)",
+        price: "360,000 MMK",
+        coin: 720,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -510,7 +543,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "20/9/2024",
         endDate: "31/12/2024",
         deadline: "15/9/2024",
-        price: "350,000 MMK (700 Coins)",
+        price: "350,000 MMK",
+        coin: 600,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -523,7 +557,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "01/11/2024",
         endDate: "15/12/2024",
         deadline: "25/10/2024",
-        price: "320,000 MMK (640 Coins)",
+        price: "320,000 MMK",
+        coin: 640,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -536,7 +571,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "05/10/2024",
         endDate: "30/12/2024",
         deadline: "30/9/2024",
-        price: "310,000 MMK (620 Coins)",
+        price: "310,000 MMK",
+        coin: 620,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -549,7 +585,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "10/10/2024",
         endDate: "20/12/2024",
         deadline: "5/10/2024",
-        price: "300,000 MMK (600 Coins)",
+        price: "300,000 MMK",
+        coin: 600,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -562,7 +599,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "15/11/2024",
         endDate: "31/1/2025",
         deadline: "10/11/2024",
-        price: "370,000 MMK (740 Coins)",
+        price: "370,000 MMK",
+        coin: 740,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -575,7 +613,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "01/12/2024",
         endDate: "30/4/2025",
         deadline: "25/11/2024",
-        price: "390,000 MMK (780 Coins)",
+        price: "390,000 MMK",
+        coin: 780,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -588,7 +627,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "15/12/2024",
         endDate: "30/5/2025",
         deadline: "10/12/2024",
-        price: "400,000 MMK (800 Coins)",
+        price: "400,000 MMK",
+        coin: 800,
         image: "../../storages/classPhoto.png",
       },
     ],
@@ -603,7 +643,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "15/9/2024",
         endDate: "30/12/2024",
         deadline: "14/9/2024",
-        price: "400,000 MMK (800 Coins)",
+        price: "400,000 MMK",
+        coin: 800,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -616,7 +657,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "20/9/2024",
         endDate: "31/12/2024",
         deadline: "15/9/2024",
-        price: "420,000 MMK (840 Coins)",
+        price: "420,000 MMK",
+        coin: 840,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -629,7 +671,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "01/10/2024",
         endDate: "20/12/2024",
         deadline: "25/9/2024",
-        price: "410,000 MMK (820 Coins)",
+        price: "410,000 MMK",
+        coin: 820,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -642,7 +685,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "10/10/2024",
         endDate: "30/12/2024",
         deadline: "5/10/2024",
-        price: "430,000 MMK (860 Coins)",
+        price: "430,000 MMK",
+        coin: 860,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -655,7 +699,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "15/10/2024",
         endDate: "30/12/2024",
         deadline: "10/10/2024",
-        price: "440,000 MMK (880 Coins)",
+        price: "440,000 MMK",
+        coin: 880,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -668,7 +713,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "01/11/2024",
         endDate: "15/12/2024",
         deadline: "25/10/2024",
-        price: "450,000 MMK (900 Coins)",
+        price: "450,000 MMK",
+        coin: 900,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -681,7 +727,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "10/11/2024",
         endDate: "31/12/2024",
         deadline: "5/11/2024",
-        price: "460,000 MMK (920 Coins)",
+        price: "460,000 MMK",
+        coin: 920,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -694,7 +741,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "15/11/2024",
         endDate: "31/12/2024",
         deadline: "10/11/2024",
-        price: "470,000 MMK (940 Coins)",
+        price: "470,000 MMK",
+        coin: 930,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -707,7 +755,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "01/12/2024",
         endDate: "30/1/2025",
         deadline: "25/11/2024",
-        price: "480,000 MMK (960 Coins)",
+        price: "480,000 MMK",
+        coin: 960,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -720,7 +769,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "05/12/2024",
         endDate: "31/1/2025",
         deadline: "30/11/2024",
-        price: "490,000 MMK (980 Coins)",
+        price: "490,000 MMK",
+        coin: 980,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -733,7 +783,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "10/12/2024",
         endDate: "15/2/2025",
         deadline: "5/12/2024",
-        price: "500,000 MMK (1000 Coins)",
+        price: "500,000 MMK",
+        coin: 1000,
         image: "../../storages/classPhoto.png",
       },
       {
@@ -746,7 +797,8 @@ ${Array(Math.floor(5 - rating))
         startDate: "15/12/2024",
         endDate: "30/3/2025",
         deadline: "10/12/2024",
-        price: "510,000 MMK (1020 Coins)",
+        price: "510,000 MMK",
+        coin: 1020,
         image: "../../storages/classPhoto.png",
       },
     ],
@@ -755,20 +807,27 @@ ${Array(Math.floor(5 - rating))
   function generateCourseSlider(course) {
     return `
 <div class="col-span-3 shadow-md">
-    <img class="rounded-t-lg w-full" src="${course.image}" alt="" />
-    <div class="p-4">
-        <h2 class="text-base text-black font-bold">${course.name}</h2>
-        <p class="text-sm text-gray-500">${course.institute}</p>
-        <p class="text-sm text-gray-600 mt-2">${course.instructor}</p>
-        <p class="text-sm text-gray-600 mb-2"><span class="font-bold">${course.rating}</span> ⭐ (${course.enrolledStudents})</p>
-        <p class="text-sm text-gray-600">Start Date: ${course.startDate}</p>
-        <p class="text-sm text-gray-600">End Date: ${course.endDate}</p>
-        <p class="text-sm font-bold text-red-400 inline">Enrollment Deadline: <span class="text-gray-600">${course.deadline}</span></p>
-        <div class="flex justify-between items-center">
-            <p class="text-base font-bold">${course.price}</p>
-            <button class="bg-primaryColor text-white px-4 py-1 rounded mt-2"><a href="Auth/enrollment.php">Enroll</a></button>
+    <a href="viewdetailsclass.php?id=${course.id}" class="block">
+        <img class="rounded-t-lg w-full" src="${course.image}" alt="" />
+        <div class="p-4">
+            <h2 class="text-base text-black font-bold">${course.name}</h2>
+            <p class="text-sm text-gray-500">${course.institute}</p>
+            <p class="text-sm text-gray-600 mt-2">${course.instructor}</p>
+            <p class="text-sm text-gray-600 mb-2"><span class="font-bold">${course.rating}</span> ⭐ (${course.enrolledStudents})</p>
+            <p class="text-sm text-gray-600">Start Date: ${course.startDate}</p>
+            <p class="text-sm text-gray-600">End Date: ${course.endDate}</p>
+            <p class="text-sm font-bold text-red-400 inline">Enrollment Deadline: <span class="text-gray-600">${course.deadline}</span></p>
+            <div class="flex justify-between items-center">
+             <div class="mt-2 text-gray-600">
+                                <svg class="inline font-bold md:w-6 md:h-6 w-4 h-4 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <span class="inline font-bold text-base relative md:top-0 top-0.5">${course.coin}</span>
+                                <p class="text-base font-bold">${course.price}</p>
+                </div>
+                
+                <button class="bg-primaryColor text-white px-4 py-1 rounded mt-2">Enroll</button>
+            </div>
         </div>
-    </div>
+    </a>
 </div>`;
   }
 
@@ -801,10 +860,17 @@ ${Array(Math.floor(5 - rating))
 
   // Tab click handler
   $(".tab-button").on("click", function () {
+    // Remove active styles from all tabs
     $(".tab-button")
-      .removeClass("border-primaryColor text-primaryColor")
+      .removeClass("text-primaryColor border-primaryColor")
       .addClass("text-gray-500 border-transparent");
-    $(this).addClass("border-primaryColor text-primaryColor");
+
+    // Add active styles to the clicked tab
+    $(this)
+      .removeClass("text-gray-500 border-transparent")
+      .addClass("text-primaryColor border-primaryColor");
+
+    // Show corresponding content
     const tab = $(this).data("tab");
     $(".tab-content").addClass("hidden");
     $(`#${tab}`).removeClass("hidden");
@@ -843,57 +909,76 @@ ${Array(Math.floor(5 - rating))
   });
 
   // Handle accordion click
-  $(".accordion-button").click(function () {
-    var tab = $(this).data("tab");
-    $(".accordion-content").slideUp();
-    if (!$(this).next(".accordion-content").is(":visible")) {
-      $(this).next(".accordion-content").slideDown();
-    }
+  // Initialize the accordion
+  $(".accordion-content").each(function () {
+    // Ensure that content is hidden initially
+    $(this).css("max-height", "0");
   });
-
-  // For accordion
-  function generateCourseCards(category) {
-    return courses[category]
-      .map(
-        (course) => `
-    <div class="w-64 shadow-md flex-shrink-0">
-        <img class="rounded-t-lg w-full" src="${course.image}" alt="" />
-        <div class="p-4">
-            <h2 class="text-base text-black font-bold">${course.name}</h2>
-            <p class="text-sm text-gray-500">${course.institute}</p>
-            <p class="text-sm text-gray-600 mt-2">${course.instructor}</p>
-            <p class="text-sm text-gray-600 mb-2"><span class="font-bold">${course.rating}</span> ⭐ (${course.enrolledStudents})</p>
-            <p class="text-sm text-gray-600">Start Date: ${course.startDate}</p>
-            <p class="text-sm text-gray-600">End Date: ${course.endDate}</p>
-            <p class="text-sm font-bold text-red-400 inline">Enrollment Deadline: <span class="text-gray-600">${course.deadline}</span></p>
-            <div class="flex justify-between items-center">
-                <p class="text-base font-bold">${course.price}</p>
-                <button class="bg-primaryColor text-white px-4 py-1 rounded mt-2"><a href="Auth/enrollment.php">Enroll</a></button>
-            </div>
-        </div>
-    </div>
-`
-      )
-      .join("");
-  }
 
   $(".accordion-button").click(function () {
     const tab = $(this).data("tab");
     const content = $(`#mobile-${tab}`);
     const icon = $(this).find("ion-icon");
 
-    if (content.hasClass("hidden")) {
-      $(".accordion-content").addClass("hidden");
-      $(".accordion-button ion-icon").attr("name", "chevron-down-outline");
-      content.removeClass("hidden");
+    // Slide up all accordion contents
+    $(".accordion-content").not(content).slideUp().css("max-height", "0");
+    $(".accordion-button")
+      .not(this)
+      .find("ion-icon")
+      .attr("name", "chevron-down-outline");
+
+    // Toggle the current content
+    if (content.css("max-height") === "0px") {
+      content.css("max-height", "1000px").slideDown();
       icon.attr("name", "chevron-up-outline");
 
+      // Load course cards if empty
       if (!content.find(".w-64").length) {
         content.find(".overflow-x-auto").html(generateCourseCards(tab));
       }
     } else {
-      content.addClass("hidden");
+      content.slideUp().css("max-height", "0");
       icon.attr("name", "chevron-down-outline");
     }
   });
+
+  // Optionally, initialize the first tab to open
+  $(".accordion-button").first().trigger("click");
+
+  // Generate course cards
+  function generateCourseCards(category) {
+    return courses[category]
+      .map(course => `
+        <div class="w-64 shadow-md flex-shrink-0" data-course-id="${course.id}">
+          <a href="viewdetailsclass.php?id=${course.id}" class="block">
+            <img class="rounded-t-lg w-full" src="${course.image}" alt="${course.name}" />
+            <div class="p-4">
+              <h2 class="text-base text-black font-bold">${course.name}</h2>
+              <p class="text-sm text-gray-500">${course.institute}</p>
+              <p class="text-sm text-gray-600 mt-2">${course.instructor}</p>
+              <p class="text-sm text-gray-600 mb-2">
+                <span class="font-bold">${course.rating}</span> ⭐ (${course.enrolledStudents})
+              </p>
+              <p class="text-sm text-gray-600">Start Date: ${course.startDate}</p>
+              <p class="text-sm text-gray-600">End Date: ${course.endDate}</p>
+              <p class="text-sm font-bold text-red-400 inline">
+                Enrollment Deadline: <span class="text-gray-600">${course.deadline}</span>
+              </p>
+              <div class="flex justify-between items-center">
+               <div class="mt-2 text-gray-600">
+                                <svg class="inline font-bold md:w-6 md:h-6 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <span class="inline font-bold md:text-xl text-base relative md:top-0 top-0.5">${course.coin}</span>
+                </div>
+                <p class="text-base font-bold">${course.price}</p>
+                <button class="bg-primaryColor text-white px-4 py-1 rounded mt-2">
+                  <a href="Auth/enrollment.php">Enroll</a>
+                </button>
+              </div>
+            </div>
+          </a>
+        </div>
+      `)
+      .join("");
+  }
+  
 });
