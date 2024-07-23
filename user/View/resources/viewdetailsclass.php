@@ -22,12 +22,12 @@
         </svg>
     </div>
     <!-- Start Header Section -->
-    <header class="">
+    <header>
         <!-- start navbar -->
-        <nav class="bg-white fixed w-[100%] z-20 top-0 right-0 left-0 m-auto border-b border-gray-200">
-            <div class="max-w-screen-xl flex items-center justify-between mx-auto px-4 relative">
+        <nav class="bg-white fixed w-[100%] z-20 top-0 left-0 border-b border-gray-200 md:h-20 md:py-3">
+            <div class="md:px-32 flex items-center justify-between mx-auto px-4 relative">
                 <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="./img/LOGO.svg" class="h-12" alt="MEP Logo" />
+                    <img src="./img/LOGO.svg" class="md:h-14 h-10" alt="MEP Logo" />
                 </a>
 
                 <button onclick="menuForMobile()" data-collapse-toggle="menuList" type="button" class="inline-flex text-primaryColor hover:text-slate-800 flex-col items-center p-2 w-10 mx-3 h-full justify-center text-sm rounded-lg md:hidden" aria-controls="navbar-default" aria-expanded="false">
@@ -35,7 +35,7 @@
                     <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
                 </button>
 
-                <div id="menuList" isOpen="false" class="hidden md:flex absolute md:static top-16 right-0 left-0 mx-24 md:mx-auto md:items-center md:justify-center bg-gray-200 rounded-xl" >
+                <div id="menuList" isOpen="false" class="hidden md:flex absolute md:static top-16 right-0 left-0 mx-24 md:mx-auto md:items-center md:justify-center bg-gray-200 rounded-xl ">
                     <ul class="flex flex-col md:flex-row justify-between items-center font-medium md:space-x-10 p-3 md:p-0">
                         <li>
                             <a href="./dashboard.php" aria-active="true" id="userDashboard" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Dashboard</a>
@@ -53,7 +53,7 @@
                 </div>
 
                 <div class="flex items-center space-x-2 md:space-x-3 rtl:space-x-reverse my-2">
-                    <a href="./chat.php">
+                    <a href="./chat.php" class="md:mr-3 mr-2">
                         <svg class="md:w-6 w-4" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10.9734 18.4591C11.5788 18.4591 12.0688 17.967 12.0664 17.3617C11.4618 17.3639 10.9734 17.8544 10.9734 18.4591ZM13.1681 18.4602C12.8949 18.4602 12.8074 18.8285 13.0518 18.9507C13.1286 18.7981 13.1681 18.6302 13.1681 18.4602ZM6.69994 18.9507C6.94435 18.8285 6.8573 18.4602 6.58406 18.4602C6.58406 18.6302 6.62368 18.7981 6.69994 18.9507ZM7.68624 17.3617C7.68357 17.967 8.17349 18.4591 8.77875 18.4591C8.77875 17.8544 8.29033 17.3639 7.68624 17.3617ZM19.7522 10.7788C19.7522 9.26003 19.7533 8.03869 19.6545 7.06205C19.5525 6.06567 19.3374 5.20203 18.8271 4.43828L17.0022 5.65746C17.2316 6.00092 17.3874 6.4618 17.4708 7.28371C17.5564 8.12428 17.5575 9.21504 17.5575 10.7788H19.7522ZM18.8271 17.1192C19.3374 16.3555 19.5525 15.4918 19.6545 14.4954C19.7533 13.5188 19.7522 12.2975 19.7522 10.7788H17.5575C17.5575 12.3425 17.5564 13.4332 17.4708 14.2738C17.3874 15.0957 17.2316 15.5566 17.0022 15.9L18.8271 17.1192ZM17.3139 18.6325C17.913 18.233 18.4277 17.7184 18.8271 17.1192L17.0022 15.9C16.763 16.2589 16.4536 16.5683 16.0947 16.8075L17.3139 18.6325ZM12.0664 17.3617C12.0712 18.5736 13.0599 19.5805 14.2687 19.4953C14.549 19.4755 14.8135 19.4494 15.0632 19.4148C15.9038 19.2985 16.6467 19.0791 17.3139 18.6325L16.0947 16.8075C15.7941 17.0084 15.4045 17.1521 14.7626 17.241C14.1031 17.3321 13.2548 17.3562 12.0664 17.3617ZM13.1681 18.4602C13.1681 18.4595 13.1676 18.4591 13.167 18.4591H10.9734C10.9734 18.4597 10.9739 18.4602 10.9745 18.4602H13.1681ZM11.8392 21.3769L13.0518 18.9507C11.9681 18.4088 10.6504 18.8479 10.1084 19.9315L9.87609 20.3959L11.8392 21.3769ZM7.91305 21.3769C8.72191 22.9944 11.0305 22.9944 11.8392 21.3769L9.87609 20.3959L7.91305 21.3769ZM6.69994 18.9507L7.91305 21.3769L9.87609 20.3959L9.64432 19.9324C9.10225 18.8483 7.78411 18.4088 6.69994 18.9507ZM6.58517 18.4591C6.58456 18.4591 6.58406 18.4595 6.58406 18.4602H8.77765C8.77826 18.4602 8.77875 18.4597 8.77875 18.4591H6.58517ZM2.43841 18.6325C3.10559 19.0791 3.84828 19.2985 4.68928 19.4148C4.93872 19.4494 5.203 19.4755 5.483 19.4953C6.69201 19.5806 7.6809 18.5737 7.68624 17.3617C6.49716 17.3562 5.64935 17.3321 4.98985 17.241C4.3479 17.1521 3.95768 17.0084 3.65777 16.8075L2.43841 18.6325ZM0.924729 17.1192C1.32493 17.7184 1.83937 18.233 2.43841 18.6325L3.65777 16.8075C3.29828 16.5683 2.98971 16.2589 2.74951 15.9L0.924729 17.1192ZM8.74279e-07 10.7788C8.74279e-07 12.2975 -0.00131457 13.5188 0.0981048 14.4954C0.19939 15.4918 0.414245 16.3555 0.924729 17.1192L2.74951 15.9C2.52016 15.5566 2.36522 15.0957 2.28149 14.2738C2.19601 13.4332 2.19469 12.3425 2.19469 10.7788H8.74279e-07ZM0.924729 4.43828C0.414245 5.20203 0.19939 6.06567 0.0981048 7.06205C-0.00131457 8.03869 8.74279e-07 9.26003 8.74279e-07 10.7788H2.19469C2.19469 9.21504 2.19601 8.12428 2.28149 7.28371C2.36522 6.4618 2.52016 6.00092 2.74951 5.65746L0.924729 4.43828ZM2.43841 2.92505C1.83937 3.32448 1.32493 3.83913 0.924729 4.43828L2.74951 5.65746C2.98971 5.29862 3.29828 4.98918 3.65777 4.74996L2.43841 2.92505ZM8.77875 2C7.26047 2 6.03902 1.99889 5.06161 2.09765C4.06588 2.19971 3.20238 2.41478 2.43841 2.92505L3.65777 4.74996C4.00091 4.52061 4.46158 4.36479 5.28382 4.28139C6.12428 4.1958 7.21471 4.19469 8.77875 4.19469V2ZM10.9734 2H8.77875V4.19469H10.9734V2ZM17.3139 2.92505C16.5501 2.41478 15.6865 2.19971 14.6901 2.09765C13.7135 1.99889 12.4922 2 10.9734 2V4.19469C12.5372 4.19469 13.6279 4.1958 14.4685 4.28139C15.2904 4.36479 15.7513 4.52061 16.0947 4.74996L17.3139 2.92505ZM18.8271 4.43828C18.4277 3.83913 17.913 3.32448 17.3139 2.92505L16.0947 4.74996C16.4536 4.98918 16.763 5.29862 17.0022 5.65746L18.8271 4.43828Z" fill="#33363F" />
                             <path d="M14.2653 11.8763C14.8714 11.8763 15.3627 11.385 15.3627 10.779C15.3627 10.1729 14.8714 9.68164 14.2653 9.68164C13.6593 9.68164 13.168 10.1729 13.168 10.779C13.168 11.385 13.6593 11.8763 14.2653 11.8763Z" fill="#33363F" stroke="#33363F" stroke-linecap="round" />
@@ -63,7 +63,7 @@
                         </svg>
                     </a>
 
-                    <a href="./notification.php">
+                    <a href="./notification.php" class="md:mr-3 mr-2">
                         <svg class="md:w-6 w-4" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8189 1.6075C12.1507 1.03836 11.9764 0.246541 11.3291 0.124153C10.8978 0.0426113 10.4535 0 10 0C6.36366 0 3.30808 2.73376 2.90717 6.34843L2.63417 8.80371L2.62762 8.86224C2.50518 9.92735 2.15849 10.9556 1.61022 11.8766L1.57987 11.9275L0.953583 12.971L0.927593 13.0143C0.665378 13.451 0.429148 13.8454 0.270952 14.1813C0.110589 14.5215 -0.0616715 14.9842 0.0217606 15.5075C0.103026 16.0244 0.369552 16.4946 0.770459 16.8316C1.17678 17.1718 1.66116 17.2618 2.03606 17.2997C2.40554 17.3365 2.86603 17.3365 3.37421 17.3365H3.42513H16.5749H16.6258C17.134 17.3365 17.5945 17.3365 17.9639 17.2997C18.3378 17.2618 18.8222 17.1718 19.2285 16.8316C19.6305 16.4946 19.897 16.0244 19.9782 15.5075C20.0617 14.9842 19.8894 14.5215 19.729 14.1813C19.5709 13.8454 19.3335 13.451 19.0724 13.0143L19.0464 12.971L18.4201 11.9275L18.3898 11.8766C18.1525 11.4784 17.9531 11.0602 17.7933 10.6276C17.5976 10.0981 17.0657 9.7518 16.5012 9.7518C15.9198 9.7518 15.4011 10.2472 15.5684 10.804C15.7971 11.5653 16.1185 12.2982 16.5272 12.9851L16.5619 13.0425L17.1881 14.0859C17.4839 14.58 17.6627 14.8802 17.7689 15.1045C17.7767 15.1216 17.765 15.142 17.7462 15.1435C17.5002 15.1684 17.1502 15.1695 16.5749 15.1695H3.42513C2.84977 15.1695 2.49976 15.1684 2.25271 15.1435C2.23444 15.142 2.2235 15.1211 2.23109 15.1045C2.33727 14.8802 2.51607 14.58 2.81187 14.0859L3.43809 13.0425L3.47281 12.9851C4.17711 11.7997 4.62349 10.4788 4.7806 9.10924L4.78821 9.04318L5.06127 6.5879C5.34083 4.07085 7.46778 2.16707 10 2.16707C10.2069 2.16707 10.411 2.17978 10.6116 2.20452C11.0898 2.26347 11.5762 2.02373 11.8189 1.6075ZM16.5793 4.36927C16.0749 3.17 14.3341 3.0331 14.3341 4.33413C14.3341 4.34922 14.3343 4.36427 14.3346 4.37927C14.3401 4.65567 14.4532 4.91224 14.5627 5.16604C14.6729 5.42104 14.7838 5.68413 14.9818 5.87893C15.3727 6.26357 15.9094 6.5012 16.5012 6.5012C16.6849 6.5012 16.8626 6.47837 17.033 6.43573C17.0721 6.42595 17.0972 6.38846 17.0928 6.34843C17.0155 5.65159 16.8393 4.98746 16.5793 4.36927Z" fill="#33363F" />
                             <path d="M6.85889 16.9736C7.04417 18.0106 7.45269 18.9262 8.02046 19.5796C8.58823 20.2329 9.28384 20.5872 9.99898 20.5872C10.7141 20.5872 11.4097 20.2329 11.9775 19.5796C12.5453 18.9262 12.9538 18.0106 13.1391 16.9736" stroke="#33363F" stroke-width="2" stroke-linecap="round" />
@@ -73,11 +73,11 @@
 
                     <div class="relative">
                         <div id="userProfile" aria-isOpen="false" class="flex justify-center items-center cursor-pointer hover:text-primaryColor">
-                            <img src="./img/profile.png" alt="profile" class="rounded-full mr-2" width="30" />
+                            <img src="./img/profile.png" alt="profile" class="md:ml-3 ml-2 rounded-full mr-2 md:w-10 w-8" />
                             <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
                         </div>
 
-                        <div id="profileMenu" class="hidden absolute bottom-0 right-0 bg-white w-44 rounded-lg p-3 translate-y-52 translate-x-4">
+                        <div id="profileMenu" class="hidden absolute bottom-0 right-0 md:mr-0 mr-3 border-2 shadow-lg bg-white w-44 rounded-lg p-3 translate-y-52 translate-x-4">
                             <h1 class="font-bold">Thiha Thwin</h1>
                             <div class="flex items-center select-none">
                                 <ion-icon name="wallet-outline" class="text-lg mx-2 my-2"></ion-icon>
@@ -105,1209 +105,571 @@
         </nav>
         <!-- end navbar -->
 
-        <!-- start banner -->
-        <div class="md:h-[100vh] grid grid-cols-1 gap-10 md:grid-cols-2 pt-28 md:pt-36 md:px-32 ">
-            <div class="flex justify-center items-center px-5">
-                <div>
-                    <div class="flex justify-center items-center md:hidden">
-                        <svg class="relative bottom-4" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                            <path fill="currentColor" d="m10 7l-2 4h3v6H5v-6l2-4zm8 0l-2 4h3v6h-6v-6l2-4z" />
-                        </svg>
-                        <p class="text-xl mb-3">Join MEP, Your Path To Success</p>
-                        <svg class="relative bottom-4" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                            <path fill="currentColor" d="M14 17h3l2-4V7h-6v6h3M6 17h3l2-4V7H5v6h3z" />
-                        </svg>
-                    </div>
-                    <img src="../../storages/mainpic.jpg" class="md:pt-28" alt="main-pic" />
-                </div>
-            </div>
-            <div class="flex justify-start items-center px-5 md:px-0">
-                <div>
-                    <h1 class="md:text-4xl text-2xl font-semibold mb-1 md:mb-2">Unlock Your Potential</h1>
-                    <h1 class="md:text-5xl text-2xl font-semibold text-blue-700 md:mb-3 mb-2">With MEP</h1>
-                    <p class="text-base md:text-lg mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-                        deleniti expedita, architecto quia nam beatae voluptatem quasi! Repellat assumenda iste aliquam
-                        praesentium veniam inventore quis, eveniet corporis excepturi porro debitis.</p>
-                    <div class="flex justify-end md:mt-5 lg:mb-12">
-                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-xl text-base px-5 py-3 me-2 md:mb-10 mb-0 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Get
-                            Started</button>
-                    </div>
-                </div>
-            </div>
-            <div class="md:relative md:bottom-48 bg-gray-400 md:bg-transparent md:col-start-2 pt-10 mb-32 md:mb-0">
-                <div>
-                    <h1 class="md:text-3xl text-xl md:hidden block text-center font-black">Let Us Build The bridge
-                        Between</h1>
-                    <h2 class="md:text-3xl text-xl text-blue-700 md:hidden block text-center font-bold">You & Your
-                        Career</h2>
-                </div>
-                <div class="flex gap-5 justify-center md:justify-normal md:gap-10 md:col-start-2 relative top-5 md:relative md:bottom-44 md:bg-none px-5 md:pt-0">
+        <!-- start class details -->
+        <div class="h-auto  bg-gray-500 md:pt-28 pt-20 md:px-56 bg-gradient-to-r from-gray-700 to-gray-900 md:pb-16 pb-14">
+            <!-- Breadcrumb -->
+            <nav class="flex py-3 text-blue-500 md:mb-5 mb-3 md:px-0 px-5" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+                    <li class="inline-flex items-center">
+                        <a href="#" class="inline-flex items-center md:text-base text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                            <svg class="w-5 h-5 me-2.5 pb-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
+                            </svg>
+                            Development
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                            </svg>
+                            <a href="#" class="ms-1 md:text-base text-sm font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">Web Development</a>
+                        </div>
+                    </li>
+                    <li aria-current="page">
+                        <div class="flex items-center">
+                            <svg class="rtl:rotate-180  w-3 h-3 mx-2 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                            </svg>
+                            <span class="ms-1 md:text-base text-sm font-medium md:ms-2 current-pages">JavaScript</span>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
 
-                    <div class="md:w-44 w-40 md:h-36 h-24 bg-gray-300 rounded-xl flex justify-center items-center">
-                        <div>
-                            <p class="text-blue-700 text-2xl md:text-3xl font-bold text-center">20K +</p>
-                            <p class="text-gray-500 text-lg md:text-xl text-center">Users</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 md:gap-10 md:px-0 px-5">
+                <!-- left -->
+                <div class="w-full bg-gray-100 rounded-lg md:mb-0 mb-10">
+                    <div>
+                        <img src="./img/class.svg" class="rounded-t-lg w-full" alt="">
+                    </div>
+                    <div class="grid grid-cols-2 gap-10 md:py-5 py-4">
+                        <div class="flex flex-col items-end md:pr-5 pr-6">
+                            <p class="md:text-2xl text-xl font-semibold text-gray-900">250,000 MMK</p>
+                            <div class="md:mt-2 text-gray-600">
+                                <svg class="inline font-bold md:w-6 md:h-6 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <span class="inline font-bold md:text-xl text-base relative md:top-0 top-0.5">100</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-center items-center md:pr-5 pr-7">
+                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-xl text-lg md:px-10 px-7 md:py-3 py-2.5">Enroll now</button>
                         </div>
                     </div>
-                    <div class="relative top-10 md:top-0 md:w-44 w-40 md:h-36 h-24 bg-gray-300 rounded-xl flex justify-center items-center">
-                        <div>
-                            <p class="text-blue-700 text-2xl md:text-3xl font-bold text-center">10K +</p>
-                            <p class="text-gray-500 text-lg md:text-xl text-center">Institutes</p>
+                </div>
+                <!-- right -->
+                <div class="text-white col-span-2">
+                    <div class="flex flex-col items-start">
+                        <h1 class="md:text-3xl text-xl font-semibold md:mb-3 mb-2">Javascript for Begineers</h1>
+                        <p class="md:text-base md:mb-5 mb-3 text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia delectus, sint excepturi eligendi sapiente illo accusamus nesciunt minus minima sed eum aspernatur sit laborum adipisci atque exercitationem ut. Modi deleniti accusantium optio quaerat maxime necessitatibus neque repudiandae totam molestiae blanditiis, quibusdam commodi mollitia nulla illo facilis quo natus, veniam sit.</p>
+                        <div class="md:mb-5 mb-4">
+                            <div class="md:mb-1">
+                                <small class="md:text-base text-base">Institute - </small> <small class="underline text-base text-blue-500">Global Code Institute</small>
+                            </div>
+                            <div>
+                                <span class="md:text-yellow-600 md:text-base font-bold md:mr-1">4.5</span>
+                                <ion-icon name="star" class="text-yellow-600 md:text-base relative top-0.5"></ion-icon>
+                                <ion-icon name="star" class="text-yellow-600 md:text-base relative top-0.5"></ion-icon>
+                                <ion-icon name="star" class="text-yellow-600 md:text-base relative top-0.5"></ion-icon>
+                                <ion-icon name="star" class="text-yellow-600 md:text-base relative top-0.5"></ion-icon>
+                                <ion-icon name="star-half" class="text-yellow-600 md:text-base relative top-0.5"></ion-icon>
+                                <span class="text-blue-500 underline">(35 rating)</span> <span>301 students</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="md:w-44 w-40 md:h-36 h-24 bg-gray-300 rounded-xl flex justify-center items-center">
+                        <div class="md:mb-5 mb-4 flex flex-col space-y-2">
+                            <div>
+                                <small class="text-base">Instructor - </small> <small class="underline md:text-base text-blue-500">Matthwe Davis</small>
+                            </div>
+                            <div>
+                                <span>Start Date - </span> <span>21/7/2024</span>
+                            </div>
+                            <div>
+                                <span>End Date - </span> <span>25/12/2024</span>
+                            </div>
+                        </div>
+                        <div class="md:mb-10 mb-7">
+                            <span class="text-blue-500">Enrollment Deadline - </span> <span>20/7/2024</span>
+                        </div>
                         <div>
-                            <p class="text-blue-700 text-2xl md:text-3xl font-bold text-center">100%</p>
-                            <p class="text-gray-500 text-lg md:text-xl text-center">Verified</p>
+                            <input type="text" name="coupon" id="coupon-code" class="md:py-2.5 py-2 bg-transparent border pl-5 rounded" placeholder="Enter coupon code" />
+                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-sm px-8 md:py-3 py-2.5 border rounded">Apply</button>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
-        <!-- end banner -->
+        <!-- end class details -->
     </header>
     <!-- End Header Section -->
 
-    <!-- Start Our Latest Pick Section -->
-    <section class="mb-20 md:mb-0 md:mt-10 md:px-32">
-        <div class="flex justify-center items-center md:mb-14 mb-5">
-            <div class="md:w-14 w-8 h-1 relative md:bottom-2 md:mr-5 mr-2 md:bg-blue-700 bg-blue-700 inline-block rounded-lg">
-            </div>
-            <div class="flex items-start">
-                <span class="md:text-2xl text-xl relative md:bottom-2 font-bold md:mr-5 mr-3">Our</span>
-                <span class="md:text-2xl text-xl relative md:bottom-2 font-semibold tracking-wider text-blue-700">Latest
-                    Pick</span>
-            </div>
-        </div>
-        <div id="default-carousel" class="relative w-full md:h-[67vh] h-[31vh] md:mb-32 md:px-20 px-10" data-carousel="slide">
-            <!-- Carousel wrapper -->
-            <div class="relative h-56 overflow-hidden -z-10 rounded-lg md:h-[60vh]">
-                <!-- Item 1 -->
-                <div class="hidden duration-700 ease-in-out md:pb-10" data-carousel-item>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:bg-gray-300 relative">
-                        <div>
-                            <img src="../../storages/school1.jpg" class="institute-imgs md:mt-7 md:ml-5" alt="school1">
-                        </div>
-                        <div class="md:pt-[28px] py-5 px-5 md:pr-10 md:relative institute-infos">
-                            <div class="flex justify-between">
-                                <h1 class="md:text-xl text-base text-white md:text-gray-950 font-semibold">Sample1
-                                    Institute</h1>
-                                <div>
-                                    <ion-icon name="star" class="md:text-2xl text-base md:text-blue-600 text-yellow-300 relative md:top-1 top-0.5"></ion-icon>
-                                    <span class="md:text-xl text-sm relative md:bottom-0 text-white md:text-gray-950">4.9</span>
-                                </div>
-                            </div>
-                            <div class="md:mb-5 md:mt-2">
-                                <div class="md:w-14 w-10 h-1 relative bottom-1 md:bottom-3 md:bg-blue-700 bg-white">
-                                </div>
-                            </div>
-                            <div class="md:mb-5 hidden md:block">
-                                <h3 class="md:text-lg font-bold text-base"> - About</h3>
-                                <p class="md:text-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque
-                                    libero quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi
-                                    quisquam doloremque enim velit maxime laudantium. Reprehenderit molestiae minima
-                                    voluptates laboriosam delectus, quam dicta neque aperiam similique maxime voluptate
-                                    alias sit?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque libero
-                                    quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi quisquam
-                                    doloremque enim velit maxime laudantium. Reprehenderit molestiae minima voluptates
-                                    laboriosam delectus, quam dicta neque aperiam similique maxime voluptate alias sit?
-                                </p>
-                            </div>
-                            <div class="md:mt-0 mt-5">
-                                <h3 class="md:text-xl text-sm font-semibold inline-block md:text-blue-600 md:mb-2 mb-4 text-white">
-                                    - Popular</h3> <span class="md:text-xl font-semibold text-sm invisible md:visible">Classes</span>
-                                <div class="flex justify-between gap-3 md:gap-0">
-                                    <div>
-                                        <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End
-                                            Development</span>
-                                    </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By
-                                        Mr.Matthwe Davis</span>
-                                </div>
-                                <div class="flex justify-between gap-3 md:gap-0">
-                                    <div>
-                                        <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End
-                                            Development</span>
-                                    </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By
-                                        Mr.Matthwe Davis</span>
-                                </div>
-                            </div>
-                            <div class="flex justify-end items-center mt-8 invisible md:visible">
-                                <button type="button" class="cursor-pointer text-whitemb-40 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-xl text-base px-5 py-3 md:mb-10 mb-0 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">View
-                                    Details</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 2 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:bg-gray-300 relative">
-                        <div>
-                            <img src="../../storages/school2.jpg" class="institute-imgs md:mt-7 md:ml-5" alt="school2">
-                        </div>
-                        <div class="md:pt-[28px] py-5 px-5 md:pr-10 md:relative institute-infos">
-                            <div class="flex justify-between">
-                                <h1 class="md:text-xl text-base text-white md:text-gray-950 font-semibold">Sample2
-                                    Institute</h1>
-                                <div>
-                                    <ion-icon name="star" class="md:text-2xl text-base md:text-blue-600 text-yellow-300 relative md:top-1 top-0.5"></ion-icon>
-                                    <span class="md:text-xl text-sm relative md:bottom-0 text-white md:text-gray-950">4.9</span>
-                                </div>
-                            </div>
-                            <div class="md:mb-5 md:mt-2">
-                                <div class="md:w-14 w-10 h-1 relative bottom-1 md:bottom-3 md:bg-blue-700 bg-white">
-                                </div>
-                            </div>
-                            <div class="md:mb-5 hidden md:block">
-                                <h3 class="md:text-lg font-bold text-base"> - About</h3>
-                                <p class="md:text-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque
-                                    libero quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi
-                                    quisquam doloremque enim velit maxime laudantium. Reprehenderit molestiae minima
-                                    voluptates laboriosam delectus, quam dicta neque aperiam similique maxime voluptate
-                                    alias sit?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque libero
-                                    quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi quisquam
-                                    doloremque enim velit maxime laudantium. Reprehenderit molestiae minima voluptates
-                                    laboriosam delectus, quam dicta neque aperiam similique maxime voluptate alias sit?
-                                </p>
-                            </div>
-                            <div class="md:mt-0 mt-5">
-                                <h3 class="md:text-xl text-sm font-semibold inline-block md:text-blue-600 md:mb-2 mb-4 text-white">
-                                    - Popular</h3> <span class="md:text-xl font-semibold text-sm invisible md:visible">Classes</span>
-                                <div class="flex justify-between gap-3 md:gap-0">
-                                    <div>
-                                        <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End
-                                            Development</span>
-                                    </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By
-                                        Mr.Matthwe Davis</span>
-                                </div>
-                                <div class="flex justify-between gap-3 md:gap-0">
-                                    <div>
-                                        <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End
-                                            Development</span>
-                                    </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By
-                                        Mr.Matthwe Davis</span>
-                                </div>
-                            </div>
-                            <div class="flex justify-end items-center mt-8 invisible md:visible">
-                                <button type="button" class="cursor-pointer text-whitemb-40 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-xl text-base px-5 py-3 md:mb-10 mb-0 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">View
-                                    Details</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 3 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:bg-gray-300 relative">
-                        <div>
-                            <img src="../../storages/school3.jpg" class="institute-imgs md:mt-7 md:ml-5" alt="school3">
-                        </div>
-                        <div class="md:pt-[28px] py-5 px-5 md:pr-10 md:relative institute-infos">
-                            <div class="flex justify-between">
-                                <h1 class="md:text-xl text-base text-white md:text-gray-950 font-semibold">Sample3
-                                    Institute</h1>
-                                <div>
-                                    <ion-icon name="star" class="md:text-2xl text-base md:text-blue-600 text-yellow-300 relative md:top-1 top-0.5"></ion-icon>
-                                    <span class="md:text-xl text-sm relative md:bottom-0 text-white md:text-gray-950">4.9</span>
-                                </div>
-                            </div>
-                            <div class="md:mb-5 md:mt-2">
-                                <div class="md:w-14 w-10 h-1 relative bottom-1 md:bottom-3 md:bg-blue-700 bg-white">
-                                </div>
-                            </div>
-                            <div class="md:mb-5 hidden md:block">
-                                <h3 class="md:text-lg font-bold text-base"> - About</h3>
-                                <p class="md:text-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque
-                                    libero quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi
-                                    quisquam doloremque enim velit maxime laudantium. Reprehenderit molestiae minima
-                                    voluptates laboriosam delectus, quam dicta neque aperiam similique maxime voluptate
-                                    alias sit?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque libero
-                                    quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi quisquam
-                                    doloremque enim velit maxime laudantium. Reprehenderit molestiae minima voluptates
-                                    laboriosam delectus, quam dicta neque aperiam similique maxime voluptate alias sit?
-                                </p>
-                            </div>
-                            <div class="md:mt-0 mt-5">
-                                <h3 class="md:text-xl text-sm font-semibold inline-block md:text-blue-600 md:mb-2 mb-4 text-white">
-                                    - Popular</h3> <span class="md:text-xl font-semibold text-sm invisible md:visible">Classes</span>
-                                <div class="flex justify-between gap-3 md:gap-0">
-                                    <div>
-                                        <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End
-                                            Development</span>
-                                    </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By
-                                        Mr.Matthwe Davis</span>
-                                </div>
-                                <div class="flex justify-between gap-3 md:gap-0">
-                                    <div>
-                                        <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End
-                                            Development</span>
-                                    </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By
-                                        Mr.Matthwe Davis</span>
-                                </div>
-                            </div>
-                            <div class="flex justify-end items-center mt-8 invisible md:visible">
-                                <button type="button" class="cursor-pointer text-whitemb-40 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-xl text-base px-5 py-3 md:mb-10 mb-0 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">View
-                                    Details</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 4 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:bg-gray-300 relative">
-                        <div>
-                            <img src="../../storages/school4.jpg" class="institute-imgs md:mt-7 md:ml-5" alt="school4">
-                        </div>
-                        <div class="md:pt-[28px] py-5 px-5 md:pr-10 md:relative institute-infos">
-                            <div class="flex justify-between">
-                                <h1 class="md:text-xl text-base text-white md:text-gray-950 font-semibold">Sample4
-                                    Institute</h1>
-                                <div>
-                                    <ion-icon name="star" class="md:text-2xl text-base md:text-blue-600 text-yellow-300 relative md:top-1 top-0.5"></ion-icon>
-                                    <span class="md:text-xl text-sm relative md:bottom-0 text-white md:text-gray-950">4.9</span>
-                                </div>
-                            </div>
-                            <div class="md:mb-5 md:mt-2">
-                                <div class="md:w-14 w-10 h-1 relative bottom-1 md:bottom-3 md:bg-blue-700 bg-white">
-                                </div>
-                            </div>
-                            <div class="md:mb-5 hidden md:block">
-                                <h3 class="md:text-lg font-bold text-base"> - About</h3>
-                                <p class="md:text-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque
-                                    libero quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi
-                                    quisquam doloremque enim velit maxime laudantium. Reprehenderit molestiae minima
-                                    voluptates laboriosam delectus, quam dicta neque aperiam similique maxime voluptate
-                                    alias sit?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque libero
-                                    quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi quisquam
-                                    doloremque enim velit maxime laudantium. Reprehenderit molestiae minima voluptates
-                                    laboriosam delectus, quam dicta neque aperiam similique maxime voluptate alias sit?
-                                </p>
-                            </div>
-                            <div class="md:mt-0 mt-5">
-                                <h3 class="md:text-xl text-sm font-semibold inline-block md:text-blue-600 md:mb-2 mb-4 text-white">
-                                    - Popular</h3> <span class="md:text-xl font-semibold text-sm invisible md:visible">Classes</span>
-                                <div class="flex justify-between gap-3 md:gap-0">
-                                    <div>
-                                        <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End
-                                            Development</span>
-                                    </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By
-                                        Mr.Matthwe Davis</span>
-                                </div>
-                                <div class="flex justify-between gap-3 md:gap-0">
-                                    <div>
-                                        <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End
-                                            Development</span>
-                                    </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By
-                                        Mr.Matthwe Davis</span>
-                                </div>
-                            </div>
-                            <div class="flex justify-end items-center mt-8 invisible md:visible">
-                                <button type="button" class="cursor-pointer text-whitemb-40 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-xl text-base px-5 py-3 md:mb-10 mb-0 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">View
-                                    Details</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 5 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:bg-gray-300 relative">
-                        <div>
-                            <img src="../../storages/school5.jpg" class="institute-imgs md:mt-7 md:ml-5" alt="school5">
-                        </div>
-                        <div class="md:pt-[28px] py-5 px-5 md:pr-10 md:relative institute-infos">
-                            <div class="flex justify-between">
-                                <h1 class="md:text-xl text-base text-white md:text-gray-950 font-semibold">Sample5
-                                    Institute</h1>
-                                <div>
-                                    <ion-icon name="star" class="md:text-2xl text-base md:text-blue-600 text-yellow-300 relative md:top-1 top-0.5"></ion-icon>
-                                    <span class="md:text-xl text-sm relative md:bottom-0 text-white md:text-gray-950">4.9</span>
-                                </div>
-                            </div>
-                            <div class="md:mb-5 md:mt-2">
-                                <div class="md:w-14 w-10 h-1 relative bottom-1 md:bottom-3 md:bg-blue-700 bg-white">
-                                </div>
-                            </div>
-                            <div class="md:mb-5 hidden md:block">
-                                <h3 class="md:text-lg font-bold text-base"> - About</h3>
-                                <p class="md:text-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque
-                                    libero quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi
-                                    quisquam doloremque enim velit maxime laudantium. Reprehenderit molestiae minima
-                                    voluptates laboriosam delectus, quam dicta neque aperiam similique maxime voluptate
-                                    alias sit?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque libero
-                                    quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi quisquam
-                                    doloremque enim velit maxime laudantium. Reprehenderit molestiae minima voluptates
-                                    laboriosam delectus, quam dicta neque aperiam similique maxime voluptate alias sit?
-                                </p>
-                            </div>
-                            <div class="md:mt-0 mt-5">
-                                <h3 class="md:text-xl text-sm font-semibold inline-block md:text-blue-600 md:mb-2 mb-4 text-white">
-                                    - Popular</h3> <span class="md:text-xl font-semibold text-sm invisible md:visible">Classes</span>
-                                <div class="flex justify-between gap-3 md:gap-0">
-                                    <div>
-                                        <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End
-                                            Development</span>
-                                    </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By
-                                        Mr.Matthwe Davis</span>
-                                </div>
-                                <div class="flex justify-between gap-3 md:gap-0">
-                                    <div>
-                                        <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End
-                                            Development</span>
-                                    </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By
-                                        Mr.Matthwe Davis</span>
-                                </div>
-                            </div>
-                            <div class="flex justify-end items-center mt-8 invisible md:visible">
-                                <button type="button" class="cursor-pointer text-whitemb-40 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-xl text-base px-5 py-3 md:mb-10 mb-0 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">View
-                                    Details</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Slider indicators -->
-            <div class="absolute flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-            </div>
-            <!-- Slider controls -->
-            <button type="button" class="absolute md:top-0 -top-6 start-0  flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
-                    </svg>
-                    <span class="sr-only">Previous</span>
-                </span>
-            </button>
-            <button type="button" class="absolute md:top-0 -top-6 end-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
-                    </svg>
-                    <span class="sr-only">Next</span>
-                </span>
-            </button>
-        </div>
-
+    <!-- Start Description Section -->
+    <section class="md:px-56 px-5 md:pt-20 pt-10">
+        <h1 class="md:text-3xl font-semibold md:mb-5 mb-3">Description</h1>
+        <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quae dolorem! Quae culpa ut, perferendis consequuntur reprehenderit nisi esse. Quasi optio nobis consequuntur eius, aliquid incidunt iusto laborum possimus ad porro commodi, officiis deserunt, quia velit quos? Nesciunt, libero doloremque. Autem tempora quas accusantium voluptates, velit dignissimos dolore debitis reiciendis quae minus deleniti modi necessitatibus nesciunt repellendus accusamus sequi beatae dolor eos quis magni officia at. Iusto repellat cumque eos soluta porro amet vitae id voluptatem a consequatur ipsam sequi quo quos ratione laudantium, modi possimus? Voluptatem, tenetur. Esse, corrupti harum corporis commodi tempora ipsam ad, necessitatibus voluptatum exercitationem perspiciatis inventore debitis assumenda voluptatibus eaque eligendi natus reiciendis asperiores laudantium? Fugiat vel voluptas quia officiis aspernatur laborum provident quibusdam doloribus nobis, impedit inventore veniam, quidem quaerat expedita est minima numquam repellat excepturi, voluptate eveniet possimus corporis praesentium eaque! Dignissimos obcaecati minus, voluptatibus laboriosam ad laudantium itaque ullam quaerat vel consequuntur voluptate quidem omnis debitis quod cupiditate cumque asperiores quasi nihil officiis exercitationem, vitae iste eligendi ducimus. Illo cumque corrupti veritatis ducimus porro! Exercitationem dolor ipsum, porro, recusandae incidunt animi itaque illum aspernatur maiores distinctio sit obcaecati quia, eius sint. Accusamus omnis magni quia nulla aliquid obcaecati, molestiae dignissimos perferendis id.</p>
+        <br/>
+        <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quae dolorem! Quae culpa ut, perferendis consequuntur reprehenderit nisi esse. Quasi optio nobis consequuntur eius, aliquid incidunt iusto laborum possimus ad porro commodi, officiis deserunt, quia velit quos? Nesciunt, libero doloremque. Autem tempora quas accusantium voluptates, velit dignissimos dolore debitis reiciendis quae minus deleniti modi necessitatibus nesciunt repellendus accusamus sequi beatae dolor eos quis magni officia at. Iusto repellat cumque eos soluta porro amet vitae id voluptatem a consequatur ipsam sequi quo quos ratione laudantium, modi possimus? Voluptatem, tenetur. Esse, corrupti harum corporis commodi tempora ipsam ad, necessitatibus voluptatum exercitationem perspiciatis inventore debitis assumenda voluptatibus eaque eligendi natus reiciendis asperiores laudantium? Fugiat vel voluptas quia officiis aspernatur laborum provident quibusdam doloribus nobis, impedit inventore veniam, quidem quaerat expedita est minima numquam repellat excepturi, voluptate eveniet possimus corporis praesentium eaque! Dignissimos obcaecati minus, voluptatibus laboriosam ad laudantium itaque ullam quaerat vel consequuntur voluptate quidem omnis debitis quod cupiditate cumque asperiores quasi nihil officiis exercitationem, vitae iste eligendi ducimus. Illo cumque corrupti veritatis ducimus porro! Exercitationem dolor ipsum, porro, recusandae incidunt animi itaque illum aspernatur maiores distinctio sit obcaecati quia, eius sint. Accusamus omnis magni quia nulla aliquid obcaecati, molestiae dignissimos perferendis id.</p>
     </section>
-    <!-- End Our Latest Pick Section -->
+    <!-- End Description Section -->
 
-    <!-- Start About Us Section -->
-    <section class="md:px-72 px-5 pt-10 md:pt-20 bg-gray-200 md:mb-16 mb-6 md:pb-5">
-        <div class="flex justify-center items-center md:mb-4 mb-10">
-            <div class="md:w-14 w-8 h-1 relative md:bottom-2 md:mr-5 mr-2 md:bg-blue-700 bg-blue-700 inline-block rounded-lg">
-            </div>
-            <div class="flex items-start">
-                <span class="md:text-2xl text-xl relative md:bottom-2 font-semibold tracking-wider text-blue-800">About
-                    Us</span>
-            </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div class="col-span-2 relative md:top-0 top-64">
-                <p class="md:text-lg text-base text-center">Welcome to MEP, your trusted partner in education and
-                    professional development. We are dedicated to empowering students and professionals through
-                    high-quality educational programs and resources.</p>
-            </div>
-            <div class="col-span-2 md:grid grid-cols-1 md:grid-cols-2">
-                <div>
-                    <img src="../../storages/Trophy.png" class="w-full relative md:bottom-0 bottom-40" alt="Trophy_S" />
-                </div>
-                <div class="hidden md:block">
-                    <div class="h-full flex justify-center items-center">
+    <!-- Start Student also Enrolled Section -->
+    <section class="md:px-56 px-5 md:py-20 md:pt-20 pt-10">
+        <h1 class="md:text-3xl text-xl font-semibold md:mb-5 mb-3">Student also enrolled</h1>
+        <div class="md:h-[67vh] h-[190vh] overflow-hidden more-less-containers">
+            <div class="border-b-2 md:pb-4 md:mt-4 mt-5">
+                <div class="flex flex-col md:grid md:grid-cols-8 ">
+                    <div class="md:col-span-1 md:block inline">
+                        <img src="./img/class.svg" class="md:h-28 h-24" alt="class-stu-also">
+                    </div>
+                    <div class="md:col-span-4 flex flex-col gap-1.5">
+                        <h3 class="md:text-xl text-base font-semibold md:mt-0 md:mb-0 mt-5 mb-3">JavaScript - The Complete Guide 2024 (Beginner + Advanced) </h3>
                         <div>
-                            <h1 class="md:text-2xl text-xl font-semibold">Helping people grow their careers,</h1>
-                            <h2 class="md:text-2xl text-blue-700 font-bold md:my-3">Everyday</h2>
-                            <p class="md:text-lg text-sm">Our platform offers a diverse range of courses and programs
-                                tailored to meet the needs of students and professionals alike. Whether you are looking
-                                to advance your career, acquire new skills, or explore new fields, MEP is here to guide
-                                you every step of the way.</p>
+                            <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
+                        </div>
+                        <div>
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
+                        </div>
+                        <div>
+                            <span class="text-red-800">Enrollment Deadline - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1">
+                        <span class="md:text-lg font-bold md:mr-1">4.5</span>
+                        <ion-icon name="star" class="text-yellow-600 md:text-lg relative top-0.5"></ion-icon>
+                    </div>
+                    <div class="md:col-span-1">
+                        <ion-icon name="people" class="md:text-xl"></ion-icon>
+                        <span class="md:text-xl relative md:bottom-[3px]">1,521</span>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
+                            <p class="md:text-xl text-base font-bold">150,000 MMK</p>
+                            <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
+                            </div>
+                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-b-2 md:pb-4 md:mt-4 mt-5">
+                <div class="flex flex-col md:grid md:grid-cols-8 ">
+                    <div class="md:col-span-1 md:block inline">
+                        <img src="./img/class.svg" class="md:h-28 h-24" alt="class-stu-also">
+                    </div>
+                    <div class="md:col-span-4 flex flex-col gap-1.5">
+                        <h3 class="md:text-xl text-base font-semibold md:mt-0 md:mb-0 mt-5 mb-3">JavaScript - The Complete Guide 2024 (Beginner + Advanced) </h3>
+                        <div>
+                            <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
+                        </div>
+                        <div>
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
+                        </div>
+                        <div>
+                            <span class="text-red-800">Enrollment Deadline - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1">
+                        <span class="md:text-lg font-bold md:mr-1">4.5</span>
+                        <ion-icon name="star" class="text-yellow-600 md:text-lg relative top-0.5"></ion-icon>
+                    </div>
+                    <div class="md:col-span-1">
+                        <ion-icon name="people" class="md:text-xl"></ion-icon>
+                        <span class="md:text-xl relative md:bottom-[3px]">1,521</span>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
+                            <p class="md:text-xl text-base font-bold">150,000 MMK</p>
+                            <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
+                            </div>
+                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-b-2 md:pb-4 md:mt-4 mt-5">
+                <div class="flex flex-col md:grid md:grid-cols-8 ">
+                    <div class="md:col-span-1 md:block inline">
+                        <img src="./img/class.svg" class="md:h-28 h-24" alt="class-stu-also">
+                    </div>
+                    <div class="md:col-span-4 flex flex-col gap-1.5">
+                        <h3 class="md:text-xl text-base font-semibold md:mt-0 md:mb-0 mt-5 mb-3">JavaScript - The Complete Guide 2024 (Beginner + Advanced) </h3>
+                        <div>
+                            <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
+                        </div>
+                        <div>
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
+                        </div>
+                        <div>
+                            <span class="text-red-800">Enrollment Deadline - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1">
+                        <span class="md:text-lg font-bold md:mr-1">4.5</span>
+                        <ion-icon name="star" class="text-yellow-600 md:text-lg relative top-0.5"></ion-icon>
+                    </div>
+                    <div class="md:col-span-1">
+                        <ion-icon name="people" class="md:text-xl"></ion-icon>
+                        <span class="md:text-xl relative md:bottom-[3px]">1,521</span>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
+                            <p class="md:text-xl text-base font-bold">150,000 MMK</p>
+                            <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
+                            </div>
+                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-b-2 md:pb-4 md:mt-4 mt-5">
+                <div class="flex flex-col md:grid md:grid-cols-8 ">
+                    <div class="md:col-span-1 md:block inline">
+                        <img src="./img/class.svg" class="md:h-28 h-24" alt="class-stu-also">
+                    </div>
+                    <div class="md:col-span-4 flex flex-col gap-1.5">
+                        <h3 class="md:text-xl text-base font-semibold md:mt-0 md:mb-0 mt-5 mb-3">JavaScript - The Complete Guide 2024 (Beginner + Advanced) </h3>
+                        <div>
+                            <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
+                        </div>
+                        <div>
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
+                        </div>
+                        <div>
+                            <span class="text-red-800">Enrollment Deadline - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1">
+                        <span class="md:text-lg font-bold md:mr-1">4.5</span>
+                        <ion-icon name="star" class="text-yellow-600 md:text-lg relative top-0.5"></ion-icon>
+                    </div>
+                    <div class="md:col-span-1">
+                        <ion-icon name="people" class="md:text-xl"></ion-icon>
+                        <span class="md:text-xl relative md:bottom-[3px]">1,521</span>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
+                            <p class="md:text-xl text-base font-bold">150,000 MMK</p>
+                            <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
+                            </div>
+                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-b-2 md:pb-4 md:mt-4 mt-5">
+                <div class="flex flex-col md:grid md:grid-cols-8 ">
+                    <div class="md:col-span-1 md:block inline">
+                        <img src="./img/class.svg" class="md:h-28 h-24" alt="class-stu-also">
+                    </div>
+                    <div class="md:col-span-4 flex flex-col gap-1.5">
+                        <h3 class="md:text-xl text-base font-semibold md:mt-0 md:mb-0 mt-5 mb-3">JavaScript - The Complete Guide 2024 (Beginner + Advanced) </h3>
+                        <div>
+                            <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
+                        </div>
+                        <div>
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
+                        </div>
+                        <div>
+                            <span class="text-red-800">Enrollment Deadline - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1">
+                        <span class="md:text-lg font-bold md:mr-1">4.5</span>
+                        <ion-icon name="star" class="text-yellow-600 md:text-lg relative top-0.5"></ion-icon>
+                    </div>
+                    <div class="md:col-span-1">
+                        <ion-icon name="people" class="md:text-xl"></ion-icon>
+                        <span class="md:text-xl relative md:bottom-[3px]">1,521</span>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
+                            <p class="md:text-xl text-base font-bold">150,000 MMK</p>
+                            <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
+                            </div>
+                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-b-2 md:pb-4 md:mt-4 mt-5">
+                <div class="flex flex-col md:grid md:grid-cols-8 ">
+                    <div class="md:col-span-1 md:block inline">
+                        <img src="./img/class.svg" class="md:h-28 h-24" alt="class-stu-also">
+                    </div>
+                    <div class="md:col-span-4 flex flex-col gap-1.5">
+                        <h3 class="md:text-xl text-base font-semibold md:mt-0 md:mb-0 mt-5 mb-3">JavaScript - The Complete Guide 2024 (Beginner + Advanced) </h3>
+                        <div>
+                            <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
+                        </div>
+                        <div>
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
+                        </div>
+                        <div>
+                            <span class="text-red-800">Enrollment Deadline - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1">
+                        <span class="md:text-lg font-bold md:mr-1">4.5</span>
+                        <ion-icon name="star" class="text-yellow-600 md:text-lg relative top-0.5"></ion-icon>
+                    </div>
+                    <div class="md:col-span-1">
+                        <ion-icon name="people" class="md:text-xl"></ion-icon>
+                        <span class="md:text-xl relative md:bottom-[3px]">1,521</span>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
+                            <p class="md:text-xl text-base font-bold">150,000 MMK</p>
+                            <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
+                            </div>
+                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-b-2 md:pb-4 md:mt-4 mt-5">
+                <div class="flex flex-col md:grid md:grid-cols-8 ">
+                    <div class="md:col-span-1 md:block inline">
+                        <img src="./img/class.svg" class="md:h-28 h-24" alt="class-stu-also">
+                    </div>
+                    <div class="md:col-span-4 flex flex-col gap-1.5">
+                        <h3 class="md:text-xl text-base font-semibold md:mt-0 md:mb-0 mt-5 mb-3">JavaScript - The Complete Guide 2024 (Beginner + Advanced) </h3>
+                        <div>
+                            <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
+                        </div>
+                        <div>
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
+                        </div>
+                        <div>
+                            <span class="text-red-800">Enrollment Deadline - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1">
+                        <span class="md:text-lg font-bold md:mr-1">4.5</span>
+                        <ion-icon name="star" class="text-yellow-600 md:text-lg relative top-0.5"></ion-icon>
+                    </div>
+                    <div class="md:col-span-1">
+                        <ion-icon name="people" class="md:text-xl"></ion-icon>
+                        <span class="md:text-xl relative md:bottom-[3px]">1,521</span>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
+                            <p class="md:text-xl text-base font-bold">150,000 MMK</p>
+                            <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
+                            </div>
+                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-b-2 md:pb-4 md:mt-4 mt-5">
+                <div class="flex flex-col md:grid md:grid-cols-8 ">
+                    <div class="md:col-span-1 md:block inline">
+                        <img src="./img/class.svg" class="md:h-28 h-24" alt="class-stu-also">
+                    </div>
+                    <div class="md:col-span-4 flex flex-col gap-1.5">
+                        <h3 class="md:text-xl text-base font-semibold md:mt-0 md:mb-0 mt-5 mb-3">JavaScript - The Complete Guide 2024 (Beginner + Advanced) </h3>
+                        <div>
+                            <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
+                        </div>
+                        <div>
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
+                        </div>
+                        <div>
+                            <span class="text-red-800">Enrollment Deadline - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1">
+                        <span class="md:text-lg font-bold md:mr-1">4.5</span>
+                        <ion-icon name="star" class="text-yellow-600 md:text-lg relative top-0.5"></ion-icon>
+                    </div>
+                    <div class="md:col-span-1">
+                        <ion-icon name="people" class="md:text-xl"></ion-icon>
+                        <span class="md:text-xl relative md:bottom-[3px]">1,521</span>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
+                            <p class="md:text-xl text-base font-bold">150,000 MMK</p>
+                            <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
+                            </div>
+                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-b-2 md:pb-4 md:mt-4 mt-5">
+                <div class="flex flex-col md:grid md:grid-cols-8 ">
+                    <div class="md:col-span-1 md:block inline">
+                        <img src="./img/class.svg" class="md:h-28 h-24" alt="class-stu-also">
+                    </div>
+                    <div class="md:col-span-4 flex flex-col gap-1.5">
+                        <h3 class="md:text-xl text-base font-semibold md:mt-0 md:mb-0 mt-5 mb-3">JavaScript - The Complete Guide 2024 (Beginner + Advanced) </h3>
+                        <div>
+                            <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
+                        </div>
+                        <div>
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
+                        </div>
+                        <div>
+                            <span class="text-red-800">Enrollment Deadline - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1">
+                        <span class="md:text-lg font-bold md:mr-1">4.5</span>
+                        <ion-icon name="star" class="text-yellow-600 md:text-lg relative top-0.5"></ion-icon>
+                    </div>
+                    <div class="md:col-span-1">
+                        <ion-icon name="people" class="md:text-xl"></ion-icon>
+                        <span class="md:text-xl relative md:bottom-[3px]">1,521</span>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
+                            <p class="md:text-xl text-base font-bold">150,000 MMK</p>
+                            <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
+                            </div>
+                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-b-2 md:pb-4 md:mt-4 mt-5">
+                <div class="flex flex-col md:grid md:grid-cols-8 ">
+                    <div class="md:col-span-1 md:block inline">
+                        <img src="./img/class.svg" class="md:h-28 h-24" alt="class-stu-also">
+                    </div>
+                    <div class="md:col-span-4 flex flex-col gap-1.5">
+                        <h3 class="md:text-xl text-base font-semibold md:mt-0 md:mb-0 mt-5 mb-3">JavaScript - The Complete Guide 2024 (Beginner + Advanced) </h3>
+                        <div>
+                            <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
+                        </div>
+                        <div>
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
+                        </div>
+                        <div>
+                            <span class="text-red-800">Enrollment Deadline - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-1">
+                        <span class="md:text-lg font-bold md:mr-1">4.5</span>
+                        <ion-icon name="star" class="text-yellow-600 md:text-lg relative top-0.5"></ion-icon>
+                    </div>
+                    <div class="md:col-span-1">
+                        <ion-icon name="people" class="md:text-xl"></ion-icon>
+                        <span class="md:text-xl relative md:bottom-[3px]">1,521</span>
+                    </div>
+                    <div class="md:col-span-1">
+                        <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
+                            <p class="md:text-xl text-base font-bold">150,000 MMK</p>
+                            <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
+                            </div>
+                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-    </section>
-    <!-- End About Us Section -->
-
-    <!-- Start Service Section -->
-    <section class="md:px-32 px-5 md:mx-32 mx-5 pt-10 md:pb-24 pb-10 md:pt-20 bg-gradient-to-t from-gray-50 to-gray-400 rounded-lg">
-        <h1 class="md:text-2xl text-xl text-center font-semibold md:mb-5">Reliable & High-Quality</h1>
-        <div class="flex justify-center items-center md:mb-14 mb-10 ">
-            <div class="md:w-14 w-8 h-1 relative md:bottom-2 md:mr-5 mr-2 md:bg-blue-700 bg-blue-700 inline-block rounded-lg">
-            </div>
-            <div class="flex items-start">
-                <span class="md:text-2xl text-xl relative md:bottom-2  font-semibold tracking-wider text-blue-800">Services</span>
-            </div>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 md:gap-28 gap-5">
-            <div class="w-full md:h-[50vh] h-[23vh]  hover:cursor-pointer md:hover:scale-105 hover:scale-105 transition-transform duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-xl relative">
-                <div class="flex justify-center items-center md:mt-8 mt-4">
-                    <div class="md:w-24 md:h-24 w-12 h-12 rounded-full bg-gray-400 flex justify-center items-center">
-                        <svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256">
-                            <path fill="currentColor" d="m226.53 56.41l-96-32a8 8 0 0 0-5.06 0l-96 32A8 8 0 0 0 24 64v80a8 8 0 0 0 16 0V75.1l33.59 11.19a64 64 0 0 0 20.65 88.05c-18 7.06-33.56 19.83-44.94 37.29a8 8 0 1 0 13.4 8.74C77.77 197.25 101.57 184 128 184s50.23 13.25 65.3 36.37a8 8 0 0 0 13.4-8.74c-11.38-17.46-27-30.23-44.94-37.29a64 64 0 0 0 20.65-88l44.12-14.7a8 8 0 0 0 0-15.18ZM176 120a48 48 0 1 1-86.65-28.45l36.12 12a8 8 0 0 0 5.06 0l36.12-12A47.9 47.9 0 0 1 176 120" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="md:my-10 my-3">
-                    <h2 class="text-center md:text-xl text-sm font-semibold opacity-80">Professional Classes</h2>
-                </div>
-                <div class="md:px-14 px-4">
-                    <p class="text-center md:text-base text-[10px]">Enhance your skills and knowledge with our
-                        expert-led professional courses in IT, Business, and Language Studies etc...</p>
-                </div>
-                <div>
-                    <img src="../../storages/wavy-bottom.png" class="w-full absolute left-0 bottom-0 rounded-bl-xl rounded-br-xl" alt="wave-img" />
-                </div>
-            </div>
-
-            <div class="w-full md:h-[50vh] h-[23vh]  hover:cursor-pointer md:hover:scale-105 transition-transform duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-xl relative">
-                <div class="flex justify-center items-center md:mt-8 mt-4">
-                    <div class="md:w-24 md:h-24 w-12 h-12 rounded-full bg-gray-400 flex justify-center items-center">
-                        <svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256">
-                            <path fill="currentColor" d="m226.53 56.41l-96-32a8 8 0 0 0-5.06 0l-96 32A8 8 0 0 0 24 64v80a8 8 0 0 0 16 0V75.1l33.59 11.19a64 64 0 0 0 20.65 88.05c-18 7.06-33.56 19.83-44.94 37.29a8 8 0 1 0 13.4 8.74C77.77 197.25 101.57 184 128 184s50.23 13.25 65.3 36.37a8 8 0 0 0 13.4-8.74c-11.38-17.46-27-30.23-44.94-37.29a64 64 0 0 0 20.65-88l44.12-14.7a8 8 0 0 0 0-15.18ZM176 120a48 48 0 1 1-86.65-28.45l36.12 12a8 8 0 0 0 5.06 0l36.12-12A47.9 47.9 0 0 1 176 120" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="md:my-10 my-3">
-                    <h2 class="text-center md:text-xl text-sm font-semibold opacity-80">Workshops & Seminars</h2>
-                </div>
-                <div class="md:px-14 px-4">
-                    <p class="text-center md:text-base text-[10px]">Participate in interactive workshops and seminars
-                        led by industry experts to stay updated with the latest trends and best practices.</p>
-                </div>
-                <div>
-                    <img src="../../storages/wavy-bottom.png" class="w-full absolute left-0 bottom-0 rounded-bl-xl rounded-br-xl" alt="wave-img" />
-                </div>
-            </div>
-
-            <div class="w-full md:h-[50vh] h-[23vh]  hover:cursor-pointer md:hover:scale-105 hover:scale-105 transition-transform duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-xl relative">
-                <div class="flex justify-center items-center md:mt-8 mt-4">
-                    <div class="md:w-24 md:h-24 w-12 h-12 rounded-full bg-gray-400 flex justify-center items-center">
-                        <svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256">
-                            <path fill="currentColor" d="m226.53 56.41l-96-32a8 8 0 0 0-5.06 0l-96 32A8 8 0 0 0 24 64v80a8 8 0 0 0 16 0V75.1l33.59 11.19a64 64 0 0 0 20.65 88.05c-18 7.06-33.56 19.83-44.94 37.29a8 8 0 1 0 13.4 8.74C77.77 197.25 101.57 184 128 184s50.23 13.25 65.3 36.37a8 8 0 0 0 13.4-8.74c-11.38-17.46-27-30.23-44.94-37.29a64 64 0 0 0 20.65-88l44.12-14.7a8 8 0 0 0 0-15.18ZM176 120a48 48 0 1 1-86.65-28.45l36.12 12a8 8 0 0 0 5.06 0l36.12-12A47.9 47.9 0 0 1 176 120" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="md:my-10 my-3">
-                    <h2 class="text-center md:text-xl text-sm font-semibold opacity-80">24/7 Support</h2>
-                </div>
-                <div class="md:px-14 px-4">
-                    <p class="text-center md:text-base text-[10px]">Access round-the-clock assistance from our dedicated
-                        support team. Whether you need technical help, we’re here to help anytime.</p>
-                </div>
-                <div>
-                    <img src="../../storages/wavy-bottom.png" class="w-full absolute left-0 bottom-0 rounded-bl-xl rounded-br-xl" alt="wave-img" />
-                </div>
-            </div>
-
-            <div class="w-full md:h-[50vh] h-[23vh]  hover:cursor-pointer md:hover:scale-105 hover:scale-105 transition-transform duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-xl relative">
-                <div class="flex justify-center items-center md:mt-8 mt-4">
-                    <div class="md:w-24 md:h-24 w-12 h-12 rounded-full bg-gray-400 flex justify-center items-center">
-                        <svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256">
-                            <path fill="currentColor" d="m226.53 56.41l-96-32a8 8 0 0 0-5.06 0l-96 32A8 8 0 0 0 24 64v80a8 8 0 0 0 16 0V75.1l33.59 11.19a64 64 0 0 0 20.65 88.05c-18 7.06-33.56 19.83-44.94 37.29a8 8 0 1 0 13.4 8.74C77.77 197.25 101.57 184 128 184s50.23 13.25 65.3 36.37a8 8 0 0 0 13.4-8.74c-11.38-17.46-27-30.23-44.94-37.29a64 64 0 0 0 20.65-88l44.12-14.7a8 8 0 0 0 0-15.18ZM176 120a48 48 0 1 1-86.65-28.45l36.12 12a8 8 0 0 0 5.06 0l36.12-12A47.9 47.9 0 0 1 176 120" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="md:my-10 my-3">
-                    <h2 class="text-center md:text-xl text-sm font-semibold opacity-80">Media Promotion</h2>
-                </div>
-                <div class="md:px-14 px-4">
-                    <p class="text-center md:text-base text-[10px]">Boost your visibility with our media promotion
-                        services. Leverage our platform to reach a wider audience and enhance your brand's presence.</p>
-                </div>
-                <div>
-                    <img src="../../storages/wavy-bottom.png" class="w-full absolute left-0 bottom-0 rounded-bl-xl rounded-br-xl" alt="wave-img" />
-                </div>
-            </div>
-            <div class="w-full md:h-[50vh] h-[23vh] hover:cursor-pointer md:hover:scale-105 hover:scale-105 transition-transform duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-xl relative">
-                <div class="flex justify-center items-center md:mt-8 mt-4">
-                    <div class="md:w-24 md:h-24 w-12 h-12 rounded-full bg-gray-400 flex justify-center items-center">
-                        <svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256">
-                            <path fill="currentColor" d="m226.53 56.41l-96-32a8 8 0 0 0-5.06 0l-96 32A8 8 0 0 0 24 64v80a8 8 0 0 0 16 0V75.1l33.59 11.19a64 64 0 0 0 20.65 88.05c-18 7.06-33.56 19.83-44.94 37.29a8 8 0 1 0 13.4 8.74C77.77 197.25 101.57 184 128 184s50.23 13.25 65.3 36.37a8 8 0 0 0 13.4-8.74c-11.38-17.46-27-30.23-44.94-37.29a64 64 0 0 0 20.65-88l44.12-14.7a8 8 0 0 0 0-15.18ZM176 120a48 48 0 1 1-86.65-28.45l36.12 12a8 8 0 0 0 5.06 0l36.12-12A47.9 47.9 0 0 1 176 120" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="md:my-10 my-3">
-                    <h2 class="text-center md:text-xl text-sm font-semibold opacity-80">Report & Analysis</h2>
-                </div>
-                <div class="md:px-14 px-4">
-                    <p class="text-center md:text-base text-[10px]">Gain valuable insights with our detailed reports and
-                        analysis. Track your progress make data-driven decisions to optimize your circumstances.</p>
-                </div>
-                <div>
-                    <img src="../../storages/wavy-bottom.png" class="w-full absolute left-0 bottom-0 rounded-bl-xl rounded-br-xl" alt="wave-img" />
-                </div>
-            </div>
-
-            <div class="w-full md:h-[50vh] h-[23vh] hover:cursor-pointer md:hover:scale-105 hover:scale-105 transition-transform duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-xl relative">
-                <div class="flex justify-center items-center md:mt-8 mt-4">
-                    <div class="md:w-24 md:h-24 w-12 h-12 rounded-full bg-gray-400 flex justify-center items-center">
-                        <svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256">
-                            <path fill="currentColor" d="m226.53 56.41l-96-32a8 8 0 0 0-5.06 0l-96 32A8 8 0 0 0 24 64v80a8 8 0 0 0 16 0V75.1l33.59 11.19a64 64 0 0 0 20.65 88.05c-18 7.06-33.56 19.83-44.94 37.29a8 8 0 1 0 13.4 8.74C77.77 197.25 101.57 184 128 184s50.23 13.25 65.3 36.37a8 8 0 0 0 13.4-8.74c-11.38-17.46-27-30.23-44.94-37.29a64 64 0 0 0 20.65-88l44.12-14.7a8 8 0 0 0 0-15.18ZM176 120a48 48 0 1 1-86.65-28.45l36.12 12a8 8 0 0 0 5.06 0l36.12-12A47.9 47.9 0 0 1 176 120" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="md:my-10 my-3">
-                    <h2 class="text-center md:text-xl text-sm font-semibold opacity-80">Easy Payment</h2>
-                </div>
-                <div class="md:px-14 px-4">
-                    <p class="text-center md:text-base text-[10px]">Enjoy hassle-free transactions with our easy payment
-                        system. Use coin payments to conveniently manage and pay for your promotion of classes.</p>
-                </div>
-                <div>
-                    <img src="../../storages/wavy-bottom.png" class="w-full absolute left-0 bottom-0 rounded-bl-xl rounded-br-xl" alt="wave-img" />
-                </div>
-            </div>
-        </div>
-
-    </section>
-    <!-- End Service Section -->
-
-    <!-- Start Client Love Section -->
-    <section class="md:px-32 px-5 md:mx-0 mx-5 pt-10 md:pb-24 pb-10 md:pt-20 bg-indigo-500 rounded-lg md:h-[73vh]">
-        <div class="grid grid-cols-1 md:grid-cols-2 md:gap-20 gap-10 h-full">
-            <div class="flex flex-col justify-center items-start">
-                <h1 class="md:text-2xl text-xl font-semibold text-gray-100">Clients Love</h1>
-                <p class="md:my-6 my-5 md:text-lg text-sm text-gray-300">Hear from our satisfied clients who have
-                    benefited from our services. Their testimonials and reviews highlight the positive impact our
-                    platform has had on their careers and personal growth.</p>
-                <button type="button" class="text-gray-800 md:mt-0 mt-2 bg-gray-200 hover:bg-indigo-900 hover:text-white font-medium rounded-lg text-lg md:text-lg px-7 md:px-10 py-3 me-2 mb-2">Contact
-                    Us</button>
-            </div>
-            <div class="flex flex-col gap-7">
-                <div class="flex justify-center items-center">
-                    <div class="flex flex-col items-center">
-                        <div class="w-[90%] h-auto bg-gray-50 rounded-lg grid md:grid-cols-4 grid-cols-3 md:px-0 px-2">
-                            <div class="md:col-span-1 col-span-3 flex md:flex-col items-center justify-center">
-                                <img src="../../storages/clients-love1.png" class="w-[60px] md:my-2" alt="client-love1">
-                                <h1 class="md:text-base md:mx-0 mx-3 font-semibold">XYZ Institute</h1>
-                                <div class="flex gap-1 md:mb-2 relative md:bottom-0 bottom-1">
-                                    <ion-icon name="star" class="md:text-lg text-yellow-500"></ion-icon>
-                                    <ion-icon name="star" class="md:text-lg text-yellow-500"></ion-icon>
-                                    <ion-icon name="star" class="md:text-lg text-yellow-500"></ion-icon>
-                                    <ion-icon name="star" class="md:text-lg text-yellow-500"></ion-icon>
-                                    <ion-icon name="star-half" class="md:text-lg text-yellow-500"></ion-icon>
-                                </div>
-                            </div>
-                            <div class="md:col-start-2 col-start-1 md:col-span-3 col-span-4 relative md:my-0 my-2">
-                                <svg class="md:w-8 md:h-8 text-gray-700 absolute left-0 top-0" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="m10 7l-2 4h3v6H5v-6l2-4zm8 0l-2 4h3v6h-6v-6l2-4z" />
-                                </svg>
-                                <div class="flex justify-center items-center h-full md:px-20 px-4">
-                                    <p class="md:text-base text-sm md:text-left text-center">The exposure we've gained
-                                        through MEP's media promotion services has been phenomenal. Our classes are
-                                        always full!</p>
-                                </div>
-                                <svg class="md:w-8 md:h-8 text-gray-700 absolute right-0 bottom-0" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M14 17h3l2-4V7h-6v6h3M6 17h3l2-4V7H5v6h3z" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex justify-center items-center">
-                    <div class="flex flex-col items-center">
-                        <div class="w-[100%] h-auto bg-gray-50 rounded-lg grid md:grid-cols-4 grid-cols-3 md:px-0 px-2">
-                            <div class="md:col-span-1 col-span-3 flex md:flex-col items-center justify-center">
-                                <img src="../../storages/profile1.svg" class="w-[60px] md:my-2 my-2" alt="profile1">
-                                <h1 class="md:text-base md:mx-0 mx-3 font-semibold">Mr. Matthwe Davis</h1>
-                            </div>
-                            <div class="md:col-start-2 col-start-1 md:col-span-3 col-span-4 relative md:my-0 my-2">
-                                <svg class="md:w-8 md:h-8 text-gray-700 absolute left-0 top-0" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="m10 7l-2 4h3v6H5v-6l2-4zm8 0l-2 4h3v6h-6v-6l2-4z" />
-                                </svg>
-                                <div class="flex justify-center items-center h-full md:px-20 px-4">
-                                    <p class="md:text-base text-sm md:text-left text-center ">The exposure we've gained
-                                        through MEP's media promotion services has been phenomenal. Our classes are
-                                        always full!</p>
-                                </div>
-                                <svg class="md:w-8 md:h-8 text-gray-700 absolute right-0 bottom-0" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M14 17h3l2-4V7h-6v6h3M6 17h3l2-4V7H5v6h3z" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="flex justify-center items-center md:mb-0 mb-1">
-                    <div class="flex flex-col items-center">
-                        <div class="w-[90%] h-auto bg-gray-50 rounded-lg grid md:grid-cols-4 grid-cols-3 md:px-0 px-2">
-                            <div class="md:col-span-1 col-span-3 flex md:flex-col items-center justify-center">
-                                <img src="../../storages/clients-love1.png" class="w-[60px] md:my-2" alt="client-love2">
-                                <h1 class="md:text-base md:mx-0 mx-3 font-semibold">XYZ Institute</h1>
-                                <div class="flex gap-1 md:mb-2 relative md:bottom-0 bottom-1">
-                                    <ion-icon name="star" class="md:text-lg text-yellow-500"></ion-icon>
-                                    <ion-icon name="star" class="md:text-lg text-yellow-500"></ion-icon>
-                                    <ion-icon name="star" class="md:text-lg text-yellow-500"></ion-icon>
-                                    <ion-icon name="star" class="md:text-lg text-yellow-500"></ion-icon>
-                                    <ion-icon name="star-half" class="md:text-lg text-yellow-500"></ion-icon>
-                                </div>
-                            </div>
-                            <div class="md:col-start-2 col-start-1 md:col-span-3 col-span-4 relative md:my-0 my-2">
-                                <svg class="md:w-8 md:h-8 text-gray-700 absolute left-0 top-0" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="m10 7l-2 4h3v6H5v-6l2-4zm8 0l-2 4h3v6h-6v-6l2-4z" />
-                                </svg>
-                                <div class="flex justify-center items-center h-full md:px-20 px-4">
-                                    <p class="md:text-base text-sm md:text-left text-center ">The exposure we've gained
-                                        through MEP's media promotion services has been phenomenal. Our classes are
-                                        always full!</p>
-                                </div>
-                                <svg class="md:w-8 md:h-8 text-gray-700 absolute right-0 bottom-0" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M14 17h3l2-4V7h-6v6h3M6 17h3l2-4V7H5v6h3z" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div id="more-less-ctrl" class="border-2 w-full h-14 md:mt-5 bg-transparent hover:bg-indigo-500 hover:text-white flex justify-center items-center space-x-4 cursor-pointer">
+            <span class="show-moreless-text">Show more</span>
+            <ion-icon name="chevron-up-outline" class="text-xl show-icons"></ion-icon>
         </div>
     </section>
-    <!-- End Client Love Section -->
+    <!-- End Student also Enrolled Section -->
 
-    <!-- Start Plan & Pricing Section -->
-    <section class="pricing-shows md:mx-32 md:mt-20 mt-12 md:pb-16 pb-8 relative h-full overflow-hidden">
-        <div>
-            <div class="flex justify-center items-center md:mb-16 mb-8">
-                <div>
-                    <span class="md:text-2xl text-xl text-center font-semibold md:mb-5">Plan & Pricing for</span>
-                    <button type="button" id="personal-dropdown" class="relative text-transparent md:ml-3 font-semibold underline md:text-2xl text-xl bg-gradient-to-r from-blue-600 to-cyan-950 bg-clip-text" data-dropdown-toggle="dropdown-menu" aria-hidden="true">Personal
-                        <ion-icon name="chevron-down-outline" class="text-blue-800 relative md:top-1.5 top-1"></ion-icon>
-                        <div class="md:w-[75%] w-[75%] h-0.5 bg-blue-700"></div>
-                    </button>
-                </div>
-                <!-- Dropdown Personal -->
-                <div id="dropdown-menu" class="z-10 hidden rounded-lg shadow w-44 bg-gray-200">
-                    <ul class="py-2 text-sm text-gray-700">
-                        <li>
-                            <a href="javascript:void(0);" class="block px-4 py-2 md:text-lg hover:text-blue-600">User</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="block px-4 py-2 md:text-lg hover:text-blue-600">Institute</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Start Institute Infomation Section -->
+    <section class="md:px-56 px-5 md:pt-20 pt-10 border-b-2 md:pb-20">
+        <h1 class="md:text-2xl text-xl font-semibold md:mb-5 mb-3">Institute Information</h1>
+        <div class="flex flex-wrap">
+            <img src="./img/event.jpg" class="md:mr-10 md:mb-5 mb-5 md:w-auto w-full" alt="institute info">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis ducimus aperiam, ad totam dolores velit fugiat ratione, fuga perferendis assumenda, exercitationem corrupti itaque laboriosam repudiandae officia nesciunt. Explicabo voluptatem atque asperiores laborum sapiente dolor laboriosam quisquam expedita velit sit sed quibusdam dignissimos tempore, et nostrum autem. Tenetur illum omnis quae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio numquam dolorem similique dolores odio perferendis, at in? Aspernatur minima accusantium obcaecati voluptate similique, sequi quis dolores laboriosam! Similique quisquam sequi harum tenetur incidunt porro commodi praesentium provident ratione? Vero deserunt nam dolorum perferendis a autem qui illum doloremque! Beatae, corrupti eligendi autem accusantium magni asperiores non exercitationem quisquam dolorem aliquid dicta voluptatum laborum? Quisquam nesciunt accusamus dolorem voluptatem commodi recusandae, fugiat quod minima rem, facere aut asperiores dolores sequi tempora explicabo itaque amet quos possimus reiciendis molestiae maiores? Cupiditate animi, in sint doloremque iure nam quam error deserunt aliquid magni?</p>
         </div>
-        <div class="swiper-container w-full py-[50px]">
-            <div class="swiper-wrapper md:flex md:justify-center md:items-center md:gap-11">
-                <!-- pricing card 1 -->
-                <div class="swiper-slide bg-center b    g-cover w-[300px] md:w-[450px] h-auto md:h-auto">
-                    <div class="pricing-box w-full h-full">
-                        <div class="w-full md:h-[60vh] h-[50vh] rounded-xl border-2 border-gray-300 border-t-0 shadow-lg relative swiper-slide">
-                            <div class="flex justify-center items-center md:mt-8 mt-4 absolute md:-top-24 -top-14 left-1/2 -translate-x-1/2">
-                                <div class="md:w-80 md:h-24 w-60 h-20 rounded-xl bg-indigo-800 flex flex-col justify-center items-center shadow-lg">
-                                    <p class="text-gray-400 md:text-base text-sm">Basic</p>
-                                    <h1 class="text-white font-semibold md:text-2xl text-xl">Free</h1>
-                                    <small class="text-gray-200 text-xs">Free To Use</small>
-                                </div>
-                            </div>
-                            <div class="flex justify-start md:px-16 md:mt-3 md:pt-14 pt-14 px-10">
-                                <ul class="space-y-4 text-left text-gray-800 flex flex-col gap-2">
-                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
-                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                                        </svg>
-                                        <span>Can search and view info of institute and class</span>
-                                    </li>
-                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
-                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                                        </svg>
-                                        <span>Get 3 times consultations in one month</span>
-                                    </li>
-                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
-                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                                        </svg>
-                                        <span>Community chat</span>
-                                    </li>
-                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
-                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                                        </svg>
-                                        <span>Event (For Free)</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
-                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2">Get
-                                    started</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- pricing card 2 -->
-                <div class="swiper-slide bg-center bg-cover w-[300px] md:w-[450px] h-auto md:h-auto">
-                    <div class="pricing-box w-full h-full">
-                        <div class="w-full md:h-[60vh] h-[50vh] rounded-xl border-2 border-gray-300 border-t-0 shadow-lg relative swiper-slide">
-                            <div class="flex justify-center items-center md:mt-8 mt-4 absolute md:-top-24 -top-14 left-1/2 -translate-x-1/2">
-                                <div class="md:w-80 md:h-24 w-60 h-20 rounded-xl bg-indigo-800 flex flex-col justify-center items-center shadow-lg">
-                                    <p class="text-gray-400 md:text-base text-sm">Pro</p>
-                                    <h1 class="text-white font-semibold md:text-2xl text-xl">500,00 MMK</h1>
-                                    <small class="text-gray-200 text-xs">One Time Payment</small>
-                                </div>
-                            </div>
-                            <div class="flex justify-start md:px-16 md:mt-3 md:pt-14 pt-14 px-10">
-                                <ul class="space-y-4 text-left text-gray-800 flex flex-col gap-2">
-                                    <p class="md:pl-6">Everything in Basic and :</p>
-                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
-                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                                        </svg>
-                                        <span>Receive 1000 point each month</span>
-                                    </li>
-                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
-                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                                        </svg>
-                                        <span>Unlimited consultations</span>
-                                    </li>
-                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
-                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                                        </svg>
-                                        <span>Support services</span>
-                                    </li>
-                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
-                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                                        </svg>
-                                        <span>Schedule</span>
-                                    </li>
-                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
-                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                                        </svg>
-                                        <span>Access all events</span>
-                                    </li>
-                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
-                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                                        </svg>
-                                        <span>Coupon codes</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
-                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2">Upgrade
-                                    Pro</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- pricing card 3 -->
-                <div class="swiper-slide bg-center bg-cover w-[300px] md:w-[450px] h-auto md:h-auto">
-                    <div class="pricing-box w-full h-full">
-                        <div class="w-full md:h-[60vh] h-[50vh] rounded-xl border-2 border-gray-300 border-t-0 shadow-lg relative swiper-slide">
-                            <div class="flex justify-center items-center md:mt-8 mt-4 absolute md:-top-24 -top-14 left-1/2 -translate-x-1/2">
-                                <div class="md:w-80 md:h-24 w-60 h-20 rounded-xl bg-indigo-800 flex flex-col justify-center items-center shadow-lg">
-                                    <p class="text-gray-400 md:text-base text-sm">500 Coins</p>
-                                    <h1 class="text-white font-semibold md:text-2xl text-xl">10,000 MMK</h1>
-                                    <small class="text-gray-200 text-xs">Unlimited buy</small>
-                                </div>
-                            </div>
-                            <div class="flex justify-start md:px-16 md:mt-3 md:pt-14 pt-14 px-10">
-                                <ul class="space-y-4 text-left text-gray-800 flex flex-col gap-2">
-                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
-                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                                        </svg>
-                                        <span>Can buy unlimited</span>
-                                    </li>
-                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
-                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                                        </svg>
-                                        <span>Events</span>
-                                    </li>
-                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
-                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                                        </svg>
-                                        <span>Enroll class (Verifed User) </span>
-                                    </li>
-                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
-                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
-                                        </svg>
-                                        <span>Event (For Free)</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
-                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2">Buy
-                                    now</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-pagination block md:hidden"></div>
-        </div>
-    </section>
-    <!-- End Plan & Pricing Section -->
-
-    <!-- Start Compare All Features Section -->
-    <section class="md:mx-32 mx-5 rounded-lg">
-        <div class="md:mb-5 flex justify-center items-center">
-            <p class="relative text-transparent md:ml-3 font-semibold underline md:text-2xl text-lg md:mb-0 mb-3 bg-gradient-to-r from-blue-600 to-cyan-950 bg-clip-text">
-                Compare All Features</p>
-        </div>
-        <div class="flex justify-between relative">
+        <div class="md:mt-8 mt-5">
             <div>
-                <div class="flex flex-col justify-start md:mt-[149px] mt-[2px] md:pt-[0px] pt-[130px] md:gap-[30px] gap-[30px] items-start absolute md:left-10 z-10 md:pl-0 pl-5 md:pr-0 pr-3 md:bg-transparent bg-gray-50">
-                    <div>Class</div>
-                    <div class="md:mt-[1px]">Chat</div>
-                    <div class="md:mt-[2px]">Event</div>
-                    <div class="md:mt-[2px]">Consultations</div>
-                    <div class="md:mt-[2px]">Coupons</div>
-                    <div class="md:mt-[2px]">Slots</div>
-                    <div class="md:mt-[2px]">SEO</div>
-                </div>
-            </div>
-            <div class="relative overflow-x-auto sm:rounded-lg border-2 shadow-lg w-full">
-                <table class="w-full text-sm text-left rtl:text-right text-gray-500 border-3 md:ml-0 ml-24">
-                    <tbody>
-                        <tr class="border-b">
-                            <td class="px-6 py-4 md:w-72 w-0">
-
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center items-center ">
-                                    <div class="flex flex-col justify-center md:w-60 w-40">
-                                        <p class="md:text-sm text-xs text text-indigo-800 text-center">Basic</p>
-                                        <p class="text-center md:text-xl text-sm md:my-1 my-0.5 text-black">Free</p>
-                                        <div class="flex justify-center">
-                                            <button class="md:text-base text-sm bg-transparent hover:bg-indigo-800 duration-100 border text-indigo-800 hover:text-gray-50 border-indigo-800 md:w-40 w-full px-5 py-2 rounded-3xl">Sign
-                                                Up</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center items-center ">
-                                    <div class="flex flex-col justify-center md:w-60 w-40">
-                                        <p class="md:text-sm text-xs text text-gray-900 text-center">Pro</p>
-                                        <div class="flex justify-center items-center">
-                                            <p class="text-center inline-block md:text-xl text-sm md:my-1 my-0.5 text-blue-800 mr-3">
-                                                50,000 Ks</p> <small>MMK/month</small>
-                                        </div>
-                                        <div class="flex justify-center">
-                                            <button class="md:text-base text-sm bg-indigo-600 hover:bg-indigo-800 duration-100 border text-gray-50 hover:text-gray-50 border-indigo-800 md:w-40 w-full px-5 py-2 rounded-3xl">Buy
-                                                Now</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center items-center ">
-                                    <div class="flex flex-col justify-center md:w-60 w-40">
-                                        <p class="md:text-sm text-xs text text-gray-900 text-center">Bussiness</p>
-                                        <div class="flex justify-center items-center">
-                                            <p class="text-center inline-block md:text-xl text-sm md:my-1 my-0.5 text-blue-800 mr-3">
-                                                100,000 Ks</p> <small>MMK/month</small>
-                                        </div>
-                                        <div class="flex justify-center">
-                                            <button class="md:text-base text-sm bg-transparent hover:bg-indigo-800 duration-100 border text-indigo-800 hover:text-gray-50 border-indigo-800 md:w-40 w-full px-5 py-2 rounded-3xl">Contact
-                                                Sales</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center items-center">
-                                    <div class="flex flex-col justify-center md:w-60 w-40">
-                                        <p class="md:text-sm text-xs text text-gray-900 text-center">Enteprise</p>
-                                        <div class="flex justify-center items-center">
-                                            <p class="text-center inline-block md:text-xl text-sm md:my-1 my-0.5 text-blue-800 mr-3">
-                                                1,000,000 Ks</p> <small>MMK/month</small>
-                                        </div>
-                                        <div class="flex justify-center">
-                                            <button class="md:text-base text-sm bg-transparent hover:bg-indigo-800 duration-100 border text-indigo-800 hover:text-gray-50 border-indigo-800 md:w-40 w-full px-5 py-2 rounded-3xl">Contact
-                                                Sales</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="border-b ">
-                            <td class="px-6 py-4">
-
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <div class="w-5 h-0.5 bg-gray-900"></div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center items-center">
-                                    <ion-icon name="checkmark-sharp" class="text-2xl text-indigo-900 "></ion-icon>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <p class="text-sm text-black">3 Classes</p>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <p class="text-sm text-black">Unlimited</p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="px-6 py-4">
-
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <div class="w-5 h-0.5 bg-gray-900"></div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <ion-icon name="checkmark-sharp" class="text-2xl text-indigo-900 "></ion-icon>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <ion-icon name="checkmark-sharp" class="text-2xl text-indigo-900 "></ion-icon>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <ion-icon name="checkmark-sharp" class="text-2xl text-indigo-900 "></ion-icon>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="px-6 py-4">
-
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <p class="text-sm text-black">Free only</p>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <p class="text-sm text-black">Unlimited</p>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <p class="text-sm text-black">2 Events</p>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <p class="text-sm text-black">Unlimited</p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="px-6 py-4">
-
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <p class="text-sm text-black">3 Times</p>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <p class="text-sm text-black">Unlimited</p>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <ion-icon name="checkmark-sharp" class="text-2xl text-indigo-900 "></ion-icon>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <ion-icon name="checkmark-sharp" class="text-2xl text-indigo-900 "></ion-icon>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="px-6 py-4">
-
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <div class="w-5 h-0.5 bg-gray-900"></div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <ion-icon name="checkmark-sharp" class="text-2xl text-indigo-900 "></ion-icon>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <p class="text-sm text-black">10 Coupons</p>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <p class="text-sm text-black">Unlimited</p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="px-6 py-4">
-
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <div class="w-5 h-0.5 bg-gray-900"></div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <div class="w-5 h-0.5 bg-gray-900"></div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <p class="text-sm text-black">One Slot</p>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <p class="text-sm text-black">Unlimited</p>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="border-b">
-                            <td class="px-6 py-4">
-
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <div class="w-5 h-0.5 bg-gray-900"></div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <div class="w-5 h-0.5 bg-gray-900"></div>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <p class="text-sm text-black">10 - 20</p>
-                                </div>
-                            </td>
-                            <td class="px-6 py-4">
-                                <div class="flex justify-center">
-                                    <p class="text-sm text-black">1 - to</p>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-    <!-- Start Compare All Features Section -->
-
-    <!-- Start Contact Us Section -->
-    <section class="md:px-32 px-5 pt-10 md:pt-28 md:mb-16 mb-6 md:pb-5">
-        <div class="flex justify-center items-center md:mb-10 mb-10">
-            <div class="md:w-14 w-8 h-1 relative md:bottom-2 md:mr-5 mr-2 md:bg-blue-700 bg-blue-700 inline-block rounded-lg">
-            </div>
-            <div class="flex items-start">
-                <span class="md:text-2xl text-xl relative md:bottom-2 font-semibold tracking-wider text-blue-800">Contact
-                    Us</span>
-            </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <!-- left -->
-            <div class="h-[60vh] border-2 border-gray-400 rounded-lg">
-                <div class="col-span-2 bg-indigo-500 md:h-3 h-2 rounded-tl-sm rounded-tr-sm"></div>
-                <form action="" method="" class="md:px-5 md:py-5 px-3 py-3">
-                    <div class="grid grid-cols-2 gap-5">
-                        <div>
-                            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900">First
-                                name</label>
-                            <input type="text" id="first_name" class="bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="John" required />
-                        </div>
-                        <div>
-                            <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900">Last
-                                name</label>
-                            <input type="text" id="last_name" class="bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Doe" required />
-                        </div>
-                        <div>
-                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
-                            <input type="email" id="email" class="bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Email Address" required />
-                        </div>
-                        <div>
-                            <label for="subject" class="block mb-2 text-sm font-medium text-gray-900">Subject</label>
-                            <input type="text" id="subject" class="bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Subject" required />
-                        </div>
-                        <div class="col-span-2">
-                            <label for="message" class="block mb-2 text-sm font-medium text-gray-900">Message</label>
-                            <textarea name="message" id="message" rows="8" class="w-full resize-none bg-gray-200 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5" placeholder="Write message....."></textarea>
-                        </div>
-                        <div class="col-span-2 flex justify-center md:mt-4">
-                            <button id="send-message" class="ml-2 bg-[#4460EF] text-white py-2 px-10 rounded-md flex items-center space-x-4">
-                                Send
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="inline ml-1" viewBox="0 0 24 24">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14L21 3m0 0l-6.5 18a.55.55 0 0 1-1 0L10 14l-7-3.5a.55.55 0 0 1 0-1z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <!-- right -->
-            <div class="flex items-center">
+                <h3 class="md:text-xl text-lg font-semibold md:mb-4 mb-3">Global Code Institute</h3>
                 <div>
-                    <p class="md:text-2xl text-xl font-medium md:mb-2 mb-3">How Can We Help You?</p>
-                    <p class="md:text-lg text-base md:mb-10 mb-8">We're here to help! If you have any
-                        questions,feedback, or need support, please feel free to reach out to us through any of the
-                        following ways.</p>
-
-                    <div>
-                        <h3 class="md:text-xl font-semibold md:mb-2 mb-2">Content Information :</h3>
-                        <div class="md:mb-1.5 mb-1">
-                            <ion-icon name="mail-outline" class="text-2xl text-blue-800 md:mr-3 relative md:top-1.5 top-1.5"></ion-icon> <span class="md:mr-1">Email: </span> <span class="text-blue-700">support@mep.com</span>
-                        </div>
-                        <div>
-                            <ion-icon name="call-outline" class="text-2xl text-blue-800 md:mr-3 relative md:top-1.5 top-1"></ion-icon> <span class="md:mr-1">Phone: </span> <span class="text-blue-700">+95 976XXXXXXXX</span>
-                        </div>
-                    </div>
-
-                    <div class="hidden md:block">
-                        <img src="../../storages/contact-tran.png" class="md:mt-16 h-60" alt="contact" />
-                    </div>
+                    <ion-icon name="mail-outline" class="md:text-2xl text-xl relative md:top-2 top-1.5 md:mr-2 mr-2"></ion-icon>
+                    <span class="text-blue-700 text-base">globalcodeinstitute@gmail.com</span>
+                </div>
+                <div>
+                    <ion-icon name="call-outline" class="md:text-2xl text-xl relative md:top-2 top-1 md:mr-2 mr-2"></ion-icon>
+                    <span class="text-base">(+95)</span><span>976XXXXXXXX</span>
+                </div>
+                <div>
+                    <ion-icon name="location-outline" class="md:text-2xl text-xl relative md:top-1 top-1.5 md:mr-2 mr-2"></ion-icon>
+                    <span class="text-gray-600">No.95, North Dagon, Yangon</span>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End Contact Us Section -->
+    <!-- End Institute Infomation Section -->
+
+    <!-- Start Instructor Info Section -->
+    <section class="md:px-56 px-5 md:pt-20 pt-10 md:mb-20">
+        <h1 class="md:text-2xl font-semibold md:mb-10 mb-5">Instructor Information</h1>
+        <div class="flex">
+            <div>
+                <img src="./img/profile4.svg" class="md:mr-16 mr-14 md:mb-5 mb-6" alt="institute info">
+                <h3 class="text-blue-700 underline">Mr.Matthwe Davis</h3>
+                <p class="text-gray-500">Software Engineer</p>
+            </div>
+            <div>
+                <div class="md:mb-2 mb-1.5">
+                    <ion-icon name="star" class="text-lg relative md:top-1"></ion-icon>
+                    <span class="text-base">4.5</span><span>Instructor Rating</span>
+                </div>
+                <div class="md:mb-2 mb-1.5">
+                    <svg class="inline w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M9 10a3.04 3.04 0 0 1 3-3a3.04 3.04 0 0 1 3 3a3.04 3.04 0 0 1-3 3a3.04 3.04 0 0 1-3-3m3 9l4 1v-3.08A7.54 7.54 0 0 1 12 18a7.54 7.54 0 0 1-4-1.08V20m4-16a5.78 5.78 0 0 0-4.24 1.74A5.78 5.78 0 0 0 6 10a5.78 5.78 0 0 0 1.76 4.23A5.78 5.78 0 0 0 12 16a5.78 5.78 0 0 0 4.24-1.77A5.78 5.78 0 0 0 18 10a5.78 5.78 0 0 0-1.76-4.26A5.78 5.78 0 0 0 12 4m8 6a8 8 0 0 1-.57 2.8A7.8 7.8 0 0 1 18 15.28V23l-6-2l-6 2v-7.72A7.9 7.9 0 0 1 4 10a7.68 7.68 0 0 1 2.33-5.64A7.73 7.73 0 0 1 12 2a7.73 7.73 0 0 1 5.67 2.36A7.68 7.68 0 0 1 20 10"/></svg>
+                    <span class="text-base">321 Reviews</span>
+                </div>
+                <div class="md:mb-2 mb-1.5">
+                    <ion-icon name="people-circle-outline" class="text-lg relative md:top-1"></ion-icon>
+                    <span class="text-base">4.5</span><span>Instructor Rating</span>
+                </div>
+            </div>
+        </div>
+        <div class="md:mt-8 mt-5">
+            <div>
+                <h3 class="text-lg font-semibold md:mb-4 mb-3">Biography</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptas minus eaque dicta impedit nisi, eligendi id cum delectus. Cumque eum magnam eligendi voluptatum iure. Asperiores voluptatum, id nobis commodi similique vitae quos amet pariatur perferendis qui illum unde accusantium inventore eius blanditiis vel totam. Aliquid ea eius ducimus, consequuntur quisquam esse sint! Repellat debitis obcaecati beatae enim ipsam ratione, voluptatem amet eligendi ex consectetur illum minima, cumque cupiditate quas reiciendis exercitationem. Eum ducimus perferendis voluptatem cumque amet, minus fuga sit possimus delectus cum? Doloremque architecto sit itaque eaque vel dignissimos, officia, qui voluptatum illo voluptatibus non. Eligendi, culpa officia!</p>
+            </div>
+            <div class="md:my-10 my-5">
+                <h3 class="text-lg font-semibold md:mb-4 mb-3">Education</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptas minus eaque dicta impedit nisi, eligendi id cum delectus. Cumque eum magnam eligendi voluptatum iure. Asperiores voluptatum, id nobis commodi similique vitae quos amet pariatur perferendis qui illum unde accusantium inventore eius blanditiis vel totam. Aliquid ea eius ducimus, consequuntur quisquam esse sint! Repellat debitis obcaecati beatae enim ipsam ratione, voluptatem amet eligendi ex consectetur illum minima, cumque cupiditate quas reiciendis exercitationem. Eum ducimus perferendis voluptatem cumque amet, minus fuga sit possimus delectus cum? Doloremque architecto sit itaque eaque vel dignissimos, officia, qui voluptatum illo voluptatibus non. Eligendi, culpa officia!</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold md:mb-4 mb-3">Experience</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum voluptas minus eaque dicta impedit nisi, eligendi id cum delectus. Cumque eum magnam eligendi voluptatum iure. Asperiores voluptatum, id nobis commodi similique vitae quos amet pariatur perferendis qui illum unde accusantium inventore eius blanditiis vel totam. Aliquid ea eius ducimus, consequuntur quisquam esse sint! Repellat debitis obcaecati beatae enim ipsam ratione, voluptatem amet eligendi ex consectetur illum minima, cumque cupiditate quas reiciendis exercitationem. Eum ducimus perferendis voluptatem cumque amet, minus fuga sit possimus delectus cum? Doloremque architecto sit itaque eaque vel dignissimos, officia, qui voluptatum illo voluptatibus non. Eligendi, culpa officia!</p>
+            </div>
+        </div>
+    </section>
+    <!-- End Instructor Info Section -->
 
     <!-- Start Footer Section -->
     <footer class="bg-blue-900 text-white md:px-32 py-8 px-4 mt-10">
