@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edit Instructor</title>
+    <title>View Instructor</title>
     <!-- Tailwind output css -->
     <link href="./../css/output.css" rel="stylesheet" />
 </head>
@@ -243,7 +243,7 @@
                             <h1 class="text-xl mb-5 mt-5 dark:text-white font-bold">Instructor Information</h1>
                             <div class="pl-5">
                                 <div class="mt-4">
-                                    <img src="./../../..//instructor.jpg" class="w-full" alt="instructor" />
+                                    <img src="./../../../storages/instructor.jpg" class="w-full" alt="instructor" />
                                 </div>
                                 <div class="mt-5">
                                     <h1 class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85">Software Engineer</h1>
