@@ -21,12 +21,14 @@ $(document).ready(function(){
             "history": "History/history.php",
             "notification": "Notification/notification.php",
             "setting": "Setting/setting.php",
-            "logout": "" // Special case for logout
+            "logout": "Auth/login.php"
         };
 
         if (clickpage in pageMap) {
+            console.log(clickpage);
             if (clickpage === "logout") {
-                console.log("logout");
+                
+                window.location.href = `./../../resources/${pageMap[clickpage]}`;
             } else {
                 window.location.href = `./../../resources/${pageMap[clickpage]}`;
             }
