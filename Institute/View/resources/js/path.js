@@ -27,7 +27,6 @@ $(document).ready(function(){
         if (clickpage in pageMap) {
             console.log(clickpage);
             if (clickpage === "logout") {
-                
                 window.location.href = `./../../resources/${pageMap[clickpage]}`;
             } else {
                 window.location.href = `./../../resources/${pageMap[clickpage]}`;
