@@ -78,12 +78,12 @@
               <p>Coin - <span class="text-primaryColor">500</span></p>
             </div>
 
-            <a class="flex items-center hover:text-primaryColor cursor-pointer">
+            <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
               <ion-icon name="person-circle-outline" class="text-lg mx-2 my-2"></ion-icon>
               <p>Profile</p>
             </a>
 
-            <a class="flex items-center hover:text-primaryColor cursor-pointer">
+            <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
               <ion-icon name="settings-outline" class="text-lg mx-2 my-2"></ion-icon>
               <p>Account Setting</p>
             </a>
@@ -183,8 +183,8 @@
               </td>
               <td class="h-full  bg-[#7382D2]">
                 <div class="w-full h-full flex flex-col ">
-        <p class="text-xs">Front End Course</p>
-                <p class="text-[.6rem] mt-2">08:00AM - 12:00PM </p>
+                  <p class="text-xs">Front End Course</p>
+                  <p class="text-[.6rem] mt-2">08:00AM - 12:00PM </p>
                 </div>
               </td>
               <td class="h-full  border-t border-white"></td>
@@ -481,7 +481,7 @@
               </div>
             </div>
           </div>
-  
+
           <div class="bg-[#7382D2] rounded-md p-2 text-white my-2 flex justify-start">
             <div class="flex justify-between flex-col items-start mr-6">
               <p class="text-md font-medium">Saturday</p>
@@ -501,7 +501,7 @@
               </div>
             </div>
           </div>
-  
+
           <div class="bg-[#7382D2] rounded-md p-2 text-white my-2 flex justify-start">
             <div class="flex justify-between flex-col items-start mr-6">
               <p class="text-md font-medium">Saturday</p>
@@ -521,7 +521,7 @@
               </div>
             </div>
           </div>
-  
+
           <div class="bg-[#7382D2] rounded-md p-2 text-white my-2 flex justify-start">
             <div class="flex justify-between flex-col items-start mr-6">
               <p class="text-md font-medium">Saturday</p>
@@ -541,7 +541,7 @@
               </div>
             </div>
           </div>
-  
+
           <div class="bg-[#7382D2] rounded-md p-2 text-white my-2 flex justify-start">
             <div class="flex justify-between flex-col items-start mr-6">
               <p class="text-md font-medium">Saturday</p>
