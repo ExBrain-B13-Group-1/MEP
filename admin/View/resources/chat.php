@@ -2,20 +2,26 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mail System</title>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script src="../resources/lib/jquery-3.7.1.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat</title>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="../resources/css/output.css" rel="stylesheet">
+  <script src="../resources/lib/jquery-3.7.1.js"></script>
   <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <style>
-    /* For Input Date Calendar Icon Color */
-    input[type="date"]::-webkit-calendar-picker-indicator {
-      filter: invert(1);
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+      /* for Chrome, Safari, and Opera */
+    }
+
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      /* for Internet Explorer, Edge */
+      scrollbar-width: none;
+      /* for Firefox */
     }
   </style>
 </head>
@@ -28,14 +34,14 @@
       </a>
       <ul class="space-y-1 font-medium">
         <li>
-          <a href="adminDashboard.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+          <a href="adminDashboard.php" class="flex items-center p-2 text-gray-500 rounded-lg bg-primarycolor group">
             <svg class="w-5 h-5 transition duration-75" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M13.6172 13.6483C13.6172 12.8233 14.286 12.1545 15.111 12.1545H24.0736C24.8986 12.1545 25.5674 12.8233 25.5674 13.6483V24.1048C25.5674 24.9298 24.8986 25.5985 24.0736 25.5985H15.111C14.286 25.5985 13.6172 24.9298 13.6172 24.1048V13.6483Z" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" />
               <path d="M1.56641 3.09863C1.56641 2.27021 2.2352 1.59863 3.06018 1.59863H7.54151C8.36649 1.59863 9.03529 2.27021 9.03529 3.09863V24.0986C9.03529 24.9271 8.36649 25.5986 7.54151 25.5986H3.06018C2.2352 25.5986 1.56641 24.9271 1.56641 24.0986V3.09863Z" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" />
               <path d="M13.6172 3.09241C13.6172 2.26743 14.286 1.59863 15.111 1.59863H24.0736C24.8986 1.59863 25.5674 2.26743 25.5674 3.09241V6.07996C25.5674 6.90494 24.8986 7.57374 24.0736 7.57374H15.111C14.286 7.57374 13.6172 6.90494 13.6172 6.07996V3.09241Z" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" />
             </svg>
 
-            <span class="ms-3 sideLabel group-hover:text-white">Dashboard</span>
+            <span class="ms-3 sideLabel text-white">Dashboard</span>
           </a>
         </li>
 
@@ -79,13 +85,13 @@
         </li>
 
         <li>
-          <a href="mailSystem.php" class="flex items-center p-2 text-gray-500 rounded-lg bg-primarycolor group">
+          <a href="mailSystem.php" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
             <svg class="flex-shrink-0 w-5 h-5 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" width="27" height="21" viewBox="0 0 27 21" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M22.2266 1.09473H4.22656C2.56971 1.09473 1.22656 2.43787 1.22656 4.09473V16.0947C1.22656 17.7516 2.56971 19.0947 4.22656 19.0947H22.2266C23.8834 19.0947 25.2266 17.7516 25.2266 16.0947V4.09473C25.2266 2.43787 23.8834 1.09473 22.2266 1.09473Z" stroke="#A7A7A7" stroke-width="2" />
               <path d="M1.22656 5.59473L11.8856 10.9239C12.7301 11.3462 13.723 11.3462 14.5675 10.9239L25.2266 5.59473" stroke="#A7A7A7" stroke-width="2" />
             </svg>
 
-            <span class="flex-1 ms-3 whitespace-nowrap sideLabel text-white">Mail</span>
+            <span class="flex-1 ms-3 whitespace-nowrap sideLabel group-hover:text-white">Mail</span>
           </a>
         </li>
 
@@ -104,7 +110,7 @@
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
             </svg>
           </a>
-          <ul id="dropdown-example" aria-checked="false" class="hidden dark:bg-gray-700 py-2 space-y-2 aria-[checked=true]:absolute aria-[checked=true]:left-16 aria-[checked=true]:pr-4 aria-[checked=true]:bottom-[-35px] bg-white aria-[checked=true]:shadow-dshadow rounded-md">
+          <ul id="dropdown-example" aria-checked="false" class="hidden py-2 space-y-2 aria-[checked=true]:absolute aria-[checked=true]:left-16 aria-[checked=true]:pr-4 aria-[checked=true]:bottom-[-35px] dark:bg-gray-700 bg-white aria-[checked=true]:shadow-dshadow rounded-md">
             <li>
               <a href="user/userFeedback.php" class="flex items-center w-full p-2 text-gray-500 transition duration-75 rounded-lg pl-11 group hover:text-primarycolor">Users</a>
             </li>
@@ -208,18 +214,18 @@
     </div>
   </aside>
 
-  <nav class=" bg-white dark:bg-gray-700 shadow-dshadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50" id="navbar">
+  <nav class=" bg-white dark:bg-gray-700 shadow-dshadow border-gray-200 rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50" id="navbar">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
-        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
-          <img src="../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
-        </a>
-        
+      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
+        <img src="../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
+      </a>
+
       <p class="bg-gradient-to-t from-[#92A3FF] to-[#00288E] text-transparent bg-clip-text font-bold text-lg">
-        Mail
+        Chat
       </p>
-      <ul class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border dark:bg-gray-700 border-gray-100 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
+      <ul class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg dark:bg-gray-700 bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
         <li class="mx-1">
-        <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400   focus:outline-none   rounded-lg text-sm p-2.5">
+          <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400   focus:outline-none   rounded-lg text-sm p-2.5">
             <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
               <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
             </svg>
@@ -265,159 +271,122 @@
   </nav>
 
 
-  <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%]  h-full" id="main" aria-checked="false">
+  <div class="absolute right-0 top-16 aria-[checked=false]:w-5/6 aria-[checked=true]:w-[94%] bg-gray-200 dark:bg-slate-800  h-full" id="main" aria-checked="false">
 
-    <!-- code here -->
+    <!--! Start Code Here -->
 
-    <div class="flex h-screen">
-      <!-- Sidebar -->
-      <div class="w-1/5 text-black dark:text-white h-full p-4 text-sm">
-        <br>
-        <ul>
-          <li class="mb-2"><a href="#" class="block p-2 text-white bg-dark-blue rounded">
-              <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" class="inline mr-1" viewBox="-2 -5 24 24" {...$$props}>
-                <path fill="currentColor" d="M2 5.702V12h16V5.702L15.039 2H4.96zM0 5l4-5h12l4 5v7a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm13.874 2a4.002 4.002 0 0 1-7.748 0H2V5h16v2zm-2.142 0H8.268a2 2 0 0 0 3.464 0" />
-              </svg>
-              Inbox <span class="px-1.5 bg-white text-dark-blue rounded-md float-right">5</span></a>
-          </li>
-          <li class="mb-2"><a href="#" class="block p-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" class="inline mr-1" viewBox="0 0 24 24" {...$$props}>
-                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14L21 3m0 0l-6.5 18a.55.55 0 0 1-1 0L10 14l-7-3.5a.55.55 0 0 1 0-1z" />
-              </svg>
-              Sent</a></li>
-          <li class="mb-2"><a href="#" class="block p-2">
-              <ion-icon name="trash-outline" class="w-5 h-5 relative top-1 mr-1"></ion-icon>
-              Trash</a></li>
-          <li id="new-message" class="mb-2 text-dark-blue dark:text-[#9aabff] bg-transparent border border-dark-blue dark:border-[#9aabff] rounded flex items-center"><a href="#" class="block p-2">
-              <ion-icon name="add-circle-outline" class="w-5 h-5 relative top-1 mr-1"></ion-icon>
-              New Message</a></li>
-        </ul>
-      </div>
-
-      <!-- New Message Form -->
-      <div id="new-message-form" class="hidden fixed bottom-0 right-10 w-full max-w-md bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg">
-        <div class="flex items-center justify-between mb-4">
-          <div class="flex-1 mr-2">
-            <label for="to" class="block text-sm font-medium text-gray-700">To:</label>
-            <input type="text" id="to" class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-500 bg-gray-200 dark:bg-gray-600 dark:text-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+    <div class="block">
+      <div class="h-[80vh] grid grid-cols-8 gap-7 m-4">
+        <!-- Left Side Common Notification Display -->
+        <div class="bg-white col-span-3 rounded-lg px-2 py-2 dark:bg-gray-600 duration-500 no-scrollbar">
+          <div class="flex flex-col h-[55vh]">
+            <!-- Inbox -->
+            <div class="px-4 py-2 flex justify-between items-center dark:text-white mb-2">
+              <div class="text-xl font-semibold">Inbox <span class="px-5 py-1 bg-gray-300 text-red-500 rounded-3xl text-sm">25</span></div>
+            </div>
+            <div class="">
+              <div class="w-full bg-white dark:bg-gray-700 dark:text-white p-4 text-sm cursor-pointer border-b border-gray-300 dark:border-gray-500">
+                <!-- Search Function -->
+                <div class="relative mb-4">
+                  <input type="text" class="border border-[#1330c2] dark:border-gray-600 dark:text-gray-100 dark:bg-gray-700 px-4 py-3 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none" placeholder="Search">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-[#1330c2] dark:text-gray-400" viewBox="0 0 24 24">
+                    <g fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="11" cy="11" r="7" />
+                      <path stroke-linecap="round" d="M11 8a3 3 0 0 0-3 3m12 9l-3-3" />
+                    </g>
+                  </svg>
+                </div>
+                <!-- 3 Tabs (All, Read, Unread) -->
+                <div class="border border-[#1330c2] dark:border-gray-600 px-2 py-1 rounded flex items-center w-full">
+                  <div class="tabs w-full flex justify-between">
+                    <button class="tab-button bg-[#4460EF] text-white dark:text-white px-4 py-3 rounded w-2/6 mr-2">All</button>
+                    <button class="tab-button text-gray-700 dark:text-white px-4 py-3 rounded w-2/6 mr-2">Read</button>
+                    <button class="tab-button text-gray-700 dark:text-white px-4 py-3 rounded w-2/6">Unread</button>
+                  </div>
+                </div>
+              </div>
+              <div class="dark:bg-gray-700 dark:text-white p-4 text-sm cursor-pointer px-4 h-[55vh] overflow-y-auto hide-scrollbar">
+                <!-- All Content -->
+                <div id="all-content" class="tab-content">
+                  <div id="notification-list">
+                    <!-- Notifications will be dynamically added here -->
+                  </div>
+                </div>
+                <!-- Read Content -->
+                <div id="read-content" class="tab-content" style="display: none;">
+                  <div id="read-list">
+                    <!-- Read notifications will be dynamically added here -->
+                  </div>
+                </div>
+                <!-- Unread Content -->
+                <div id="unread-content" class="tab-content" style="display: none;">
+                  <div id="unread-list">
+                    <!-- Unread notifications will be dynamically added here -->
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="mx-2 relative">
-            <!-- <hr class="w-full border-gray-300"> -->
-            <span class="mx-2 text-gray-500 dark:text-gray-400 my-4 absolute -left-4 -top-4">or</span>
-            <!-- <hr class="w-full border-gray-300"> -->
-          </div>
-          <div class="flex-1 ml-2">
-            <label for="scope" class="block text-sm font-medium text-gray-700">Scope:</label>
-            <select id="scope" class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-500 bg-gray-200 dark:bg-gray-600 dark:text-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-              <option>Select Scope</option>
-              <option value="all">All</option>
-              <option value="users">Users</option>
-              <option value="institutes">Institutes</option>
-            </select>
-          </div>
-        </div>
-        <!-- Subject -->
-        <div class="mb-4">
-          <label for="subject" class="block text-sm font-medium text-gray-700">Subject:</label>
-          <input type="text" id="subject" class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-500 bg-gray-200 dark:bg-gray-600 dark:text-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
-        </div>
-        <!-- Comment -->
-        <div class="mb-4">
-          <label for="comment" class="block text-sm font-medium text-gray-700">Comment:</label>
-          <textarea id="comment" rows="4" class="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-500 bg-gray-200 dark:bg-gray-600 dark:text-white rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
-        </div>
-        <!-- Send, Calendar, Cancel -->
-        <div class="flex items-center justify-end">
-          <button id="send-button" class="flex items-center px-4 py-2 bg-dark-blue text-white rounded-md mr-2">
-            Send
-            <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" class="inline ml-2" viewBox="0 0 24 24" {...$$props}>
-              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14L21 3m0 0l-6.5 18a.55.55 0 0 1-1 0L10 14l-7-3.5a.55.55 0 0 1 0-1z" />
-            </svg>
-          </button>
-          <label for="schedule-date" class="flex items-center px-4 py-2 bg-dark-blue text-white rounded-md mr-2 cursor-pointer">
-            <input type="date" id="schedule-date" class="bg-dark-blue text-white focus:outline-none">
-          </label>
-          <button id="cancel-button" class="px-4 py-2 bg-gray-200 text-gray-700 dark:bg-gray-500 dark:text-white rounded-md">Cancel</button>
-        </div>
-      </div>
-
-      <!-- Main Content -->
-      <div class="flex-1 flex flex-col text-sm">
-        <!-- Navbar -->
-        <div class="px-4 bg-white dark:bg-gray-700 shadow flex justify-between items-center">
-          <div class="text-xl font-semibold mt-3 dark:text-white">Inbox</div>
         </div>
 
-        <div class="flex-1 flex overflow-hidden ">
-          <!-- Middle Column -->
-          <div class="w-1/2 bg-white dark:bg-gray-700 p-4 overflow-y-auto no-scrollbar text-sm">
-            <div class="mb-4">
-              <div class="relative">
-                <input type="text" class="border border-dark-blue dark:text-white dark:border-gray-600 dark:bg-gray-600 px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none" placeholder="Search">
-                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue dark:text-gray-300" viewBox="0 0 24 24">
-                  <g fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="7" />
-                    <path stroke-linecap="round" d="M11 8a3 3 0 0 0-3 3m12 9l-3-3" />
-                  </g>
+        <!-- Realtime Chat Component Here -->
+        <div class="block bg-white col-span-5 rounded-lg py-2 dark:bg-gray-600 duration-500">
+
+          <!-- Chat Header -->
+          <div>
+            <div class="py-4 px-6 flex justify-between items-center border-b">
+              <!-- Image, Name, Message -->
+              <div class="flex items-center" id="chat-header">
+                <img src="../../storages/noti_person1.png" id="chat-photo" alt="profile1" class="w-10 h-10 rounded-full">
+                <div class="ml-3">
+                  <p id="chat-name" class="text-lg font-semibold dark:text-white"></p>
+                  <p class="text-sm text-gray-500 dark:text-white">Message</p>
+                </div>
+              </div>
+              <!-- 3 Buttons (Back, Phone, Email) -->
+              <div class="flex items-center">
+                <button class="mr-6 hidden" id="back-button">
+                  <ion-icon name="arrow-back" class="text-[#4460EF] dark:text-gray-300 text-2xl"></ion-icon>
+                </button>
+                <button class="mr-6" id="call-button">
+                  <ion-icon name="call" class="text-[#4460EF] dark:text-gray-300 text-2xl"></ion-icon>
+                </button>
+                <button id="mail-button">
+                  <ion-icon name="mail" class="text-[#4460EF] dark:text-gray-300 text-3xl"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat Messages -->
+          <div class=" dark:bg-gray-700 bg-[#ECEFFF]">
+            <div id="chat-container" class="h-[62vh] p-4 bg-[#ECEFFF] dark:bg-gray-700 overflow-y-auto hide-scrollbar">
+              <div id="chat-messages">
+                <!-- Messages will be Dynamic -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat Input Text -->
+          <div id="chat-input-container" class="p-4 border-t">
+            <div class="flex items-center">
+            <input type="text" id="chat-input" class="w-full border dark:text-white border-gray-300 dark:border-gray-600 bg-gray-200 dark:bg-gray-700 p-2 rounded-md focus:outline-none" placeholder="Message">
+              <button id="send-message" class="ml-2 bg-[#4460EF] text-white py-2 px-4 rounded-md flex items-center space-x-4">
+                Send
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="inline ml-1" viewBox="0 0 24 24">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14L21 3m0 0l-6.5 18a.55.55 0 0 1-1 0L10 14l-7-3.5a.55.55 0 0 1 0-1z" />
                 </svg>
-              </div>
-            </div>
-            <!-- 3 Tabs (User, Institute, Others) -->
-            <div class="border border-dark-blue dark:border-gray-500 px-2 py-1 rounded flex items-center w-full">
-              <div class="tabs w-full flex justify-between">
-                <button class="tab-button bg-dark-blue text-white dark:text-white px-4 py-2 rounded w-2/6 mr-2">User</button>
-                <button class="tab-button text-gray-700 dark:text-white px-4 py-2 rounded w-2/6 mr-2">Institute</button>
-                <button class="tab-button text-gray-700 dark:text-white px-4 py-2 rounded w-2/6">Others</button>
-              </div>
-            </div>
-
-            <!-- User Sent Mail -->
-            <div id="user-content" class="tab-content active space-y-4 mt-3 dark:text-white">
-              <!-- Notifications will be dynamically added here -->
-            </div>
-
-            <!-- Institute Sent Mail -->
-            <div id="institute-content" class="tab-content space-y-4 mt-3 dark:text-white">
-              <!-- Notifications will be dynamically added here -->
-            </div>
-
-            <!-- Others Sent Mail -->
-            <div id="others-content" class="tab-content space-y-4 mt-3 dark:text-white">
-              <!-- Notifications will be dynamically added here -->
+              </button>
             </div>
           </div>
-
-          <!-- Right Column -->
-          <div id="email-details-container" class="w-1/2 bg-white dark:bg-gray-700 dark:text-white p-4 overflow-y-auto no-scrollbar">
-            <!-- Email details will be dynamically added here -->
-          </div>
-
         </div>
       </div>
     </div>
   </div>
 
-  <script src="js/mailSystem.js"></script>
+
+  <script src="js/chat.js"></script>
   <script src="js/sidebar.js"></script>
-  <script>
-    $(document).ready(function() {
-  $('#new-message').on('click', function(e) {
-    $('#new-message-form').toggleClass('hidden');
-
-    // Toggle button styles
-    if ($('#new-message-form').hasClass('hidden')) {
-      $(this).removeClass("bg-dark-blue text-white").addClass("text-dark-blue bg-transparent");
-    } else {
-      $(this).removeClass("text-dark-blue bg-transparent").addClass("bg-dark-blue text-white");
-    }
-  });
-
-  $('#cancel-button').on('click', function() {
-    $('#new-message-form').addClass('hidden');
-    $('#new-message').removeClass("bg-dark-blue text-white").addClass("text-dark-blue  bg-transparent");
-  });
-});
-  </script>
 </body>
 
 </html>

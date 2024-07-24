@@ -12,9 +12,16 @@
   <script src="./lib/jquery-3.7.1.js"></script>
   <script src="./js/navbar.js" defer></script>
   <style>
-    .no-scrollbar {
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+      /* for Chrome, Safari, and Opera */
+    }
+
+    .hide-scrollbar {
       -ms-overflow-style: none;
+      /* for Internet Explorer, Edge */
       scrollbar-width: none;
+      /* for Firefox */
     }
   </style>
 </head>
@@ -106,20 +113,20 @@
   <!--! Start Code Here -->
 
   <div class="block pt-20 px-10 ml-6 mb-10">
-    <div class="h-screen grid grid-cols-8 gap-7 mt-6">
-      <!-- Left Side Notification Display -->
-      <div class="bg-white col-span-8 md:col-span-3 rounded-lg px-2 py-2 duration-500 no-scrollbar md:overflow-y-auto overflow-y-hidden h-full" id="left-side">
-        <div class="flex flex-col h-full">
+    <div class="h-[80vh] grid grid-cols-8 gap-7 mt-6">
+      <!-- Left Side Common Notification Display -->
+      <div class="bg-white col-span-8 md:col-span-3 rounded-lg px-2 py-2 duration-500 no-scrollbar" id="left-side">
+        <div class="flex flex-col h-[55vh]">
           <!-- Inbox -->
-          <div class="px-4 py-2 flex justify-between items-center">
-            <div class="text-xl font-semibold">Inbox <span class="px-2 py-1 bg-gray-300 text-red-500 rounded-full text-sm">25</span></div>
+          <div class="px-4 py-2 flex justify-between items-center mb-2">
+            <div class="text-xl font-semibold">Inbox <span class="px-5 py-1 bg-gray-300 text-red-500 rounded-3xl text-sm">25</span></div>
           </div>
-          <div class="flex overflow-hidden h-full">
-            <div class="w-full bg-white p-4 overflow-y-auto no-scrollbar text-sm cursor-pointer">
+          <div class="">
+            <div class="w-full bg-white p-4 text-sm cursor-pointer border-b border-gray-300 ">
               <!-- Search Function -->
               <div class="relative mb-4">
-                <input type="text" class="border border-[#1330c2] px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none" placeholder="Search">
-                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-[#1330c2]" viewBox="0 0 24 24">
+                <input type="text" class="border border-[#1330c2]  px-4 py-3 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none" placeholder="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-[#1330c2] " viewBox="0 0 24 24">
                   <g fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="11" cy="11" r="7" />
                     <path stroke-linecap="round" d="M11 8a3 3 0 0 0-3 3m12 9l-3-3" />
@@ -127,30 +134,31 @@
                 </svg>
               </div>
               <!-- 3 Tabs (All, Read, Unread) -->
-              <div class="border border-[#1330c2] px-2 py-1 rounded flex items-center mb-2 w-full">
+              <div class="border border-[#1330c2] px-2 py-1 rounded flex items-center w-full">
                 <div class="tabs w-full flex justify-between">
-                  <button class="tab-button bg-[#4460EF] text-white px-4 py-2 rounded w-2/6 mr-2">All</button>
-                  <button class="tab-button text-gray-700 px-4 py-2 rounded w-2/6 mr-2">Read</button>
-                  <button class="tab-button text-gray-700 px-4 py-2 rounded w-2/6">Unread</button>
+                  <button class="tab-button bg-[#4460EF] text-white px-4 py-3 rounded w-2/6 mr-2">All</button>
+                  <button class="tab-button text-gray-700 px-4 py-3 rounded w-2/6 mr-2">Read</button>
+                  <button class="tab-button text-gray-700 px-4 py-3 rounded w-2/6">Unread</button>
                 </div>
               </div>
-
+            </div>
+            <div class="p-4 text-sm cursor-pointer px-4 h-[55vh] overflow-y-auto hide-scrollbar">
               <!-- All Content -->
-              <div id="all-content" class="tab-content no-scrollbar">
+              <div id="all-content" class="tab-content">
                 <div id="notification-list">
-                  <!-- Notifications Dynamic Contents -->
+                  <!-- Notifications will be dynamically added here -->
                 </div>
               </div>
               <!-- Read Content -->
-              <div id="read-content" class="tab-content no-scrollbar" style="display: none;">
+              <div id="read-content" class="tab-content" style="display: none;">
                 <div id="read-list">
-                  <!-- Read Dynamic Contents -->
+                  <!-- Read notifications will be dynamically added here -->
                 </div>
               </div>
               <!-- Unread Content -->
-              <div id="unread-content" class="tab-content no-scrollbar" style="display: none;">
+              <div id="unread-content" class="tab-content" style="display: none;">
                 <div id="unread-list">
-                  <!-- Unread Dynamic Contents -->
+                  <!-- Unread notifications will be dynamically added here -->
                 </div>
               </div>
             </div>
@@ -158,14 +166,15 @@
         </div>
       </div>
 
-      <!-- Realtime Chat -->
-      <div class="hidden md:block bg-transparent md:bg-white col-span-8 md:col-span-5 min-h-80 rounded-lg mr-8 py-2 duration-500" id="right-side">
-        <div class="flex flex-col md:h-dvh h-5/6">
-          <!-- Chat Header -->
-          <div class="py-4 px-6 flex justify-between bg-white items-center border-b">
+      <!-- Realtime Chat Component Here -->
+      <div class="hidden md:block bg-transparent md:bg-white col-span-8 md:col-span-5 bg-white rounded-lg py-2 duration-500" id="right-side">
+
+        <!-- Chat Header -->
+        <div>
+          <div class="py-4 px-6 flex justify-between items-center border-b">
             <!-- Image, Name, Message -->
             <div class="flex items-center" id="chat-header">
-              <img src="../../storages/noti_person1.png" id="chat-photo" alt="Avatar" class="w-10 h-10 rounded-full">
+              <img src="../../storages/noti_person1.png" id="chat-photo" alt="profile1" class="w-10 h-10 rounded-full">
               <div class="ml-3">
                 <p id="chat-name" class="text-lg font-semibold"></p>
                 <p class="text-sm text-gray-500">Message</p>
@@ -184,23 +193,27 @@
               </button>
             </div>
           </div>
-          <!-- Chat Messages -->
-          <div id="chat-container" class="flex-1 overflow-y-auto p-4 bg-[#ECEFFF] no-scrollbar">
+        </div>
+
+        <!-- Chat Messages -->
+        <div class=" bg-[#ECEFFF]">
+          <div id="chat-container" class="h-[62vh] p-4 bg-[#ECEFFF] overflow-y-auto hide-scrollbar">
             <div id="chat-messages">
               <!-- Messages will be Dynamic -->
             </div>
           </div>
-          <!-- Chat Input Text -->
-          <div id="chat-input-container" class="p-4 border-t">
-            <div class="flex items-center">
-              <input type="text" id="chat-input" class="w-full border border-gray-300 bg-gray-200 p-2 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Message">
-              <button id="send-message" class="ml-2 bg-[#4460EF] text-white py-2 px-4 rounded-md flex items-center space-x-4">
-                Send
-                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="inline ml-1" viewBox="0 0 24 24">
-                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14L21 3m0 0l-6.5 18a.55.55 0 0 1-1 0L10 14l-7-3.5a.55.55 0 0 1 0-1z" />
-                </svg>
-              </button>
-            </div>
+        </div>
+
+        <!-- Chat Input Text -->
+        <div id="chat-input-container" class="p-4 border-t">
+          <div class="flex items-center">
+            <input type="text" id="chat-input" class="w-full border border-gray-300  bg-gray-200  p-2 rounded-md focus:outline-none" placeholder="Message">
+            <button id="send-message" class="ml-2 bg-[#4460EF] text-white py-2 px-4 rounded-md flex items-center space-x-4">
+              Send
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="inline ml-1" viewBox="0 0 24 24">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14L21 3m0 0l-6.5 18a.55.55 0 0 1-1 0L10 14l-7-3.5a.55.55 0 0 1 0-1z" />
+              </svg>
+            </button>
           </div>
         </div>
       </div>

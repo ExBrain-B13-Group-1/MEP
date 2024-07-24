@@ -192,7 +192,7 @@ $(document).ready(function () {
       `);
 
       $("#details").html(`
-        <div class="p-4 bg-white rounded-lg shadow-md">
+        <div class="p-4 bg-white rounded-lg shadow-sm">
           <div class="mb-6 flex justify-between space-x-3">
             <img src="${notification.classPhoto}">
             <p class="text-sm">${notification.aboutClass}</p>

@@ -57,15 +57,15 @@
     <div class="flex items-center justify-center min-h-screen">
         <div class="py-8 px-20 bg-primary-main rounded-lg bg-opacity-90 shadow-xl w-3/4 relative overflow-hidden">
             <!-- Logo and Form Name -->
-            <div class="flex justify-between items-center ">
+            <div class="flex flex-col md:flex-row justify-between items-center ">
                 <img src="../../../../storages/logo-white.svg" class="mb-5" alt="logo">
-                <h2 class="text-white text-center text-xl font-bold mb-6">Verification Form</h2>
+                <h2 class="text-white text-center text-xl font-bold mb-6 block">Verification Form</h2>
             </div>
 
             <div>
                 <!-- Verification Form Back-End -->
                 <form action="" id="verifyForm" class="form-step active space-y-6">
-                    <div class="grid grid-cols-2 gap-x-20 gap-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-4">
                         <!-- User Full Name -->
                         <div>
                             <label for="user-name" class="text-dark-gray text-sm">Full Name *</label>
@@ -102,7 +102,7 @@
                             <!-- Front Side Upload -->
                             <div class="w-full">
                                 <label class="block text-white mb-2">Front Side *</label>
-                                <div class="mb-6">
+                                <div class="mb-2 md:mb-6">
                                     <div class="upload-area rounded-md" id="upload-area-front">
                                         <input type="file" id="file-input-front" accept="image/*" required class="hidden">
                                         <img id="uploaded-image-front" alt="Uploaded Image">
@@ -115,11 +115,11 @@
                             </div>
                         </div>
                         <!-- NRC Verification Upload (Back) -->
-                        <div class="mt-10">
+                        <div class="mt-0 md:mt-10">
                             <!-- Back Side Upload -->
                             <div class="w-full">
                                 <label class="block text-white mb-3">Back Side *</label>
-                                <div class="mb-6">
+                                <div class="mb-2 md:mb-6">
                                     <div class="upload-area rounded-md" id="upload-area-back">
                                         <input type="file" id="file-input-back" accept="image/*" required class="hidden">
                                         <img id="uploaded-image-back" alt="Uploaded Image">
@@ -132,7 +132,7 @@
                             </div>
                         </div>
                         <!-- Agree Terms & Conditions -->
-                        <div class="mb-2">
+                        <div class="mb-0 md:mb-2">
                             <label class="inline-flex items-center">
                                 <input type="checkbox" id="agree-terms" class="form-checkbox hpp-checkbox">
                                 <span class="ml-2 text-white text-sm">Agree Terms & Conditions</span>
@@ -141,10 +141,11 @@
                         <!-- Empty Div -->
                         <div></div>
                         <!-- 2 Buttons (Back, Enroll) -->
-                        <div class="flex">
+                        <div class="flex justify-between">
                             <button type="button" class="py-2 px-4 bg-white text-primary-main font-bold rounded-md hover:bg-opacity-90 duration-75"><a href="../dashboard.php">Back</a></button>
+                            <button type="submit" id="submit-button" class="block md:hidden py-2 px-4 bg-white text-primary-main font-bold rounded-md opacity-50 cursor-not-allowed duration-75" disabled>Verify</button>
                         </div>
-                        <div class="flex justify-end">
+                        <div class="flex justify-end text-right hidden md:block">
                             <button type="submit" id="submit-button" class="py-2 px-4 bg-white text-primary-main font-bold rounded-md opacity-50 cursor-not-allowed duration-75" disabled>Verify</button>
                         </div>
                 </form>
@@ -152,9 +153,9 @@
 
             <!-- Received Information Announced -->
             <div id="step2" class="form-step hidden text-center">
-                <h2 class="text-white text-xl mb-6">Verification Received</h2>
-                <div class="p-6 bg-white rounded-lg shadow-md text-gray-800">
-                    <h3 class="text-lg font-bold mb-4">Thank you for your Verification!</h3>
+                <h2 class="text-white text-base md:text-xl mb-2 md:mb-6">Verification Received</h2>
+                <div class="p-6 bg-white rounded-lg shadow-md text-gray-800 text-sm md:text-base">
+                    <h3 class="text-base md:text-lg font-bold mb-4">Thank you for your Verification!</h3>
                     <p class="mb-4">We have successfully received your <b>personal</b> information. Our team is
                         currently
                         reviewing your submission, and you should expect a response within <span class="font-semibold">24 hours</span>.</p>

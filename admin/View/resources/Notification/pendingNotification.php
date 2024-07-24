@@ -224,7 +224,7 @@
                     </button>
                 </li>
                 <li class="mx-1">
-                    <a href="#" class="block py-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0" aria-current="page">
+                    <a href="../chat.php" class="block py-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0" aria-current="page">
                         <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.22656 19.5947C1.22656 12.9673 6.59956 7.59473 13.2266 7.59473C19.8536 7.59473 25.2266 12.9673 25.2266 19.5947V27.2312C25.2266 28.5017 25.2266 29.1362 25.0376 29.6432C24.7331 30.4577 24.0896 31.1012 23.2751 31.4057C22.7681 31.5947 22.1336 31.5947 20.8631 31.5947H13.2266C6.59956 31.5947 1.22656 26.2217 1.22656 19.5947Z" stroke="#4460EF" stroke-width="2" />
                             <path d="M8.22656 17.5947H18.2266" stroke="#4460EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -235,7 +235,7 @@
                     </a>
                 </li>
                 <li class="mx-1">
-                    <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
+                    <a href="" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
                         <svg width="30" height="33" viewBox="0 0 30 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8.72435 26.2614H4.19194C2.51219 26.2614 1.67232 26.2614 1.49561 26.1311C1.29709 25.9847 1.24858 25.8983 1.22708 25.6529C1.20795 25.4343 1.7227 24.5929 2.75223 22.9102C3.81519 21.1727 4.71778 18.643 4.71778 15.0614C4.71778 13.0811 5.56156 11.1819 7.06348 9.78166C8.56542 8.38139 10.6025 7.59473 12.7265 7.59473C14.8506 7.59473 16.8876 8.38139 18.3895 9.78166C19.8916 11.1819 20.7353 13.0811 20.7353 15.0614C20.7353 18.643 21.6379 21.1727 22.7009 22.9102C23.7303 24.5929 24.2451 25.4343 24.2261 25.6529C24.2046 25.8983 24.156 25.9847 23.9575 26.1311C23.7808 26.2614 22.9409 26.2614 21.2612 26.2614H16.7309M8.72435 26.2614L8.72216 27.5947C8.72216 29.8039 10.515 31.5947 12.7265 31.5947C14.9382 31.5947 16.7309 29.8039 16.7309 27.5947V26.2614M8.72435 26.2614H16.7309" stroke="#4460EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             <circle cx="21.2266" cy="8.59473" r="8" fill="#FF5E5E" />
