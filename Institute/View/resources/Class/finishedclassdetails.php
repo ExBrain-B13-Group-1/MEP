@@ -15,13 +15,13 @@
     <nav class="fixed top-0 z-10 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 duration-300">
         <div class="px-3 py-3 lg:px-5 lg:pl-3">
             <div class="flex items-center justify-between">
-                <div class="ml-64 relative top-3 pl-3">
+                <div class="ml-64 relative top-2 pl-3">
                     <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500  dark:border-gray-700 dark:text-gray-400">
                         <li class="me-2 h-10">
-                            <a href="#" class="inline-block p-4 rounded-t-lg hover:dark:bg-gray-600 changes">Class Lists</a>
+                            <a href="#" class="inline-block text-base p-4 rounded-t-lg hover:dark:bg-gray-600 changes">Class Lists</a>
                         </li>
                         <li class="me-2 h-10">
-                            <a href="#" class="inline-block p-4 rounded-t-lg hover:dark:bg-gray-600 changes actives">Finished Classes</a>
+                            <a href="#" class="inline-block text-base p-4 rounded-t-lg hover:dark:bg-gray-600 changes actives">Finished Classes</a>
                         </li>
                     </ul>
                 </div>
@@ -634,7 +634,8 @@
     <!-- darkmode lightmode js -->
     <script src="./../js/darkandlight.js" type="text/javascript"></script>
     <!-- customjs -->
-    <script src="./../js/class.js" type="text/javascript"></script>
+    <script src="./../js/paginatedTable.js" type="text/javascript"></script>
+    <script src="./../js/finishedclassdetails.js" type="text/javascript"></script>
 </body>
 
 </html>

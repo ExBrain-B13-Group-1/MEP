@@ -111,12 +111,12 @@
               <p>Coin - <span class="text-primaryColor">500</span></p>
             </div>
 
-            <a class="flex items-center hover:text-primaryColor cursor-pointer">
+            <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
               <ion-icon name="person-circle-outline" class="text-lg mx-2 my-2"></ion-icon>
               <p>Profile</p>
             </a>
 
-            <a class="flex items-center hover:text-primaryColor cursor-pointer">
+            <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
               <ion-icon name="settings-outline" class="text-lg mx-2 my-2"></ion-icon>
               <p>Account Setting</p>
             </a>
@@ -135,7 +135,7 @@
   <!--! Start Code Here -->
 
 
-  <div class="block pt-20 px-10 ml-6 mb-10">
+  <div class="block pt-20 md:px-10 ml-6 mb-10">
     <div class="h-screen grid grid-cols-4 gap-7 mt-3">
       <div class="col-span-4 rounded-lg px-2 duration-500 no-scrollbar md:overflow-y-auto overflow-y-hidden h-full" id="left-side">
         <div class="flex flex-col h-full">
@@ -173,8 +173,8 @@
               </div>
 
               <!-- FaQ Sections -->
-              <div id="faq-content" class="tab-content">
-                <div class="container mx-auto px-4 py-8">
+              <div id="faq-content" class="tab-content w-full">
+                <div class="container mx-auto md:px-4 py-8">
                   <h2 class="text-xl text-white font-bold mb-6">Frequently Asked Questions</h2>
                   <div class="bg-white p-6 rounded-lg shadow-lg cursor-pointer">
                     <div class="space-y-4">

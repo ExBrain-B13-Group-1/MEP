@@ -272,7 +272,9 @@
                         <!-- left -->
                         <div class="pl-5">
                             <div class="flex justify-end">
-                                <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit Class</button>
+                                <a href="./modifyclass.php">
+                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit Class</button>
+                                </a>
                             </div>
                             <div class="mt-5">
                                 <span class="text-lg opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Start Date :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60">21 / 6 / 2024</span>

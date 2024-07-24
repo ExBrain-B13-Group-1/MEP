@@ -7,6 +7,23 @@
         <title>Class - Class List</title>
         <!-- Tailwind output css -->
         <link href="./../css/output.css" rel="stylesheet" />
+        <style>
+            .pagination {
+                margin: 10px 0;
+                display: flex;
+                justify-content: center;
+            }
+
+            .pagination button {
+                margin: 0 5px;
+                padding: 5px 10px;
+            }
+
+            .pagination button.active {
+                background-color: #007bff;
+                color: white;
+            }
+        </style>
     </head>
 
     <body class=" dark:bg-gray-800">
@@ -352,401 +369,53 @@
                     </div>
                     <div class="relative overflow-x-auto shadow-md dark:shadow-none sm:rounded-lg">
                         <!-- ClassList Table -->
-                        <table class=" w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-400 dark:bg-gray-700 duration-500 dark:text-gray-400">
-                                <th scope="col" class="p-4">
-                                    ID
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    CLASS TITLE
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    INSTRUCTOR
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    START DATE
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    END DATE
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    STATUS
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    CLASS FEE
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    MAX ENROLLMENT
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    ENROLLMENT DEADLINE
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    DETAILS
-                                </th>
-                            </thead>
-                            <tbody>
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 class-views">
-                                    <td class="w-4 p-4">
-                                        C135
-                                    </td>
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Front-End Development Course
+                        <div id="data-container">
+                            <table class=" w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
+                                <thead class="text-xs text-gray-700 uppercase bg-gray-400 dark:bg-gray-700 duration-500 dark:text-gray-400">
+                                    <th scope="col" class="p-4">
+                                        ID
                                     </th>
-                                    <td class="px-6 py-4">
-                                        Mr.Matthwe Davis
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        21/6/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        31/8/2024
-                                    </td>
-                                    <td class="px-6 py-4 text-green-500">
-                                        Active
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        10,000 MMK
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        25
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        20/6/2024
-                                    </td>
-                                    <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                        View
-                                    </td>
-                                </tr>
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 class-views">
-                                    <td class="w-4 p-4">
-                                        C135
-                                    </td>
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Front-End Development Course
+                                    <th scope="col" class="px-6 py-3">
+                                        CLASS TITLE
                                     </th>
-                                    <td class="px-6 py-4">
-                                        Mr.Matthwe Davis
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        21/6/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        31/8/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        Active
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        10,000 MMK
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        25
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        20/6/2024
-                                    </td>
-                                    <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                        View
-                                    </td>
-                                </tr>
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 class-views">
-                                    <td class="w-4 p-4">
-                                        C135
-                                    </td>
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Front-End Development Course
+                                    <th scope="col" class="px-6 py-3">
+                                        INSTRUCTOR
                                     </th>
-                                    <td class="px-6 py-4">
-                                        Mr.Matthwe Davis
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        21/6/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        31/8/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        Active
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        10,000 MMK
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        25
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        20/6/2024
-                                    </td>
-                                    <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                        View
-                                    </td>
-                                </tr>
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 class-views">
-                                    <td class="w-4 p-4">
-                                        C135
-                                    </td>
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Front-End Development Course
+                                    <th scope="col" class="px-6 py-3">
+                                        START DATE
                                     </th>
-                                    <td class="px-6 py-4">
-                                        Mr.Matthwe Davis
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        21/6/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        31/8/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        Active
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        10,000 MMK
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        25
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        20/6/2024
-                                    </td>
-                                    <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                        View
-                                    </td>
-                                </tr>
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 class-views">
-                                    <td class="w-4 p-4">
-                                        C135
-                                    </td>
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Front-End Development Course
+                                    <th scope="col" class="px-6 py-3">
+                                        END DATE
                                     </th>
-                                    <td class="px-6 py-4">
-                                        Mr.Matthwe Davis
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        21/6/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        31/8/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        Active
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        10,000 MMK
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        25
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        20/6/2024
-                                    </td>
-                                    <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                        View
-                                    </td>
-                                </tr>
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 class-views">
-                                    <td class="w-4 p-4">
-                                        C135
-                                    </td>
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Front-End Development Course
+                                    <th scope="col" class="px-6 py-3">
+                                        STATUS
                                     </th>
-                                    <td class="px-6 py-4">
-                                        Mr.Matthwe Davis
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        21/6/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        31/8/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        Active
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        10,000 MMK
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        25
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        20/6/2024
-                                    </td>
-                                    <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                        View
-                                    </td>
-                                </tr>
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 class-views">
-                                    <td class="w-4 p-4">
-                                        C135
-                                    </td>
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Front-End Development Course
+                                    <th scope="col" class="px-6 py-3">
+                                        CLASS FEE
                                     </th>
-                                    <td class="px-6 py-4">
-                                        Mr.Matthwe Davis
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        21/6/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        31/8/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        Active
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        10,000 MMK
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        25
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        20/6/2024
-                                    </td>
-                                    <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                        View
-                                    </td>
-                                </tr>
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 class-views">
-                                    <td class="w-4 p-4">
-                                        C135
-                                    </td>
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Front-End Development Course
+                                    <th scope="col" class="px-6 py-3">
+                                        MAX ENROLLMENT
                                     </th>
-                                    <td class="px-6 py-4">
-                                        Mr.Matthwe Davis
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        21/6/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        31/8/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        Active
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        10,000 MMK
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        25
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        20/6/2024
-                                    </td>
-                                    <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                        View
-                                    </td>
-                                </tr>
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 class-views">
-                                    <td class="w-4 p-4">
-                                        C135
-                                    </td>
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Front-End Development Course
+                                    <th scope="col" class="px-6 py-3">
+                                        ENROLLMENT DEADLINE
                                     </th>
-                                    <td class="px-6 py-4">
-                                        Mr.Matthwe Davis
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        21/6/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        31/8/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        Active
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        10,000 MMK
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        25
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        20/6/2024
-                                    </td>
-                                    <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                        View
-                                    </td>
-                                </tr>
-                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 class-views">
-                                    <td class="w-4 p-4">
-                                        C135
-                                    </td>
-                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        Front-End Development Course
+                                    <th scope="col" class="px-6 py-3">
+                                        DETAILS
                                     </th>
-                                    <td class="px-6 py-4">
-                                        Mr.Matthwe Davis
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        21/6/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        31/8/2024
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        Active
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        10,000 MMK
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        25
-                                    </td>
-                                    <td class="px-6 py-4">
-                                        20/6/2024
-                                    </td>
-                                    <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                        View
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody id="table-body">
+                                    <!-- table data -->
+                                </tbody>
+                            </table>
+                        </div>
 
                         <div class="flex justify-center">
                             <nav aria-label="Page navigation example">
-                                <ul class="flex items-center -space-x-px h-10 text-base my-6">
-                                    <li>
-                                        <a href="#" class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                                            <span class="sr-only">Previous</span>
-                                            <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
-                                            </svg>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" aria-current="page" class="z-10 flex items-center justify-center px-4 h-10 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                                            <span class="sr-only">Next</span>
-                                            <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
-                                            </svg>
-                                        </a>
-                                    </li>
+                                <ul class="flex items-center -space-x-px h-10 text-base my-6" id="pagination">
+                                    <!-- Pagination buttons will be injected here -->
                                 </ul>
                             </nav>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -766,9 +435,10 @@
         <!-- path -->
         <script src="./../js/path.js" type="text/javascript"></script>
         <!-- darkmode lightmode js -->
-        <script src="./../js/darkandlight.js" type="text/javascript"></script> 
+        <script src="./../js/darkandlight.js" type="text/javascript"></script>
         <!-- customjs -->
-        <script src="./../js/class.js" type="text/javascript"></script>
+        <script src="./../js/paginatedTable.js" type="text/javascript"></script>
+        <script src="./../js/classlist.js" type="text/javascript"></script>
     </body>
 
-    </html>
+</html>
