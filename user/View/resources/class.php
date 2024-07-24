@@ -236,6 +236,7 @@
                 </div>
             </div>
 
+
             <!-- Mobile View Accordion -->
             <div class="block md:hidden">
                 <div class="accordion-item mt-4">

@@ -263,6 +263,13 @@
 
                     </div>
                   </div>
+                  <!-- Privacy Policy -->
+                  <div class="text-center mt-6">
+                    <a href="privacyPolicy.php" class="inline-block text-blue-700 hover:text-blue-900 font-semibold text-xl bg-blue-100 hover:bg-blue-200 py-2 px-4 rounded-lg shadow-md transition-all duration-300">
+                      Privacy Policy
+                    </a>
+                  </div>
+
                 </div>
               </div>
 

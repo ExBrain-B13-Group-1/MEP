@@ -1166,7 +1166,7 @@
                 <div class="flex space-x-4 mt-4 md:mt-0">
                     <a href="privacyPolicy.php" class="md:text-sm text-xs text-gray-400">Privacy Policy</a>
                     <a href="feedback.php" class="md:text-sm text-xs text-gray-400">Feedback</a>
-                    <a href="faq.php" class="md:text-sm text-xs text-gray-400">FAQ</a>
+                    <a href="support.php" class="md:text-sm text-xs text-gray-400">FAQ</a>
                 </div>
             </div>
         </div>
