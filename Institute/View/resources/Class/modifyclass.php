@@ -17,7 +17,6 @@
             <div class="flex items-center justify-between">
                 <div class="ml-64 relative pl-3">
 
-
                     <!-- Breadcrumb -->
                     <nav class="flex px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
                         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">

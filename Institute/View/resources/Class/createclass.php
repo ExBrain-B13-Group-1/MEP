@@ -369,7 +369,7 @@
                                         <option value="DE">Tun Tun</option>
                                         <option value="DE">Aung Aung</option>
                                         <option value="DE">Hla Hla</option>
-                                        <option value="DE">Nu Nu</option>
+                                        <option value="DE">Nu Nu</option>   
                                     </select>
                                     <button type="button" class="h-full w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</button>
                                 </div>
