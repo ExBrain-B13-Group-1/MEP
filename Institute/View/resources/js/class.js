@@ -28,11 +28,6 @@ $(document).ready(function(){
         reader.readAsDataURL(this.files[0]);
     });
 
-    $('#create-publish').on("click",(e)=>{
-        console.log("hay");
-        e.preventDetault();
-        window.location.href = 'http://localhost/MEP/Institute/View/resources/Class/viewdetailsclass.php';
-    });
 
     $('#create-cancel').on("click",(e)=>{
         console.log("hay");
@@ -40,25 +35,7 @@ $(document).ready(function(){
         window.location.href = 'http://localhost/MEP/Institute/View/resources/Class/createclass.php';
     });
 
-    $('#modify-savechange').on("click",(e)=>{
-        console.log("hay");
-        e.preventDetault();
-        window.location.href = 'http://localhost/MEP/Institute/View/resources/Class/viewdetailsclass.php';
-    });
 
-    $('#modify-savechange').on("click",(e)=>{
-        console.log("hay");
-        e.preventDetault();
-        window.location.href = 'http://localhost/MEP/Institute/View/resources/Class/viewdetailsclass.php';
-    });
 
-    $('#modify-cancel').on("click",(e)=>{
-        console.log("hay");
-        e.preventDetault();
-        window.location.href = 'http://localhost/MEP/Institute/View/resources/Class/viewdetailsclass.php';
-    });
 
 });
-
-
-console.log("hay");

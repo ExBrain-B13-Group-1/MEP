@@ -598,7 +598,7 @@
         </div>
         <div id="more-less-ctrl" class="border-2 w-full h-14 md:mt-5 bg-transparent hover:bg-indigo-500 hover:text-white flex justify-center items-center space-x-4 cursor-pointer">
             <span class="show-moreless-text">Show more</span>
-            <ion-icon name="chevron-up-outline" class="text-xl show-icons"></ion-icon>
+            <ion-icon name="chevron-down-outline" class="text-xl show-icons"></ion-icon>
         </div>
     </section>
     <!-- End Student also Enrolled Section -->
