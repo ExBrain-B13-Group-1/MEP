@@ -1185,7 +1185,7 @@
     <!-- jQuery js1-->
     <script src="./lib/jquery-3.7.1.js" type="text/javascript"></script>
     <!-- customjs -->
-    <script src="./js/homepage.js" type="text/javascript"></script>
+    <script src="./js/index.js" type="text/javascript"></script>
 </body>
 
 </html>
