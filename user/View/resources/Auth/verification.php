@@ -81,6 +81,11 @@
                             <label for="age" class="text-dark-gray text-sm">Age *</label>
                             <input type="number" id="age" min="5" max="90" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
                         </div>
+                         <!-- User Contact -->
+                         <div>
+                            <label for="contact" class="text-dark-gray text-sm">Contact *</label>
+                            <input type="text" id="contact" placeholder="+959" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
+                        </div>
                         <!-- Gender -->
                         <div>
                             <label for="gender" class="text-dark-gray text-sm">Gender</label>
@@ -95,6 +100,8 @@
                                 </label>
                             </div>
                         </div>
+                        <!-- Empty Div -->
+                        <div></div>
                         <!-- NRC Verification Upload (Front) -->
                         <div>
                             <label class="text-white text-sm">NRC Verification * </label>
@@ -118,7 +125,7 @@
                         <div class="mt-0 md:mt-10">
                             <!-- Back Side Upload -->
                             <div class="w-full">
-                                <label class="block text-white mb-3">Back Side *</label>
+                                <label class="block text-white mb-4">Back Side *</label>
                                 <div class="mb-2 md:mb-6">
                                     <div class="upload-area rounded-md" id="upload-area-back">
                                         <input type="file" id="file-input-back" accept="image/*" required class="hidden">

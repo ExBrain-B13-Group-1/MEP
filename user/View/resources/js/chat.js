@@ -305,4 +305,47 @@ $(document).ready(function () {
     renderNotifications("#read-list", (notification) => notification.isRead);
     renderNotifications("#unread-list", (notification) => !notification.isRead);
   });
+
+  // Function to populate mail dynamically
+  function populateMailFields(notification) {
+    $("#mail-header").text(notification.time);
+    $("#mail-from").text(notification.email);
+    $("#mail-to").text("instituteAdmin@gmail.com");
+    $("#mail-subject").text(
+      notification.details ? `${notification.details}` : "No Subject"
+    );
+    $("#mail-body").text(
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae in, vel, quod quis impedit autem laborum, praesentium aliquam a dignissimos vero. Porro ipsa facilis numquam aliquam tempore odio rem magni?"
+    );
+
+    // Auto Put Value in "To"
+    $("#mail-to-input").val(notification.email);
+  }
+
+  // Handling mail icon click
+  $("#mail-button").click(function () {
+    // Hide chat and show mail container
+    $("#chat-container, #chat-input-container").hide();
+    $("#mail-container").show();
+
+    // Populate mail fields with current notification data
+    if (currentNotification) {
+      populateMailFields(currentNotification);
+    }
+
+    // Show back button & hide mail button
+    $("#back-button").show();
+    $("#mail-button").hide();
+  });
+
+  // Handling back button click
+  $("#back-button").click(function () {
+    // Hide mail container and show chat
+    $("#mail-container").hide();
+    $("#chat-container, #chat-input-container").show();
+
+    // Hide back button & show mail button
+    $(this).hide();
+    $("#mail-button").show();
+  });
 });

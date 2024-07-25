@@ -216,6 +216,34 @@
             </button>
           </div>
         </div>
+
+        <!-- Mail Content -->
+        <div id="mail-container" class="flex-1 overflow-y-auto p-4 bg-[#ECEFFF]" style="display: none;">
+          <div class="p-4 text-sm">
+            <p id="mail-header" class="text-right text-xs text-gray-500"></p>
+            <p>From: <span id="mail-from" class="text-[#4460EF]"></span></p>
+            <p class="mb-2">To: <span id="mail-to" class="text-[#4460EF]"></span></p>
+            <p>Subject: <span id="mail-subject" class="font-semibold"></span></p>
+            <p class="text-gray-900  mt-4" id="mail-body"></p>
+          </div>
+          <!-- From, To, Comment, Send -->
+          <div class="grid grid-cols-2 p-4 gap-4">
+            <div>
+              <input type="text" id="mail-subject-input" class="w-full border border-gray-300 bg-gray-100  p-2 text-sm rounded-md outline-none mb-4" placeholder="Subject">
+              <input type="text" id="mail-to-input" class="w-full border border-gray-300 bg-gray-100 p-2 text-sm rounded-md outline-none mb-4" placeholder="To">
+              <!-- // Send Button -->
+              <div class="w-full">
+                <button id="send-mail" class="w-full mt-4 bg-[#4460EF] text-white text-sm py-2 px-4 rounded-md flex justify-center items-center space-x-4">
+                  Send
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="inline ml-1" viewBox="0 0 24 24">
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14L21 3m0 0l-6.5 18a.55.55 0 0 1-1 0L10 14l-7-3.5a.55.55 0 0 1 0-1z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <textarea id="mail-body-input" class="w-full border border-gray-300 bg-gray-100  p-2 text-sm rounded-md outline-none" placeholder="Comment"></textarea>
+          </div>
+        </div>
       </div>
     </div>
   </div>
