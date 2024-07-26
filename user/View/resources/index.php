@@ -438,7 +438,7 @@
             <div class="w-full md:h-[50vh] h-[23vh]  hover:cursor-pointer md:hover:scale-105 transition-transform duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-xl relative">
                 <div class="flex justify-center items-center md:mt-8 mt-4">
                     <div class="md:w-24 md:h-24 w-12 h-12 rounded-full bg-gray-400 flex justify-center items-center">
-                        <svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="m226.53 56.41l-96-32a8 8 0 0 0-5.06 0l-96 32A8 8 0 0 0 24 64v80a8 8 0 0 0 16 0V75.1l33.59 11.19a64 64 0 0 0 20.65 88.05c-18 7.06-33.56 19.83-44.94 37.29a8 8 0 1 0 13.4 8.74C77.77 197.25 101.57 184 128 184s50.23 13.25 65.3 36.37a8 8 0 0 0 13.4-8.74c-11.38-17.46-27-30.23-44.94-37.29a64 64 0 0 0 20.65-88l44.12-14.7a8 8 0 0 0 0-15.18ZM176 120a48 48 0 1 1-86.65-28.45l36.12 12a8 8 0 0 0 5.06 0l36.12-12A47.9 47.9 0 0 1 176 120"/></svg>
+                        <svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path d="M44 8H4v30h15l5 5l5-5h15z"/><circle cx="24" cy="19" r="5" fill="currentColor"/><path d="M33 32c0-4.418-4.03-8-9-8s-9 3.582-9 8"/></g></svg>
                     </div>
                 </div>
                 <div class="md:my-10 my-3">
@@ -455,7 +455,7 @@
             <div class="w-full md:h-[50vh] h-[23vh]  hover:cursor-pointer md:hover:scale-105 hover:scale-105 transition-transform duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-xl relative">
                 <div class="flex justify-center items-center md:mt-8 mt-4">
                     <div class="md:w-24 md:h-24 w-12 h-12 rounded-full bg-gray-400 flex justify-center items-center">
-                        <svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="m226.53 56.41l-96-32a8 8 0 0 0-5.06 0l-96 32A8 8 0 0 0 24 64v80a8 8 0 0 0 16 0V75.1l33.59 11.19a64 64 0 0 0 20.65 88.05c-18 7.06-33.56 19.83-44.94 37.29a8 8 0 1 0 13.4 8.74C77.77 197.25 101.57 184 128 184s50.23 13.25 65.3 36.37a8 8 0 0 0 13.4-8.74c-11.38-17.46-27-30.23-44.94-37.29a64 64 0 0 0 20.65-88l44.12-14.7a8 8 0 0 0 0-15.18ZM176 120a48 48 0 1 1-86.65-28.45l36.12 12a8 8 0 0 0 5.06 0l36.12-12A47.9 47.9 0 0 1 176 120"/></svg>
+                        <svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12.005 13.003a3 3 0 0 1 2.08 5.162l-1.91 1.837h2.83v2h-6l-.001-1.724l3.694-3.555a1 1 0 1 0-1.693-.72h-2a3 3 0 0 1 3-3m6 0v4h2v-4h2v9h-2v-3h-4v-6zm-14-1a7.99 7.99 0 0 0 3 6.246v2.416a10 10 0 0 1-5-8.662zm8-10c5.185 0 9.449 3.946 9.95 9h-2.012a8.001 8.001 0 0 0-14.554-3.5h2.616v2h-6v-6h2v2.499a9.99 9.99 0 0 1 8-4"/></svg>
                     </div>
                 </div>
                 <div class="md:my-10 my-3">
@@ -472,7 +472,7 @@
             <div class="w-full md:h-[50vh] h-[23vh]  hover:cursor-pointer md:hover:scale-105 hover:scale-105 transition-transform duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-xl relative">
                 <div class="flex justify-center items-center md:mt-8 mt-4">
                     <div class="md:w-24 md:h-24 w-12 h-12 rounded-full bg-gray-400 flex justify-center items-center">
-                        <svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="m226.53 56.41l-96-32a8 8 0 0 0-5.06 0l-96 32A8 8 0 0 0 24 64v80a8 8 0 0 0 16 0V75.1l33.59 11.19a64 64 0 0 0 20.65 88.05c-18 7.06-33.56 19.83-44.94 37.29a8 8 0 1 0 13.4 8.74C77.77 197.25 101.57 184 128 184s50.23 13.25 65.3 36.37a8 8 0 0 0 13.4-8.74c-11.38-17.46-27-30.23-44.94-37.29a64 64 0 0 0 20.65-88l44.12-14.7a8 8 0 0 0 0-15.18ZM176 120a48 48 0 1 1-86.65-28.45l36.12 12a8 8 0 0 0 5.06 0l36.12-12A47.9 47.9 0 0 1 176 120"/></svg>
+                        <svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 8H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h1v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h3l5 4V4zm9.5 4c0 1.71-.96 3.26-2.5 4V8c1.53.75 2.5 2.3 2.5 4"/></svg>
                     </div>
                 </div>
                 <div class="md:my-10 my-3">
@@ -488,7 +488,7 @@
             <div class="w-full md:h-[50vh] h-[23vh] hover:cursor-pointer md:hover:scale-105 hover:scale-105 transition-transform duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-xl relative">
                 <div class="flex justify-center items-center md:mt-8 mt-4">
                     <div class="md:w-24 md:h-24 w-12 h-12 rounded-full bg-gray-400 flex justify-center items-center">
-                        <svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="m226.53 56.41l-96-32a8 8 0 0 0-5.06 0l-96 32A8 8 0 0 0 24 64v80a8 8 0 0 0 16 0V75.1l33.59 11.19a64 64 0 0 0 20.65 88.05c-18 7.06-33.56 19.83-44.94 37.29a8 8 0 1 0 13.4 8.74C77.77 197.25 101.57 184 128 184s50.23 13.25 65.3 36.37a8 8 0 0 0 13.4-8.74c-11.38-17.46-27-30.23-44.94-37.29a64 64 0 0 0 20.65-88l44.12-14.7a8 8 0 0 0 0-15.18ZM176 120a48 48 0 1 1-86.65-28.45l36.12 12a8 8 0 0 0 5.06 0l36.12-12A47.9 47.9 0 0 1 176 120"/></svg>
+                        <svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024"><path fill="currentColor" d="m665.216 768l110.848 192h-73.856L591.36 768H433.024L322.176 960H248.32l110.848-192H160a32 32 0 0 1-32-32V192H64a32 32 0 0 1 0-64h896a32 32 0 1 1 0 64h-64v544a32 32 0 0 1-32 32zM832 192H192v512h640zM352 448a32 32 0 0 1 32 32v64a32 32 0 0 1-64 0v-64a32 32 0 0 1 32-32m160-64a32 32 0 0 1 32 32v128a32 32 0 0 1-64 0V416a32 32 0 0 1 32-32m160-64a32 32 0 0 1 32 32v192a32 32 0 1 1-64 0V352a32 32 0 0 1 32-32"/></svg>
                     </div>
                 </div>
                 <div class="md:my-10 my-3">
@@ -505,7 +505,7 @@
             <div class="w-full md:h-[50vh] h-[23vh] hover:cursor-pointer md:hover:scale-105 hover:scale-105 transition-transform duration-300 ease-in-out bg-white hover:bg-gray-200 rounded-xl relative">
                 <div class="flex justify-center items-center md:mt-8 mt-4">
                     <div class="md:w-24 md:h-24 w-12 h-12 rounded-full bg-gray-400 flex justify-center items-center">
-                        <svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="m226.53 56.41l-96-32a8 8 0 0 0-5.06 0l-96 32A8 8 0 0 0 24 64v80a8 8 0 0 0 16 0V75.1l33.59 11.19a64 64 0 0 0 20.65 88.05c-18 7.06-33.56 19.83-44.94 37.29a8 8 0 1 0 13.4 8.74C77.77 197.25 101.57 184 128 184s50.23 13.25 65.3 36.37a8 8 0 0 0 13.4-8.74c-11.38-17.46-27-30.23-44.94-37.29a64 64 0 0 0 20.65-88l44.12-14.7a8 8 0 0 0 0-15.18ZM176 120a48 48 0 1 1-86.65-28.45l36.12 12a8 8 0 0 0 5.06 0l36.12-12A47.9 47.9 0 0 1 176 120"/></svg>
+                        <svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 14 14"><path fill="currentColor" fill-rule="evenodd" d="M1.5 0A1.5 1.5 0 0 0 0 1.5v6A1.5 1.5 0 0 0 1.5 9h11A1.5 1.5 0 0 0 14 7.5v-6A1.5 1.5 0 0 0 12.5 0zm6.125 1.454a.625.625 0 1 0-1.25 0v.4a1.532 1.532 0 0 0-.15 3.018l1.197.261a.39.39 0 0 1-.084.773h-.676a.39.39 0 0 1-.369-.26a.625.625 0 0 0-1.178.416c.194.55.673.965 1.26 1.069v.415a.625.625 0 1 0 1.25 0V7.13a1.641 1.641 0 0 0 .064-3.219L6.492 3.65a.281.281 0 0 1 .06-.556h.786a.388.388 0 0 1 .369.26a.625.625 0 1 0 1.178-.416a1.64 1.64 0 0 0-1.26-1.069zM2.75 3.75a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5m8.5 0a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5M4.5 9.875c.345 0 .625.28.625.625v2a.625.625 0 1 1-1.25 0v-2c0-.345.28-.625.625-.625m5.625.625a.625.625 0 1 0-1.25 0v2a.625.625 0 1 0 1.25 0zm-2.5.75a.625.625 0 1 0-1.25 0v2a.625.625 0 1 0 1.25 0z" clip-rule="evenodd"/></svg>
                     </div>
                 </div>
                 <div class="md:my-10 my-3">
@@ -848,7 +848,7 @@
                                         <div class="flex flex-col justify-center md:w-60 w-40">
                                             <p class="md:text-sm text-xs text text-gray-900 text-center">Enteprise</p>
                                             <div class="flex justify-center items-center">
-                                                <p class="text-center inline-block md:text-xl text-sm md:my-1 my-0.5 text-blue-800 mr-3">1,000,000 Ks</p> <small>MMK/month</small>
+                                                <p class="text-center inline-block md:text-xl text-sm md:my-1 my-0.5 text-blue-800 mr-3">1,000,000 Ks</p> <small>MMK/year</small>
                                             </div>
                                             <div class="flex justify-center">
                                                 <button class="md:text-base text-sm bg-transparent hover:bg-indigo-800 duration-100 border text-indigo-800 hover:text-gray-50 border-indigo-800 md:w-40 w-full px-5 py-2 rounded-3xl">Contact Sales</button>
@@ -1166,7 +1166,7 @@
                 <div class="flex space-x-4 mt-4 md:mt-0">
                     <a href="privacyPolicy.php" class="md:text-sm text-xs text-gray-400">Privacy Policy</a>
                     <a href="feedback.php" class="md:text-sm text-xs text-gray-400">Feedback</a>
-                    <a href="faq.php" class="md:text-sm text-xs text-gray-400">FAQ</a>
+                    <a href="support.php" class="md:text-sm text-xs text-gray-400">FAQ</a>
                 </div>
             </div>
         </div>
@@ -1185,7 +1185,7 @@
     <!-- jQuery js1-->
     <script src="./lib/jquery-3.7.1.js" type="text/javascript"></script>
     <!-- customjs -->
-    <script src="./js/homepage.js" type="text/javascript"></script>
+    <script src="./js/index.js" type="text/javascript"></script>
 </body>
 
 </html>

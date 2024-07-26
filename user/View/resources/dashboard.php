@@ -27,7 +27,7 @@
         <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
       </button>
 
-      <div id="menuList" isOpen="false" class="hidden md:flex absolute md:static top-16 right-0 left-0 mx-24 md:mx-auto md:items-center md:justify-center bg-gray-200 rounded-xl" >
+      <div id="menuList" isOpen="false" class="hidden md:flex absolute md:static top-16 right-0 left-0 mx-24 md:mx-auto md:items-center md:justify-center bg-gray-200 rounded-xl">
         <ul class="flex flex-col md:flex-row justify-between items-center font-medium md:space-x-10 p-3 md:p-0">
           <li>
             <a href="./dashboard.php" aria-active="true" id="userDashboard" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Dashboard</a>
@@ -76,12 +76,12 @@
               <p>Coin - <span class="text-primaryColor">500</span></p>
             </div>
 
-            <a class="flex items-center hover:text-primaryColor cursor-pointer">
+            <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
               <ion-icon name="person-circle-outline" class="text-lg mx-2 my-2"></ion-icon>
               <p>Profile</p>
             </a>
 
-            <a class="flex items-center hover:text-primaryColor cursor-pointer">
+            <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
               <ion-icon name="settings-outline" class="text-lg mx-2 my-2"></ion-icon>
               <p>Account Setting</p>
             </a>

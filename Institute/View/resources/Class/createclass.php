@@ -369,7 +369,7 @@
                                         <option value="DE">Tun Tun</option>
                                         <option value="DE">Aung Aung</option>
                                         <option value="DE">Hla Hla</option>
-                                        <option value="DE">Nu Nu</option>
+                                        <option value="DE">Nu Nu</option>   
                                     </select>
                                     <button type="button" class="h-full w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</button>
                                 </div>
@@ -422,8 +422,12 @@
                             </div>
                             <div class="mt-10 pl-5">
                                 <div class="grid grid-cols-2 gap-14">
-                                    <button type="button" id="create-cancel" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
-                                    <button type="submit" id="create-publish" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Publish</button>
+                                    <a href="./classlist.php">
+                                        <button type="button" id="create-cancel" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
+                                    </a>
+                                    <a href="./viewdetailsclass.php">
+                                        <button type="button" id="create-publish" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-base px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Publish</button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

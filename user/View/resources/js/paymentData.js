@@ -34,13 +34,11 @@ $(document).ready(function () {
     const selectedFee = $("#fees-type").val();
     if (selectedFee === "500") {
       $("#payment-plan-container, #attachment-receipt").css({
-          "visibility": "hidden",
-          "opacity": "0"
+          "display": "none",
       });
   } else {
       $("#payment-plan-container, #attachment-receipt").css({
-          "visibility": "visible",
-          "opacity": "1"
+          "display": "block",
       });
   }
 }

@@ -346,7 +346,7 @@
           </button>
                 </li>
                 <li class="mx-1">
-                    <a href="#"
+                    <a href="../chat.php"
                         class="block py-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent"
                         aria-current="page">
                         <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">

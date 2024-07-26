@@ -224,7 +224,7 @@
           </button>
         </li>
         <li class="mx-1">
-          <a href="#" class="block py-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">
+          <a href="../chat.php" class="block py-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">
             <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1.22656 19.5947C1.22656 12.9673 6.59956 7.59473 13.2266 7.59473C19.8536 7.59473 25.2266 12.9673 25.2266 19.5947V27.2312C25.2266 28.5017 25.2266 29.1362 25.0376 29.6432C24.7331 30.4577 24.0896 31.1012 23.2751 31.4057C22.7681 31.5947 22.1336 31.5947 20.8631 31.5947H13.2266C6.59956 31.5947 1.22656 26.2217 1.22656 19.5947Z" stroke="#4460EF" stroke-width="2" />
               <path d="M8.22656 17.5947H18.2266" stroke="#4460EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />

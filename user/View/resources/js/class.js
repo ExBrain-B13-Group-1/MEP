@@ -231,9 +231,11 @@ ${Array(Math.floor(5 - rating))
              <div class="md:mt-2 text-gray-600">
                                 <svg class="inline font-bold md:w-6 md:h-6 w-4 h-4 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
                                 <span class="inline font-bold text-base relative md:top-0 top-0.5 mb-2">100</span>
-                                 <p class="text-base font-bold">${course.price}</p>
+                                 <p class="text-base font-bold">${
+                                   course.price
+                                 }</p>
                             </div>             
-                <button class="bg-primaryColor text-white px-2 py-1 rounded mt-2">Enroll</button>
+                <button class="bg-primaryColor text-white px-2 py-1 rounded mt-2"><a href="../../View/resources/Auth/enrollment.php">Enroll</a></button>
             </div>
         </div>
     `;
@@ -806,7 +808,7 @@ ${Array(Math.floor(5 - rating))
 
   function generateCourseSlider(course) {
     return `
-<div class="col-span-3 shadow-md">
+<div class="col-span-4 md:col-span-3 shadow-md">
     <a href="viewdetailsclass.php?id=${course.id}" class="block">
         <img class="rounded-t-lg w-full" src="${course.image}" alt="" />
         <div class="p-4">
@@ -818,13 +820,13 @@ ${Array(Math.floor(5 - rating))
             <p class="text-sm text-gray-600">End Date: ${course.endDate}</p>
             <p class="text-sm font-bold text-red-400 inline">Enrollment Deadline: <span class="text-gray-600">${course.deadline}</span></p>
             <div class="flex justify-between items-center">
-             <div class="mt-2 text-gray-600">
+                <div class="mt-2 text-gray-600">
                                 <svg class="inline font-bold md:w-6 md:h-6 w-4 h-4 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
                                 <span class="inline font-bold text-base relative md:top-0 top-0.5">${course.coin}</span>
                                 <p class="text-base font-bold">${course.price}</p>
                 </div>
                 
-                <button class="bg-primaryColor text-white px-4 py-1 rounded mt-2">Enroll</button>
+                <button class="bg-primaryColor text-white px-4 py-1 rounded mt-2"><a href="../../View/resources/Auth/enrollment.php"">Enroll</a></button>
             </div>
         </div>
     </a>
@@ -837,9 +839,10 @@ ${Array(Math.floor(5 - rating))
     carouselWrapper.empty();
 
     const itemsPerSlide = 4;
+
     for (let i = 0; i < data.length; i += itemsPerSlide) {
       const slide = $(
-        '<div class="hidden duration-700 ease-in-out" data-carousel-item></div>'
+        '<div class="hidden duration-700 ease-in-out absolute inset-0 transition-transform transform z-10 translate-x-0 z-20" data-carousel-item></div>'
       );
       const slideContent = $(
         '<div class="w-full py-1 h-full grid grid-cols-12 gap-6 overflow-x-scroll scroll-smooth no-scrollbar"></div>'
@@ -852,11 +855,29 @@ ${Array(Math.floor(5 - rating))
     }
 
     // Activate the first slide
-    carouselWrapper.children().first().addClass("block").removeClass("hidden");
+    carouselWrapper
+      .children()
+      .first()
+      .addClass(
+        "block ease-in-out absolute inset-0 transition-transform transform z-30 translate-x-0 z-10"
+      )
+      .removeClass("hidden");
+  }
+
+  function initializeCarousel(tab) {
+    const carouselWrapper = $(`#${tab}-slider`);
+    carouselWrapper
+      .children()
+      .first()
+      .addClass(
+        "block active ease-in-out absolute inset-0 transition-transform transform z-30 translate-x-0 z-10"
+      )
+      .removeClass("hidden");
   }
 
   // Load initial tab's courses
   loadCourses("most-popular");
+  initializeCarousel("most-popular");
 
   // Tab click handler
   $(".tab-button").on("click", function () {
@@ -875,37 +896,35 @@ ${Array(Math.floor(5 - rating))
     $(".tab-content").addClass("hidden");
     $(`#${tab}`).removeClass("hidden");
     loadCourses(tab);
+    initializeCarousel(tab);
   });
 
   // Carousel controls
-  $("[data-carousel-next]").on("click", function () {
-    const activeSlide = $("#controls-carousel [data-carousel-item].block");
-    const nextSlide = activeSlide.next("[data-carousel-item]");
-    if (nextSlide.length) {
-      activeSlide.removeClass("block").addClass("hidden");
-      nextSlide.removeClass("hidden").addClass("block");
-    } else {
-      activeSlide.removeClass("block").addClass("hidden");
-      $("#controls-carousel [data-carousel-item]")
-        .first()
-        .removeClass("hidden")
-        .addClass("block");
+  $("button[data-carousel-next]").click(function () {
+    let activeTab = $(".tab-content:not(.hidden)").attr("id");
+    const items = $(`#${activeTab}-slider [data-carousel-item]`);
+    const activeItem = items.filter(".active");
+    console.log("Items:", items); // Debug output
+
+    let nextItem = activeItem.next();
+    if (!nextItem.length) {
+      nextItem = items.first();
     }
+
+    activeItem.removeClass("active block").addClass("hidden");
+    nextItem.addClass("active block").removeClass("hidden");
   });
 
-  $("[data-carousel-prev]").on("click", function () {
-    const activeSlide = $("#controls-carousel [data-carousel-item].block");
-    const prevSlide = activeSlide.prev("[data-carousel-item]");
-    if (prevSlide.length) {
-      activeSlide.removeClass("block").addClass("hidden");
-      prevSlide.removeClass("hidden").addClass("block");
-    } else {
-      activeSlide.removeClass("block").addClass("hidden");
-      $("#controls-carousel [data-carousel-item]")
-        .last()
-        .removeClass("hidden")
-        .addClass("block");
+  $("button[data-carousel-prev]").click(function () {
+    let activeTab = $(".tab-content:not(.hidden)").attr("id");
+    const items = $(`#${activeTab}-slider [data-carousel-item]`);
+    const activeItem = items.filter(".active");
+    let prevItem = activeItem.prev();
+    if (!prevItem.length) {
+      prevItem = items.last();
     }
+    activeItem.removeClass("active block").addClass("hidden");
+    prevItem.addClass("active block").removeClass("hidden");
   });
 
   // Handle accordion click
@@ -948,7 +967,8 @@ ${Array(Math.floor(5 - rating))
   // Generate course cards
   function generateCourseCards(category) {
     return courses[category]
-      .map(course => `
+      .map(
+        (course) => `
         <div class="w-64 shadow-md flex-shrink-0" data-course-id="${course.id}">
           <a href="viewdetailsclass.php?id=${course.id}" class="block">
             <img class="rounded-t-lg w-full" src="${course.image}" alt="${course.name}" />
@@ -971,14 +991,14 @@ ${Array(Math.floor(5 - rating))
                 </div>
                 <p class="text-base font-bold">${course.price}</p>
                 <button class="bg-primaryColor text-white px-4 py-1 rounded mt-2">
-                  <a href="Auth/enrollment.php">Enroll</a>
+                  <a href="../../View/resources/Auth/enrollment.php">Enroll</a>
                 </button>
               </div>
             </div>
           </a>
         </div>
-      `)
+      `
+      )
       .join("");
   }
-  
 });
