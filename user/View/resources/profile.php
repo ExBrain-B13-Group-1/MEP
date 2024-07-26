@@ -75,12 +75,12 @@
               <p>Coin - <span class="text-primaryColor">500</span></p>
             </div>
 
-            <a class="flex items-center hover:text-primaryColor cursor-pointer">
+            <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
               <ion-icon name="person-circle-outline" class="text-lg mx-2 my-2"></ion-icon>
               <p>Profile</p>
             </a>
 
-            <a class="flex items-center hover:text-primaryColor cursor-pointer">
+            <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
               <ion-icon name="settings-outline" class="text-lg mx-2 my-2"></ion-icon>
               <p>Account Setting</p>
             </a>
@@ -124,6 +124,10 @@
           <p>Add Information about yourself</p>
         </div>
         <div>
+          <div class="flex justify-between items-center my-2">
+            <p>Verify account with NRC</p>
+            <button aria-verify="false" class="bg-white border aria-[verify=true]:text-gray-400 aria-[verify=true]:border-gray-400 aria-[verify=false]:border-red-400 aria-[verify=false]:text-red-400 px-10 py-2 rounded-md aria-[verify=false]:hover:bg-red-400 aria-[verify=false]:hover:text-white">Verify</button>
+          </div>
           <form>
             <h1>Basics</h1>
             <div class="grid gap-6 mb-20">

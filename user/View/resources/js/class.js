@@ -831,7 +831,7 @@ ${Array(Math.floor(5 - rating))
         </div>
     </a>
 </div>`;
-}
+  }
 
   function loadCourses(tab) {
     const data = courses[tab];
@@ -842,7 +842,7 @@ ${Array(Math.floor(5 - rating))
 
     for (let i = 0; i < data.length; i += itemsPerSlide) {
       const slide = $(
-        '<div class="hidden duration-700 ease-in-out" data-carousel-item></div>'
+        '<div class="hidden duration-700 ease-in-out absolute inset-0 transition-transform transform z-10 translate-x-0 z-20" data-carousel-item></div>'
       );
       const slideContent = $(
         '<div class="w-full py-1 h-full grid grid-cols-12 gap-6 overflow-x-scroll scroll-smooth no-scrollbar"></div>'
@@ -855,7 +855,13 @@ ${Array(Math.floor(5 - rating))
     }
 
     // Activate the first slide
-    carouselWrapper.children().first().addClass("block").removeClass("hidden");
+    carouselWrapper
+      .children()
+      .first()
+      .addClass(
+        "block ease-in-out absolute inset-0 transition-transform transform z-30 translate-x-0 z-10"
+      )
+      .removeClass("hidden");
   }
 
   function initializeCarousel(tab) {
@@ -863,7 +869,9 @@ ${Array(Math.floor(5 - rating))
     carouselWrapper
       .children()
       .first()
-      .addClass("block active")
+      .addClass(
+        "block active ease-in-out absolute inset-0 transition-transform transform z-30 translate-x-0 z-10"
+      )
       .removeClass("hidden");
   }
 
@@ -896,10 +904,13 @@ ${Array(Math.floor(5 - rating))
     let activeTab = $(".tab-content:not(.hidden)").attr("id");
     const items = $(`#${activeTab}-slider [data-carousel-item]`);
     const activeItem = items.filter(".active");
+    console.log("Items:", items); // Debug output
+
     let nextItem = activeItem.next();
     if (!nextItem.length) {
       nextItem = items.first();
     }
+
     activeItem.removeClass("active block").addClass("hidden");
     nextItem.addClass("active block").removeClass("hidden");
   });

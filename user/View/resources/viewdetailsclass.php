@@ -84,12 +84,12 @@
                                 <p>Coin - <span class="text-primaryColor">500</span></p>
                             </div>
 
-                            <a class="flex items-center hover:text-primaryColor cursor-pointer">
+                            <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
                                 <ion-icon name="person-circle-outline" class="text-lg mx-2 my-2"></ion-icon>
                                 <p>Profile</p>
                             </a>
 
-                            <a class="flex items-center hover:text-primaryColor cursor-pointer">
+                            <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
                                 <ion-icon name="settings-outline" class="text-lg mx-2 my-2"></ion-icon>
                                 <p>Account Setting</p>
                             </a>
@@ -147,7 +147,13 @@
                         <div class="flex flex-col items-end md:pr-5 pr-6">
                             <p class="md:text-2xl text-xl font-semibold text-gray-900">250,000 MMK</p>
                             <div class="md:mt-2 text-gray-600">
-                                <svg class="inline font-bold md:w-6 md:h-6 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <svg class="inline font-bold md:w-6 md:h-6 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+                                    <g fill="currentColor">
+                                        <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z" />
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                        <path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
+                                    </g>
+                                </svg>
                                 <span class="inline font-bold md:text-xl text-base relative md:top-0 top-0.5">100</span>
                             </div>
                         </div>
@@ -206,7 +212,7 @@
     <section class="md:px-56 px-5 md:pt-20 pt-10">
         <h1 class="md:text-3xl font-semibold md:mb-5 mb-3">Description</h1>
         <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quae dolorem! Quae culpa ut, perferendis consequuntur reprehenderit nisi esse. Quasi optio nobis consequuntur eius, aliquid incidunt iusto laborum possimus ad porro commodi, officiis deserunt, quia velit quos? Nesciunt, libero doloremque. Autem tempora quas accusantium voluptates, velit dignissimos dolore debitis reiciendis quae minus deleniti modi necessitatibus nesciunt repellendus accusamus sequi beatae dolor eos quis magni officia at. Iusto repellat cumque eos soluta porro amet vitae id voluptatem a consequatur ipsam sequi quo quos ratione laudantium, modi possimus? Voluptatem, tenetur. Esse, corrupti harum corporis commodi tempora ipsam ad, necessitatibus voluptatum exercitationem perspiciatis inventore debitis assumenda voluptatibus eaque eligendi natus reiciendis asperiores laudantium? Fugiat vel voluptas quia officiis aspernatur laborum provident quibusdam doloribus nobis, impedit inventore veniam, quidem quaerat expedita est minima numquam repellat excepturi, voluptate eveniet possimus corporis praesentium eaque! Dignissimos obcaecati minus, voluptatibus laboriosam ad laudantium itaque ullam quaerat vel consequuntur voluptate quidem omnis debitis quod cupiditate cumque asperiores quasi nihil officiis exercitationem, vitae iste eligendi ducimus. Illo cumque corrupti veritatis ducimus porro! Exercitationem dolor ipsum, porro, recusandae incidunt animi itaque illum aspernatur maiores distinctio sit obcaecati quia, eius sint. Accusamus omnis magni quia nulla aliquid obcaecati, molestiae dignissimos perferendis id.</p>
-        <br/>
+        <br />
         <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, quae dolorem! Quae culpa ut, perferendis consequuntur reprehenderit nisi esse. Quasi optio nobis consequuntur eius, aliquid incidunt iusto laborum possimus ad porro commodi, officiis deserunt, quia velit quos? Nesciunt, libero doloremque. Autem tempora quas accusantium voluptates, velit dignissimos dolore debitis reiciendis quae minus deleniti modi necessitatibus nesciunt repellendus accusamus sequi beatae dolor eos quis magni officia at. Iusto repellat cumque eos soluta porro amet vitae id voluptatem a consequatur ipsam sequi quo quos ratione laudantium, modi possimus? Voluptatem, tenetur. Esse, corrupti harum corporis commodi tempora ipsam ad, necessitatibus voluptatum exercitationem perspiciatis inventore debitis assumenda voluptatibus eaque eligendi natus reiciendis asperiores laudantium? Fugiat vel voluptas quia officiis aspernatur laborum provident quibusdam doloribus nobis, impedit inventore veniam, quidem quaerat expedita est minima numquam repellat excepturi, voluptate eveniet possimus corporis praesentium eaque! Dignissimos obcaecati minus, voluptatibus laboriosam ad laudantium itaque ullam quaerat vel consequuntur voluptate quidem omnis debitis quod cupiditate cumque asperiores quasi nihil officiis exercitationem, vitae iste eligendi ducimus. Illo cumque corrupti veritatis ducimus porro! Exercitationem dolor ipsum, porro, recusandae incidunt animi itaque illum aspernatur maiores distinctio sit obcaecati quia, eius sint. Accusamus omnis magni quia nulla aliquid obcaecati, molestiae dignissimos perferendis id.</p>
     </section>
     <!-- End Description Section -->
@@ -226,7 +232,7 @@
                             <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
                         </div>
                         <div>
-                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
                             <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
                         </div>
                         <div>
@@ -245,7 +251,13 @@
                         <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
                             <p class="md:text-xl text-base font-bold">150,000 MMK</p>
                             <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
-                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+                                    <g fill="currentColor">
+                                        <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z" />
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                        <path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
+                                    </g>
+                                </svg>
                                 <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
                             </div>
                             <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded"><a href="../../View/resources/Auth/enrollment.php">Enroll</a></button>
@@ -264,7 +276,7 @@
                             <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
                         </div>
                         <div>
-                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
                             <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
                         </div>
                         <div>
@@ -283,7 +295,13 @@
                         <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
                             <p class="md:text-xl text-base font-bold">150,000 MMK</p>
                             <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
-                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+                                    <g fill="currentColor">
+                                        <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z" />
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                        <path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
+                                    </g>
+                                </svg>
                                 <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
                             </div>
                             <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
@@ -302,7 +320,7 @@
                             <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
                         </div>
                         <div>
-                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
                             <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
                         </div>
                         <div>
@@ -321,7 +339,13 @@
                         <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
                             <p class="md:text-xl text-base font-bold">150,000 MMK</p>
                             <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
-                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+                                    <g fill="currentColor">
+                                        <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z" />
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                        <path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
+                                    </g>
+                                </svg>
                                 <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
                             </div>
                             <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
@@ -340,7 +364,7 @@
                             <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
                         </div>
                         <div>
-                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
                             <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
                         </div>
                         <div>
@@ -359,7 +383,13 @@
                         <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
                             <p class="md:text-xl text-base font-bold">150,000 MMK</p>
                             <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
-                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+                                    <g fill="currentColor">
+                                        <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z" />
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                        <path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
+                                    </g>
+                                </svg>
                                 <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
                             </div>
                             <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
@@ -378,7 +408,7 @@
                             <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
                         </div>
                         <div>
-                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
                             <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
                         </div>
                         <div>
@@ -397,7 +427,13 @@
                         <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
                             <p class="md:text-xl text-base font-bold">150,000 MMK</p>
                             <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
-                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+                                    <g fill="currentColor">
+                                        <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z" />
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                        <path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
+                                    </g>
+                                </svg>
                                 <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
                             </div>
                             <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
@@ -416,7 +452,7 @@
                             <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
                         </div>
                         <div>
-                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
                             <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
                         </div>
                         <div>
@@ -435,7 +471,13 @@
                         <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
                             <p class="md:text-xl text-base font-bold">150,000 MMK</p>
                             <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
-                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+                                    <g fill="currentColor">
+                                        <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z" />
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                        <path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
+                                    </g>
+                                </svg>
                                 <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
                             </div>
                             <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
@@ -454,7 +496,7 @@
                             <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
                         </div>
                         <div>
-                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
                             <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
                         </div>
                         <div>
@@ -473,7 +515,13 @@
                         <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
                             <p class="md:text-xl text-base font-bold">150,000 MMK</p>
                             <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
-                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+                                    <g fill="currentColor">
+                                        <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z" />
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                        <path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
+                                    </g>
+                                </svg>
                                 <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
                             </div>
                             <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
@@ -492,7 +540,7 @@
                             <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
                         </div>
                         <div>
-                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
                             <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
                         </div>
                         <div>
@@ -511,7 +559,13 @@
                         <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
                             <p class="md:text-xl text-base font-bold">150,000 MMK</p>
                             <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
-                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+                                    <g fill="currentColor">
+                                        <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z" />
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                        <path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
+                                    </g>
+                                </svg>
                                 <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
                             </div>
                             <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
@@ -530,7 +584,7 @@
                             <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
                         </div>
                         <div>
-                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
                             <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
                         </div>
                         <div>
@@ -549,7 +603,13 @@
                         <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
                             <p class="md:text-xl text-base font-bold">150,000 MMK</p>
                             <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
-                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+                                    <g fill="currentColor">
+                                        <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z" />
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                        <path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
+                                    </g>
+                                </svg>
                                 <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
                             </div>
                             <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
@@ -568,7 +628,7 @@
                             <small class="text-base opacity-65">Instructor - </small> <small class="underline md:text-base text-sm text-blue-500">Matthwe Davis</small>
                         </div>
                         <div>
-                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span> 
+                            <span class="opacity-65">Start Date - </span> <span class="md:mr-5 font-medium">21/7/2024</span>
                             <span class="opacity-65">End Date - </span> <span class="font-medium">25/12/2024</span>
                         </div>
                         <div>
@@ -587,7 +647,13 @@
                         <div class="flex flex-col items-end md:mb-0 relative md:bottom-0 bottom-10">
                             <p class="md:text-xl text-base font-bold">150,000 MMK</p>
                             <div class="md:mt-2 text-gray-600 md:mb-1 mb-2">
-                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
+                                <svg class="inline font-bold md:w-5 md:h-5 w-5 h-5 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+                                    <g fill="currentColor">
+                                        <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z" />
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                        <path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
+                                    </g>
+                                </svg>
                                 <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">100</span>
                             </div>
                             <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded">Enroll</button>
@@ -645,7 +711,9 @@
                     <span class="text-base">4.5</span><span>Instructor Rating</span>
                 </div>
                 <div class="md:mb-2 mb-1.5">
-                    <svg class="inline w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M9 10a3.04 3.04 0 0 1 3-3a3.04 3.04 0 0 1 3 3a3.04 3.04 0 0 1-3 3a3.04 3.04 0 0 1-3-3m3 9l4 1v-3.08A7.54 7.54 0 0 1 12 18a7.54 7.54 0 0 1-4-1.08V20m4-16a5.78 5.78 0 0 0-4.24 1.74A5.78 5.78 0 0 0 6 10a5.78 5.78 0 0 0 1.76 4.23A5.78 5.78 0 0 0 12 16a5.78 5.78 0 0 0 4.24-1.77A5.78 5.78 0 0 0 18 10a5.78 5.78 0 0 0-1.76-4.26A5.78 5.78 0 0 0 12 4m8 6a8 8 0 0 1-.57 2.8A7.8 7.8 0 0 1 18 15.28V23l-6-2l-6 2v-7.72A7.9 7.9 0 0 1 4 10a7.68 7.68 0 0 1 2.33-5.64A7.73 7.73 0 0 1 12 2a7.73 7.73 0 0 1 5.67 2.36A7.68 7.68 0 0 1 20 10"/></svg>
+                    <svg class="inline w-5 h-5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M9 10a3.04 3.04 0 0 1 3-3a3.04 3.04 0 0 1 3 3a3.04 3.04 0 0 1-3 3a3.04 3.04 0 0 1-3-3m3 9l4 1v-3.08A7.54 7.54 0 0 1 12 18a7.54 7.54 0 0 1-4-1.08V20m4-16a5.78 5.78 0 0 0-4.24 1.74A5.78 5.78 0 0 0 6 10a5.78 5.78 0 0 0 1.76 4.23A5.78 5.78 0 0 0 12 16a5.78 5.78 0 0 0 4.24-1.77A5.78 5.78 0 0 0 18 10a5.78 5.78 0 0 0-1.76-4.26A5.78 5.78 0 0 0 12 4m8 6a8 8 0 0 1-.57 2.8A7.8 7.8 0 0 1 18 15.28V23l-6-2l-6 2v-7.72A7.9 7.9 0 0 1 4 10a7.68 7.68 0 0 1 2.33-5.64A7.73 7.73 0 0 1 12 2a7.73 7.73 0 0 1 5.67 2.36A7.68 7.68 0 0 1 20 10" />
+                    </svg>
                     <span class="text-base">321 Reviews</span>
                 </div>
                 <div class="md:mb-2 mb-1.5">
