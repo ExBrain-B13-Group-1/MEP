@@ -2449,6 +2449,11 @@ html {
   padding-bottom: 2rem;
 }
 
+.px-2\.5 {
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
+
 .pb-0\.5 {
   padding-bottom: 0.125rem;
 }

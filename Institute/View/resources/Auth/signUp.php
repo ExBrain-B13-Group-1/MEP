@@ -99,9 +99,50 @@
                             <input type="text" id="institute-address" placeholder="Institute Address" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
                         </div>
                         <!-- State/Division -->
-                        <div>
-                            <label for="institute-state" class="text-[#BDBDBD] text-sm">State/Division *</label>
-                            <input type="text" id="institute-state" placeholder="State/Division" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
+                        <div class="flex">
+                            <div class="">
+                                <label for="region" class="block mb-1 font-medium text-[#BDBDBD] text-sm opacity-80">State/Region</label>
+                                <select id="region" class="bg-white border border-gray-300 text-gray-700 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full" required>
+                                    <option selected disabled>Select State/Region</option>
+                                    <option value="ayeyarwady">Ayeyarwady</option>
+                                    <option value="bago">Bago</option>
+                                    <option value="chin">Chin</option>
+                                    <option value="kachin">Kachin</option>
+                                    <option value="kayah">Kayah</option>
+                                    <option value="kayin">Kayin</option>
+                                    <option value="magway">Magway</option>
+                                    <option value="mandalay">Mandalay</option>
+                                    <option value="mon">Mon</option>
+                                    <option value="rakhine">Rakhine</option>
+                                    <option value="sagaing">Sagaing</option>
+                                    <option value="shan">Shan</option>
+                                    <option value="tanintharyi">Tanintharyi</option>
+                                    <option value="yangon">Yangon</option>
+                                </select>
+                            </div>
+                            <div class="pl-5">
+                                <label for="region" class="block mb-1 text-sm font-medium text-[#BDBDBD] opacity-80">City</label>
+                                <select id="region" class="bg-white border border-gray-300 text-gray-700 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full" required>
+                                    <option selected disabled>Select City in Yangon</option>
+                                    <option value="dagon">Dagon</option>
+                                    <option value="hlaing">Hlaing</option>
+                                    <option value="kamayut">Kamayut</option>
+                                    <option value="kyauktada">Kyauktada</option>
+                                    <option value="lanmadaw">Lanmadaw</option>
+                                    <option value="latha">Latha</option>
+                                    <option value="mayangone">Mayangone</option>
+                                    <option value="mingaladon">Mingaladon</option>
+                                    <option value="mingalartaungnyunt">Mingalartaungnyunt</option>
+                                    <option value="north_dagon">North Dagon</option>
+                                    <option value="south_dagon">South Dagon</option>
+                                    <option value="pabedan">Pabedan</option>
+                                    <option value="sanchaung">Sanchaung</option>
+                                    <option value="tamwe">Tamwe</option>
+                                    <option value="thaketa">Thaketa</option>
+                                    <option value="thingangyun">Thingangyun</option>
+                                    <option value="yangon_downtown">Yangon Downtown</option>
+                                </select>
+                            </div>
                         </div>
                         <!-- Institute Website Link (Optional) -->
                         <div>
@@ -262,15 +303,11 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Affiliations Name (Optional) -->
+                        <!-- Brief Introduction about Institute -->
                         <div>
-                            <label for="affiliations" class="text-[#BDBDBD] text-sm">Affiliations (Optional)</label>
-                            <div id="affiliations-container">
-                                <input type="text" name="affiliations[]" placeholder="Add Affiliations If Convenient" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg mb-2">
-                            </div>
-                            <!-- Add Input Form More -->
-                            <button type="button" id="add-affiliation" class="mt-2 px-4 py-2 bg-white text-[#4460EF] font-bold rounded-md hover:bg-opacity-90 duration-75">+
-                                Add</button>
+                            <label for="institution-intro" class="text-[#BDBDBD] text-sm">Introduce Your Institution
+                                (max-300)</label>
+                            <textarea id="institution-intro" rows="5" placeholder="About Your Institute" maxlength="300" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required></textarea>
                         </div>
                         <!-- Institute's Facilities Upload Multiple Images -->
                         <div>
@@ -278,13 +315,16 @@
                                 <label class="block mb-2 text-[#BDBDBD] text-sm" for="facilities">Facilities - Library etc. (Optional)</label>
                                 <input id="facilities" multiple class="block w-full text-base text-gray-900 rounded-lg cursor-pointer bg-gray-50 focus:outline-none focus:ring-1 focus:ring-blue-light-bg" aria-describedby="user_avatar_help" id="user_avatar" type="file">
                             </div>
-
                         </div>
-                        <!-- Brief Introduction about Institute -->
+                        <!-- Affiliations Name (Optional) -->
                         <div>
-                            <label for="institution-intro" class="text-[#BDBDBD] text-sm">Introduce Your Institution
-                                (max-300)</label>
-                            <textarea id="institution-intro" rows="5" placeholder="About Your Institute" maxlength="300" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required></textarea>
+                            <!-- <label for="affiliations" class="text-[#BDBDBD] text-sm">Affiliations (Optional)</label>
+                            <div id="affiliations-container">
+                                <input type="text" name="affiliations[]" placeholder="Add Affiliations If Convenient" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg mb-2">
+                            </div>
+                          
+                            <button type="button" id="add-affiliation" class="mt-2 px-4 py-2 bg-white text-[#4460EF] font-bold rounded-md hover:bg-opacity-90 duration-75">+
+                                Add</button> -->
                         </div>
                         <!-- Empty Div -->
                         <div></div>
@@ -297,7 +337,7 @@
                         </div>
                     </div>
                     <!-- 2 Buttons (Step 2, Submit) -->
-                    <div class="flex justify-between mt-6">
+                    <div class="flex justify-between mt-5">
                         <button type="button" id="prev2" class="py-2 px-4 bg-white text-[#4460EF] font-bold rounded-md hover:bg-opacity-90 duration-75">Prev</button>
                         <button type="submit" id="submit-button" class="py-2 px-4 bg-white text-[#4460EF] font-bold rounded-md opacity-50 cursor-not-allowed duration-75" disabled>Send</button>
                     </div>
