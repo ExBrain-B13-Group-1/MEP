@@ -1636,6 +1636,18 @@ html {
   height: 100vh;
 }
 
+.h-\[65vh\] {
+  height: 65vh;
+}
+
+.h-\[100vh\] {
+  height: 100vh;
+}
+
+.h-\[70vh\] {
+  height: 70vh;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }

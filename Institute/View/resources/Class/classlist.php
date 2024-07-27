@@ -370,7 +370,7 @@
                     <div class="relative overflow-x-auto shadow-md dark:shadow-none sm:rounded-lg">
                         <!-- ClassList Table -->
                         <div id="data-container">
-                            <table class=" w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
+                            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
                                 <thead class="text-xs text-gray-700 uppercase bg-gray-400 dark:bg-gray-700 duration-500 dark:text-gray-400">
                                     <th scope="col" class="p-4">
                                         ID
