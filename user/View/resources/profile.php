@@ -126,7 +126,7 @@
         <div>
           <div class="flex justify-between items-center my-2">
             <p>Verify account with NRC</p>
-            <button aria-verify="false" class="bg-white border aria-[verify=true]:text-gray-400 aria-[verify=true]:border-gray-400 aria-[verify=false]:border-red-400 aria-[verify=false]:text-red-400 px-10 py-2 rounded-md aria-[verify=false]:hover:bg-red-400 aria-[verify=false]:hover:text-white">Verify</button>
+            <button aria-verify="false" class="bg-white border aria-[verify=true]:text-gray-400 aria-[verify=true]:border-gray-400 aria-[verify=false]:border-red-400 aria-[verify=false]:text-red-400 px-10 py-2 rounded-md aria-[verify=false]:hover:bg-red-400 aria-[verify=false]:hover:text-white"><a href="Auth/verification.php">Verify</a></button>
           </div>
           <form>
             <h1>Basics</h1>
