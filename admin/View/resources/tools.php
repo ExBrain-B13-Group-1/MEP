@@ -1,3 +1,9 @@
+<?php 
+ini_set('display_errors', '1');
+include '../../Controller/Coupon.controller.php';
+// echo '<pre>';
+// print_r($allCoupons);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -277,7 +283,7 @@
       </div>
       <div class="w-full mt-5">
         <h1 class="font-bold text-2xl mb-5">Coupon Generator</h1>
-        <form class="px-20">
+        <form class="px-20" method="post" action="../../Controller/Coupon.controller.php">
           <div class="grid gap-4 mb-6 md:grid-cols-2">
             <div>
               <label for="first_name" class="block text-xs font-medium ">Coupon Code</label>
@@ -326,19 +332,35 @@
             </tr>
           </thead>
           <tbody>
+            <?php foreach ($allCoupons as $coupon) {?>
             <tr class="odd:bg-primarycolor/45 even:bg-primarycolor/75 text-white">
               <td class="px-6 py-4">Coupon</td>
-              <td class="px-6 py-4">D2PDCE</td>
-              <td class="px-6 py-4">25/ 06/ 2024</td>
-              <td class="px-6 py-4">25/ 06/ 2024</td>
-              <td class="px-6 py-4">10</td>
-              <td class="px-6 py-4">500</td>
-              <td class="px-6 py-4">25 / 06 / 2024 7:40 PM</td>
-              <td class="px-6 py-4">Paing Sett Kyaw</td>
+              <td class="px-6 py-4">
+              <?= ($coupon["code"]) ?>
+              </td>
+              <td class="px-6 py-4">
+              <?= ($coupon["start_date"]) ?>
+              </td>
+              <td class="px-6 py-4">
+              <?= ($coupon["expiration_date"]) ?>
+              </td>
+              <td class="px-6 py-4">
+              <?= ($coupon["promo_percent"]) ?>
+              </td>
+              <td class="px-6 py-4">
+              <?= ($coupon["usage_limit"]) ?>
+              </td>
+              <td class="px-6 py-4">
+              <?= ($coupon["create_date"]) ?>
+              </td>
+              <td class="px-6 py-4">
+              <?= (ucfirst($coupon["fname"]).' '.ucfirst($coupon["lname"])) ?>
+              </td>
               <td class="px-6 py-4">
                 <ion-icon name="close-circle-outline" class="text-2xl cursor-pointer hover:text-red-500"></ion-icon>
               </td>
             </tr>
+            <?php } ?>
           </tbody>
         </table>
       </div>

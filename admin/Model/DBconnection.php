@@ -1,11 +1,13 @@
 <?php
 ini_set('display_errors', '1');
 
+
+
 class DBConnection{
-    private $hostname = "localhost";
-    private $port = 3306;
-    private $dbname = "mep";
-    private $username = "root";
+    private $hostname = "";
+    private $port = '';
+    private $dbname = "";
+    private $username = "";
     private $password = "";
     /**
      * this method is used for to connect database
