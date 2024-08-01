@@ -4,29 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Class - Finished</title>
+    <title>Class - Finished Class Detail</title>
     <!-- Tailwind output css -->
     <link href="./../css/output.css" rel="stylesheet" />
-    <style>
-        .pagination {
-            margin: 10px 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        .pagination button {
-            margin: 0 5px;
-            padding: 5px 10px;
-        }
-
-        .pagination button.active {
-            background-color: #007bff;
-            color: white;
-        }
-    </style>
 </head>
 
-<body class=" dark:bg-gray-800">
+<body class="bg-gray-300 dark:bg-gray-800">
 
     <!-- Navbar -->
     <nav class="fixed top-0 z-10 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 duration-300">
@@ -35,10 +18,10 @@
                 <div class="ml-64 relative top-2 pl-3">
                     <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500  dark:border-gray-700 dark:text-gray-400">
                         <li class="me-2 h-10">
-                            <a href="#" class="inline-block p-4 text-base rounded-t-lg hover:dark:bg-gray-600 changes">Class Lists</a>
+                            <a href="#" class="inline-block text-base p-4 rounded-t-lg hover:dark:bg-gray-600 changes">Class Lists</a>
                         </li>
                         <li class="me-2 h-10">
-                            <a href="#" class="inline-block p-4 text-base rounded-t-lg hover:dark:bg-gray-600 changes actives">Finished Classes</a>
+                            <a href="#" class="inline-block text-base p-4 rounded-t-lg hover:dark:bg-gray-600 changes actives">Finished Classes</a>
                         </li>
                     </ul>
                 </div>
@@ -46,6 +29,10 @@
                 <div class="flex items-center">
                     <div class="flex items-center">
                         <div class="flex items-center">
+                            <button type="button" class="relative text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-10 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                <ion-icon name="add-circle-outline" class="w-5 h-5 relative top-1 right-2"></ion-icon>
+                                Add New Class
+                            </button>
                             <div class="grid grid-cols-3 gap-8 mx-14">
                                 <ion-icon name="sunny-outline" class="w-6 h-6 cursor-pointer dark:text-white modechanges"></ion-icon>
                                 <svg class="w-6 h-6 cursor-pointer dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -259,9 +246,28 @@
     <!-- Data Area Class List-->
     <div class="block pt-20 px-5 ml-64 bg-gray-300 dark:bg-gray-800 classlists">
         <div class="grid grid-cols-8 gap-4 mt-10">
-            <div class="bg-white col-span-8 rounded-lg px-4 py-2 dark:bg-gray-600 duration-500">
-                <div class="w-full h-20 flex relative">
-                    <form class="w-1/4 mt-4">
+            <div class="bg-white col-span-6 rounded-lg px-4 py-2 dark:bg-gray-600 duration-300">
+                <div class="dark:text-white mt-5">
+                    <h3 class="font-bold">Front-End Development Course</h3>
+                    <p class="opacity-60">Class ID - C135</p>
+                </div>
+                <div class="w-full h-20 flex justify-between">
+                    <div class="flex items-center mb-4 gap-5">
+                        <div class="flex items-center">
+                            <input checked id="all" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <label for="all" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">All</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="certificate" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <label for="certificate" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Certificate</label>
+                        </div>
+                        <div class="flex items-center">
+                            <input id="no-certificate" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                            <label for="no-certificate" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">No Certificate</label>
+                        </div>
+                    </div>
+
+                    <form class="w-1/4 mt-2">
                         <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
                         <div class="relative">
                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -273,153 +279,344 @@
                             <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                         </div>
                     </form>
-
-                    <div class="h-full mt-4 ml-10 relative top-1.5">
-                        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-blue-700 hover:bg-blue-800  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Filter
-                            <svg class="w-4 h-4 ml-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M22 18.605a.75.75 0 0 1-.75.75h-5.1a2.93 2.93 0 0 1-5.66 0H2.75a.75.75 0 1 1 0-1.5h7.74a2.93 2.93 0 0 1 5.66 0h5.1a.75.75 0 0 1 .75.75m0-13.21a.75.75 0 0 1-.75.75H18.8a2.93 2.93 0 0 1-5.66 0H2.75a.75.75 0 1 1 0-1.5h10.39a2.93 2.93 0 0 1 5.66 0h2.45a.74.74 0 0 1 .75.75m0 6.6a.74.74 0 0 1-.75.75H9.55a2.93 2.93 0 0 1-5.66 0H2.75a.75.75 0 1 1 0-1.5h1.14a2.93 2.93 0 0 1 5.66 0h11.7a.75.75 0 0 1 .75.75" />
-                            </svg>
-                        </button>
-                    </div>
-
-                    <div class="h-full mt-4 ml-10 absolute top-1.5 right-0">
-                        <button type="button" class="relative text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-10 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                            <ion-icon name="add-circle-outline" class="w-5 h-5 relative top-1 right-2"></ion-icon>
-                            Add New Class
-                        </button>
-                    </div>
-
-                    <!-- Dropdown menu -->
-                    <div id="dropdown" class="relative z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow border-2 dark:border-gray-600 w-auto dark:bg-gray-700">
-
-                        <form class="dark:text-white px-10">
-                            <p class="text-right mt-6 text-red-500 mb-5 cursor-pointer">Clear</p>
-                            <div class="flex items-center justify-between">
-                                <p class="mt-6">Class ID :</p>
-                                <div class="grid grid-cols-2 gap-8">
-                                    <div>
-                                        <label for="from" class="block">From</label>
-                                        <input type="text" id="from" class="w-20 h-10 py-3 text-sm dark:bg-gray-600 rounded-md" />
-                                    </div>
-                                    <div>
-                                        <label for="to" class="block">To</label>
-                                        <input type="text" id="to" class="w-20 h-10 py-3 text-sm dark:bg-gray-600 rounded-md" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center justify-between">
-                                <p class="mt-4 mr-5">Instructor :</p>
-                                <div class="grid grid-cols-2 mt-3">
-                                    <select name="instructor" id="" class="w-48 col-span-2 dark:bg-gray-600 rounded-md">
-                                        <option selected disabled>Select Instructor</option>
-                                        <option value="">Instructor 1</option>
-                                        <option value="">Instructor 2</option>
-                                        <option value="">Instructor 3</option>
-                                        <option value="">Instructor 4</option>
-                                        <option value="">Instructor 5</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center justify-between">
-                                <p class="mt-4 mr-5">Start Date :</p>
-                                <div class="grid grid-cols-2 mt-3">
-                                    <input type="date" class="w-48 col-span-2 dark:bg-gray-600 rounded-md" />
-                                </div>
-                            </div>
-
-                            <div class="flex items-center justify-between">
-                                <p class="mt-4 mr-5">End Date :</p>
-                                <div class="grid grid-cols-2 mt-3">
-                                    <input type="date" class="w-48 col-span-2 dark:bg-gray-600 rounded-md" />
-                                </div>
-                            </div>
-
-                            <div class="flex items-center justify-between mt-3 pb-7">
-                                <p class="mt-1">Class Fee :</p>
-                                <div class="grid grid-cols-2 gap-8 ">
-                                    <div>
-                                        <select name="fee" id="" class="w-20 dark:bg-gray-600 rounded-md">
-                                            <option selected disabled>Min</option>
-                                            <option value="">50000</option>
-                                            <option value="">100000</option>
-                                            <option value="">200000</option>
-                                            <option value="">300000</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <select name="fee" id="" class="w-20 dark:bg-gray-600 rounded-md">
-                                            <option selected disabled>Max</option>
-                                            <option value="">100000</option>
-                                            <option value="">200000</option>
-                                            <option value="">300000</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-2 gap-10 mb-4 mt-3">
-                                <button type="button" class="w-full focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
-                                <button type="button" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Apply</button>
-                            </div>
-
-                        </form>
-                    </div>
                 </div>
-                <div class="relative overflow-x-auto shadow-md dark:shadow-none sm:rounded-lg">
-                    <!-- ClassList Table -->
-                    <div id="data-container">
-                        <table class=" w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-400 dark:bg-gray-700 duration-500 dark:text-gray-400">
-                                <th scope="col" class="p-4">
-                                    ID
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    CLASS TITLE
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    INSTRUCTOR
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    START DATE
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    END DATE
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    STATUS
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    CLASS FEE
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    MAX ENROLLMENT
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    ENROLLMENT DEADLINE
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    DETAILS
-                                </th>
-                            </thead>
-                            <tbody id="table-body">
-                                <!-- table data -->
-                            </tbody>
-                        </table>
-                    </div>
 
-                    <div class="flex justify-center">
+                <div class="relative overflow-x-auto shadow-md dark:shadow-none sm:rounded-lg ">
+                    <!-- ClassList Table -->
+                    <table class=" w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-400 dark:bg-gray-700 duration-500 dark:text-gray-400">
+                            <th scope="col" class="p-4">
+                                ID
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                FULLNAME
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                GENDER
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                ENROLLED CLASS
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Certified
+                            </th>
+                            <th scope="col" class="px-6 py-3 ">
+                                DETAILS
+                            </th>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="w-4 p-4">
+                                    S123456
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Mr.Denial Brown
+                                </th>
+                                <td class="px-6 py-4">
+                                    Male
+                                </td>
+                                <td class="px-6 py-4">
+                                    C123, C321, ...
+                                </td>
+                                <td class="px-6 py-4">
+                                    <input type="checkbox" checked />
+                                </td>
+                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                                    Details
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="w-4 p-4">
+                                    S123456
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Mr.Denial Brown
+                                </th>
+                                <td class="px-6 py-4">
+                                    Male
+                                </td>
+                                <td class="px-6 py-4">
+                                    C123, C321, ...
+                                </td>
+                                <td class="px-6 py-4">
+                                    <input type="checkbox" />
+                                </td>
+                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                                    Details
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="w-4 p-4">
+                                    S123456
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Mr.Denial Brown
+                                </th>
+                                <td class="px-6 py-4">
+                                    Male
+                                </td>
+                                <td class="px-6 py-4">
+                                    C123, C321, ...
+                                </td>
+                                <td class="px-6 py-4">
+                                    <input type="checkbox" checked />
+                                </td>
+                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                                    Details
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="w-4 p-4">
+                                    S123456
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Mr.Denial Brown
+                                </th>
+                                <td class="px-6 py-4">
+                                    Male
+                                </td>
+                                <td class="px-6 py-4">
+                                    C123, C321, ...
+                                </td>
+                                <td class="px-6 py-4">
+                                    <input type="checkbox" />
+                                </td>
+                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                                    Details
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="w-4 p-4">
+                                    S123456
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Mr.Denial Brown
+                                </th>
+                                <td class="px-6 py-4">
+                                    Male
+                                </td>
+                                <td class="px-6 py-4">
+                                    C123, C321, ...
+                                </td>
+                                <td class="px-6 py-4">
+                                    <input type="checkbox" />
+                                </td>
+                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                                    Details
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="w-4 p-4">
+                                    S123456
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Mr.Denial Brown
+                                </th>
+                                <td class="px-6 py-4">
+                                    Male
+                                </td>
+                                <td class="px-6 py-4">
+                                    C123, C321, ...
+                                </td>
+                                <td class="px-6 py-4">
+                                    <input type="checkbox" checked />
+                                </td>
+                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                                    Details
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="w-4 p-4">
+                                    S123456
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Mr.Denial Brown
+                                </th>
+                                <td class="px-6 py-4">
+                                    Male
+                                </td>
+                                <td class="px-6 py-4">
+                                    C123, C321, ...
+                                </td>
+                                <td class="px-6 py-4">
+                                    <input type="checkbox" />
+                                </td>
+                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                                    Details
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="w-4 p-4">
+                                    S123456
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Mr.Denial Brown
+                                </th>
+                                <td class="px-6 py-4">
+                                    Male
+                                </td>
+                                <td class="px-6 py-4">
+                                    C123, C321, ...
+                                </td>
+                                <td class="px-6 py-4">
+                                    <input type="checkbox" />
+                                </td>
+                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                                    Details
+                                </td>
+                            </tr>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="w-4 p-4">
+                                    S123456
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Mr.Denial Brown
+                                </th>
+                                <td class="px-6 py-4">
+                                    Male
+                                </td>
+                                <td class="px-6 py-4">
+                                    C123, C321, ...
+                                </td>
+                                <td class="px-6 py-4">
+                                    <input type="checkbox" />
+                                </td>
+                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                                    Details
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="w-4 p-4">
+                                    S123456
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    Mr.Denial Brown
+                                </th>
+                                <td class="px-6 py-4">
+                                    Male
+                                </td>
+                                <td class="px-6 py-4">
+                                    C123, C321, ...
+                                </td>
+                                <td class="px-6 py-4">
+                                    <input type="checkbox" />
+                                </td>
+                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                                    Details
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="flex justify-center relative">
                         <nav aria-label="Page navigation example">
-                            <ul class="flex items-center -space-x-px h-10 text-base my-6" id="pagination">
-                                <!-- Pagination buttons will be injected here -->
+                            <ul class="flex items-center -space-x-px h-10 text-base my-6">
+                                <li>
+                                    <a href="#" class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                        <span class="sr-only">Previous</span>
+                                        <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
+                                </li>
+                                <li>
+                                    <a href="#" aria-current="page" class="z-10 flex items-center justify-center px-4 h-10 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                                        <span class="sr-only">Next</span>
+                                        <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                                        </svg>
+                                    </a>
+                                </li>
                             </ul>
                         </nav>
+                        <div class="absolute right-0 top-6">
+
+                            <button type="button" class="relative text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base px-14 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- student detail card -->
+            <div class="bg-white col-span-2 rounded-lg px-10 pt-10 dark:bg-gray-600 duration-300 mr-5 relative">
+                <div class="flex items-center gap-5">
+                    <div class="absolute top-0 right-0 pt-3 pr-5">
+                        <button type="button" class="px-2 py-2 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-500 dark:hover:text-white">
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <div class="relative">
+                        <img src="./../../../storages/profile1.svg" alt="profile1">
+                        <div class="absolute top-0 right-0 w-5 h-5 rounded-full bg-blue-700 flex justify-center items-center">
+                            <ion-icon name="checkmark-outline" class="text-white"></ion-icon>
+                        </div>
+
+                    </div>
+                    <div class="dark:text-white">
+                        <h3 class="font-black">Mr.Daniel Brown</h3>
+                        <span class="dark:opacity-60">ID - S34115</span>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h3 class="text-red-600 dark:text-white mt-8 mb-3 font-black">Content Information</h3>
+                        <ion-icon name="mail-outline" class="w-5 h-5 relative top-1 mr-2 dark:text-white opacity-60"></ion-icon> <span class="text-blue-700 dark:text-blue-400">deniaelbrown334@gmail.com</span>
+                    </div>
+                    <div>
+                        <ion-icon name="call-outline" class="w-5 h-5 relative top-1 mr-2 dark:text-white opacity-60"></ion-icon> <span class="dark:text-white mr-2 opacity-80">(+95)</span><span class="dark:text-white opacity-80">976XXXXXXXX</span>
+                    </div>
+                    <div>
+                        <ion-icon name="logo-linkedin" class="w-5 h-5 relative top-1 mr-2 dark:text-white opacity-60"></ion-icon> <span class="text-blue-700 dark:text-blue-400">https://linkedin/profile/danielbrown</span>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h3 class="text-red-600 dark:text-white mt-8 mb-3 font-black">Address</h3>
+                        <p class="dark:text-white mr-2 opacity-80">No.977, Yone Gyi Str, Hleden, Yangon</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h3 class="text-red-600 dark:text-white mt-8 mb-3 font-black">Enrolled Classes (ID) </h3>
+                        <ul class="text-blue-700 dark:text-blue-400 list-inside list-disc">
+                            <li>C123</li>
+                            <li>C321</li>
+                            <li>C321</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h3 class="text-red-600 dark:text-white mt-8 mb-3 font-black">Certified Classes (ID) </h3>
+                        <ul class="text-blue-700 dark:text-blue-400 list-inside list-disc">
+                            <li>C121</li>
+                            <li>C101</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
     <!-- ionicons icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -438,7 +635,7 @@
     <script src="./../js/darkandlight.js" type="text/javascript"></script>
     <!-- customjs -->
     <script src="./../js/paginatedTable.js" type="text/javascript"></script>
-    <script src="./../js/finishedclass.js" type="text/javascript"></script>
+    <script src="./../js/finishedclassdetails.js" type="text/javascript"></script>
 </body>
 
 </html>
