@@ -1,6 +1,6 @@
 <?php
 ini_set('display_errors', '1');
-require_once "../../Model/DBConnection.php";
+require_once  __DIR__ . '/../Model/DBConnection.php';
 
 class MInstitute{
     /**

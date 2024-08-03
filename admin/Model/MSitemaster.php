@@ -1,8 +1,9 @@
 <?php
 ini_set('display_errors', '1');
-require_once "../../Model/DBConnection.php";
+require_once  __DIR__ . '/../Model/DBConnection.php';
 
-class MSitemaster{
+class MSitemaster
+{
     /**
      * (Read)
      */
@@ -33,9 +34,9 @@ class MSitemaster{
             $db = new DBConnection();
             //get connection
             $pdo = $db->connection();
-            // query prepare
+             // query prepare
             $sql = $pdo->prepare(
-                "UPDATE m_sitemaster SET slogan = :slogan, title = :title, users = :users, institutes = :institutes, description = :description WHERE id = :id"
+                "UPDATE m_sitemaster SET slogan = :slogan, title = :title, description = :description WHERE id = :id"
             );
             $sql->bindValue(":slogan", $slogan);
             $sql->bindValue(":title", $title);
@@ -45,23 +46,26 @@ class MSitemaster{
             return true;
         } catch (\Throwable $th) {
             // fail connection or query
+            echo "Unexpected Error Occurs! $th";
             return false;
         }
     }
 
-    /**
-     * (Create)
+     /**
+     * (Update About)
      */
-    public function add($admin)
-    {
+    public function updateAbout($id, $title, $description) {
         try {
             $db = new DBConnection();
             //get connection
             $pdo = $db->connection();
-            // query prepare
+             // query prepare
             $sql = $pdo->prepare(
-                "SELECT * FROM m_admins"
+                "UPDATE m_sitemaster SET title = :title, description = :description WHERE id = :id"
             );
+            $sql->bindValue(":title", $title);
+            $sql->bindValue(":description", $description);
+            $sql->bindValue(":id", $id);
             $sql->execute();
             return true;
         } catch (\Throwable $th) {
@@ -71,47 +75,4 @@ class MSitemaster{
         }
     }
 
-    /**
-     * (Update)
-     */
-    public function modify($admin, $id)
-    {
-        try {
-            $db = new DBConnection();
-            //get connection
-            $pdo = $db->connection();
-            // query prepare
-            $sql = $pdo->prepare(
-                "SELECT * FROM m_admins" //update query
-            );
-            $sql->execute();
-            return true;
-        } catch (\Throwable $th) {
-            // fail connection or query
-            echo "Unexpected Error Occurs! $th";
-            return false;
-        }
-    }
-
-    /**
-     * (Delete)
-     */
-    public function remove($id)
-    {
-        try {
-            $db = new DBConnection();
-            //get connection
-            $pdo = $db->connection();
-            // query prepare
-            $sql = $pdo->prepare(
-                "SELECT * FROM m_admins"
-            );
-            $sql->execute();
-            return true;
-        } catch (\Throwable $th) {
-            // fail connection or query
-            echo "Unexpected Error Occurs! $th";
-            return false;
-        }
-    }
 }

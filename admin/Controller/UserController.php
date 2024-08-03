@@ -1,6 +1,6 @@
 <?php 
 ini_set('display_errors','1');
-include "../../Model/MUsers.php";
+include __DIR__ . '/../Model/MUsers.php';
 
 $mUsers = new MUser();
 $users = $mUsers->getAllUser();

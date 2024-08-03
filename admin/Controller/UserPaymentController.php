@@ -1,6 +1,6 @@
 <?php 
 ini_set('display_errors','1');
-include "../../Model/MUserPayments.php";
+include __DIR__ . '/../Model/MUserPayments.php';
 
 $mUserPays = new MUserPayment();
 $userPays = $mUserPays->getAll();

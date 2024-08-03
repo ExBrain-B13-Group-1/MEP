@@ -1,7 +1,11 @@
 <?php
 session_start();
 
-// Access session variable
+// Initialize session variables if not set
+if (!isset($_SESSION['totalIncome'])) {
+    $_SESSION['totalIncome'] = 0;
+}
+
 $totalIncome = $_SESSION['totalIncome'];
 
 include '../../Controller/UserController.php';
@@ -16,7 +20,6 @@ $totalInstitutes = count($institutes);
 // Payment Controller
 $instituteIncome = 0;
 $userIncome = 0;
-$totalIncome = 0;
 foreach ($institutePays as $pays) {
     $instituteIncome += $pays['payment_amount'];
 }

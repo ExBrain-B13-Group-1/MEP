@@ -108,7 +108,7 @@
                             <p class="text-red-500 text-sm">Please Also Upload Your NRC Information</p>
                             <!-- Front Side Upload -->
                             <div class="w-full">
-                                <label class="block text-white mb-2">Front Side *</label>
+                                <label class="block text-white mb-3">Front Side *</label>
                                 <div class="mb-2 md:mb-6">
                                     <div class="upload-area rounded-md" id="upload-area-front">
                                         <input type="file" id="file-input-front" accept="image/*" required class="hidden">
@@ -148,12 +148,9 @@
                         <!-- Empty Div -->
                         <div></div>
                         <!-- 2 Buttons (Back, Enroll) -->
-                        <div class="flex justify-between">
+                        <div class="col-span-1 md:col-span-2 flex justify-between">
                             <button type="button" class="py-2 px-4 bg-white text-primary-main font-bold rounded-md hover:bg-opacity-90 duration-75"><a href="../dashboard.php">Back</a></button>
-                            <button type="submit" id="submit-button" class="block md:hidden py-2 px-4 bg-white text-primary-main font-bold rounded-md opacity-50 cursor-not-allowed duration-75" disabled>Verify</button>
-                        </div>
-                        <div class="flex justify-end text-right hidden md:block">
-                            <button type="submit" id="submit-button" class="py-2 px-4 bg-white text-primary-main font-bold rounded-md opacity-50 cursor-not-allowed duration-75" disabled>Verify</button>
+                            <button type="submit" id="submit-button" class=" py-2 px-4 bg-white text-primary-main font-bold rounded-md opacity-50 cursor-not-allowed duration-75" disabled>Verify</button>
                         </div>
                 </form>
             </div>

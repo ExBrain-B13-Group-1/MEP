@@ -58,4 +58,6 @@ $(document).ready(function () {
   // Initialize all upload areas
   setupUploadArea("upload-area-front", "file-input-front", "uploaded-image-front", "upload-text-front");
   setupUploadArea("upload-area-back", "file-input-back", "uploaded-image-back", "upload-text-back");
+  setupUploadArea("upload-area-logo", "file-input-logo", "uploaded-image-logo", "upload-text-logo");
+  setupUploadArea("upload-area-slider", "file-input-slider", "uploaded-image-slider", "upload-text-slider");
   });

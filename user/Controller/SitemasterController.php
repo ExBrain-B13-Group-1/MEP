@@ -1,6 +1,6 @@
 <?php
 ini_set('display_errors', '1');
-include "../../Model/MSitemaster.php";
+include __DIR__ . '/../Model/MSitemaster.php';
 
 $mSites = new MSitemaster();
 $sites = $mSites->getAll();

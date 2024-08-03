@@ -28,7 +28,7 @@ $serviceContents = array_filter($sites, function ($site) {
     return $site['page_name'] === 'Service';
 });
 // echo "<pre>";
-// print_r($serviceContents);
+// print_r($aboutContents);
 ?>
 
 <!DOCTYPE html>
@@ -335,10 +335,9 @@ $serviceContents = array_filter($sites, function ($site) {
             </div>
 
             <!-- Home Content -->
-            <form id="home-content" action="http://localhost/MEP/admin/Controller/SitemasterController.php" method="POST" class="tab-content space-y-4 mt-6">
+            <form id="home-content" action="../../Controller/SitemasterController.php" method="POST" class="tab-content space-y-4 mt-6">
                 <?php foreach ($homeContents as $home) : ?>
                     <input type="hidden" name="id" value="<?= ($home['id']); ?>">
-                    <?= ($home['id']); ?>
                     <div class="grid grid-cols-3 space-x-3">
                         <div class="space-y-2">
                             <label for="slogan" class="block font-medium text-gray-700">Slogan</label>
@@ -365,155 +364,60 @@ $serviceContents = array_filter($sites, function ($site) {
                     </div>
                 <?php endforeach; ?>
 
-                
-                <button type="submit" name="update" id="save-home" class="bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+
+                <button type="submit" name="updateHome" id="save-home" class="bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                     Save Changes
                 </button>
             </form>
-            <div class="grid grid-cols-3 gap-4 mt-4">
-                    <div class="space-y-2">
-                        <!-- Slider 1 Upload -->
-                        <div class="w-full">
-                            <label class="block mb-2 dark:text-white">Slider 1</label>
-                            <div class="mb-6">
-                                <div class="upload-area dark:bg-gray-600 dark:border-gray-500 rounded-md" id="upload-area-1">
-                                    <input type="file" id="file-input-1" accept="image/*" required class="hidden">
-                                    <img id="uploaded-image-1" alt="Uploaded Image" class="uploaded-image">
-                                    <div id="upload-text-1" class="upload-text text-center">
-                                        <ion-icon name="cloud-upload-outline" class="text-2xl text-gray-500 dark:text-gray-400"></ion-icon>
-                                        <p class="text-gray-400 dark:text-gray-300 text-sm">Upload Here (Slider) </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <!-- Slider 2 Upload -->
-                        <div class="w-full">
-                            <label class="block mb-2 dark:text-white">Slider 2</label>
-                            <div class="mb-6">
-                                <div class="upload-area dark:bg-gray-600 dark:border-gray-500 rounded-md" id="upload-area-2">
-                                    <input type="file" id="file-input-2" accept="image/*" required class="hidden">
-                                    <img id="uploaded-image-2" alt="Uploaded Image" class="uploaded-image">
-                                    <div id="upload-text-2" class="upload-text text-center">
-                                        <ion-icon name="cloud-upload-outline" class="text-2xl text-gray-500 dark:text-gray-400"></ion-icon>
-                                        <p class="text-gray-400 dark:text-gray-300 text-sm">Upload Here (Slider) </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <!-- Slider 3 Upload -->
-                        <div class="w-full">
-                            <label class="block mb-2 dark:text-white">Slider 3</label>
-                            <div class="mb-6">
-                                <div class="upload-area dark:bg-gray-600 dark:border-gray-500 rounded-md" id="upload-area-3">
-                                    <input type="file" id="file-input-3" accept="image/*" required class="hidden">
-                                    <img id="uploaded-image-3" alt="Uploaded Image" class="uploaded-image">
-                                    <div id="upload-text-3" class="upload-text text-center">
-                                        <ion-icon name="cloud-upload-outline" class="text-2xl text-gray-500 dark:text-gray-400"></ion-icon>
-                                        <p class="text-gray-400 dark:text-gray-300 text-sm">Upload Here (Slider) </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <!-- Slider 4 Upload -->
-                        <div class="w-full">
-                            <label class="block mb-2 dark:text-white">Slider 4</label>
-                            <div class="mb-6">
-                                <div class="upload-area dark:bg-gray-600 dark:border-gray-500 rounded-md" id="upload-area-4">
-                                    <input type="file" id="file-input-4" accept="image/*" required class="hidden">
-                                    <img id="uploaded-image-4" alt="Uploaded Image" class="uploaded-image">
-                                    <div id="upload-text-4" class="upload-text text-center">
-                                        <ion-icon name="cloud-upload-outline" class="text-2xl text-gray-500 dark:text-gray-400"></ion-icon>
-                                        <p class="text-gray-400 dark:text-gray-300 text-sm">Upload Here (Slider) </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <!-- Slider 5 Upload -->
-                        <div class="w-full">
-                            <label class="block mb-2 dark:text-white">Slider 5</label>
-                            <div class="mb-6">
-                                <div class="upload-area dark:bg-gray-600 dark:border-gray-500 rounded-md" id="upload-area-5">
-                                    <input type="file" id="file-input-5" accept="image/*" required class="hidden">
-                                    <img id="uploaded-image-5" alt="Uploaded Image" class="uploaded-image">
-                                    <div id="upload-text-5" class="upload-text text-center">
-                                        <ion-icon name="cloud-upload-outline" class="text-2xl text-gray-500 dark:text-gray-400"></ion-icon>
-                                        <p class="text-gray-400 dark:text-gray-300 text-sm">Upload Here (Slider) </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <!-- Slider 6 Upload -->
-                        <div class="w-full">
-                            <label class="block mb-2 dark:text-white">Slider 6</label>
-                            <div class="mb-6">
-                                <div class="upload-area dark:bg-gray-600 dark:border-gray-500 rounded-md" id="upload-area-6">
-                                    <input type="file" id="file-input-6" accept="image/*" required class="hidden">
-                                    <img id="uploaded-image-6" alt="Uploaded Image" class="uploaded-image">
-                                    <div id="upload-text-6" class="upload-text text-center">
-                                        <ion-icon name="cloud-upload-outline" class="text-2xl text-gray-500 dark:text-gray-400"></ion-icon>
-                                        <p class="text-gray-400 dark:text-gray-300 text-sm">Upload Here (Slider) </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             <!-- About Us Content -->
             <form id="about-content" action="../../Controller/SitemasterController.php" method="POST" class="tab-content space-y-4 mt-6">
                 <div class="grid grid-cols-3 space-x-16">
                     <div class="space-y-2">
+                        <input type="hidden" name="id[]" value="<?= ($aboutContents[2]['id']); ?>">
+                        <?= ($aboutContents[2]['id']); ?>
                         <div>
-                            <label for="slogan" class="block font-medium text-gray-700">Title</label>
-                            <input type="text" id="slogan" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($aboutContents[2]['title']); ?>">
+                            <label for="title1" class="block font-medium text-gray-700">Title</label>
+                            <input type="text" name="title[]" id="title1" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($aboutContents[2]['title']); ?>">
                         </div>
                         <div>
-                            <label for="description" class="block font-medium text-gray-700">Description</label>
-                            <textarea id="description" rows="9" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs resize-none no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg"><?= ($aboutContents[2]['description']); ?></textarea>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <div>
-                            <label for="title" class="block font-medium text-gray-700">Title</label>
-                            <input type="text" id="title" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($aboutContents[3]['title']); ?>">
-                        </div>
-                        <div>
-                            <label for="description" class="block font-medium text-gray-700">Description</label>
-                            <textarea id="description" rows="9" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs resize-none no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg"><?= ($aboutContents[3]['description']); ?></textarea>
+                            <label for="description1" class="block font-medium text-gray-700">Description</label>
+                            <textarea id="description1" name="description[]" rows="9" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs resize-none no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg"><?= ($aboutContents[2]['description']); ?></textarea>
                         </div>
                     </div>
                     <div class="space-y-2">
-                        <!-- About Us Upload -->
-                        <div class="w-full">
-                            <label class="block mb-2 dark:text-white">Change About Us Photo</label>
-                            <div class="mb-6">
-                                <div class="upload-area dark:bg-gray-600 dark:border-gray-500 rounded-md" id="upload-area-about">
-                                    <input type="file" id="file-input-about" accept="image/*" required class="hidden">
-                                    <img id="uploaded-image-about" alt="Uploaded Image" class="uploaded-image">
-                                    <div id="upload-text-about" class="upload-text text-center">
-                                        <ion-icon name="cloud-upload-outline" class="text-2xl text-gray-500 dark:text-gray-400"></ion-icon>
-                                        <p class="text-gray-400 dark:text-gray-300 text-sm">Upload Here (About Us) </p>
-                                    </div>
+                        <input type="hidden" name="id[]" value="<?= ($aboutContents[3]['id']); ?>">
+                        <?= ($aboutContents[3]['id']); ?>
+                        <div>
+                            <label for="title2" class="block font-medium text-gray-700">Title</label>
+                            <input type="text" name="title[]" id="title2" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($aboutContents[3]['title']); ?>">
+                        </div>
+                        <div>
+                            <label for="description2" class="block font-medium text-gray-700">Description</label>
+                            <textarea id="description2" name="description[]" rows="9" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs resize-none no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg"><?= ($aboutContents[3]['description']); ?></textarea>
+                        </div>
+                    </div>
+                    <!-- About Us Upload -->
+                    <div class="w-full">
+                        <label class="block mb-2 dark:text-white">Change About Us Photo</label>
+                        <div class="mb-6">
+                            <div class="upload-area dark:bg-gray-600 dark:border-gray-500 rounded-md" id="upload-area-about">
+                                <input type="file" id="file-input-about" accept="image/*" required class="hidden">
+                                <img id="uploaded-image-about" alt="Uploaded Image" class="uploaded-image">
+                                <div id="upload-text-about" class="upload-text text-center">
+                                    <ion-icon name="cloud-upload-outline" class="text-2xl text-gray-500 dark:text-gray-400"></ion-icon>
+                                    <p class="text-gray-400 dark:text-gray-300 text-sm">Upload Here (About Us)</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="submit" id="save-about" class="bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                <button type="submit" name="updateAbout" id="save-about" class="bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                     Save Changes
                 </button>
-
             </form>
+
+
 
             <!-- Service Content -->
             <form id="service-content" action="../../Controller/SitemasterController.php" method="POST" class="tab-content space-y-4 mt-6">
@@ -533,7 +437,6 @@ $serviceContents = array_filter($sites, function ($site) {
                                 <textarea id="description" rows="7" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg"><?= ($serviceContents[$service]['description']); ?></textarea>
                             </div>
                         </div>
-
                     <?php endfor; ?>
 
                     <!-- Institute Price -->

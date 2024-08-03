@@ -9,7 +9,7 @@ $template = str_replace("###username","Linn Ko",$template);
 
 $mail = new SendMail();
 $mail->sendMail(
-    "happyboy252820@gmail.com",
+    "@gmail.com",
     "Welcome From Our System",
     $template
     )

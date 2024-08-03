@@ -1,6 +1,6 @@
 <?php 
 ini_set('display_errors','1');
-include "../../Model/MInstitutes.php";
+include __DIR__ . '/../Model/MInstitutes.php';
 
 $mInstitutes = new MInstitute();
 $institutes = $mInstitutes->getAllInstitute();
