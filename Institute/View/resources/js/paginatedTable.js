@@ -20,30 +20,7 @@ class PaginatedTable {
     }
 
     displayData() {
-        const container = $('#table-body');
-        container.empty();
-        const start = (this.currentPage - 1) * this.rowsPerPage;
-        const end = start + this.rowsPerPage;
-        const paginatedItems = this.jsonData.slice(start, end);
-
-        paginatedItems.forEach(item => {
-            const row = `
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <td class="w-4 p-4">${item.id}</td>
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">${item.title}</th>
-                    <td class="px-6 py-4">${item.instructor}</td>
-                    <td class="px-6 py-4">${item.start_date}</td>
-                    <td class="px-6 py-4">${item.end_date}</td>
-                    <td class="px-6 py-4 text-green-500">${item.status}</td>
-                    <td class="px-6 py-4">${item.class_fee}</td>
-                    <td class="px-6 py-4">${item.max_enrollment}</td>
-                    <td class="px-6 py-4">${item.enrollment_deadline}</td>
-                    <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                        <a href="viewdetailsclass.php?${item.id}">View</a>
-                    </td>
-                </tr>`;
-            container.append(row);
-        });
+        // display data
     }
 
     setupPagination() {
@@ -65,9 +42,9 @@ class PaginatedTable {
 
         for (let i = 1; i <= pageCount; i++) {
             const pageButton = `
-                <li>
-                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${i === 1 ? 'active' : ''}" data-page="${i}">${i}</a>
-                </li>`;
+            <li>
+                <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border hover:bg-gray-400 border-gray-300 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${i === this.currentPage ? 'active' : ''}" data-page="${i}">${i}</a>
+            </li>`;
             container.append(pageButton);
         }
 

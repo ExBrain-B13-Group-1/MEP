@@ -2,18 +2,35 @@
 
 include "../Model/DBConnection.php";
 
-class MClasses{
+class MInstructors{
 
     /**
      * this method is used for get all classes records from database
      */
-    public function getAllClasses(){
+    public function getAllInstructors(){
         try{
             $dbconn = new DBConnection();
             // get connection
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
                 "SELECT * FROM m_instructors"
+            );
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
+    public function getRelatedClasses($id){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT c_title FROM m_classes WHERE instructor_id = $id"
             );
             $sql->execute();
             $results = $sql->fetchAll(PDO::FETCH_ASSOC);
