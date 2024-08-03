@@ -6,14 +6,14 @@ $(document).ready(function () {
          ..............*/
 
   // Thousand Separator Format
-  function formatAmount(amount) {
-    return amount.toLocaleString();
-  }
+  // function formatAmount(amount) {
+  //   return amount.toLocaleString();
+  // }
 
-  // Format the numbers
-  $("#total-institutes").text(formatAmount(1960));
-  $("#total-users").text(formatAmount(6942));
-  $("#amount").text(formatAmount(5000));
+  // // Format the numbers
+  // $("#total-institutes").text(formatAmount(1960));
+  // $("#total-users").text(formatAmount(6942));
+  // $("#amount").text(formatAmount(5000));
 
   // Function to determine if dark mode is active
   function isDarkMode() {
@@ -105,28 +105,62 @@ $(document).ready(function () {
     });
   }
 
+  /**
+   * Function to categorize entities and calculate percentages
+   */
+  function getPieChartData(data, premiumPrices, totalCount) {
+    let premiumCount = 0;
+
+    data.forEach((item) => {
+      // Convert item.payment_amount to number type
+      const paymentAmount = Number(item.payment_amount);
+
+      // Check if the payment amount is in the premiumPrices
+      if (premiumPrices.includes(paymentAmount)) {
+        premiumCount++;
+      }
+    });
+
+    console.log("Premium Count:", premiumCount);
+    const regularCount = totalCount - premiumCount;
+    const premiumPercentage = (premiumCount / totalCount) * 100;
+    const regularPercentage = (regularCount / totalCount) * 100;
+
+    return {
+      labels: ["Premium", "Regular"],
+      datasets: [
+        {
+          data: [premiumPercentage, regularPercentage],
+          backgroundColor: ["#FF6384", "#36A2EB"],
+        },
+      ],
+    };
+  }
+
+  // Check if user data exists
+  let usersPieData;
+  if (jsonUserPays) {
+    // Generate the pie chart data
+    usersPieData = getPieChartData(jsonUserPays, [50000], totalUsers);
+  } else {
+    console.log("No data found!");
+  }
   // Initialize the Users Pie Chart
-  const usersPieData = {
-    labels: ["Premium", "Regular"],
-    datasets: [
-      {
-        data: [58.9, 41.1],
-        backgroundColor: ["#FF6384", "#36A2EB"],
-      },
-    ],
-  };
   const usersPieChart = initializePieChart("users-pie-chart", usersPieData);
 
-  // Initialize the Institutes Pie Chart
-  const institutesPieData = {
-    labels: ["Premium", "Regular"],
-    datasets: [
-      {
-        data: [58.9, 41.1],
-        backgroundColor: ["#FF6384", "#36A2EB"],
-      },
-    ],
-  };
+  // Check if institute data exists
+  let institutesPieData;
+  if (jsonInstitutePays) {
+    // Generate the pie chart data
+    institutesPieData = getPieChartData(
+      jsonInstitutePays,
+      [100000, 1000000],
+      totalInstitutes
+    );
+  } else {
+    console.log("No data found!");
+  }
+  // Initialize the Users Pie Chart
   const institutesPieChart = initializePieChart(
     "institutes-pie-chart",
     institutesPieData
@@ -143,75 +177,6 @@ $(document).ready(function () {
     attributes: true,
     attributeFilter: ["class"],
   });
-
-  //Sample Data For Ad Slots
-  const adSlots = [
-    {
-      name: "ABC Institute",
-      requested: "July 5",
-      month: "12 Months",
-      // profileImg: '../../storages/instituteLogo.png'
-    },
-    {
-      name: "XYZ Institute",
-      requested: "July 10",
-      month: "2 Months",
-      // profileImg: '../../storages/instituteLogo.png'
-    },
-    {
-      name: "DEF Institute",
-      requested: "July 15",
-      month: "3 Months",
-      // profileImg: '../../storages/instituteLogo.png'
-    },
-  ];
-
-  // Start Ad Slots
-  let adSlotsContent = `
-         <table class="w-full text-xs cursor-pointer">
-             <thead>
-                 <tr class="border-b bg-[#D9D9D9] bg-opacity-30">
-                     <th class="text-left px-2">Name</th>
-                     <th class="text-left">Booked</th>
-                     <th class="text-left">Month</th>
-                     <th class="text-left">Action</th>
-                 </tr>
-             </thead>
-             <tbody>
-     `;
-
-  // Can Add Logo
-  // <div class="w-8 h-8 rounded-full overflow-hidden">
-  //     <img src="${slot.profileImg}" class="w-full h-full object-cover rounded-full">
-  // </div>
-  adSlots.forEach((slot) => {
-    adSlotsContent += `
-             <tr class="border-b hover:bg-[#D9D9D9] hover:bg-opacity-10">
-                 <td class="px-2">
-                     <div class="flex items-center space-x-4">
-                         ${slot.name}
-                     </div>
-                 </td>
-                 <td>${slot.requested}</td>
-                 <td>${slot.month}</td>
-                 <td>
-                     <button class="px-2 py-1 rounded transform transition-transform duration-200 hover:scale-110">
-                         <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" class="inline mr-1" viewBox="0 0 24 24">
-                             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14L21 3m0 0l-6.5 18a.55.55 0 0 1-1 0L10 14l-7-3.5a.55.55 0 0 1 0-1z"/>
-                         </svg>
-                     </button>
-                 </td>
-             </tr>
-         `;
-  });
-
-  adSlotsContent += `
-             </tbody>
-         </table>
-     `;
-
-  $("#upcoming-ad-slots").html(adSlotsContent);
-  // End Ad Slots
 
   // Sample Date For Top Clients
   const clients = [
@@ -237,29 +202,76 @@ $(document).ready(function () {
     },
   ];
 
+  console.log(jsonInstitutePays);
+
+  function getTopInstitutes(data, topN) {
+    // Step 1: Aggregate total payments and collect name and photo by institute_id
+    const paymentTotals = data.reduce((totals, item) => {
+      const instituteId = item.institute_id;
+      const paymentAmount = parseFloat(item.payment_amount);
+
+      if (!totals[instituteId]) {
+        totals[instituteId] = {
+          total_payment: 0,
+          name: item.name,
+          photo: item.photo,
+        };
+      }
+      totals[instituteId].total_payment += paymentAmount;
+
+      return totals;
+    }, {});
+
+    // Step 2: Convert the paymentTotals object to an array of objects
+    const paymentArray = Object.keys(paymentTotals).map((instituteId) => ({
+      institute_id: instituteId,
+      total_payment: paymentTotals[instituteId].total_payment,
+      name: paymentTotals[instituteId].name,
+      photo: paymentTotals[instituteId].photo,
+    }));
+
+    // Step 3: Sort the array by total_payment in descending order
+    paymentArray.sort((a, b) => b.total_payment - a.total_payment);
+
+    // Step 4: Get the top N institutes
+    return paymentArray.slice(0, topN);
+  }
+
+  // Get the top institutes
+  const top7Institutes = getTopInstitutes(jsonInstitutePays, 7);
+  // Separate into top 4 and remaining
+  const top4Institutes = top7Institutes.slice(0, 4);
+  const remainingInstitutes = top7Institutes.slice(4, 7);
+  console.log(top4Institutes);
+  console.log(remainingInstitutes);
   // Start Top Client
   let tableContent = `
                   <table class="w-full table-auto cursor-pointer">
              <thead>
                  <tr class="border-b bg-[#D9D9D9] bg-opacity-30">
                      <th class="text-left px-4">Profile</th>
+                     <th class="text-left px-4">Name</th>
                      <th class="text-left px-4">Amount</th>
-                     <th class="text-left px-4">Reviews</th>
                  </tr>
              </thead>
              <tbody>
              `;
 
-  clients.forEach((client) => {
+  top4Institutes.forEach((institute) => {
     tableContent += `
                      <tr class="border-b hover:bg-[#D9D9D9] hover:bg-opacity-10">
                          <td class="text-left px-4">
                              <div class="w-8 h-8 rounded-full overflow-hidden">
-                                 <img src="${client.profileImg}" class="w-full h-full object-cover rounded-full">
+                                 <img src="${
+                                   institute.photo
+                                 }" class="w-full h-full object-cover rounded-full">
                              </div>
                          </td>
-                         <td class="text-left px-4">${client.amount}</td>
-                         <td class="text-left px-4">${client.reviews} <ion-icon name="star" class="relative top-1 text-xl text-dark-blue"></ion-icon></td>
+                         <td class="text-left pl-4">${institute.name}</td>
+                         <td class="text-left">${
+                           institute.total_payment.toLocaleString("en-US") +
+                           " MMK"
+                         }</td>
                      </tr>
                  `;
   });
@@ -272,15 +284,6 @@ $(document).ready(function () {
   $("#top-clients").html(tableContent);
   // End Top Clients
 
-  // Optional (Later)
-  //         $('#recent-actions').html(`
-  //     <ul>
-  //         <li>Super Admin Login at 2024/06/30 of 12:00PM</li>
-  //         <li>Super Admin Change Themes at 2024/06/29 of 1:00PM</li>
-  //         <li>Content Manager Update Home Page at 2024/06/29 of 11:00AM</li>
-  //     </ul>
-  // `);
-
   // Start Calendar Section
   var calendarEl = document.getElementById("calendar");
   var calendar = new FullCalendar.Calendar(calendarEl, {
@@ -289,25 +292,100 @@ $(document).ready(function () {
   });
   calendar.render();
 
-  // Sample Data For Institute's Ad Progress
-  var subscriptions = {
-    1: [{ title: "Limit", start: "2024-07-01", end: "2024-07-12" }],
-    2: [{ title: "Limit", start: "2024-07-01", end: "2024-07-31" }],
-    3: [{ title: "Limit", start: "2024-07-15", end: "2024-07-20" }],
-  };
+  // Assuming slots is an array of ad slot objects
+  console.log(slots);
 
-  // Make logo a little big when got clicked
+  // Make logo a little big when clicked
   $(".logo").on("click", function () {
+    // Remove the 'active' class from all logos
     $(".logo").removeClass("active transform scale-125");
+
+    // Add the 'active' class to the clicked logo
     $(this).addClass("active transform scale-125");
+
+    // Get the institute ID from the clicked logo
     var instituteId = $(this).data("institute");
+
+    // Remove all existing events from the calendar
     calendar.removeAllEvents();
-    var instituteEvents = subscriptions[instituteId] || [];
+
+    // Filter slots based on the selected institute ID
+    var instituteEvents = slots
+      .filter((slot) => slot.institute_id == instituteId)
+      .map((slot) => ({
+        title: "Limit", // or any other title you want to set
+        start: slot.ad_start_date,
+        end: slot.ad_end_date,
+      }));
+
+    // Add filtered events to the calendar
     instituteEvents.forEach((event) => {
       calendar.addEvent(event);
     });
   });
+
   // End Calendar Section
+
+  //Sample Data For Ad Slots
+  // const adSlots = [
+  //   {
+  //     name: "ABC Institute",
+  //     requested: "July 5",
+  //     month: "12 Months",
+  //     // profileImg: '../../storages/instituteLogo.png'
+  //   },
+  //   {
+  //     name: "XYZ Institute",
+  //     requested: "July 10",
+  //     month: "2 Months",
+  //     // profileImg: '../../storages/instituteLogo.png'
+  //   },
+  //   {
+  //     name: "DEF Institute",
+  //     requested: "July 15",
+  //     month: "3 Months",
+  //     // profileImg: '../../storages/instituteLogo.png'
+  //   },
+  // ];
+
+  // Start Ad Slots
+  let adSlotsContent = `
+         <table class="w-full text-xs cursor-pointer">
+             <thead>
+                 <tr class="border-b bg-[#D9D9D9] bg-opacity-30">
+                     <th class="text-left px-2">Name</th>
+                     <th class="text-left">Action</th>
+                 </tr>
+             </thead>
+             <tbody>
+     `;
+
+  remainingInstitutes.forEach((slot) => {
+    adSlotsContent += `
+             <tr class="border-b hover:bg-[#D9D9D9] hover:bg-opacity-10">
+                 <td class="px-2">
+                     <div class="flex items-center space-x-4">
+                         ${slot.name}
+                     </div>
+                 </td>
+                 <td>
+                     <button class="px-2 py-1 rounded transform transition-transform duration-200 hover:scale-110">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" class="inline mr-1" viewBox="0 0 24 24">
+                             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14L21 3m0 0l-6.5 18a.55.55 0 0 1-1 0L10 14l-7-3.5a.55.55 0 0 1 0-1z"/>
+                         </svg>
+                     </button>
+                 </td>
+             </tr>
+         `;
+  });
+
+  adSlotsContent += `
+             </tbody>
+         </table>
+     `;
+
+  $("#upcoming-ad-slots").html(adSlotsContent);
+  // End Ad Slots
 
   /* ............
          ............

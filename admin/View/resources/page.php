@@ -1,10 +1,43 @@
+<?php
+ini_set('display_errors', '1');
+include '../../Controller/BankingController.php';
+include '../../Controller/PayController.php';
+include '../../Controller/PricesPlanController.php';
+include '../../Controller/SitemasterController.php';
+// echo "<pre>";
+// print_r($sites);
+
+// Separate prices by scope
+$userPrices = array_filter($prices, function ($price) {
+    return $price['scope'] === 'user';
+});
+
+$institutePrices = array_filter($prices, function ($price) {
+    return $price['scope'] === 'institute';
+});
+
+$homeContents = array_filter($sites, function ($site) {
+    return $site['page_name'] === 'Home';
+});
+
+$aboutContents = array_filter($sites, function ($site) {
+    return $site['page_name'] === 'About Us';
+});
+
+$serviceContents = array_filter($sites, function ($site) {
+    return $site['page_name'] === 'Service';
+});
+// echo "<pre>";
+// print_r($serviceContents);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Feedback</title>
+    <title>Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="../resources/css/output.css" rel="stylesheet">
     <script src="../resources/lib/jquery-3.7.1.js"></script>
@@ -302,35 +335,45 @@
             </div>
 
             <!-- Home Content -->
-            <div id="home-content" class="tab-content space-y-4 mt-6">
-                <div class="grid grid-cols-3 space-x-3">
-                    <div class="space-y-2">
-                        <label for="slogan" class="block font-medium text-gray-700">Slogan</label>
-                        <input type="text" id="slogan" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="Join MEP: Your Path To Success">
-                    </div>
-                    <div class="space-y-2">
-                        <label for="title" class="block font-medium text-gray-700">Title</label>
-                        <input type="text" id="title" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="Unlock Your Potential with MEP">
-                    </div>
-                    <div class="flex space-x-2">
+            <form id="home-content" action="http://localhost/MEP/admin/Controller/SitemasterController.php" method="POST" class="tab-content space-y-4 mt-6">
+                <?php foreach ($homeContents as $home) : ?>
+                    <input type="hidden" name="id" value="<?= ($home['id']); ?>">
+                    <?= ($home['id']); ?>
+                    <div class="grid grid-cols-3 space-x-3">
                         <div class="space-y-2">
-                            <label for="users" class="block font-medium text-gray-700">Users</label>
-                            <input type="text" id="users" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="20K+">
+                            <label for="slogan" class="block font-medium text-gray-700">Slogan</label>
+                            <input type="text" name="slogan" id="slogan" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($home['slogan']); ?>">
                         </div>
                         <div class="space-y-2">
-                            <label for="institutes" class="block font-medium text-gray-700">Institutes</label>
-                            <input type="text" id="institutes" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="10K+">
+                            <label for="title" class="block font-medium text-gray-700">Title</label>
+                            <input type="text" name="title" id="title" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($home['title']); ?>">
+                        </div>
+                        <div class="flex space-x-2">
+                            <div class="space-y-2">
+                                <label for="users" class="block font-medium text-gray-700">Users</label>
+                                <input type="text" id="users" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="20K+">
+                            </div>
+                            <div class="space-y-2">
+                                <label for="institutes" class="block font-medium text-gray-700">Institutes</label>
+                                <input type="text" id="institutes" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="10K+">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="space-y-2">
-                    <label for="description" class="block font-medium text-gray-700">Description</label>
-                    <textarea id="description" rows="5" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs resize-none no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Empowering students and professionals</textarea>
-                </div>
-                <div class="grid grid-cols-3 gap-4 mt-4">
                     <div class="space-y-2">
-                       <!-- Slider 1 Upload -->
-                       <div class="w-full">
+                        <label for="description" class="block font-medium text-gray-700">Description</label>
+                        <textarea id="description" name="description" rows="5" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs resize-none no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg"><?= ($home['description']); ?></textarea>
+                    </div>
+                <?php endforeach; ?>
+
+                
+                <button type="submit" name="update" id="save-home" class="bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                    Save Changes
+                </button>
+            </form>
+            <div class="grid grid-cols-3 gap-4 mt-4">
+                    <div class="space-y-2">
+                        <!-- Slider 1 Upload -->
+                        <div class="w-full">
                             <label class="block mb-2 dark:text-white">Slider 1</label>
                             <div class="mb-6">
                                 <div class="upload-area dark:bg-gray-600 dark:border-gray-500 rounded-md" id="upload-area-1">
@@ -361,8 +404,8 @@
                         </div>
                     </div>
                     <div class="space-y-2">
-                         <!-- Slider 3 Upload -->
-                         <div class="w-full">
+                        <!-- Slider 3 Upload -->
+                        <div class="w-full">
                             <label class="block mb-2 dark:text-white">Slider 3</label>
                             <div class="mb-6">
                                 <div class="upload-area dark:bg-gray-600 dark:border-gray-500 rounded-md" id="upload-area-3">
@@ -377,8 +420,8 @@
                         </div>
                     </div>
                     <div class="space-y-2">
-                         <!-- Slider 4 Upload -->
-                         <div class="w-full">
+                        <!-- Slider 4 Upload -->
+                        <div class="w-full">
                             <label class="block mb-2 dark:text-white">Slider 4</label>
                             <div class="mb-6">
                                 <div class="upload-area dark:bg-gray-600 dark:border-gray-500 rounded-md" id="upload-area-4">
@@ -409,8 +452,8 @@
                         </div>
                     </div>
                     <div class="space-y-2">
-                         <!-- Slider 6 Upload -->
-                         <div class="w-full">
+                        <!-- Slider 6 Upload -->
+                        <div class="w-full">
                             <label class="block mb-2 dark:text-white">Slider 6</label>
                             <div class="mb-6">
                                 <div class="upload-area dark:bg-gray-600 dark:border-gray-500 rounded-md" id="upload-area-6">
@@ -425,32 +468,28 @@
                         </div>
                     </div>
                 </div>
-                <button id="save-home" class="bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                    Save Changes
-                </button>
-            </div>
 
             <!-- About Us Content -->
-            <div id="about-content" class="tab-content space-y-4 mt-6">
+            <form id="about-content" action="../../Controller/SitemasterController.php" method="POST" class="tab-content space-y-4 mt-6">
                 <div class="grid grid-cols-3 space-x-16">
                     <div class="space-y-2">
                         <div>
                             <label for="slogan" class="block font-medium text-gray-700">Title</label>
-                            <input type="text" id="slogan" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="About Us">
+                            <input type="text" id="slogan" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($aboutContents[2]['title']); ?>">
                         </div>
                         <div>
                             <label for="description" class="block font-medium text-gray-700">Description</label>
-                            <textarea id="description" rows="9" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs resize-none no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Welcome to MEP, your trusted partner in education and professional development. We are dedicated to empowering students and professionals through high-quality educational programs and resources.</textarea>
+                            <textarea id="description" rows="9" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs resize-none no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg"><?= ($aboutContents[2]['description']); ?></textarea>
                         </div>
                     </div>
                     <div class="space-y-2">
                         <div>
                             <label for="title" class="block font-medium text-gray-700">Title</label>
-                            <input type="text" id="title" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="Helping People grow their careers, Everyday!">
+                            <input type="text" id="title" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($aboutContents[3]['title']); ?>">
                         </div>
                         <div>
                             <label for="description" class="block font-medium text-gray-700">Description</label>
-                            <textarea id="description" rows="9" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs resize-none no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Our platform offers a diverse range of courses and programs tailored to meet the needs of students and professionals alike. Whether you are looking to advance your career, acquire new skills, or explore new fields, MEP is here to guide you every step of the way.</textarea>
+                            <textarea id="description" rows="9" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs resize-none no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg"><?= ($aboutContents[3]['description']); ?></textarea>
                         </div>
                     </div>
                     <div class="space-y-2">
@@ -470,114 +509,80 @@
                         </div>
                     </div>
                 </div>
-                <button id="save-about" class="bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                <button type="submit" id="save-about" class="bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                     Save Changes
                 </button>
 
-            </div>
+            </form>
 
             <!-- Service Content -->
-            <div id="service-content" class="tab-content space-y-4 mt-6">
+            <form id="service-content" action="../../Controller/SitemasterController.php" method="POST" class="tab-content space-y-4 mt-6">
                 <div class="w-1/3">
                     <label for="slogan" class="block font-medium text-gray-700 dark:text-white">Title</label>
-                    <input type="text" id="slogan" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="Reliable & High-Quality Service">
+                    <input type="text" id="slogan" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($serviceContents[5]['title']); ?>">
                 </div>
                 <div class="grid grid-cols-5 space-x-4">
-                    <div class="space-y-2">
-                        <div class="mb-3">
-                            <label for="slogan" class="block font-medium text-gray-700 dark:text-white">Sub-Title</label>
-                            <input type="text" id="slogan" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="Professional Courses">
+                    <?php for ($service = 6; $service < 9; $service++) : ?>
+                        <div class="space-y-2">
+                            <div class="mb-3">
+                                <label for="slogan" class="block font-medium text-gray-700 dark:text-white">Sub-Title</label>
+                                <input type="text" id="slogan" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($serviceContents[$service]['subtitle']); ?>">
+                            </div>
+                            <div>
+                                <label for="description" class="block font-medium text-gray-700 dark:text-white">Description</label>
+                                <textarea id="description" rows="7" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg"><?= ($serviceContents[$service]['description']); ?></textarea>
+                            </div>
                         </div>
-                        <div>
-                            <label for="description" class="block font-medium text-gray-700 dark:text-white">Description</label>
-                            <textarea id="description" rows="7" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Enhance your skills and knowledge with our expert-led professional courses in IT, Business, and Language Studies etc...</textarea>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="mb-3">
-                            <label for="title" class="block font-medium text-gray-700 dark:text-white">Sub-Title</label>
-                            <input type="text" id="title" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="workshops & Webinars">
-                        </div>
-                        <div>
-                            <label for="description" class="block font-medium text-gray-700 dark:text-white">Description</label>
-                            <textarea id="description" rows="7" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Participate in interactive workshops and seminars led by industry experts to stay updated with the latest trends and best practices.</textarea>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="mb-3">
-                            <label for="title" class="block font-medium text-gray-700 dark:text-white">Sub-Title</label>
-                            <input type="text" id="title" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="24/7 Support">
-                        </div>
-                        <div>
-                            <label for="description" class="block font-medium text-gray-700 dark:text-wrap">Description</label>
-                            <textarea id="description" rows="7" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Access round-the-clock assistance from our dedicated support team. Whether you need technical help, we’re here to help anytime.</textarea>
-                        </div>
-                    </div>
+
+                    <?php endfor; ?>
+
+                    <!-- Institute Price -->
                     <div class="space-y-2 pr-4 border-r-2 dark:border-gray-300">
                         <h2 class="font-bold dark:text-white">Institute Premium Price</h2>
-                        <div class="my-2">
-                            <label for="title" class="block font-medium text-gray-700 dark:text-white">For Business (Monthly)</label>
-                            <input type="text" id="title" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="100,000 MMK">
-                        </div>
-                        <div class="my-2">
-                            <label for="title" class="block font-medium text-gray-700 dark:text-white">For Enterprise (Yearly)</label>
-                            <input type="text" id="title" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="10,00,000 MMK">
-                        </div>
-                        <div class="my-2">
-                            <label for="title" class="block font-medium text-gray-700 dark:text-white">For 500 Coin</label>
-                            <input type="text" id="title" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="25,000 MMK">
-                        </div>
+                        <?php foreach ($institutePrices as $price) : ?>
+                            <div class="my-2">
+                                <label for="<?= ($price['label']); ?>" class="block font-medium text-gray-700 dark:text-white">
+                                    <?= ($price['label']); ?>
+                                </label>
+                                <input type="text" id="<?= ($price['label']); ?>" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= number_format($price['amount'], 0, '', ','); ?> MMK">
+                            </div>
+                        <?php endforeach; ?>
                     </div>
+
+                    <!-- User Price -->
                     <div class="space-y-2">
                         <h2 class="font-bold dark:text-white">User Premium Price</h2>
-                        <div class="my-2">
-                            <label for="title" class="block font-medium text-gray-700 dark:text-white">Pro</label>
-                            <input type="text" id="title" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="500,00 MMK">
-                        </div>
-                        <div class="my-2">
-                            <label for="title" class="block font-medium text-gray-700 dark:text-white">For 500 Coin</label>
-                            <input type="text" id="title" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="10,000 MMK">
-                        </div>
+                        <?php foreach ($userPrices as $price) : ?>
+                            <div class="my-2">
+                                <label for="<?= ($price['label']); ?>" class="block font-medium text-gray-700 dark:text-white">
+                                    <?= ($price['label']); ?>
+                                </label>
+                                <input type="text" id="<?= ($price['label']); ?>" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= number_format($price['amount'], 0, '', ','); ?> MMK">
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
                 <hr class="w-3/5 border-1 border-gray-800 dark:border-gray-300">
                 <div class="grid grid-cols-5 space-x-4">
-                    <div class="space-y-2">
-                        <div class="mb-3">
-                            <label for="slogan" class="block font-medium text-gray-700 dark:text-white">Sub-Title</label>
-                            <input type="text" id="slogan" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="Media Promotion">
+                    <?php for ($service = 9; $service < 12; $service++) : ?>
+                        <div class="space-y-2">
+                            <div class="mb-3">
+                                <label for="slogan" class="block font-medium text-gray-700 dark:text-white">Sub-Title</label>
+                                <input type="text" id="slogan" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($serviceContents[$service]['subtitle']); ?>">
+                            </div>
+                            <div>
+                                <label for="description" class="block font-medium text-gray-700 dark:text-white">Description</label>
+                                <textarea id="description" rows="7" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg"><?= ($serviceContents[$service]['description']); ?></textarea>
+                            </div>
                         </div>
-                        <div>
-                            <label for="description" class="block font-medium text-gray-700 dark:text-white">Description</label>
-                            <textarea id="description" rows="7" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Boost your visibility with our media promotion services. Leverage our platform to reach a wider audience and enhance your brand's presence.</textarea>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="mb-3">
-                            <label for="title" class="block font-medium text-gray-700 dark:text-white">Sub-Title</label>
-                            <input type="text" id="title" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="Reports & Analysis">
-                        </div>
-                        <div>
-                            <label for="description" class="block font-medium text-gray-700 dark:text-white">Description</label>
-                            <textarea id="description" rows="7" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Gain valuable insights with our detailed reports and analysis. Track your progress make data-driven decisions to optimize your circumstances.</textarea>
-                        </div>
-                    </div>
-                    <div class="space-y-2">
-                        <div class="mb-3">
-                            <label for="title" class="block font-medium text-gray-700 dark:text-white">Sub-Title</label>
-                            <input type="text" id="title" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="24/7 Support">
-                        </div>
-                        <div>
-                            <label for="description" class="block font-medium text-gray-700 dark:text-white">Easy Payment</label>
-                            <textarea id="description" rows="7" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg">Enjoy hassle-free transactions with our easy payment system. Use coin payments to conveniently manage and pay for your promotion of classes.</textarea>
-                        </div>
-                    </div>
+
+                    <?php endfor; ?>
                 </div>
-                <button id="save-service" class="bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                <button type="submit" id="save-service" class="bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
                     Save Changes
                 </button>
 
-            </div>
+            </form>
 
             <!-- Payment Content -->
             <div id="payment-content" class="tab-content mt-6">
@@ -585,12 +590,62 @@
                 <h2 class="font-bold text-base dark:text-white">Banking</h2>
                 <div id="banking-container" class="grid grid-cols-4 space-x-4">
                     <!-- Dynamic content -->
+                    <?php foreach ($bankings as $data) : ?>
+                        <div class="space-y-2 bg-white dark:bg-gray-600 shadow-md rounded-lg overflow-hidden my-4 p-3">
+                            <div class="px-2 bg-thin-bg relative">
+                                <div class="w-full h-24">
+                                    <img src="<?= ($data['bank_name']) ?>" alt="Bank Logo">
+                                </div>
+                                <div class="absolute top-2 right-3">
+                                    <img src="<?= ($data['qr_code']) ?>" alt="QR Code" class="w-8 h-8">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="account-number" class="block font-medium text-gray-700 dark:text-white/90">Account Number</label>
+                                <input type="text" id="account-number" class="w-full p-2 border border-gray-300 dark:bg-gray-500 dark:border-gray-500 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($data['account_number']) ?>">
+                            </div>
+                            <button class="save-pay bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                                Save Changes
+                            </button>
+                        </div>
+                    <?php endforeach; ?>
+                    <div class="space-y-2 flex items-center justify-center">
+                        <button id="addButtonBanking" class="w-20 h-20 border outline-dashed hover:bg-thin-hover-bg rounded-full text-lg font-bold text-dark-blue dark:text-[#9aabff]">
+                            + ADD
+                        </button>
+                    </div>
                 </div>
+
                 <br>
                 <!-- Pay Payment Content -->
                 <h2 class="font-bold text-base dark:text-white">Pay</h2>
                 <div id="pay-container" class="grid grid-cols-4 space-x-4">
                     <!-- Dynamic content -->
+                    <!-- Dynamic content -->
+                    <?php foreach ($pays as $data) : ?>
+                        <div class="space-y-2 bg-white dark:bg-gray-600 shadow-md rounded-lg overflow-hidden my-4 p-3">
+                            <div class="px-2 bg-thin-bg relative">
+                                <div class="w-full h-24">
+                                    <img src="<?= ($data['pay_image']) ?>" alt="Pay Logo">
+                                </div>
+                                <div class="absolute top-2 right-3">
+                                    <img src="<?= ($data['qr_code']) ?>" alt="QR Code" class="w-8 h-8">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="account-number" class="block font-medium text-gray-700 dark:text-white/90">Account Number</label>
+                                <input type="text" id="account-number" class="w-full p-2 border border-gray-300 dark:bg-gray-500 dark:border-gray-500 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($data['ph_num']) ?>">
+                            </div>
+                            <button class="save-pay bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                                Save Changes
+                            </button>
+                        </div>
+                    <?php endforeach; ?>
+                    <div class="space-y-2 flex items-center justify-center">
+                        <button id="addButtonPay" class=" w-20 h-20 border outline-dashed hover:bg-thin-hover-bg rounded-full text-lg font-bold text-dark-blue dark:text-[#9aabff]">
+                            + ADD
+                        </button>
+                    </div>
                 </div>
             </div>
 

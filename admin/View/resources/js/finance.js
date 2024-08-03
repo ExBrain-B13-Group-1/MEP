@@ -4,13 +4,13 @@ $(document).ready(function () {
          ..............*/
 
   // Thousand Separator Format
-  function formatAmount(amount) {
-    return "$ " + amount.toLocaleString();
-  }
+  // function formatAmount(amount) {
+  //   return "$ " + amount.toLocaleString();
+  // }
 
-  $("#total-income").text(formatAmount(100000000));
-  $("#income-user").text(formatAmount(100000000));
-  $("#income-institute").text(formatAmount(100000000));
+  // $("#total-income").text(formatAmount(100000000));
+  // $("#income-user").text(formatAmount(100000000));
+  // $("#income-institute").text(formatAmount(100000000));
 
   // Get Current Year
   var currentYear = new Date().getFullYear();

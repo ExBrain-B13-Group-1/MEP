@@ -1,8 +1,8 @@
 <?php
 ini_set('display_errors', '1');
-include "../Model/DBconnection.php";
+require_once "../../../Model/DBConnection.php";
 
-class MAdmins{
+class MPays{
     /**
      * (Read)
      */
@@ -13,9 +13,9 @@ class MAdmins{
             $pdo = $db->connection();
             // query prepare
             $sql = $pdo->prepare(
-                "SELECT * FROM m_admins"
+                "SELECT * FROM pays"
             );
-            $sql->execute();  
+            $sql->execute(); 
             return $sql->fetchAll(PDO::FETCH_ASSOC);
         }catch(\Throwable $th){
             // fail connection or query

@@ -1,3 +1,15 @@
+<?php
+// Start the session
+session_start();
+
+// Get session value
+$userIncome = $_SESSION['userIncome'];
+$instituteIncome = $_SESSION['instituteIncome'];
+$totalIncome = $_SESSION['totalIncome'];
+// echo "<pre>";
+// print_r($userPays);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -205,23 +217,23 @@
 
     <nav class=" bg-white dark:bg-gray-700 shadow-dshadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50" id="navbar">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
-                <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
-                    <img src="../../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" route='finance' />
-                </a>
-                
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
+                <img src="../../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" route='finance' />
+            </a>
+
             <p class="bg-gradient-to-t from-[#92A3FF] to-[#00288E] text-transparent bg-clip-text font-bold text-lg">
                 Finance
             </p>
             <ul class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border dark:bg-gray-700 border-gray-100 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
                 <li class="mx-1">
-                <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400   focus:outline-none   rounded-lg text-sm p-2.5">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-            </svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
-            </svg>
-          </button>
+                    <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400   focus:outline-none   rounded-lg text-sm p-2.5">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
                 </li>
                 <li class="mx-1">
                     <a href="../chat.php" class="block py-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">
@@ -264,8 +276,7 @@
 
         <!-- code here -->
         <div class="text-right px-4 py-2">
-            <a href="financeHistory.php"
-                class="px-3 py-2 bg-primary-main text-white rounded text-xs ">History Purchased</a>
+            <a href="financeHistory.php" class="px-3 py-2 bg-primary-main text-white rounded text-xs ">History Purchased</a>
         </div>
         <!-- Cards -->
         <div class="grid grid-cols-3 gap-4 mb-4 mt-10 px-4">
@@ -285,7 +296,7 @@
                     <p class="text-sm text-green-500">+12% Last Month</p>
                 </div>
                 <div class="w-full bg-primary-main text-white px-4 py-2 mt-1 rounded-b-lg">
-                    <p id="total-income" class="text-xl font-bold"></p>
+                    <p id="total-income" class="text-xl font-bold"><?= number_format($totalIncome, 2) . ' MMK'; ?></p>
                 </div>
             </div>
             <!-- Income by User -->
@@ -301,7 +312,7 @@
                     <p class="text-sm text-red-500">-2% Last Month</p>
                 </div>
                 <div class="w-full bg-[#1B5F4E] text-white px-4 py-2 mt-1 rounded-b-lg">
-                    <p id="income-user" class="text-xl font-bold"></p>
+                    <p id="income-user" class="text-xl font-bold"><?= number_format($userIncome, 2) . ' MMK'; ?></p>
                 </div>
             </div>
             <!-- Income by Institute -->
@@ -320,7 +331,7 @@
                     <p class="text-sm text-green-500">+14% Last Month</p>
                 </div>
                 <div class="w-full bg-[#E0CE2C] text-white px-4 py-2 mt-1 rounded-b-lg">
-                    <p id="income-institute" class="text-xl font-bold"></p>
+                    <p id="income-institute" class="text-xl font-bold"><?= number_format($instituteIncome, 2) . ' MMK'; ?></p>
                 </div>
             </div>
         </div>

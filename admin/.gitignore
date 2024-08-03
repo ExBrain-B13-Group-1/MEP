@@ -1,2 +1,3 @@
 /View/resources/node_modules
 .env
+/Model/DBConnection.php

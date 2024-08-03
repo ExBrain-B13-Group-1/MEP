@@ -1,3 +1,44 @@
+<?php
+session_start();
+
+// Access session variable
+$totalIncome = $_SESSION['totalIncome'];
+
+include '../../Controller/UserController.php';
+include '../../Controller/InstituteController.php';
+include '../../Controller/InstitutePaymentController.php';
+include '../../Controller/UserPaymentController.php';
+include '../../Controller/SlotController.php';
+
+$totalUsers = count($users);
+$totalInstitutes = count($institutes);
+
+// Payment Controller
+$instituteIncome = 0;
+$userIncome = 0;
+$totalIncome = 0;
+foreach ($institutePays as $pays) {
+    $instituteIncome += $pays['payment_amount'];
+}
+
+foreach ($userPays as $pays) {
+    $userIncome += $pays['payment_amount'];
+}
+$totalIncome = $instituteIncome + $userIncome;
+
+// Set session variables
+$_SESSION['userIncome'] = $userIncome;
+$_SESSION['instituteIncome'] = $instituteIncome;
+$_SESSION['totalIncome'] = $instituteIncome + $userIncome;
+$_SESSION['userPays'] = $institutePays;
+$_SESSION['institutePays'] = $userPays;
+
+// Convert PHP array to JSON
+$jsonUserPays = json_encode($userPays);
+$jsonInstitutePays = json_encode($institutePays);
+$slotsData = json_encode($slots);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -209,23 +250,23 @@
 
     <nav class=" bg-white dark:bg-gray-700 shadow-dshadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50" id="navbar">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
-                <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
-                    <img src="../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
-                </a>
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
+                <img src="../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
+            </a>
 
             <p class="bg-gradient-to-t from-[#92A3FF] to-[#00288E] text-transparent bg-clip-text font-bold text-lg">
                 Dashboard
             </p>
             <ul class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg dark:bg-gray-700 bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
                 <li class="mx-1">
-                <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400   focus:outline-none   rounded-lg text-sm p-2.5">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-            </svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
-            </svg>
-          </button>
+                    <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400   focus:outline-none   rounded-lg text-sm p-2.5">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
                 </li>
                 <li class="mx-1">
                     <a href="chat.php" class="block py-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">
@@ -276,7 +317,7 @@
                     <div class="col-span-1 bg-card-bg dark:bg-gray-700 p-4 rounded-lg shadow-custom text-center flex justify-between items-center">
                         <div>
                             <div class="text-gray-700 dark:text-white text-left">Total <br> Users</div>
-                            <div id="total-users" class="text-2xl text-primary-main dark:text-white font-bold text-left"></div>
+                            <div id="total-users" class="text-2xl text-primary-main dark:text-white font-bold text-left"><?= number_format($totalUsers); ?></div>
                         </div>
                         <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" class="text-primary-main dark:text-white" viewBox="0 0 24 24" {...$$props}>
@@ -288,7 +329,7 @@
                     <div class="col-span-1 bg-card-bg p-4 dark:bg-gray-700 rounded-lg shadow-custom text-center flex justify-between items-center">
                         <div>
                             <div class="text-gray-700 dark:text-white text-left">Total <br> Institutes</div>
-                            <div id="total-institutes" class="text-2xl text-primary-main dark:text-white font-bold text-left"></div>
+                            <div id="total-institutes" class="text-2xl text-primary-main dark:text-white font-bold text-left"><?= number_format($totalUsers); ?></div>
                         </div>
                         <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" class="text-primary-main dark:text-white" viewBox="0 0 24 24" {...$$props}>
@@ -303,7 +344,7 @@
                     <div class="col-span-1 bg-card-bg p-4 dark:bg-gray-700 rounded-lg shadow-custom text-center flex justify-between items-center">
                         <div>
                             <div class="text-gray-700 dark:text-white text-left">Amount <br> Earnings</div>
-                            <div class="text-2xl text-primary-main dark:text-white font-bold text-left">$ <span id="amount"></span></div>
+                            <div class="text-2xl text-primary-main dark:text-white font-bold text-left">$ <span id="amount"></span><?= number_format($totalIncome / 6000); ?></div>
                         </div>
                         <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" class="text-primary-main dark:text-white" viewBox="0 0 24 24" {...$$props}>
@@ -349,12 +390,9 @@
                         <!-- Calendar Placeholder -->
                         <div id="calendar" class="dark:text-white"></div>
                         <div id="logos" class="flex justify-center items-center mt-4 space-x-2">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 1" class="logo rounded-full w-8 h-8" data-institute="1">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 2" class="logo rounded-full  w-8 h-8" data-institute="2">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 3" class="logo rounded-full  w-8 h-8" data-institute="3">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 2" class="logo rounded-full  w-8 h-8" data-institute="2">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 3" class="logo rounded-full  w-8 h-8" data-institute="3">
-                            <img src="../../storages/instituteLogo.png" alt="Institute 3" class="logo rounded-full  w-8 h-8" data-institute="3">
+                            <?php foreach($slots as $slot): ?>
+                                <img src="<?= ($slot['photo']); ?>" alt="<?= ($slot['institute_id']); ?>" class="logo rounded-full w-8 h-8" data-institute="<?= ($slot['institute_id']); ?>">
+                            <?php endforeach; ?>
                         </div>
                     </div>
                     <!-- Top Clients -->
@@ -375,6 +413,18 @@
     </div>
     </div>
 
+
+    <script>
+        // Pass PHP session data to JavaScript
+        var totalUsers = <?php echo $totalUsers; ?>;
+        var totalInstitutes = <?php echo $totalInstitutes; ?>;
+        var jsonUserPays = <?php echo $jsonUserPays; ?>;
+        var jsonInstitutePays = <?php echo $jsonInstitutePays; ?>;
+        var slots = <?php echo $slotsData; ?>;
+
+        // Store the JSON data in sessionStorage
+        // sessionStorage.setItem('jsonUserPays', JSON.stringify(jsonUserPays));
+    </script>
     <script src="js/adminDashboard.js"></script>
     <script src="js/sidebar.js"></script>
 </body>

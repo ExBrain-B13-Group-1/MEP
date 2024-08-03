@@ -1,3 +1,37 @@
+<?php
+ini_set('display_errors', '1');
+include '../../../Controller/BankingController.php';
+include '../../../Controller/PayController.php';
+
+// Merge data into a single array using IDs as keys
+$paymentData = [];
+// To make default value to first item
+$firstItem = null;
+
+foreach ($bankings as $banking) {
+    $key = 'bank:' . $banking['id'];
+    $paymentData[$key] = [
+        'name' => $banking['bank_name'],
+        'image' => $banking['back_image'],
+        'qr_code' => $banking['qr_code']
+    ];
+    if (!$firstItem) {
+        $firstItem = $key;
+    }
+}
+
+foreach ($pays as $payment) {
+    $key = 'pay:' . $payment['id'];
+    $paymentData[$key] = [
+        'name' => $payment['pay_name'],
+        'image' => $payment['pay_image'],  
+        'qr_code' => $payment['qr_code']
+    ];
+}
+$paymentData = json_encode($paymentData);
+$firstItem = json_encode($firstItem);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -115,8 +149,23 @@
                                 <label for="payment-plan" class="text-dark-gray text-sm">Payment Plan</label>
                                 <div class="relative">
                                     <select id="payment-plan" class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-10 rounded-md leading-tight focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
-                                        <option value="kpay" selected>Kpay (09123456789)</option>
-                                        <option value="wavepay">Wavepay (09987654321)</option>
+                                        <!-- Group for Banking -->
+                                        <optgroup label="Banking">
+                                            <?php foreach ($bankings as $banking) : ?>
+                                                <option value="bank:<?= $banking['id'] ?>">
+                                                <?= ($banking['bank_name'] . " Banking - ") ?><?= ($banking['account_name'] . " ") ?><?= '(' . ($banking['account_number']) . ')' ?>
+                                                </option>
+                                            <?php endforeach ?>
+                                        </optgroup>
+
+                                        <!-- Group for Payments -->
+                                        <optgroup label="Payments">
+                                            <?php foreach ($pays as $pay) : ?>
+                                                <option value="pay:<?= $pay['id'] ?>">
+                                                <?= ($pay['pay_name'] . " - ") ?><?= ($pay['user_name'] . " ") ?><?= '(' . ($pay['ph_num']) . ')' ?>
+                                                </option>
+                                            <?php endforeach ?>
+                                        </optgroup>
                                     </select>
                                     <div class="pointer-events-none absolute inset-y-0 right-2 flex items-center px-2 text-gray-700">
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -125,8 +174,8 @@
                                     </div>
                                 </div>
                                 <div id="payment-details" class="payment-overlay flex items-center mt-4">
-                                    <img id="payment-logo" src="../../../storages/payment/kpay.png" alt="Payment Logo" class="w-16 h-16 mr-4">
-                                    <img id="qr-code" src="../../../storages/payment/kpayQr.svg" alt="QR Code" class="w-24 h-24">
+                                    <img id="payment-logo" src=""  alt="Payment Logo" class="w-16 h-16 mr-4">
+                                    <img id="qr-code" src="" alt="QR Code" class="w-24 h-24">
                                 </div>
                             </div>
                             <!-- Attachment -->
@@ -170,6 +219,10 @@
         </div>
     </div>
 
+    <script>
+         var paymentData = <?php echo $paymentData; ?>;
+         var defaultValue = <?php echo $firstItem; ?>;
+    </script>
     <script src="../js/paymentData.js"></script>
     <script src="../js/formStep.js"></script>
 

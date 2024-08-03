@@ -1,3 +1,24 @@
+<?php
+// Start the session
+session_start();
+
+// Get session value
+$userPays = $_SESSION['userPays'];
+$institutePays = $_SESSION['institutePays'];
+
+
+// Get current page from query parameter
+$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+$data = array_merge($institutePays, $userPays);
+usort($data, function ($a, $b) {
+    return strtotime($b['create_date']) - strtotime($a['create_date']);
+});
+
+// Convert PHP array to JSON
+$jsonData = json_encode($data);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -203,23 +224,23 @@
 
     <nav class=" bg-white dark:bg-gray-700 shadow-dshadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50" id="navbar">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
-                <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
-                    <img src="../../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" route='finance' />
-                </a>
-                
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
+                <img src="../../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" route='finance' />
+            </a>
+
             <p class="bg-gradient-to-t from-[#92A3FF] to-[#00288E] text-transparent bg-clip-text font-bold text-lg">
                 Finance History
             </p>
             <ul class="flex items-center flex-col font-medium p-4 md:p-0 mt-4 border dark:bg-gray-700 border-gray-100 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
                 <li class="mx-1">
-                <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400   focus:outline-none   rounded-lg text-sm p-2.5">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-            </svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
-            </svg>
-          </button>
+                    <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400   focus:outline-none   rounded-lg text-sm p-2.5">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
                 </li>
                 <li class="mx-1">
                     <a href="../chat.php" class="block py-2 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">
@@ -270,7 +291,7 @@
                 <div class="flex items-center space-x-4">
                     <!-- Search & Filter -->
                     <div class="relative">
-                        <input type="text" class="border border-dark-blue dark:border-gray-700 dark:bg-gray-600 dark:text-white px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none" placeholder="Search">
+                        <input type="text" id="search-input" class="border border-dark-blue dark:border-gray-700 dark:bg-gray-600 dark:text-white px-4 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none" placeholder="Search">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-dark-blue dark:text-white/80" viewBox="0 0 24 24">
                             <g fill="none" stroke="currentColor" stroke-width="2">
                                 <circle cx="11" cy="11" r="7" />
@@ -288,54 +309,52 @@
             </div>
 
             <!-- Dropdown menu -->
-            <div id="dropdown" class="relative z-10 hidden bg-white dark:bg-gray-700 dark:text-white divide-y rounded-lg shadow border-2 dark:border-gray-500  w-auto ">
-                <form class=" px-10">
-                    <p class="text-right mt-6 text-red-500 mb-5 cursor-pointer">Clear</p>
+            <div id="dropdown" class="relative z-10 hidden bg-white dark:bg-gray-700 dark:text-white divide-y rounded-lg shadow border-2 dark:border-gray-500 w-auto">
+                <form id="filter-form" class="px-10">
+                    <p id="clear" class="text-right mt-6 text-red-500 mb-5 cursor-pointer">Clear</p>
                     <div class="flex items-center justify-between space-x-6">
-                        <p class="mt-6">CID :</p>
+                        <p class="mt-6">Transaction ID :</p>
                         <div class="grid grid-cols-2 gap-8">
                             <div>
-                                <label for="from" class="block">From</label>
-                                <input type="text" id="from" class="w-20 h-10 py-2 text-sm bg-gray-100 dark:bg-gray-500 focus:outline-none  rounded-md" />
+                                <label for="from-id" class="block">From</label>
+                                <input type="number" id="from-id" class="w-20 h-10 py-2 text-sm bg-gray-100 dark:bg-gray-500 focus:outline-none rounded-md" />
                             </div>
                             <div>
-                                <label for="from" class="block">To</label>
-                                <input type="text" id="from" class="w-20 h-10 py-2 text-sm bg-gray-100 dark:bg-gray-500 focus:outline-none rounded-md" />
+                                <label for="to-id" class="block">To</label>
+                                <input type="number" id="to-id" class="w-20 h-10 py-2 text-sm bg-gray-100 dark:bg-gray-500 focus:outline-none rounded-md" />
                             </div>
                         </div>
                     </div>
-
-
                     <div class="flex items-center justify-between mt-3 pb-7">
-                        <p class="mt-1">Coin :</p>
-                        <div class="grid grid-cols-2 gap-8 ">
+                        <p class="mt-1">Amount :</p>
+                        <div class="grid grid-cols-2 gap-8">
                             <div>
-                                <select name="coin" id="" class="w-20 h-10 bg-gray-100 dark:bg-gray-500 focus:outline-none  rounded-md">
+                                <select id="min-amount" class="w-20 h-10 bg-gray-100 dark:bg-gray-500 focus:outline-none rounded-md">
                                     <option value="">Min</option>
-                                    <option value="">50000</option>
-                                    <option value="">100000</option>
-                                    <option value="">200000</option>
-                                    <option value="">300000</option>
+                                    <option value="50000">50000</option>
+                                    <option value="100000">100000</option>
+                                    <option value="200000">200000</option>
+                                    <option value="300000">300000</option>
                                 </select>
                             </div>
                             <div>
-                                <select name="coin" id="" class="w-20 h-10 bg-gray-100 dark:bg-gray-500 focus:outline-none rounded-md">
+                                <select id="max-amount" class="w-20 h-10 bg-gray-100 dark:bg-gray-500 focus:outline-none rounded-md">
                                     <option value="">Max</option>
-                                    <option value="">100000</option>
-                                    <option value="">200000</option>
-                                    <option value="">300000</option>
+                                    <option value="100000">100000</option>
+                                    <option value="300000">300000</option>
+                                    <option value="500000">500000</option>
+                                    <option value="700000">700000</option>
                                 </select>
                             </div>
                         </div>
                     </div>
-
                     <div class="grid grid-cols-2 gap-10 mb-4 mt-3">
-                        <button type="button" class="w-full focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
-                        <button type="button" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Apply</button>
+                        <button id="cancel" type="button" class="w-full focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
+                        <button id="apply" type="button" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Apply</button>
                     </div>
-
                 </form>
             </div>
+
 
             <!-- Start Table -->
             <div class="overflow-x-auto">
@@ -344,14 +363,14 @@
                         <tr class="bg-gray-200 dark:bg-gray-600 dark:text-white/90 text-gray-600 text-left text-sm leading-normal">
                             <th class="py-3 px-6">ID</th>
                             <th class="py-3 px-6">Name</th>
-                            <th class="py-3 px-6">Date</th>
-                            <th class="py-3 px-6">Coin</th>
-                            <th class="py-3 px-6">Class Fee</th>
+                            <th class="py-3 px-6">Amount</th>
+                            <th class="py-3 px-6">Paid With</th>
+                            <th class="py-3 px-6">Transaction Date</th>
                             <th class="py-3 px-6">Details</th>
                         </tr>
                     </thead>
                     <tbody id="table-body" class="text-gray-800 dark:text-white/80 text-sm font-light">
-                        <!-- Rows will be inserted here by jQuery -->
+                        <!-- Dynamic Data -->
                     </tbody>
                 </table>
             </div>
@@ -360,11 +379,12 @@
             <div class="flex justify-center mt-6">
                 <nav aria-label="Page navigation">
                     <ul id="pagination" class="inline-flex items-center -space-x-px">
-                        <!-- Pagination buttons will be inserted here by jQuery -->
+                        <!-- Pagination buttons will be dynamically added here -->
                     </ul>
                 </nav>
             </div>
         </div>
+
 
         <!-- For Detail Card -->
         <div id="detail-view" class="fixed bottom-0 right-0 m-4 px-10 py-5 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 dark:text-white rounded-lg shadow-lg hidden">
@@ -373,6 +393,197 @@
     </div>
     </div>
 
+
+    <script>
+        $(document).ready(function() {
+            var data = <?php echo $jsonData; ?>;
+            const rowsPerPage = 10;
+            let currentPage = 1;
+            let totalPages;
+            let filteredData = data;
+
+            // Function to render the table with data
+            function renderTable(data, page) {
+                var tableBody = $('#table-body');
+                tableBody.empty(); // Clear existing rows
+
+                var start = (page - 1) * rowsPerPage;
+                var end = start + rowsPerPage;
+                var pageData = data.slice(start, end);
+
+                pageData.forEach(function(row) {
+                    var uniqueId = row.institute_id ? 'I' + row.institute_id : 'U' + row.user_id;
+                    var paidWith = row.bank_name ? row.bank_name + " Banking" : row.pay_name;
+
+                    var rowHtml = `
+                    <tr data-id="${row.t_id}" data-email="${row.email}" class="border-b border-gray-200 dark:border-gray-500 hover:bg-gray-100 hover:dark:bg-gray-600 cursor-pointer">
+                        <td class="py-3 px-6">${uniqueId}</td>
+                        <td class="py-3 px-6">${row.name}</td>
+                        <td class="py-3 px-6">${parseFloat(row.payment_amount).toFixed(2)} MMK</td>
+                        <td class="py-3 px-6">${paidWith}</td>
+                        <td class="py-3 px-6">${row.create_date}</td>
+                        <td class="py-3 px-6 text-blue-500 dark:text-blue-400">View</td>
+                    </tr>
+                `;
+                    tableBody.append(rowHtml);
+                });
+            }
+
+            // Function for rendering pagination
+            function renderPagination(totalPages, currentPage) {
+                const pagination = $("#pagination");
+                pagination.empty();
+
+                // Add Previous Button
+                if (currentPage > 1) {
+                    pagination.append(
+                        `<li><a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white rounded-l" data-page="${currentPage - 1}"><ion-icon name="chevron-back-outline"></ion-icon></a></li>`
+                    );
+                }
+
+                // Add Page Numbers
+                for (let i = 1; i <= totalPages; i++) {
+                    const activeClass = i === currentPage ?
+                        "z-10 flex items-center justify-center px-4 h-10 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white" :
+                        "flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white";
+
+                    pagination.append(
+                        `<li><a href="#" class="flex items-center justify-center px-4 h-10 leading-tight border ${activeClass}" data-page="${i}">${i}</a></li>`
+                    );
+                }
+
+                // Add Next Button
+                if (currentPage < totalPages) {
+                    pagination.append(
+                        `<li><a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white rounded-r" data-page="${currentPage + 1}"><ion-icon name="chevron-forward-outline"></ion-icon></a></li>`
+                    );
+                }
+            }
+
+            // Function to update the table and pagination
+            function updateTableAndPagination() {
+                totalPages = Math.ceil(filteredData.length / rowsPerPage);
+                renderTable(filteredData, currentPage);
+                renderPagination(totalPages, currentPage);
+            }
+
+            // Initial Render
+            updateTableAndPagination();
+
+            // Pagination changes on clicking
+            $("#pagination").on("click", "a", function(e) {
+                e.preventDefault();
+                currentPage = $(this).data("page");
+                updateTableAndPagination();
+            });
+
+            // Search Function
+            $('#search-input').on('input', function() {
+                const searchTerm = $(this).val().toLowerCase();
+                filteredData = data.filter(function(item) {
+                    return item.name.toLowerCase().includes(searchTerm);
+                });
+                currentPage = 1; // Reset to first page after search
+                updateTableAndPagination();
+            });
+
+            // Table row clicked
+            $("#table-body").on("click", "tr", function() {
+                const tId = $(this).data("id");
+                const email = $(this).data("email");
+                const row = data.find(item =>
+                    item.t_id == tId &&
+                    item.email.trim().toLowerCase() === email.trim().toLowerCase()
+                );
+
+                if (row) {
+                    console.log('Found row:', row);
+                    const paidWith = row.bank_name ? row.bank_name + " Banking" : row.pay_name;
+                    const detailView = $("#detail-view");
+                    detailView.html(`
+                    <div class="relative">
+                        <button id="close-detail" class="text-2xl absolute -right-6 -top-2"><ion-icon name="close-outline"></ion-icon></button>
+                        <div class="flex justify-start items-center space-x-4 mb-2">
+                            <div>
+                                <img class="w-16 h-16 rounded-full" src="${row.photo ? row.photo : 'nothing'}" alt="Photo">
+                            </div>
+                            <div>
+                                <div class="font-bold">${row.name}</div>
+                                <div>Amount: ${parseFloat(row.payment_amount).toLocaleString('en-US') + " MMK"}</div>
+                            </div>
+                        </div>
+                        <div class="text-[#A82525] dark:text-red-500 text-sm mb-1 font-semibold">Contact Information</div>
+                        <div class="text-xs flex items-center space-x-1"><ion-icon name="mail-outline"></ion-icon><span class="text-primary-main dark:text-[#9aabff]">${row.email}</span></div>
+                        <div class="text-xs flex items-center space-x-1"><ion-icon name="call-outline"></ion-icon><span class="text-primary-main dark:text-[#9aabff]">${row.contact || 'Not Given'}</span></div>
+                        <div class="text-[#A82525] dark:text-red-500 text-sm mt-4 mb-1 font-semibold">Bill Invoice Detail</div>
+                        <div class="text-sm">Transaction ID: ${row.t_id}</div>
+                        <div class="text-sm">Paid With: ${paidWith}</div>
+                        <div class="text-sm">Date: ${row.create_date.split(' ')[0]}</div>
+                        <div class="text-sm">Time: ${row.create_date.split(' ')[1]}</div>
+                    </div>
+                `);
+                    detailView.removeClass("hidden");
+                } else {
+                    console.log('Row not found for t_id and email:', tId, email);
+                }
+            });
+
+            // Function to filter data
+            function filterData() {
+                var fromId = $('#from-id').val();
+                var toId = $('#to-id').val();
+                var minAmount = parseFloat($('#min-amount').val()) || 0;
+                var maxAmount = parseFloat($('#max-amount').val()) || Infinity;
+
+                return data.filter(function(item) {
+                    var idMatch = (!fromId || item.t_id >= fromId) && (!toId || item.t_id <= toId);
+                    var amountMatch = (parseFloat(item.payment_amount) >= minAmount) && (parseFloat(item.payment_amount) <= maxAmount);
+                    return idMatch && amountMatch;
+                });
+            }
+
+            // Handle filter form submission
+            $('#apply').on('click', function() {
+                filteredData = filterData();
+                currentPage = 1; // Reset to first page after filtering
+                updateTableAndPagination();
+                $('#dropdown').addClass('hidden');
+            });
+
+            // Handle cancel button click
+            $('#cancel').on('click', function() {
+                resetFilters();
+                $('#dropdown').addClass('hidden');
+            });
+
+            // Handle clear link click
+            $('#clear').on('click', function() {
+                resetFilters();
+            });
+
+            // Function to reset filters and update table and pagination
+            function resetFilters() {
+                $('#from-id').val('');
+                $('#to-id').val('');
+                $('#min-amount').val('');
+                $('#max-amount').val('');
+
+                // Show all data
+                filteredData = data; // Reset to all data
+                currentPage = 1; // Reset to first page
+                updateTableAndPagination();
+            }
+
+            // Keyboard enter to apply filters
+            $('#filter-form').on('keypress', function(e) {
+                if (e.which == 13) { // Enter key
+                    e.preventDefault();
+                    $('#apply').click();
+                }
+            });
+
+        });
+    </script>
     <script src="../js/financeHistory.js"></script>
     <script src="../js/sidebar.js"></script>
 
