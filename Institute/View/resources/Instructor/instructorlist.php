@@ -235,7 +235,7 @@
     <!-- Data Area Instructor List-->
     <div class="pt-20 px-5 ml-64 bg-gray-300 dark:bg-gray-800 mb-8">
         <div class="grid grid-cols-8 gap-4 mt-10">
-            <div class="bg-white col-span-6 rounded-lg px-4 py-2 dark:bg-gray-600 duration-300">
+            <div id="list-table" class="bg-white col-span-8 rounded-lg px-4 py-2 dark:bg-gray-600 duration-300">
                 <div class="w-full h-20 flex relative">
                     <form class="w-1/4 mt-4">
                         <label for="default-search" class="mb-2 text-base font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -347,274 +347,15 @@
                                 EDIT
                             </th>
                         </thead>
-                        <tbody>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td class="w-4 p-4">
-                                    S123456
-                                </td>
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
-                                </th>
-                                <td class="px-6 py-4">
-                                    Male
-                                </td>
-                                <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
-                                </td>
-                                <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Details
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td class="w-4 p-4">
-                                    S123456
-                                </td>
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
-                                </th>
-                                <td class="px-6 py-4">
-                                    Male
-                                </td>
-                                <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
-                                </td>
-                                <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Details
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td class="w-4 p-4">
-                                    S123456
-                                </td>
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
-                                </th>
-                                <td class="px-6 py-4">
-                                    Male
-                                </td>
-                                <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
-                                </td>
-                                <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Details
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td class="w-4 p-4">
-                                    S123456
-                                </td>
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
-                                </th>
-                                <td class="px-6 py-4">
-                                    Male
-                                </td>
-                                <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
-                                </td>
-                                <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Details
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td class="w-4 p-4">
-                                    S123456
-                                </td>
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
-                                </th>
-                                <td class="px-6 py-4">
-                                    Male
-                                </td>
-                                <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
-                                </td>
-                                <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Details
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td class="w-4 p-4">
-                                    S123456
-                                </td>
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
-                                </th>
-                                <td class="px-6 py-4">
-                                    Male
-                                </td>
-                                <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
-                                </td>
-                                <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Details
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td class="w-4 p-4">
-                                    S123456
-                                    card </td>
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
-                                </th>
-                                <td class="px-6 py-4">
-                                    Male
-                                </td>
-                                <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
-                                </td>
-                                <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Details
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td class="w-4 p-4">
-                                    S123456
-                                </td>
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
-                                </th>
-                                <td class="px-6 py-4">
-                                    Male
-                                </td>
-                                <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
-                                </td>
-                                <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Details
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td class="w-4 p-4">
-                                    S123456
-                                </td>
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
-                                </th>
-                                <td class="px-6 py-4">
-                                    Male
-                                </td>
-                                <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
-                                </td>
-                                <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Details
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td class="w-4 p-4">
-                                    S123456
-                                </td>
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Mr.Denial Brown
-                                </th>
-                                <td class="px-6 py-4">
-                                    Male
-                                </td>
-                                <td class="px-6 py-4">
-                                    denialbrown334@gmail.com
-                                </td>
-                                <td class="px-6 py-4">
-                                    +95 976XXXXXXXX
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Details
-                                </td>
-                                <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                                    Edit
-                                </td>
-                            </tr>
+                        <tbody id="table-body">
+                            <!-- data will be here -->
                         </tbody>
                     </table>
 
                     <div class="flex justify-center">
                         <nav aria-label="Page navigation example">
-                            <ul class="flex items-center -space-x-px h-10 text-base my-6">
-                                <li>
-                                    <a href="#" class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                                        <span class="sr-only">Previous</span>
-                                        <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-                                </li>
-                                <li>
-                                    <a href="#" aria-current="page" class="z-10 flex items-center justify-center px-4 h-10 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                                        <span class="sr-only">Next</span>
-                                        <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
-                                        </svg>
-                                    </a>
-                                </li>
+                            <ul class="flex items-center -space-x-px h-10 text-base my-6" id="pagination">
+                                <!-- Pagination buttons will be injected here -->
                             </ul>
                         </nav>
                     </div>
@@ -622,78 +363,9 @@
             </div>
 
             <!-- instructor detail card -->
-
-            <div class="bg-white col-span-2 rounded-lg px-10 pt-10 dark:bg-gray-600 duration-300 relative py-10 ">
-                <div class="h-[85vh] overflow-y-auto hide-scrollbar">
-                    <div class="flex items-center gap-5">
-                        <div class="absolute top-0 right-0 pt-3 pr-5">
-                            <button type="button" class="px-2 py-2 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-base w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-500 dark:hover:text-white">
-                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                        </div>
-                        <div class="relative">
-                            <img src="./../../../storages/profile1.svg" alt="profile1">
-                            <div class="absolute top-0 right-0 w-5 h-5 rounded-full bg-blue-700 flex justify-center items-center">
-                                <ion-icon name="checkmark-outline" class="text-white"></ion-icon>
-                            </div>
-
-                        </div>
-                        <div class="dark:text-white">
-                            <h3 class="font-black">Mr.Daniel Brown</h3>
-                            <span class="dark:opacity-60">Senior Software Engineer</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <div>
-                                <h3 class="text-red-600 dark:text-white mt-8 mb-3 font-black">Content Information</h3>
-                                <ion-icon name="mail-outline" class="w-5 h-5 relative top-1 mr-2 dark:text-white opacity-60"></ion-icon> <span class="text-blue-700 dark:text-blue-400">deniaelbrown334@gmail.com</span>
-                            </div>
-                            <div>
-                                <ion-icon name="call-outline" class="w-5 h-5 relative top-1 mr-2 dark:text-white opacity-60"></ion-icon> <span class="dark:text-white mr-2 opacity-80">(+95)</span><span class="dark:text-white opacity-80">976XXXXXXXX</span>
-                            </div>
-                            <div>
-                                <ion-icon name="logo-linkedin" class="w-5 h-5 relative top-1 mr-2 dark:text-white opacity-60"></ion-icon> <span class="text-blue-700 dark:text-blue-400">https://linkedin/profile/danielbrown</span>
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <h3 class="text-red-600 dark:text-white mt-5 mb-3 font-black">Biography</h3>
-                            <p class="dark:text-white dark:opacity-80">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                        </div>
-                        <div class="mt-3">
-                            <h3 class="text-red-600 dark:text-white mt-5 mb-3 font-black">Skill</h3>
-                            <div>
-                                <p class="dark:text-white dark:opacity-80 inline ">Programming Languages :</p> <span class="dark:text-blue-400 text-blue-700">Javascript, Python, Java, C++</span>
-                            </div>
-                            <div>
-                                <p class="dark:text-white dark:opacity-80 inline">Framework :</p> <span class="dark:text-blue-400 text-blue-700">React, NodeJS, Django, Spring</span>
-                            </div>
-                            <div>
-                                <p class="dark:text-white dark:opacity-80 inline">Tools & Technologies :</p> <span class="dark:text-blue-400 text-blue-700">Docker, Kubernetes, AWS, Git</span>
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <h3 class="text-red-600 dark:text-white mt-5 mb-3 font-black inline">Experience : </h3> <span class="dark:text-blue-400 text-blue-700">10 years</span>
-                        </div>
-                        <div>
-                            <div>
-                                <h3 class="text-red-600 dark:text-white mt-5 mb-3 font-black">Address</h3>
-                                <p class="dark:text-white mr-2 opacity-80">No.977, Yone Gyi Str, Hleden, Yangon</p>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-red-600 dark:text-white mt-5 mb-3 font-black">Related Class (ID) </h3>
-                            <ul class="text-blue-700 dark:text-blue-400 list-inside list-disc">
-                                <li>C123</li>
-                                <li>C321</li>
-                                <li>C321</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div id="card-container" class="bg-white col-span-2 rounded-lg px-10 pt-10 dark:bg-gray-600 duration-300 relative py-10 hidden">
+                <!-- card data -->
+                
             </div>
         </div>
     </div>
@@ -715,6 +387,7 @@
     <!-- darkmode lightmode js -->
     <script src="./../js/darkandlight.js" type="text/javascript"></script>
     <!-- customjs -->
+    <script src="./../js/paginatedTable.js" type="text/javascript"></script>
     <script src="./../js/instructor.js" type="text/javascript"></script>
 </body>
 

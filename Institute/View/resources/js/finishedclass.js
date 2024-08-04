@@ -35,11 +35,11 @@ $(document).ready(function () {
         $(this).addClass("actives");
         console.log($(this).text());
         if ($(this).text() === "Class Lists") {
-            url = "../json/finishedclassdatas.json";
+            // url = "../json/finishedclassdatas.json";
             window.location.href = "./../Class/classlist.php";
             
         } else if ($(this).text() === "Finished Classes") {
-            url = "../json/classdatas.json";
+            // url = "../json/classdatas.json";
             window.location.href = "./../Class/classlistfinished.php";
         }
     });
