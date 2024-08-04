@@ -28,7 +28,7 @@ $serviceContents = array_filter($sites, function ($site) {
     return $site['page_name'] === 'Service';
 });
 // echo "<pre>";
-// print_r($aboutContents);
+// print_r($serviceContents);
 ?>
 
 <!DOCTYPE html>
@@ -372,10 +372,9 @@ $serviceContents = array_filter($sites, function ($site) {
 
             <!-- About Us Content -->
             <form id="about-content" action="../../Controller/SitemasterController.php" method="POST" class="tab-content space-y-4 mt-6">
-                <div class="grid grid-cols-3 space-x-16">
+                <div class="grid grid-cols-3 space-x-4">
                     <div class="space-y-2">
                         <input type="hidden" name="id[]" value="<?= ($aboutContents[2]['id']); ?>">
-                        <?= ($aboutContents[2]['id']); ?>
                         <div>
                             <label for="title1" class="block font-medium text-gray-700">Title</label>
                             <input type="text" name="title[]" id="title1" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($aboutContents[2]['title']); ?>">
@@ -387,7 +386,6 @@ $serviceContents = array_filter($sites, function ($site) {
                     </div>
                     <div class="space-y-2">
                         <input type="hidden" name="id[]" value="<?= ($aboutContents[3]['id']); ?>">
-                        <?= ($aboutContents[3]['id']); ?>
                         <div>
                             <label for="title2" class="block font-medium text-gray-700">Title</label>
                             <input type="text" name="title[]" id="title2" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($aboutContents[3]['title']); ?>">
@@ -417,139 +415,149 @@ $serviceContents = array_filter($sites, function ($site) {
                 </button>
             </form>
 
-
-
             <!-- Service Content -->
-            <form id="service-content" action="../../Controller/SitemasterController.php" method="POST" class="tab-content space-y-4 mt-6">
+            <div id="service-content" class="tab-content space-y-4 mt-6">
                 <div class="w-1/3">
                     <label for="slogan" class="block font-medium text-gray-700 dark:text-white">Title</label>
                     <input type="text" id="slogan" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($serviceContents[5]['title']); ?>">
                 </div>
-                <div class="grid grid-cols-5 space-x-4">
-                    <?php for ($service = 6; $service < 9; $service++) : ?>
-                        <div class="space-y-2">
-                            <div class="mb-3">
-                                <label for="slogan" class="block font-medium text-gray-700 dark:text-white">Sub-Title</label>
-                                <input type="text" id="slogan" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($serviceContents[$service]['subtitle']); ?>">
+                <div class="grid grid-cols-5 gap-10">
+                    <!-- Service Content Column -->
+                    <div class="col-span-3">
+                        <form action="../../Controller/SitemasterController.php" method="POST">
+                            <div class="grid grid-cols-3 gap-4">
+                                <?php for ($service = 6; $service < 12; $service++) : ?>
+                                    <div class="space-y-2">
+                                        <input type="hidden" name="id[]" value="<?= $serviceContents[$service]['id']; ?>">
+                                        <div class="mb-3">
+                                            <label for="subtitle-<?= $service; ?>" class="font-medium text-gray-700 dark:text-white">Sub-Title</label>
+                                            <input type="text" name="subtitle[]" id="subtitle-<?= $service; ?>" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($serviceContents[$service]['subtitle']); ?>">
+                                        </div>
+                                        <div>
+                                            <label for="description-<?= $service; ?>" class="font-medium text-gray-700 dark:text-white">Description</label>
+                                            <textarea id="description-<?= $service; ?>" name="description[]" rows="7" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg"><?= ($serviceContents[$service]['description']); ?></textarea>
+                                        </div>
+                                    </div>
+                                <?php endfor; ?>
+                                <div class="col-span-3">
+                                    <div class="flex justify-end">
+                                        <button name="updateService" id="save-service" class="bg-dark-blue hover:bg-dark-blue/90 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                                            Save Changes
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <label for="description" class="block font-medium text-gray-700 dark:text-white">Description</label>
-                                <textarea id="description" rows="7" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg"><?= ($serviceContents[$service]['description']); ?></textarea>
-                            </div>
-                        </div>
-                    <?php endfor; ?>
-
-                    <!-- Institute Price -->
-                    <div class="space-y-2 pr-4 border-r-2 dark:border-gray-300">
-                        <h2 class="font-bold dark:text-white">Institute Premium Price</h2>
-                        <?php foreach ($institutePrices as $price) : ?>
-                            <div class="my-2">
-                                <label for="<?= ($price['label']); ?>" class="block font-medium text-gray-700 dark:text-white">
-                                    <?= ($price['label']); ?>
-                                </label>
-                                <input type="text" id="<?= ($price['label']); ?>" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= number_format($price['amount'], 0, '', ','); ?> MMK">
-                            </div>
-                        <?php endforeach; ?>
+                        </form>
                     </div>
-
-                    <!-- User Price -->
-                    <div class="space-y-2">
-                        <h2 class="font-bold dark:text-white">User Premium Price</h2>
-                        <?php foreach ($userPrices as $price) : ?>
-                            <div class="my-2">
-                                <label for="<?= ($price['label']); ?>" class="block font-medium text-gray-700 dark:text-white">
-                                    <?= ($price['label']); ?>
-                                </label>
-                                <input type="text" id="<?= ($price['label']); ?>" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= number_format($price['amount'], 0, '', ','); ?> MMK">
+                    
+                    <!-- Price Information Column -->
+                    <div class="col-span-2 bg-gray-50 dark:bg-gray-600 shadow-sm px-5 py-3 rounded-md">
+                        <h3 class="font-bold mb-3 text-lg dark:text-white">Prices & Plans</h3>
+                        <form action="../../Controller/PricesPlanController.php" method="POST">
+                            <div class="">
+                                <!-- Institute Price -->
+                                <div class="space-y-2 pr-4">
+                                    <h2 class="font-bold dark:text-white">Institute Premium Price</h2>
+                                    <?php foreach ($institutePrices as $price) : ?>
+                                        <input type="hidden" name="id[]" value="<?= $price['id']; ?>">
+                                        <div class="my-2">
+                                            <label for="<?= $price['label']; ?>" class="block font-medium text-gray-700 dark:text-white">
+                                                <?= $price['label']; ?>
+                                            </label>
+                                            <input type="text" name="amount[]" id="<?= $price['label']; ?>" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= number_format($price['amount'], 0, '', ','); ?> MMK">
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                                <!-- User Price -->
+                                <div class="space-y-2">
+                                    <h2 class="font-bold dark:text-white">User Premium Price</h2>
+                                    <?php foreach ($userPrices as $price) : ?>
+                                        <input type="hidden" name="id[]" value="<?= $price['id']; ?>">
+                                        <div class="my-2">
+                                            <label for="<?= $price['label']; ?>" class="block font-medium text-gray-700 dark:text-white">
+                                                <?= $price['label']; ?>
+                                            </label>
+                                            <input type="text" name="amount[]" id="<?= $price['label']; ?>" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= number_format($price['amount'], 0, '', ','); ?> MMK">
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
                             </div>
-                        <?php endforeach; ?>
+                            <button type="submit" name="updatePrice" id="save-service" class="mt-6 bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                                Save Changes
+                            </button>
+                        </form>
                     </div>
                 </div>
-                <hr class="w-3/5 border-1 border-gray-800 dark:border-gray-300">
-                <div class="grid grid-cols-5 space-x-4">
-                    <?php for ($service = 9; $service < 12; $service++) : ?>
-                        <div class="space-y-2">
-                            <div class="mb-3">
-                                <label for="slogan" class="block font-medium text-gray-700 dark:text-white">Sub-Title</label>
-                                <input type="text" id="slogan" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($serviceContents[$service]['subtitle']); ?>">
-                            </div>
-                            <div>
-                                <label for="description" class="block font-medium text-gray-700 dark:text-white">Description</label>
-                                <textarea id="description" rows="7" class="w-full p-2 border border-gray-300 dark:border-gray-500 dark:bg-gray-700 dark:text-white rounded-md text-xs no-scrollbar focus:outline-none focus:ring-1 focus:ring-blue-light-bg"><?= ($serviceContents[$service]['description']); ?></textarea>
-                            </div>
-                        </div>
-
-                    <?php endfor; ?>
-                </div>
-                <button type="submit" id="save-service" class="bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                    Save Changes
-                </button>
-
-            </form>
+            </div>
 
             <!-- Payment Content -->
             <div id="payment-content" class="tab-content mt-6">
                 <!-- Banking Payment Content -->
                 <h2 class="font-bold text-base dark:text-white">Banking</h2>
-                <div id="banking-container" class="grid grid-cols-4 space-x-4">
-                    <!-- Dynamic content -->
-                    <?php foreach ($bankings as $data) : ?>
-                        <div class="space-y-2 bg-white dark:bg-gray-600 shadow-md rounded-lg overflow-hidden my-4 p-3">
-                            <div class="px-2 bg-thin-bg relative">
-                                <div class="w-full h-24">
-                                    <img src="<?= ($data['bank_name']) ?>" alt="Bank Logo">
+                <form id="bank-form" action="../../Controller/BankingController.php" method="POST">
+                    <div id="banking-container" class="grid grid-cols-4 space-x-4">
+                        <!-- Dynamic content -->
+                        <?php foreach ($bankings as $data) : ?>
+                            <div class="space-y-2 bg-white dark:bg-gray-600 shadow-md rounded-lg overflow-hidden my-4 p-3">
+                                <div class="px-2 bg-thin-bg relative">
+                                    <div class="w-full h-24">
+                                        <img src="<?= ($data['bank_name']) ?>" alt="Bank Logo">
+                                    </div>
+                                    <div class="absolute top-2 right-3">
+                                        <img src="<?= ($data['qr_code']) ?>" alt="QR Code" class="w-8 h-8">
+                                    </div>
                                 </div>
-                                <div class="absolute top-2 right-3">
-                                    <img src="<?= ($data['qr_code']) ?>" alt="QR Code" class="w-8 h-8">
+                                <input type="hidden" name="id[]" value="<?= $data['id']; ?>">
+                                <div>
+                                    <label for="account-number-<?= $data['id']; ?>" class="block font-medium text-gray-700 dark:text-white/90">Account Number</label>
+                                    <input type="text" name="account_number[]" id="account-number-<?= $data['id']; ?>" class="w-full p-2 border border-gray-300 dark:bg-gray-500 dark:border-gray-500 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($data['account_number']) ?>">
                                 </div>
+                                <button type="button" class="save-pay bg-dark-blue hover:bg-dark-blue/90 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                                    Save Changes
+                                </button>
                             </div>
-                            <div>
-                                <label for="account-number" class="block font-medium text-gray-700 dark:text-white/90">Account Number</label>
-                                <input type="text" id="account-number" class="w-full p-2 border border-gray-300 dark:bg-gray-500 dark:border-gray-500 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($data['account_number']) ?>">
-                            </div>
-                            <button class="save-pay bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                                Save Changes
+                        <?php endforeach; ?>
+                        <div class="space-y-2 flex items-center justify-center">
+                            <button id="addButtonBanking" class="w-20 h-20 border outline-dashed hover:bg-thin-hover-bg rounded-full text-lg font-bold text-dark-blue dark:text-[#9aabff]">
+                                + ADD
                             </button>
                         </div>
-                    <?php endforeach; ?>
-                    <div class="space-y-2 flex items-center justify-center">
-                        <button id="addButtonBanking" class="w-20 h-20 border outline-dashed hover:bg-thin-hover-bg rounded-full text-lg font-bold text-dark-blue dark:text-[#9aabff]">
-                            + ADD
-                        </button>
                     </div>
-                </div>
-
+                </form>
                 <br>
                 <!-- Pay Payment Content -->
                 <h2 class="font-bold text-base dark:text-white">Pay</h2>
-                <div id="pay-container" class="grid grid-cols-4 space-x-4">
-                    <!-- Dynamic content -->
-                    <!-- Dynamic content -->
-                    <?php foreach ($pays as $data) : ?>
-                        <div class="space-y-2 bg-white dark:bg-gray-600 shadow-md rounded-lg overflow-hidden my-4 p-3">
-                            <div class="px-2 bg-thin-bg relative">
-                                <div class="w-full h-24">
-                                    <img src="<?= ($data['pay_image']) ?>" alt="Pay Logo">
+                <form id="pay-form" action="../../Controller/PayController.php" method="POST">
+                    <div id="pay-container" class="grid grid-cols-4 space-x-4">
+                        <!-- Dynamic content -->
+                        <?php foreach ($pays as $data) : ?>
+                            <div class="space-y-2 bg-white dark:bg-gray-600 shadow-md rounded-lg overflow-hidden my-4 p-3">
+                                <div class="px-2 bg-thin-bg relative">
+                                    <div class="w-full h-24">
+                                        <img src="<?= ($data['pay_image']) ?>" alt="Pay Logo">
+                                    </div>
+                                    <div class="absolute top-2 right-3">
+                                        <img src="<?= ($data['qr_code']) ?>" alt="QR Code" class="w-8 h-8">
+                                    </div>
                                 </div>
-                                <div class="absolute top-2 right-3">
-                                    <img src="<?= ($data['qr_code']) ?>" alt="QR Code" class="w-8 h-8">
+                                <input type="hidden" name="id[]" value="<?= $data['id']; ?>">
+                                <div>
+                                    <label for="phone-number-<?= $data['id']; ?>" class="block font-medium text-gray-700 dark:text-white/90">Phone Number</label>
+                                    <input type="text" name="ph_num[]" id="phone-number-<?= $data['id']; ?>" class="w-full p-2 border border-gray-300 dark:bg-gray-500 dark:border-gray-500 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ('0' . $data['ph_num']) ?>">
                                 </div>
+                                <button type="button" class="save-pay bg-dark-blue hover:bg-dark-blue/90 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" data-id="<?= $data['id']; ?>">
+                                    Save Changes
+                                </button>
                             </div>
-                            <div>
-                                <label for="account-number" class="block font-medium text-gray-700 dark:text-white/90">Account Number</label>
-                                <input type="text" id="account-number" class="w-full p-2 border border-gray-300 dark:bg-gray-500 dark:border-gray-500 dark:text-white rounded-md text-xs focus:outline-none focus:ring-1 focus:ring-blue-light-bg" value="<?= ($data['ph_num']) ?>">
-                            </div>
-                            <button class="save-pay bg-dark-blue hover:bg-dark-blue/90 text-white float-right font-bold py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                                Save Changes
+                        <?php endforeach; ?>
+                        <div class="space-y-2 flex items-center justify-center">
+                            <button id="addButtonPay" class="w-20 h-20 border outline-dashed hover:bg-thin-hover-bg rounded-full text-lg font-bold text-dark-blue dark:text-[#9aabff]">
+                                + ADD
                             </button>
                         </div>
-                    <?php endforeach; ?>
-                    <div class="space-y-2 flex items-center justify-center">
-                        <button id="addButtonPay" class=" w-20 h-20 border outline-dashed hover:bg-thin-hover-bg rounded-full text-lg font-bold text-dark-blue dark:text-[#9aabff]">
-                            + ADD
-                        </button>
                     </div>
-                </div>
+                </form>
+
             </div>
 
             <!-- Confirmation Modal -->

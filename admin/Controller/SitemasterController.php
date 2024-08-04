@@ -28,12 +28,31 @@ if (isset($_POST["updateAbout"])) {
     $titles = $_POST['title'];
     $descriptions = $_POST['description'];
 
-    // Loop each
     foreach ($titles as $index => $title) {
         $description = $descriptions[$index];
         $id = $ids[$index];
 
         $success = $mSites->updateAbout($id, $title, $description);
+        if ($success) {
+            header("Location: ../View/resources/page.php");
+        } else {
+            echo "failed";
+        }
+    }
+}
+
+// Update Service
+if (isset($_POST['updateService'])) {
+    $ids = $_POST['id'];
+    $subtitles = $_POST['subtitle'];
+    $descriptions = $_POST['description'];
+
+    foreach ($ids as $index => $id) {
+        $subtitle = $subtitles[$index];
+        $description = $descriptions[$index];
+
+        $success = $mSites->updateService($id, $subtitle, $description);
+
         if ($success) {
             header("Location: ../View/resources/page.php");
         } else {

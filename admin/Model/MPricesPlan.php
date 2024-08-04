@@ -23,63 +23,23 @@ class MPricesPlan{
         }
     }
 
-     /**
-     * (Create)
+      /**
+     * (Update Price Plan)
      */
-    public function add($admin){
-        try{
-            $db = new DBConnection();  
+    public function updatePrice($id, $amount) {
+        try {
+            $db = new DBConnection();
             //get connection
             $pdo = $db->connection();
-            // query prepare
+             // query prepare
             $sql = $pdo->prepare(
-                "SELECT * FROM m_admins"
+                "UPDATE m_prices_plan SET amount = :amount WHERE id = :id"
             );
-            $sql->execute();  
-            return true; 
-        }catch(\Throwable $th){
-            // fail connection or query
-            echo "Unexpected Error Occurs! $th";
-            return false;
-        }
-    }
-
-     /**
-     * (Update)
-     */
-    public function modify($admin, $id){
-        try{
-            $db = new DBConnection();  
-            //get connection
-            $pdo = $db->connection();
-            // query prepare
-            $sql = $pdo->prepare(
-                "SELECT * FROM m_admins"//update query
-            );
-            $sql->execute();  
+            $sql->bindValue(":amount", $amount);
+            $sql->bindValue(":id", $id);
+            $sql->execute();
             return true;
-        }catch(\Throwable $th){
-            // fail connection or query
-            echo "Unexpected Error Occurs! $th";
-            return false;
-        }
-    }
-
-     /**
-     * (Delete)
-     */
-    public function remove($id){
-        try{
-            $db = new DBConnection();  
-            //get connection
-            $pdo = $db->connection();
-            // query prepare
-            $sql = $pdo->prepare(
-                "SELECT * FROM m_admins"
-            );
-            $sql->execute();  
-            return true; 
-        }catch(\Throwable $th){
+        } catch (\Throwable $th) {
             // fail connection or query
             echo "Unexpected Error Occurs! $th";
             return false;

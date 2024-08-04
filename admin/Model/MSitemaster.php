@@ -75,4 +75,28 @@ class MSitemaster
         }
     }
 
+    /**
+     * (Update Service)
+     */
+    public function updateService($id, $subtitle, $description) {
+        try {
+            $db = new DBConnection();
+            //get connection
+            $pdo = $db->connection();
+             // query prepare
+            $sql = $pdo->prepare(
+                "UPDATE m_sitemaster SET subtitle = :subtitle, description = :description WHERE id = :id"
+            );
+            $sql->bindValue(":subtitle", $subtitle);
+            $sql->bindValue(":description", $description);
+            $sql->bindValue(":id", $id);
+            $sql->execute();
+            return true;
+        } catch (\Throwable $th) {
+            // fail connection or query
+            echo "Unexpected Error Occurs! $th";
+            return false;
+        }
+    }
+
 }

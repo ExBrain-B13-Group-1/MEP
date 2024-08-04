@@ -2,7 +2,7 @@
 ini_set('display_errors', '1');
 require_once  __DIR__ . '/../Model/DBConnection.php';
 
-class MPays{
+class MPricesPlan{
     /**
      * (Read)
      */
@@ -13,7 +13,7 @@ class MPays{
             $pdo = $db->connection();
             // query prepare
             $sql = $pdo->prepare(
-                "SELECT * FROM pays"
+                "SELECT * FROM m_prices_plan"
             );
             $sql->execute(); 
             return $sql->fetchAll(PDO::FETCH_ASSOC);

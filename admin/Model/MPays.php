@@ -23,63 +23,24 @@ class MPays{
         }
     }
 
-     /**
-     * (Create)
+    /**
+     * (Update Phone Number)
      */
-    public function add($admin){
-        try{
-            $db = new DBConnection();  
+    public function updatePhNum($id, $ph_num)
+    {
+        try {
+            $db = new DBConnection();
             //get connection
             $pdo = $db->connection();
             // query prepare
             $sql = $pdo->prepare(
-                "SELECT * FROM m_admins"
+                "UPDATE pays SET ph_num = :ph_num WHERE id = :id"
             );
-            $sql->execute();  
-            return true; 
-        }catch(\Throwable $th){
-            // fail connection or query
-            echo "Unexpected Error Occurs! $th";
-            return false;
-        }
-    }
-
-     /**
-     * (Update)
-     */
-    public function modify($admin, $id){
-        try{
-            $db = new DBConnection();  
-            //get connection
-            $pdo = $db->connection();
-            // query prepare
-            $sql = $pdo->prepare(
-                "SELECT * FROM m_admins"//update query
-            );
-            $sql->execute();  
+            $sql->bindValue(":ph_num", $ph_num);
+            $sql->bindValue(":id", $id);
+            $sql->execute();
             return true;
-        }catch(\Throwable $th){
-            // fail connection or query
-            echo "Unexpected Error Occurs! $th";
-            return false;
-        }
-    }
-
-     /**
-     * (Delete)
-     */
-    public function remove($id){
-        try{
-            $db = new DBConnection();  
-            //get connection
-            $pdo = $db->connection();
-            // query prepare
-            $sql = $pdo->prepare(
-                "SELECT * FROM m_admins"
-            );
-            $sql->execute();  
-            return true; 
-        }catch(\Throwable $th){
+        } catch (\Throwable $th) {
             // fail connection or query
             echo "Unexpected Error Occurs! $th";
             return false;

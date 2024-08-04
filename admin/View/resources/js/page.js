@@ -5,7 +5,7 @@ $(document).ready(function () {
          .............. 
          ..............*/
 
-         // Initial show home content
+  // Initial show home content
   $("#home-content").show();
   //  Handling Tabs (Home, About Us, Service, Payment)
   $(".tab-button").click(function () {
@@ -79,8 +79,11 @@ $(document).ready(function () {
     $("#addPayModal").addClass("hidden");
   });
 
-  // Save Changes button click 
+  let currentForm = null;
+
+  // Save Changes button click
   $(document).on("click", ".save-pay", function () {
+    currentForm = $(this).closest("form");
     $("#confirmModal").removeClass("hidden");
   });
 
@@ -91,7 +94,13 @@ $(document).ready(function () {
   $("#confirmChanges").on("click", function () {
     // To Handle Confirmation Data
     $("#confirmModal").addClass("hidden");
-    alert("Changes have been confirmed!");
+    if (currentForm) {
+      // Hide the modal
+      $("#confirmModal").addClass("hidden");
+      // Submit the current form
+      currentForm.submit();
+      alert("Changes have been confirmed!");
+    }
   });
 
   /* ............
