@@ -137,10 +137,6 @@ $(document).ready(function () {
     },
   ];
 
-
-  
-  
-
   // Close Back
   $("#detail-view").on("click", "#close-detail", function () {
     $("#detail-view").addClass("hidden");

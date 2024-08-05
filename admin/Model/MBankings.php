@@ -48,4 +48,29 @@ class MBankings
             return false;
         }
     }
+
+     /**
+     * (Add Banking Account)
+     */
+    public function addAccount($bank_name, $account_number, $account_name, $qr_code) {
+        try {
+            $db = new DBConnection();
+            //get connection
+            $pdo = $db->connection();
+             // query prepare
+            $sql = $pdo->prepare(
+                "INSERT INTO m_bankings (bank_name, account_number, account_name, qr_code) VALUES (:bank_name, :account_number, :account_name :qr_code)"
+            );
+            $sql->bindValue(":bank_name", $bank_name);
+            $sql->bindValue(":account_number", $account_number);
+            $sql->bindValue(":account_name", $account_name);
+            $sql->bindValue(":qr_code", $qr_code);
+            $sql->execute();
+            return true;
+        } catch (\Throwable $th) {
+            // fail connection or query
+            echo "Unexpected Error Occurs! $th";
+            return false;
+        }
+    }
 }

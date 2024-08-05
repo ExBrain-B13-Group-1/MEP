@@ -953,6 +953,10 @@ video {
   margin-bottom: 0.25rem;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -1220,6 +1224,10 @@ video {
   height: 0.75rem;
 }
 
+.h-32 {
+  height: 8rem;
+}
+
 .h-4 {
   height: 1rem;
 }
@@ -1359,6 +1367,10 @@ video {
 
 .w-3 {
   width: 0.75rem;
+}
+
+.w-3\/4 {
+  width: 75%;
 }
 
 .w-4 {
@@ -2099,6 +2111,15 @@ video {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-x-20 {
+  -moz-column-gap: 5rem;
+       column-gap: 5rem;
+}
+
+.gap-y-4 {
+  row-gap: 1rem;
 }
 
 .-space-x-px > :not([hidden]) ~ :not([hidden]) {
@@ -2903,6 +2924,15 @@ video {
   background-color: rgb(250 204 21 / var(--tw-bg-opacity));
 }
 
+.bg-\[\] {
+  background-color: ;
+}
+
+.bg-\[\#FF5E5E\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 94 94 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-30 {
   --tw-bg-opacity: 0.3;
 }
@@ -3075,10 +3105,6 @@ video {
   padding: 1rem;
 }
 
-.p-5 {
-  padding: 1.25rem;
-}
-
 .p-6 {
   padding: 1.5rem;
 }
@@ -3216,6 +3242,10 @@ video {
   padding-left: 1rem;
 }
 
+.pl-5 {
+  padding-left: 1.25rem;
+}
+
 .pl-6 {
   padding-left: 1.5rem;
 }
@@ -3335,6 +3365,10 @@ video {
   font-size: 11px;
 }
 
+.text-\[5px\] {
+  font-size: 5px;
+}
+
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -3358,6 +3392,14 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+.text-\[6px\] {
+  font-size: 6px;
+}
+
+.text-\[8px\] {
+  font-size: 8px;
 }
 
 .font-bold {
@@ -3478,6 +3520,11 @@ video {
 .text-\[\#A82525\] {
   --tw-text-opacity: 1;
   color: rgb(168 37 37 / var(--tw-text-opacity));
+}
+
+.text-\[\#BDBDBD\] {
+  --tw-text-opacity: 1;
+  color: rgb(189 189 189 / var(--tw-text-opacity));
 }
 
 .text-\[\#C9B926\] {
@@ -3604,6 +3651,10 @@ video {
   color: rgb(234 179 8 / var(--tw-text-opacity));
 }
 
+.text-\[px\] {
+  color: px;
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -3648,6 +3699,10 @@ video {
 .subpixel-antialiased {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
+}
+
+.opacity-80 {
+  opacity: 0.8;
 }
 
 .bg-blend-normal {
@@ -4617,11 +4672,6 @@ body {
 .dark\:bg-gray-800:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-}
-
-.dark\:bg-gray-900:is(.dark *) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
 .dark\:bg-red-600:is(.dark *) {

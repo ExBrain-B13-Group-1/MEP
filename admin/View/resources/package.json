@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.4.7"
+  },
+  "dependencies": {
+    "moment": "^2.30.1"
   }
 }

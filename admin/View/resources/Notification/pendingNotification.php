@@ -1,3 +1,25 @@
+<?php
+session_start();
+
+// Initialize session variables if not set
+if (!isset($_SESSION['totalPending'])) {
+    $_SESSION['totalPending'] = 0;
+}
+
+$totalPending = $_SESSION['totalPending'];
+include '../../../Controller/UserController.php';
+include '../../../Controller/InstituteController.php';
+
+
+$totalPendingUsers = count($pendingUsers);
+$totalPendingIs = count($pendingInstitutes);
+$totalPending = $totalPendingUsers + $totalPendingIs;
+
+// Set session variable (for other pages)
+$_SESSION['totalPending'] = $totalPendingUsers + $totalPendingIs;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -235,12 +257,13 @@
                     </a>
                 </li>
                 <li class="mx-1">
-                    <a href="" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
+                    <a href="" class="relative block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
                         <svg width="30" height="33" viewBox="0 0 30 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8.72435 26.2614H4.19194C2.51219 26.2614 1.67232 26.2614 1.49561 26.1311C1.29709 25.9847 1.24858 25.8983 1.22708 25.6529C1.20795 25.4343 1.7227 24.5929 2.75223 22.9102C3.81519 21.1727 4.71778 18.643 4.71778 15.0614C4.71778 13.0811 5.56156 11.1819 7.06348 9.78166C8.56542 8.38139 10.6025 7.59473 12.7265 7.59473C14.8506 7.59473 16.8876 8.38139 18.3895 9.78166C19.8916 11.1819 20.7353 13.0811 20.7353 15.0614C20.7353 18.643 21.6379 21.1727 22.7009 22.9102C23.7303 24.5929 24.2451 25.4343 24.2261 25.6529C24.2046 25.8983 24.156 25.9847 23.9575 26.1311C23.7808 26.2614 22.9409 26.2614 21.2612 26.2614H16.7309M8.72435 26.2614L8.72216 27.5947C8.72216 29.8039 10.515 31.5947 12.7265 31.5947C14.9382 31.5947 16.7309 29.8039 16.7309 27.5947V26.2614M8.72435 26.2614H16.7309" stroke="#4460EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <circle cx="21.2266" cy="8.59473" r="8" fill="#FF5E5E" />
-                            <path d="M20.1357 7.5957H20.7803C21.096 7.5957 21.3564 7.54362 21.5615 7.43945C21.7699 7.33203 21.9245 7.18718 22.0254 7.00488C22.1296 6.81934 22.1816 6.611 22.1816 6.37988C22.1816 6.10645 22.1361 5.87695 22.0449 5.69141C21.9538 5.50586 21.8171 5.36589 21.6348 5.27148C21.4525 5.17708 21.2214 5.12988 20.9414 5.12988C20.6875 5.12988 20.4629 5.18034 20.2676 5.28125C20.0755 5.37891 19.9242 5.51888 19.8135 5.70117C19.7061 5.88346 19.6523 6.09831 19.6523 6.3457H18.749C18.749 5.98438 18.8402 5.6556 19.0225 5.35938C19.2048 5.06315 19.4603 4.82715 19.7891 4.65137C20.1211 4.47559 20.5052 4.3877 20.9414 4.3877C21.3711 4.3877 21.7471 4.46419 22.0693 4.61719C22.3916 4.76693 22.6423 4.99154 22.8213 5.29102C23.0003 5.58724 23.0898 5.95671 23.0898 6.39941C23.0898 6.57845 23.0475 6.77051 22.9629 6.97559C22.8815 7.17741 22.7529 7.36621 22.5771 7.54199C22.4046 7.71777 22.18 7.86263 21.9033 7.97656C21.6266 8.08724 21.2946 8.14258 20.9072 8.14258H20.1357V7.5957ZM20.1357 8.33789V7.7959H20.9072C21.3597 7.7959 21.734 7.84961 22.0303 7.95703C22.3265 8.06445 22.5592 8.20768 22.7285 8.38672C22.901 8.56576 23.0215 8.7627 23.0898 8.97754C23.1615 9.18913 23.1973 9.40072 23.1973 9.61231C23.1973 9.94434 23.1403 10.2389 23.0264 10.4961C22.9157 10.7533 22.7578 10.9714 22.5527 11.1504C22.3509 11.3294 22.1133 11.4645 21.8398 11.5557C21.5664 11.6468 21.2686 11.6924 20.9463 11.6924C20.637 11.6924 20.3457 11.6484 20.0723 11.5605C19.8021 11.4727 19.5628 11.3457 19.3545 11.1797C19.1462 11.0104 18.9834 10.8037 18.8662 10.5596C18.749 10.3122 18.6904 10.0306 18.6904 9.71484H19.5938C19.5938 9.96224 19.6475 10.1787 19.7549 10.3643C19.8656 10.5498 20.0218 10.6947 20.2236 10.7988C20.4287 10.8997 20.6696 10.9502 20.9463 10.9502C21.223 10.9502 21.4606 10.903 21.6592 10.8086C21.861 10.7109 22.0156 10.5645 22.123 10.3691C22.2337 10.1738 22.2891 9.92806 22.2891 9.63184C22.2891 9.33561 22.2272 9.0931 22.1035 8.9043C21.9798 8.71224 21.804 8.57064 21.5762 8.47949C21.3516 8.38509 21.0863 8.33789 20.7803 8.33789H20.1357Z" fill="white" />
+                            <!-- <circle cx="21.2266" cy="8.59473" r="8" fill="#FF5E5E" /> -->
+                            <!-- <path d="M20.1357 7.5957H20.7803C21.096 7.5957 21.3564 7.54362 21.5615 7.43945C21.7699 7.33203 21.9245 7.18718 22.0254 7.00488C22.1296 6.81934 22.1816 6.611 22.1816 6.37988C22.1816 6.10645 22.1361 5.87695 22.0449 5.69141C21.9538 5.50586 21.8171 5.36589 21.6348 5.27148C21.4525 5.17708 21.2214 5.12988 20.9414 5.12988C20.6875 5.12988 20.4629 5.18034 20.2676 5.28125C20.0755 5.37891 19.9242 5.51888 19.8135 5.70117C19.7061 5.88346 19.6523 6.09831 19.6523 6.3457H18.749C18.749 5.98438 18.8402 5.6556 19.0225 5.35938C19.2048 5.06315 19.4603 4.82715 19.7891 4.65137C20.1211 4.47559 20.5052 4.3877 20.9414 4.3877C21.3711 4.3877 21.7471 4.46419 22.0693 4.61719C22.3916 4.76693 22.6423 4.99154 22.8213 5.29102C23.0003 5.58724 23.0898 5.95671 23.0898 6.39941C23.0898 6.57845 23.0475 6.77051 22.9629 6.97559C22.8815 7.17741 22.7529 7.36621 22.5771 7.54199C22.4046 7.71777 22.18 7.86263 21.9033 7.97656C21.6266 8.08724 21.2946 8.14258 20.9072 8.14258H20.1357V7.5957ZM20.1357 8.33789V7.7959H20.9072C21.3597 7.7959 21.734 7.84961 22.0303 7.95703C22.3265 8.06445 22.5592 8.20768 22.7285 8.38672C22.901 8.56576 23.0215 8.7627 23.0898 8.97754C23.1615 9.18913 23.1973 9.40072 23.1973 9.61231C23.1973 9.94434 23.1403 10.2389 23.0264 10.4961C22.9157 10.7533 22.7578 10.9714 22.5527 11.1504C22.3509 11.3294 22.1133 11.4645 21.8398 11.5557C21.5664 11.6468 21.2686 11.6924 20.9463 11.6924C20.637 11.6924 20.3457 11.6484 20.0723 11.5605C19.8021 11.4727 19.5628 11.3457 19.3545 11.1797C19.1462 11.0104 18.9834 10.8037 18.8662 10.5596C18.749 10.3122 18.6904 10.0306 18.6904 9.71484H19.5938C19.5938 9.96224 19.6475 10.1787 19.7549 10.3643C19.8656 10.5498 20.0218 10.6947 20.2236 10.7988C20.4287 10.8997 20.6696 10.9502 20.9463 10.9502C21.223 10.9502 21.4606 10.903 21.6592 10.8086C21.861 10.7109 22.0156 10.5645 22.123 10.3691C22.2337 10.1738 22.2891 9.92806 22.2891 9.63184C22.2891 9.33561 22.2272 9.0931 22.1035 8.9043C21.9798 8.71224 21.804 8.57064 21.5762 8.47949C21.3516 8.38509 21.0863 8.33789 20.7803 8.33789H20.1357Z" fill="white" /> -->
                         </svg>
+                        <span class="absolute top-0 right-0 w-4 h-4 rounded-full flex justify-center items-center text-[8px] bg-[#FF5E5E] text-white "><?= $totalPending ?></span></button>
                     </a>
                 </li>
                 <li class="ml-3">
@@ -268,9 +291,52 @@
             <div id="user-content" class="tab-content active flex-1 overflow-y-auto no-scrollbar px-4 mt-5">
                 <div class="bg-white dark:bg-gray-700 dark:text-white p-4 rounded-lg shadow">
                     <div class="text-lg font-bold mb-4">New User Requested Approval Pending</div>
-                    <div class="space-y-4" id="user-notification-list">
-                        <!-- New User Notifications will be appended here dynamically -->
-                    </div>
+                    <form id="userForm" action="../../../Controller/UserController.php" method="POST">
+                        <div class="space-y-4" id="user-notification-list">
+                            <!-- New User Notifications will be appended here dynamically -->
+                            <?php foreach ($pendingUsers as $notification) : ?>
+                                <?php $parts = explode(" ", $notification['create_date']);
+                                $datePart = $parts[0];
+                                $timePart = $parts[1];
+                                ?>
+                                <input type="hidden" name="id" value="<?= $notification['id']; ?>">
+                                <div class="bg-thin-bg p-4 rounded-lg flex items-center justify-between cursor-pointer hover:bg-thin-hover-bg">
+                                    <div class="flex items-center">
+                                        <img src="${notification.photo}" alt="User Avatar" class="rounded-full w-16 h-16 mr-4">
+                                        <div>
+                                            <div class="font-bold"><?= $notification['name']; ?></div>
+                                            <div class="text-gray-500 dark:text-gray-400 text-sm"><?= $datePart ?></div>
+                                            <div class="text-gray-500 dark:text-gray-400 text-sm"><?= $timePart ?></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" {...$$props}>
+                                            <path fill="currentColor" d="m12 15.577l-3.539-3.538l.708-.72L11.5 13.65V5h1v8.65l2.33-2.33l.709.719zM5 19v-4.038h1V18h12v-3.038h1V19z" />
+                                        </svg>
+                                        <a href="" class="text-dark-blue dark:text-[#9aabff] underline mr-32">
+                                            Validation Form
+                                        </a>
+                                        <div class="flex flex-col">
+                                            <button type="button" class="bg-primary-main text-white px-4 py-2 rounded text-sm flex items-center transition duration-100 transform hover:scale-105 verify-button" data-action="verify" data-id="<?= $notification['id']; ?>">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" class="mr-1" viewBox="0 0 24 24" {...$$props}>
+                                                    <path fill="currentColor" d="M23 11.99L20.56 9.2l.34-3.69l-3.61-.82L15.4 1.5L12 2.96L8.6 1.5L6.71 4.69L3.1 5.5l.34 3.7L1 11.99l2.44 2.79l-.34 3.7l3.61.82l1.89 3.2l3.4-1.47l3.4 1.46l1.89-3.19l3.61-.82l-.34-3.69zm-3.95 1.48l-.56.65l.08.85l.18 1.95l-1.9.43l-.84.19l-.44.74l-.99 1.68l-1.78-.77l-.8-.34l-.79.34l-1.78.77l-.99-1.67l-.44-.74l-.84-.19l-1.9-.43l.18-1.96l.08-.85l-.56-.65L3.67 12l1.29-1.48l.56-.65l-.09-.86l-.18-1.94l1.9-.43l.84-.19l.44-.74l.99-1.68l1.78.77l.8.34l.79-.34l1.78-.77l.99 1.68l.44.74l.84.19l1.9.43l-.18 1.95l-.08.85l.56.65l1.29 1.47z" />
+                                                    <path fill="currentColor" d="m10.09 13.75l-2.32-2.33l-1.48 1.49l3.8 3.81l7.34-7.36l-1.48-1.49z" />
+                                                </svg>
+                                                Verified
+                                            </button>
+                                            <div class="w-2 h-2"></div>
+                                            <button type="button" class="bg-red-500 text-white px-4 py-2 rounded text-sm flex items-center transition duration-100 transform hover:scale-105 reject-button" data-action="reject" data-id="<?= $notification['id']; ?>">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" class="mr-1" viewBox="0 0 16 16" {...$$props}>
+                                                    <path fill="currentColor" fill-rule="evenodd" d="M7.67 14.72h.71L10.1 13h2.4l.5-.5v-2.42l1.74-1.72v-.71l-1.71-1.72V3.49l-.5-.49H10.1L8.38 1.29h-.71L6 3H3.53L3 3.5v2.43L1.31 7.65v.71L3 10.08v2.42l.53.5H6zM6.16 12H4V9.87l-.12-.35L2.37 8l1.48-1.51l.15-.35V4h2.16l.36-.14L8 2.35l1.54 1.51l.35.14H12v2.14l.17.35L13.69 8l-1.55 1.52l-.14.35V12H9.89l-.38.15L8 13.66l-1.48-1.52zm1.443-5.859a1 1 0 0 0-.128.291q-.045.164-.062.317l-.005.043h-.895l.003-.051q.027-.49.212-.864q.079-.162.193-.318q.122-.16.294-.28q.178-.125.409-.2A1.7 1.7 0 0 1 8.165 5q.42 0 .726.14q.301.133.494.363q.19.228.279.52q.087.291.087.599q0 .287-.098.54q-.096.247-.238.466q-.14.215-.31.41q-.165.193-.304.372a2.5 2.5 0 0 0-.23.34a.65.65 0 0 0-.088.318v.48h-.888v-.539q0-.252.094-.464a2 2 0 0 1 .24-.401q.145-.19.308-.368a5 5 0 0 0 .299-.356q.14-.18.228-.377a1 1 0 0 0 .09-.421a1 1 0 0 0-.047-.318v-.001a.6.6 0 0 0-.13-.243a.56.56 0 0 0-.216-.158H8.46a.7.7 0 0 0-.294-.059a.64.64 0 0 0-.339.083a.7.7 0 0 0-.223.215zM8.5 11h-.888v-.888H8.5z" clip-rule="evenodd" />
+                                                </svg>
+                                                Reject
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </form>
                 </div>
             </div>
 
@@ -278,9 +344,50 @@
             <div id="institute-content" class="tab-content flex-1 overflow-y-auto no-scrollbar px-4 mt-5">
                 <div class="bg-white dark:bg-gray-700 dark:text-white p-4 rounded-lg shadow">
                     <div class="text-lg font-bold mb-4">Institute Requested Approval Pending</div>
-                    <div class="space-y-4" id="institute-notification-list">
-                        <!-- Institute notifications will be appended here dynamically -->
-                    </div>
+                    <form id="instituteForm" action="../../../Controller/InstituteController.php" method="POST">
+                        <div class="space-y-4" id="institute-notification-list">
+                            <!-- Institute notifications will be appended here dynamically -->
+                            <?php foreach ($pendingInstitutes as $notification) : ?>
+                                <?php $parts = explode(" ", $notification['create_date']);
+                                $datePart = $parts[0];
+                                $timePart = $parts[1];
+                                ?>
+                                <input type="hidden" name="id" value="<?= $notification['id']; ?>">
+                                <div class="bg-thin-bg p-4 rounded-lg flex items-center justify-between cursor-pointer hover:bg-thin-hover-bg">
+                                    <div class="flex items-center">
+                                        <img src="<?= $notification['photo']; ?>" alt="User Avatar" class="rounded-full w-16 h-16 mr-4">
+                                        <div>
+                                            <div class="font-bold"><?= $notification['name']; ?></div>
+                                            <div class="text-gray-500 dark:text-gray-400 text-sm"><?= $datePart ?></div>
+                                            <div class="text-gray-500 dark:text-gray-400 text-sm"><?= $timePart ?></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" {...$$props}>
+                                            <path fill="currentColor" d="m12 15.577l-3.539-3.538l.708-.72L11.5 13.65V5h1v8.65l2.33-2.33l.709.719zM5 19v-4.038h1V18h12v-3.038h1V19z" />
+                                        </svg>
+                                        <p  class="viewForm text-dark-blue dark:text-[#9aabff] underline mr-32" data-action="view" data-id="<?= $notification['id']; ?>">Validation Form</p>
+                                        <div class="flex flex-col">
+                                            <button type="button" class="bg-primary-main text-white px-4 py-2 rounded text-sm flex items-center transition duration-100 transform hover:scale-105 verify-button" data-action="verify" data-id="<?= $notification['id']; ?>">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" class="mr-1" viewBox="0 0 24 24" {...$$props}>
+                                                    <path fill="currentColor" d="M23 11.99L20.56 9.2l.34-3.69l-3.61-.82L15.4 1.5L12 2.96L8.6 1.5L6.71 4.69L3.1 5.5l.34 3.7L1 11.99l2.44 2.79l-.34 3.7l3.61.82l1.89 3.2l3.4-1.47l3.4 1.46l1.89-3.19l3.61-.82l-.34-3.69zm-3.95 1.48l-.56.65l.08.85l.18 1.95l-1.9.43l-.84.19l-.44.74l-.99 1.68l-1.78-.77l-.8-.34l-.79.34l-1.78.77l-.99-1.67l-.44-.74l-.84-.19l-1.9-.43l.18-1.96l.08-.85l-.56-.65L3.67 12l1.29-1.48l.56-.65l-.09-.86l-.18-1.94l1.9-.43l.84-.19l.44-.74l.99-1.68l1.78.77l.8.34l.79-.34l1.78-.77l.99 1.68l.44.74l.84.19l1.9.43l-.18 1.95l-.08.85l.56.65l1.29 1.47z" />
+                                                    <path fill="currentColor" d="m10.09 13.75l-2.32-2.33l-1.48 1.49l3.8 3.81l7.34-7.36l-1.48-1.49z" />
+                                                </svg>
+                                                Verified
+                                            </button>
+                                            <div class="w-2 h-2"></div>
+                                            <button type="button" class="bg-red-500 text-white px-4 py-2 rounded text-sm flex items-center transition duration-100 transform hover:scale-105 reject-button" data-action="reject" data-id="<?= $notification['id']; ?>">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" class="mr-1" viewBox="0 0 16 16" {...$$props}>
+                                                    <path fill="currentColor" fill-rule="evenodd" d="M7.67 14.72h.71L10.1 13h2.4l.5-.5v-2.42l1.74-1.72v-.71l-1.71-1.72V3.49l-.5-.49H10.1L8.38 1.29h-.71L6 3H3.53L3 3.5v2.43L1.31 7.65v.71L3 10.08v2.42l.53.5H6zM6.16 12H4V9.87l-.12-.35L2.37 8l1.48-1.51l.15-.35V4h2.16l.36-.14L8 2.35l1.54 1.51l.35.14H12v2.14l.17.35L13.69 8l-1.55 1.52l-.14.35V12H9.89l-.38.15L8 13.66l-1.48-1.52zm1.443-5.859a1 1 0 0 0-.128.291q-.045.164-.062.317l-.005.043h-.895l.003-.051q.027-.49.212-.864q.079-.162.193-.318q.122-.16.294-.28q.178-.125.409-.2A1.7 1.7 0 0 1 8.165 5q.42 0 .726.14q.301.133.494.363q.19.228.279.52q.087.291.087.599q0 .287-.098.54q-.096.247-.238.466q-.14.215-.31.41q-.165.193-.304.372a2.5 2.5 0 0 0-.23.34a.65.65 0 0 0-.088.318v.48h-.888v-.539q0-.252.094-.464a2 2 0 0 1 .24-.401q.145-.19.308-.368a5 5 0 0 0 .299-.356q.14-.18.228-.377a1 1 0 0 0 .09-.421a1 1 0 0 0-.047-.318v-.001a.6.6 0 0 0-.13-.243a.56.56 0 0 0-.216-.158H8.46a.7.7 0 0 0-.294-.059a.64.64 0 0 0-.339.083a.7.7 0 0 0-.223.215zM8.5 11h-.888v-.888H8.5z" clip-rule="evenodd" />
+                                                </svg>
+                                                Reject
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </form>
                 </div>
             </div>
 
@@ -299,9 +406,9 @@
             <!-- Tabs -->
             <div class="flex flex-col justify-center space-y-4 border-l border-gray-400 px-4 w-52">
                 <button id="user-tab" class="tab-button  text-dark-blue dark:text-[#9aabff] font-bold text-xl px-4 py-2 rounded">User
-                    <span class="px-2 py-1 rounded-full text-sm bg-red-500 text-white relative bottom-3">3</span></button>
+                    <span class="px-2 py-1 rounded-full text-sm bg-red-500 text-white relative bottom-3"><?= $totalPendingUsers ?></span></button>
                 <button id="institute-tab" class="tab-button  text-gray-700 dark:text-gray-400 px-4 py-2 rounded">Institute
-                    <span class="px-2 py-1 rounded-full text-sm bg-red-500 text-white relative bottom-3">5</span></button>
+                    <span class="px-2 py-1 rounded-full text-sm bg-red-500 text-white relative bottom-3"><?= $totalPendingIs ?></span></button>
             </div>
 
         </div>
