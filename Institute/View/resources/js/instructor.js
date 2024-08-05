@@ -8,7 +8,7 @@ class InstructorLists extends PaginatedTable{
         const paginatedItems = this.jsonData.slice(start, end);
 
         paginatedItems.forEach(item => {
-            // console.log(item);
+            console.log(item);
             const row = `
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
             <td class="w-4 p-4">
@@ -38,18 +38,18 @@ class InstructorLists extends PaginatedTable{
     }
 }
 
-new InstructorLists('http://localhost/MEP/Institute/Controller/ViewInstructorController.php', 8);
+new InstructorLists('http://localhost/MEP/Institute/Controller/ViewInstructorController.php', 9);
 
 function showCard(id){
     $('#card-container').text("");
     $('#list-table').removeClass('col-span-8').addClass('col-span-6');
-    fetch('http://localhost/MEP/Institute/Controller/ViewInstructorController.php').then(response=>response.json())
+    fetch(`http://localhost/MEP/Institute/Controller/ViewInstructorController.php`).then(response=>response.json())
     .then(datas=>{
         datas.forEach(item=>{
             if(item.id === id){
                 console.log(item);
                 let cardhtml = `
-                            <div class="h-[60vh] overflow-y-auto hide-scrollbar">
+                            <div class="h-[70vh] overflow-y-auto hide-scrollbar">
                             <div class="flex items-center gap-5">
                                 <div class="absolute top-0 right-0 pt-3 pr-5">
                                     <button type="button" class="px-2 py-2 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-base w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-500 dark:hover:text-white" onclick="closeCard()">
@@ -105,12 +105,7 @@ function showCard(id){
                                 </div>
                                 <div>
                                     <h3 class="text-red-600 dark:text-white mt-5 mb-3 font-black">Related Class</h3>
-                                    <ul class="text-blue-700 dark:text-blue-400 list-inside list-disc">
-                                        <?php : ?>
-                                            <li>
-                                                <a href="http://localhost/MEP/Institute/Controller/ViewDetailsClassController.php?id=${item.id}"></a>
-                                            </li>
-                                        <?php endforeach();?>
+                                    <ul id="related-classes" class="text-blue-700 dark:text-blue-400 list-inside list-disc">
                                     </ul>
                                 </div>
                             </div>
@@ -118,6 +113,24 @@ function showCard(id){
                 `;
                 $('#card-container').append(cardhtml);
                 $('#card-container').removeClass('hidden');
+
+                fetch(`http://localhost/MEP/Institute/Controller/GetRelatedClassesController.php?id=${id}`)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(classes => {
+                        let relatedClassesHtml = classes.map(cls => `
+                            <li>
+                                <a href="http://localhost/MEP/Institute/Controller/ViewDetailsClassController.php?classid=${cls.id}">${cls.c_title}</a>
+                            </li>
+                        `).join('');
+
+                        $('#related-classes').html(relatedClassesHtml);
+                    })
+                    .catch(error => console.error('Error fetching related classes:', error));
             }
         });
     })

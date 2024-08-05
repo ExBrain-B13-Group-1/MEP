@@ -33,8 +33,13 @@ class MClasses{
             // get connection
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
-                "SELECT * FROM m_classes
-                WHERE id = :id"
+                "SELECT c.*, 
+                mc.cat_name as c_name,
+                mi.full_name
+                FROM m_classes AS c
+                JOIN m_categories AS mc ON c.cate_id = mc.id
+                JOIN m_instructors AS mi ON c.instructor_id = mi.id
+                WHERE c.id = :id"
             );
             $sql->bindValue(":id", $id);
             $sql->execute();

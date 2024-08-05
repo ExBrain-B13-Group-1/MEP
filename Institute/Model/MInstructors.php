@@ -14,7 +14,8 @@ class MInstructors{
             // get connection
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
-                "SELECT * FROM m_instructors"
+                "SELECT * FROM m_instructors 
+                JOIN m_classes ON m_classes.id = m_instructors.id"
             );
             $sql->execute();
             $results = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -25,14 +26,13 @@ class MInstructors{
         }
     }
 
-    public function getRelatedClasses($id){
+    public function getRelatedClasses($instructorId){
         try{
             $dbconn = new DBConnection();
             // get connection
             $pdo = $dbconn->connection();
-            $sql = $pdo->prepare(
-                "SELECT c_title FROM m_classes WHERE instructor_id = $id"
-            );
+            $sql = $pdo->prepare("SELECT id,c_title FROM m_classes WHERE instructor_id = :instructorId"); 
+            $sql->bindValue(':instructorId', $instructorId);
             $sql->execute();
             $results = $sql->fetchAll(PDO::FETCH_ASSOC);
             return $results;

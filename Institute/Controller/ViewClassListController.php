@@ -6,6 +6,6 @@ require_once  __DIR__ . '/../Model/MClasses.php';
 $classObj = new MClasses();
 $classes = $classObj->getAllClasses();
 
-// echo json_encode($classes);
+echo json_encode($classes);
 
 ?>
