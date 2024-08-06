@@ -9,7 +9,7 @@ $results = $classObj->viewDetailsClass($id);
 
 if($results){
     $encodedResults = urlencode(json_encode($results)); // Encode $results data
-    $redirectUrl = "../View/resources/Class/viewdetailsclass1.php?data=$encodedResults";
+    $redirectUrl = "../View/resources/Class/viewdetailsclass.php?data=$encodedResults";
     header("Location: $redirectUrl");
     exit();
 }else{

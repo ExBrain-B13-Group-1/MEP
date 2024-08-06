@@ -14,9 +14,41 @@ class MClasses{
             // get connection
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
-                "SELECT * FROM m_classes
-                JOIN m_institutes ON m_classes.institute_id = m_institutes.id
-                JOIN m_instructors ON m_classes.instructor_id = m_instructors.id"
+                "SELECT c.*,
+                mit.name AS institute_name,
+                mi.full_name AS instructor_name,
+                mc.cat_name AS category_name,
+                cs.status AS class_status
+                FROM m_classes AS c
+                LEFT JOIN c_status AS cs ON c.c_status_id = cs.id
+                LEFT JOIN m_institutes AS mit ON c.institute_id = mit.id
+                LEFT JOIN m_instructors AS mi ON c.instructor_id = mi.id
+                LEFT JOIN m_categories AS mc ON c.cate_id = mc.id;"
+            );
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
+    public function finishedClasses(){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT c.*,
+                mc.cat_name AS c_name,
+                mi.full_name,
+                mit.name
+                FROM m_classes AS c
+                LEFT JOIN m_categories AS mc ON c.cate_id = mc.id
+                LEFT JOIN m_instructors AS mi ON c.instructor_id = mi.id
+                LEFT JOIN m_institutes AS mit ON c.institute_id = mit.id
+                WHERE c.c_status_id = 3;"
             );
             $sql->execute();
             $results = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -37,8 +69,8 @@ class MClasses{
                 mc.cat_name as c_name,
                 mi.full_name
                 FROM m_classes AS c
-                JOIN m_categories AS mc ON c.cate_id = mc.id
-                JOIN m_instructors AS mi ON c.instructor_id = mi.id
+                LEFT JOIN m_categories AS mc ON c.cate_id = mc.id
+                LEFT JOIN m_instructors AS mi ON c.instructor_id = mi.id
                 WHERE c.id = :id"
             );
             $sql->bindValue(":id", $id);

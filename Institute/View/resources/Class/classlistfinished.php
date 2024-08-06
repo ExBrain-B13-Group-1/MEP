@@ -388,9 +388,6 @@
                                     END DATE
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    STATUS
-                                </th>
-                                <th scope="col" class="px-6 py-3">
                                     CLASS FEE
                                 </th>
                                 <th scope="col" class="px-6 py-3">

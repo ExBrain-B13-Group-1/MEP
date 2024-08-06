@@ -7,25 +7,46 @@ class ClassList extends PaginatedTable{
         const paginatedItems = this.jsonData.slice(start, end);
 
         paginatedItems.forEach(item => {
-            // console.log(item);
+            console.log(item);
             // console.log(item.id);
             const row = `
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <td class="w-4 p-4">${item.id}</td>
+                    <td class="w-4 p-4">${item.c_id}</td>
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">${item.c_title}</th>
-                    <td class="px-6 py-4">${item.full_name}</td>
+                    <td class="px-6 py-4">${item.instructor_name}</td>
                     <td class="px-6 py-4">${item.start_date}</td>
                     <td class="px-6 py-4">${item.end_date}</td>
-                    <td class="px-6 py-4 text-green-500">${"hello"}</td>
-                    <td class="px-6 py-4">${item.c_fee}</td>
+                    ${showStatus(item.class_status)}
+                    <td class="px-6 py-4">${addThousandSeparator(item.c_fee)}</td>
                     <td class="px-6 py-4">${item.max_enrollment}</td>
                     <td class="px-6 py-4">${item.enrollment_deadline}</td>
                     <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                        <a href="viewdetailsclass2.php?${item.id}">View</a>
+                        <a href="http://localhost/MEP/Institute/Controller/ViewDetailsClassController.php?classid=${item.id}">View</a>
                     </td>   
                 </tr>`;
             container.append(row);
         });
+    }
+}
+
+function addThousandSeparator(value) {
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function showStatus(status){
+    switch (status) {
+        case "Active":
+            return `<td class="px-6 py-4 text-green-500">${status}</td>`;
+            break;
+        case "Upcoming":
+            return `<td class="px-6 py-4 text-yellow-500">${status}</td>`;
+            break;
+        case "Completed":
+            return `<td class="px-6 py-4 text-blue-500">${status}</td>`;
+            break;
+        case "Cancelled":
+            return `<td class="px-6 py-4 text-red-500">${status}</td>`;
+            break;
     }
 }
 

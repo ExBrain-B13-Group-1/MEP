@@ -1616,6 +1616,10 @@ html {
   height: 62vh;
 }
 
+.h-\[70vh\] {
+  height: 70vh;
+}
+
 .h-\[80vh\] {
   height: 80vh;
 }
@@ -1634,18 +1638,6 @@ html {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[65vh\] {
-  height: 65vh;
-}
-
-.h-\[100vh\] {
-  height: 100vh;
-}
-
-.h-\[70vh\] {
-  height: 70vh;
 }
 
 .min-h-screen {
@@ -2461,11 +2453,6 @@ html {
   padding-bottom: 2rem;
 }
 
-.px-2\.5 {
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
-}
-
 .pb-0\.5 {
   padding-bottom: 0.125rem;
 }
@@ -2819,6 +2806,16 @@ html {
 .text-yellow-500 {
   --tw-text-opacity: 1;
   color: rgb(194 120 3 / var(--tw-text-opacity));
+}
+
+.text-red-800 {
+  --tw-text-opacity: 1;
+  color: rgb(155 28 28 / var(--tw-text-opacity));
+}
+
+.text-green-600 {
+  --tw-text-opacity: 1;
+  color: rgb(5 122 85 / var(--tw-text-opacity));
 }
 
 .underline {
