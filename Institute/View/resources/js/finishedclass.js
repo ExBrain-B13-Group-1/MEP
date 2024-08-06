@@ -19,7 +19,7 @@ class FinishedTable extends PaginatedTable{
                     <td class="px-6 py-4">${item.max_enrollment}</td>
                     <td class="px-6 py-4">${item.enrollment_deadline}</td>
                     <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                        <a href="http://localhost/MEP/Institute/Controller/FinishedClassListController.php?classid=${item.id}">View</a>
+                        <a href="finishedclassdetails.php?classid=${item.id}">View</a>
                     </td>
                 </tr>`;
             container.append(row);
@@ -45,7 +45,7 @@ $(document).ready(function () {
             // url = "../json/finishedclassdatas.json";
             window.location.href = "./../Class/classlist.php";
             
-        } else if ($(this).text() === "Finished Classes") {
+        } else if ($(this).text() === "Completed Classes") {
             // url = "../json/classdatas.json";
             window.location.href = "./../Class/classlistfinished.php";
         }

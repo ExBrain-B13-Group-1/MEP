@@ -54,7 +54,7 @@ function formatDays($days){
                                     <svg class="rtl:rotate-180  w-3 h-3 mx-2 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
                                     </svg>
-                                    <span class="ms-1 text-base font-medium md:ms-2 current-pages">View</span>
+                                    <span class="ms-1 text-base font-medium md:ms-2 current-pages">Details</span>
                                 </div>
                             </li>
                         </ol>

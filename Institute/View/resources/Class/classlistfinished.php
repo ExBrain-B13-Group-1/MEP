@@ -38,7 +38,7 @@
                             <a href="#" class="inline-block p-4 text-base rounded-t-lg hover:dark:bg-gray-600 changes">Class Lists</a>
                         </li>
                         <li class="me-2 h-10">
-                            <a href="#" class="inline-block p-4 text-base rounded-t-lg hover:dark:bg-gray-600 changes actives">Finished Classes</a>
+                            <a href="#" class="inline-block p-4 text-base rounded-t-lg hover:dark:bg-gray-600 changes actives">Completed Classes</a>
                         </li>
                     </ul>
                 </div>

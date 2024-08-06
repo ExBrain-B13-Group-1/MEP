@@ -21,7 +21,7 @@ class ClassList extends PaginatedTable{
                     <td class="px-6 py-4">${item.max_enrollment}</td>
                     <td class="px-6 py-4">${item.enrollment_deadline}</td>
                     <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                        <a href="http://localhost/MEP/Institute/Controller/ViewDetailsClassController.php?classid=${item.id}">View</a>
+                        <a href="http://localhost/MEP/Institute/Controller/ViewDetailsClassController.php?classid=${item.id}&status=${item.class_status}">View</a>
                     </td>   
                 </tr>`;
             container.append(row);
@@ -60,7 +60,7 @@ $(document).ready(function () {
         console.log($(this).text());
         if ($(this).text() === "Class Lists") {
             window.location.href = "./../Class/classlist.php";
-        } else if ($(this).text() === "Finished Classes") {
+        } else if ($(this).text() === "Completed Classes") {
             window.location.href = "./../Class/classlistfinished.php";
         }
     });
