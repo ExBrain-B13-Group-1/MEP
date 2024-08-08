@@ -54,7 +54,7 @@ function formatDays($days){
                                     <svg class="rtl:rotate-180  w-3 h-3 mx-2 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
                                     </svg>
-                                    <span class="ms-1 text-base font-medium md:ms-2 current-pages">View</span>
+                                    <span class="ms-1 text-base font-medium md:ms-2 current-pages">Details</span>
                                 </div>
                             </li>
                         </ol>
@@ -283,21 +283,21 @@ function formatDays($days){
                             <div class="pl-5">
                                 <div class="mt-4">
                                     <h1 class="text-xl dark:text-white font-bold mb-7">Class Infomation</h1>
-                                    <img src="<?= $results[0]['c_photo'] ?>" class="w-full" alt="instructor" />
+                                    <img src="./../../../storages/uploads/<?=$results[0]['c_photo']?>" class="w-full" alt="classphoto" />
                                 </div>
                                 <div class="mt-5">
                                     <h1 class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85">
                                         <?= $results[0]['c_title'] ?>
                                     </h1>
                                     <div class="opacity-50 dark:text-white dark:opacity-50">
-                                        <?= $results[0]['c_name'] ?>
+                                        <?= $results[0]['category_name'] ?>
                                     </div>
                                 </div>
                             </div>
                             <!-- left -->
                             <div class="pl-5">
                                 <div class="flex justify-end">
-                                    <a href="./modifyclass.php">
+                                    <a href="http://localhost/MEP/Institute/Controller/EditClassController.php?classid=<?=$results[0]["id"]?>">
                                         <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit Class</button>
                                     </a>
                                 </div>
@@ -337,7 +337,7 @@ function formatDays($days){
                                 </div>
                                 <div class="mt-3">
                                     <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5 ">Instructor :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60">
-                                        <?= $results[0]['full_name'] ?>
+                                        <?= $results[0]['instructor_name'] ?>
                                     </span>
                                 </div>
                             </div>

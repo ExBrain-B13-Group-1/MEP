@@ -43,7 +43,7 @@ class MClasses{
             // get connection
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
-                "SELECT  cat.id,cat.cat_name FROM m_categories AS cat"
+                "SELECT cat.id,cat.cat_name FROM m_categories AS cat"
             );
             $sql->execute();
             $results = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -103,8 +103,55 @@ class MClasses{
         }
     }
 
-    public function add($user_infos){
+    public function addClass(array $classdatas,$id){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
 
+            $photo = $classdatas['photo'];
+            $title = $classdatas['title'];
+            $description = $classdatas['description'];
+            $categoryid = $classdatas['categoryid'];
+            $startdate = $classdatas['startdate'];
+            $enddate = $classdatas['enddate'];
+            $days = $classdatas['days'];
+            $starttime = $classdatas['starttime'];
+            $endtime = $classdatas['endtime'];
+            $instructorid = $classdatas['instructorid'];
+            $classfee = $classdatas['classfee'];
+            $maxenrollment = $classdatas['maxenrollment'];
+            $enrollementdeadline = $classdatas['enrollementdeadline'];
+            $creditpoint = $classdatas['creditpoint'];
+
+            $sql = $pdo->prepare(
+                "UPDATE m_classes
+                SET 
+                    c_photo = '$photo',                       
+                    c_title = '$title',                    
+                    c_des = '$description',                     
+                    cate_id = $categoryid,                          
+                    c_fee = $classfee,                        
+                    start_date = '$startdate',            
+                    end_date = '$enddate',              
+                    start_time = '$starttime',                 
+                    end_time = '$endtime',                   
+                    days = '$days',                     
+                    instructor_id = $instructorid,                    
+                    max_enrollment = $maxenrollment,                 
+                    enrollment_deadline = '$enrollementdeadline',   
+                    credit_point = $creditpoint                   
+                WHERE id = :id;
+                "
+            );
+            $sql->bindValue(":id", $id);
+            $sql->execute();
+            return true;
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+            return false;
+        }
     }
 
     public function modifyClass(array $modifydatas,$id){

@@ -1,12 +1,8 @@
 <?php
-ini_set('display_errors', '1');
 
-include '../../../Controller/InstituteController.php';
+ini_set("display_error", true);
 include "../../../Controller/common/getInstructorNames.php";
 include "../../../Controller/common/classCategories.php";
-
-// url for logo
-$baseUrl = 'http://localhost/MEP/storages/uploads/';
 
 $instructorNames = getAllInstructorNames();
 $classCategories = getAllClassCategories();
@@ -109,11 +105,11 @@ function selectedCategory($catename)
                             <div>
                                 <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
                                     <span class="sr-only">Open user menu</span>
-                                    <img class="w-14 h-14 rounded-full select-none" src="<?= $baseUrl . ($institute['photo']) ?>" alt="user photo">
+                                    <img class="w-14 h-14 rounded-full select-none" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
                                 </button>
                             </div>
                             <div class="ml-3 pt-2 dark:text-white">
-                                <p class="text-base leading-none select-none"><?= ($institute['name']) ?></p>
+                                <p class="text-base leading-none select-none">Education Portal</p>
                                 <p class="text-sm leading-none text-slate-500 select-none dark:text-white dark:text-opacity-50">Admin</p>
                                 <div class="flex pt-1">
                                     <svg class="w-4 h-4 mt-0.5 mr-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
@@ -141,13 +137,7 @@ function selectedCategory($catename)
                                     </li>
                                 </ul>
                                 <div class="py-2">
-                                    <!-- Logout Form -->
-                                    <form action="../../../Controller/LogoutController.php" method="post">
-                                        <button type="submit" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
-                                            Logout
-                                        </button>
-                                    </form>
-                                    <!-- <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a> -->
+                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
                                 </div>
                             </div>
                         </div>
@@ -296,15 +286,13 @@ function selectedCategory($catename)
                     </li>
 
                     <li class="mb-1.5 sidebarlinks" click-page="logout">
-                        <form action="../../../Controller/LogoutController.php" method="post" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#d9dffc] dark:hover:bg-gray-700 group">
+                        <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#d9dffc] dark:hover:bg-gray-700 group">
                             <svg class="w-5 h-5  text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path fill="currentColor" fill-rule="evenodd" d="M16.125 12a.75.75 0 0 0-.75-.75H4.402l1.961-1.68a.75.75 0 1 0-.976-1.14l-3.5 3a.75.75 0 0 0 0 1.14l3.5 3 a.75.75 0 1 0 .976-1.14l-1.96-1.68h10.972a.75.75 0 0 0 .75-.75" clip-rule="evenodd" />
                                 <path fill="currentColor" d="M9.375 8c0 .702 0 1.053.169 1.306a1 1 0 0 0 .275.275c.253.169.604.169 1.306.169h4.25a2.25 2.25 0 0 1 0 4.5h-4.25c-.702 0-1.053 0-1.306.168a1 1 0 0 0-.275.276c-.169.253-.169.604-.169 1.306c0 2.828 0 4.243.879 5.121c.878.879 2.292.879 5.12.879h1c2.83 0 4.243 0 5.122-.879c.879-.878.879-2.293.879-5.121V8c0-2.828 0-4.243-.879-5.121C20.617 2 19.203 2 16.375 2h-1c-2.829 0-4.243 0-5.121.879c-.879.878-.879 2.293-.879 5.121" />
                             </svg>
-                            <button type="submit" class="flex-1 ms-3 whitespace-nowrap text-left">
-                                Logout
-                            </button>
-                        </form>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Logout</span>
+                        </a>
                     </li>
                 </div>
             </ul>
@@ -315,7 +303,7 @@ function selectedCategory($catename)
     <div class="block pt-20 pb-8 px-5 ml-64 bg-gray-300 dark:bg-gray-800">
         <div class="grid grid-cols-10 gap-7 mt-10 ">
             <div class="bg-white col-span-8 col-start-2 rounded-lg px-4 py-2 dark:bg-gray-700 duration-500">
-                <form id="classform" action="http://localhost/MEP/Institute/Controller/EditSaveController.php" method="POST" enctype="multipart/form-data" class="px-10">
+                <form id="classform" action="http://localhost/MEP/Institute/Controller/ModifyClassController.php" method="POST" enctype="multipart/form-data" class="px-10">
                     <div class="grid grid-cols-2 gap-10">
                         <!-- left -->
                         <div>
@@ -519,7 +507,7 @@ function selectedCategory($catename)
         let previousFee = classfee.value;
         let previousCoin = creditCoin.value;
         console.log("prev = " + previousFee);
-        classfee.addEventListener('keyup', function() {
+        classfee.addEventListener('blur', function() {
             // console.log('hay');
             let coinAmt = 1;
             let feeValue = parseInt(classfee.value.replace(/,/g, ''));
@@ -535,7 +523,7 @@ function selectedCategory($catename)
                 window.alert('Fee Amount should be at least 10000 MMK');
             } else {
                 // console.log("go");
-                if (feeValue > 10000) {
+                if (feeValue >= 10000) {
                     calCoinAmt = feeValue / 1000 * coinAmt;
                     creditCoin.value = Math.ceil(calCoinAmt);
                 }
