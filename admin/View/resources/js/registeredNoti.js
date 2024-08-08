@@ -59,8 +59,8 @@ $(document).ready(function () {
   $("#confirm-button").click(function () {
     const action = $(this).data("action");
     const notificationId = $(this).data("id");
-    console.log("Action: ", action); 
-    console.log("Notification ID: ", notificationId); 
+    console.log("Action: ", action);
+    console.log("Notification ID: ", notificationId);
 
     // Hide the confirmation modal
     $("#confirmation-modal").addClass("hidden");
@@ -132,60 +132,21 @@ $(document).ready(function () {
     showModal("reject", name, notificationId);
   });
 
-
-
-  // Function to handle the modal confirmation
-  $(".viewForm").click(function () {
-   
+  // Function to handle view form
+  $(".iViewForm").click(function () {
     const action = $(this).data("action");
     const notificationId = parseInt($(this).data("id"));
-
-    console.log("Notification ID: ", notificationId);
-
     if (action == "view") {
       window.location.href = `./../Notification/instituteSignUp.php?id=${notificationId}&action=${action}`;
-  }
-
-    // let formSelector;
-    // if (activeTab === "user") {
-    //   formSelector = "#userForm";
-    // } else {
-    //   formSelector = "#instituteForm";
-    // }
-    // // Find the form
-    // const form = $(formSelector);
-    // // Remove existing hidden inputs to avoid duplication
-    // form.find("input[name='action']").remove();
-    // form.find("input[name='id']").remove();
-
-    // // Append new hidden inputs with action and notificationId
-    // $("<input>")
-    //   .attr({
-    //     type: "hidden",
-    //     name: "action",
-    //     value: action,
-    //   })
-    //   .appendTo(form);
-
-    // $("<input>")
-    //   .attr({
-    //     type: "hidden",
-    //     name: "id",
-    //     value: notificationId,
-    //   })
-    //   .appendTo(form);
-
-    // // Display an alert based on action
-    // if (action === "verify") {
-    //   alert(`This ${activeTab} has been verified and an email has been sent.`);
-    // } else if (action === "reject") {
-    //   alert(
-    //     `This ${activeTab} has been rejected. Please ask them to fill in the correct information.`
-    //   );
-    // }
-
-    // // Submit the form
-    // form.submit();
+    }
+  });
+  // Function to handle view form
+  $(".uViewForm").click(function () {
+    const action = $(this).data("action");
+    const notificationId = parseInt($(this).data("id"));
+    if (action == "view") {
+      window.location.href = `./../Notification/userVerification.php?id=${notificationId}&action=${action}`;
+    }
   });
 
   /* ............

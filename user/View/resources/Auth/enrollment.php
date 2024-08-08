@@ -12,7 +12,7 @@ foreach ($bankings as $banking) {
     $key = 'bank:' . $banking['id'];
     $paymentData[$key] = [
         'name' => $banking['bank_name'],
-        'image' => $banking['back_image'],
+        'image' => $banking['bank_image'],
         'qr_code' => $banking['qr_code']
     ];
     if (!$firstItem) {
@@ -52,7 +52,7 @@ $firstItem = json_encode($firstItem);
         .payment-overlay {
             position: absolute;
             top: 55%;
-            left: 72%;
+            left: 73%;
             transform: translate(-50%, -50%);
             background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
@@ -162,7 +162,7 @@ $firstItem = json_encode($firstItem);
                                         <optgroup label="Payments">
                                             <?php foreach ($pays as $pay) : ?>
                                                 <option value="pay:<?= $pay['id'] ?>">
-                                                <?= ($pay['pay_name'] . " - ") ?><?= ($pay['user_name'] . " ") ?><?= '(' . ($pay['ph_num']) . ')' ?>
+                                                <?= ($pay['pay_name'] . " - ") ?><?= ($pay['user_name'] . " ") ?><?= '(' .  '0' .($pay['ph_num']) . ')' ?>
                                                 </option>
                                             <?php endforeach ?>
                                         </optgroup>
@@ -174,7 +174,7 @@ $firstItem = json_encode($firstItem);
                                     </div>
                                 </div>
                                 <div id="payment-details" class="payment-overlay flex items-center mt-4">
-                                    <img id="payment-logo" src=""  alt="Payment Logo" class="w-16 h-16 mr-4">
+                                    <img id="payment-logo" src=""  alt="Payment Logo" class="h-16 mr-4">
                                     <img id="qr-code" src="" alt="QR Code" class="w-24 h-24">
                                 </div>
                             </div>

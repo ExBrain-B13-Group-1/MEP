@@ -1,8 +1,10 @@
 <?php
 ini_set('display_errors', '1');
 include __DIR__ . '/../Model/MInstitutes.php';
+include __DIR__ . '/common/mailSender.php';
 
 $mInstitutes = new MInstitute();
+$mail = new SendMail();
 $institutes = $mInstitutes->getAllInstitute();
 
 $pendingInstitutes = $mInstitutes->getPendingInstitutes();
@@ -11,10 +13,11 @@ $pendingInstitutes = $mInstitutes->getPendingInstitutes();
 // print_r($institutes);
 
 if (isset($_POST['action'])) {
+    echo 'hit';
     $id = $_POST['id'];
     $action = $_POST['action'];
 
-    if ($action === 'verify') {
+    if ($action == 'verify') {
         // Handle the verification process
         $success = $mInstitutes->updateVerified($id);
         if ($success) {
@@ -22,7 +25,7 @@ if (isset($_POST['action'])) {
         } else {
             echo "Verification failed.";
         }
-    } elseif ($action === 'reject') {
+    } elseif ($action == 'reject') {
         // Handle the rejection process
         $success = $mInstitutes->updateRejected($id);
         if ($success) {
@@ -41,22 +44,6 @@ if (isset($_GET['id']) && isset($_GET['action'])) {
     $institute = $mInstitutes->getInstitute($id);
 } 
 
-// // Get parameters from the URL
-// $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
-// $action = isset($_GET['action']) ? $_GET['action'] : '';
-
-// // Check if the action is valid
-// if ($id > 0 && $action === 'view') {
-//     // Get the institute data based on the ID
-//     $institute = $mInstitutes->getInstitute($id);
-
-//     // Check if data is returned
-//     if (empty($institute)) {
-//         echo "No data found for the given ID.";
-//     }
-// } else {
-//     $institute = []; // Default to an empty array if conditions aren't met
-// }
 
 // echo "<pre>";
 // print_r($institute);

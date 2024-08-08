@@ -1,3 +1,20 @@
+<?php
+session_start();
+
+// Check for "Remember Me" cookie at the start of your session
+if (isset($_COOKIE['user-email'])) {
+    // Redirect to the dashboard (or home page)
+    header("Location: http://localhost/MEP/User/View/resources/dashboard.php");
+    exit();
+}
+
+if (isset($_COOKIE['institute-email'])) {
+    // Redirect to the dashboard (or home page)
+    header("Location: http://localhost/MEP/Institute/View/resources/Dashboard/dashoverview.php");
+    exit();
+}
+?>
+
 <!doctype html>
 <html>
 
@@ -7,6 +24,8 @@
     <title>Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="../../resources/css/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="../../resources/lib/jquery-3.7.1.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
@@ -26,18 +45,33 @@
             <h2 class="hidden lg:block text-4xl font-bold text-white mb-8 text-center">Login</h2>
 
             <!-- Login Form For Back-End -->
-            <form action="../dashboard.php" class="space-y-4 md:space-y-7">
+            <form action="../../../Controller/LoginController.php" method="POST" class="space-y-4 md:space-y-7">
                 <!-- Email -->
-                <div>
-                    <input type="email" id="email" placeholder="Email" class="w-full px-4 py-2 border rounded-md md:bg-white bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
+                <div class="relative">
+                    <input type="email" id="email" name="email" placeholder="Email" class="w-full px-4 py-2 border rounded-md md:bg-white bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required value="<?php echo isset($_SESSION['email']) ? ($_SESSION['email']) : ''; ?>">
+                    <?php if (isset($_SESSION['email_error'])) : ?>
+                        <p class="text-[#ff3e3e] text-xs mt-1 absolute"><?php echo $_SESSION['email_error'];
+                                                                        unset($_SESSION['email_error']); ?></p>
+                    <?php endif; ?>
                 </div>
                 <!-- Password -->
-                <div>
-                    <input type="password" id="password" placeholder="Password" class="w-full px-4 py-2 border rounded-md md:bg-white bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
+                <div class="password-container relative">
+                    <input type="password" id="password" name="password" placeholder="Password" class="w-full px-4 py-2 border rounded-md md:bg-white bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
+                    <?php if (isset($_SESSION['ps_error'])) : ?>
+                        <p class="text-[#ff3e3e] text-xs mt-1 absolute"><?php echo $_SESSION['ps_error'];
+                                                                        unset($_SESSION['ps_error']); ?></p>
+                    <?php endif; ?>
+                    <span class="eye-icon absolute bottom-[0.6rem] right-2 text-primaryColor text-sm" id="toggle-password">
+                        <i class="fas fa-eye"></i>
+                    </span>
+                </div>
+                <div class="flex items-center mt-2 md:mt-0">
+                    <input type="checkbox" id="remember-me" name="remember_me" class="mr-1">
+                    <label for="remember-me" class="text-sm text-dark-gray">Remember Me</label>
                 </div>
                 <!-- Submit -->
                 <div class="flex justify-center">
-                    <button type="submit" class="w-1/2 py-2 px-4 bg-primary-main md:bg-white text-white md:text-primary-main font-bold rounded-md hover:bg-opacity-90 duration-75 focus:outline-none focus:ring-2 focus:ring-blue-600">Login</button>
+                    <button type="submit" name="login" class="w-1/2 py-2 px-4 bg-primary-main md:bg-white text-white md:text-primary-main font-bold rounded-md hover:bg-opacity-90 duration-75 focus:outline-none focus:ring-2 focus:ring-blue-600">Login</button>
                 </div>
             </form>
 
@@ -74,12 +108,11 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 
     <script src="../../resources/lib/jquery-3.7.1.js"></script>
+    <script src="../js/auth.js"></script>
     <script>
         $(document).ready(function() {
             // Show the popup when the sign up link is clicked

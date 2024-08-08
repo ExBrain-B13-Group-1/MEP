@@ -101,7 +101,11 @@
 
             <a class="flex items-center hover:text-primaryColor cursor-pointer">
               <ion-icon name="log-out-outline" class="text-lg mx-2 my-2"></ion-icon>
-              <p>Logout</p>
+              <form action="../../Controller/LogoutController.php" method="POST" class="inline">
+                <button type="submit">
+                  Logout
+                </button>
+              </form>
             </a>
 
           </div>

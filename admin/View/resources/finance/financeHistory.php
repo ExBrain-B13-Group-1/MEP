@@ -1,6 +1,7 @@
 <?php
 // Start the session
 session_start();
+$baseUrl = 'http://localhost/MEP/storages/uploads/';
 
 // Get session value
 $userPays = $_SESSION['userPays'];
@@ -13,6 +14,9 @@ $data = array_merge($institutePays, $userPays);
 usort($data, function ($a, $b) {
     return strtotime($b['create_date']) - strtotime($a['create_date']);
 });
+
+// echo "<pre>";
+// print_r($data);
 
 // Convert PHP array to JSON
 $jsonData = json_encode($data);
@@ -397,6 +401,8 @@ $jsonData = json_encode($data);
     <script>
         $(document).ready(function() {
             var data = <?php echo $jsonData; ?>;
+            var baseUrl = "<?php echo $baseUrl; ?>";
+
             const rowsPerPage = 10;
             let currentPage = 1;
             let totalPages;
@@ -505,7 +511,7 @@ $jsonData = json_encode($data);
                         <button id="close-detail" class="text-2xl absolute -right-6 -top-2"><ion-icon name="close-outline"></ion-icon></button>
                         <div class="flex justify-start items-center space-x-4 mb-2">
                             <div>
-                                <img class="w-16 h-16 rounded-full" src="${row.photo ? row.photo : 'nothing'}" alt="Photo">
+                                <img class="w-16 h-16 rounded-full" src="${row.photo ? baseUrl + row.photo : 'nothing'}" alt="Photo">
                             </div>
                             <div>
                                 <div class="font-bold">${row.name}</div>

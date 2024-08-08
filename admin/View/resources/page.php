@@ -28,7 +28,8 @@ $serviceContents = array_filter($sites, function ($site) {
     return $site['page_name'] === 'Service';
 });
 // echo "<pre>";
-// print_r($serviceContents);
+// print_r($aboutContents[4]);
+
 ?>
 
 <!DOCTYPE html>
@@ -400,8 +401,8 @@ $serviceContents = array_filter($sites, function ($site) {
                         <label class="block mb-2 dark:text-white">Change About Us Photo</label>
                         <div class="mb-6">
                             <div class="upload-area dark:bg-gray-600 dark:border-gray-500 rounded-md" id="upload-area-about">
-                                <input type="file" id="file-input-about" accept="image/*" required class="hidden">
-                                <img id="uploaded-image-about" alt="Uploaded Image" class="uploaded-image">
+                                <input type="file" id="file-input-about" accept="image/*" class="hidden">
+                                <img id="uploaded-image-about" src="<?= ($aboutContents[4]['about_image']); ?>" alt="Uploaded Image" class="uploaded-image">
                                 <div id="upload-text-about" class="upload-text text-center">
                                     <ion-icon name="cloud-upload-outline" class="text-2xl text-gray-500 dark:text-gray-400"></ion-icon>
                                     <p class="text-gray-400 dark:text-gray-300 text-sm">Upload Here (About Us)</p>
@@ -501,8 +502,8 @@ $serviceContents = array_filter($sites, function ($site) {
                             <?php foreach ($bankings as $data) : ?>
                                 <div class="space-y-2 bg-white dark:bg-gray-600 shadow-md rounded-lg overflow-hidden my-4 p-3">
                                     <div class="px-2 bg-thin-bg relative">
-                                        <div class="w-full h-24">
-                                            <img src="<?= ($data['bank_name']) ?>" alt="Bank Logo">
+                                        <div class="py-4">
+                                            <img src="<?= ($data['bank_image']) ?>" alt="Bank Logo" class="h-24 rounded-md">
                                         </div>
                                         <div class="absolute top-2 right-3">
                                             <img src="<?= ($data['qr_code']) ?>" alt="QR Code" class="w-8 h-8">
@@ -537,8 +538,8 @@ $serviceContents = array_filter($sites, function ($site) {
                             <?php foreach ($pays as $data) : ?>
                                 <div class="space-y-2 bg-white dark:bg-gray-600 shadow-md rounded-lg overflow-hidden my-4 p-3">
                                     <div class="px-2 bg-thin-bg relative">
-                                        <div class="w-full h-24">
-                                            <img src="<?= ($data['pay_image']) ?>" alt="Pay Logo">
+                                        <div class="py-4">
+                                            <img src="<?= ($data['pay_image']) ?>" alt="Pay Logo" class="w-20 h-20">
                                         </div>
                                         <div class="absolute top-2 right-3">
                                             <img src="<?= ($data['qr_code']) ?>" alt="QR Code" class="w-8 h-8">

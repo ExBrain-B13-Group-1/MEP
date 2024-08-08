@@ -2,6 +2,8 @@
 ini_set('display_errors', '1');
 include '../../../Controller/InstituteController.php';
 
+$baseUrl = 'http://localhost/MEP/storages/uploads/';
+
 // echo "<pre>";
 // print_r($institute);
 
@@ -13,7 +15,7 @@ include '../../../Controller/InstituteController.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Institute Sign-Up Form</title>
+    <title>Institute Signed-Up </title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="../../resources/css/output.css" rel="stylesheet">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -33,6 +35,7 @@ include '../../../Controller/InstituteController.php';
             scrollbar-width: none;
         }
 
+        
         .upload-area {
             position: relative;
             width: 100%;
@@ -53,7 +56,6 @@ include '../../../Controller/InstituteController.php';
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: none;
         }
 
         .upload-text {
@@ -82,114 +84,134 @@ include '../../../Controller/InstituteController.php';
                     <!-- Logo -->
                     <div class="w-full">
                         <label class="block text-white text-lg">Institute Logo</label>
-                        <div class="mb-2">
+                        <div class="my-2">
                             <div class="upload-area rounded-md border border-gray-300 p-2">
-                                <img src="#" id="uploaded-image-logo" alt="Uploaded Image" class="w-full h-32 object-cover rounded-md">
-                                <p id="upload-text-logo" class="text-gray-400 text-sm">Logo Image</p>
+                                <img src="<?= $baseUrl . $institute[0]['photo']; ?>" id="uploaded-image-logo" alt="Uploaded Image" class="w-full h-32 object-cover rounded-md">
+                                <p class="text-gray-400 text-sm"></p>
                             </div>
                         </div>
                     </div>
                     <!-- Slider -->
                     <div class="w-full">
                         <label class="block text-white text-lg">Slider</label>
-                        <div class="mb-2">
+                        <div class="my-2">
                             <div class="upload-area rounded-md border border-gray-300 p-2">
-                                <img src="#" id="uploaded-image-slider" alt="Uploaded Image" class="w-full h-32 object-cover rounded-md">
-                                <p id="upload-text-slider" class="text-gray-400 text-sm">Slider Image</p>
+                                <?php if (!empty($institute[0]['slider_image'])) : ?>
+                                    <img src="<?= $baseUrl . $institute[0]['slider_image']; ?>" id="uploaded-image-slider" alt="Uploaded Image" class="w-full h-32 object-cover rounded-md">
+                                <?php else : ?>
+                                    <p class="text-gray-400 text-sm">Image: Not Given</p>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
                     <!-- Institute Name -->
                     <div>
                         <label class="text-[#BDBDBD] text-sm">Institute Name</label>
-                        <p id="institute-name" class="text-white">Institute Name Here</p>
+                        <p id="institute-name" class="text-white"><?= $institute[0]['name']; ?></p>
                     </div>
                     <!-- Institute Type -->
                     <div>
                         <label class="text-[#BDBDBD] text-sm">Institute Type</label>
-                        <p id="institute-type" class="text-white">Institute Type Here</p>
+                        <p id="institute-type" class="text-white"><?= $institute[0]['itype']; ?></p>
                     </div>
                     <!-- Institute Email -->
                     <div>
                         <label class="text-[#BDBDBD] text-sm">Institute Email</label>
-                        <p id="institute-email" class="text-white">email@example.com</p>
+                        <p id="institute-email" class="text-white"><?= $institute[0]['email']; ?></p>
                     </div>
                     <!-- Institute Contact -->
                     <div>
                         <label class="text-[#BDBDBD] text-sm">Contact</label>
-                        <p id="institute-contact" class="text-white">+959 123 456 789</p>
+                        <p id="institute-contact" class="text-white"><?= $institute[0]['contact']; ?></p>
                     </div>
                     <!-- Institute Address -->
                     <div>
                         <label class="text-[#BDBDBD] text-sm">Institute Address</label>
-                        <p id="institute-address" class="text-white">Institute Address Here</p>
+                        <p id="institute-address" class="text-white"><?= $institute[0]['address']; ?></p>
                     </div>
                     <!-- State/Region and City -->
                     <div class="flex">
                         <div class="relative w-1/2">
                             <label class="block mb-1 text-[#BDBDBD] text-sm opacity-80">State/Region</label>
-                            <p id="state-region" class="text-white">State/Region Here</p>
+                            <p id="state-region" class="text-white"><?= $institute[0]['srName']; ?></p>
                         </div>
                         <div class="relative pl-5 w-1/2">
                             <label class="block mb-1 text-[#BDBDBD] text-sm opacity-80">City</label>
-                            <p id="city" class="text-white">City Here</p>
+                            <p id="city" class="text-white"><?= $institute[0]['cityName']; ?></p>
                         </div>
                     </div>
                     <!-- Institute Website Link (Optional) -->
                     <div>
                         <label class="text-[#BDBDBD] text-sm">Website Link</label>
-                        <p id="website-link" class="text-white">http://website-link.com</p>
+                        <p id="website-link" class="text-white"><?= $institute[0]['website'] ? $institute[0]['website'] : 'Website Link: Not Given' ?></p>
                     </div>
                     <!-- Institute Social Links (Optional) -->
                     <div>
                         <label class="text-[#BDBDBD] text-sm">Social Links</label>
-                        <p id="social-links" class="text-white">http://social-link.com</p>
+                        <p id="social-links" class="text-white"><?= $institute[0]['social'] ? $institute[0]['social'] : 'Social Link: Not Given' ?></p>
                     </div>
                 </div>
             </div>
 
+            <hr>
             <!-- Founder Information -->
             <div>
-                <h2 class="text-white text-xl mb-6">2. Founder Information</h2>
+                <h2 class="text-white text-xl my-6">2. Founder Information</h2>
                 <div class="grid grid-cols-2 gap-x-20 gap-y-4">
                     <!-- Founder Full Name -->
                     <div>
                         <label class="text-[#BDBDBD] text-sm">Full Name</label>
-                        <p id="founder-name" class="text-white">Full Name Here</p>
+                        <p id="founder-name" class="text-white"><?= $institute[0]['founderName']; ?></p>
                     </div>
                     <!-- Founder Email Address -->
                     <div>
                         <label class="text-[#BDBDBD] text-sm">Personal Email Address</label>
-                        <p id="founder-email" class="text-white">founder@example.com</p>
+                        <p id="founder-email" class="text-white"><?= $institute[0]['founderEmail']; ?></p>
                     </div>
                     <!-- Founder Contact -->
                     <div>
                         <label class="text-[#BDBDBD] text-sm">Contact</label>
-                        <p id="contact" class="text-white">+959 987 654 321</p>
+                        <p id="contact" class="text-white"><?= $institute[0]['founderContact']; ?></p>
                     </div>
                     <div></div>
                     <!-- Founder NRC Front -->
                     <div class="w-full">
                         <label class="block text-white text-lg">NRC Front</label>
-                        <div class="mb-2">
+                        <div class="my-2">
                             <div class="upload-area rounded-md border border-gray-300 p-2">
-                                <img src="#" id="uploaded-image-logo" alt="Uploaded Image" class="w-full h-32 object-cover rounded-md">
-                                <p id="upload-text-logo" class="text-gray-400 text-sm">NRC</p>
+                                <img src="<?= $baseUrl . $institute[0]['nrcFront']; ?>" id="uploaded-image-logo" alt="Uploaded Image" class="w-full h-32 object-cover rounded-md">
                             </div>
                         </div>
                     </div>
                     <!-- Founder NRC Back -->
                     <div class="w-full">
                         <label class="block text-white text-lg">NRC Back</label>
-                        <div class="mb-2">
+                        <div class="my-2">
                             <div class="upload-area rounded-md border border-gray-300 p-2">
-                                <img src="#" id="uploaded-image-logo" alt="Uploaded Image" class="w-full h-32 object-cover rounded-md">
-                                <p id="upload-text-logo" class="text-gray-400 text-sm">NRC</p>
+                                <img src="<?= $baseUrl . $institute[0]['nrcBack']; ?>" id="uploaded-image-logo" alt="Uploaded Image" class="w-full h-32 object-cover rounded-md">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <form action="../../../Controller/InstituteController.php" method="POST" class="flex justify-between mt-6">
+                <input type="hidden" name="id" value="<?= $institute[0]['id']; ?>">
+                <button type="submit" name="action" value="reject" class="bg-red-500 text-white px-4 py-2 rounded text-sm flex items-center transition duration-100 transform hover:scale-105 reject-button" data-action="reject" data-id="<?= $institute[0]['id']; ?>">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" class="mr-1" viewBox="0 0 16 16" {...$$props}>
+                        <path fill="currentColor" fill-rule="evenodd" d="M7.67 14.72h.71L10.1 13h2.4l.5-.5v-2.42l1.74-1.72v-.71l-1.71-1.72V3.49l-.5-.49H10.1L8.38 1.29h-.71L6 3H3.53L3 3.5v2.43L1.31 7.65v.71L3 10.08v2.42l.53.5H6zM6.16 12H4V9.87l-.12-.35L2.37 8l1.48-1.51l.15-.35V4h2.16l.36-.14L8 2.35l1.54 1.51l.35.14H12v2.14l.17.35L13.69 8l-1.55 1.52l-.14.35V12H9.89l-.38.15L8 13.66l-1.48-1.52zm1.443-5.859a1 1 0 0 0-.128.291q-.045.164-.062.317l-.005.043h-.895l.003-.051q.027-.49.212-.864q.079-.162.193-.318q.122-.16.294-.28q.178-.125.409-.2A1.7 1.7 0 0 1 8.165 5q.42 0 .726.14q.301.133.494.363q.19.228.279.52q.087.291.087.599q0 .287-.098.54q-.096.247-.238.466q-.14.215-.31.41q-.165.193-.304.372a2.5 2.5 0 0 0-.23.34a.65.65 0 0 0-.088.318v.48h-.888v-.539q0-.252.094-.464a2 2 0 0 1 .24-.401q.145-.19.308-.368a5 5 0 0 0 .299-.356q.14-.18.228-.377a1 1 0 0 0 .09-.421a1 1 0 0 0-.047-.318v-.001a.6.6 0 0 0-.13-.243a.56.56 0 0 0-.216-.158H8.46a.7.7 0 0 0-.294-.059a.64.64 0 0 0-.339.083a.7.7 0 0 0-.223.215zM8.5 11h-.888v-.888H8.5z" clip-rule="evenodd" />
+                    </svg>
+                    Reject
+                </button>
+                <div class="w-2 h-2"></div>
+                <button type="submit" name="action" value="verify" class="bg-green-600 text-white px-4 py-2 rounded text-sm flex items-center transition duration-100 transform hover:scale-105 verify-button" data-action="verify" data-id="<?= $institute[0]['id']; ?>">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" class="mr-1" viewBox="0 0 24 24" {...$$props}>
+                        <path fill="currentColor" d="M23 11.99L20.56 9.2l.34-3.69l-3.61-.82L15.4 1.5L12 2.96L8.6 1.5L6.71 4.69L3.1 5.5l.34 3.7L1 11.99l2.44 2.79l-.34 3.7l3.61.82l1.89 3.2l3.4-1.47l3.4 1.46l1.89-3.19l3.61-.82l-.34-3.69zm-3.95 1.48l-.56.65l.08.85l.18 1.95l-1.9.43l-.84.19l-.44.74l-.99 1.68l-1.78-.77l-.8-.34l-.79.34l-1.78.77l-.99-1.67l-.44-.74l-.84-.19l-1.9-.43l.18-1.96l.08-.85l-.56-.65L3.67 12l1.29-1.48l.56-.65l-.09-.86l-.18-1.94l1.9-.43l.84-.19l.44-.74l.99-1.68l1.78.77l.8.34l.79-.34l1.78-.77l.99 1.68l.44.74l.84.19l1.9.43l-.18 1.95l-.08.85l.56.65l1.29 1.47z" />
+                        <path fill="currentColor" d="m10.09 13.75l-2.32-2.33l-1.48 1.49l3.8 3.81l7.34-7.36l-1.48-1.49z" />
+                    </svg>
+                    Verified
+                </button>
+            </form>
         </div>
     </div>
 </body>

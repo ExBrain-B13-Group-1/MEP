@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!doctype html>
 <html>
 
@@ -6,7 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Password</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link href="../../resources/css/output.css" rel="stylesheet">
+    <script src="../../resources/lib/jquery-3.7.1.js"></script>
 </head>
 
 <body class="bg-blue-light-bg flex items-center justify-center min-h-screen">
@@ -24,25 +31,32 @@
             <h2 class="hidden lg:block text-2xl font-bold text-white mb-8 text-center">Forgot Password</h2>
 
             <!-- New Password Form For Back-End -->
-            <form action="login.php" class="space-y-4 md:space-y-7">
-                <!-- New Password -->
-                <div class="mt-0 lg:mt-20">
-                    <input type="password" id="new-password" placeholder="New Password"
-                        class="w-full px-4 py-2 border rounded-md md:bg-white bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
+            <form id="updatePsForm" action="../../../Controller/LoginController.php" method="POST" class="space-y-4 md:space-y-7">
+                <!-- Password -->
+                <div class="password-container relative mt-0 lg:mt-20">
+                    <input type="password" id="password" name="password" placeholder="New Password" class="w-full px-4 py-2 border rounded-md md:bg-white bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
+                    <span class="eye-icon absolute bottom-[0.6rem] right-2 text-primaryColor text-sm" id="toggle-password">
+                        <i class="fas fa-eye"></i>
+                    </span>
                 </div>
-                 <!-- Confirm Password -->
-                 <div class="mt-0 lg:mt-20">
-                    <input type="password" id="confirm-password" placeholder="Confirm Password"
-                        class="w-full px-4 py-2 border rounded-md md:bg-white bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
+                <!-- Confirm Password -->
+                <div class="password-container relative mt-0 lg:mt-20">
+                    <input type="password" id="confirm-password" placeholder="Confirm Password" class="w-full px-4 py-2 border rounded-md md:bg-white bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
+                    <span class="eye-icon absolute bottom-[0.6rem] right-2 text-primaryColor text-sm" id="toggle-confirm-password">
+                        <i class="fas fa-eye text-primary-main"></i>
+                    </span>
+                </div>
+                <div class="relative">
+                    <p id="psMessage" class="absolute text-xs bottom-3"></p>
                 </div>
                 <!-- Submit -->
                 <div class="flex justify-center">
-                    <button type="submit"
-                        class="w-1/2 py-2 px-4 bg-primary-main md:bg-white text-white md:text-primary-main font-bold rounded-md hover:bg-opacity-90 duration-75 focus:outline-none focus:ring-2 focus:ring-blue-600">Confirm</button>
+                    <button type="button" id="newPs-button" class="w-1/2 py-2 px-4 bg-primary-main md:bg-white text-white md:text-primary-main font-bold rounded-md hover:bg-opacity-90 duration-75 focus:outline-none focus:ring-2 focus:ring-blue-600">Confirm</button>
                 </div>
             </form>
         </div>
     </div>
+    <script src="../js/auth.js"></script>
 </body>
 
 </html>

@@ -111,9 +111,12 @@
         <button aria-active="false" class="text-sm md:text-base aria-[active=true]:bg-primaryColor aria-[active=true]:text-white w-full text-center md:text-start p-2 rounded-md" onclick="profileMenu('account')">
           Account Security
         </button>
-        <button class=" text-sm md:text-base text-red-500 w-full text-center md:text-start p-2 rounded-md">
-          Logout
-        </button>
+        <form action="../../Controller/LogoutController.php" method="POST" class="inline">
+          <button type="submit" class="text-sm md:text-base text-red-500 w-full text-center md:text-start p-2 rounded-md">
+            Logout
+          </button>
+        </form>
+
       </div>
     </div>
     <div class="w-full md:w-[80%] h-full">

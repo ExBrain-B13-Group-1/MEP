@@ -74,17 +74,17 @@
             </a>
 
             <button onclick="menuForMobile()" data-collapse-toggle="menuList" type="button" class="inline-flex text-primaryColor hover:text-slate-800 flex-col items-center p-2 w-10 mx-3 h-full justify-center text-sm rounded-lg md:hidden" aria-controls="navbar-default" aria-expanded="false">
-                <p class="font-bold">Dashboard</p>
+                <p class="font-bold">Class</p>
                 <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
             </button>
 
             <div id="menuList" isOpen="false" class="hidden md:flex absolute md:static top-16 right-0 left-0 mx-24 md:mx-auto md:items-center md:justify-center bg-gray-200 rounded-xl">
                 <ul class="flex flex-col md:flex-row justify-between items-center font-medium md:space-x-10 p-3 md:p-0">
                     <li>
-                        <a href="./dashboard.php" aria-active="true" id="userDashboard" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Dashboard</a>
+                        <a href="./dashboard.php" id="userDashboard" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Dashboard</a>
                     </li>
                     <li>
-                        <a href="./class.php" id="userClass" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Class</a>
+                        <a href="./class.php"  aria-active="true" id="userClass" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Class</a>
                     </li>
                     <li>
                         <a href="./schedule.php" id="userSchedule" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Schedule</a>
@@ -139,7 +139,11 @@
 
                         <a class="flex items-center hover:text-primaryColor cursor-pointer">
                             <ion-icon name="log-out-outline" class="text-lg mx-2 my-2"></ion-icon>
-                            <p>Logout</p>
+                            <form action="../../Controller/LogoutController.php" method="POST" class="inline">
+                                <button type="submit">
+                                    Logout
+                                </button>
+                            </form>
                         </a>
                     </div>
                 </div>

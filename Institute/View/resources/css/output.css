@@ -1616,6 +1616,10 @@ html {
   height: 62vh;
 }
 
+.h-\[70vh\] {
+  height: 70vh;
+}
+
 .h-\[80vh\] {
   height: 80vh;
 }
@@ -1634,18 +1638,6 @@ html {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[65vh\] {
-  height: 65vh;
-}
-
-.h-\[100vh\] {
-  height: 100vh;
-}
-
-.h-\[70vh\] {
-  height: 70vh;
 }
 
 .min-h-screen {
@@ -2459,11 +2451,6 @@ html {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.px-2\.5 {
-  padding-left: 0.625rem;
-  padding-right: 0.625rem;
 }
 
 .pb-0\.5 {

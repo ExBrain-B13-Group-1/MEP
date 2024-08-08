@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!doctype html>
 <html>
 
@@ -24,16 +28,20 @@
             <h2 class="hidden lg:block text-2xl font-bold text-white mb-8 text-center">Forgot Password</h2>
 
             <!-- OTP Form For Back-End -->
-            <form action="newPassword.php" class="space-y-4 md:space-y-7">
+            <form action="../../../Controller/LoginController.php" method="POST" class="space-y-4 md:space-y-7">
                 <!-- Fill OTP -->
                 <div class="mt-0 lg:mt-20">
                     <label for="otp" class="block text-dark-gray text-sm">Fill OTP in your email</label>
-                    <input type="text" id="otp" placeholder="OTP"
+                    <input type="text" id="otp" name="otp" placeholder="OTP"
                         class="w-full px-4 py-2 border rounded-md md:bg-white bg-gray-300 focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
+                        <?php if (isset($_SESSION['otp_error'])) : ?>
+                        <p class="text-[#ff3e3e] text-xs mt-1 absolute"><?php echo $_SESSION['otp_error'];
+                                                                        unset($_SESSION['otp_error']); ?></p>
+                    <?php endif; ?>
                 </div>
                 <!-- Submit -->
                 <div class="flex justify-center">
-                    <button type="submit"
+                    <button type="submit" name="sendOtp"
                         class="w-1/2 py-2 px-4 bg-primary-main md:bg-white text-white md:text-primary-main font-bold rounded-md hover:bg-opacity-90 duration-75 focus:outline-none focus:ring-2 focus:ring-blue-600">Confirm</button>
                 </div>
             </form>

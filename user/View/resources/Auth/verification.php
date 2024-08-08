@@ -91,7 +91,7 @@
                             <label for="gender" class="text-dark-gray text-sm">Gender</label>
                             <div id="gender" class="flex items-center space-x-4 text-white mt-2">
                                 <label class="inline-flex items-center">
-                                    <input type="radio" name="gender" value="male" class="form-radio hpp-radio" checked>
+                                    <input type="radio" name="gender" value="male" class="form-radio hpp-radio">
                                     <span class="ml-2">Male</span>
                                 </label>
                                 <label class="inline-flex items-center">

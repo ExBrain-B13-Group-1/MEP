@@ -14,7 +14,7 @@ class MUserPayment{
             // query prepare
             $sql = $pdo->prepare(
                 "SELECT tup.*,
-                u.name, u.email,
+                u.name, u.email, u.photo,
                 b.bank_name,
                 p.pay_name,
                 price.amount as payment_amount

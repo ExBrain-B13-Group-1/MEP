@@ -1,21 +1,23 @@
 <?php
 session_start();
 
-// Get session value
-$totalPending = $_SESSION['totalPending'];
-
 // Initialize session variables if not set
 if (!isset($_SESSION['totalIncome'])) {
     $_SESSION['totalIncome'] = 0;
+    $_SESSION['totalPending'] = 0;
 }
 
 $totalIncome = $_SESSION['totalIncome'];
+$totalPending = $_SESSION['totalPending'];
 
 include '../../Controller/UserController.php';
 include '../../Controller/InstituteController.php';
 include '../../Controller/InstitutePaymentController.php';
 include '../../Controller/UserPaymentController.php';
 include '../../Controller/SlotController.php';
+
+// echo "<pre>";
+// print_r($institutes);
 
 $totalUsers = count($users);
 $totalInstitutes = count($institutes);
@@ -336,7 +338,7 @@ $slotsData = json_encode($slots);
                     <div class="col-span-1 bg-card-bg p-4 dark:bg-gray-700 rounded-lg shadow-custom text-center flex justify-between items-center">
                         <div>
                             <div class="text-gray-700 dark:text-white text-left">Total <br> Institutes</div>
-                            <div id="total-institutes" class="text-2xl text-primary-main dark:text-white font-bold text-left"><?= number_format($totalUsers); ?></div>
+                            <div id="total-institutes" class="text-2xl text-primary-main dark:text-white font-bold text-left"><?= number_format($totalInstitutes); ?></div>
                         </div>
                         <div class="bg-thin-hover-bg w-20 h-20 rounded-full flex justify-center items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" class="text-primary-main dark:text-white" viewBox="0 0 24 24" {...$$props}>

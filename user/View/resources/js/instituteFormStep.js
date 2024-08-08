@@ -1,5 +1,4 @@
-// *********** Use in SignUp.html *********** 
-
+// *********** Use in SignUp.html ***********
 
 $(document).ready(function () {
   /* Start HPP Code 
@@ -26,12 +25,6 @@ $(document).ready(function () {
     });
   }
 
-  // Can add more affiliation input
-  $("#add-affiliation").on("click", function () {
-    $("#affiliations-container").append(
-      '<input type="text" name="affiliations[]" placeholder="Add Affiliations" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg mb-2">'
-    );
-  });
 
   // Check if all required fields are filled out
   function validateForm(step) {
@@ -39,7 +32,7 @@ $(document).ready(function () {
     $(`#step${step} [required]`).each(function () {
       if ($(this).val() === "") {
         isValid = false;
-        return false; 
+        return false;
       }
     });
     return isValid;
@@ -85,7 +78,7 @@ $(document).ready(function () {
   $("#prev1").click(function () {
     goToStep(1);
   });
-  
+
   $("#next2").click(function () {
     if (validateForm(2)) {
       goToStep(3);
@@ -106,12 +99,81 @@ $(document).ready(function () {
     }
   });
 
+  const form = $("#regForm");
+
+  // Append new hidden input
+  $("<input>")
+    .attr({
+      type: "hidden",
+      name: "register",
+    })
+    .appendTo(form);
+
+  const savedStep = sessionStorage.getItem("current_step") || 1;
+  console.log(savedStep);
+
+  if (savedStep == 3) {
+    goToStep(3);
+  }
+
   // Function to change the step
   function goToStep(step) {
     $(".form-step").removeClass("active").addClass("hidden");
     $(`#step${step}`).removeClass("hidden").addClass("active");
-    updateNextButton(step);
+
+    if (step === 3) {
+      if (!sessionStorage.getItem("form_submitted")) {
+        console.log("finished");
+        sessionStorage.setItem("form_submitted", true);
+        sessionStorage.setItem("current_step", step);
+
+        // Show loading spinner
+        $("#loadingSpinner").show();
+        $("#page").hide();
+
+        $.ajax({
+          url: form.attr("action"),
+          type: "POST",
+          data: new FormData(form[0]),
+          processData: false,
+          contentType: false,
+          success: function (response) {
+            // Parse the JSON response
+            const result = JSON.parse(response);
+  
+            // Introduce a 3-second delay
+            setTimeout(function () {
+              $("#loadingSpinner").hide();
+              $('#page').show();
+  
+              if (result.success) {
+                // If the response indicates success, show step 3
+                goToStep(3);
+              } else {
+                goToStep(1);
+                // Handle error message
+                alert(result.message || "An error occurred. Please try again.");
+              }
+            }, 3000); // 3000 milliseconds = 3 seconds
+          },
+          error: function () {
+            $("#loadingSpinner").hide();
+            $('#page').show();
+            alert("An unexpected error occurred. Please try again.");
+          }
+        });
+        return;
+      } else {
+        console.log("Form already submitted.");
+      }
+    } else {
+      updateNextButton(step);
+      sessionStorage.removeItem("form_submitted");
+    }
   }
+
+  $("#loadingSpinner").hide();
+
 
   // Initial check for the "Next" button on page load
   updateNextButton(1);
@@ -131,8 +193,8 @@ $(document).ready(function () {
     }
   });
 
-   // Handler for state/region dropdown change
-   $("#state-region").change(function () {
+  // Handler for state/region dropdown change
+  $("#state-region").change(function () {
     var stateRegionId = $(this).val();
     $("#city").empty();
 
@@ -147,6 +209,12 @@ $(document).ready(function () {
         '<option value="' + city.id + '">' + city.name + "</option>"
       );
     });
+  });
+
+  // Removing sessions
+  $("#finishButton").click(function () {
+    sessionStorage.removeItem("current_step");
+    sessionStorage.removeItem("form_submitted");
   });
   /* ............
      ............

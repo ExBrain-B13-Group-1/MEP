@@ -1,5 +1,6 @@
 <?php
 session_start();
+$baseUrl = 'http://localhost/MEP/storages/uploads/';
 
 // Initialize session variables if not set
 if (!isset($_SESSION['totalPending'])) {
@@ -302,7 +303,7 @@ $_SESSION['totalPending'] = $totalPendingUsers + $totalPendingIs;
                                 <input type="hidden" name="id" value="<?= $notification['id']; ?>">
                                 <div class="bg-thin-bg p-4 rounded-lg flex items-center justify-between cursor-pointer hover:bg-thin-hover-bg">
                                     <div class="flex items-center">
-                                        <img src="${notification.photo}" alt="User Avatar" class="rounded-full w-16 h-16 mr-4">
+                                        <img src="<?= $notification['photo']; ?>" alt="User Avatar" class="rounded-full w-16 h-16 mr-4">
                                         <div>
                                             <div class="font-bold"><?= $notification['name']; ?></div>
                                             <div class="text-gray-500 dark:text-gray-400 text-sm"><?= $datePart ?></div>
@@ -310,12 +311,7 @@ $_SESSION['totalPending'] = $totalPendingUsers + $totalPendingIs;
                                         </div>
                                     </div>
                                     <div class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" {...$$props}>
-                                            <path fill="currentColor" d="m12 15.577l-3.539-3.538l.708-.72L11.5 13.65V5h1v8.65l2.33-2.33l.709.719zM5 19v-4.038h1V18h12v-3.038h1V19z" />
-                                        </svg>
-                                        <a href="" class="text-dark-blue dark:text-[#9aabff] underline mr-32">
-                                            Validation Form
-                                        </a>
+                                    <p class="uViewForm text-dark-blue dark:text-[#9aabff] underline mr-32" data-action="view" data-id="<?= $notification['id']; ?>"><ion-icon class="relative top-1 mr-1" name="eye-outline"></ion-icon>Validation Form</p>
                                         <div class="flex flex-col">
                                             <button type="button" class="bg-primary-main text-white px-4 py-2 rounded text-sm flex items-center transition duration-100 transform hover:scale-105 verify-button" data-action="verify" data-id="<?= $notification['id']; ?>">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" class="mr-1" viewBox="0 0 24 24" {...$$props}>
@@ -355,7 +351,7 @@ $_SESSION['totalPending'] = $totalPendingUsers + $totalPendingIs;
                                 <input type="hidden" name="id" value="<?= $notification['id']; ?>">
                                 <div class="bg-thin-bg p-4 rounded-lg flex items-center justify-between cursor-pointer hover:bg-thin-hover-bg">
                                     <div class="flex items-center">
-                                        <img src="<?= $notification['photo']; ?>" alt="User Avatar" class="rounded-full w-16 h-16 mr-4">
+                                        <img src="<?=  $baseUrl . $notification['photo'] ?>" alt="User Avatar" class="rounded-full w-16 h-16 mr-4">
                                         <div>
                                             <div class="font-bold"><?= $notification['name']; ?></div>
                                             <div class="text-gray-500 dark:text-gray-400 text-sm"><?= $datePart ?></div>
@@ -363,10 +359,7 @@ $_SESSION['totalPending'] = $totalPendingUsers + $totalPendingIs;
                                         </div>
                                     </div>
                                     <div class="flex items-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" {...$$props}>
-                                            <path fill="currentColor" d="m12 15.577l-3.539-3.538l.708-.72L11.5 13.65V5h1v8.65l2.33-2.33l.709.719zM5 19v-4.038h1V18h12v-3.038h1V19z" />
-                                        </svg>
-                                        <p  class="viewForm text-dark-blue dark:text-[#9aabff] underline mr-32" data-action="view" data-id="<?= $notification['id']; ?>">Validation Form</p>
+                                        <p class="iViewForm text-dark-blue dark:text-[#9aabff] underline mr-32" data-action="view" data-id="<?= $notification['id']; ?>"><ion-icon class="relative top-1 mr-1" name="eye-outline"></ion-icon>Validation Form</p>
                                         <div class="flex flex-col">
                                             <button type="button" class="bg-primary-main text-white px-4 py-2 rounded text-sm flex items-center transition duration-100 transform hover:scale-105 verify-button" data-action="verify" data-id="<?= $notification['id']; ?>">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" class="mr-1" viewBox="0 0 24 24" {...$$props}>

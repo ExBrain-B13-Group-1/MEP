@@ -36,4 +36,9 @@ if(isset($_POST['action'])){
     }
 }
 
+if (isset($_GET['id']) && isset($_GET['action'])) {
+    $id = $_GET['id'];
+    $user = $mUsers->getUser($id);
+} 
+
 
