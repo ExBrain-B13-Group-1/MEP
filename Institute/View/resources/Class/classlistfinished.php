@@ -48,7 +48,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                             <a href="#" class="inline-block p-4 text-base rounded-t-lg hover:dark:bg-gray-600 changes">Class Lists</a>
                         </li>
                         <li class="me-2 h-10">
-                            <a href="#" class="inline-block p-4 text-base rounded-t-lg hover:dark:bg-gray-600 changes actives">Finished Classes</a>
+                            <a href="#" class="inline-block p-4 text-base rounded-t-lg hover:dark:bg-gray-600 changes actives">Completed Classes</a>
                         </li>
                     </ul>
                 </div>
@@ -404,9 +404,6 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     END DATE
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    STATUS
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     CLASS FEE
