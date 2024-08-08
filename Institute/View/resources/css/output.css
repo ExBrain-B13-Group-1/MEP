@@ -1600,10 +1600,6 @@ html {
   height: 2.25rem;
 }
 
-.h-\[50vh\] {
-  height: 50vh;
-}
-
 .h-\[55vh\] {
   height: 55vh;
 }
@@ -2806,16 +2802,6 @@ html {
 .text-yellow-500 {
   --tw-text-opacity: 1;
   color: rgb(194 120 3 / var(--tw-text-opacity));
-}
-
-.text-red-800 {
-  --tw-text-opacity: 1;
-  color: rgb(155 28 28 / var(--tw-text-opacity));
-}
-
-.text-green-600 {
-  --tw-text-opacity: 1;
-  color: rgb(5 122 85 / var(--tw-text-opacity));
 }
 
 .underline {

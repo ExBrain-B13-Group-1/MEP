@@ -8,4 +8,7 @@ $classes = $classObj->getAllClasses();
 
 echo json_encode($classes);
 
+// echo "<pre>";
+// print_r($classes);
+
 ?>

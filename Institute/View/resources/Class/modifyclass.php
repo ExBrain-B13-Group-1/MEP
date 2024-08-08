@@ -1,3 +1,40 @@
+<?php
+
+ini_set("display_error", true);
+include "../../../Controller/common/getInstructorNames.php";
+include "../../../Controller/common/classCategories.php";
+
+$instructorNames = getAllInstructorNames();
+$classCategories = getAllClassCategories();
+
+$encodedResults = $_GET['data'];
+$results = json_decode(urldecode($encodedResults), true);
+$photoName = basename($results[0]['c_photo']);
+$curInstructorName = $results[0]['instructor_name'];
+$curClassCategory = $results[0]['category_name'];
+
+function selectedInstructor($iname)
+{
+    global $curInstructorName;
+    if ($iname === $curInstructorName) {
+        return "selected";
+    } else {
+        return "";
+    }
+}
+
+function selectedCategory($catename)
+{
+    global $curClassCategory;
+    if ($catename === $curClassCategory) {
+        return "selected";
+    } else {
+        return "";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -21,7 +58,7 @@
                     <nav class="flex px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
                         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                             <li class="inline-flex items-center">
-                                <a href="#" class="inline-flex items-center text-base font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                                <a href="http://localhost/MEP/Institute/View/resources/Class/classlist.php" class="inline-flex items-center text-base font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
                                     <svg class="w-5 h-5 me-2.5 pb-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
                                     </svg>
@@ -33,7 +70,7 @@
                                     <svg class="rtl:rotate-180 block w-3 h-3 mx-1 text-gray-400 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
                                     </svg>
-                                    <a href="#" class="ms-1 text-base font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">View</a>
+                                    <a href="http://localhost/MEP/Institute/Controller/ViewDetailsClassController.php?classid=<?= $results[0]['id'] ?>" class="ms-1 text-base font-medium text-gray-700 hover:text-blue-600 md:ms-2 dark:text-gray-400 dark:hover:text-white">View</a>
                                 </div>
                             </li>
                             <li aria-current="page">
@@ -266,7 +303,7 @@
     <div class="block pt-20 pb-8 px-5 ml-64 bg-gray-300 dark:bg-gray-800">
         <div class="grid grid-cols-10 gap-7 mt-10 ">
             <div class="bg-white col-span-8 col-start-2 rounded-lg px-4 py-2 dark:bg-gray-700 duration-500">
-                <form action="" method="" class="px-10">
+                <form id="classform" action="http://localhost/MEP/Institute/Controller/EditSaveController.php" method="POST" enctype="multipart/form-data" class="px-10">
                     <div class="grid grid-cols-2 gap-10">
                         <!-- left -->
                         <div>
@@ -275,29 +312,30 @@
                                 <div>
                                     <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="edit-profile">Class Profile Photo</label>
                                     <!-- Display the current image -->
-                                    <img id="preview_image" src="./../../../storages/cloud.jpg" alt="Class Profile Photo" class="mb-2 w-40 object-cover rounded-lg">
+                                    <img id="preview_image" src="./../../../storages/uploads/<?=$results[0]['c_photo']?>" alt="Class Profile Photo" class="mb-2 w-40 object-cover rounded-lg">
                                     <!-- Input to upload a new image -->
-                                    <input class="block w-full text-base text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="edit-profile" type="file" required onchange="document.getElementById('preview_image').src = window.URL.createObjectURL(this.files[0])">
+                                    <input class="block w-full text-base text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="edit-profile" type="file" name="image" required accept=".jpg, .jpeg" onchange="document.getElementById('preview_image').src = window.URL.createObjectURL(this.files[0])">
+                                    <input type="hidden" name="classid" value="<?=$results[0]['id']?>">
                                 </div>
                                 <div class="mt-4">
                                     <label for="classtitle" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Class Title</label>
-                                    <input type="text" id="classtitle" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Title" required />
+                                    <input type="text" id="classtitle" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Title" required value="<?= $results[0]['c_title'] ?>" />
                                 </div>
                                 <div class="mt-4">
                                     <label for="description" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Description</label>
-                                    <textarea id="description" rows="4" class="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none" placeholder="Write class description...." required></textarea>
+                                    <textarea id="description" rows="4" name="description" class="block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none" placeholder="Write class description...." required>
+                                        <?= trim($results[0]['c_des']) ?>
+                                    </textarea>
                                 </div>
                                 <div class="mt-4">
                                     <label for="categories" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Category</label>
-                                    <select id="categories" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                        <option selected disabled>Choose Category</option>
-                                        <option value="">IT/Hardware</option>
-                                        <option value="">Bussiness</option>
-                                        <option value="">Telecommunication</option>
-                                        <option value="">Accounting</option>
-                                        <option value="">Painting</option>
-                                        <option value="">Digital Marketing</option>
-                                        <option value="">Other</option>
+                                    <select id="categories" name="category-id" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                        <option disabled>Choose Category</option>
+                                        <?php foreach ($classCategories as $category) : ?>
+                                            <option <?= selectedCategory($category['cat_name']) ?> value="<?= $category['id'] ?>">
+                                                <?= $category['cat_name'] ?>
+                                            </option>
+                                        <?php endforeach; ?>
                                     </select>
                                 </div>
 
@@ -306,25 +344,25 @@
                             <div class="pl-5">
                                 <div class="grid grid-cols-2 gap-5">
                                     <div>
-                                        <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="datepicker-autohide1">Start Date</label>
+                                        <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="datepicker-autohide-1">Start Date (mm/dd/yy)</label>
                                         <div class="relative max-w-sm">
                                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                                 <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                                     <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                                                 </svg>
                                             </div>
-                                            <input id="datepicker-autohide1" datepicker datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
+                                            <input id="datepicker-autohide-1" datepicker datepicker-autohide type="text" name="start-date" value="<?php echo date('m/d/Y', strtotime($results[0]['start_date'])); ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
                                         </div>
                                     </div>
                                     <div>
-                                        <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="datepicker-autohide2">End Date</label>
+                                        <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="datepicker-autohide-2">End Date (mm/dd/yy)</label>
                                         <div class="relative max-w-sm">
                                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                                 <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                                     <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                                                 </svg>
                                             </div>
-                                            <input id="datepicker-autohide2" datepicker datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
+                                            <input id="datepicker-autohide-2" datepicker datepicker-autohide type="text" name="end-date" value="<?php echo date('m/d/Y', strtotime($results[0]['end_date'])); ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
                                         </div>
                                     </div>
                                 </div>
@@ -332,34 +370,22 @@
                             <div class="mt-5 mb-5 pl-5">
                                 <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Class Schedule</label>
                                 <div class="flex items-center mb-4 gap-5">
-                                    <div class="flex items-center">
-                                        <input checked id="mon" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="mon" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Mon</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input id="tue" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="tue" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Tue</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input id="wed" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="wed" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Wed</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input checked id="thu" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="thu" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Thu</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input id="fri" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="fri" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Fri</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input id="sat" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="sat" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Sat</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input id="sun" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="sun" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Sun</label>
-                                    </div>
+                                    <?php $daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]; ?>
+                                    <?php $binaryDays = $results[0]['days'] ?>
+                                    <?php for ($i = 0; $i < strlen($binaryDays); $i++) : ?>
+                                        <?php if ($binaryDays[$i] === '1') : ?>
+                                            <div class="flex items-center">
+                                                <input id="<?= strtolower($daysOfWeek[$i]) ?>" type="checkbox" value="<?= $daysOfWeek[$i] ?>" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" checked>
+                                                <label for="<?= strtolower($daysOfWeek[$i]) ?>" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300"><?= $daysOfWeek[$i] ?></label>
+                                            </div>
+                                        <?php else : ?>
+                                            <div class="flex items-center">
+                                                <input id="<?= strtolower($daysOfWeek[$i]) ?>" type="checkbox" value="<?= $daysOfWeek[$i] ?>" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                <label for="<?= strtolower($daysOfWeek[$i]) ?>" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300"><?= $daysOfWeek[$i] ?></label>
+                                            </div>
+                                        <?php endif; ?>
+                                    <?php endfor; ?>
+                                    <input type="hidden" name="binarydays" id="binaryDayInput" value="" />
                                 </div>
                             </div>
                             <div class="grid grid-cols-2 gap-5 mb-8 pl-5">
@@ -371,7 +397,7 @@
                                                 <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd" />
                                             </svg>
                                         </div>
-                                        <input type="time" id="start-time" class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min="00:00" max="24:00" value="00:00" required />
+                                        <input type="time" id="start-time" name="start-time" class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min="00:00" max="24:00" value="<?= $results[0]['start_time'] ?>" required />
                                     </div>
                                 </div>
                                 <div>
@@ -382,7 +408,7 @@
                                                 <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd" />
                                             </svg>
                                         </div>
-                                        <input type="time" id="end-time" class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min="00:00" max="24:00" value="00:00" required />
+                                        <input type="time" id="end-time" name="end-time" class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min="00:00" max="24:00" value="<?= $results[0]['end_time'] ?>" required />
                                     </div>
                                 </div>
                             </div>
@@ -393,15 +419,13 @@
                             <div class="mt-4 pl-5">
                                 <label for="instructor" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Instructor</label>
                                 <div class="grid grid-cols-4 gap-3">
-                                    <select id="instructor" class="col-span-3 bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
-                                        <option selected disabled>Choose Instructor</option>
-                                        <option value="US">Mg Mg</option>
-                                        <option value="CA">Zaw Zaw</option>
-                                        <option value="FR">Kyaw Kyaw</option>
-                                        <option value="DE">Tun Tun</option>
-                                        <option value="DE">Aung Aung</option>
-                                        <option value="DE">Hla Hla</option>
-                                        <option value="DE">Nu Nu</option>
+                                    <select id="instructor" name="instructor-id" class="col-span-3 bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                        <option disabled>Choose Instructor</option>
+                                        <?php foreach ($instructorNames as $iname) : ?>
+                                            <option <?= selectedInstructor($iname["full_name"]); ?> value="<?= $iname["id"]; ?>">
+                                                <?= $iname["full_name"] ?>
+                                            </option>
+                                        <?php endforeach; ?>
                                     </select>
                                     <button type="button" class="h-full w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</button>
                                 </div>
@@ -409,21 +433,21 @@
                             <h1 class="text-xl mb-5 mt-8 dark:text-white font-bold">Pricing and Enrollment</h1>
                             <div class="mt-4 pl-5">
                                 <label for="classfee" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Class Fee</label>
-                                <input type="text" id="classfee" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 10,000 MMK" required />
+                                <input type="text" id="classfee" name="class-fee" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 10,000" value="<?= number_format($results[0]['c_fee']) ?>" required />
                             </div>
                             <div class="mt-4 pl-5">
                                 <label for="maxenrollment" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Maximum Enrollment</label>
-                                <input type="text" id="maxenrollment" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 25" required />
+                                <input type="text" id="maxenrollment" name="max-enrollment" value="<?= $results[0]['max_enrollment'] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 25" required />
                             </div>
                             <div class="mt-4 pl-5">
-                                <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="datepicker-autohide3">Enrollment Deadline</label>
+                                <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="datepicker-autohide-3">Enrollment Deadline</label>
                                 <div class="relative">
                                     <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                             <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                                         </svg>
                                     </div>
-                                    <input id="datepicker-autohide3" datepicker datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
+                                    <input id="datepicker-autohide-3" datepicker datepicker-autohide type="text" name="enrollment-deadline" value="<?php echo date('m/d/Y', strtotime($results[0]['enrollment_deadline'])); ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
                                 </div>
                             </div>
                             <div class="mt-4 pl-5">
@@ -437,28 +461,18 @@
                                                 <path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
                                             </g>
                                         </svg>
-                                        <input type="text" id="creditpoint" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 25" required />
+                                        <input type="text" id="creditpoint" name="creditpoint" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 select-none" placeholder="Eg. 25" value="<?= $results[0]['credit_point'] ?>" required readonly/>
                                     </div>
                                 </div>
                             </div>
-                            <div class="mt-4 pl-5">
-                                <label for="coupon" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Coupon Code</label>
-                                <select id="coupon" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    <option selected disabled>Choose Coupon</option>
-                                    <option value="5">HUEI34I 5%OFF</option>
-                                    <option value="10">JLOEO33 10%OFF</option>
-                                    <option value="15">DSEJE42 15%OFF</option>
-                                    <option value="25">YRGIIR2 25%OFF</option>
-                                    <option value="50">RYGNT32 50%OFF</option>
-                                </select>
-                            </div>
+
                             <div class="mt-10 pl-5">
                                 <div class="flex justify-between">
-                                    <a href="./viewdetailsclass.php">
-                                        <button type="button" id="modify-cancel" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base w-40 px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
+                                    <a href="http://localhost/MEP/Institute/Controller/ViewDetailsClassController.php?classid=<?= $results[0]['id'] ?>">
+                                        <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base w-40 px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
                                     </a>
-                                    <a href="./viewdetailsclass.php">
-                                        <button type="button" id="modify-savechange" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-base w-40 px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Save Change</button>
+                                    <a href="javascript:void(0);">
+                                        <input type="submit" id="modify-savechange" name="submit" value="Save Change" class="cursor-pointer focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-base w-40 px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" />
                                     </a>
                                 </div>
                             </div>
@@ -486,7 +500,50 @@
     <!-- darkmode lightmode js -->
     <script src="./../js/darkandlight.js" type="text/javascript"></script>
     <!-- customjs -->
-    <script src="./../js/class.js" type="text/javascript"></script>
-</body>
+    <script type="text/javascript">
+        let getdays = document.querySelectorAll('input[type=checkbox]');
+        let classfee = document.querySelector('#classfee');
+        let creditCoin = document.querySelector('#creditpoint');
+        let previousFee = classfee.value;
+        let previousCoin = creditCoin.value;
+        console.log("prev = " + previousFee);
+        classfee.addEventListener('keyup', function() {
+            // console.log('hay');
+            let coinAmt = 1;
+            let feeValue = parseInt(classfee.value.replace(/,/g, ''));
+            // console.log(Math.abs(feeValue));
+            if (feeValue > 10000) {
+                previousFee = feeValue;
+                previousCoin = feeValue / 1000 * coinAmt;
+            }
+            classfee.value = feeValue.toLocaleString();
+            if (isNaN(feeValue) || feeValue < 10000) {
+                classfee.value = previousFee.toLocaleString();
+                creditCoin.value = previousCoin;
+                window.alert('Fee Amount should be at least 10000 MMK');
+            } else {
+                // console.log("go");
+                if (feeValue > 10000) {
+                    calCoinAmt = feeValue / 1000 * coinAmt;
+                    creditCoin.value = Math.ceil(calCoinAmt);
+                }
+            }
+        });
+
+        let binaryDay = '';
+        getdays.forEach(day => {
+            binaryDay += day.checked ? '1' : '0';
+            day.addEventListener('change', () => {
+                binaryDay = '';
+                getdays.forEach(d => {
+                    binaryDay += d.checked ? '1' : '0';
+                });
+                // console.log(binaryDay);
+            });
+        });
+        document.getElementById('modify-savechange').addEventListener('click', function() {
+            document.getElementById('binaryDayInput').value = binaryDay;
+        });
+    </script>
 
 </html>
