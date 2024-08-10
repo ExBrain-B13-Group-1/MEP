@@ -47,7 +47,7 @@ function selectedCategory($catename)
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Class - Create</title>
     <!-- jQuery Ui css1 js1 -->
-    <link rel="stylesheet" href="./../lib/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="./../lib/jquery-ui-1.14.0/jquery-ui.min.css" type="text/css">
     <!-- Tailwind output css -->
     <link href="./../css/output.css" rel="stylesheet" />
 </head>
@@ -290,11 +290,11 @@ function selectedCategory($catename)
                                     <!-- Display the current image -->
                                     <img id="preview_image" src="" alt="Class Profile Photo" class="hidden mb-2 w-40 object-cover rounded-lg">
                                     <!-- Input to upload a new image -->
-                                    <input class="block w-full text-base text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="edit-profile" type="file" name="image" required accept=".jpg, .jpeg" onchange="document.getElementById('preview_image').src = window.URL.createObjectURL(this.files[0]);document.getElementById('preview_image').classList.remove('hidden')">
+                                    <input class="block w-full text-base text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="edit-profile" type="file" name="image"  accept=".jpg, .jpeg" onchange="document.getElementById('preview_image').src = window.URL.createObjectURL(this.files[0]);document.getElementById('preview_image').classList.remove('hidden')" required />
                                 </div>
                                 <div class="mt-4">
                                     <label for="classtitle" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Class Title</label>
-                                    <input type="text" id="classtitle" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Title" required />
+                                    <input type="text" id="classtitle" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Title" required autocomplete="off"/>
                                 </div>
                                 <div class="mt-4">
                                     <label for="description" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Description</label>
@@ -317,26 +317,25 @@ function selectedCategory($catename)
                             <div class="pl-5">
                                 <div class="grid grid-cols-2 gap-5">
                                     <div>
-                                        <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="default-datepicker-1">Start Date (mm/dd/yy)</label>
+                                        <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="default-datepicker-1">Start Date (dd-mm-yy)</label>
                                         <div class="relative max-w-sm">
                                             <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                                                 <svg class="relative -top-0.5 w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                                     <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                                                 </svg>
                                             </div>
-                                            <input type="text" id="default-datepicker-1" name="start-date" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" readonly autocomplete="off" required>
+                                            <input type="text" id="default-datepicker-1" name="start-date" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" readonly autocomplete="off" required/>
                                         </div>
                                     </div>
                                     <div>
-                                        <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="default-datepicker-2">End Date (mm/dd/yy)</label>
+                                        <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="default-datepicker-2">End Date (dd-mm-yy)</label>
                                         <div class="relative max-w-sm">
                                             <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                                                 <svg class="relative -top-0.5 w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                                     <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                                                 </svg>
                                             </div>
-                                            <!-- <input datepicker id="default-datepicker-2" name="end-date" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" utocomplete="off" autocomplete="off" required> -->
-                                            <input type="text" id="default-datepicker-2" readonly>
+                                            <input type="text" id="default-datepicker-2" name="end-date" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" readonly autocomplete="off" required />
                                         </div>
                                     </div>
                                 </div>
@@ -348,7 +347,7 @@ function selectedCategory($catename)
                                     <?php $binaryDays = "0000000" ?>
                                     <?php for ($i = 0; $i < strlen($binaryDays); $i++) : ?>
                                         <div class="flex items-center">
-                                            <input id="<?= strtolower($daysOfWeek[$i]) ?>" type="checkbox" value="<?= $daysOfWeek[$i] ?>" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                            <input id="<?= strtolower($daysOfWeek[$i]) ?>" type="checkbox" value="<?= $daysOfWeek[$i] ?>" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" required />
                                             <label for="<?= strtolower($daysOfWeek[$i]) ?>" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300"><?= $daysOfWeek[$i] ?></label>
                                         </div>
                                     <?php endfor; ?>
@@ -400,11 +399,11 @@ function selectedCategory($catename)
                             <h1 class="text-xl mb-5 mt-8 dark:text-white font-bold">Pricing and Enrollment</h1>
                             <div class="mt-4 pl-5">
                                 <label for="classfee" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Class Fee</label>
-                                <input type="text" id="classfee" name="class-fee" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 10,000" required />
+                                <input type="text" id="classfee" name="class-fee" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 10,000" autocomplete="off" required />
                             </div>
                             <div class="mt-4 pl-5">
                                 <label for="maxenrollment" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Maximum Enrollment</label>
-                                <input type="text" id="maxenrollment" name="max-enrollment" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 25" required />
+                                <input type="text" id="maxenrollment" name="max-enrollment" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 25" autocomplete="off" required />
                             </div>
                             <div class="mt-4 pl-5">
                                 <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="default-datepicker-3">Enrollment Deadline</label>
@@ -414,7 +413,7 @@ function selectedCategory($catename)
                                             <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                                         </svg>
                                     </div>
-                                    <input datepicker id="default-datepicker-3" datepicker-min-date="<?= $minStartDate ?>" name="enrollment-deadline" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" utocomplete="off" autocomplete="off" required>
+                                    <input type="text" id="default-datepicker-3" name="enrollment-deadline" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" readonly autocomplete="off" required />
                                 </div>
                             </div>
                             <div class="mt-4 pl-5">
@@ -428,7 +427,7 @@ function selectedCategory($catename)
                                                 <path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
                                             </g>
                                         </svg>
-                                        <input type="text" id="creditpoint" name="creditpoint" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 select-none" placeholder="Eg. 25" required readonly />
+                                        <input type="text" id="creditpoint" name="creditpoint" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-10 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 select-none" placeholder="Eg. 25" readonly />
                                     </div>
                                 </div>
                             </div>
@@ -459,7 +458,7 @@ function selectedCategory($catename)
     <!-- jQuery -->
     <script src="./../lib/jquery-3.7.1.min.js" type="text/javascript"></script>
     <!-- jQuery Ui css1 js1-->
-    <script src="./../lib/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="./../lib/jquery-ui-1.14.0/jquery-ui.min.js" type="text/javascript"></script>
     <!-- chartjs -->
     <script src="./../lib/chart.js" type="text/javascript"></script>
     <!-- datatable -->
@@ -529,6 +528,17 @@ function selectedCategory($catename)
             });
 
             $('#default-datepicker-2').datepicker({
+                numberOfMonths: 1,
+
+                showAnim: "slideDown",
+                dateFormat: "dd-mm-yy",
+
+                // onClose: function(selectdate) {
+                //     $('#bookingstart').datepicker("option", "maxDate", selectdate);
+                // },
+            });
+
+            $('#default-datepicker-3').datepicker({
                 numberOfMonths: 1,
 
                 showAnim: "slideDown",
