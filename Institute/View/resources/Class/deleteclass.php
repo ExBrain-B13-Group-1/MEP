@@ -1,3 +1,13 @@
+<?php
+ini_set('display_errors', '1');
+
+include '../../../Controller/InstituteController.php';
+
+// url for logo
+$baseUrl = 'http://localhost/MEP/storages/uploads/';
+
+?>
+    
     <!DOCTYPE html>
     <html>
 
@@ -38,20 +48,20 @@
                                 <div>
                                     <button type="button" class="flex text-base bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
                                         <span class="sr-only">Open user menu</span>
-                                        <img class="w-14 h-14 rounded-full select-none" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
+                                        <img class="w-14 h-14 rounded-full select-none" src="<?=$baseUrl.($institute['photo'])?>" alt="institute photo">
                                     </button>
                                 </div>
                                 <div class="ml-3 pt-2 dark:text-white">
-                                    <p class="text-base leading-none select-none">Education Portal</p>
-                                    <p class="text-base leading-none text-slate-500 select-none dark:text-white dark:text-opacity-50">Admin</p>
-                                    <div class="flex pt-1">
-                                        <svg class="w-4 h-4 mt-0.5 mr-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
+                                    <p class="text-base leading-none select-none"><?= ($institute['name']) ?></p>
+                                    <p class="text-sm leading-none text-slate-500 select-none dark:text-white dark:text-opacity-50"><?= $institute['institute_type'] ?></p>
+                                    <div class="flex pt-1 opacity-90">
+                                        <svg class="w-4 h-4 mt-0.5 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
                                             <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
                                                 <path d="M7 13.5a6.5 6.5 0 1 0 0-13a6.5 6.5 0 0 0 0 13" />
                                                 <path d="M8.702 5.222a1.332 1.332 0 0 0-1.258-.889H6.412a1.19 1.19 0 0 0-.254 2.353l1.571.344a1.334 1.334 0 0 1-.285 2.637h-.888a1.334 1.334 0 0 1-1.258-.89M7 4.333V3m0 8V9.666" />
                                             </g>
                                         </svg>
-                                        <span class="select-none">1000</span>
+                                        <span class="select-none"><?= abs($institute['remaining_coin']) ?></span>
                                     </div>
                                 </div>
                                 <div class="flex items-center ml-6 text-2xl cursor-pointer dark:text-white">
@@ -70,7 +80,7 @@
                                         </li>
                                     </ul>
                                     <div class="py-2">
-                                        <a href="#" class="block px-4 py-2 text-base text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+                                        <a href="http://localhost/MEP/Institute/Controller/LogoutController.php" class="block px-4 py-2 text-base text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
                                     </div>
                                 </div>
                             </div>
@@ -219,7 +229,7 @@
                         </li>
 
                         <li class="mb-1.5 sidebarlinks" click-page="logout">
-                            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#d9dffc] dark:hover:bg-gray-700 group">
+                            <a href="http://localhost/MEP/Institute/Controller/LogoutController.php" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#d9dffc] dark:hover:bg-gray-700 group">
                                 <svg class="w-5 h-5  text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                     <path fill="currentColor" fill-rule="evenodd" d="M16.125 12a.75.75 0 0 0-.75-.75H4.402l1.961-1.68a.75.75 0 1 0-.976-1.14l-3.5 3a.75.75 0 0 0 0 1.14l3.5 3 a.75.75 0 1 0 .976-1.14l-1.96-1.68h10.972a.75.75 0 0 0 .75-.75" clip-rule="evenodd" />
                                     <path fill="currentColor" d="M9.375 8c0 .702 0 1.053.169 1.306a1 1 0 0 0 .275.275c.253.169.604.169 1.306.169h4.25a2.25 2.25 0 0 1 0 4.5h-4.25c-.702 0-1.053 0-1.306.168a1 1 0 0 0-.275.276c-.169.253-.169.604-.169 1.306c0 2.828 0 4.243.879 5.121c.878.879 2.292.879 5.12.879h1c2.83 0 4.243 0 5.122-.879c.879-.878.879-2.293.879-5.121V8c0-2.828 0-4.243-.879-5.121C20.617 2 19.203 2 16.375 2h-1c-2.829 0-4.243 0-5.121.879c-.879.878-.879 2.293-.879 5.121" />

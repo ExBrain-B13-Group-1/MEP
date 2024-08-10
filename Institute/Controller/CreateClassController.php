@@ -1,37 +1,25 @@
 <?php
 
+session_start();
 ini_set('display_errors', '1');
 require_once  __DIR__ . '/../Model/MClasses.php';
+require_once  __DIR__ . '/../Model/MInstitutes.php';
+require_once  __DIR__ . '/../Controller/common/GenerateClassId.php';
 
+$mInstitutes = new MInstitute();
 
-// if (isset($_POST["submit"])) {
-
-//     $class_photo = $_FILES["fileToUpload"]["name"];
+if (isset($_POST["submit"]) && isset($_COOKIE['institute_id'])) {
     
-
-//     echo "photo_path = $class_photo <br/>";
-//     echo "title = $class_title <br/>";
-//     echo "description = $calss_des <br/>";
-//     echo "category = $category <br/>";
-//     echo "start date = $start_date <br/>";
-//     echo "end date = $end_date <br/>";
-//     echo "binary days = $binaryDays <br/>";
-//     echo "start time = $start_time <br/>";
-//     echo "end time = $end_time <br/>";
-//     echo "instructor = $instructor <br/>";
-//     echo "class fee = " . str_replace(",", "", $class_fee) . " <br/>";
-//     echo "max enrollment = $max_enrollment <br/>";
-//     echo "enrollment deadline = $enrollment_deadline <br/>";
-//     echo "creditpoint = $creditpoint <br/>";
-
-
-
-// }
-
-if (isset($_POST["submit"])) {
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
+
+    $id = $_COOKIE['institute_id'];
+    $instituteInfos = $mInstitutes->getInstituteInfo($id);
+    $instututeID = $instituteInfos['id'];
+    $classObj = new MClasses();
+    $lastID = $classObj->getLatestClassID($instituteInfos['id']);
+    $newClassID = generateClassID($lastID);
 
     // Directory where files will be uploaded
     $uploadDir = "../storages/uploads/";
@@ -49,6 +37,7 @@ if (isset($_POST["submit"])) {
     $tempname = $_FILES["image"]["tmp_name"];
     $targetpath = $uploadDir . basename($filename);
 
+    $class_id = $newClassID;
     $class_title = $_POST['title'];
     $calss_des = $_POST['description'];
     $category_id = $_POST['category-id'];
@@ -64,9 +53,10 @@ if (isset($_POST["submit"])) {
     $max_enrollment = $_POST['max-enrollment'];
     $enrollment_deadline = $_POST['enrollment-deadline'];
     $creditpoint = $_POST['creditpoint'];
+    $instituteid = $instututeID;
 
     // $classid = $_POST['classid'];
-
+    echo "class_id = $class_id <br/>";
     echo "photo_path = $filename <br/>";
     echo "title = $class_title <br/>";
     echo "description = $calss_des <br/>";
@@ -81,10 +71,11 @@ if (isset($_POST["submit"])) {
     echo "max enrollment = $max_enrollment <br/>";
     echo "enrollment deadline = $enrollment_deadline <br/>";
     echo "creditpoint = $creditpoint <br/>";
-    // echo "classid is = $classid <br/>";
+    echo "instituteid = $instituteid <br/>";
 
     $datasarr = [
         "photo"=>$filename,
+        "classid"=>$class_id,
         "title"=>$class_title,
         "description"=>$calss_des,
         "categoryid"=>(int)$category_id,
@@ -97,23 +88,27 @@ if (isset($_POST["submit"])) {
         "classfee"=>(int)str_replace(",", "", $class_fee),
         "maxenrollment"=>(int)$max_enrollment,
         "enrollementdeadline"=>date('Y-m-d', strtotime($enrollment_deadline)),
-        "creditpoint"=>(int)$creditpoint
+        "creditpoint"=>(int)$creditpoint,
+        "instituteid"=>(int)$instituteid
     ];
+
+    echo "<pre>";
+    print_r($datasarr);
 
     // Check if the file extension is allowed
     if (in_array($ext, $allowedTypes)) {
         // Move the uploaded file to the target directory
         if (move_uploaded_file($tempname, $targetpath)) {
-            // $classobj = new MClasses();
-            // $success = $classobj->modifyClass($datasarr,$classid);
-            // if($success){
-            //     $redirectUrl = "../Controller/ViewDetailsClassController.php?classid=$classid";
-            //     header("Location: $redirectUrl");
-            //     exit();
-            // }else{
-            //     echo "Fail modify process.";
-            // }
-            echo "successful";
+            $classobj = new MClasses();
+            $success = $classobj->addClass($datasarr,$instututeID);
+            if($success){
+                $classid = $classobj->recentCreatedClassId($class_id);
+                $redirectUrl = "../Controller/ViewDetailsClassController.php?classid=$classid";
+                header("Location: $redirectUrl");
+                exit();
+            }else{
+                echo "Fail modify process.";
+            }
         } else {
             echo "Something went wrong while moving the uploaded file.";
         }
