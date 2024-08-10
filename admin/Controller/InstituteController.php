@@ -18,9 +18,19 @@ if (isset($_POST['action'])) {
     $action = $_POST['action'];
 
     if ($action == 'verify') {
+        $institute = $mInstitutes->getInstitute($id);
+        $email = $institute[0]['email'];
+        $password = $institute[0]['password'];
         // Handle the verification process
-        $success = $mInstitutes->updateVerified($id);
+        $success = $mInstitutes->updateVerified($id, $password);
+       
         if ($success) {
+            // send password
+            $mail->sendMail(
+                "$email",
+                "Approved, Here is Your Password",
+                "<h3>$password</h3>"
+            );
             header("Location: ../View/resources/Notification/pendingNotification.php");
         } else {
             echo "Verification failed.";

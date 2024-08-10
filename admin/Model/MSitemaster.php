@@ -75,6 +75,51 @@ class MSitemaster
         }
     }
 
+      /**
+     * (Update About Image)
+     */
+    public function updateAboutImage($id, $about_image) {
+        try {
+            $db = new DBConnection();
+            //get connection
+            $pdo = $db->connection();
+             // query prepare
+            $sql = $pdo->prepare(
+                "UPDATE m_sitemaster SET about_image = :about_image WHERE id = :id"
+            );
+            $sql->bindValue(":about_image", $about_image);
+            $sql->bindValue(":id", $id);
+            $sql->execute();
+            return true;
+        } catch (\Throwable $th) {
+            // fail connection or query
+            echo "Unexpected Error Occurs! $th";
+            return false;
+        }
+    }
+
+     /**
+     * (Get About Image)
+     */
+    public function getAboutImage($id)
+    {
+        try {
+            $db = new DBConnection();
+            //get connection
+            $pdo = $db->connection();
+            // query prepare
+            $sql = $pdo->prepare(
+                "SELECT * FROM m_sitemaster WHERE id = :id"
+            );
+            $sql->bindValue(":id", $id);
+            $sql->execute();
+            return $sql->fetchAll(PDO::FETCH_ASSOC);
+        } catch (\Throwable $th) {
+            // fail connection or query
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
     /**
      * (Update Service)
      */

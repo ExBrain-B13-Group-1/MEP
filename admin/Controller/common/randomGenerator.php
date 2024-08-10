@@ -1,7 +1,7 @@
 <?php
 function getRandom($count)
 {
-    $char = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!#$%&*+';
+    $char = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
 
     $randString = "";
 

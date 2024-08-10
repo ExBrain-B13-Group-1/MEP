@@ -7,6 +7,8 @@ include '../../Controller/SitemasterController.php';
 // echo "<pre>";
 // print_r($sites);
 
+$baseUrl = 'http://localhost/MEP/storages/uploads/';
+
 // Separate prices by scope
 $userPrices = array_filter($prices, function ($price) {
     return $price['scope'] === 'user';
@@ -49,7 +51,7 @@ $serviceContents = array_filter($sites, function ($site) {
         .upload-area {
             position: relative;
             width: 100%;
-            height: 200px;
+            height: 230px;
             border: 2px dashed #ccc;
             display: flex;
             align-items: center;
@@ -63,7 +65,7 @@ $serviceContents = array_filter($sites, function ($site) {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: none;
+            /* display: none; */
         }
 
         .upload-text {
@@ -77,6 +79,11 @@ $serviceContents = array_filter($sites, function ($site) {
 </head>
 
 <body class="bg-white dark:bg-slate-800">
+    <!-- Notification Message -->
+    <div id="notification" class="fixed top-0 left-1/2 transform -translate-x-1/2 bg-primary-main text-white py-2 px-4 rounded shadow-lg opacity-0 transition-opacity duration-500 ease-in-out z-50">
+        <p id="notificationMessage" class="text-sm text-center"></p>
+    </div>
+
     <aside id="logo-sidebar" close="false" class="fixed z-40 w-52 h-screen transition-transform translate-x-full sm:translate-x-0 float-left" aria-label="Sidebar">
         <div class="h-full px-3 py-4 shadow-dshadow bg-white dark:bg-gray-700 rounded-tr-md rounded-br-md relative">
             <a href="/" class="flex items-center mb-5">
@@ -264,7 +271,7 @@ $serviceContents = array_filter($sites, function ($site) {
         </div>
     </aside>
 
-    <nav class=" bg-white dark:bg-gray-700 shadow-dshadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50" id="navbar">
+    <nav class=" bg-white dark:bg-gray-700 shadow-dshadow border-gray-200   rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-30" id="navbar">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
                 <img src="../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
@@ -372,7 +379,7 @@ $serviceContents = array_filter($sites, function ($site) {
             </form>
 
             <!-- About Us Content -->
-            <form id="about-content" action="../../Controller/SitemasterController.php" method="POST" class="tab-content space-y-4 mt-6">
+            <form id="about-content" action="../../Controller/SitemasterController.php" method="POST" class="tab-content space-y-4 mt-6" enctype="multipart/form-data">
                 <div class="grid grid-cols-3 space-x-4">
                     <div class="space-y-2">
                         <input type="hidden" name="id[]" value="<?= ($aboutContents[2]['id']); ?>">
@@ -398,14 +405,15 @@ $serviceContents = array_filter($sites, function ($site) {
                     </div>
                     <!-- About Us Upload -->
                     <div class="w-full">
+                        <input type="hidden" name="id[]" value="<?= ($aboutContents[4]['id']); ?>">
                         <label class="block mb-2 dark:text-white">Change About Us Photo</label>
                         <div class="mb-6">
                             <div class="upload-area dark:bg-gray-600 dark:border-gray-500 rounded-md" id="upload-area-about">
-                                <input type="file" id="file-input-about" accept="image/*" class="hidden">
-                                <img id="uploaded-image-about" src="<?= ($aboutContents[4]['about_image']); ?>" alt="Uploaded Image" class="uploaded-image">
+                                <input type="file" id="file-input-about" name="about_image" accept="image/*" class="hidden">
+                                <img id="uploaded-image-about" src="<?= $baseUrl . ($aboutContents[4]['about_image']); ?>" alt="Uploaded Image" class="uploaded-image">
                                 <div id="upload-text-about" class="upload-text text-center">
-                                    <ion-icon name="cloud-upload-outline" class="text-2xl text-gray-500 dark:text-gray-400"></ion-icon>
-                                    <p class="text-gray-400 dark:text-gray-300 text-sm">Upload Here (About Us)</p>
+                                    <!-- <ion-icon name="cloud-upload-outline" class="text-2xl text-gray-500 dark:text-gray-400"></ion-icon> -->
+                                    <p class="text-gray-400 dark:text-gray-300 text-sm"></p>
                                 </div>
                             </div>
                         </div>
@@ -630,6 +638,27 @@ $serviceContents = array_filter($sites, function ($site) {
     <script src="js/fileUpload.js"></script>
     <script src="js/page.js"></script>
     <script src="js/sidebar.js"></script>
+    <?php if (isset($_SESSION['notification_message'])): ?>
+        <script>
+            $(document).ready(function() {
+                // Call the function to show notification
+                showNotification('<?php echo $_SESSION['notification_message']; ?>');
+                // Clear the session variables after showing notification
+                <?php unset($_SESSION['notification_message']); ?>
+            });
+
+            // Show Notification for 2 seconds
+            function showNotification(message) {
+                const notification = $('#notification');
+                const notificationMessage = $('#notificationMessage');
+                notificationMessage.text(message);
+                notification.removeClass('opacity-0').addClass('opacity-100');
+                setTimeout(function() {
+                    notification.removeClass('opacity-100').addClass('opacity-0');
+                }, 2000);
+            }
+        </script>
+    <?php endif; ?>
 </body>
 
 </html>

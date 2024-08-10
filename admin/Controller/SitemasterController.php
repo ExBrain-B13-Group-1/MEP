@@ -1,7 +1,8 @@
 <?php
 ini_set('display_errors', 1);
-
+session_start();
 include __DIR__ . '/../Model/MSitemaster.php';
+$uploadDir = __DIR__ . '/../../storages/uploads/';
 
 $mSites = new MSitemaster();
 $sites = $mSites->getAll();
@@ -15,6 +16,7 @@ if (isset($_POST["updateHome"])) {
 
     $success = $mSites->updateHome($id, $slogan, $title, $description);
     if ($success) {
+        $_SESSION['notification_message'] = "Home Contents Updated Successfully.";
         header("Location: ../View/resources/page.php");
     } else {
         echo "failed";
@@ -24,8 +26,18 @@ if (isset($_POST["updateHome"])) {
 // Update About Us
 if (isset($_POST["updateAbout"])) {
     $ids = $_POST['id'];
+    $lastId = end($ids);
     $titles = $_POST['title'];
     $descriptions = $_POST['description'];
+   
+    $about_image = !empty($_FILES['about_image']['name']) ? $_FILES['about_image']['name'] : $mSites->getAboutImage($lastId)[0]['about_image'];
+
+    if ($about_image) {
+        $photoTmpName = $_FILES['about_image']['tmp_name'];
+        $photoDestination = $uploadDir . $about_image;
+        move_uploaded_file($photoTmpName, $photoDestination);
+    }
+    $successImage = $mSites->updateAboutImage($lastId, $about_image);
 
     foreach ($titles as $index => $title) {
         $description = $descriptions[$index];
@@ -33,6 +45,7 @@ if (isset($_POST["updateAbout"])) {
 
         $success = $mSites->updateAbout($id, $title, $description);
         if ($success) {
+            $_SESSION['notification_message'] = "About Contents Updated Successfully.";
             header("Location: ../View/resources/page.php");
         } else {
             echo "failed";
@@ -53,6 +66,7 @@ if (isset($_POST['updateService'])) {
         $success = $mSites->updateService($id, $subtitle, $description);
 
         if ($success) {
+            $_SESSION['notification_message'] = "Service Contents Updated Successfully.";
             header("Location: ../View/resources/page.php");
         } else {
             echo "failed";

@@ -1634,6 +1634,14 @@ video {
   width: 100%;
 }
 
+.w-\[\] {
+  width: ;
+}
+
+.w-\[26rem\] {
+  width: 26rem;
+}
+
 .max-w-4xl {
   max-width: 56rem;
 }
@@ -3587,10 +3595,6 @@ video {
 
 .pb-2 {
   padding-bottom: 0.5rem;
-}
-
-.pb-6 {
-  padding-bottom: 1.5rem;
 }
 
 .pb-8 {

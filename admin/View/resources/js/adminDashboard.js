@@ -257,14 +257,15 @@ $(document).ready(function () {
              <tbody>
              `;
 
+             
+ const baseUrl = 'http://localhost/MEP/storages/uploads/';
   top4Institutes.forEach((institute) => {
+    const imageUrl = `${baseUrl}${institute.photo}`;
     tableContent += `
                      <tr class="border-b hover:bg-[#D9D9D9] hover:bg-opacity-10">
                          <td class="text-left px-4">
                              <div class="w-8 h-8 rounded-full overflow-hidden">
-                                 <img src="${
-                                   institute.photo
-                                 }" class="w-full h-full object-cover rounded-full">
+                                 <img src="${imageUrl}" class="w-full h-full object-cover rounded-full">
                              </div>
                          </td>
                          <td class="text-left pl-4">${institute.name}</td>

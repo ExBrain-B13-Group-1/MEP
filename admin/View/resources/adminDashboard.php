@@ -1,5 +1,6 @@
 <?php
-session_start();
+// session_start();
+$baseUrl = 'http://localhost/MEP/storages/uploads/';
 
 // Initialize session variables if not set
 if (!isset($_SESSION['totalIncome'])) {
@@ -10,6 +11,7 @@ if (!isset($_SESSION['totalIncome'])) {
 $totalIncome = $_SESSION['totalIncome'];
 $totalPending = $_SESSION['totalPending'];
 
+include '../../Controller/AdminController.php';
 include '../../Controller/UserController.php';
 include '../../Controller/InstituteController.php';
 include '../../Controller/InstitutePaymentController.php';
@@ -17,7 +19,7 @@ include '../../Controller/UserPaymentController.php';
 include '../../Controller/SlotController.php';
 
 // echo "<pre>";
-// print_r($institutes);
+// print_r($admin);
 
 $totalUsers = count($users);
 $totalInstitutes = count($institutes);
@@ -33,6 +35,11 @@ foreach ($userPays as $pays) {
     $userIncome += $pays['payment_amount'];
 }
 $totalIncome = $instituteIncome + $userIncome;
+
+// Total Pending
+$totalPendingUsers = count($pendingUsers);
+$totalPendingIs = count($pendingInstitutes);
+$totalPending = $totalPendingUsers + $totalPendingIs;
 
 // Set session variables
 $_SESSION['userIncome'] = $userIncome;
@@ -299,10 +306,10 @@ $slotsData = json_encode($slots);
                 </li>
                 <li class="ml-3">
                     <div class="flex items-center bg-white dark:bg-gray-700 dark:text-white rounded-full pr-2">
-                        <img src="../resources/img/profile.png" alt="profile" class="rounded-full" height="100" />
+                        <img src="<?= !empty($admin[0]['photo']) ? $baseUrl . $admin[0]['photo'] : '../resources/img/profile.pn'; ?>" alt="profile" class="rounded-full w-10 h-10" />
                         <div class="mx-3">
-                            <p class="text-sm font-bold">John Smith</p>
-                            <p class="text-[11px] m-0">Admin</p>
+                            <p class="text-sm font-bold"><?= ucwords(strtolower($admin[0]['first_name'])) . ' ' . ucwords(strtolower($admin[0]['last_name'])); ?></p>
+                            <p class="text-[11px] m-0"><?= ucwords(strtolower($admin[0]['role_name'])) ?></p>
                         </div>
                         <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.2266 1.59473L7.22656 7.59473L1.22656 1.59473" stroke="#636363" stroke-width="2" stroke-linecap="round" />
@@ -399,8 +406,8 @@ $slotsData = json_encode($slots);
                         <!-- Calendar Placeholder -->
                         <div id="calendar" class="dark:text-white"></div>
                         <div id="logos" class="flex justify-center items-center mt-4 space-x-2">
-                            <?php foreach($slots as $slot): ?>
-                                <img src="<?= ($slot['photo']); ?>" alt="<?= ($slot['institute_id']); ?>" class="logo rounded-full w-8 h-8" data-institute="<?= ($slot['institute_id']); ?>">
+                           <?php foreach ($slots as $slot): ?>
+                                <img src="<?= $baseUrl . ($slot['photo']); ?>" alt="<?= ($slot['institute_id']); ?>" class="logo rounded-full w-8 h-8" data-institute="<?= ($slot['institute_id']); ?>">
                             <?php endforeach; ?>
                         </div>
                     </div>
@@ -410,12 +417,6 @@ $slotsData = json_encode($slots);
                         <!-- Top Clients Placeholder -->
                         <div id="top-clients" class="text-sm dark:text-white"></div>
                     </div>
-                    <!-- For Recent Actions Later (Optional) -->
-                    <!-- <div class="col-span-1 bg-custom-bg p-4 rounded-lg shadow-custom"> -->
-                    <!-- <div class="text-xl font-bold mb-2">Recent Actions</div> -->
-                    <!-- Recent Actions Placeholder -->
-                    <!-- <div id="recent-actions"></div> -->
-                    <!-- </div> -->
                 </div>
             </div>
         </div>
@@ -430,7 +431,6 @@ $slotsData = json_encode($slots);
         var jsonUserPays = <?php echo $jsonUserPays; ?>;
         var jsonInstitutePays = <?php echo $jsonInstitutePays; ?>;
         var slots = <?php echo $slotsData; ?>;
-
     </script>
     <script src="js/adminDashboard.js"></script>
     <script src="js/sidebar.js"></script>

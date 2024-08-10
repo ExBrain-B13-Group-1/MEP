@@ -139,8 +139,7 @@ $(document).ready(function () {
           contentType: false,
           success: function (response) {
             // Parse the JSON response
-            const result = JSON.parse(response);
-  
+            const result = JSON.parse(response); 
             // Introduce a 3-second delay
             setTimeout(function () {
               $("#loadingSpinner").hide();

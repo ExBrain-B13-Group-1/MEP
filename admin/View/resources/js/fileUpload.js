@@ -16,7 +16,6 @@ $(document).ready(function () {
 
     // Handle click to open file dialog
     uploadArea.on("click", function (event) {
-      console.log("Upload area clicked.");
       if (event.target.id !== inputId) {
         fileInput.trigger("click");
       }
@@ -25,7 +24,6 @@ $(document).ready(function () {
     // Handle file input change (file selected)
     fileInput.on("change", function (event) {
       const file = event.target.files[0];
-      console.log("File selected:", file);
       if (file) {
         const reader = new FileReader();
         reader.onload = function (e) {
@@ -56,7 +54,6 @@ $(document).ready(function () {
       event.stopPropagation();
       $(this).removeClass("border-blue-500");
       const file = event.originalEvent.dataTransfer.files[0];
-      console.log("File dropped:", file);
       if (file) {
         const reader = new FileReader();
         reader.onload = function (e) {
@@ -68,6 +65,4 @@ $(document).ready(function () {
     });
   }
 
-  // Log the current src value to debug
-  console.log($("#uploaded-image-about").attr("src")); // Ensure this shows the URL
 });

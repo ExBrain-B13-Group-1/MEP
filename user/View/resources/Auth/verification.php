@@ -1,3 +1,9 @@
+<?php
+ini_set('display_errors', '1');
+include '../../../Controller/UserController.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,38 +70,38 @@
 
             <div>
                 <!-- Verification Form Back-End -->
-                <form action="" id="verifyForm" class="form-step active space-y-6">
+                <form action="" id="verifyForm" class="form-step active space-y-6" enctype="multipart/form-data">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-4">
                         <!-- User Full Name -->
                         <div>
                             <label for="user-name" class="text-dark-gray text-sm">Full Name *</label>
-                            <input type="text" id="user-name" value="John Smith (Acc Name)" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
+                            <input type="text" id="user-name" value="<?= $user[0]['name'] ?>" name="name" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
                         </div>
                         <!-- User Email -->
                         <div>
                             <label for="user-email" class="text-dark-gray text-sm">Email Address *</label>
-                            <input type="email" id="user-email" value="johnsmith@gmail.com" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
+                            <input type="email" id="user-email" value="<?= $user[0]['email'] ?>" name="email" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
                         </div>
                         <!-- Age -->
                         <div>
                             <label for="age" class="text-dark-gray text-sm">Age *</label>
-                            <input type="number" id="age" min="5" max="90" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
+                            <input type="text" id="age" name="age" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
                         </div>
-                         <!-- User Contact -->
-                         <div>
+                        <!-- User Contact -->
+                        <div>
                             <label for="contact" class="text-dark-gray text-sm">Contact *</label>
-                            <input type="text" id="contact" placeholder="+959" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
+                            <input type="text" id="contact" placeholder="+959" name="contact" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
                         </div>
                         <!-- Gender -->
                         <div>
                             <label for="gender" class="text-dark-gray text-sm">Gender</label>
                             <div id="gender" class="flex items-center space-x-4 text-white mt-2">
                                 <label class="inline-flex items-center">
-                                    <input type="radio" name="gender" value="male" class="form-radio hpp-radio">
+                                    <input type="radio" name="gender" value="Male" class="form-radio hpp-radio">
                                     <span class="ml-2">Male</span>
                                 </label>
                                 <label class="inline-flex items-center">
-                                    <input type="radio" name="gender" value="female" class="form-radio hpp-radio">
+                                    <input type="radio" name="gender" value="Female" class="form-radio hpp-radio">
                                     <span class="ml-2">Female</span>
                                 </label>
                             </div>
@@ -111,7 +117,7 @@
                                 <label class="block text-white mb-3">Front Side *</label>
                                 <div class="mb-2 md:mb-6">
                                     <div class="upload-area rounded-md" id="upload-area-front">
-                                        <input type="file" id="file-input-front" accept="image/*" required class="hidden">
+                                        <input type="file" name="nrc_front" id="file-input-front" accept="image/*" required class="hidden">
                                         <img id="uploaded-image-front" alt="Uploaded Image">
                                         <div id="upload-text-front" class="upload-text text-center">
                                             <ion-icon name="cloud-upload-outline" class="text-2xl text-gray-500"></ion-icon>
@@ -128,7 +134,7 @@
                                 <label class="block text-white mb-4">Back Side *</label>
                                 <div class="mb-2 md:mb-6">
                                     <div class="upload-area rounded-md" id="upload-area-back">
-                                        <input type="file" id="file-input-back" accept="image/*" required class="hidden">
+                                        <input type="file" name="nrc_back" id="file-input-back" accept="image/*" required class="hidden">
                                         <img id="uploaded-image-back" alt="Uploaded Image">
                                         <div id="upload-text-back" class="upload-text text-center">
                                             <ion-icon name="cloud-upload-outline" class="text-2xl text-gray-500"></ion-icon>
@@ -149,8 +155,8 @@
                         <div></div>
                         <!-- 2 Buttons (Back, Enroll) -->
                         <div class="col-span-1 md:col-span-2 flex justify-between">
-                            <button type="button" class="py-2 px-4 bg-white text-primary-main font-bold rounded-md hover:bg-opacity-90 duration-75"><a href="../dashboard.php">Back</a></button>
-                            <button type="submit" id="submit-button" class=" py-2 px-4 bg-white text-primary-main font-bold rounded-md opacity-50 cursor-not-allowed duration-75" disabled>Verify</button>
+                            <button type="button" class="py-2 px-4 bg-white text-primary-main font-bold rounded-md hover:bg-opacity-90 duration-75"><a href="../profile.php">Back</a></button>
+                            <button type="submit" name="" id="submit-button" class=" py-2 px-4 bg-white text-primary-main font-bold rounded-md opacity-50 cursor-not-allowed duration-75" disabled>Verify</button>
                         </div>
                 </form>
             </div>

@@ -86,7 +86,7 @@ class MUser{
     /**
      * (Get User Details)
      */
-    public function getUser($id)
+    public function getUserById($id)
     {
         try {
             $db = new DBConnection();
@@ -94,8 +94,13 @@ class MUser{
             $pdo = $db->connection();
             // query prepare
             $sql = $pdo->prepare(
-                 "SELECT * FROM m_user WHERE id = :id"
+                "SELECT m_user.*, m_user_coins.remain_amount 
+                 FROM m_user 
+                 INNER JOIN m_user_coins 
+                 ON m_user.id = m_user_coins.user_id 
+                 WHERE m_user.id = :id"
             );
+            
             $sql->bindValue(":id", $id);
             $sql->execute();
             return $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -104,7 +109,6 @@ class MUser{
             echo "Unexpected Error Occurs! $th";
         }
     }
-
 
     
     /**
@@ -137,6 +141,28 @@ class MUser{
         }
     }
 
- 
 
+     /**
+     * (Update profile photo)
+     */
+    public function updateProfile($id, $photo)
+    {
+        try {
+            $db = new DBConnection();
+            // get connection
+            $pdo = $db->connection();
+            // query prepare
+            $sql = $pdo->prepare(
+                "UPDATE m_user SET photo = :photo WHERE id = :id"
+            );
+            $sql->bindValue(":photo", $photo);
+            $sql->bindValue(":id", $id);
+            $sql->execute();
+            return true;
+        } catch (\Throwable $th) {
+            // fail connection or query 
+            echo "Unexpected Error Occurs! $th";
+            return false;
+        }
+    }
 }

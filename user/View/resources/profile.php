@@ -1,10 +1,27 @@
+<?php
+ini_set('display_errors', '1');
+include '../../Controller/UserController.php';
+// later
+// Initialize session variables if not set
+// if (!isset($_SESSION['notiCount'])) {
+//     $_SESSION['notiCount'] = 0;
+// }
+// $notiCount = $_SESSION['notiCount'];
+
+// if (isset($_SESSION['profile_upload_success'])) {
+//   echo "<script>alert('" . $_SESSION['profile_upload_success'] . "');</script>";
+//   unset($_SESSION['profile_upload_success']);
+// }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Profile</title>
   <link href="./css/output.css" rel="stylesheet" />
   <link href="./css/navbar.css" rel="stylesheet" />
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -14,7 +31,40 @@
   <script src="./js/profile.js" defer></script>
 </head>
 
+<style>
+  .upload-area {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  #uploaded-image-photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+  }
+
+  .upload-text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+  }
+</style>
+
 <body class="bg-bgColor">
+  <!-- Notification Message -->
+  <div id="notification" class="relative top-0 left-1/2 transform -translate-x-1/2 bg-primaryColor text-white py-2 px-4 rounded shadow-lg opacity-0 transition-opacity duration-500 ease-in-out z-[200]">
+    <p id="notificationMessage" class="text-sm text-center"></p>
+  </div>
+
   <!-- Navigation bar -->
   <nav class="bg-white fixed w-[95%] z-20 top-0 right-0 left-0 m-auto my-2 border-b border-gray-200 rounded-xl">
     <div class="max-w-screen-xl flex items-center justify-between mx-auto px-4 relative">
@@ -64,15 +114,15 @@
 
         <div class="relative">
           <div id="userProfile" aria-isOpen="false" class="flex justify-center items-center cursor-pointer hover:text-primaryColor">
-            <img src="./img/profile.png" alt="profile" class="rounded-full mr-2" width="30" />
+            <img src="<?= !empty($user[0]['photo']) ? '../../../storages/uploads/' . $user[0]['photo'] : './img/profile.png'; ?>" alt="profile" class="rounded-full mr-2" width="30" />
             <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
           </div>
 
           <div id="profileMenu" class="hidden absolute bottom-0 right-0 bg-white w-44 rounded-lg p-3 translate-y-52 translate-x-4">
-            <h1 class="font-bold">Thiha Thwin</h1>
+            <h1 class="font-bold"><?= ucwords(strtolower($user[0]['name'])); ?></h1>
             <div class="flex items-center select-none">
               <ion-icon name="wallet-outline" class="text-lg mx-2 my-2"></ion-icon>
-              <p>Coin - <span class="text-primaryColor">500</span></p>
+              <p>Coin - <span class="text-primaryColor"><?= $user[0]['remain_amount'] ?></span></p>
             </div>
 
             <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
@@ -99,7 +149,7 @@
   <div class="m-auto h-full flex flex-col md:flex-row mt-16 w-[95%] md:w-[80%] mb-6 md:mb-2 bg-white py-2 rounded-md">
     <div class="w-full md:w-[20%]">
       <div class="m-5 text-center flex justify-center items-center">
-        <img src="./img/profile.png" alt="profile" width="90" />
+        <img src="<?= !empty($user[0]['photo']) ? '../../../storages/uploads/' . $user[0]['photo'] : './img/profile.png'; ?>" alt="profile" width="90" />
       </div>
       <div class="mt-4 px-2 md:pl-10 flex justify-center space-x-2 md:space-x-0 md:space-y-3 items-center md:items-start flex-row md:flex-col" id="profileSetting">
         <button aria-active="true" class="text-sm md:text-base aria-[active=true]:bg-primaryColor aria-[active=true]:text-white w-full text-center md:text-start p-2 rounded-md" onclick="profileMenu('general')">
@@ -129,7 +179,7 @@
         <div>
           <div class="flex justify-between items-center my-2">
             <p>Verify account with NRC</p>
-            <button aria-verify="false" class="bg-white border aria-[verify=true]:text-gray-400 aria-[verify=true]:border-gray-400 aria-[verify=false]:border-red-400 aria-[verify=false]:text-red-400 px-10 py-2 rounded-md aria-[verify=false]:hover:bg-red-400 aria-[verify=false]:hover:text-white"><a href="Auth/verification.php">Verify</a></button>
+            <button aria-verify="false" class="bg-white border aria-[verify=true]:text-gray-400 aria-[verify=true]:border-gray-400 aria-[verify=false]:border-red-400 aria-[verify=false]:text-red-400 px-10 py-2 rounded-md aria-[verify=false]:hover:bg-red-400 aria-[verify=false]:hover:text-white"><a href="./Auth/verification.php">Verify</a></button>
           </div>
           <form>
             <h1>Basics</h1>
@@ -166,26 +216,31 @@
           </p>
         </div>
         <div>
-          <form action="#">
+          <form action="../../Controller/UserController.php" method="POST" enctype="multipart/form-data">
             <div class="flex items-center justify-center w-full mb-6">
-              <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
-                <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                  <svg class="w-8 h-8 mb-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
-                  </svg>
-                  <p class="mb-2 text-sm text-gray-500">
-                    <span class="font-semibold">Click to upload</span> or drag
-                    and drop
-                  </p>
-                  <p class="text-xs text-gray-500">
-                    SVG, PNG, JPG or GIF (MAX. 800x400px)
-                  </p>
+              <div class="w-[26rem]">
+                <div class="mb-2 md:mb-6 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                  <div class="upload-area rounded-md" id="upload-area-photo">
+                    <input type="file" name="photo" id="file-input-photo" accept="image/*" required class="hidden">
+                    <img id="uploaded-image-photo" alt="Uploaded Image">
+                    <div id="upload-text-photo" class="upload-text text-center">
+                      <svg class="w-8 h-8 mb-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+                      </svg>
+                      <p class="mb-2 text-sm text-gray-500">
+                        <span class="font-semibold">Click to upload</span> or drag
+                        and drop
+                      </p>
+                      <p class="text-xs text-gray-500">
+                        SVG, PNG, JPG or GIF (MAX. 800x400px)
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <input id="dropzone-file" type="file" class="hidden" />
-              </label>
+              </div>
             </div>
             <div class="text-end">
-              <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center d">
+              <button type="submit" name="updateProfile" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center d">
                 Save
               </button>
             </div>
@@ -224,6 +279,29 @@
       </div>
     </div>
   </div>
+
+  <script src="./js/fileUpload.js"></script>
+  <?php if (isset($_SESSION['notification_message'])): ?>
+    <script>
+      $(document).ready(function() {
+        // Call the function to show notification
+        showNotification('<?php echo $_SESSION['notification_message']; ?>');
+        // Clear the session variables after showing notification
+        <?php unset($_SESSION['notification_message']); ?>
+      });
+
+      // Show Notification for 2 seconds
+      function showNotification(message) {
+        const notification = $('#notification');
+        const notificationMessage = $('#notificationMessage');
+        notificationMessage.text(message);
+        notification.removeClass('opacity-0').addClass('opacity-100');
+        setTimeout(function() {
+          notification.removeClass('opacity-100').addClass('opacity-0');
+        }, 2000);
+      }
+    </script>
+  <?php endif; ?>
 </body>
 
 </html>

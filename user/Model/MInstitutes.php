@@ -45,7 +45,7 @@ class MInstitute
             $sql->bindValue(':photo', $photo);
             $sql->bindValue(':slider_image', $slider_image);
             $sql->bindValue(':email', $email);
-            $sql->bindValue(":password", password_hash($password,PASSWORD_DEFAULT) );
+            $sql->bindValue(":password", $password);
             $sql->bindValue(':type_id', $type_id, PDO::PARAM_INT); 
             $sql->bindValue(':contact', $contact);
             $sql->bindValue(':address', $address);

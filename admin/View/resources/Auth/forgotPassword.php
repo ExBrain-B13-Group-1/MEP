@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!doctype html>
 <html>
 
@@ -15,16 +19,20 @@
             <img src="../../../../storages/logo-white.svg" class="mx-auto mb-5" alt="logo">
 
             <!-- Forgot Password Form For Back-End -->
-            <form action="otp.php" class="space-y-4 md:space-y-7">
+            <form action="../../../Controller/LoginController.php" method="POST" class="space-y-4 md:space-y-7">
                 <!-- Email -->
                 <div>
                     <label for="email" class="block text-dark-gray text-sm">Find your account</label>
-                    <input type="email" id="email" placeholder="Email"
-                        class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
+                    <input type="email" id="email" placeholder="Email" name="email"
+                        class="w-full px-6 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
+                    <?php if (isset($_SESSION['email_error'])) : ?>
+                        <p class="text-[#ff3e3e] text-xs mt-1 absolute"><?php echo $_SESSION['email_error'];
+                                                                        unset($_SESSION['email_error']); ?></p>
+                    <?php endif; ?>
                 </div>
                 <!-- Submit -->
                 <div class="flex justify-center">
-                    <button type="submit"
+                    <button type="submit" name="forgotPs"
                         class="w-1/2 py-2 px-4 bg-white text-primary-main font-bold rounded-md hover:bg-opacity-90 duration-75 focus:outline-none focus:ring-2 focus:ring-blue-600">Search</button>
                 </div>
             </form>

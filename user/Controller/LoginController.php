@@ -10,6 +10,7 @@ $mLogins = new Logins();
 
 $rememberMe = isset($_POST['remember_me']);
 
+// Login
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -80,6 +81,8 @@ if (isset($_POST['login'])) {
     exit();
 }
 
+
+// Forgot Password
 if (isset($_POST['forgotPs'])) {
     $email = $_POST['email'];
     $password = getRandom(6);
@@ -102,7 +105,7 @@ if (isset($_POST['forgotPs'])) {
         }
     }
 
-    // Check user table
+    // Check institute table
     $institute = $mLogins->authLoginInstitute($email);
     if ($institute) {
         $success = $mLogins->updateInstitutePs($institute['id'], $password);
@@ -125,6 +128,8 @@ if (isset($_POST['forgotPs'])) {
     exit();
 }
 
+
+// Send OTP
 if (isset($_POST['sendOtp'])) {
     $enteredOtp = $_POST['otp'];
     $email = $_SESSION['email'];
@@ -151,6 +156,8 @@ if (isset($_POST['sendOtp'])) {
     exit();
 }
 
+
+// New Password Update
 if (isset($_POST['updatePassword'])) {
     $password = $_POST['password'];
     $email = $_SESSION['email'];

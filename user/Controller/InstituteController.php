@@ -73,12 +73,6 @@ if (isset($_POST['register'])) {
             if ($success && $successCoin) {
                 $_SESSION['success_message'] = "success!";
                 $response['success'] = true;
-                // send password
-                $mail->sendMail(
-                    "$email",
-                    "Here is Your Password",
-                    "<h3>$password</h3>"
-                );
                 // Send JSON response
                 header('Content-Type: application/json');
                 header("Location: ../View/resources/Auth/instituteSignUp.php");

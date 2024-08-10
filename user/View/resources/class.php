@@ -1,3 +1,16 @@
+<?php
+ini_set('display_errors', '1');
+include '../../Controller/UserController.php';
+// later
+// Initialize session variables if not set
+// if (!isset($_SESSION['notiCount'])) {
+//     $_SESSION['notiCount'] = 0;
+// }
+// $notiCount = $_SESSION['notiCount'];
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -116,15 +129,15 @@
 
                 <div class="relative">
                     <div id="userProfile" aria-isOpen="false" class="flex justify-center items-center cursor-pointer hover:text-primaryColor">
-                        <img src="./img/profile.png" alt="profile" class="rounded-full mr-2" width="30" />
+                        <img src="<?= !empty($user[0]['photo']) ? '../../../storages/uploads/' . $user[0]['photo'] : './img/profile.png'; ?>" alt="profile" class="rounded-full mr-2" width="30" />
                         <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
                     </div>
 
                     <div id="profileMenu" class="hidden absolute bottom-0 right-0 bg-white w-44 rounded-lg p-3 translate-y-52 translate-x-4">
-                        <h1 class="font-bold">Thiha Thwin</h1>
+                        <h1 class="font-bold"><?=  ucwords(strtolower($user[0]['name'])); ?></h1>
                         <div class="flex items-center select-none">
                             <ion-icon name="wallet-outline" class="text-lg mx-2 my-2"></ion-icon>
-                            <p>Coin - <span class="text-primaryColor">500</span></p>
+                            <p>Coin - <span class="text-primaryColor"><?= $user[0]['remain_amount'] ?></span></p>
                         </div>
 
                         <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">

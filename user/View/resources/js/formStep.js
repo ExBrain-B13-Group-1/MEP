@@ -61,6 +61,17 @@ $(document).ready(function () {
     }
   });
 
+  // For Verification
+  $('#age').on('input', function() {
+    let value = $(this).val();
+    console.log(value)
+    if (isNaN(value) || value < 5 || value > 90) {
+        $(this).get(0).setCustomValidity('Please enter a number between 5 and 90.');
+    } else {
+        $(this).get(0).setCustomValidity('');
+    }
+});
+
   /* ............
      ............
      End HPP Code */

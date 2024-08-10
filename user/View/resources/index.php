@@ -5,6 +5,7 @@ include '../../Controller/PricesPlanController.php';
 // echo "<pre>";
 // print_r($sites);
 
+$baseUrl = 'http://localhost/MEP/storages/uploads/';
 // Separate prices by scope
 $userPrices = array_filter($prices, function ($price) {
     return $price['scope'] === 'user';
@@ -458,7 +459,7 @@ $svgs = [
             </div>
             <div class="col-span-2 md:grid grid-cols-1 md:grid-cols-2">
                 <div>
-                    <img src="../../storages/Trophy.png" class="w-full relative md:bottom-0 bottom-40" alt="Trophy_S" />
+                    <img src="<?= $baseUrl . ($aboutContents[4]['about_image']); ?>" class="w-full relative md:bottom-0 bottom-40" alt="Trophy_S" />
                 </div>
                 <div class="hidden md:block">
                     <div class="h-full flex justify-center items-center">

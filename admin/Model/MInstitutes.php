@@ -81,7 +81,7 @@ class MInstitute
     /**
      * (Update Verified)
      */
-    public function updateVerified($id)
+    public function updateVerified($id, $password)
     {
         try {
             $db = new DBConnection();
@@ -89,9 +89,11 @@ class MInstitute
             $pdo = $db->connection();
             // query prepare
             $sql = $pdo->prepare(
-                "UPDATE m_institutes SET status = 1 WHERE id = :id"
+                "UPDATE m_institutes SET status = 1, password = :password WHERE id = :id"
             );
+            $sql->bindValue(":password", password_hash($password,PASSWORD_DEFAULT) );
             $sql->bindValue(":id", $id);
+           
             $sql->execute();
             return true;
         } catch (\Throwable $th) {
