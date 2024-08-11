@@ -1,3 +1,4 @@
+
 class ClassList extends PaginatedTable{
     displayData(){
         const container = $('#table-body');
@@ -7,7 +8,7 @@ class ClassList extends PaginatedTable{
         const paginatedItems = this.jsonData.slice(start, end);
 
         paginatedItems.forEach(item => {
-            console.log(item);
+            // console.log(item);
             // console.log(item.id);
             const row = `
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -28,6 +29,10 @@ class ClassList extends PaginatedTable{
         });
     }
 }
+
+let url = `http://localhost/MEP/Institute/Controller/ViewClassListController.php`;
+
+new ClassList(url,10);
 
 function addThousandSeparator(value) {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -51,8 +56,8 @@ function showStatus(status){
 }
 
 
-$(document).ready(function () {
-    new ClassList('http://localhost/MEP/Institute/Controller/ViewClassListController.php', 10);
+$(document).ready(function () {  
+
     // to change tab
     $(".changes").on("click", function () {
         $(".changes").removeClass("actives");
@@ -73,3 +78,6 @@ $(document).ready(function () {
         reader.readAsDataURL(this.files[0]);
     });
 });
+
+
+

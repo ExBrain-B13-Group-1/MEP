@@ -290,11 +290,11 @@ function selectedCategory($catename)
                                     <!-- Display the current image -->
                                     <img id="preview_image" src="" alt="Class Profile Photo" class="hidden mb-2 w-40 object-cover rounded-lg">
                                     <!-- Input to upload a new image -->
-                                    <input class="block w-full text-base text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="edit-profile" type="file" name="image"  accept=".jpg, .jpeg" onchange="document.getElementById('preview_image').src = window.URL.createObjectURL(this.files[0]);document.getElementById('preview_image').classList.remove('hidden')" required />
+                                    <input class="block w-full text-base text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="edit-profile" type="file" name="image" accept=".jpg, .jpeg" onchange="document.getElementById('preview_image').src = window.URL.createObjectURL(this.files[0]);document.getElementById('preview_image').classList.remove('hidden')" required />
                                 </div>
                                 <div class="mt-4">
                                     <label for="classtitle" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Class Title</label>
-                                    <input type="text" id="classtitle" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Title" required autocomplete="off"/>
+                                    <input type="text" id="classtitle" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Title" required autocomplete="off" />
                                 </div>
                                 <div class="mt-4">
                                     <label for="description" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Description</label>
@@ -324,7 +324,7 @@ function selectedCategory($catename)
                                                     <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                                                 </svg>
                                             </div>
-                                            <input type="text" id="default-datepicker-1" name="start-date" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" readonly autocomplete="off" required/>
+                                            <input type="text" id="default-datepicker-1" name="start-date" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" readonly autocomplete="off" required />
                                         </div>
                                     </div>
                                     <div>
@@ -347,7 +347,7 @@ function selectedCategory($catename)
                                     <?php $binaryDays = "0000000" ?>
                                     <?php for ($i = 0; $i < strlen($binaryDays); $i++) : ?>
                                         <div class="flex items-center">
-                                            <input id="<?= strtolower($daysOfWeek[$i]) ?>" type="checkbox" value="<?= $daysOfWeek[$i] ?>" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" required />
+                                            <input id="<?= strtolower($daysOfWeek[$i]) ?>" type="checkbox" value="<?= $daysOfWeek[$i] ?>" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                             <label for="<?= strtolower($daysOfWeek[$i]) ?>" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300"><?= $daysOfWeek[$i] ?></label>
                                         </div>
                                     <?php endfor; ?>
@@ -524,7 +524,8 @@ function selectedCategory($catename)
 
                 onClose: function(selectdate) {
                     $('#default-datepicker-2').datepicker("option", "minDate", selectdate);
-                },
+                    $('#default-datepicker-3').datepicker("option", "maxDate", selectdate);
+                }
             });
 
             $('#default-datepicker-2').datepicker({
@@ -545,7 +546,7 @@ function selectedCategory($catename)
                 dateFormat: "dd-mm-yy",
 
                 // onClose: function(selectdate) {
-                //     $('#bookingstart').datepicker("option", "maxDate", selectdate);
+                //     $('#default-datepicker-1').datepicker("option", "minDate", selectdate);
                 // },
             });
         });

@@ -37,7 +37,7 @@ if (isset($_POST['login'])) {
             exit();
         } else {
             $_SESSION['ps_error'] = "Incorrect Password!";
-            header("Location: ../View/resources/Auth/login.php");
+            header("Location: http://localhost/MEP/user/View/resources/dashboard.php");
             exit();
         }
     }

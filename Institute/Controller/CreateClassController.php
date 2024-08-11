@@ -4,6 +4,7 @@ session_start();
 ini_set('display_errors', '1');
 require_once  __DIR__ . '/../Model/MClasses.php';
 require_once  __DIR__ . '/../Model/MInstitutes.php';
+require_once  __DIR__ . '/../Model/UpdateRemainingCoin.php';
 require_once  __DIR__ . '/../Controller/common/GenerateClassId.php';
 
 $mInstitutes = new MInstitute();
@@ -101,7 +102,10 @@ if (isset($_POST["submit"]) && isset($_COOKIE['institute_id'])) {
         if (move_uploaded_file($tempname, $targetpath)) {
             $classobj = new MClasses();
             $success = $classobj->addClass($datasarr,$instututeID);
-            if($success){
+            $updateCoinAmt = $instituteInfos['remaining_coin'] - ($creditpoint * 0.1);
+            $coinObj = new UpdateRemainingCoin();
+            $isUpdateCoin = $coinObj->updateRemainingCoin($updateCoinAmt,$instututeID);
+            if($success && $isUpdateCoin){
                 $classid = $classobj->recentCreatedClassId($class_id);
                 $redirectUrl = "../Controller/ViewDetailsClassController.php?classid=$classid";
                 header("Location: $redirectUrl");

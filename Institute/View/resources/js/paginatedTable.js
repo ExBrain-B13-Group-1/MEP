@@ -1,5 +1,5 @@
 class PaginatedTable {
-    constructor(url, rowsPerPage) {
+    constructor(url,rowsPerPage) {
         this.url = url;
         this.rowsPerPage = rowsPerPage;
         this.currentPage = 1;
@@ -7,20 +7,26 @@ class PaginatedTable {
         this.init();
     }
 
-    async fetchData() {
-        try {
-            const response = await fetch(this.url);
-            const data = await response.json();
-            this.jsonData = data;
-            this.displayData();
-            this.setupPagination();
-        } catch (error) {
-            console.error('Error fetching data:', error);
-        }
+    fetchData() {
+        $.ajax({
+            url: this.url,
+            method: 'GET',
+            dataType: 'json',
+            success: (data) => {
+                this.jsonData = data;
+                this.displayData();
+                this.setupPagination();
+            },
+            error: (xhr, status, error) => {
+                console.error('Error fetching data:', status, error);
+            }
+        });
     }
+    
 
     displayData() {
         // display data
+        // overwrite display data in clild class
     }
 
     setupPagination() {

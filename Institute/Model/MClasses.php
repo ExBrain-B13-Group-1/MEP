@@ -24,7 +24,8 @@ class MClasses{
                 LEFT JOIN m_institutes AS mit ON c.institute_id = mit.id
                 LEFT JOIN m_instructors AS mi ON c.instructor_id = mi.id
                 LEFT JOIN m_categories AS mc ON c.cate_id = mc.id 
-                WHERE c.institute_id = :id"
+                WHERE c.institute_id = :id 
+                ORDER BY c.c_id DESC"
             );
             $sql->bindValue(":id",$id);
             $sql->execute();
