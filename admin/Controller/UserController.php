@@ -41,4 +41,4 @@ if (isset($_GET['id']) && isset($_GET['action'])) {
     $user = $mUsers->getUser($id);
 } 
 
-
+$userLists = $mUsers->getUsers();

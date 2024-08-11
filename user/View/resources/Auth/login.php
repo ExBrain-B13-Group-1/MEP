@@ -4,7 +4,7 @@ session_start();
 // Check for "Remember Me" cookie at the start of your session
 if (isset($_COOKIE['user-email'])) {
     // Redirect to the dashboard (or home page)
-    header("Location: http://localhost/MEP/User/View/resources/dashboard.php");
+    header("Location: http://localhost/MEP/user/View/resources/dashboard.php");
     exit();
 }
 

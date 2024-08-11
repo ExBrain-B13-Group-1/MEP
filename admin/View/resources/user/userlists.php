@@ -1,10 +1,21 @@
+<?php
+session_start();
+$baseUrl = 'http://localhost/MEP/storages/uploads/';
+
+include '../../../Controller/UserController.php';
+
+// echo "<pre>";
+// print_r($users);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Navigation</title>
+  <title>User Lists</title>
   <link rel="stylesheet" href="../../resources/css/output.css" />
   <script src="../../resources/lib/jquery.js"></script>
   <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
