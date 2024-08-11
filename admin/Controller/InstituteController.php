@@ -54,6 +54,8 @@ if (isset($_GET['id']) && isset($_GET['action'])) {
     $institute = $mInstitutes->getInstitute($id);
 } 
 
+$instituteLists = $mInstitutes->getInstitutes();
+
 
 // echo "<pre>";
 // print_r($institute);

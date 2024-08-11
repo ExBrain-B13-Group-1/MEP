@@ -125,4 +125,45 @@ class MInstitute
             return false;
         }
     }
+
+
+     /**
+     * (Read)
+     */
+    public function getInstitutes()
+    {
+        try {
+            $db = new DBConnection();
+            //get connection
+            $pdo = $db->connection();
+            // query prepare
+            $sql = $pdo->prepare(
+                "SELECT 
+                    i.*,
+                    i.name AS institute_name,
+                    t.itype AS institute_type,
+                    COUNT(c.id) AS total_classes_opened,
+                    CASE 
+                        WHEN SUM(CASE WHEN iip.p_id IN (4, 5) THEN 1 ELSE 0 END) > 0 THEN 'Premium'
+                        ELSE 'Free'
+                    END AS institute_status
+                FROM 
+                    m_institutes AS i
+                LEFT JOIN 
+                    m_classes AS c ON i.id = c.institute_id 
+                LEFT JOIN
+                    i_types AS t ON i.type_id = t.id
+                LEFT JOIN 
+                    i_institute_payment AS iip ON i.id = iip.institute_id
+                GROUP BY 
+                    i.id, i.name;"
+            );   
+            
+            $sql->execute();
+            return $sql->fetchAll(PDO::FETCH_ASSOC);
+        } catch (\Throwable $th) {
+            // fail connection or query
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
 }
