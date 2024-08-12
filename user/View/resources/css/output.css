@@ -896,6 +896,10 @@ video {
   z-index: 50;
 }
 
+.z-\[200\] {
+  z-index: 200;
+}
+
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
@@ -1469,6 +1473,10 @@ video {
   height: 100vh;
 }
 
+.h-28 {
+  height: 7rem;
+}
+
 .min-h-80 {
   min-height: 20rem;
 }
@@ -1585,6 +1593,10 @@ video {
   width: 24%;
 }
 
+.w-\[26rem\] {
+  width: 26rem;
+}
+
 .w-\[300px\] {
   width: 300px;
 }
@@ -1634,12 +1646,8 @@ video {
   width: 100%;
 }
 
-.w-\[\] {
-  width: ;
-}
-
-.w-\[26rem\] {
-  width: 26rem;
+.w-28 {
+  width: 7rem;
 }
 
 .max-w-4xl {

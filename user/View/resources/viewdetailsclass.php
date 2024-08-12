@@ -86,7 +86,7 @@ include '../../Controller/UserController.php';
 
                     <div class="relative">
                         <div id="userProfile" aria-isOpen="false" class="flex justify-center items-center cursor-pointer hover:text-primaryColor">
-                            <img src="<?= !empty($user[0]['photo']) ? '../../../storages/uploads/' . $user[0]['photo'] : './img/profile.png'; ?>" alt="profile" class="md:ml-3 ml-2 rounded-full mr-2 md:w-10 w-8" />
+                            <img src="<?= !empty($user[0]['photo']) ? '../../../storages/uploads/' . $user[0]['photo'] : './img/profile.png'; ?>" alt="profile" class="md:ml-3 ml-2 rounded-full mr-2 md:w-10 w-8 md:h-10 h-8" />
                             <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
                         </div>
 

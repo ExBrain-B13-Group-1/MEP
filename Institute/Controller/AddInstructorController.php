@@ -26,7 +26,7 @@ if (isset($_POST["submit"]) && isset($_COOKIE['institute_id'])) {
 
     // Ensure the upload directory exists and has the correct permissions
     if (!is_dir($uploadDir)) {
-        mkdir($uploadDir, 777, true);
+        mkdir($uploadDir, 0777, true);
     }
 
     $name = $_FILES['image']['name'];
