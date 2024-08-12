@@ -2725,6 +2725,11 @@ html {
   color: rgb(194 120 3 / var(--tw-text-opacity));
 }
 
+.text-\[\#BDBDBD\] {
+  --tw-text-opacity: 1;
+  color: rgb(189 189 189 / var(--tw-text-opacity));
+}
+
 .underline {
   text-decoration-line: underline;
 }
@@ -2871,11 +2876,6 @@ html {
 .sidebar-light-currents{
   background-color: #d9dffc;
   border-radius: 8px;
-}
-
-.ui-datepicker-prev {
-  fill: black;
-  /* Change the color to black */
 }
 
 .after\:absolute::after {

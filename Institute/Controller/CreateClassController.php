@@ -10,7 +10,7 @@ require_once  __DIR__ . '/../Controller/common/GenerateClassId.php';
 $mInstitutes = new MInstitute();
 
 if (isset($_POST["submit"]) && isset($_COOKIE['institute_id'])) {
-    
+
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
@@ -27,11 +27,11 @@ if (isset($_POST["submit"]) && isset($_COOKIE['institute_id'])) {
 
     // Ensure the upload directory exists and has the correct permissions
     if (!is_dir($uploadDir)) {
-        mkdir($uploadDir, 777 , true);
+        mkdir($uploadDir, 777, true);
     }
 
     $name = $_FILES['image']['name'];
-    $filename = rand(1000,100000)."-". $name;
+    $filename = rand(1000, 100000) . "-" . $name;
     $ext = pathinfo($filename, PATHINFO_EXTENSION);
 
     $allowedTypes = array("jpg", "jpeg");
@@ -75,22 +75,22 @@ if (isset($_POST["submit"]) && isset($_COOKIE['institute_id'])) {
     echo "instituteid = $instituteid <br/>";
 
     $datasarr = [
-        "photo"=>$filename,
-        "classid"=>$class_id,
-        "title"=>$class_title,
-        "description"=>$calss_des,
-        "categoryid"=>(int)$category_id,
-        "startdate"=>date('Y-m-d', strtotime($start_date)),
-        "enddate"=>date('Y-m-d', strtotime($end_date)),
-        "days"=>$binaryDays,
-        "starttime"=>$start_time,
-        "endtime"=>$end_time,
-        "instructorid"=>(int)$instructor_id,
-        "classfee"=>(int)str_replace(",", "", $class_fee),
-        "maxenrollment"=>(int)$max_enrollment,
-        "enrollementdeadline"=>date('Y-m-d', strtotime($enrollment_deadline)),
-        "creditpoint"=>(int)$creditpoint,
-        "instituteid"=>(int)$instituteid
+        "photo" => $filename,
+        "classid" => $class_id,
+        "title" => $class_title,
+        "description" => $calss_des,
+        "categoryid" => (int)$category_id,
+        "startdate" => date('Y-m-d', strtotime($start_date)),
+        "enddate" => date('Y-m-d', strtotime($end_date)),
+        "days" => $binaryDays,
+        "starttime" => $start_time,
+        "endtime" => $end_time,
+        "instructorid" => (int)$instructor_id,
+        "classfee" => (int)str_replace(",", "", $class_fee),
+        "maxenrollment" => (int)$max_enrollment,
+        "enrollementdeadline" => date('Y-m-d', strtotime($enrollment_deadline)),
+        "creditpoint" => (int)$creditpoint,
+        "instituteid" => (int)$instituteid
     ];
 
     echo "<pre>";
@@ -101,16 +101,16 @@ if (isset($_POST["submit"]) && isset($_COOKIE['institute_id'])) {
         // Move the uploaded file to the target directory
         if (move_uploaded_file($tempname, $targetpath)) {
             $classobj = new MClasses();
-            $success = $classobj->addClass($datasarr,$instututeID);
+            $success = $classobj->addClass($datasarr, $instututeID);
             $updateCoinAmt = $instituteInfos['remaining_coin'] - ($creditpoint * 0.1);
             $coinObj = new UpdateRemainingCoin();
-            $isUpdateCoin = $coinObj->updateRemainingCoin($updateCoinAmt,$instututeID);
-            if($success && $isUpdateCoin){
+            $isUpdateCoin = $coinObj->updateRemainingCoin($updateCoinAmt, $instututeID);
+            if ($success && $isUpdateCoin) {
                 $classid = $classobj->recentCreatedClassId($class_id);
                 $redirectUrl = "../Controller/ViewDetailsClassController.php?classid=$classid";
                 header("Location: $redirectUrl");
                 exit();
-            }else{
+            } else {
                 echo "Fail modify process.";
             }
         } else {
@@ -120,10 +120,3 @@ if (isset($_POST["submit"]) && isset($_COOKIE['institute_id'])) {
         echo "Only JPG and JPEG files are allowed.";
     }
 }
-
-
-
-
-
-
-?>

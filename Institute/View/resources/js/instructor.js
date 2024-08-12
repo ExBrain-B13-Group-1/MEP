@@ -1,4 +1,4 @@
-class InstructorLists extends PaginatedTable{
+class InstructorLists extends PaginatedTable {
     displayData() {
         const container = $('#table-body');
         // console.log(container);
@@ -40,15 +40,15 @@ class InstructorLists extends PaginatedTable{
 
 new InstructorLists('http://localhost/MEP/Institute/Controller/ViewInstructorController.php', 9);
 
-function showCard(id){
+function showCard(id) {
     $('#card-container').text("");
     $('#list-table').removeClass('col-span-8').addClass('col-span-6');
-    fetch(`http://localhost/MEP/Institute/Controller/ViewInstructorController.php`).then(response=>response.json())
-    .then(datas=>{
-        datas.forEach(item=>{
-            if(item.id === id){
-                console.log(item);
-                let cardhtml = `
+    fetch(`http://localhost/MEP/Institute/Controller/ViewInstructorController.php`).then(response => response.json())
+        .then(datas => {
+            datas.forEach(item => {
+                if (item.id === id) {
+                    console.log(item);
+                    let cardhtml = `
                             <div class="h-[70vh] overflow-y-auto hide-scrollbar">
                             <div class="flex items-center gap-5">
                                 <div class="absolute top-0 right-0 pt-3 pr-5">
@@ -111,62 +111,41 @@ function showCard(id){
                             </div>
                         </div>                
                 `;
-                $('#card-container').append(cardhtml);
-                $('#card-container').removeClass('hidden');
+                    $('#card-container').append(cardhtml);
+                    $('#card-container').removeClass('hidden');
 
-                fetch(`http://localhost/MEP/Institute/Controller/GetRelatedClassesController.php?id=${id}`)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('Network response was not ok');
-                        }
-                        return response.json();
-                    })
-                    .then(classes => {
-                        let relatedClassesHtml = classes.map(cls => `
+                    fetch(`http://localhost/MEP/Institute/Controller/GetRelatedClassesController.php?id=${id}`)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error('Network response was not ok');
+                            }
+                            return response.json();
+                        })
+                        .then(classes => {
+                            let relatedClassesHtml = classes.map(cls => `
                             <li>
                                 <a href="http://localhost/MEP/Institute/Controller/ViewDetailsClassController.php?classid=${cls.id}">${cls.c_title}</a>
                             </li>
                         `).join('');
 
-                        $('#related-classes').html(relatedClassesHtml);
-                    })
-                    .catch(error => console.error('Error fetching related classes:', error));
-            }
-        });
-    })
-    .catch();
+                            $('#related-classes').html(relatedClassesHtml);
+                        })
+                        .catch(error => console.error('Error fetching related classes:', error));
+                }
+            });
+        })
+        .catch();
 }
 
-function closeCard(){
+function closeCard() {
     document.getElementById('card-container').classList.add('hidden');
     let getlisttable = document.getElementById('list-table');
     getlisttable.classList.remove('col-span-6');
     getlisttable.classList.add('col-span-8');
 }
 
-$(document).ready(function () {
-    $('#tags-input').on('keypress', function (event) {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            const tagText = $(this).val().trim();
-            if (tagText !== '') {
-                addTag(tagText);
-                $(this).val('');
-            }
-        }
-    });
 
-    function addTag(tagText) {
-        const tag = $(`
-                <div class="tag bg-gray-200 dark:bg-gray-600 rounded px-2 py-1 m-1 flex items-center text-black dark:text-white">
-                    <span>${tagText}</span>
-                    <span class="remove-tag ml-2 cursor-pointer text-gray-500 dark:text-gray-300">&times;</span>
-                </div>
-            `);
-        $('#tags-input').before(tag);
 
-        tag.find('.remove-tag').on('click', function () {
-            tag.remove();
-        });
-    }
-});
+
+
+
