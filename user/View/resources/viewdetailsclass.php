@@ -87,42 +87,43 @@ include '../../Controller/UserController.php';
                     <div class="relative">
                         <div id="userProfile" aria-isOpen="false" class="flex justify-center items-center cursor-pointer hover:text-primaryColor">
                             <div class="relative">
-                                <img src="<?= !empty($user[0]['photo']) ? '../../../storages/uploads/' . $user[0]['photo'] : './img/profile.png'; ?>" alt="profile" class="rounded-full mr-2" width="30" />
+                                <img src="<?= !empty($user[0]['photo']) ? '../../../storages/uploads/' . $user[0]['photo'] : './img/profile.png'; ?>" alt="profile" class="rounded-full mr-2 md:w-10 w-8 md:h-10 h-8" />
                                 <?php if (isset($_COOKIE['verified'])): ?>
                                     <ion-icon name="checkmark-circle" class="text-green-600 absolute right-0 top-[0.95rem]"></ion-icon>
                                 <?php endif; ?>
                             </div>
                             <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
                         </div>
+                    </div>
 
-                        <div id="profileMenu" class="hidden absolute bottom-0 right-0 md:mr-0 mr-3 border-2 shadow-lg bg-white w-44 rounded-lg p-3 translate-y-52 translate-x-4">
-                            <h1 class="font-bold"><?= ucwords(strtolower($user[0]['name'])); ?></h1>
-                            <div class="flex items-center select-none">
-                                <ion-icon name="wallet-outline" class="text-lg mx-2 my-2"></ion-icon>
-                                <p>Coin - <span class="text-primaryColor"><?= $user[0]['remain_amount'] ?></span></p>
-                            </div>
-
-                            <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
-                                <ion-icon name="person-circle-outline" class="text-lg mx-2 my-2"></ion-icon>
-                                <p>Profile</p>
-                            </a>
-
-                            <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
-                                <ion-icon name="settings-outline" class="text-lg mx-2 my-2"></ion-icon>
-                                <p>Account Setting</p>
-                            </a>
-
-                            <a href="./Auth/login.php" class="flex items-center hover:text-primaryColor cursor-pointer">
-                                <ion-icon name="log-out-outline" class="text-lg mx-2 my-2"></ion-icon>
-                                <form action="../../Controller/LogoutController.php" method="POST" class="inline">
-                                    <button type="submit">
-                                        Logout
-                                    </button>
-                                </form>
-                            </a>
+                    <div id="profileMenu" class="hidden absolute bottom-0 right-0 md:mr-0 mr-3 border-2 shadow-lg bg-white w-44 rounded-lg p-3 translate-y-52 translate-x-4">
+                        <h1 class="font-bold"><?= ucwords(strtolower($user[0]['name'])); ?></h1>
+                        <div class="flex items-center select-none">
+                            <ion-icon name="wallet-outline" class="text-lg mx-2 my-2"></ion-icon>
+                            <p>Coin - <span class="text-primaryColor"><?= $user[0]['remain_amount'] ?></span></p>
                         </div>
+
+                        <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
+                            <ion-icon name="person-circle-outline" class="text-lg mx-2 my-2"></ion-icon>
+                            <p>Profile</p>
+                        </a>
+
+                        <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
+                            <ion-icon name="settings-outline" class="text-lg mx-2 my-2"></ion-icon>
+                            <p>Account Setting</p>
+                        </a>
+
+                        <a href="./Auth/login.php" class="flex items-center hover:text-primaryColor cursor-pointer">
+                            <ion-icon name="log-out-outline" class="text-lg mx-2 my-2"></ion-icon>
+                            <form action="../../Controller/LogoutController.php" method="POST" class="inline">
+                                <button type="submit">
+                                    Logout
+                                </button>
+                            </form>
+                        </a>
                     </div>
                 </div>
+            </div>
             </div>
         </nav>
         <!-- end navbar -->

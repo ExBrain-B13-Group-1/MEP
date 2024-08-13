@@ -6,6 +6,12 @@ include '../../../Controller/InstituteController.php';
 // url for logo
 $baseUrl = 'http://localhost/MEP/storages/uploads/';
 
+// url for instructor photo
+$baseUrlInstructor = 'http://localhost/MEP/Institute/storages/uploads/';
+
+$encodedResults = $_GET['data'];
+$results = json_decode(urldecode($encodedResults), true);
+
 ?>
 
 <!DOCTYPE html>
@@ -70,10 +76,10 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                             <div>
                                 <button type="button" class="flex text-base bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
                                     <span class="sr-only">Open user menu</span>
-                                    <img class="w-14 h-14 rounded-full select-none" src="<?=$baseUrl.($institute['photo'])?>" alt="institute photo">
+                                    <img class="w-14 h-14 rounded-full select-none" src="<?= $baseUrl . ($institute['photo']) ?>" alt="institute photo">
                                 </button>
                             </div>
-                            <<div class="ml-3 pt-2 dark:text-white">
+                            <div class="ml-3 pt-2 dark:text-white">
                                 <p class="text-base leading-none select-none"><?= ($institute['name']) ?></p>
                                 <p class="text-sm leading-none text-slate-500 select-none dark:text-white dark:text-opacity-50"><?= $institute['institute_type'] ?></p>
                                 <div class="flex pt-1 opacity-90">
@@ -85,30 +91,30 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                                     </svg>
                                     <span class="select-none"><?= abs($institute['remaining_coin']) ?></span>
                                 </div>
-                        </div>
-                        <div class="flex items-center ml-6 text-2xl cursor-pointer dark:text-white">
-                            <ion-icon name="chevron-down-outline"></ion-icon>
-                        </div>
-                        <div id="dropdown-user" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-64 dark:bg-gray-700 dark:divide-gray-600">
-                            <ul class="py-2 text-base text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guide</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Help Center</a>
-                                </li>
-                            </ul>
-                            <div class="py-2">
-                                <a href="http://localhost/MEP/Institute/Controller/LogoutController.php" class="block px-4 py-2 text-base text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+                            </div>
+                            <div class="flex items-center ml-6 text-2xl cursor-pointer dark:text-white">
+                                <ion-icon name="chevron-down-outline"></ion-icon>
+                            </div>
+                            <div id="dropdown-user" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-64 dark:bg-gray-700 dark:divide-gray-600">
+                                <ul class="py-2 text-base text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+                                    <li>
+                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guide</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Help Center</a>
+                                    </li>
+                                </ul>
+                                <div class="py-2">
+                                    <a href="http://localhost/MEP/Institute/Controller/LogoutController.php" class="block px-4 py-2 text-base text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </nav>
 
     <!-- Sidebar -->
@@ -275,20 +281,30 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                             <h1 class="text-xl mb-5 mt-5 dark:text-white font-bold">Instructor Information</h1>
                             <div class="pl-5">
                                 <div class="mt-4">
-                                    <img src="./../../../storages/instructor.jpg" class="w-full" alt="instructor" />
+                                    <img src="<?= $baseUrlInstructor . $results[0]['profile_picture'] ?>" class="w-full" alt="instructor" />
                                 </div>
                                 <div class="mt-5">
-                                    <h1 class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85">Software Engineer</h1>
-                                    <div class="opacity-50 dark:text-white dark:opacity-50">example@gmail.com</div>
-                                    <span class="opacity-50 dark:text-white dark:opacity-50">+95 97612345678</span>
+                                    <h1 class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85">
+                                        <?= $results[0]['position'] ?>
+                                    </h1>
+                                    <div class="opacity-50 dark:text-white dark:opacity-50">
+                                        <?= $results[0]['email'] ?>
+                                    </div>
+                                    <span class="opacity-50 dark:text-white dark:opacity-50">
+                                        <?= $results[0]['phone'] ?>
+                                    </span>
                                 </div>
                                 <div class="mt-5">
                                     <h1 class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85">Biography</h1>
-                                    <div class="opacity-50 dark:text-white dark:opacity-50 text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+                                    <div class="opacity-50 dark:text-white dark:opacity-50 text-justify">
+                                        <?= $results[0]['bio'] ?>
+                                    </div>
                                 </div>
                                 <div class="mt-5">
-                                    <h1 class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85">Biography</h1>
-                                    <div class="opacity-50 dark:text-white dark:opacity-50 text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+                                    <h1 class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85">Education</h1>
+                                    <div class="opacity-50 dark:text-white dark:opacity-50 text-justify">
+                                        <?= $results[0]['education'] ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -301,29 +317,31 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                                 </a>
                             </div>
                             <div class="mt-20">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Full Name :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60">John Doe</span>
+                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Full Name :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60"><?=$results[0]['full_name']?></span>
                             </div>
                             <div class="mt-4">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Date of Birth :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60">21 / 7 /1995</span>
+                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Date of Birth :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60"><?= date("d-m-Y", strtotime($results[0]['date_of_birth'])) ?></span>
                             </div>
                             <div class="mt-4">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Gender :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60">Male</span>
+                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Gender :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60"><?=$results[0]['gender']?></span>
                             </div>
                             <div class="mt-4">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Skill :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60">Javascript, Java, Python, ...</span>
+                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Skill :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60"><?=$results[0]['skills']?></span>
                             </div>
                             <div class="mt-4 border-b pb-10">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Address :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60">No.977, Yone Gyi, Hleden, Yangon</span>
+                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Address :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60"><?=$results[0]['address']?></span>
                             </div>
                             <div class="mt-4 pt-8">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">LinkedIn :</span> <span class="text-xl opacity-50  dark:opacity-60 text-blue-800 dark:text-blue-400">https://linkedin/profile/johndow345</span>
+                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">LinkedIn :</span> <span class="text-xl opacity-50  dark:opacity-60 text-blue-800 dark:text-blue-400"><?=$results[0]['linkedin']?></span>
                             </div>
                             <div class="mt-4">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Portfolio :</span> <span class="text-xl opacity-50 dark:opacity-60 text-blue-800 dark:text-blue-400">https://example.com</span>
+                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Portfolio :</span> <span class="text-xl opacity-50 dark:opacity-60 text-blue-800 dark:text-blue-400"><?=$results[0]['portfolio']?></span>
                             </div>
                             <div class="mt-12">
                                 <h1 class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85">Experience</h1>
-                                <div class="opacity-50 dark:text-white dark:opacity-50 text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+                                <div class="opacity-50 dark:text-white dark:opacity-50 text-justify">
+                                <?=$results[0]['experience']?>
+                                </div>
                             </div>
                         </div>
                     </div>

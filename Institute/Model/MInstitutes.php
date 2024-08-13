@@ -39,4 +39,28 @@ class MInstitute
         }
     }
 
+    public function getLatestInstructorID($instituteID){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT c.instructor_id FROM m_instructors AS c 
+                WHERE c.institute_id = :id
+                ORDER BY c.instructor_id DESC LIMIT 1 ;"
+            );
+            $sql->bindValue(":id",$instituteID);
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            if($results){
+                return $results[0]['c_id'];
+            }else{
+                return "I1000";
+            }
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
 }
