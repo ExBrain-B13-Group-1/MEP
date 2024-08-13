@@ -13,6 +13,8 @@ include '../../Controller/UserController.php';
 //   unset($_SESSION['profile_upload_success']);
 // }
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -60,10 +62,10 @@ include '../../Controller/UserController.php';
 </style>
 
 <body class="bg-bgColor">
-  <!-- Notification Message -->
-  <div id="notification" class="relative top-0 left-1/2 transform -translate-x-1/2 bg-primaryColor text-white py-2 px-4 rounded shadow-lg opacity-0 transition-opacity duration-500 ease-in-out z-[200]">
-    <p id="notificationMessage" class="text-sm text-center"></p>
-  </div>
+   <!-- Notification Message -->
+   <div id="notification" class="fixed top-0 left-1/2 transform -translate-x-1/2 bg-primary-main text-white py-2 px-4 rounded shadow-lg opacity-0 transition-opacity duration-500 ease-in-out z-50">
+        <p id="notificationMessage" class="text-sm text-center"></p>
+    </div>
 
   <!-- Navigation bar -->
   <nav class="bg-white fixed w-[95%] z-20 top-0 right-0 left-0 m-auto my-2 border-b border-gray-200 rounded-xl">
@@ -114,7 +116,12 @@ include '../../Controller/UserController.php';
 
         <div class="relative">
           <div id="userProfile" aria-isOpen="false" class="flex justify-center items-center cursor-pointer hover:text-primaryColor">
-            <img src="<?= !empty($user[0]['photo']) ? '../../../storages/uploads/' . $user[0]['photo'] : './img/profile.png'; ?>" alt="profile" class="rounded-full mr-2" width="30" />
+          <div class="relative">
+           <img src="<?= !empty($user[0]['photo']) ? '../../../storages/uploads/' . $user[0]['photo'] : './img/profile.png'; ?>" alt="profile" class="rounded-full mr-2" width="30" />
+           <?php if (isset($_COOKIE['verified'])): ?>
+            <ion-icon name="checkmark-circle" class="text-green-600 absolute right-0 top-[0.95rem]"></ion-icon>
+        <?php endif; ?>
+           </div>
             <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
           </div>
 
@@ -137,7 +144,11 @@ include '../../Controller/UserController.php';
 
             <a class="flex items-center hover:text-primaryColor cursor-pointer">
               <ion-icon name="log-out-outline" class="text-lg mx-2 my-2"></ion-icon>
-              <p>Logout</p>
+              <form action="../../Controller/LogoutController.php" method="POST" class="inline">
+                <button type="submit">
+                  Logout
+                </button>
+              </form>
             </a>
           </div>
         </div>
@@ -179,7 +190,15 @@ include '../../Controller/UserController.php';
         <div>
           <div class="flex justify-between items-center my-2">
             <p>Verify account with NRC</p>
-            <button aria-verify="false" class="bg-white border aria-[verify=true]:text-gray-400 aria-[verify=true]:border-gray-400 aria-[verify=false]:border-red-400 aria-[verify=false]:text-red-400 px-10 py-2 rounded-md aria-[verify=false]:hover:bg-red-400 aria-[verify=false]:hover:text-white"><a href="./Auth/verification.php">Verify</a></button>
+            <form action="../../Controller/UserController.php" method="POST">
+              <button id="verifyButton"
+                type="submit"
+                name="verifyPending"
+                class="bg-white border border-red-400 text-red-400 px-10 py-2 rounded-md hover:bg-red-400 hover:text-white">
+                Verify
+              </button>
+            </form>
+
           </div>
           <form>
             <h1>Basics</h1>

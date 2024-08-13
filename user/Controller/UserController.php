@@ -60,3 +60,26 @@ if (isset($_POST['updateProfile'])) {
         }
     }
 }
+
+if (isset($_POST['verifyPending'])) {
+    $userId = $_COOKIE['user_id'];
+    $user = $mUsers->getUserById($userId);
+
+    if ($user && isset($user[0]['nrc_verify'])) {
+        $nrcVerifyStatus = $user[0]['nrc_verify'];
+
+        if ($nrcVerifyStatus == 0) {
+            header("Location: ../View/resources/Auth/pendingStage.php");
+            exit();
+        } else if ($nrcVerifyStatus == -1) {
+            header("Location: ../View/resources/Auth/verification.php");
+            exit();
+        } else{
+            header("Location: ../View/resources/profile.php");
+            exit();
+        }
+    } else {
+        echo "User not found or invalid data.";
+    }
+}
+

@@ -91,7 +91,12 @@ include '../../Controller/UserController.php';
 
         <div class="relative">
           <div id="userProfile" aria-isOpen="false" class="flex justify-center items-center cursor-pointer hover:text-primaryColor">
-            <img src="<?= !empty($user[0]['photo']) ? '../../../storages/uploads/' . $user[0]['photo'] : './img/profile.png'; ?>" alt="profile" class="rounded-full mr-2 " width="30">
+          <div class="relative">
+           <img src="<?= !empty($user[0]['photo']) ? '../../../storages/uploads/' . $user[0]['photo'] : './img/profile.png'; ?>" alt="profile" class="rounded-full mr-2" width="30" />
+           <?php if (isset($_COOKIE['verified'])): ?>
+            <ion-icon name="checkmark-circle" class="text-green-600 absolute right-0 top-[0.95rem]"></ion-icon>
+        <?php endif; ?>
+           </div>
             <ion-icon name="chevron-down-outline" class="text-lg "></ion-icon>
           </div>
 

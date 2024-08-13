@@ -6,6 +6,7 @@ $(document).ready(function () {
      ..............*/
 
   handleFileUpload("#upload-logo", "#preview-image-logo", "#file-name-logo");
+  handleFileUpload("#upload-slider", "#preview-image-slider", "#file-name-slider");
 
   // Function for handling file upload (logo)
   function handleFileUpload(inputId, previewImageId, fileNameId) {
@@ -24,7 +25,6 @@ $(document).ready(function () {
       }
     });
   }
-
 
   // Check if all required fields are filled out
   function validateForm(step) {
@@ -101,20 +101,7 @@ $(document).ready(function () {
 
   const form = $("#regForm");
 
-  // Append new hidden input
-  $("<input>")
-    .attr({
-      type: "hidden",
-      name: "register",
-    })
-    .appendTo(form);
 
-  const savedStep = sessionStorage.getItem("current_step") || 1;
-  console.log(savedStep);
-
-  if (savedStep == 3) {
-    goToStep(3);
-  }
 
   // Function to change the step
   function goToStep(step) {
@@ -128,38 +115,64 @@ $(document).ready(function () {
         sessionStorage.setItem("current_step", step);
 
         // Show loading spinner
-        $("#loadingSpinner").show();
-        $("#page").hide();
+        // $("#loadingSpinner").show();
+        // $("#page").hide();
+
+        let name = $("#institute-name").val();
+        let email = $("#institute-email").val();
+        let type_id = $("#institute-type").val();
+        let contact = $("#institute-contact").val();
+        let address = $("#institute-address").val();
+        let state = $("#state-region").val();
+        let city = $("#city").val();
+        let website = $("#website-link").val();
+        let social = $("#social-links").val();
+
+        let f_name = $("#founder-name").val();
+        let f_email = $("#founder-email").val();
+        let f_contact = $("#founder-contact").val();
+
+        // Append file data
+        let photo = $("#file-input-logo")[0].files[0];
+        let slider = $("#file-input-slider")[0].files[0];
+        let nrc_front = $("#file-input-front")[0].files[0];
+        let nrc_back = $("#file-input-back")[0].files[0];
+
+        // Create a FormData object
+        let formData = new FormData();
+        formData.append("name", name);
+        formData.append("email", email);
+        formData.append("type_id", type_id);
+        formData.append("contact", contact);
+        formData.append("address", address);
+        formData.append("state", state);
+        formData.append("city", city);
+        formData.append("website", website);
+        formData.append("social", social);
+
+        formData.append("f_name", f_name);
+        formData.append("f_email", f_email);
+        formData.append("f_contact", f_contact);
+
+        formData.append("photo", photo);
+        formData.append("slider", slider);
+        formData.append("nrc_front", nrc_front);      
+        formData.append("nrc_back", nrc_back);
 
         $.ajax({
-          url: form.attr("action"),
+          url: "../../../Controller/InstituteRegisterController.php",
           type: "POST",
-          data: new FormData(form[0]),
-          processData: false,
-          contentType: false,
-          success: function (response) {
-            // Parse the JSON response
-            const result = JSON.parse(response); 
-            // Introduce a 3-second delay
-            setTimeout(function () {
-              $("#loadingSpinner").hide();
-              $('#page').show();
-  
-              if (result.success) {
-                // If the response indicates success, show step 3
-                goToStep(3);
-              } else {
-                goToStep(1);
-                // Handle error message
-                alert(result.message || "An error occurred. Please try again.");
-              }
-            }, 3000); // 3000 milliseconds = 3 seconds
+          data: formData,
+          processData: false, 
+          contentType: false, 
+          dataType: "text", 
+          success: function (data) {
+            console.log(data);
+            goToStep(3);
           },
           error: function () {
-            $("#loadingSpinner").hide();
-            $('#page').show();
             alert("An unexpected error occurred. Please try again.");
-          }
+          },
         });
         return;
       } else {
@@ -172,7 +185,6 @@ $(document).ready(function () {
   }
 
   $("#loadingSpinner").hide();
-
 
   // Initial check for the "Next" button on page load
   updateNextButton(1);

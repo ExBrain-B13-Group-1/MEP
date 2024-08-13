@@ -28,7 +28,7 @@ class MInstitute
     /**
      * (Create Institute)
      */
-    public function createInstitute($name, $photo, $slider_image, $email, $password, $type_id, $contact, $address, $state, $city, $website, $social)
+    public function createInstitute($name, $photo, $slider_image, $email, $password, $type_id, $contact, $address, $state, $city, $website, $social, $role_id)
     {
         try {
             $db = new DBConnection();
@@ -36,8 +36,8 @@ class MInstitute
             $pdo = $db->connection();
             // query prepare
             $sql = $pdo->prepare(
-                "INSERT INTO m_institutes (name, photo, slider_image, email, password, type_id, contact, address, state, city, website, social) 
-                VALUES (:name, :photo, :slider_image, :email, :password, :type_id, :contact, :address, :state, :city, :website, :social)"
+                "INSERT INTO m_institutes (name, photo, slider_image, email, password, type_id, contact, address, state, city, website, social, role_id) 
+                VALUES (:name, :photo, :slider_image, :email, :password, :type_id, :contact, :address, :state, :city, :website, :social, :role_id)"
             );
 
 
@@ -53,6 +53,7 @@ class MInstitute
             $sql->bindValue(':city', $city, PDO::PARAM_INT); 
             $sql->bindValue(':website', $website);
             $sql->bindValue(':social', $social);
+            $sql->bindValue(':role_id', $role_id);
 
             $sql->execute();
 

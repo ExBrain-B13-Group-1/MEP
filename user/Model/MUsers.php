@@ -165,4 +165,35 @@ class MUser{
             return false;
         }
     }
+
+
+     /**
+     * (Update Verification NRC etc...)
+     */
+    public function updateVerify($id, $name, $email, $age, $contact, $gender, $nrc_front, $nrc_back, $nrc_verify) {
+        try {
+            $db = new DBConnection();
+            //get connection
+            $pdo = $db->connection();
+             // query prepare
+            $sql = $pdo->prepare(
+                "UPDATE m_user SET name = :name, email = :email, age = :age, contact = :contact, gender = :gender, nrc_front = :nrc_front, nrc_back = :nrc_back, nrc_verify = :nrc_verify WHERE id = :id"
+            );
+            $sql->bindValue(":name", $name);
+            $sql->bindValue(":email", $email);
+            $sql->bindValue(":age", $age);
+            $sql->bindValue(":contact", $contact);
+            $sql->bindValue(":gender", $gender);
+            $sql->bindValue(":nrc_front", $nrc_front);
+            $sql->bindValue(":nrc_back", $nrc_back);
+            $sql->bindValue(":nrc_verify", $nrc_verify);
+            $sql->bindValue(":id", $id);
+            $sql->execute();
+            return true;
+        } catch (\Throwable $th) {
+            // fail connection or query
+            echo "Unexpected Error Occurs! $th";
+            return false;
+        }
+    }
 }

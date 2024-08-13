@@ -54,7 +54,6 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: none;
         }
 
         .upload-text {

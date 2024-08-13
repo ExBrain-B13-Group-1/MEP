@@ -19,6 +19,8 @@ if(isset($_POST['action'])){
         // Handle the verification process
         $success = $mUsers->updateVerified($id);  
         if ($success) {
+            $expiration = time() + (86400 * 3650); 
+            setcookie('verified', 'Have Been Verified!', $expiration, '/', '', false, true);
             header("Location: ../View/resources/Notification/pendingNotification.php");
         } else {
             echo "Verification failed.";

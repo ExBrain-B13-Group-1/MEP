@@ -1,7 +1,6 @@
 <?php
 // session_start();
 ini_set('display_errors', '1');
-include '../../../Controller/InstituteController.php';
 include '../../../Controller/StateRegionController.php';
 include '../../../Controller/CityController.php';
 include '../../../Controller/InstituteTypeController.php';
@@ -9,15 +8,6 @@ include '../../../Controller/InstituteTypeController.php';
 if (isset($_SESSION['error_message'])) {
     echo "<script>alert('" . $_SESSION['error_message'] . "');</script>";
     unset($_SESSION['error_message']);
-}
-
-if (isset($_SESSION['success_message'])) {
-    $message = htmlspecialchars($_SESSION['success_message'], ENT_QUOTES, 'UTF-8');
-    echo "<script>
-        var successMessage = '$message';
-        console.log(successMessage);
-    </script>";
-    unset($_SESSION['success_message']);
 }
 
 // echo "<pre>";
@@ -65,8 +55,8 @@ $cities = json_encode($cities);
 
         #uploaded-image-front,
         #uploaded-image-back,
-        #uploaded-image-logo,
-        #uploaded-image-slider {
+        #uploaded-image-slider,
+        #uploaded-image-logo {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -95,7 +85,7 @@ $cities = json_encode($cities);
                 <h2 class="text-white text-center text-xl font-bold mb-6">Institute Register Form</h2>
             </div>
 
-            <form id="regForm" action="../../../Controller/InstituteController.php" method="POST" enctype="multipart/form-data">
+            <form id="regForm" enctype="multipart/form-data">
                 <!-- Form Step 1 -->
                 <div id="step1" class="form-step active">
                     <h2 class="text-white text-xl mb-6">1.Institute Information</h2>
@@ -232,7 +222,7 @@ $cities = json_encode($cities);
                             <!-- Founder Contact -->
                             <div>
                                 <label for="contact" class="text-[#BDBDBD] text-sm">Contact *</label>
-                                <input type="tel" id="contact" name="f_contact" placeholder="+959" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
+                                <input type="tel" id="founder-contact" name="f_contact" placeholder="+959" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
                             </div>
                             <!-- Free Space -->
                             <div></div>
@@ -277,7 +267,7 @@ $cities = json_encode($cities);
                     <!-- 2 Buttons (Step-1, Step-3) -->
                     <div class="flex justify-between mt-6">
                         <button type="button" id="prev1" class="py-2 px-4 bg-white text-[#4460EF] font-bold rounded-md hover:bg-opacity-90 duration-75">Prev</button>
-                        <button name="register" type="submit" id="next2" class="py-2 px-4 bg-white text-[#4460EF] font-bold rounded-md hover:bg-opacity-90 duration-75">Next</button>
+                        <button name="register" type="button" id="next2" class="py-2 px-4 bg-white text-[#4460EF] font-bold rounded-md hover:bg-opacity-90 duration-75">Next</button>
                     </div>
                 </div>
             </form>
