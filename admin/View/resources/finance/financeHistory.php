@@ -1,7 +1,7 @@
 <?php
-// Start the session
-session_start();
 $baseUrl = 'http://localhost/MEP/storages/uploads/';
+
+include '../../../Controller/AdminController.php';
 
 // Get session value
 $userPays = $_SESSION['userPays'];
@@ -213,14 +213,15 @@ $jsonData = json_encode($data);
                 </li>
 
                 <li>
-                    <a href="#" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
-                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.44827 4.81641C2.90964 6.35503 1.86186 8.31442 1.43836 10.4484C1.01348 12.5824 1.23076 14.7947 2.06401 16.8036C2.89588 18.8138 4.30661 20.5326 6.11473 21.7412C7.92424 22.9499 10.0514 23.5948 12.2266 23.5948C14.4019 23.5948 16.529 22.9499 18.3385 21.7412C20.1466 20.5326 21.5574 18.8138 22.3892 16.8036C23.2225 14.7947 23.4398 12.5824 23.0149 10.4484C22.5914 8.31442 21.5436 6.35503 20.005 4.81641" stroke="#A82525" stroke-width="2" stroke-linecap="round" />
-                            <path d="M12.2266 7.09473V1.59473" stroke="#A82525" stroke-width="2" stroke-linecap="round" />
-                        </svg>
-
-                        <span class="flex-1 ms-3 whitespace-nowrap sideLabel group-hover:text-white">Logout</span>
-                    </a>
+                    <form action="../../../Controller/LogoutController.php" method="POST">
+                        <button type="submit" class="w-full flex text-left p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+                            <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.44827 4.81641C2.90964 6.35503 1.86186 8.31442 1.43836 10.4484C1.01348 12.5824 1.23076 14.7947 2.06401 16.8036C2.89588 18.8138 4.30661 20.5326 6.11473 21.7412C7.92424 22.9499 10.0514 23.5948 12.2266 23.5948C14.4019 23.5948 16.529 22.9499 18.3385 21.7412C20.1466 20.5326 21.5574 18.8138 22.3892 16.8036C23.2225 14.7947 23.4398 12.5824 23.0149 10.4484C22.5914 8.31442 21.5436 6.35503 20.005 4.81641" stroke="#A82525" stroke-width="2" stroke-linecap="round" />
+                                <path d="M12.2266 7.09473V1.59473" stroke="#A82525" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span class="flex-1 ms-3 whitespace-nowrap sideLabel group-hover:text-white">Logout</span>
+                        </button>
+                    </form>
                 </li>
             </ul>
         </div>
@@ -268,14 +269,14 @@ $jsonData = json_encode($data);
                 </li>
                 <li class="ml-3">
                     <div class="flex items-center bg-white dark:bg-gray-700 dark:text-white rounded-full pr-2">
-                        <img src="../../resources/img/profile.png" alt="profile" class="rounded-full" height="100" />
+                        <img src="<?= !empty($admin[0]['photo']) ? $baseUrl . $admin[0]['photo'] : '../../resources/img/profile.pn'; ?>" alt="profile" class="rounded-full w-10 h-10" />
                         <div class="mx-3">
-                            <p class="text-sm font-bold">John Smith</p>
-                            <p class="text-[11px] m-0">Admin</p>
+                            <p class="text-sm font-bold"><?= ucwords(strtolower($admin[0]['first_name'])) . ' ' . ucwords(strtolower($admin[0]['last_name'])); ?></p>
+                            <p class="text-[11px] m-0"><?= ucwords(strtolower($admin[0]['role_name'])) ?></p>
                         </div>
-                        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.2266 1.59473L7.22656 7.59473L1.22656 1.59473" stroke="#636363" stroke-width="2" stroke-linecap="round" />
-                        </svg>
+                        </svg> -->
                     </div>
                 </li>
             </ul>
@@ -418,7 +419,7 @@ $jsonData = json_encode($data);
                 var pageData = data.slice(start, end);
 
                 pageData.forEach(function(row) {
-                    var uniqueId = row.institute_id ? 'I' + row.institute_id : 'U' + row.user_id;
+                    var uniqueId = row.institute_id ? 'I-100' + row.institute_id : 'U-100' + row.user_id;
                     var paidWith = row.bank_name ? row.bank_name + " Banking" : row.pay_name;
 
                     var rowHtml = `

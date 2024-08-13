@@ -312,9 +312,9 @@ $slotsData = json_encode($slots);
                             <p class="text-sm font-bold"><?= ucwords(strtolower($admin[0]['first_name'])) . ' ' . ucwords(strtolower($admin[0]['last_name'])); ?></p>
                             <p class="text-[11px] m-0"><?= ucwords(strtolower($admin[0]['role_name'])) ?></p>
                         </div>
-                        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.2266 1.59473L7.22656 7.59473L1.22656 1.59473" stroke="#636363" stroke-width="2" stroke-linecap="round" />
-                        </svg>
+                        </svg> -->
                     </div>
                 </li>
             </ul>

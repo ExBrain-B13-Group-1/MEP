@@ -13,7 +13,15 @@ include '../../Controller/UserController.php';
 //   unset($_SESSION['profile_upload_success']);
 // }
 
+// Split the name into parts by space
+$name_parts = explode(' ', $user[0]['name']);
 
+// get first and last name
+$first_name = $name_parts[0];
+$last_name = $name_parts[1];
+
+// Split the social links
+$social_links = explode(',', $user[0]['social_links']);
 
 ?>
 
@@ -27,6 +35,7 @@ include '../../Controller/UserController.php';
   <link href="./css/output.css" rel="stylesheet" />
   <link href="./css/navbar.css" rel="stylesheet" />
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="./lib/jquery-3.7.1.js"></script>
   <script src="./js/navbar.js" defer></script>
@@ -62,10 +71,10 @@ include '../../Controller/UserController.php';
 </style>
 
 <body class="bg-bgColor">
-   <!-- Notification Message -->
-   <div id="notification" class="fixed top-0 left-1/2 transform -translate-x-1/2 bg-primary-main text-white py-2 px-4 rounded shadow-lg opacity-0 transition-opacity duration-500 ease-in-out z-50">
-        <p id="notificationMessage" class="text-sm text-center"></p>
-    </div>
+  <!-- Notification Message -->
+  <div id="notification" class="fixed top-0 left-1/2 transform -translate-x-1/2 bg-primary-main text-white py-2 px-4 rounded shadow-lg opacity-0 transition-opacity duration-500 ease-in-out z-50">
+    <p id="notificationMessage" class="text-sm text-center"></p>
+  </div>
 
   <!-- Navigation bar -->
   <nav class="bg-white fixed w-[95%] z-20 top-0 right-0 left-0 m-auto my-2 border-b border-gray-200 rounded-xl">
@@ -117,44 +126,44 @@ include '../../Controller/UserController.php';
         <div class="relative">
           <div id="userProfile" aria-isOpen="false" class="flex justify-center items-center cursor-pointer hover:text-primaryColor">
 
-          <div class="relative">
-          <img src="<?= !empty($user[0]['photo']) ? '../../../storages/uploads/' . $user[0]['photo'] : './img/profile.png'; ?>" alt="profile" class="rounded-full mr-2 md:w-10 w-8 md:h-10 h-8" />
-           <?php if (isset($_COOKIE['verified'])): ?>
-            <ion-icon name="checkmark-circle" class="text-green-600 absolute right-0 top-[1.45rem]"></ion-icon>
-        <?php endif; ?>
-           </div>
+            <div class="relative">
+              <img src="<?= !empty($user[0]['photo']) ? '../../../storages/uploads/' . $user[0]['photo'] : './img/profile.png'; ?>" alt="profile" class="rounded-full mr-2 md:w-10 w-8 md:h-10 h-8" />
+              <?php if (isset($_COOKIE['verified'])): ?>
+                <ion-icon name="checkmark-circle" class="text-green-600 absolute right-0 top-[1.45rem]"></ion-icon>
+              <?php endif; ?>
+            </div>
             <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
           </div>
+        </div>
+
+        <div id="profileMenu" class="hidden absolute bottom-0 right-0 bg-white w-44 rounded-lg p-3 translate-y-52 translate-x-4">
+          <h1 class="font-bold"><?= ucwords(strtolower($user[0]['name'])); ?></h1>
+          <div class="flex items-center select-none">
+            <ion-icon name="wallet-outline" class="text-lg mx-2 my-2"></ion-icon>
+            <p>Coin - <span class="text-primaryColor"><?= $user[0]['remain_amount'] ?></span></p>
           </div>
 
-          <div id="profileMenu" class="hidden absolute bottom-0 right-0 bg-white w-44 rounded-lg p-3 translate-y-52 translate-x-4">
-            <h1 class="font-bold"><?= ucwords(strtolower($user[0]['name'])); ?></h1>
-            <div class="flex items-center select-none">
-              <ion-icon name="wallet-outline" class="text-lg mx-2 my-2"></ion-icon>
-              <p>Coin - <span class="text-primaryColor"><?= $user[0]['remain_amount'] ?></span></p>
-            </div>
+          <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
+            <ion-icon name="person-circle-outline" class="text-lg mx-2 my-2"></ion-icon>
+            <p>Profile</p>
+          </a>
 
-            <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
-              <ion-icon name="person-circle-outline" class="text-lg mx-2 my-2"></ion-icon>
-              <p>Profile</p>
-            </a>
+          <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
+            <ion-icon name="settings-outline" class="text-lg mx-2 my-2"></ion-icon>
+            <p>Account Setting</p>
+          </a>
 
-            <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
-              <ion-icon name="settings-outline" class="text-lg mx-2 my-2"></ion-icon>
-              <p>Account Setting</p>
-            </a>
-
-            <a class="flex items-center hover:text-primaryColor cursor-pointer">
-              <ion-icon name="log-out-outline" class="text-lg mx-2 my-2"></ion-icon>
-              <form action="../../Controller/LogoutController.php" method="POST" class="inline">
-                <button type="submit">
-                  Logout
-                </button>
-              </form>
-            </a>
-          </div>
+          <a class="flex items-center hover:text-primaryColor cursor-pointer">
+            <ion-icon name="log-out-outline" class="text-lg mx-2 my-2"></ion-icon>
+            <form action="../../Controller/LogoutController.php" method="POST" class="inline">
+              <button type="submit">
+                Logout
+              </button>
+            </form>
+          </a>
         </div>
       </div>
+    </div>
     </div>
   </nav>
 
@@ -205,21 +214,20 @@ include '../../Controller/UserController.php';
           <form>
             <h1>Basics</h1>
             <div class="grid gap-6 mb-20">
-              <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="First Name" required />
-              <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Last Name" required />
-              <input type="text" id="headline" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Headline" required />
+              <input type="text" id="first_name" name="first_name" value="<?= ($first_name) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="First Name" required />
+              <input type="text" id="last_name" name="last_name" value="<?= ($last_name) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Last Name" required />
             </div>
 
             <h1>Portfolio Links & Socail links</h1>
             <div class="grid gap-6 mb-6">
-              <input type="url" id="portfolio" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Portfolio Website" required />
-              <input type="url" id="facebook" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Facebook" required />
-              <input type="url" id="instagram" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Instagram" required />
-              <input type="url" id="twiiter" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Twitter" required />
-              <input type="url" id="telegram" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Telegram" required />
+              <input type="url" id="portfolio" name="portfolio" value="<?= ($social_links[0]) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Portfolio Website" />
+              <input type="url" id="facebook" name="facebook" value="<?= ($social_links[1]) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Facebook" />
+              <input type="url" id="instagram" name="instagram" value="<?= ($social_links[2]) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Instagram" />
+              <input type="url" id="twitter" name="twitter" value="<?= ($social_links[3]) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Twitter" />
+              <input type="url" id="telegram" name="telegram" value="<?= ($social_links[4]) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Telegram" />
             </div>
             <div class="text-end">
-              <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center d">
+              <button type="button" id="saveBtn" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center d">
                 Save
               </button>
             </div>
@@ -282,17 +290,33 @@ include '../../Controller/UserController.php';
         <form action="#">
           <h1>Basics</h1>
           <div class="grid gap-6 mb-20">
-            <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter Email" required />
+            <input type="email" id="email" value="<?= ($user[0]['email']) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter Email" required />
           </div>
 
           <h1>Password</h1>
           <div class="grid gap-6 mb-10">
-            <input type="password" id="old_password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter current password" required />
-            <input type="password" id="new_password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter new password" required />
-            <input type="password" id="retype_password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Re-type new password" required />
+            <!-- Old Password -->
+            <div class="password-container relative">
+              <input type="password" id="old-password" name="old-password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter current password" required>
+              <?php if (isset($_SESSION['password_err_message'])) : ?>
+                <p class="text-[#ff3e3e] text-xs mt-1 absolute"><?php echo $_SESSION['password_err_message'];
+                                                                unset($_SESSION['password_err_message']); ?></p>
+              <?php endif; ?>
+            </div>
+            <!-- Password -->
+            <div class="password-container relative">
+              <input type="password" id="password" name="password"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter new password" required>
+            </div>
+            <!-- Confirm Password -->
+            <div class="password-container relative">
+              <input type="password" id="confirm-password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Re-type new password" required>
+            </div>
+            <div class="relative mt-1">
+              <p id="psMessage" class="absolute text-xs bottom-3"></p>
+            </div>
           </div>
           <div class="text-end">
-            <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center d">
+            <button type="button" id="changePs" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center d">
               Save
             </button>
           </div>
@@ -302,6 +326,7 @@ include '../../Controller/UserController.php';
   </div>
 
   <script src="./js/fileUpload.js"></script>
+
   <?php if (isset($_SESSION['notification_message'])): ?>
     <script>
       $(document).ready(function() {

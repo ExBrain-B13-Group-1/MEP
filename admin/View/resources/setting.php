@@ -1,3 +1,12 @@
+<?php
+// session_start();
+ini_set('display_errors', '1');
+include '../../Controller/AdminController.php';
+
+$baseUrl = 'http://localhost/MEP/storages/uploads/';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +24,11 @@
   <script src="../resources/js/sidebar.js" defer></script>
 </head>
 
-<body  class="bg-white dark:bg-slate-800">
+<body class="bg-white dark:bg-slate-800">
+  <!-- Notification Message -->
+  <div id="notification" class="fixed top-0 left-1/2 transform -translate-x-1/2 bg-primary-main text-white py-2 px-4 rounded shadow-lg opacity-0 transition-opacity duration-500 ease-in-out z-50">
+    <p id="notificationMessage" class="text-sm text-center"></p>
+  </div>
   <aside id="logo-sidebar" close="false" class="fixed z-40 w-52 h-screen transition-transform translate-x-full sm:translate-x-0 float-left" aria-label="Sidebar">
     <div class="h-full px-3 py-4 shadow-dshadow bg-white dark:bg-gray-700 rounded-tr-md rounded-br-md relative">
       <a href="/" class="flex items-center mb-5">
@@ -190,26 +203,27 @@
         </li>
 
         <li>
-          <a href="#" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
-            <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.44827 4.81641C2.90964 6.35503 1.86186 8.31442 1.43836 10.4484C1.01348 12.5824 1.23076 14.7947 2.06401 16.8036C2.89588 18.8138 4.30661 20.5326 6.11473 21.7412C7.92424 22.9499 10.0514 23.5948 12.2266 23.5948C14.4019 23.5948 16.529 22.9499 18.3385 21.7412C20.1466 20.5326 21.5574 18.8138 22.3892 16.8036C23.2225 14.7947 23.4398 12.5824 23.0149 10.4484C22.5914 8.31442 21.5436 6.35503 20.005 4.81641" stroke="#A82525" stroke-width="2" stroke-linecap="round" />
-              <path d="M12.2266 7.09473V1.59473" stroke="#A82525" stroke-width="2" stroke-linecap="round" />
-            </svg>
-
-            <span class="flex-1 ms-3 whitespace-nowrap sideLabel group-hover:text-white">Logout</span>
-          </a>
+          <form action="../../Controller/LogoutController.php" method="POST">
+            <button type="submit" class="w-full flex text-left p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+              <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.44827 4.81641C2.90964 6.35503 1.86186 8.31442 1.43836 10.4484C1.01348 12.5824 1.23076 14.7947 2.06401 16.8036C2.89588 18.8138 4.30661 20.5326 6.11473 21.7412C7.92424 22.9499 10.0514 23.5948 12.2266 23.5948C14.4019 23.5948 16.529 22.9499 18.3385 21.7412C20.1466 20.5326 21.5574 18.8138 22.3892 16.8036C23.2225 14.7947 23.4398 12.5824 23.0149 10.4484C22.5914 8.31442 21.5436 6.35503 20.005 4.81641" stroke="#A82525" stroke-width="2" stroke-linecap="round" />
+                <path d="M12.2266 7.09473V1.59473" stroke="#A82525" stroke-width="2" stroke-linecap="round" />
+              </svg>
+              <span class="flex-1 ms-3 whitespace-nowrap sideLabel group-hover:text-white">Logout</span>
+            </button>
+          </form>
         </li>
       </ul>
     </div>
   </aside>
 
-  <nav class="bg-white shadow-dshadow dark:bg-gray-700 border-gray-200 rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-50" id="navbar">
+  <nav class="bg-white shadow-dshadow dark:bg-gray-700 border-gray-200 rounded-md mt-1 mr-5 w-5/6 ml-56 float-right fixed top-0 z-30" id="navbar">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
-  
-        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
-          <img src="../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
-        </a>
-        
+
+      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse mr-4">
+        <img src="../resources/img/sideopen.svg" class="h-8" alt="Flowbite Logo" id="sidebarControl" />
+      </a>
+
 
       <p class="bg-gradient-to-t from-[#92A3FF] to-[#00288E] text-transparent bg-clip-text font-bold text-lg">
         Setting
@@ -248,14 +262,14 @@ dark:bg-gray-700 bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 
         </li>
         <li class="ml-3">
           <div class="flex items-center bg-white dark:bg-gray-700 dark:text-white rounded-full pr-2">
-            <img src="../resources/img/profile.png" alt="profile" class="rounded-full" height="100" />
+            <img src="<?= !empty($admin[0]['photo']) ? $baseUrl . $admin[0]['photo'] : '../resources/img/profile.pn'; ?>" alt="profile" class="rounded-full w-10 h-10" />
             <div class="mx-3">
-              <p class="text-sm font-bold">John Smith</p>
-              <p class="text-[11px] m-0">Admin</p>
+              <p class="text-sm font-bold"><?= ucwords(strtolower($admin[0]['first_name'])) . ' ' . ucwords(strtolower($admin[0]['last_name'])); ?></p>
+              <p class="text-[11px] m-0"><?= ucwords(strtolower($admin[0]['role_name'])) ?></p>
             </div>
-            <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M13.2266 1.59473L7.22656 7.59473L1.22656 1.59473" stroke="#636363" stroke-width="2" stroke-linecap="round" />
-            </svg>
+            </svg> -->
           </div>
         </li>
       </ul>
@@ -294,23 +308,19 @@ dark:bg-gray-700 bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 
           <div class="grid gap-6 mb-6 grid-cols-3 p-3">
             <div>
               <label for="first_name" class="block mb-2 text-sm font-medium">First name</label>
-              <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="John" required />
+              <input type="text" id="first_name" name="first_name" value="<?= ucwords(strtolower($admin[0]['first_name'])) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="John" required />
             </div>
             <div>
               <label for="last_name" class="block mb-2 text-sm font-medium ">Last name</label>
-              <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="Doe" required />
+              <input type="text" id="last_name" name="last_name" value="<?= ucwords(strtolower($admin[0]['last_name'])) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="Doe" required />
             </div>
             <div>
-              <label for="company" class="block mb-2 text-sm font-medium ">Email Address</label>
-              <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="example@gmail.com" required />
+              <label for="email" class="block mb-2 text-sm font-medium ">Email Address</label>
+              <input type="text" id="email" name="email" value="<?= ($admin[0]['email']) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="example@gmail.com" required />
             </div>
             <div>
               <label for="phone" class="block mb-2 text-sm font-medium ">Gender</label>
-              <input type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="Male" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
-            </div>
-            <div>
-              <label for="website" class="block mb-2 text-sm font-medium ">Date of Birth</label>
-              <input type="date" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="2024/ 06/ 24" required />
+              <input type="text" id="phone" value="<?= ($admin[0]['gender']) ?>" disabled class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="Male" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
             </div>
           </div>
 
@@ -318,15 +328,15 @@ dark:bg-gray-700 bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 
           <div class="grid gap-6 mb-6 grid-cols-3 p-3">
             <div>
               <label for="first_name" class="block mb-2 text-sm font-medium ">Phone Number</label>
-              <input type="tel" id="phone_number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="(+95) 9123456789" required />
+              <input type="tel" id="phone_number" value="<?= ($admin[0]['contact']) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="(+95) 9123456789" required />
             </div>
             <div>
               <label for="country" class="block mb-2 text-sm font-medium ">Country</label>
-              <input type="text" id="country" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="Myanmar" required />
+              <input type="text" id="country" value="Myanmar" disabled class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="Myanmar" required />
             </div>
             <div>
-              <label for="company" class="block mb-2 text-sm font-medium ">Address</label>
-              <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="No Main road" required />
+              <label for="" class="block mb-2 text-sm font-medium ">Address</label>
+              <input type="text" id="" value="<?= ($admin[0]['address']) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="No Main road" required />
             </div>
           </div>
 
@@ -353,10 +363,10 @@ dark:bg-gray-700 bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 
                 </select>
               </div>
               <div>
-                <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="Email" required />
+                <input type="email" id="role-email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="Email" required />
               </div>
               <div>
-                <input type="password" id="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="Password" required />
+                <input type="password" id="role-password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="Password" required />
               </div>
               <div class="flex justify-center items-end">
                 <button class="w-full h-fit text-white py-2 rounded-md bg-primarycolor">
@@ -397,50 +407,59 @@ dark:bg-gray-700 bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 
           </div>
         </div>
 
-        <h1 class="my-3 font-semibold">Change Password</h1>
+        <h1 class="mb-3 mt-5 font-semibold">Change Password</h1>
         <div class="w-full">
+          <div class="relative mt-8">
+            <p id="psMessage" class="absolute text-xs bottom-3"></p>
+          </div>
           <form action="">
-            <div class="grid gap-6 grid-cols-4 p-3">
-              <div>
-                <label for="oldPass" class="block mb-2 text-sm font-medium ">Old Password</label>
-                <input type="text" id="oldPass" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="********" required />
+            <div class="grid gap-6 grid-cols-4 pb-3">
+              <!-- Old Password -->
+              <div class="password-container relative">
+                <label for="old-password" class="block mb-2 text-sm font-medium ">Old Password</label>
+                <input type="password" id="old-password" name="old-password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="********" required>
               </div>
-              <div>
-                <label for="newPass" class="block mb-2 text-sm font-medium ">New Password</label>
-                <input type="text" id="newPass" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="Email" required />
+              <!-- Password -->
+              <div class="password-container relative">
+                <label for="password" class="block mb-2 text-sm font-medium ">New Password</label>
+                <input type="password" id="password" name="password" placeholder="Password" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" required>
               </div>
-              <div>
+              <!-- Confirm Password -->
+              <div class="password-container relative">
                 <label for="confirmPass" class="block mb-2 text-sm font-medium ">Confirm Password</label>
-
-                <input type="text" id="confirmPass" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="Password" required />
+                <input type="password" id="confirm-password" placeholder="Confirm Password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" required>
               </div>
               <div class="flex justify-center items-end">
-                <button class="w-full h-fit text-white py-2 rounded-md bg-primarycolor">
+                <button type="button" id="changePs" class="w-full h-fit text-white py-2 rounded-md bg-primarycolor">
                   Save
                 </button>
               </div>
             </div>
+            <?php if (isset($_SESSION['password_err_message'])) : ?>
+              <p class="text-[#ff3e3e] text-xs mt-1 absolute"><?php echo $_SESSION['password_err_message'];
+                                                              unset($_SESSION['password_err_message']); ?></p>
+            <?php endif; ?>
           </form>
         </div>
 
-        <h1 class="my-3 font-semibold">Security</h1>
+        <h1 class="my-5 font-semibold">Security</h1>
         <div class="w-[95%] h-fit m-auto bg-[#A0AFFF]/20 flex justify-between items-center p-2 rounded">
           <div class="flex justify-start items-center">
-             <svg width="29" height="32" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16.4217 7.96911V6.70595C16.4217 3.91564 14.1594 1.65332 11.369 1.65332C8.57872 1.65332 6.31641 3.91564 6.31641 6.70595V7.96911" stroke="#1237F2" stroke-width="2" stroke-linecap="round" />
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.11035 7.81637C3.57628e-05 8.92542 0 10.7128 0 14.285V15.5482C0 20.3115 -3.7645e-06 22.6939 1.48042 24.173C2.95958 25.6534 5.3419 25.6534 10.1053 25.6534H12.6316C17.3949 25.6534 19.7773 25.6534 21.2564 24.173C22.7368 22.6939 22.7368 20.3115 22.7368 15.5482V14.285C22.7368 10.7128 22.7368 8.92542 21.6265 7.81637C20.5174 6.70605 18.7301 6.70605 15.1579 6.70605H7.57895C4.00674 6.70605 2.2194 6.70605 1.11035 7.81637ZM11.3684 16.8113C12.0657 16.8113 12.6316 16.2454 12.6316 15.5482C12.6316 14.8509 12.0657 14.285 11.3684 14.285C10.6712 14.285 10.1053 14.8509 10.1053 15.5482C10.1053 16.2454 10.6712 16.8113 11.3684 16.8113ZM15.1579 15.5482C15.1579 17.1978 14.1032 18.6012 12.6316 19.1216V21.864H10.1053V19.1216C8.63369 18.6012 7.57895 17.1978 7.57895 15.5482C7.57895 13.4551 9.27537 11.7587 11.3684 11.7587C13.4615 11.7587 15.1579 13.4551 15.1579 15.5482Z" fill="#1237F2" />
-          </svg>
-          
-          <div class="ml-4">
-            <h1 class="font-semibold">Two Factory Authentication</h1>
-            <p class="text-sm text-gray-400">
-              Two-factor authentication adds an additional layer of security
-              to your account by requiring more than just a password to sign
-              in.
-            </p>
+            <svg width="29" height="32" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.4217 7.96911V6.70595C16.4217 3.91564 14.1594 1.65332 11.369 1.65332C8.57872 1.65332 6.31641 3.91564 6.31641 6.70595V7.96911" stroke="#1237F2" stroke-width="2" stroke-linecap="round" />
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M1.11035 7.81637C3.57628e-05 8.92542 0 10.7128 0 14.285V15.5482C0 20.3115 -3.7645e-06 22.6939 1.48042 24.173C2.95958 25.6534 5.3419 25.6534 10.1053 25.6534H12.6316C17.3949 25.6534 19.7773 25.6534 21.2564 24.173C22.7368 22.6939 22.7368 20.3115 22.7368 15.5482V14.285C22.7368 10.7128 22.7368 8.92542 21.6265 7.81637C20.5174 6.70605 18.7301 6.70605 15.1579 6.70605H7.57895C4.00674 6.70605 2.2194 6.70605 1.11035 7.81637ZM11.3684 16.8113C12.0657 16.8113 12.6316 16.2454 12.6316 15.5482C12.6316 14.8509 12.0657 14.285 11.3684 14.285C10.6712 14.285 10.1053 14.8509 10.1053 15.5482C10.1053 16.2454 10.6712 16.8113 11.3684 16.8113ZM15.1579 15.5482C15.1579 17.1978 14.1032 18.6012 12.6316 19.1216V21.864H10.1053V19.1216C8.63369 18.6012 7.57895 17.1978 7.57895 15.5482C7.57895 13.4551 9.27537 11.7587 11.3684 11.7587C13.4615 11.7587 15.1579 13.4551 15.1579 15.5482Z" fill="#1237F2" />
+            </svg>
+
+            <div class="ml-4">
+              <h1 class="font-semibold">Two Factory Authentication</h1>
+              <p class="text-sm text-gray-400">
+                Two-factor authentication adds an additional layer of security
+                to your account by requiring more than just a password to sign
+                in.
+              </p>
+            </div>
           </div>
-          </div>
-         
+
 
           <label class="inline-flex items-center cursor-pointer">
             <input type="checkbox" value="" class="sr-only peer" id="checkboxAccSetting" onclick="openAccountSecurity('2fa')" />
@@ -591,8 +610,8 @@ This Privacy Policy describes how [Myanmar Education Portall] ("we," "us," or "o
         <h1 class="font-bold text-2xl my-2">Footer</h1>
         <div class="mx-2">
           <form action="">
-            <label for="email" class="mr-3">Mail:</label>
-            <input type="email" name="email" id="email" value="paingsettkyaw@gmail.com" class="w-60 border border-gray-300 px-3 py-1 rounded-md dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" />
+            <label for="edu-email" class="mr-3">Mail:</label>
+            <input type="email" name="email" id="edu-email" value="paingsettkyaw@gmail.com" class="w-60 border border-gray-300 px-3 py-1 rounded-md dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" />
             <h1 class="my-3">Myanmar Education Portal (MEP)</h1>
             <div class="w-full text-end my-3">
               <button type="submit" class="px-10 py-2 bg-primarycolor text-white rounded-md">
@@ -643,7 +662,7 @@ This Privacy Policy describes how [Myanmar Education Portall] ("we," "us," or "o
             </div>
             <form>
               <div class="flex my-3">
-                <input type="color" name="color id=" color" value="blue" class="w-28 h-10 border border-gray-400 rounded-md">
+                <input type="color" name="color id=" color-value="blue" class="w-28 h-10 border border-gray-400 rounded-md">
                 <button type="submit" class="bg-primarycolor px-12 py-1 text-white mx-3 rounded-md">
                   Add
                 </button>
@@ -667,19 +686,19 @@ This Privacy Policy describes how [Myanmar Education Portall] ("we," "us," or "o
             <div class="grid gap-3 md:grid-cols-2">
               <div>
                 <label for="facebook" class="block mb-1 text-sm font-medium ">Facebook Link</label>
-                <input type="url" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="https:://www.facebook.com/myaneduportal" required />
+                <input type="url" id="facebook" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="https:://www.facebook.com/myaneduportal" required />
               </div>
               <div>
                 <label for="telegram" class="block mb-1 text-sm font-medium ">Telegram Link</label>
-                <input type="url" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="https:://t.me/myaneduportal" required />
+                <input type="url" id="telegram" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="https:://t.me/myaneduportal" required />
               </div>
               <div>
                 <label for="instagram" class="block mb-1 text-sm font-medium">Instagram Link</label>
-                <input type="url" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="https:://www.instagram.com/myaneduportal" required />
+                <input type="url" id="instagram" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="https:://www.instagram.com/myaneduportal" required />
               </div>
               <div>
                 <label for="twitter" class="block mb-1 text-sm font-medium ">X Link</label>
-                <input type="url" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="https:://www.x.com/myaneduportal" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
+                <input type="url" id="twitter" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white" placeholder="https:://www.x.com/myaneduportal" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
               </div>
             </div>
             <div class="w-full text-end mt-1">
@@ -704,7 +723,7 @@ This Privacy Policy describes how [Myanmar Education Portall] ("we," "us," or "o
           <form action="">
             <div class="grid gap-6 grid-cols-4 p-3">
               <div>
-                <select id="countries" class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white">
+                <select id="scope" class="bg-gray-50 border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:focus:border-white dark:focus:ring-white">
                   <option selected>Select Scope</option>
                   <option value="US">User</option>
                   <option value="CA">Institute</option>
@@ -753,10 +772,32 @@ This Privacy Policy describes how [Myanmar Education Portall] ("we," "us," or "o
           </div>
         </div>
 
-      
+
       </div>
     </div>
   </div>
+  <script src="./js/setting.js"></script>
+  <?php if (isset($_SESSION['notification_message'])): ?>
+    <script>
+      $(document).ready(function() {
+        // Call the function to show notification
+        showNotification('<?php echo $_SESSION['notification_message']; ?>');
+        // Clear the session variables after showing notification
+        <?php unset($_SESSION['notification_message']); ?>
+      });
+
+      // Show Notification for 2 seconds
+      function showNotification(message) {
+        const notification = $('#notification');
+        const notificationMessage = $('#notificationMessage');
+        notificationMessage.text(message);
+        notification.removeClass('opacity-0').addClass('opacity-100');
+        setTimeout(function() {
+          notification.removeClass('opacity-100').addClass('opacity-0');
+        }, 2000);
+      }
+    </script>
+  <?php endif; ?>
 </body>
 
 </html>

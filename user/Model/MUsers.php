@@ -196,4 +196,29 @@ class MUser{
             return false;
         }
     }
+
+      /**
+     * (Update profile information)
+     */
+    public function updateInfors($id, $name, $social_links)
+    {
+        try {
+            $db = new DBConnection();
+            // get connection
+            $pdo = $db->connection();
+            // query prepare
+            $sql = $pdo->prepare(
+                "UPDATE m_user SET name = :name, social_links = :social_links WHERE id = :id"
+            );
+            $sql->bindValue(":name", $name);
+            $sql->bindValue(":social_links", $social_links);
+            $sql->bindValue(":id", $id);
+            $sql->execute();
+            return true;
+        } catch (\Throwable $th) {
+            // fail connection or query 
+            echo "Unexpected Error Occurs! $th";
+            return false;
+        }
+    }
 }

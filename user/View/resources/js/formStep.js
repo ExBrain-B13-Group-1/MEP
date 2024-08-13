@@ -75,9 +75,8 @@ $(document).ready(function () {
   });
 
   $("#submit-button").on("click", function (e) {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault(); 
 
-    // Define a function to validate the form
     function validateForm() {
         let isValid = true;
         
@@ -85,18 +84,18 @@ $(document).ready(function () {
         $("input[required]").each(function() {
             if ($.trim($(this).val()) === '') {
                 isValid = false;
-                $(this).addClass('border-red-500'); // Optional: Add error styling
+                $(this).addClass('border-red-500'); 
             } else {
-                $(this).removeClass('border-red-500'); // Optional: Remove error styling
+                $(this).removeClass('border-red-500');
             }
         });
         
         // Check if at least one gender radio button is selected
         if (!$('input[name="gender"]:checked').val()) {
             isValid = false;
-            $("#gender").addClass('border-red-500'); // Optional: Add error styling
+            $("#gender").addClass('border-red-500'); 
         } else {
-            $("#gender").removeClass('border-red-500'); // Optional: Remove error styling
+            $("#gender").removeClass('border-red-500');
         }
 
         // Check if files are selected
@@ -160,6 +159,7 @@ $(document).ready(function () {
         alert("Please fill out all required fields and upload both NRC images.");
     }
 });
+
 
   /* ............
      ............

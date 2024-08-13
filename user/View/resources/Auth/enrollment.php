@@ -89,37 +89,37 @@ $firstItem = json_encode($firstItem);
                             <!-- User Full Name -->
                             <div class="mb-4">
                                 <label for="user-name" class="text-dark-gray text-sm">Full Name *</label>
-                                <input type="text" id="user-name" value="John Smith (Acc Name)" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
+                                <input type="text" id="user-name" value="John Smith (Acc Name)" disabled class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
                             </div>
                             <!-- User Email -->
                             <div class="mb-4">
                                 <label for="user-email" class="text-dark-gray text-sm">Email Address *</label>
-                                <input type="email" id="user-email" value="johnsmith@gmail.com" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
+                                <input type="email" id="user-email" value="johnsmith@gmail.com" disabled class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
                             </div>
                             <!-- Institute Name -->
                             <div class="mb-4">
                                 <label for="institute-name" class="text-dark-gray text-sm">Institute Name</label>
-                                <input type="text" id="institute-name" value="Tech Innovative Academy" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
+                                <input type="text" id="institute-name" value="Tech Innovative Academy" disabled class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
                             </div>
                             <!-- Class Name -->
                             <div class="mb-4">
                                 <label for="class-name" class="text-dark-gray text-sm">Class</label>
-                                <input type="text" id="class-name" value="Javascript For Beginner" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
+                                <input type="text" id="class-name" value="Javascript For Beginner" disabled class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
                             </div>
                             <!-- Instructor Name -->
                             <div class="mb-4">
                                 <label for="instructor-name" class="text-dark-gray text-sm">Instructor</label>
-                                <input type="text" id="instructor-name" value="Matthew Davis" class="w-full px-4 py-2 border rounded-md text-red-800 bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
+                                <input type="text" id="instructor-name" value="Matthew Davis" disabled class="w-full px-4 py-2 border rounded-md text-red-800 bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
                             </div>
                             <!-- Start Date & End Date -->
                             <div class="flex space-x-5">
                                 <div>
                                     <label for="start-date" class="text-dark-gray text-sm">Start Date</label>
-                                    <input type="text" id="start-date" value="21 / 7 / 2024" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
+                                    <input type="text" id="start-date" value="21 / 7 / 2024" disabled class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
                                 </div>
                                 <div>
                                     <label for="end-date" class="text-dark-gray text-sm">End Date</label>
-                                    <input type="text" id="end-date" value="25 / 12 / 2024" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
+                                    <input type="text" id="end-date" value="25 / 12 / 2024" disabled class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
                                 </div>
                             </div>
                         </div>
@@ -178,13 +178,7 @@ $firstItem = json_encode($firstItem);
                                     <img id="qr-code" src="" alt="QR Code" class="w-24 h-24">
                                 </div>
                             </div>
-                            <!-- Attachment -->
-                            <div id="attachment-receipt" class="mt-[11.5rem]">
-                                <label for="attachment" class="text-dark-gray text-sm">Attachment *</label>
-                                <input type="file" id="attachment" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
-                            </div>
                         </div>
-
                     </div>
                     <!-- Agree Terms & Conditions -->
                     <div class="mb-4">
