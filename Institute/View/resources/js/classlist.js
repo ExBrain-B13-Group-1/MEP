@@ -30,9 +30,9 @@ class ClassList extends PaginatedTable{
     }
 }
 
-let url = `http://localhost/MEP/Institute/Controller/ViewClassListController.php`;
+let viewClassLIstURL = `http://localhost/MEP/Institute/Controller/ViewClassListController.php`;
 
-new ClassList(url,10);
+new ClassList(viewClassLIstURL,10);
 
 function addThousandSeparator(value) {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -78,6 +78,3 @@ $(document).ready(function () {
         reader.readAsDataURL(this.files[0]);
     });
 });
-
-
-

@@ -312,7 +312,7 @@ $results = json_decode(urldecode($encodedResults), true);
                         <!-- right -->
                         <div class="pl-5">
                             <div class="mt-1 flex justify-end">
-                                <a href="./editinstructor.php">
+                                <a href="http://localhost/MEP/Institute/Controller/EditInstructorController.php?instructorid=<?=$results[0]['id']?>">
                                     <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit Instructor</button>
                                 </a>
                             </div>

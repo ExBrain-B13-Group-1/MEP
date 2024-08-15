@@ -2,9 +2,45 @@
 ini_set('display_errors', '1');
 
 include '../../../Controller/InstituteController.php';
+include '../../../Controller/common/StateRegions.php';
+include '../../../Controller/common/Citys.php';
 
 // url for logo
 $baseUrl = 'http://localhost/MEP/storages/uploads/';
+
+// url for instructor photo
+$baseUrlInstructor = 'http://localhost/MEP/Institute/storages/uploads/';
+
+$encodedResults = $_GET['data'];
+$results = json_decode(urldecode($encodedResults), true);
+
+$curStateRegion = $results[0]['state_region_name'];
+$curCity = $results[0]['city_name'];
+$curCityID = $results[0]['id'];
+
+function selectStateRegion($curstateregion)
+{
+    global $curStateRegion;
+    if ($curstateregion === $curStateRegion) {
+        return "selected";
+    } else {
+        return "";
+    }
+}
+
+function selectCity($curcity)
+{
+    global $curCity;
+    if ($curcity === $curCity) {
+        return "selected";
+    } else {
+        return "";
+    }
+}
+
+
+$cities = json_encode($cities);
+$skills = json_encode($results[0]['skills']);
 
 ?>
 
@@ -35,7 +71,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                                     <svg class="w-5 h-5 me-2.5 pb-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
                                     </svg>
-                                    Instructor
+                                    Instructor List
                                 </a>
                             </li>
                             <li>
@@ -78,7 +114,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                             <div>
                                 <button type="button" class="flex text-base bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
                                     <span class="sr-only">Open user menu</span>
-                                    <img class="w-14 h-14 rounded-full select-none" src="<?=$baseUrl.($institute['photo'])?>" alt="institute photo">
+                                    <img class="w-14 h-14 rounded-full select-none" src="<?= $baseUrl . ($institute['photo']) ?>" alt="institute photo">
                                 </button>
                             </div>
                             <div class="ml-3 pt-2 dark:text-white">
@@ -276,7 +312,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
     <div class="block pt-20 pb-8 px-5 ml-64 bg-gray-300 dark:bg-gray-800">
         <div class="grid grid-cols-10 gap-7 mt-10 ">
             <div class="bg-white col-span-8 col-start-2 rounded-lg px-4 py-2 dark:bg-gray-700 duration-500">
-                <form action="" method="" class="px-10">
+                <form action="http://localhost/MEP/Institute/Controller/ModifyInstructorControler.php" method="POST" enctype="multipart/form-data" class="px-10">
                     <div class="grid grid-cols-2 gap-10">
                         <!-- left -->
                         <div>
@@ -284,48 +320,40 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                             <div class="pl-5">
                                 <div class="mt-4">
                                     <label for="fullname" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Full Name</label>
-                                    <input type="text" id="fullname" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Full Name" required />
+                                    <input type="text" id="fullname" name="fullname" value="<?= $results[0]['full_name'] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Full Name" required />
+                                    <input type="hidden" name="instructorid" value="<?=$results[0]['id']?>">
                                 </div>
                                 <div class="mt-4">
                                     <label for="professional" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Position (Professional)</label>
-                                    <input type="text" id="professional" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Professional" required />
+                                    <input type="text" id="professional" name="professional" value="<?= $results[0]['position'] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Professional" required />
                                 </div>
                                 <div class="mt-4">
                                     <label for="email" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Email</label>
-                                    <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Email" required />
+                                    <input type="email" id="email" name="email" value="<?= $results[0]['email'] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Email" required />
                                 </div>
                                 <div class="mt-4 relative">
-                                    <label for="fullname" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Full Name</label>
-                                    <select name="phone" id="phone" class="absolute left-3 top-9 h-9 rounded-xl dark:bg-gray-600 dark:text-white">
-                                        <option value="myan" class="h-9">+95</option>
-                                        <option value="1" class="h-9">+111</option>
-                                        <option value="2" class="h-9">+44</option>
-                                        <option value="3" class="h-9">+34</option>
-                                        <option value="4" class="h-9">+91</option>
-                                        <option value="5" class="h-9">+15</option>
-                                    </select>
-                                    <input type="text" id="fullname" class="bg-gray-50 border pl-28 border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="976XXXXXXXX" required />
+                                    <label for="phone" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Phone</label>
+                                    <input type="text" id="phone" name="phone" value="<?= $results[0]['phone'] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="09XXXXXXXXX" required />
                                 </div>
                                 <div class="mt-4">
-                                    <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="datepicker-autohide4">Date of Birth</label>
+                                    <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="datepicker-autohide4">Date of Birth (mm/dd/YY) </label>
                                     <div class="relative">
                                         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                             <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                                 <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                                             </svg>
                                         </div>
-                                        <input id="datepicker-autohide4" datepicker datepicker-autohide type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
+                                        <input id="datepicker-autohide4" datepicker datepicker-autohide type="text" name="dob" value="<?php echo date('m/d/Y', strtotime($results[0]['date_of_birth'])); ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
                                     </div>
                                 </div>
                                 <div class="mt-4">
                                     <p class="dark:text-white dark:opacity-80 mb-3">Gender</p>
                                     <div class="flex gap-10">
                                         <div>
-                                            <input id="male" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                            <label for="male" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Male</label>
-                                        </div>
-                                        <div>
-                                            <input checked id="female" type="radio" value="" name="default-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                            <input id="male" type="radio" value="male" name="gender" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" <?= strtolower($results[0]['gender']) === "male" ? 'checked' : '' ?> />
+                                            <label for="male" class="ms-2 mr-5 text-base font-medium text-gray-900 dark:text-gray-300">Male</label>
+
+                                            <input id="female" type="radio" value="female" name="gender" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" <?= strtolower($results[0]['gender']) === "female" ? 'checked' : '' ?> />
                                             <label for="female" class="ms-2 text-base font-medium text-gray-900 dark:text-gray-300">Female</label>
                                         </div>
                                     </div>
@@ -334,49 +362,27 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                             <h1 class="text-xl mb-5 mt-10 dark:text-white font-bold">Content Information</h1>
                             <div class="mt-4 pl-5">
                                 <label for="address" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Address</label>
-                                <input type="text" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="No. ,Street, Township, Yangon" required />
+                                <input type="text" id="address" name="address" value="<?= $results[0]['address'] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="No. ,Street, Township, Yangon" required />
                             </div>
                             <div class="mt-4 pl-5">
-                                <label for="region" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">State/Region</label>
-                                <select id="region" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    <option selected disabled>Select State/Region</option>
-                                    <option value="ayeyarwady">Ayeyarwady</option>
-                                    <option value="bago">Bago</option>
-                                    <option value="chin">Chin</option>
-                                    <option value="kachin">Kachin</option>
-                                    <option value="kayah">Kayah</option>
-                                    <option value="kayin">Kayin</option>
-                                    <option value="magway">Magway</option>
-                                    <option value="mandalay">Mandalay</option>
-                                    <option value="mon">Mon</option>
-                                    <option value="rakhine">Rakhine</option>
-                                    <option value="sagaing">Sagaing</option>
-                                    <option value="shan">Shan</option>
-                                    <option value="tanintharyi">Tanintharyi</option>
-                                    <option value="yangon">Yangon</option>
+                                <label for="state-region" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">State/Region</label>
+                                <select id="state-region" name="stateregion" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <option disabled>Select State/Region</option>
+                                    <?php foreach ($stateRegions as $stateRegion) : ?>
+                                        <option <?= selectStateRegion($stateRegion['name']) ?> value="<?= $stateRegion['id'] ?>">
+                                            <?= ($stateRegion['name']) ?>
+                                        </option>
+                                    <?php endforeach ?>
                                 </select>
                             </div>
                             <div class="mt-4 pl-5 mb-7">
-                                <label for="region" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">City</label>
-                                <select id="region" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    <option selected disabled>Select City in Yangon</option>
-                                    <option value="dagon">Dagon</option>
-                                    <option value="hlaing">Hlaing</option>
-                                    <option value="kamayut">Kamayut</option>
-                                    <option value="kyauktada">Kyauktada</option>
-                                    <option value="lanmadaw">Lanmadaw</option>
-                                    <option value="latha">Latha</option>
-                                    <option value="mayangone">Mayangone</option>
-                                    <option value="mingaladon">Mingaladon</option>
-                                    <option value="mingalartaungnyunt">Mingalartaungnyunt</option>
-                                    <option value="north_dagon">North Dagon</option>
-                                    <option value="south_dagon">South Dagon</option>
-                                    <option value="pabedan">Pabedan</option>
-                                    <option value="sanchaung">Sanchaung</option>
-                                    <option value="tamwe">Tamwe</option>
-                                    <option value="thaketa">Thaketa</option>
-                                    <option value="thingangyun">Thingangyun</option>
-                                    <option value="yangon_downtown">Yangon Downtown</option>
+                                <label for="city" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">City</label>
+                                <select id="city" name="city" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <option disabled>Select City</option>
+                                    <option value="<?= $curCityID ?>">
+                                        <?= $curCity ?>
+                                    </option>
+                                    <!--update city data will be append -->
                                 </select>
                             </div>
                         </div>
@@ -385,35 +391,48 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                         <div class="pr-5">
                             <h1 class="text-xl mb-5 mt-5 dark:text-white font-bold">Professional Information</h1>
                             <div class="pl-5">
-                                <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="user_avatar">Class Profile Photo</label>
-                                <input class="block w-full text-base text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="user_avatar" type="file" required>
+                                <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="edit-profile">Instructor Profile Photo</label>
+                                <!-- Display the current image -->
+                                <img id="preview_image" src="<?=$baseUrlInstructor.$results[0]['profile_picture']?>" alt="Instructor Profile Photo" class="mb-2 w-40 object-cover rounded-lg">
+                                <!-- Input to upload a new image -->
+                                <!-- <input  aria-describedby="user_avatar_help" id="edit-profile" type="file" name="image" accept=".jpg, .jpeg" onchange="document.getElementById('preview_image').src = window.URL.createObjectURL(this.files[0]);document.getElementById('preview_image').classList.remove('hidden')" required /> -->
+                                <input type="file" name="image" id="preview_image" class="block w-full text-base text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" onchange="document.getElementById('preview_image').src = window.URL.createObjectURL(this.files[0]);document.getElementById('preview_image').classList.remove('hidden')" required />
                             </div>
                             <div class="mt-4 pl-5">
                                 <label for="bio" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Bio</label>
-                                <textarea id="bio" rows="4" class="resize-none block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write biography...." required></textarea>
+                                <textarea id="bio" rows="4" name="bio" class="resize-none block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write biography...." required>
+                                    <?=trim($results[0]['bio'])?>
+                                </textarea>
                             </div>
                             <div class="mt-4 pl-5">
                                 <label for="education" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Education</label>
-                                <textarea id="education" rows="4" class="resize-none block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write education background...." required></textarea>
+                                <textarea id="education" rows="4" name="education" class="resize-none block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write education background...." required>
+                                    <?=trim($results[0]['education'])?>
+                                </textarea>
                             </div>
                             <div class="mt-4 pl-5">
-                                <label for="experience" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Experience</label>
-                                <textarea id="experience" rows="4" class="resize-none block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write experience...." required></textarea>
+                                <label for="experience"  class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Experience</label>
+                                <textarea id="experience" rows="4" name="experience" class="resize-none block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write experience...." required>
+                                    <?=trim($results[0]['experience'])?>
+                                </textarea>
                             </div>
 
                             <div class="mt-4 pl-5">
-                                <label for="skills" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Skills</label>
-                                <input type="skills" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required />
+                            <label for="skills" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Skills</label>
+                                <div class="tags-input-container flex flex-wrap border border-gray-300 dark:border-gray-600 p-2 rounded" id="tags-input-container">
+                                    <input type="text" id="tags-input" class="tags-input outline-none flex-grow bg-white dark:bg-gray-700 text-black dark:text-white border-0 focus:outline-none focus:ring-0" placeholder="Add a skill">
+                                    <input type="hidden" name="skills" id="skills" />
+                                </div>
                             </div>
 
                             <div class="mt-4 pl-5">
                                 <label for="linkedin" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">LinkedIn</label>
-                                <input type="linkedin" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="https://linkedin/profile/johndoe123" required />
+                                <input type="linkedin" id="address" name="linkedin" value="<?=$results[0]['linkedin']?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="https://linkedin/profile/johndoe123" required />
                             </div>
 
                             <div class="mt-4 pl-5">
                                 <label for="Portfolio" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Portfolio</label>
-                                <input type="text" id="Portfolio" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="https://example.com" required />
+                                <input type="text" id="Portfolio" name="portfolio" value="<?=$results[0]['portfolio']?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="https://example.com" required />
                             </div>
 
                             <div class="mt-10 pl-5 pb-5">
@@ -421,8 +440,8 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                                     <a href="./viewinstructor.php">
                                         <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base w-40 px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
                                     </a>
-                                    <a href="./viewinstructor.php">
-                                        <button type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-base w-40 px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Save Change</button>
+                                    <a href="javascript:void(0);">
+                                        <input type="submit" name="submit" value="Save Change" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-base w-40 px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" />
                                     </a>
                                 </div>
                             </div>
@@ -450,7 +469,14 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
     <!-- darkmode lightmode js -->
     <script src="./../js/darkandlight.js" type="text/javascript"></script>
     <!-- customjs -->
-    <script src="./../js/instructor.js" type="text/javascript"></script>
+    <script src="./../js/modifyinstructor.js" type="text/javascript"></script>
+    <script>
+        let cities = <?php echo $cities; ?>;
+        let curcity = '<?php echo $curCity; ?>';
+        let curskills = <?php echo $skills ?>;
+        // console.log(curskills);
+    </script>
+
 </body>
 
 </html>

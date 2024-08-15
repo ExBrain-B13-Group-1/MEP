@@ -3,10 +3,6 @@ $(document).ready(function () {
     let isSet = false;
 
     let agendaItems = [
-        { time: '9:30 AM - 10:00 AM', title: 'Meet the Team (Sample Format) ' },
-        { time: '9:30 AM - 10:00 AM', title: 'Meet the Team (Sample Format) ' },
-        { time: '9:30 AM - 10:00 AM', title: 'Meet the Team (Sample Format) ' },
-        { time: '9:30 AM - 10:00 AM', title: 'Meet the Team (Sample Format) ' },
         { time: '9:30 AM - 10:00 AM', title: 'Meet the Team (Sample Format) ' }
     ];
 

@@ -44,23 +44,23 @@ $(document).ready(function(){
     togglePasswordVisibility('toggle-password-confirm', 'confirm-password');
 
 
-    $('#edit').on("click",()=>{
-        // console.log('hay');
-        $('.generals').removeClass("block").addClass("hidden");
-        $('.generaledits').removeClass("hidden").addClass("block");
-    });
+    // $('#edit').on("click",()=>{
+    //     // console.log('hay');
+    //     $('.generals').removeClass("block").addClass("hidden");
+    //     $('.generaledits').removeClass("hidden").addClass("block");
+    // });
 
-    $('.cancels').on("click",()=>{
-        // console.log("hay");
-        $('.generals').removeClass("hidden").addClass("block");
-        $('.generaledits').removeClass("block").addClass("hidden");
-    });
+    // $('.cancels').on("click",()=>{
+    //     // console.log("hay");
+    //     $('.generals').removeClass("hidden").addClass("block");
+    //     $('.generaledits').removeClass("block").addClass("hidden");
+    // });
 
-    $('.saves').on("click",(e)=>{
-        // console.log("hay");
-        e.preventDefault();
-        $('.generals').removeClass("hidden").addClass("block");
-        $('.generaledits').removeClass("block").addClass("hidden");
-    });
+    // $('.saves').on("click",(e)=>{
+    //     // console.log("hay");
+    //     e.preventDefault();
+    //     $('.generals').removeClass("hidden").addClass("block");
+    //     $('.generaledits').removeClass("block").addClass("hidden");
+    // });
 
 });

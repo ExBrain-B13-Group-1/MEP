@@ -12,25 +12,25 @@ class InstructorLists extends PaginatedTable {
             const row = `
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
             <td class="w-4 p-4">
-                ${item.id}
+                ${item['instructor_sr_no']}
             </td>
             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                ${item.full_name}
+                ${item['full_name']}
             </th>
             <td class="px-6 py-4">
-                ${item.gender}
+                ${item['gender']}
             </td>
             <td class="px-6 py-4">
-                ${item.email}
+                ${item['email']}
             </td>
             <td class="px-6 py-4">
-                ${item.phone}
+                ${item['phone']}
             </td>
             <td class="px-6 py-4">
                 <a href="javascript:void(0);" class="text-blue-700 underline card-details" onclick="showCard(${item.id})">Details</a>
             </td>
             <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                <a href="javascript:void(0);" class="text-blue-700 underline">Edit</a>
+                <a href="http://localhost/MEP/Institute/Controller/ViewDetailsInstructorController.php?instructorid=${item.id}" class="text-blue-700 underline">Edit</a>
             </td>
         </tr>`;
             container.append(row);

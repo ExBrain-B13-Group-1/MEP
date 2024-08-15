@@ -9,7 +9,7 @@ class MInstructors
     /**
      * this method is used for get all instructors records from database
      */
-    public function getAllInstructors()
+    public function getAllInstructors($id)
     {
         try {
             $dbconn = new DBConnection();
@@ -17,8 +17,10 @@ class MInstructors
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
                 "SELECT * FROM m_instructors 
-                JOIN m_classes ON m_classes.id = m_instructors.id"
+                JOIN m_classes ON m_classes.id = m_instructors.id
+                WHERE m_instructors.institute_id = :id"
             );
+            $sql->bindValue(":id",$id);
             $sql->execute();
             $results = $sql->fetchAll(PDO::FETCH_ASSOC);
             return $results;
@@ -31,8 +33,7 @@ class MInstructors
     /**
      * this method is used for get all instructor's name from database to use in 'select option'
      */
-    public function getAllInstructorNames()
-    {
+    public function getAllInstructorNames(){
         try {
             $dbconn = new DBConnection();
             // get connection
@@ -49,8 +50,7 @@ class MInstructors
         }
     }
 
-    public function getRelatedClasses($instructorId)
-    {
+    public function getRelatedClasses($instructorId){
         try {
             $dbconn = new DBConnection();
             // get connection
@@ -66,8 +66,7 @@ class MInstructors
         }
     }
 
-    public function getLatestInstructorID($instituteID)
-    {
+    public function getLatestInstructorID($instituteID){
         try {
             $dbconn = new DBConnection();
             // get connection
@@ -231,7 +230,80 @@ class MInstructors
         }
     }
 
-    public function modify($user_infos, $id) {}
+    public function modifyInstructor(array $instructordatas, $id) {
+        try {
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            
+            // Extract instructor data from the array
+            $photo = $instructordatas['photo'];
+            $fullname = $instructordatas['fullname'];
+            $professional = $instructordatas['professional'];
+            $email = $instructordatas['email'];
+            $phone = $instructordatas['phone'];
+            $dob = $instructordatas['dob'];
+            $gender = $instructordatas['gender'];
+            $address = $instructordatas['address'];
+            $stateregion = $instructordatas['stateregion'];
+            $city = $instructordatas['city'];
+            $bio = $instructordatas['bio'];
+            $education = $instructordatas['education'];
+            $experience = $instructordatas['experience'];
+            $skills = $instructordatas['skills'];
+            $linkedin = $instructordatas['linkedin'];
+            $portfolio = $instructordatas['portfolio'];
+    
+            // Update query
+            $sql = $pdo->prepare(
+                "UPDATE m_instructors SET
+                    full_name = :fullname,
+                    position = :position,
+                    email = :email,
+                    phone = :phone,
+                    date_of_birth = :dob,
+                    gender = :gender,
+                    address = :address,
+                    state_region_id = :stateregionid,
+                    city_id = :cityid,
+                    profile_picture = :profilepicture,
+                    bio = :bio,
+                    education = :education,
+                    experience = :experience,
+                    linkedin = :linkedin,
+                    portfolio = :portfolio,
+                    skills = :skills
+                WHERE id = :id"
+            );
+            
+            // Bind parameters
+            $sql->bindValue(':fullname', $fullname);
+            $sql->bindValue(':position', $professional);
+            $sql->bindValue(':email', $email);
+            $sql->bindValue(':phone', $phone);
+            $sql->bindValue(':dob', $dob);
+            $sql->bindValue(':gender', $gender);
+            $sql->bindValue(':address', $address);
+            $sql->bindValue(':stateregionid', $stateregion);
+            $sql->bindValue(':cityid', $city);
+            $sql->bindValue(':profilepicture', $photo);
+            $sql->bindValue(':bio', $bio);
+            $sql->bindValue(':education', $education);
+            $sql->bindValue(':experience', $experience);
+            $sql->bindValue(':linkedin', $linkedin);
+            $sql->bindValue(':portfolio', $portfolio);
+            $sql->bindValue(':skills', $skills);
+            $sql->bindValue(':id', $id);
+    
+            // Execute the query
+            $sql->execute();
+            return true;
+        } catch (\Throwable $th) {
+            // Handle the error
+            echo "Unexpected Error Occurs! $th";
+            return false;
+        }
+    }
 
     public function remove($id) {}
 }

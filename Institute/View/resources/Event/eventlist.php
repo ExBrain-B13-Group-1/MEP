@@ -583,7 +583,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
     <!-- darkmode lightmode js -->
     <script src="./../js/darkandlight.js" type="text/javascript"></script>
     <!-- customjs -->
-    <script src="./../js/student.js" type="text/javascript"></script>
+    <script src="./../js/eventlist.js" type="text/javascript"></script>
 </body>
 
 </html>

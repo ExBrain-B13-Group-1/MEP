@@ -186,127 +186,127 @@ $(document).ready(function () {
 
 });
 
-function showCard(id) {
-    $('#card-container').text("");
-    $('#list-table').removeClass('col-span-8').addClass('col-span-6');
+// function showCard(id) {
+//     $('#card-container').text("");
+//     $('#list-table').removeClass('col-span-8').addClass('col-span-6');
     
-    // AJAX call to get student details
-    $.ajax({
-        url: `http://localhost/MEP/Institute/Controller/ViewStudentListController.php`,
-        method: 'GET',
-        dataType: 'json',
-        success: function(datas) {
-            datas.forEach(item => {
-                if (item.id === id) {
-                    console.log(item);
-                    let cardhtml = `
-                        <div class="flex items-center gap-5">
-                        <div class="absolute top-0 right-0 pt-3 pr-5">
-                            <button type="button" onclick="closeCard()" class="px-2 py-2 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-500 dark:hover:text-white">
-                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                                </svg>
-                                <span class="sr-only">Close modal</span>
-                            </button>
-                        </div>
-                        <div class="relative">
-                            <img src="${baseUrl + item.profile_photo}" class="w-16 h-16 rounded-full" alt="${item.profile_photo}">
-                            <div class="absolute top-0 right-0 w-5 h-5 rounded-full bg-blue-700 flex justify-center items-center">
-                                <ion-icon name="checkmark-outline" class="text-white"></ion-icon>
-                            </div>
-                        </div>
-                        <div class="dark:text-white">
-                            <h3 class="font-black">${item.name}</h3>
-                            <span class="dark:opacity-60">ID - ${item.student_id}</span>
-                        </div>
-                        </div>
-                        <div>
-                            <div>
-                                <h3 class="text-red-600 dark:text-white mt-8 mb-3 font-black">Contact Information</h3>
-                                <ion-icon name="mail-outline" class="w-5 h-5 relative top-1 mr-2 dark:text-white opacity-60"></ion-icon> 
-                                <span class="text-blue-700 dark:text-blue-400">${item.email}</span>
-                            </div>
-                            <div>
-                                <ion-icon name="call-outline" class="w-5 h-5 relative top-1 mr-2 dark:text-white opacity-60"></ion-icon> 
-                                <span class="dark:text-white opacity-80">${item.phone}</span>
-                            </div>
-                            <div>
-                                <ion-icon name="logo-linkedin" class="w-5 h-5 relative top-1 mr-2 dark:text-white opacity-60"></ion-icon> 
-                                <span class="text-blue-700 dark:text-blue-400">${item.linkedin}</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <h3 class="text-red-600 dark:text-white mt-8 mb-3 font-black">Address</h3>
-                                <p class="dark:text-white mr-2 opacity-80">${item.address}</p>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <h3 class="text-red-600 dark:text-white mt-8 mb-3 font-black">Enrolled Classes</h3>
-                                <ul id="enrolled-classes" class="text-blue-700 dark:text-blue-400 list-inside list-disc"></ul>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <h3 class="text-red-600 dark:text-white mt-8 mb-3 font-black">Certified Classes</h3>
-                                <ul id="certified-classes" class="text-blue-700 dark:text-blue-400 list-inside list-disc"></ul>
-                            </div>
-                        </div>`;
+//     // AJAX call to get student details
+//     $.ajax({
+//         url: `http://localhost/MEP/Institute/Controller/ViewStudentListController.php`,
+//         method: 'GET',
+//         dataType: 'json',
+//         success: function(datas) {
+//             datas.forEach(item => {
+//                 if (item.id === id) {
+//                     console.log(item);
+//                     let cardhtml = `
+//                         <div class="flex items-center gap-5">
+//                         <div class="absolute top-0 right-0 pt-3 pr-5">
+//                             <button type="button" onclick="closeCard()" class="px-2 py-2 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-500 dark:hover:text-white">
+//                                 <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+//                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+//                                 </svg>
+//                                 <span class="sr-only">Close modal</span>
+//                             </button>
+//                         </div>
+//                         <div class="relative">
+//                             <img src="${baseUrl + item.profile_photo}" class="w-16 h-16 rounded-full" alt="${item.profile_photo}">
+//                             <div class="absolute top-0 right-0 w-5 h-5 rounded-full bg-blue-700 flex justify-center items-center">
+//                                 <ion-icon name="checkmark-outline" class="text-white"></ion-icon>
+//                             </div>
+//                         </div>
+//                         <div class="dark:text-white">
+//                             <h3 class="font-black">${item.name}</h3>
+//                             <span class="dark:opacity-60">ID - ${item.student_id}</span>
+//                         </div>
+//                         </div>
+//                         <div>
+//                             <div>
+//                                 <h3 class="text-red-600 dark:text-white mt-8 mb-3 font-black">Contact Information</h3>
+//                                 <ion-icon name="mail-outline" class="w-5 h-5 relative top-1 mr-2 dark:text-white opacity-60"></ion-icon> 
+//                                 <span class="text-blue-700 dark:text-blue-400">${item.email}</span>
+//                             </div>
+//                             <div>
+//                                 <ion-icon name="call-outline" class="w-5 h-5 relative top-1 mr-2 dark:text-white opacity-60"></ion-icon> 
+//                                 <span class="dark:text-white opacity-80">${item.phone}</span>
+//                             </div>
+//                             <div>
+//                                 <ion-icon name="logo-linkedin" class="w-5 h-5 relative top-1 mr-2 dark:text-white opacity-60"></ion-icon> 
+//                                 <span class="text-blue-700 dark:text-blue-400">${item.linkedin}</span>
+//                             </div>
+//                         </div>
+//                         <div>
+//                             <div>
+//                                 <h3 class="text-red-600 dark:text-white mt-8 mb-3 font-black">Address</h3>
+//                                 <p class="dark:text-white mr-2 opacity-80">${item.address}</p>
+//                             </div>
+//                         </div>
+//                         <div>
+//                             <div>
+//                                 <h3 class="text-red-600 dark:text-white mt-8 mb-3 font-black">Enrolled Classes</h3>
+//                                 <ul id="enrolled-classes" class="text-blue-700 dark:text-blue-400 list-inside list-disc"></ul>
+//                             </div>
+//                         </div>
+//                         <div>
+//                             <div>
+//                                 <h3 class="text-red-600 dark:text-white mt-8 mb-3 font-black">Certified Classes</h3>
+//                                 <ul id="certified-classes" class="text-blue-700 dark:text-blue-400 list-inside list-disc"></ul>
+//                             </div>
+//                         </div>`;
                     
-                    $('#card-container').append(cardhtml);
-                    $('#card-container').removeClass('hidden');
+//                     $('#card-container').append(cardhtml);
+//                     $('#card-container').removeClass('hidden');
 
-                    // AJAX call to fetch enrolled classes
-                    $.ajax({
-                        url: `http://localhost/MEP/Institute/Controller/GetEnrolledClassesController.php`,
-                        method: 'GET',
-                        data: { id: id },
-                        dataType: 'json',
-                        success: function(classes) {
-                            let enrolledClassesHtml = classes.map(cls => `
-                                <li>
-                                    <a href="http://localhost/MEP/Institute/Controller/ViewDetailsClassController.php?classid=${cls.id}">${cls.c_title}</a>
-                                </li>
-                            `).join('');
-                            $('#enrolled-classes').html(enrolledClassesHtml);
-                        },
-                        error: function(error) {
-                            console.error('Error fetching enrolled classes:', error);
-                        }
-                    });
+//                     // AJAX call to fetch enrolled classes
+//                     $.ajax({
+//                         url: `http://localhost/MEP/Institute/Controller/GetEnrolledClassesController.php`,
+//                         method: 'GET',
+//                         data: { id: id },
+//                         dataType: 'json',
+//                         success: function(classes) {
+//                             let enrolledClassesHtml = classes.map(cls => `
+//                                 <li>
+//                                     <a href="http://localhost/MEP/Institute/Controller/ViewDetailsClassController.php?classid=${cls.id}">${cls.c_title}</a>
+//                                 </li>
+//                             `).join('');
+//                             $('#enrolled-classes').html(enrolledClassesHtml);
+//                         },
+//                         error: function(error) {
+//                             console.error('Error fetching enrolled classes:', error);
+//                         }
+//                     });
 
-                    // AJAX call to fetch certified classes
-                    $.ajax({
-                        url: `http://localhost/MEP/Institute/Controller/GetCertifiedClass.php`,
-                        method: 'GET',
-                        data: { id: id },
-                        dataType: 'json',
-                        success: function(classes) {
-                            let certifiedClassesHtml = classes.map(cls => `
-                                <li>
-                                    <a href="http://localhost/MEP/Institute/Controller/ViewDetailsClassController.php?classid=${cls.id}">${cls.c_title}</a>
-                                </li>
-                            `).join('');
-                            $('#certified-classes').html(certifiedClassesHtml);
-                        },
-                        error: function(error) {
-                            console.error('Error fetching certified classes:', error);
-                        }
-                    });
-                }
-            });
-        },
-        error: function(error) {
-            console.error('Error fetching student details:', error);
-        }
-    });
-}
+//                     // AJAX call to fetch certified classes
+//                     $.ajax({
+//                         url: `http://localhost/MEP/Institute/Controller/GetCertifiedClass.php`,
+//                         method: 'GET',
+//                         data: { id: id },
+//                         dataType: 'json',
+//                         success: function(classes) {
+//                             let certifiedClassesHtml = classes.map(cls => `
+//                                 <li>
+//                                     <a href="http://localhost/MEP/Institute/Controller/ViewDetailsClassController.php?classid=${cls.id}">${cls.c_title}</a>
+//                                 </li>
+//                             `).join('');
+//                             $('#certified-classes').html(certifiedClassesHtml);
+//                         },
+//                         error: function(error) {
+//                             console.error('Error fetching certified classes:', error);
+//                         }
+//                     });
+//                 }
+//             });
+//         },
+//         error: function(error) {
+//             console.error('Error fetching student details:', error);
+//         }
+//     });
+// }
 
-function closeCard() {
-    $('#card-container').addClass('hidden');
-    $('#list-table').removeClass('col-span-6').addClass('col-span-8');
-}
+// function closeCard() {
+//     $('#card-container').addClass('hidden');
+//     $('#list-table').removeClass('col-span-6').addClass('col-span-8');
+// }
 
 
 

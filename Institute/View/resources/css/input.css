@@ -45,6 +45,11 @@
   border-radius: 8px;
 }
 
+.active{
+  background-color: #374151;
+  color: #ffffff;
+}
+
 
 
 
