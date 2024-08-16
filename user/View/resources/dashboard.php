@@ -1,6 +1,11 @@
 <?php
 ini_set('display_errors', '1');
+
 include '../../Controller/UserController.php';
+include '../../Controller/EnrolledClassController.php';
+// echo "<pre>";
+// print_r($data);
+$baseUrl = 'http://localhost/MEP/Institute/storages/uploads/';
 // later
 // Initialize session variables if not set
 // if (!isset($_SESSION['notiCount'])) {
@@ -8,8 +13,29 @@ include '../../Controller/UserController.php';
 // }
 // $notiCount = $_SESSION['notiCount'];
 
-?>
+$today = new DateTime();
+$progressArray = [];
+if (!empty($data)) {
+  foreach ($data as $index => $class) {
+    $startDate = new DateTime($class['start_date']);
+    $endDate = new DateTime($class['end_date']);
 
+    $totalDuration = $startDate->diff($endDate)->days;
+    $progressDuration = $startDate->diff($today)->days;
+
+    // Calculate progress percentage
+    $progressPercentage = 0;
+    if ($totalDuration > 0) {
+      $progressPercentage = ($progressDuration / $totalDuration) * 100;
+      // Ensure progress doesn't exceed 100%
+      if ($progressPercentage > 100) {
+        $progressPercentage = 100;
+      }
+    }
+    $progressArray[$index] = round($progressPercentage, 2);
+  }
+}
+?>
 
 
 <!DOCTYPE html>
@@ -79,44 +105,44 @@ include '../../Controller/UserController.php';
 
         <div class="relative">
           <div id="userProfile" aria-isOpen="false" class="flex justify-center items-center cursor-pointer hover:text-primaryColor">
-          <div class="relative">
-          <img src="<?= !empty($user[0]['photo']) ? '../../../storages/uploads/' . $user[0]['photo'] : './img/profile.png'; ?>" alt="profile" class="rounded-full mr-2 md:w-10 w-8 md:h-10 h-8" />
-           <?php if (isset($_COOKIE['verified'])): ?>
-            <ion-icon name="checkmark-circle" class="text-green-600 absolute right-0 top-[1.45rem]"></ion-icon>
-        <?php endif; ?>
-           </div>
+            <div class="relative">
+              <img src="<?= !empty($user[0]['photo']) ? '../../../storages/uploads/' . $user[0]['photo'] : './img/profile.png'; ?>" alt="profile" class="rounded-full mr-2 md:w-10 w-8 md:h-10 h-8" />
+              <?php if (isset($_COOKIE['verified'])): ?>
+                <ion-icon name="checkmark-circle" class="text-green-600 absolute right-0 top-[1.45rem]"></ion-icon>
+              <?php endif; ?>
+            </div>
             <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
           </div>
+        </div>
+
+        <div id="profileMenu" class="hidden absolute bottom-0 right-0 bg-white w-44 rounded-lg p-3 translate-y-52 translate-x-4">
+          <h1 class="font-bold"><?= ucwords(strtolower($user[0]['name'])); ?></h1>
+          <div class="flex items-center select-none">
+            <ion-icon name="wallet-outline" class="text-lg mx-2 my-2"></ion-icon>
+            <p>Coin - <span class="text-primaryColor"><?= $user[0]['remain_amount'] ?></span></p>
           </div>
 
-          <div id="profileMenu" class="hidden absolute bottom-0 right-0 bg-white w-44 rounded-lg p-3 translate-y-52 translate-x-4">
-          <h1 class="font-bold"><?=  ucwords(strtolower($user[0]['name'])); ?></h1>
-            <div class="flex items-center select-none">
-              <ion-icon name="wallet-outline" class="text-lg mx-2 my-2"></ion-icon>
-              <p>Coin - <span class="text-primaryColor"><?= $user[0]['remain_amount'] ?></span></p>
-            </div>
+          <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
+            <ion-icon name="person-circle-outline" class="text-lg mx-2 my-2"></ion-icon>
+            <p>Profile</p>
+          </a>
 
-            <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
-              <ion-icon name="person-circle-outline" class="text-lg mx-2 my-2"></ion-icon>
-              <p>Profile</p>
-            </a>
+          <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
+            <ion-icon name="settings-outline" class="text-lg mx-2 my-2"></ion-icon>
+            <p>Account Setting</p>
+          </a>
 
-            <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
-              <ion-icon name="settings-outline" class="text-lg mx-2 my-2"></ion-icon>
-              <p>Account Setting</p>
-            </a>
-
-            <a class="flex items-center hover:text-primaryColor cursor-pointer">
-              <ion-icon name="log-out-outline" class="text-lg mx-2 my-2"></ion-icon>
-              <form action="../../Controller/LogoutController.php" method="POST" class="inline">
-                <button type="submit">
-                  Logout
-                </button>
-              </form>
-            </a>
-          </div>
+          <a class="flex items-center hover:text-primaryColor cursor-pointer">
+            <ion-icon name="log-out-outline" class="text-lg mx-2 my-2"></ion-icon>
+            <form action="../../Controller/LogoutController.php" method="POST" class="inline">
+              <button type="submit">
+                Logout
+              </button>
+            </form>
+          </a>
         </div>
       </div>
+    </div>
     </div>
   </nav>
 
@@ -195,6 +221,7 @@ include '../../Controller/UserController.php';
                     <h1 class="text-xs font-bold">
                       Understanding Cloud Computing in 2024
                     </h1>
+
                     <p class="text-xs">Date: July 20,2024</p>
                   </div>
                   <div class="flex justify-between items-center my-2">
@@ -338,7 +365,6 @@ include '../../Controller/UserController.php';
       <div class="bg-primaryColor text-white rounded-lg">
         <div class="relative p-3">
           <h1 class="mb-2 font-medium text-md flex justify-start items-center"><ion-icon name="book-outline" class="mr-2 text-xl"></ion-icon> My Class</h1>
-
           <div id="controls-carousel" class="w-full " data-carousel="static">
             <!-- Carousel wrapper -->
             <div class="relative h-60 overflow-hidden">
@@ -346,70 +372,75 @@ include '../../Controller/UserController.php';
               <div class="hidden duration-700 ease-in-out " data-carousel-item="active">
                 <div class="w-full h-full flex justify-start items-center">
                   <div class="bg-bgColor/55 w-full h-full mx-2 rounded-lg p-3">
-                    <h1 class="font-semibold mb-3">UI UX Class</h1>
+                    <h1 class="font-semibold mb-3">
+                      <?= !empty($data[0]) ? ($data[0]['class_name']) : 'UI/UX Class' ?>
+                    </h1>
                     <p class="text-sm text-gray-200">Instiute</p>
-                    <h1 class="font-medium mb-3">ABC Telecom</h1>
+                    <h1 class="font-medium mb-3"><?= !empty($data[0]) ? ($data[0]['institute_name']) : 'ABC Telecom' ?></h1>
                     <p class="text-gray-300 text-sm">Instructors</p>
                     <div class="flex justify-start items-center my-2">
-                      <img src="./img/profile.png" alt="profile" width="40">
-                      <p class="ml-2">Saw Phyo Naing</p>
+                      <img src="<?= !empty($data[0]) ?  $baseUrl . ($data[0]['instructor_profile']) : './img/profile.png' ?> " alt="profile" class="w-10 h-10 rounded-full">
+                      <p class="ml-2"><?= !empty($data[0]) ? ($data[0]['instructor_name']) : 'Saw Phyo Naing' ?></p>
                     </div>
                     <hr class="mb-3">
-
-
                     <div class="w-full bg-gray-200 rounded-full h-2">
-                      <div class="bg-primaryColor h-2 rounded-full" style="width: 45%"></div>
+                      <div class="bg-primaryColor h-2 rounded-full"
+                        style="width: <?= isset($progressArray[0]) && $progressArray[0] > 0 ? $progressArray[0] . '%' : '45%' ?>">
+                      </div>
                     </div>
 
                     <div class="flex justify-between items-center mt-2 text-sm">
                       <p>Class progress</p>
-                      <p>42 %</p>
+                      <p><?= isset($progressArray[0]) && $progressArray[0] > 0 ? $progressArray[0] . ' %' : '45 %' ?></p>
+                    </div>
+                  </div>
+
+                  <div class="bg-bgColor/55 hidden md:block w-full h-full mx-2 rounded-lg p-3">
+                    <h1 class="font-semibold mb-3">
+                      <?= !empty($data[1]) ? ($data[1]['class_name']) : 'UI/UX Class' ?>
+                    </h1>
+                    <p class="text-sm text-gray-200">Instiute</p>
+                    <h1 class="font-medium mb-3"><?= !empty($data[1]) ? ($data[1]['institute_name']) : 'ABC Telecom' ?></h1>
+                    <p class="text-gray-300 text-sm">Instructors</p>
+                    <div class="flex justify-start items-center my-2">
+                      <img src="<?= !empty($data[1]) ?  $baseUrl . ($data[1]['instructor_profile']) : './img/profile.png' ?> " alt="profile" class="w-10 h-10 rounded-full">
+                      <p class="ml-2"><?= !empty($data[1]) ? ($data[1]['instructor_name']) : 'Saw Phyo Naing' ?></p>
+                    </div>
+                    <hr class="mb-3">
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                      <div class="bg-primaryColor h-2 rounded-full"
+                        style="width: <?= isset($progressArray[1]) && $progressArray[1] > 0 ? $progressArray[1] . '%' : '45%' ?>">
+                      </div>
+                    </div>
+
+                    <div class="flex justify-between items-center mt-2 text-sm">
+                      <p>Class progress</p>
+                      <p><?= isset($progressArray[1]) && $progressArray[1] > 0 ? $progressArray[1] . ' %' : '45 %' ?></p>
                     </div>
 
                   </div>
 
                   <div class="bg-bgColor/55 hidden md:block w-full h-full mx-2 rounded-lg p-3">
-                    <h1 class="font-semibold mb-3">UI UX Class</h1>
+                    <h1 class="font-semibold mb-3">
+                      <?= !empty($data[2]) ? ($data[2]['class_name']) : 'UI/UX Class' ?>
+                    </h1>
                     <p class="text-sm text-gray-200">Instiute</p>
-                    <h1 class="font-medium mb-3">ABC Telecom</h1>
+                    <h1 class="font-medium mb-3"><?= !empty($data[2]) ? ($data[2]['institute_name']) : 'ABC Telecom' ?></h1>
                     <p class="text-gray-300 text-sm">Instructors</p>
                     <div class="flex justify-start items-center my-2">
-                      <img src="./img/profile.png" alt="profile" width="40">
-                      <p class="ml-2">Saw Phyo Naing</p>
+                      <img src="<?= !empty($data[2]) ?  $baseUrl . ($data[2]['instructor_profile']) : './img/profile.png' ?> " alt="profile" class="w-10 h-10 rounded-full">
+                      <p class="ml-2"><?= !empty($data[2]) ? ($data[2]['instructor_name']) : 'Saw Phyo Naing' ?></p>
                     </div>
                     <hr class="mb-3">
-
-
                     <div class="w-full bg-gray-200 rounded-full h-2">
-                      <div class="bg-primaryColor h-2 rounded-full" style="width: 45%"></div>
+                      <div class="bg-primaryColor h-2 rounded-full"
+                        style="width: <?= isset($progressArray[2]) && $progressArray[2] > 0 ? $progressArray[2] . '%' : '45%' ?>">
+                      </div>
                     </div>
 
                     <div class="flex justify-between items-center mt-2 text-sm">
                       <p>Class progress</p>
-                      <p>42 %</p>
-                    </div>
-
-                  </div>
-
-                  <div class="bg-bgColor/55 hidden md:block w-full h-full mx-2 rounded-lg p-3">
-                    <h1 class="font-semibold mb-3">UI UX Class</h1>
-                    <p class="text-sm text-gray-200">Instiute</p>
-                    <h1 class="font-medium mb-3">ABC Telecom</h1>
-                    <p class="text-gray-300 text-sm">Instructors</p>
-                    <div class="flex justify-start items-center my-2">
-                      <img src="./img/profile.png" alt="profile" width="40">
-                      <p class="ml-2">Saw Phyo Naing</p>
-                    </div>
-                    <hr class="mb-3">
-
-
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                      <div class="bg-primaryColor h-2 rounded-full" style="width: 45%"></div>
-                    </div>
-
-                    <div class="flex justify-between items-center mt-2 text-sm">
-                      <p>Class progress</p>
-                      <p>42 %</p>
+                      <p><?= isset($progressArray[2]) && $progressArray[2] > 0 ? $progressArray[2] . ' %' : '45 %' ?></p>
                     </div>
 
                   </div>
@@ -420,47 +451,26 @@ include '../../Controller/UserController.php';
               <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <div class="w-full h-full flex justify-start items-center">
                   <div class="bg-bgColor/55 w-full h-full mx-2 rounded-lg p-3">
-                    <h1 class="font-semibold mb-3">UI UX Class</h1>
+                    <h1 class="font-semibold mb-3">
+                      <?= !empty($data[3]) ? ($data[3]['class_name']) : 'UI/UX Class' ?>
+                    </h1>
                     <p class="text-sm text-gray-200">Instiute</p>
-                    <h1 class="font-medium mb-3">ABC Telecom</h1>
+                    <h1 class="font-medium mb-3"><?= !empty($data[3]) ? ($data[3]['institute_name']) : 'ABC Telecom' ?></h1>
                     <p class="text-gray-300 text-sm">Instructors</p>
                     <div class="flex justify-start items-center my-2">
-                      <img src="./img/profile.png" alt="profile" width="40">
-                      <p class="ml-2">Saw Phyo Naing</p>
+                      <img src="<?= !empty($data[3]) ?  $baseUrl . ($data[3]['instructor_profile']) : './img/profile.png' ?> " alt="profile" class="w-10 h-10 rounded-full">
+                      <p class="ml-2"><?= !empty($data[3]) ? ($data[3]['instructor_name']) : 'Saw Phyo Naing' ?></p>
                     </div>
                     <hr class="mb-3">
-
-
                     <div class="w-full bg-gray-200 rounded-full h-2">
-                      <div class="bg-primaryColor h-2 rounded-full" style="width: 45%"></div>
+                      <div class="bg-primaryColor h-2 rounded-full"
+                        style="width: <?= isset($progressArray[3]) && $progressArray[3] > 0 ? $progressArray[3] . '%' : '45%' ?>">
+                      </div>
                     </div>
 
                     <div class="flex justify-between items-center mt-2 text-sm">
                       <p>Class progress</p>
-                      <p>42 %</p>
-                    </div>
-
-                  </div>
-
-                  <div class="bg-bgColor/55 hidden md:block w-full h-full mx-2 rounded-lg p-3">
-                    <h1 class="font-semibold mb-3">UI UX Class</h1>
-                    <p class="text-sm text-gray-200">Instiute</p>
-                    <h1 class="font-medium mb-3">ABC Telecom</h1>
-                    <p class="text-gray-300 text-sm">Instructors</p>
-                    <div class="flex justify-start items-center my-2">
-                      <img src="./img/profile.png" alt="profile" width="40">
-                      <p class="ml-2">Saw Phyo Naing</p>
-                    </div>
-                    <hr class="mb-3">
-
-
-                    <div class="w-full bg-gray-200 rounded-full h-2">
-                      <div class="bg-primaryColor h-2 rounded-full" style="width: 45%"></div>
-                    </div>
-
-                    <div class="flex justify-between items-center mt-2 text-sm">
-                      <p>Class progress</p>
-                      <p>42 %</p>
+                      <p><?= isset($progressArray[3]) && $progressArray[3] > 0 ? $progressArray[3] . ' %' : '45 %' ?></p>
                     </div>
 
                   </div>
@@ -588,7 +598,7 @@ include '../../Controller/UserController.php';
                     <div class="absolute bottom-2 flex justify-start items-center">
                       <img src="./img/profile.png" alt="profile" width="40">
                       <div class="ml-3">
-                        <h1 class="font-semibold">Hset Paing Phyo</h1>
+                        <h1 class="font-semibold">Saw Phyo Naing</h1>
                         <p class="text-ms text-gray-500">Instructor</p>
                       </div>
                     </div>
@@ -601,7 +611,7 @@ include '../../Controller/UserController.php';
                     <div class="absolute bottom-2 flex justify-start items-center">
                       <img src="./img/profile.png" alt="profile" width="40">
                       <div class="ml-3">
-                        <h1 class="font-semibold">Hset Paing Phyo</h1>
+                        <h1 class="font-semibold">Saw Phyo Naing</h1>
                         <p class="text-ms text-gray-300">Instructor</p>
                       </div>
                     </div>
@@ -620,7 +630,7 @@ include '../../Controller/UserController.php';
                     <div class="absolute bottom-2 flex justify-start items-center">
                       <img src="./img/profile.png" alt="profile" width="40">
                       <div class="ml-3">
-                        <h1 class="font-semibold">Hset Paing Phyo</h1>
+                        <h1 class="font-semibold">Saw Phyo Naing</h1>
                         <p class="text-ms text-gray-500">Instructor</p>
                       </div>
                     </div>
@@ -633,7 +643,7 @@ include '../../Controller/UserController.php';
                     <div class="absolute bottom-2 flex justify-start items-center">
                       <img src="./img/profile.png" alt="profile" width="40">
                       <div class="ml-3">
-                        <h1 class="font-semibold">Hset Paing Phyo</h1>
+                        <h1 class="font-semibold">Saw Phyo Naing</h1>
                         <p class="text-ms text-gray-500">Instructor</p>
                       </div>
                     </div>
@@ -654,7 +664,7 @@ include '../../Controller/UserController.php';
                     <div class="absolute bottom-2 flex justify-start items-center">
                       <img src="./img/profile.png" alt="profile" width="40">
                       <div class="ml-3">
-                        <h1 class="font-semibold">Hset Paing Phyo</h1>
+                        <h1 class="font-semibold">Saw Phyo Naing</h1>
                         <p class="text-ms text-gray-500">Instructor</p>
                       </div>
                     </div>
@@ -667,7 +677,7 @@ include '../../Controller/UserController.php';
                     <div class="absolute bottom-2 flex justify-start items-center">
                       <img src="./img/profile.png" alt="profile" width="40">
                       <div class="ml-3">
-                        <h1 class="font-semibold">Hset Paing Phyo</h1>
+                        <h1 class="font-semibold">Saw Phyo Naing</h1>
                         <p class="text-ms text-gray-300">Instructor</p>
                       </div>
                     </div>
@@ -686,7 +696,7 @@ include '../../Controller/UserController.php';
                     <div class="absolute bottom-2 flex justify-start items-center">
                       <img src="./img/profile.png" alt="profile" width="40">
                       <div class="ml-3">
-                        <h1 class="font-semibold">Hset Paing Phyo</h1>
+                        <h1 class="font-semibold">Saw Phyo Naing</h1>
                         <p class="text-ms text-gray-500">Instructor</p>
                       </div>
                     </div>
@@ -699,14 +709,11 @@ include '../../Controller/UserController.php';
                     <div class="absolute bottom-2 flex justify-start items-center">
                       <img src="./img/profile.png" alt="profile" width="40">
                       <div class="ml-3">
-                        <h1 class="font-semibold">Hset Paing Phyo</h1>
+                        <h1 class="font-semibold">Saw Phyo Naing</h1>
                         <p class="text-ms text-gray-500">Instructor</p>
                       </div>
                     </div>
                   </div>
-
-
-
 
                 </div>
               </div>

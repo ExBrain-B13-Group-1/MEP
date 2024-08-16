@@ -38,10 +38,7 @@ if (isset($_COOKIE['user_id'])) {
     $userId = $_COOKIE['user_id'];
     // Fetch the user's details based on the ID from the cookie
     $user = $mUsers->getUserById($userId);
-} else {
-    echo "No user ID cookie found.";
-}
-
+} 
 
 if (isset($_POST['updateProfile'])) {
     // Handle file upload

@@ -2,6 +2,7 @@
 ini_set('display_errors', '1');
 include '../../../Controller/UserController.php';
 
+$isVerified = isset($_COOKIE['verified']);
 if (isset($_SESSION['error_message'])) {
     echo "<script>alert('" . $_SESSION['error_message'] . "');</script>";
     unset($_SESSION['error_message']);
@@ -77,7 +78,8 @@ if (isset($_SESSION['error_message'])) {
         </div>
     </div>
 
-   <script src="../js/auth.js"></script>
+    <script src="../js/auth.js"></script>
+
 </body>
 
 </html>

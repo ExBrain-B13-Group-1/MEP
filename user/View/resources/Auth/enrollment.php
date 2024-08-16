@@ -24,7 +24,7 @@ foreach ($pays as $payment) {
     $key = 'pay:' . $payment['id'];
     $paymentData[$key] = [
         'name' => $payment['pay_name'],
-        'image' => $payment['pay_image'],  
+        'image' => $payment['pay_image'],
         'qr_code' => $payment['qr_code']
     ];
 }
@@ -153,7 +153,7 @@ $firstItem = json_encode($firstItem);
                                         <optgroup label="Banking">
                                             <?php foreach ($bankings as $banking) : ?>
                                                 <option value="bank:<?= $banking['id'] ?>">
-                                                <?= ($banking['bank_name'] . " Banking - ") ?><?= ($banking['account_name'] . " ") ?><?= '(' . ($banking['account_number']) . ')' ?>
+                                                    <?= ($banking['bank_name'] . " Banking - ") ?><?= ($banking['account_name'] . " ") ?><?= '(' . ($banking['account_number']) . ')' ?>
                                                 </option>
                                             <?php endforeach ?>
                                         </optgroup>
@@ -162,7 +162,7 @@ $firstItem = json_encode($firstItem);
                                         <optgroup label="Payments">
                                             <?php foreach ($pays as $pay) : ?>
                                                 <option value="pay:<?= $pay['id'] ?>">
-                                                <?= ($pay['pay_name'] . " - ") ?><?= ($pay['user_name'] . " ") ?><?= '(' .  '0' .($pay['ph_num']) . ')' ?>
+                                                    <?= ($pay['pay_name'] . " - ") ?><?= ($pay['user_name'] . " ") ?><?= '(' .  '0' . ($pay['ph_num']) . ')' ?>
                                                 </option>
                                             <?php endforeach ?>
                                         </optgroup>
@@ -174,9 +174,14 @@ $firstItem = json_encode($firstItem);
                                     </div>
                                 </div>
                                 <div id="payment-details" class="payment-overlay flex items-center mt-4">
-                                    <img id="payment-logo" src=""  alt="Payment Logo" class="h-16 mr-4">
+                                    <img id="payment-logo" src="" alt="Payment Logo" class="h-16 mr-4">
                                     <img id="qr-code" src="" alt="QR Code" class="w-24 h-24">
                                 </div>
+                            </div>
+                            <!-- Attachment -->
+                            <div id="attachment-receipt" class="mt-[11.5rem]">
+                                <label for="attachment" class="text-dark-gray text-sm">Attachment *</label>
+                                <input type="file" id="attachment" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
                             </div>
                         </div>
                     </div>
@@ -214,8 +219,8 @@ $firstItem = json_encode($firstItem);
     </div>
 
     <script>
-         var paymentData = <?php echo $paymentData; ?>;
-         var defaultValue = <?php echo $firstItem; ?>;
+        var paymentData = <?php echo $paymentData; ?>;
+        var defaultValue = <?php echo $firstItem; ?>;
     </script>
     <script src="../js/paymentData.js"></script>
     <script src="../js/formStep.js"></script>

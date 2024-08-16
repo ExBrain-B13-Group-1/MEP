@@ -220,11 +220,11 @@ $social_links = explode(',', $user[0]['social_links']);
 
             <h1>Portfolio Links & Socail links</h1>
             <div class="grid gap-6 mb-6">
-              <input type="url" id="portfolio" name="portfolio" value="<?= ($social_links[0]) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Portfolio Website" />
-              <input type="url" id="facebook" name="facebook" value="<?= ($social_links[1]) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Facebook" />
-              <input type="url" id="instagram" name="instagram" value="<?= ($social_links[2]) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Instagram" />
-              <input type="url" id="twitter" name="twitter" value="<?= ($social_links[3]) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Twitter" />
-              <input type="url" id="telegram" name="telegram" value="<?= ($social_links[4]) ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Telegram" />
+              <input type="url" id="portfolio" name="portfolio" value="<?= isset($social_links[0]) ? ($social_links[0]) : '' ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Portfolio Website" />
+              <input type="url" id="facebook" name="facebook" value="<?= isset($social_links[1]) ? ($social_links[1]) : '' ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Facebook" />
+              <input type="url" id="instagram" name="instagram" value="<?= isset($social_links[2]) ? ($social_links[2]) : '' ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Instagram" />
+              <input type="url" id="twitter" name="twitter" value="<?= isset($social_links[3]) ? ($social_links[3]) : '' ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Twitter" />
+              <input type="url" id="telegram" name="telegram" value="<?= isset($social_links[4]) ? ($social_links[4]) : '' ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Telegram" />
             </div>
             <div class="text-end">
               <button type="button" id="saveBtn" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center d">
@@ -305,7 +305,7 @@ $social_links = explode(',', $user[0]['social_links']);
             </div>
             <!-- Password -->
             <div class="password-container relative">
-              <input type="password" id="password" name="password"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter new password" required>
+              <input type="password" id="password" name="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter new password" required>
             </div>
             <!-- Confirm Password -->
             <div class="password-container relative">

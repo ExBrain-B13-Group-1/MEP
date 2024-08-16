@@ -10,6 +10,8 @@ $mLogins = new Logins();
 
 $rememberMe = isset($_POST['remember_me']);
 
+$template = file_get_contents("./mailtemplate/eamilTemplate.html");
+
 // Login
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
@@ -94,11 +96,15 @@ if (isset($_POST['forgotPs'])) {
         if ($success) {
             $_SESSION['email'] = $email; 
             $_SESSION['user_id'] = $user['id'];
+            $userName = $user['name'];
+            $template = file_get_contents("./mailtemplate/eamilTemplate.html");
+            $template = str_replace("###username",$userName,$template);
+            $template = str_replace("###password",$password,$template);
             // send otp
             $mail->sendMail(
                 "$email",
-                "Here is Your OTP Code",
-                "<h3>$password</h3>"
+                "Password Verification",
+                "$template"
             );
             header("Location: ../View/resources/Auth/otp.php");
             exit();
@@ -112,11 +118,15 @@ if (isset($_POST['forgotPs'])) {
         if ($success) {
             $_SESSION['email'] = $email; 
             $_SESSION['institute_id'] = $institute['id']; 
+            $instituteName = $institute['name'];
+            $template = file_get_contents("./mailtemplate/eamilTemplate.html");
+            $template = str_replace("###username",$instituteName,$template);
+            $template = str_replace("###password",$password,$template);
             // send otp
             $mail->sendMail(
                 "$email",
-                "Here is Your OTP Code",
-                "<h3>$password</h3>"
+                "Password Verification",
+                "$template"
             );
             header("Location: ../View/resources/Auth/otp.php");
             exit();

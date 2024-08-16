@@ -178,29 +178,6 @@ $(document).ready(function () {
     attributeFilter: ["class"],
   });
 
-  // Sample Date For Top Clients
-  const clients = [
-    {
-      profileImg: "../../storages/instituteLogo.png",
-      amount: "$1000",
-      reviews: "4.5",
-    },
-    {
-      profileImg: "../../storages/instituteLogo.png",
-      amount: "$1500",
-      reviews: "4.8",
-    },
-    {
-      profileImg: "../../storages/instituteLogo.png",
-      amount: "$2000",
-      reviews: "5.0",
-    },
-    {
-      profileImg: "../../storages/instituteLogo.png",
-      amount: "$1800",
-      reviews: "4.7",
-    },
-  ];
 
   console.log(jsonInstitutePays);
 
@@ -327,27 +304,6 @@ $(document).ready(function () {
 
   // End Calendar Section
 
-  //Sample Data For Ad Slots
-  // const adSlots = [
-  //   {
-  //     name: "ABC Institute",
-  //     requested: "July 5",
-  //     month: "12 Months",
-  //     // profileImg: '../../storages/instituteLogo.png'
-  //   },
-  //   {
-  //     name: "XYZ Institute",
-  //     requested: "July 10",
-  //     month: "2 Months",
-  //     // profileImg: '../../storages/instituteLogo.png'
-  //   },
-  //   {
-  //     name: "DEF Institute",
-  //     requested: "July 15",
-  //     month: "3 Months",
-  //     // profileImg: '../../storages/instituteLogo.png'
-  //   },
-  // ];
 
   // Start Ad Slots
   let adSlotsContent = `

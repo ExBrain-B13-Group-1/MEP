@@ -25,6 +25,7 @@ class SendMail
             $mail->Password   = 'uvkqraahrqohlujw'; // <<< Change
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mail->Port       = 465;
+            $mail->SMTPDebug  = 0;
 
             //Recipients
             $mail->setFrom('myanmareduportal@gmail.com', 'Myanmar Education Portal'); //<<< Change

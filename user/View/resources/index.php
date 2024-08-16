@@ -607,13 +607,14 @@ $svgs = [
             <div class="flex justify-center items-center md:mb-16 mb-8">
                 <div>
                     <span class="md:text-2xl text-xl text-center font-semibold md:mb-5">Plan & Pricing for</span>
-                    <button type="button" id="personal-dropdown" class="relative text-transparent md:ml-3 font-semibold underline md:text-2xl text-xl bg-gradient-to-r from-blue-600 to-cyan-950 bg-clip-text" data-dropdown-toggle="dropdown-menu" aria-hidden="true">Personal
+                    <button type="button" id="personal-dropdown" class="relative text-transparent md:ml-3 font-semibold underline md:text-2xl text-xl bg-gradient-to-r from-blue-600 to-cyan-950 bg-clip-text" data-dropdown-toggle="dropdown-menu">
+                        Personal
                         <ion-icon name="chevron-down-outline" class="text-blue-800 relative md:top-1.5 top-1"></ion-icon>
                         <div class="md:w-[75%] w-[75%] h-0.5 bg-blue-700"></div>
                     </button>
                 </div>
                 <!-- Dropdown Personal -->
-                <div id="dropdown-menu" class="z-10 hidden rounded-lg shadow w-44 bg-gray-200">
+                <div id="dropdown-menu" class="z-10 hidden rounded-lg shadow w-44 bg-gray-200" role="menu" aria-labelledby="personal-dropdown">
                     <ul class="py-2 text-sm text-gray-700">
                         <li>
                             <a href="javascript:void(0);" class="block px-4 py-2 md:text-lg hover:text-blue-600">User</a>
@@ -625,6 +626,8 @@ $svgs = [
                 </div>
             </div>
         </div>
+
+    
         <div class="swiper-container w-full py-[50px]">
             <div class="swiper-wrapper md:flex md:justify-center md:items-center md:gap-11">
                 <!-- pricing card 1 -->
@@ -771,6 +774,177 @@ $svgs = [
                             </div>
                             <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
                                 <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2">Buy now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination block md:hidden"></div>
+        </div>
+
+        <div class="swiper-container w-full py-[50px] hidden">
+            <div class="swiper-wrapper md:flex md:justify-center md:items-center md:gap-11">
+                <!-- pricing card 1 -->
+                <div class="swiper-slide bg-center b    g-cover w-[300px] md:w-[450px] h-auto md:h-auto">
+                    <div class="pricing-box w-full h-full">
+                        <div class="w-full md:h-[60vh] h-[50vh] rounded-xl border-2 border-gray-300 border-t-0 shadow-lg relative swiper-slide">
+                            <div class="flex justify-center items-center md:mt-8 mt-4 absolute md:-top-24 -top-14 left-1/2 -translate-x-1/2">
+                                <div class="md:w-80 md:h-24 w-60 h-20 rounded-xl bg-indigo-800 flex flex-col justify-center items-center shadow-lg">
+                                    <p class="text-gray-400 md:text-base text-sm">Business</p>
+                                    <h1 class="text-white font-semibold md:text-2xl text-xl"><?= number_format($institutePrices[2]['amount'], 0, '', ','); ?> MMK</h1>
+                                    <small class="text-gray-200 text-xs">Monthly</small>
+                                </div>
+                            </div>
+                            <div class="flex justify-start md:px-16 md:mt-3 md:pt-14 pt-14 px-10">
+                                <ul class="space-y-4 text-left text-gray-800 flex flex-col gap-2">
+                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                        </svg>
+                                        <span>Receive 100 point each month</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                        </svg>
+                                        <span>10 Coupon Code ( 10% - 30% )</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                        </svg>
+                                        <span>Get one slot advertise</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                        </svg>
+                                        <span>Get two event</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                        </svg>
+                                        <span>SEO ( 1 - 20 )</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                        </svg>
+                                        <span>5 Classes</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                        </svg>
+                                        <span>Support Service</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
+                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2">Purchase Plan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- pricing card 2 -->
+                <div class="swiper-slide bg-center bg-cover w-[300px] md:w-[450px] h-auto md:h-auto">
+                    <div class="pricing-box w-full h-full">
+                        <div class="w-full md:h-[60vh] h-[50vh] rounded-xl border-2 border-gray-300 border-t-0 shadow-lg relative swiper-slide">
+                            <div class="flex justify-center items-center md:mt-8 mt-4 absolute md:-top-24 -top-14 left-1/2 -translate-x-1/2">
+                                <div class="md:w-80 md:h-24 w-60 h-20 rounded-xl bg-indigo-800 flex flex-col justify-center items-center shadow-lg">
+                                    <p class="text-gray-400 md:text-base text-sm">Enterprise</p>
+                                    <h1 class="text-white font-semibold md:text-2xl text-xl"><?= number_format($institutePrices[3]['amount'], 0, '', ','); ?> MMK</h1>
+                                    <small class="text-gray-200 text-xs">Yearly</small>
+                                </div>
+                            </div>
+                            <div class="flex justify-start md:px-16 md:mt-3 md:pt-14 pt-14 px-10">
+                                <ul class="space-y-4 text-left text-gray-800 flex flex-col gap-2">
+                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                        </svg>
+                                        <span>Receive 5000 point each month</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                        </svg>
+                                        <span>Unlimited Coupon Code ( 30% - 50% )</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                        </svg>
+                                        <span>Get Three slot advertise in one month</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                        </svg>
+                                        <span>Unlimited event</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                        </svg>
+                                        <span>SEO ( 1 - 10)</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                        </svg>
+                                        <span>Unlimited Class</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                        </svg>
+                                        <span>Support Service</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
+                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2">Purchase Plan</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- pricing card 3 -->
+                <div class="swiper-slide bg-center bg-cover w-[300px] md:w-[450px] h-auto md:h-auto">
+                    <div class="pricing-box w-full h-full">
+                        <div class="w-full md:h-[60vh] h-[50vh] rounded-xl border-2 border-gray-300 border-t-0 shadow-lg relative swiper-slide">
+                            <div class="flex justify-center items-center md:mt-8 mt-4 absolute md:-top-24 -top-14 left-1/2 -translate-x-1/2">
+                                <div class="md:w-80 md:h-24 w-60 h-20 rounded-xl bg-indigo-800 flex flex-col justify-center items-center shadow-lg">
+                                    <p class="text-gray-400 md:text-base text-sm">500 Coins</p>
+                                    <h1 class="text-white font-semibold md:text-2xl text-xl"><?= number_format($institutePrices[4]['amount'], 0, '', ','); ?> MMK</h1>
+                                    <small class="text-gray-200 text-xs">Unlimited buy</small>
+                                </div>
+                            </div>
+                            <div class="flex justify-start md:px-16 md:mt-3 md:pt-14 pt-14 px-10">
+                                <ul class="space-y-4 text-left text-gray-800 flex flex-col gap-2">
+                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                        </svg>
+                                        <span>Can buy unlimited</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                        </svg>
+                                        <span>Events</span>
+                                    </li>
+                                    <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                        <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                        </svg>
+                                        <span>Class </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
+                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2">Purchase Plan</button>
                             </div>
                         </div>
                     </div>
@@ -1209,6 +1383,7 @@ $svgs = [
     <script src="./lib/jquery-3.7.1.js" type="text/javascript"></script>
     <!-- customjs -->
     <script src="./js/index.js" type="text/javascript"></script>
+
 </body>
 
 </html>

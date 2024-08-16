@@ -10,6 +10,8 @@ $mLogins = new Logins();
 
 $rememberMe = isset($_POST['remember_me']);
 
+$template = file_get_contents("./mailtemplate/eamilTemplate.html");
+
 
 // Login
 if (isset($_POST['login'])) {
@@ -61,11 +63,15 @@ if (isset($_POST['forgotPs'])) {
         if ($success) {
             $_SESSION['email'] = $email; 
             $_SESSION['admin_id'] = $admin['id'];
+            $adminName = ucwords(strtolower($admin['first_name'])) . ' ' . ucwords(strtolower($admin['last_name']));
+            $template = file_get_contents("./mailtemplate/eamilTemplate.html");
+            $template = str_replace("###username",$adminName,$template);
+            $template = str_replace("###password",$password,$template);
             // send otp
             $mail->sendMail(
                 "$email",
-                "Here is Your OTP Code",
-                "<h3>$password</h3>"
+                "Password Verification",
+                "$template"
             );
             header("Location: ../View/resources/Auth/otp.php");
             exit();
