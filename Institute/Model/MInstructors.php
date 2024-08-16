@@ -30,6 +30,28 @@ class MInstructors
         }
     }
 
+    public function searchInstructorByName($id,$name)
+    {
+        try {
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT * FROM m_instructors 
+                JOIN m_classes ON m_classes.id = m_instructors.id
+                WHERE m_instructors.institute_id = :id AND m_instructors.full_name LIKE :name"
+            );
+            $sql->bindValue(":id",$id);
+            $sql->bindValue(":name", '%' . $name . '%');
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        } catch (\Throwable $th) {
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
     /**
      * this method is used for get all instructor's name from database to use in 'select option'
      */

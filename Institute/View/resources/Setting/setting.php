@@ -256,81 +256,8 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
         <div class="grid grid-cols-10 gap-4">
 
             <!-- General Component -->
-            <div class="block bg-white col-span-8 col-start-2 rounded-lg px-20 py-10 mt-16 dark:bg-gray-600 duration-500 generals">
-                <div class="flex justify-between items-center">
-                    <h2 class="text-2xl font-bold dark:text-white mb-5 opacity-80">Institute Information</h2>
-                    <button type="button" id="edit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-6 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit</button>
-                </div>
-                <form action="" method="">
-                    <div class="grid grid-cols-2 gap-20">
-                        <!-- left -->
-                        <div>
-                            <p class="opacity-70 text-xl dark:text-white dark:opacity-80 mb-2 font-medium">Current Photo</p>
-                            <div class="flex items-center justify-center w-full">
-                                <label for="dropzone-file1" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50  dark:bg-gray-700  dark:border-gray-600 ">
-                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                        <!-- <img src="../../../storages/uploads/12219-pexels-pixabay-355465.jpg" class="h-64" alt=""> -->
-
-                                        <!-- Input to upload a new image -->
-
-                                    </div>
-                                    <!-- <input id="dropzone-file1" type="file" class="hidden" /> -->
-                                </label>
-                            </div>
-                        </div>
-                        <!-- right -->
-                        <div>
-                            <p class="opacity-70 text-xl dark:text-white dark:opacity-80 mb-2 font-medium">Change Logo</p>
-                            <div class="flex items-center justify-center w-full">
-                                <label for="dropzone-file2" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50  dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                        <img id="preview_image" src="" alt="Class Profile Photo" class="h-64 hidden" />
-                                        <div id="showtext" class="block">
-                                            <div class="flex justify-center">
-                                                <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
-                                                </svg>
-                                            </div>
-                                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                                            <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-                                        </div>
-                                    </div>
-                                    <!-- <input id="dropzone-file2" type="file" class="hidden" /> -->
-                                    <input id="dropzone-file2" class="hidden" aria-describedby="user_avatar_help" id="edit-profile" type="file" name="image" accept=".jpg, .jpeg" onchange="document.getElementById('preview_image').src = window.URL.createObjectURL(this.files[0]);document.getElementById('preview_image').classList.remove('hidden');document.getElementById('showtext').classList.add('hidden')" required />
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-20">
-                        <div class="mb-6 mt-8">
-                            <label for="institute_name" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Institute Name</label>
-                            <input type="text" id="institute_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                        </div>
-                    </div>
-                    <h2 class="text-2xl font-bold dark:text-white mb-5 mt-6 opacity-80">Institute Information</h2>
-                    <div class="grid grid-cols-2 gap-20">
-                        <div>
-                            <div class="mb-6 mt-0">
-                                <label for="email" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Email</label>
-                                <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                            </div>
-                            <div class="mb-6 mt-0">
-                                <label for="phone" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Phone</label>
-                                <input type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            </div>
-                        </div>
-                        <div>
-                            <div class="mb-6 mt-0">
-                                <label for="website" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Website</label>
-                                <input type="text" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                            </div>
-                            <div class="mb-6 mt-0">
-                                <label for="address" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Address</label>
-                                <input type="text" id="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            </div>
-                        </div>
-                    </div>
-                </form>
+            <div id="generalsetting" class="block bg-white col-span-8 col-start-2 rounded-lg px-20 py-10 mt-16 dark:bg-gray-600 duration-500 generals">
+                
             </div>
 
             <!-- General (Edit) Component -->
