@@ -6,7 +6,10 @@ require_once  __DIR__ . '/../Model/Settings.php';
 if(isset($_COOKIE['institute_id'])){
     $id = $_COOKIE['institute_id'];
     $obj = new Settings();
-    $datas = $obj->getSocialLinks($id);
+    $datas = $obj->getAllSocialLinks($id);
+
+    // echo "<pre>";
+    // print_r($datas);
     echo json_encode($datas);
 }else{
     echo "<script>alert('Your session is timed out');</script>";

@@ -2,6 +2,7 @@
 ini_set('display_errors', '1');
 
 include '../../../Controller/InstituteController.php';
+include '../../../Controller/GetSocialLinksController.php';
 
 // url for logo
 $baseUrl = 'http://localhost/MEP/storages/uploads/';
@@ -183,6 +184,16 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                         </a>
                     </li>
 
+                    <li class="b-1.5 sidebarlinks" click-page="enrollment-list">
+                        <a href="javascript:void(0);" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#d9dffc] dark:hover:bg-gray-700 group">
+                            <svg class="relative -top-0.5 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path fill="currentColor" d="M15 16.69V13h1.5v2.82l2.44 1.41l-.75 1.3zM19.5 3.5L18 2l-1.5 1.5L15 2l-1.5 1.5L12 2l-1.5 1.5L9 2L7.5 3.5L6 2L4.5 3.5L3 2v20l1.5-1.5L6 22l1.5-1.5L9 22l1.58-1.58c.14.19.3.36.47.53A7.001 7.001 0 0 0 21 11.1V2zM11.1 11c-.6.57-1.07 1.25-1.43 2H6v-2zm-2.03 4c-.07.33-.07.66-.07 1s0 .67.07 1H6v-2zM18 9H6V7h12zm2.85 7c0 .64-.12 1.27-.35 1.86c-.26.58-.62 1.14-1.07 1.57c-.43.45-.99.81-1.57 1.07c-.59.23-1.22.35-1.86.35c-2.68 0-4.85-2.17-4.85-4.85c0-1.29.51-2.5 1.42-3.43c.93-.91 2.14-1.42 3.43-1.42c2.67 0 4.85 2.17 4.85 4.85" />
+                            </svg>
+                            <span class="flex-1 ms-3 whitespace-nowrap">Enrollment</span>
+                            <span class="flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-300 bg-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-300">0</span>
+                        </a>
+                    </li>
+
                     <li class="mb-1.5">
                         <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-[#d9dffc] dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-event" data-collapse-toggle="dropdown-event">
                             <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 21">
@@ -342,26 +353,11 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
             <!-- Social Link -->
             <div class="hidden bg-white col-span-8 col-start-2 rounded-lg px-24 py-16 mt-16 dark:bg-gray-600 duration-500 sociallinks">
                 <h2 class="text-2xl font-bold dark:text-white mb-5 opacity-80">Social Links</h2>
-                <div class="grid grid-cols-2 gap-x-20">
-                    <div class="mb-6 mt-8">
-                        <label for="facebook-link" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Facebook Link</label>
-                        <input type="text" id="facebook-link" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    </div>
-                    <div class="mb-6 mt-8">
-                        <label for="telegram-link" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Telegram Link</label>
-                        <input type="text" id="telegram-link" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    </div>
-                    <div class="mb-6 mt-8">
-                        <label for="instagram-link" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Instragram Link</label>
-                        <input type="text" id="instagram-link" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    </div>
-                    <div class="mb-6 mt-8">
-                        <label for="x-link" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">X Link</label>
-                        <input type="text" id="x-link" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    </div>
+                <div id="sociallinks" class="grid grid-cols-2 gap-x-20">
+                    
                 </div>
                 <div class="flex justify-end mt-10">
-                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-12 py-4 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Update</button>
+                    <button type="button" id="updatesociallinks" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-12 py-4 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Update</button>
                 </div>
             </div>
 

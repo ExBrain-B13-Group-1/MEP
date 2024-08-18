@@ -8,6 +8,7 @@ module.exports = {
     "./Instructor/**/*.{html,js,php}",
     "./Student/**/*.{html,js,php}",
     "./Notification/**/*.{html,js,php}",
+    "./Enrollment/**/*.{html,js,php}",
     "./Setting/**/*.{html,js,php}",
     "./js/**/*.{html,js,php}",
     "./Class/**/*.{html,js,php}",

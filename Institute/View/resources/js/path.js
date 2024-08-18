@@ -16,6 +16,7 @@ $(document).ready(function(){
             "add-instructor": "Instructor/addinstructor.php",
             "delete-instructor": "Instructor/deleteinstructor.php",
             "student-list": "Student/studentlist.php",
+            "enrollment-list": "Enrollment/enrollment.php",
             "event-list": "Event/eventlist.php",
             "create-event": "Event/createevent.php",
             "history": "History/history.php",

@@ -94,15 +94,15 @@ class MInstructors
             // get connection
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
-                "SELECT mi.instructor_id FROM m_instructors AS mi
+                "SELECT mi.instructor_sr_no FROM m_instructors AS mi
                 WHERE mi.institute_id = :id
-                ORDER BY mi.instructor_id DESC LIMIT 1 ;"
+                ORDER BY mi.instructor_sr_no DESC LIMIT 1"
             );
             $sql->bindValue(":id", $instituteID);
             $sql->execute();
             $results = $sql->fetchAll(PDO::FETCH_ASSOC);
             if ($results) {
-                return $results[0]['instructor_id'];
+                return $results[0]['instructor_sr_no'];
             } else {
                 return "I1000";
             }
@@ -119,7 +119,7 @@ class MInstructors
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
                 "SELECT mi.id FROM m_instructors AS mi
-                WHERE mi.instructor_id = :id"
+                WHERE mi.instructor_sr_no = :id"
             );
             $sql->bindValue(":id",$generateInstructorId);
             $sql->execute();
@@ -182,7 +182,7 @@ class MInstructors
 
             $sql = $pdo->prepare(
                 "INSERT INTO m_instructors (
-                    instructor_id,
+                    instructor_sr_no,
                     institute_id,
                     full_name,
                     position,
@@ -295,7 +295,7 @@ class MInstructors
                     linkedin = :linkedin,
                     portfolio = :portfolio,
                     skills = :skills
-                WHERE id = :id"
+                WHERE m_instructors.id = :id"
             );
             
             // Bind parameters

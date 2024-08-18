@@ -4,7 +4,7 @@ let searchInstructorByNameURL = `http://localhost/MEP/Institute/Controller/Searc
 $(document).ready(function () {
     // Replace with your data source URL
     let dynurl = instructorLists;
-    let rowsPerPage = 10;
+    let rowsPerPage = 9;
     let jsonData = [];
     let currentPage = 1;
 
@@ -183,11 +183,12 @@ function showCard(id) {
     $('#list-table').removeClass('col-span-8').addClass('col-span-6');
     fetch(`http://localhost/MEP/Institute/Controller/ViewInstructorController.php`).then(response => response.json())
         .then(datas => {
+            // console.log(datas);
             datas.forEach(item => {
                 if (item.id === id) {
                     console.log(item);
                     let cardhtml = `
-                            <div class="h-[70vh] overflow-y-auto hide-scrollbar">
+                        <div class="h-[70vh] overflow-y-auto hide-scrollbar">
                             <div class="flex items-center gap-5">
                                 <div class="absolute top-0 right-0 pt-3 pr-5">
                                     <button type="button" class="px-2 py-2 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-base w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-500 dark:hover:text-white" onclick="closeCard()">
@@ -274,6 +275,7 @@ function showCard(id) {
         })
         .catch();
 }
+
 
 function closeCard() {
     document.getElementById('card-container').classList.add('hidden');

@@ -2,7 +2,9 @@ $(document).ready(function () {
 
     let settingurl = `http://localhost/MEP/Institute/Controller/GetProfileSettingDataController.php`;
     let updateUrl = `http://localhost/MEP/Institute/Controller/UpdateSettingController.php`;
-    let sociallinkurl = `http://localhost/MEP/Institute/Controller/GetSocialLinksController.php`;
+
+    let getsociallinkurl = `http://localhost/MEP/Institute/Controller/GetSocialLinksController.php`;
+    let sociallinkurl = `http://localhost/MEP/Institute/Controller/UpdateSocialLinkController.php`;
     let baseurl = `../../../../storages/uploads/`;
 
     $('.modechanges').on("click", () => {
@@ -62,7 +64,7 @@ $(document).ready(function () {
                     <div class="flex justify-between items-center">
                         <h2 class="text-2xl font-bold dark:text-white mb-5 opacity-80">Institute Information</h2>
                     </div>
-                    <form action="http://localhost/MEP/Institute/Controller/UpdateSettingController.php" method="POST" enctype="multipart/form-data">
+                    <form >
                         <div class="grid grid-cols-2 gap-20">
                             <!-- left -->
                             <div>
@@ -129,7 +131,7 @@ $(document).ready(function () {
                         </div>
 
                         <div class="flex justify-end mt-5">
-                            <input type="submit" name="submit" value="Save Change" id="savechange" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-6 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" />
+                            <input type="button" name="button" value="Save Change" id="savechange" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-6 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" />
                         </div>
                     </form>
                     `;
@@ -142,56 +144,133 @@ $(document).ready(function () {
 
         });
 
-        // let uploadphoto = "";
+        let uploadphoto = "";
 
-        // $('#changephoto').change(function (e) {
-        //     console.log('hay');
-        //     let changephoto = e.target.files[0];
-        //     uploadphoto = changephoto.name;
-        // })
+        $('#changephoto').change(function (e) {
+            console.log('hay');
+            let changephoto = e.target.files[0];
+            uploadphoto = changephoto.name;
+        })
 
 
-        // $('#savechange').on('click', function (e) {
-        //     e.preventDefault();
+        $('#savechange').on('click', function (e) {
+            e.preventDefault();
 
-        //     console.log('Button clicked');
-        //     let photo = uploadphoto === "" ? currentphoto : uploadphoto;
-        //     let instituteName = $('#institute_name').val();
-        //     let email = $('#email').val();
-        //     let phone = $('#phone').val();
-        //     let website = $('#website').val();
-        //     let address = $('#address').val();
+            // console.log('Button clicked');
+            let photo = uploadphoto === "" ? currentphoto : uploadphoto;
+            let instituteName = $('#institute_name').val();
+            let email = $('#email').val();
+            let phone = $('#phone').val();
+            let website = $('#website').val();
+            let address = $('#address').val();
 
-        //     console.log('Variables:', { photo, instituteName, email, phone, website, address });
+            // console.log('Variables:', { photo, instituteName, email, phone, website, address });
+            let dataobj = { photo: photo, institute_name: instituteName, email: email, phone: phone, website: website, address: address };
+            // console.log(dataobj);
+            let datajsonobj = JSON.stringify(dataobj);
+            console.log(datajsonobj);
 
-        //     $.ajax({
-        //         url: updateUrl,
-        //         method: 'POST',
-        //         data: {
-        //             photo: photo,
-        //             institute_name: instituteName,
-        //             email: email,
-        //             phone: phone,
-        //             website: website,
-        //             address: address
-        //         },
-        //         dataType: 'json', // Expect JSON response
-        //         success: function (data) {
-        //             console.log('Data updated successfully:', data);
-        //         },
-        //         error: function (xhr, status, error) {
-        //             console.error('Error updating data:', status, error);
-        //             console.log('Raw Response:', xhr.responseText); // Inspect raw response
-        //         }
-        //     });
+            var xmlhttp = new XMLHttpRequest();
+            var url = updateUrl;
+            xmlhttp.open("POST", url, true);
+            xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlhttp.send("datas=" + datajsonobj);
 
-        // });
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                    var result = xmlhttp.responseText;
+                    var resultobj = JSON.parse(result);
+                    console.log(resultobj);
+                    window.alert("done");
+                    window.location.reload();
+                }
+            }
+        });
 
 
     }
 
     fetchData();
 
+
+    async function showSocialLinks() {
+        await $.ajax({
+            url: getsociallinkurl,
+            method: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                let displaydata = `
+                    <div class="mb-6 mt-8">
+                        <label for="facebook-link" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Facebook Link</label>
+                        <input type="text" id="facebook-link" value="${data[0]['facebook_link']}" class="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </div>
+                    <div class="mb-6 mt-8">
+                        <label for="telegram-link" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Telegram Link</label>
+                        <input type="text" id="telegram-link" value="${data[0]['telegram_link']}" class="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </div>
+                    <div class="mb-6 mt-8">
+                        <label for="instagram-link" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Instagram Link</label>
+                        <input type="text" id="instagram-link" value="${data[0]['instagram_link']}" class="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </div>
+                    <div class="mb-6 mt-8">
+                        <label for="x-link" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">X Link</label>
+                        <input type="text" id="x-link" value="${data[0]['x_link']}" class="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </div>
+                `;
+
+                $('#sociallinks').append(displaydata);
+            },
+            error: function (xhr, status, error) {
+                console.error('Error fetching data:', status, error);
+            }
+
+        });
+    }
+
+    showSocialLinks();
+
+
+
+    $('#updatesociallinks').on('click', function (e) {
+        e.preventDefault();
+
+        // console.log('hay');
+
+        let facebooklink = $('#facebook-link').val();
+        let telegramlink = $('#telegram-link').val();
+        let instagramlink = $('#instagram-link').val();
+        let xlink = $('#x-link').val();
+
+        // console.log('Variables:', { facebooklink, telegramlink, instagramlink, xlink});
+        let dataobj = { facebooklink: facebooklink, telegramlink: telegramlink, instagramlink: instagramlink, xlink: xlink };
+        // console.log(dataobj);
+        let datajsonobj = JSON.stringify(dataobj);
+        console.log(datajsonobj);
+
+        var xmlhttp = new XMLHttpRequest();
+        var url = sociallinkurl;
+        xmlhttp.open("POST", url, true);
+        xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xmlhttp.send("datas=" + datajsonobj);
+
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                var result = xmlhttp.responseText;
+                // console.log(result);
+                var resultobj = JSON.parse(result);
+                console.log(resultobj);
+                
+                $('#facebook-link').val(`${resultobj.facebooklink}`);
+                $('#telegram-link').val(`${resultobj.telegramlink}`);
+                $('#instagram-link').val(`${resultobj.instagramlink}`);
+                $('#x-link').val(`${resultobj.xlink}`);
+
+                window.alert("Update Succefully!!");
+                // window.location.reload();
+            }
+        }
+    });
 
 
 });
