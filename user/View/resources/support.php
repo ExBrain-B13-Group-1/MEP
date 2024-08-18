@@ -1,6 +1,7 @@
 <?php
 ini_set('display_errors', '1');
 include '../../Controller/UserController.php';
+include '../../Controller/UserFaqController.php';
 
 // later
 // Initialize session variables if not set
@@ -8,6 +9,8 @@ include '../../Controller/UserController.php';
 //     $_SESSION['notiCount'] = 0;
 // }
 // $notiCount = $_SESSION['notiCount'];
+
+// print_r($userFaqs);
 
 ?>
 
@@ -113,45 +116,45 @@ include '../../Controller/UserController.php';
 
         <div class="relative">
           <div id="userProfile" aria-isOpen="false" class="flex justify-center items-center cursor-pointer hover:text-primaryColor">
-          <div class="relative">
-          <img src="<?= !empty($user[0]['photo']) ? '../../../storages/uploads/' . $user[0]['photo'] : './img/profile.png'; ?>" alt="profile" class="rounded-full mr-2 md:w-10 w-8 md:h-10 h-8" />
-           <?php if (isset($_COOKIE['verified'])): ?>
-            <ion-icon name="checkmark-circle" class="text-green-600 absolute right-0 top-[1.45rem]"></ion-icon>
-        <?php endif; ?>
-           </div>
+            <div class="relative">
+              <img src="<?= !empty($user[0]['photo']) ? '../../../storages/uploads/' . $user[0]['photo'] : './img/profile.png'; ?>" alt="profile" class="rounded-full mr-2 md:w-10 w-8 md:h-10 h-8" />
+              <?php if (isset($_COOKIE['verified'])): ?>
+                <ion-icon name="checkmark-circle" class="text-green-600 absolute right-0 top-[1.45rem]"></ion-icon>
+              <?php endif; ?>
+            </div>
             <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
           </div>
+        </div>
+
+        <div id="profileMenu" class="hidden absolute bottom-0 right-0 bg-white w-44 rounded-lg p-3 translate-y-52 translate-x-4">
+          <h1 class="font-bold"><?= ucwords(strtolower($user[0]['name'])); ?></h1>
+          <div class="flex items-center select-none">
+            <ion-icon name="wallet-outline" class="text-lg mx-2 my-2"></ion-icon>
+            <p>Coin - <span class="text-primaryColor"><?= $user[0]['remain_amount'] ?></span></p>
           </div>
 
-          <div id="profileMenu" class="hidden absolute bottom-0 right-0 bg-white w-44 rounded-lg p-3 translate-y-52 translate-x-4">
-            <h1 class="font-bold"><?=  ucwords(strtolower($user[0]['name'])); ?></h1>
-            <div class="flex items-center select-none">
-              <ion-icon name="wallet-outline" class="text-lg mx-2 my-2"></ion-icon>
-              <p>Coin - <span class="text-primaryColor"><?= $user[0]['remain_amount'] ?></span></p>
-            </div>
+          <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
+            <ion-icon name="person-circle-outline" class="text-lg mx-2 my-2"></ion-icon>
+            <p>Profile</p>
+          </a>
 
-            <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
-              <ion-icon name="person-circle-outline" class="text-lg mx-2 my-2"></ion-icon>
-              <p>Profile</p>
-            </a>
+          <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
+            <ion-icon name="settings-outline" class="text-lg mx-2 my-2"></ion-icon>
+            <p>Account Setting</p>
+          </a>
 
-            <a href="./profile.php" class="flex items-center hover:text-primaryColor cursor-pointer">
-              <ion-icon name="settings-outline" class="text-lg mx-2 my-2"></ion-icon>
-              <p>Account Setting</p>
-            </a>
+          <a class="flex items-center hover:text-primaryColor cursor-pointer">
+            <ion-icon name="log-out-outline" class="text-lg mx-2 my-2"></ion-icon>
+            <form action="../../Controller/LogoutController.php" method="POST" class="inline">
+              <button type="submit">
+                Logout
+              </button>
+            </form>
+          </a>
 
-            <a class="flex items-center hover:text-primaryColor cursor-pointer">
-              <ion-icon name="log-out-outline" class="text-lg mx-2 my-2"></ion-icon>
-              <form action="../../Controller/LogoutController.php" method="POST" class="inline">
-                <button type="submit">
-                  Logout
-                </button>
-              </form>
-            </a>
-
-          </div>
         </div>
       </div>
+    </div>
     </div>
   </nav>
 
@@ -201,89 +204,18 @@ include '../../Controller/UserController.php';
                   <h2 class="text-xl text-white font-bold mb-6">Frequently Asked Questions</h2>
                   <div class="bg-white p-6 rounded-lg shadow-lg cursor-pointer">
                     <div class="space-y-4">
-                      <!-- Accordion Item 1 -->
-                      <div>
-                        <div class="accordion-button flex justify-between items-center w-full p-4 bg-primaryColor/10 rounded-lg">
-                          <span class="text-base">How do I sign up for the online learning platform?</span>
-                          <span class="icon text-3xl">+</span>
+                      <?php foreach ($userFaqs as $faq): ?>
+                        <!-- Accordion Item -->
+                        <div>
+                          <div class="accordion-button flex justify-between items-center w-full p-4 bg-primaryColor/10 rounded-lg">
+                            <span class="text-base"><?= ($faq['title']); ?></span>
+                            <span class="icon text-3xl">+</span>
+                          </div>
+                          <div class="accordion-content mt-2 p-4 bg-primaryColor/5 rounded-lg hidden">
+                            <p><?= ($faq['description']); ?></p>
+                          </div>
                         </div>
-                        <div class="accordion-content mt-2 p-4 bg-primaryColor/5 rounded-lg hidden">
-                          <p>You can sign up by visiting our website and clicking on the "Sign Up" button. Follow the
-                            prompts to create an account using your email address and a password.</p>
-                        </div>
-                      </div>
-                      <!-- Accordion Item 2 -->
-                      <div>
-                        <div class="accordion-button flex justify-between items-center w-full p-4 bg-primaryColor/10 rounded-lg">
-                          <span class="text-base">What types of courses are offered?</span>
-                          <span class="icon text-3xl">+</span>
-                        </div>
-                        <div class="accordion-content mt-2 p-4 bg-primaryColor/5 rounded-lg hidden">
-                          <p>Our platform offers a wide range of courses, including subjects like Math, Science,
-                            English, History, and elective courses such as Music and Art.</p>
-                        </div>
-                      </div>
-                      <!-- Accordion Item 3 -->
-                      <div>
-                        <div class="accordion-button flex justify-between items-center w-full p-4 bg-primaryColor/10 rounded-lg">
-                          <span class="text-base">How are the courses delivered?</span>
-                          <span class="icon text-3xl">+</span>
-                        </div>
-                        <div class="accordion-content mt-2 p-4 bg-primaryColor/5 rounded-lg hidden">
-                          <p>Courses are delivered through a combination of live virtual classes, pre-recorded video lessons, interactive quizzes, and downloadable resources.</p>
-                        </div>
-                      </div>
-                      <!-- Accordion Item 4 -->
-                      <div>
-                        <div class="accordion-button flex justify-between items-center w-full p-4 bg-primaryColor/10 rounded-lg">
-                          <span class="text-base">Can I access the platform on any device?</span>
-                          <span class="icon text-3xl">+</span>
-                        </div>
-                        <div class="accordion-content mt-2 p-4 bg-primaryColor/5 rounded-lg hidden">
-                          <p>Yes, our platform is accessible on any device with internet connectivity, including laptops, tablets, and smartphones.</p>
-                        </div>
-                      </div>
-                      <!-- Accordion Item 5 -->
-                      <div>
-                        <div class="accordion-button flex justify-between items-center w-full p-4 bg-primaryColor/10 rounded-lg">
-                          <span class="text-base">Is there a mobile app available?</span>
-                          <span class="icon text-3xl">+</span>
-                        </div>
-                        <div class="accordion-content mt-2 p-4 bg-primaryColor/5 rounded-lg hidden">
-                          <p>No, we currently developed for web version. Later we will for mobile platform.</p>
-                        </div>
-                      </div>
-                      <!-- Accordion Item 6 -->
-                      <div>
-                        <div class="accordion-button flex justify-between items-center w-full p-4 bg-primaryColor/10 rounded-lg">
-                          <span class="text-base">How do I get technical support if I encounter an issue?</span>
-                          <span class="icon text-3xl">+</span>
-                        </div>
-                        <div class="accordion-content mt-2 p-4 bg-primaryColor/5 rounded-lg hidden">
-                          <p>For technical support, you can visit our Help Center on the website or contact our support team via email or live chat.</p>
-                        </div>
-                      </div>
-                      <!-- Accordion Item 7 -->
-                      <div>
-                        <div class="accordion-button flex justify-between items-center w-full p-4 bg-primaryColor/10 rounded-lg">
-                          <span class="text-base">Are the Institute qualified?</span>
-                          <span class="icon text-3xl">+</span>
-                        </div>
-                        <div class="accordion-content mt-2 p-4 bg-primaryColor/5 rounded-lg hidden">
-                          <p>Yes, all our Institute are highly qualified professionals with relevant teaching certifications and experience in their subject areas.</p>
-                        </div>
-                      </div>
-                      <!-- Accordion Item 8 -->
-                      <div>
-                        <div class="accordion-button flex justify-between items-center w-full p-4 bg-primaryColor/10 rounded-lg">
-                          <span class="text-base">Is there a fee for using the platform?</span>
-                          <span class="icon text-3xl">+</span>
-                        </div>
-                        <div class="accordion-content mt-2 p-4 bg-primaryColor/5 rounded-lg hidden">
-                          <p>Yes, there is a fee structure depending on the courses you enroll in. We offer different subscription plans and payment options to suit your needs.</p>
-                        </div>
-                      </div>
-
+                      <?php endforeach; ?>
                     </div>
                   </div>
                   <!-- Privacy Policy -->

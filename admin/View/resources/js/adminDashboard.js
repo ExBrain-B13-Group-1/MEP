@@ -179,7 +179,7 @@ $(document).ready(function () {
   });
 
 
-  console.log(jsonInstitutePays);
+  // console.log(jsonInstitutePays);
 
   function getTopInstitutes(data, topN) {
     // Step 1: Aggregate total payments and collect name and photo by institute_id
@@ -219,8 +219,9 @@ $(document).ready(function () {
   // Separate into top 4 and remaining
   const top4Institutes = top7Institutes.slice(0, 4);
   const remainingInstitutes = top7Institutes.slice(4, 7);
-  console.log(top4Institutes);
-  console.log(remainingInstitutes);
+  // console.log(top4Institutes);
+  // console.log(remainingInstitutes);
+  
   // Start Top Client
   let tableContent = `
                   <table class="w-full table-auto cursor-pointer">
@@ -275,23 +276,19 @@ $(document).ready(function () {
 
   // Make logo a little big when clicked
   $(".logo").on("click", function () {
-    // Remove the 'active' class from all logos
     $(".logo").removeClass("active transform scale-125");
 
-    // Add the 'active' class to the clicked logo
     $(this).addClass("active transform scale-125");
 
-    // Get the institute ID from the clicked logo
     var instituteId = $(this).data("institute");
 
-    // Remove all existing events from the calendar
     calendar.removeAllEvents();
 
     // Filter slots based on the selected institute ID
     var instituteEvents = slots
       .filter((slot) => slot.institute_id == instituteId)
       .map((slot) => ({
-        title: "Limit", // or any other title you want to set
+        title: "Limit", 
         start: slot.ad_start_date,
         end: slot.ad_end_date,
       }));

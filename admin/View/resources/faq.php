@@ -1,3 +1,22 @@
+<?php
+// session_start();
+ini_set('display_errors', '1');
+include '../../Controller/AdminController.php';
+include '../../Controller/UserFaqController.php';
+include '../../Controller/InstituteFaqController.php';
+
+$baseUrl = 'http://localhost/MEP/storages/uploads/';
+
+// Initialize session variables if not set
+if (!isset($_SESSION['totalPending'])) {
+  $_SESSION['totalPending'] = 0;
+}
+$totalPending = $_SESSION['totalPending'];
+
+// print_r($userFaqs);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -188,16 +207,16 @@
             <span class="flex-1 ms-3 whitespace-nowrap sideLabel group-hover:text-white">Setting</span>
           </a>
         </li>
-
         <li>
-          <a href="#" class="flex items-center p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
-            <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.44827 4.81641C2.90964 6.35503 1.86186 8.31442 1.43836 10.4484C1.01348 12.5824 1.23076 14.7947 2.06401 16.8036C2.89588 18.8138 4.30661 20.5326 6.11473 21.7412C7.92424 22.9499 10.0514 23.5948 12.2266 23.5948C14.4019 23.5948 16.529 22.9499 18.3385 21.7412C20.1466 20.5326 21.5574 18.8138 22.3892 16.8036C23.2225 14.7947 23.4398 12.5824 23.0149 10.4484C22.5914 8.31442 21.5436 6.35503 20.005 4.81641" stroke="#A82525" stroke-width="2" stroke-linecap="round" />
-              <path d="M12.2266 7.09473V1.59473" stroke="#A82525" stroke-width="2" stroke-linecap="round" />
-            </svg>
-
-            <span class="flex-1 ms-3 whitespace-nowrap sideLabel group-hover:text-white">Logout</span>
-          </a>
+          <form action="../../Controller/LogoutController.php" method="POST">
+            <button type="submit" class="w-full flex text-left p-2 text-gray-500 rounded-lg hover:bg-primarycolor group">
+              <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.44827 4.81641C2.90964 6.35503 1.86186 8.31442 1.43836 10.4484C1.01348 12.5824 1.23076 14.7947 2.06401 16.8036C2.89588 18.8138 4.30661 20.5326 6.11473 21.7412C7.92424 22.9499 10.0514 23.5948 12.2266 23.5948C14.4019 23.5948 16.529 22.9499 18.3385 21.7412C20.1466 20.5326 21.5574 18.8138 22.3892 16.8036C23.2225 14.7947 23.4398 12.5824 23.0149 10.4484C22.5914 8.31442 21.5436 6.35503 20.005 4.81641" stroke="#A82525" stroke-width="2" stroke-linecap="round" />
+                <path d="M12.2266 7.09473V1.59473" stroke="#A82525" stroke-width="2" stroke-linecap="round" />
+              </svg>
+              <span class="flex-1 ms-3 whitespace-nowrap sideLabel group-hover:text-white">Logout</span>
+            </button>
+          </form>
         </li>
       </ul>
     </div>
@@ -234,24 +253,25 @@
           </a>
         </li>
         <li class="mx-1">
-          <a href="Notification/pendingNotification.php" class="block py-2 px-3 text-gray-700 rounded 0 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+          <a href="Notification/pendingNotification.php" class="relative block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
             <svg width="30" height="33" viewBox="0 0 30 33" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8.72435 26.2614H4.19194C2.51219 26.2614 1.67232 26.2614 1.49561 26.1311C1.29709 25.9847 1.24858 25.8983 1.22708 25.6529C1.20795 25.4343 1.7227 24.5929 2.75223 22.9102C3.81519 21.1727 4.71778 18.643 4.71778 15.0614C4.71778 13.0811 5.56156 11.1819 7.06348 9.78166C8.56542 8.38139 10.6025 7.59473 12.7265 7.59473C14.8506 7.59473 16.8876 8.38139 18.3895 9.78166C19.8916 11.1819 20.7353 13.0811 20.7353 15.0614C20.7353 18.643 21.6379 21.1727 22.7009 22.9102C23.7303 24.5929 24.2451 25.4343 24.2261 25.6529C24.2046 25.8983 24.156 25.9847 23.9575 26.1311C23.7808 26.2614 22.9409 26.2614 21.2612 26.2614H16.7309M8.72435 26.2614L8.72216 27.5947C8.72216 29.8039 10.515 31.5947 12.7265 31.5947C14.9382 31.5947 16.7309 29.8039 16.7309 27.5947V26.2614M8.72435 26.2614H16.7309" stroke="#4460EF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              <circle cx="21.2266" cy="8.59473" r="8" fill="#FF5E5E" />
-              <path d="M20.1357 7.5957H20.7803C21.096 7.5957 21.3564 7.54362 21.5615 7.43945C21.7699 7.33203 21.9245 7.18718 22.0254 7.00488C22.1296 6.81934 22.1816 6.611 22.1816 6.37988C22.1816 6.10645 22.1361 5.87695 22.0449 5.69141C21.9538 5.50586 21.8171 5.36589 21.6348 5.27148C21.4525 5.17708 21.2214 5.12988 20.9414 5.12988C20.6875 5.12988 20.4629 5.18034 20.2676 5.28125C20.0755 5.37891 19.9242 5.51888 19.8135 5.70117C19.7061 5.88346 19.6523 6.09831 19.6523 6.3457H18.749C18.749 5.98438 18.8402 5.6556 19.0225 5.35938C19.2048 5.06315 19.4603 4.82715 19.7891 4.65137C20.1211 4.47559 20.5052 4.3877 20.9414 4.3877C21.3711 4.3877 21.7471 4.46419 22.0693 4.61719C22.3916 4.76693 22.6423 4.99154 22.8213 5.29102C23.0003 5.58724 23.0898 5.95671 23.0898 6.39941C23.0898 6.57845 23.0475 6.77051 22.9629 6.97559C22.8815 7.17741 22.7529 7.36621 22.5771 7.54199C22.4046 7.71777 22.18 7.86263 21.9033 7.97656C21.6266 8.08724 21.2946 8.14258 20.9072 8.14258H20.1357V7.5957ZM20.1357 8.33789V7.7959H20.9072C21.3597 7.7959 21.734 7.84961 22.0303 7.95703C22.3265 8.06445 22.5592 8.20768 22.7285 8.38672C22.901 8.56576 23.0215 8.7627 23.0898 8.97754C23.1615 9.18913 23.1973 9.40072 23.1973 9.61231C23.1973 9.94434 23.1403 10.2389 23.0264 10.4961C22.9157 10.7533 22.7578 10.9714 22.5527 11.1504C22.3509 11.3294 22.1133 11.4645 21.8398 11.5557C21.5664 11.6468 21.2686 11.6924 20.9463 11.6924C20.637 11.6924 20.3457 11.6484 20.0723 11.5605C19.8021 11.4727 19.5628 11.3457 19.3545 11.1797C19.1462 11.0104 18.9834 10.8037 18.8662 10.5596C18.749 10.3122 18.6904 10.0306 18.6904 9.71484H19.5938C19.5938 9.96224 19.6475 10.1787 19.7549 10.3643C19.8656 10.5498 20.0218 10.6947 20.2236 10.7988C20.4287 10.8997 20.6696 10.9502 20.9463 10.9502C21.223 10.9502 21.4606 10.903 21.6592 10.8086C21.861 10.7109 22.0156 10.5645 22.123 10.3691C22.2337 10.1738 22.2891 9.92806 22.2891 9.63184C22.2891 9.33561 22.2272 9.0931 22.1035 8.9043C21.9798 8.71224 21.804 8.57064 21.5762 8.47949C21.3516 8.38509 21.0863 8.33789 20.7803 8.33789H20.1357Z" fill="white" />
+              <!-- <circle cx="21.2266" cy="8.59473" r="8" fill="#FF5E5E" /> -->
+              <!-- <path d="M20.1357 7.5957H20.7803C21.096 7.5957 21.3564 7.54362 21.5615 7.43945C21.7699 7.33203 21.9245 7.18718 22.0254 7.00488C22.1296 6.81934 22.1816 6.611 22.1816 6.37988C22.1816 6.10645 22.1361 5.87695 22.0449 5.69141C21.9538 5.50586 21.8171 5.36589 21.6348 5.27148C21.4525 5.17708 21.2214 5.12988 20.9414 5.12988C20.6875 5.12988 20.4629 5.18034 20.2676 5.28125C20.0755 5.37891 19.9242 5.51888 19.8135 5.70117C19.7061 5.88346 19.6523 6.09831 19.6523 6.3457H18.749C18.749 5.98438 18.8402 5.6556 19.0225 5.35938C19.2048 5.06315 19.4603 4.82715 19.7891 4.65137C20.1211 4.47559 20.5052 4.3877 20.9414 4.3877C21.3711 4.3877 21.7471 4.46419 22.0693 4.61719C22.3916 4.76693 22.6423 4.99154 22.8213 5.29102C23.0003 5.58724 23.0898 5.95671 23.0898 6.39941C23.0898 6.57845 23.0475 6.77051 22.9629 6.97559C22.8815 7.17741 22.7529 7.36621 22.5771 7.54199C22.4046 7.71777 22.18 7.86263 21.9033 7.97656C21.6266 8.08724 21.2946 8.14258 20.9072 8.14258H20.1357V7.5957ZM20.1357 8.33789V7.7959H20.9072C21.3597 7.7959 21.734 7.84961 22.0303 7.95703C22.3265 8.06445 22.5592 8.20768 22.7285 8.38672C22.901 8.56576 23.0215 8.7627 23.0898 8.97754C23.1615 9.18913 23.1973 9.40072 23.1973 9.61231C23.1973 9.94434 23.1403 10.2389 23.0264 10.4961C22.9157 10.7533 22.7578 10.9714 22.5527 11.1504C22.3509 11.3294 22.1133 11.4645 21.8398 11.5557C21.5664 11.6468 21.2686 11.6924 20.9463 11.6924C20.637 11.6924 20.3457 11.6484 20.0723 11.5605C19.8021 11.4727 19.5628 11.3457 19.3545 11.1797C19.1462 11.0104 18.9834 10.8037 18.8662 10.5596C18.749 10.3122 18.6904 10.0306 18.6904 9.71484H19.5938C19.5938 9.96224 19.6475 10.1787 19.7549 10.3643C19.8656 10.5498 20.0218 10.6947 20.2236 10.7988C20.4287 10.8997 20.6696 10.9502 20.9463 10.9502C21.223 10.9502 21.4606 10.903 21.6592 10.8086C21.861 10.7109 22.0156 10.5645 22.123 10.3691C22.2337 10.1738 22.2891 9.92806 22.2891 9.63184C22.2891 9.33561 22.2272 9.0931 22.1035 8.9043C21.9798 8.71224 21.804 8.57064 21.5762 8.47949C21.3516 8.38509 21.0863 8.33789 20.7803 8.33789H20.1357Z" fill="white" /> -->
             </svg>
+            <span class="absolute top-0 right-0 w-4 h-4 rounded-full flex justify-center items-center text-[8px] bg-[#FF5E5E] text-white "><?= $totalPending ?></span></button>
           </a>
         </li>
         <li class="ml-3">
           <div class="flex items-center bg-white dark:bg-gray-700 dark:text-white rounded-full pr-2">
-            <img src="../resources/img/profile.png" alt="profile" class="rounded-full" height="100" />
+            <img src="<?= !empty($admin[0]['photo']) ? $baseUrl . $admin[0]['photo'] : '../resources/img/profile.pn'; ?>" alt="profile" class="rounded-full w-10 h-10" />
             <div class="mx-3">
-              <p class="text-sm font-bold">John Smith</p>
-              <p class="text-[11px] m-0">Admin</p>
+              <p class="text-sm font-bold"><?= ucwords(strtolower($admin[0]['first_name'])) . ' ' . ucwords(strtolower($admin[0]['last_name'])); ?></p>
+              <p class="text-[11px] m-0"><?= ucwords(strtolower($admin[0]['role_name'])) ?></p>
             </div>
-            <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path class="dark:stroke-slate-50 stroke-slate-600" d="M13.2266 1.59473L7.22656 7.59473L1.22656 1.59473" stroke="#636363" stroke-width="2" stroke-linecap="round" />
-            </svg>
+            <!-- <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.2266 1.59473L7.22656 7.59473L1.22656 1.59473" stroke="#636363" stroke-width="2" stroke-linecap="round" />
+            </svg> -->
           </div>
         </li>
       </ul>
@@ -268,232 +288,40 @@
 
       <!--! User Faq -->
       <div id="faqUser" class="w-full px-28 pt-10">
-        <div class="w-full mt-1 m-auto border-b-2 border-gray-300 dark:border-gray-700 pb-4 px-20 group/edit relative">
-          <form action="" id="faqInputForm">
-            <input disabled aria-disabled="true" type="text" name="question" id="question" class="w-full font-bold mb-2 p-2 bg-white  text-lg aria-[disabled=false]:bg-gray-300 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500" value="How do I sign up for the online learning platform?" />
-            <textarea disabled aria-disabled="true" id="message" rows="3" class="text-start block w-full max-h-28 overflow-y-auto p-2 bg-white  text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-300 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500">
-You can sign up by visiting our website and clicking on the "Sign Up" button. Follow the prompts to create an account using your email address and a password.
-              </textarea>
-          </form>
+        <?php foreach ($userFaqs as $faq) { ?>
+          <div class="w-full mt-1 m-auto border-b-2 border-gray-300 dark:border-gray-700 pb-4 px-20 group/edit relative faq-container" data-faq-id="<?= $faq['id']; ?>">
+            <form action="../../Controller/UserFaqController.php" method="post" class="faq-form" id="faqForm-<?= $faq['id']; ?>">
+              <input type="hidden" name="id" value="<?= $faq['id']; ?>" />
+              <input type="hidden" name="updateUserFaq" value="1" /> 
+              <input disabled aria-disabled="true" type="text" name="title" class="title-field w-full font-bold mb-2 p-2 bg-white text-lg aria-[disabled=false]:bg-gray-300 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500" value="<?= htmlspecialchars($faq['title']); ?>" />
+              <textarea disabled aria-disabled="true" name="description" class="description-field text-start block w-full max-h-28 overflow-y-auto p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-300 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500"><?= htmlspecialchars($faq['description']); ?></textarea>
 
-          <div class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
-            <ion-icon name="create-outline" class="text-3xl my-3  cursor-pointer text-slate-800 dark:text-white" onclick="faqEdite(this)"></ion-icon>
-            <ion-icon name="remove-circle-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" id="faqRemove"></ion-icon>
+              <div class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
+                <ion-icon name="create-outline" class="text-3xl my-3 cursor-pointer text-slate-800 dark:text-white edit-icon"></ion-icon>
+                <ion-icon name="remove-circle-outline" class="text-3xl my-3 cursor-pointer text-slate-800 dark:text-white delete-icon"></ion-icon>
+              </div>
+            </form>
           </div>
-        </div>
-
-        <div class="w-full mt-1 m-auto border-b-2 border-gray-300 dark:border-gray-700 pb-4 px-20 group/edit relative">
-          <form action="" id="faqInputForm">
-            <input disabled aria-disabled="true" type="text" name="question" id="question" class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500" value="What types of courses are offered?" />
-            <textarea disabled aria-disabled="true" id="message" rows="3" class="text-start block w-full max-h-28 overflow-y-auto p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500">
-Our platform offers a wide range of courses, including subjects like Math, Science, English, History, and elective courses such as Music and Art.
-            </textarea>
-          </form>
-
-          <div class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
-            <ion-icon name="create-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" onclick="faqEdite(this)"></ion-icon>
-            <ion-icon name="remove-circle-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" id="faqRemove"></ion-icon>
-          </div>
-        </div>
-
-        <div class="w-full mt-1 m-auto border-b-2 border-gray-300 dark:border-gray-700 pb-4 px-20 group/edit relative">
-          <form action="" id="faqInputForm">
-            <input disabled aria-disabled="true" type="text" name="question" id="question" class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500" value="How are the courses delivered?" />
-            <textarea disabled aria-disabled="true" id="message" rows="3" class="text-start block w-full max-h-28 overflow-y-auto p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500">
-Courses are delivered through a combination of live virtual classes, pre-recorded video lessons, interactive quizzes, and downloadable resources.
-          </textarea>
-          </form>
-
-          <div class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
-            <ion-icon name="create-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" onclick="faqEdite(this)"></ion-icon>
-            <ion-icon name="remove-circle-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" id="faqRemove"></ion-icon>
-          </div>
-        </div>
-
-        <div class="w-full mt-1 m-auto border-b-2 border-gray-300 dark:border-gray-700 pb-4 px-20 group/edit relative">
-          <form action="" id="faqInputForm">
-            <input disabled aria-disabled="true" type="text" name="question" id="question" class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500" value="Can I access the platform on any device?" />
-            <textarea disabled aria-disabled="true" id="message" rows="3" class="text-start block w-full max-h-28 overflow-y-auto p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500">
-Yes, our platform is accessible on any device with internet connectivity, including laptops, tablets, and smartphones.
-        </textarea>
-          </form>
-
-          <div class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
-            <ion-icon name="create-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" onclick="faqEdite(this)"></ion-icon>
-            <ion-icon name="remove-circle-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" id="faqRemove"></ion-icon>
-          </div>
-        </div>
-
-        <div class="w-full mt-1 m-auto border-b-2 border-gray-300 dark:border-gray-700 pb-4 px-20 group/edit relative">
-          <form action="" id="faqInputForm">
-            <input disabled aria-disabled="true" type="text" name="question" id="question" class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500" value="Is there a mobile app available?" />
-            <textarea disabled aria-disabled="true" id="message" rows="3" class="text-start block w-full max-h-28 overflow-y-auto p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500">
-No, we currently developed for web version. Later we will for mobile platform.
-      </textarea>
-          </form>
-
-          <div class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
-            <ion-icon name="create-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" onclick="faqEdite(this)"></ion-icon>
-            <ion-icon name="remove-circle-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" id="faqRemove"></ion-icon>
-          </div>
-        </div>
-
-        <div class="w-full mt-1 m-auto border-b-2 border-gray-300 dark:border-gray-700 pb-4 px-20 group/edit relative">
-          <form action="" id="faqInputForm">
-            <input disabled aria-disabled="true" type="text" name="question" id="question" class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500" value="Is there a mobile app available?" />
-            <textarea disabled aria-disabled="true" id="message" rows="3" class="text-start block w-full max-h-28 overflow-y-auto p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500">
-No, we currently developed for web version. Later we will for mobile platform.
-    </textarea>
-          </form>
-
-          <div class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
-            <ion-icon name="create-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" onclick="faqEdite(this)"></ion-icon>
-            <ion-icon name="remove-circle-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" id="faqRemove"></ion-icon>
-          </div>
-        </div>
-
-        <div class="w-full mt-1 m-auto border-b-2 border-gray-300 dark:border-gray-700 pb-4 px-20 group/edit relative">
-          <form action="" id="faqInputForm">
-            <input disabled aria-disabled="true" type="text" name="question" id="question" class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500" value="How do I get technical support if I encounter an issue?" />
-            <textarea disabled aria-disabled="true" id="message" rows="3" class="text-start block w-full max-h-28 overflow-y-auto p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500">
-For technical support, you can visit our Help Center on the website or contact our support team via email or live chat.
-  </textarea>
-          </form>
-
-          <div class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
-            <ion-icon name="create-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" onclick="faqEdite(this)"></ion-icon>
-            <ion-icon name="remove-circle-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" id="faqRemove"></ion-icon>
-          </div>
-        </div>
-
-        <div class="w-full mt-1 m-auto border-b-2 border-gray-300 dark:border-gray-700 pb-4 px-20 group/edit relative">
-          <form action="" id="faqInputForm">
-            <input disabled aria-disabled="true" type="text" name="question" id="question" class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500" value="Are the Institute qualified?" />
-            <textarea disabled aria-disabled="true" id="message" rows="3" class="text-start block w-full max-h-28 overflow-y-auto p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500">
-Yes, all our Institute are highly qualified professionals with relevant teaching certifications and experience in their subject areas.
-  </textarea>
-          </form>
-
-          <div class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
-            <ion-icon name="create-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" onclick="faqEdite(this)"></ion-icon>
-            <ion-icon name="remove-circle-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" id="faqRemove"></ion-icon>
-          </div>
-        </div>
-
-        <div class="w-full mt-1 m-auto border-b-2 border-gray-300 dark:border-gray-700 pb-4 px-20 group/edit relative">
-          <form action="" id="faqInputForm">
-            <input disabled aria-disabled="true" type="text" name="question" id="question" class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500" value="Is there a fee for using the platform?" />
-            <textarea disabled aria-disabled="true" id="message" rows="3" class="text-start block w-full max-h-28 overflow-y-auto p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500">
-Yes, there is a fee structure depending on the courses you enroll in. We offer different subscription plans and payment options to suit your needs.
-  </textarea>
-          </form>
-
-          <div class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
-            <ion-icon name="create-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" onclick="faqEdite(this)"></ion-icon>
-            <ion-icon name="remove-circle-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" id="faqRemove"></ion-icon>
-          </div>
-        </div>
-
-        <div class="w-full mt-1 m-auto border-b-2 border-gray-300 dark:border-gray-700 pb-4 px-20 group/edit relative">
-          <form action="" id="faqInputForm">
-            <input disabled aria-disabled="true" type="text" name="question" id="question" class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500" value="Is there a fee for using the platform?" />
-            <textarea disabled aria-disabled="true" id="message" rows="3" class="text-start block w-full max-h-28 overflow-y-auto p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500">
-Yes, there is a fee structure depending on the courses you enroll in. We offer different subscription plans and payment options to suit your needs.
-  </textarea>
-          </form>
-
-          <div class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
-            <ion-icon name="create-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" onclick="faqEdite(this)"></ion-icon>
-            <ion-icon name="remove-circle-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" id="faqRemove"></ion-icon>
-          </div>
-        </div>
+        <?php } ?>
       </div>
 
-      <!--! Institute Faq -->
+      <!-- Institute FAQ -->
       <div id="faqInstitute" class="w-full hidden px-28 pt-10">
-        <div class="w-full mt-1 m-auto border-b-2 border-gray-300 dark:border-gray-700 pb-4 px-20 group/edit relative">
-          <form action="" id="faqInputForm">
-            <input disabled aria-disabled="true" type="text" name="question" id="question" class="w-full font-bold mb-2 p-2 bg-white text-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500" value="What features are available for institutions?" />
-            <textarea disabled aria-disabled="true" id="message" rows="3" class="text-start block w-full max-h-28 overflow-y-auto p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500">
-Institutions can benefit from features such as custom branding, dedicated portals for students and staff, administrative dashboards, and integration with existing systems.
-              </textarea>
-          </form>
+        <?php foreach ($instituteFaqs as $faq) { ?>
+          <div class="w-full mt-1 m-auto border-b-2 border-gray-300 dark:border-gray-700 pb-4 px-20 group/edit relative">
+            <form action="../../Controller/InstituteFaqController.php" method="post" class="faq-form" id="faqForm-<?= $faq['id']; ?>">
+              <input type="hidden" name="id" value="<?= $faq['id']; ?>" />
+              <input type="hidden" name="updateInstituteFaq" value="1" /> 
+              <input disabled aria-disabled="true" type="text" name="question" id="question-<?= $faq['id']; ?>" class="w-full font-bold mb-2 p-2 bg-white text-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500" value="<?= ($faq['title']); ?>" />
+              <textarea disabled aria-disabled="true" id="message-<?= $faq['id']; ?>" rows="3" class="text-start block w-full max-h-28 overflow-y-auto p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500"><?= ($faq['description']); ?></textarea>
 
-          <div class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
-            <ion-icon name="create-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" onclick="faqEdite(this)"></ion-icon>
-            <ion-icon name="remove-circle-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" id="faqRemove"></ion-icon>
+              <div class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
+                <ion-icon name="create-outline" class="text-3xl my-3 cursor-pointer text-slate-800 dark:text-white" onclick="faqEdit(this)"></ion-icon>
+                <ion-icon name="remove-circle-outline" class="text-3xl my-3 cursor-pointer text-slate-800 dark:text-white delete-icon" onclick="faqDelete(this)"></ion-icon>
+              </div>
+            </form>
           </div>
-        </div>
-
-        <div class="w-full mt-1 m-auto border-b-2 border-gray-300 dark:border-gray-700 pb-4 px-20 group/edit relative">
-          <form action="" id="faqInputForm">
-            <input disabled aria-disabled="true" type="text" name="question" id="question" class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500" value="Is the platform secure?" />
-            <textarea disabled aria-disabled="true" id="message" rows="3" class="text-start block w-full max-h-28 overflow-y-auto p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500">
-Yes, our platform uses advanced security measures to protect your data and ensure the privacy and safety of all users.
-            </textarea>
-          </form>
-
-          <div class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
-            <ion-icon name="create-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" onclick="faqEdite(this)"></ion-icon>
-            <ion-icon name="remove-circle-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" id="faqRemove"></ion-icon>
-          </div>
-        </div>
-
-        <div class="w-full mt-1 m-auto border-b-2 border-gray-300 dark:border-gray-700 pb-4 px-20 group/edit relative">
-          <form action="" id="faqInputForm">
-            <input disabled aria-disabled="true" type="text" name="question" id="question" class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500" value="What are the reporting capabilities?" />
-            <textarea disabled aria-disabled="true" id="message" rows="3" class="text-start block w-full max-h-28 overflow-y-auto p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500">
-Our platform provides detailed reporting capabilities, allowing administrators to track student performance, attendance, and engagement.
-          </textarea>
-          </form>
-
-          <div class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
-            <ion-icon name="create-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" onclick="faqEdite(this)"></ion-icon>
-            <ion-icon name="remove-circle-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" id="faqRemove"></ion-icon>
-          </div>
-        </div>
-
-        <div class="w-full mt-1 m-auto border-b-2 border-gray-300 dark:border-gray-700 pb-4 px-20 group/edit relative">
-          <form action="" id="faqInputForm">
-            <input disabled aria-disabled="true" type="text" name="question" id="question" class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500" value="How can we get started?" />
-            <textarea disabled aria-disabled="true" id="message" rows="3" class="text-start block w-full max-h-28 overflow-y-auto p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500">
-To get started, contact our sales team to discuss your needs and schedule a demo. We will provide you with all the necessary information and support to begin using our platform.
-        </textarea>
-          </form>
-
-          <div class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
-            <ion-icon name="create-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" onclick="faqEdite(this)"></ion-icon>
-            <ion-icon name="remove-circle-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" id="faqRemove"></ion-icon>
-          </div>
-        </div>
-
-        <div class="w-full mt-1 m-auto border-b-2 border-gray-300 dark:border-gray-700 pb-4 px-20 group/edit relative">
-          <form action="" id="faqInputForm">
-            <input disabled aria-disabled="true" type="text" name="question" id="question" class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500" value="Is there a mobile app available?" />
-            <textarea disabled aria-disabled="true" id="message" rows="3" class="text-start block w-full max-h-28 overflow-y-auto p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500">
-No, we currently developed for web version. Later we will for mobile platform.
-      </textarea>
-          </form>
-
-          <div class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
-            <ion-icon name="create-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" onclick="faqEdite(this)"></ion-icon>
-            <ion-icon name="remove-circle-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" id="faqRemove"></ion-icon>
-          </div>
-        </div>
-
-        <div class="w-full mt-1 m-auto border-b-2 border-gray-300 dark:border-gray-700 pb-4 px-20 group/edit relative">
-          <form action="" id="faqInputForm">
-            <input disabled aria-disabled="true" type="text" name="question" id="question" class="w-full font-bold mb-2 bg-white p-2 text-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500" value="How do I get technical support if I encounter an issue?" />
-            <textarea disabled aria-disabled="true" id="message" rows="3" class="text-start block w-full max-h-28 overflow-y-auto p-2 bg-white text-md text-gray-900 rounded-lg aria-[disabled=false]:bg-gray-100 dark:bg-slate-800 dark:text-white aria-[disabled=false]:dark:bg-gray-500">
-For technical support, you can visit our Help Center on the website or contact our support team via email or live chat.
-    </textarea>
-          </form>
-
-          <div class="invisible absolute top-0 right-0 mr-3 flex flex-col justify-center items-center h-full group-hover/edit:visible">
-            <ion-icon name="create-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" onclick="faqEdite(this)"></ion-icon>
-            <ion-icon name="remove-circle-outline" class="text-3xl my-3 cursor-pointer  text-slate-800 dark:text-white" id="faqRemove"></ion-icon>
-          </div>
-        </div>
+        <?php } ?>
       </div>
 
       <div class="fixed right-5 top-72 flex flex-col justify-center items-end">
@@ -506,6 +334,79 @@ For technical support, you can visit our Help Center on the website or contact o
       </div>
     </div>
   </div>
+
+  <script>
+    $(document).ready(function() {
+      let activeFormId = null;
+
+      // Enable editing on click of the edit icon
+      $('.edit-icon').on('click', function(event) {
+        event.stopPropagation();
+        const faqContainer = $(this).closest('.faq-container');
+        const faqId = faqContainer.data('faq-id');
+
+        // Enable the fields for editing
+        faqContainer.find('.title-field').prop('disabled', false).attr('aria-disabled', 'false');
+        faqContainer.find('.description-field').prop('disabled', false).attr('aria-disabled', 'false');
+
+        // Set the active form ID
+        activeFormId = faqId;
+
+        // Focus on the title input
+        faqContainer.find('.title-field').focus();
+      });
+
+      // Handle deletion of FAQ
+      $('.delete-icon').on('click', function(event) {
+        event.stopPropagation();
+        const faqContainer = $(this).closest('.faq-container');
+        const faqId = faqContainer.data('faq-id');
+
+        if (confirm('Are you sure you want to delete this FAQ?')) {
+          $('<form>', {
+            "method": "post",
+            "action": "../../Controller/UserFaqController.php"
+          }).append($('<input>', {
+            "type": "hidden",
+            "name": "id",
+            "value": faqId
+          })).append($('<input>', {
+            "type": "hidden",
+            "name": "deleteUserFaq",
+            "value": "1"
+          })).appendTo('body').submit();
+        }
+      });
+
+      // Detect click outside of the form to submit the active form
+      $(document).on('click', function(event) {
+        if (activeFormId) {
+          const activeForm = $('#faqForm-' + activeFormId);
+          const formBounds = activeForm[0].getBoundingClientRect();
+          const clickInside = (
+            event.clientX >= formBounds.left &&
+            event.clientX <= formBounds.right &&
+            event.clientY >= formBounds.top &&
+            event.clientY <= formBounds.bottom
+          );
+
+          // Check if the click was outside the active form
+          if (!clickInside) {
+            activeForm.submit();
+            activeFormId = null;
+          }
+        }
+      });
+
+      // Prevent form submission on pressing Enter key inside text fields
+      $('.faq-form input, .faq-form textarea').on('keydown', function(event) {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+        }
+      });
+    });
+  </script>
+
 </body>
 
 </html>

@@ -384,18 +384,19 @@ $slotsData = json_encode($slots);
                         <div class="w-2/4 bg-card-bg dark:bg-gray-700 p-4 rounded-lg shadow-custom ">
                             <div class="font-bold mb-2 dark:text-white">Users</div>
                             <!-- Users Pie Chart Placeholder -->
-                            <canvas id="users-pie-chart" class="h-40"></canvas>
+                            <canvas id="users-pie-chart" class="h-70"></canvas>
                         </div>
                         <div class="w-2/4  bg-card-bg dark:bg-gray-700 p-4 rounded-lg shadow-custom">
                             <div class=" font-bold mb-2 dark:text-white">Institutes</div>
                             <!-- Institutes Pie Chart Placeholder -->
-                            <canvas id="institutes-pie-chart" class="h-40"></canvas>
+                            <canvas id="institutes-pie-chart" class="h-70"></canvas>
                         </div>
-                        <div class="w-5/6 bg-card-bg dark:bg-gray-700 py-4 rounded-lg shadow-custom">
-                            <div class="font-bold mb-2 px-2 dark:text-white">Upcoming Ad Slots</div>
                             <!-- Upcoming Ad Slots Placeholder -->
+                        <!-- <div class="w-5/6 bg-card-bg dark:bg-gray-700 py-4 rounded-lg shadow-custom">
+                            <div class="font-bold mb-2 px-2 dark:text-white">Upcoming Ad Slots</div>
+                        
                             <div id="upcoming-ad-slots" class="dark:text-white"></div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
