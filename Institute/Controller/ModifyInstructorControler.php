@@ -116,6 +116,7 @@ if (isset($_POST["submit"])) {
             echo "Something went wrong while moving the uploaded file.";
         }
     } else {
-        echo "Only JPG and JPEG files are allowed.";
+        // Add an alert message using JavaScript
+        echo "<script>alert('Only JPG and JPEG files are allowed.');</script>";
     }
 }

@@ -1512,6 +1512,10 @@ html {
   margin-top: 2rem;
 }
 
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
 .block {
   display: block;
 }
@@ -1634,6 +1638,10 @@ html {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[88vh\] {
+  height: 88vh;
 }
 
 .w-1\/2 {
@@ -1827,10 +1835,6 @@ html {
 
 .grid-cols-10 {
   grid-template-columns: repeat(10, minmax(0, 1fr));
-}
-
-.grid-cols-12 {
-  grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 
 .grid-cols-2 {
@@ -2540,6 +2544,10 @@ html {
   padding-top: 15px;
 }
 
+.pb-20 {
+  padding-bottom: 5rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2897,6 +2905,10 @@ html {
 .active{
   background-color: #374151;
   color: #ffffff;
+}
+
+.custom-height {
+  height: 720px;
 }
 
 .after\:absolute::after {
