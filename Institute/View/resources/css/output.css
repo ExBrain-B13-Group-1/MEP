@@ -1316,6 +1316,10 @@ html {
   margin-bottom: 1.5rem;
 }
 
+.-mb-4 {
+  margin-bottom: -1rem;
+}
+
 .-mb-px {
   margin-bottom: -1px;
 }
@@ -1510,26 +1514,6 @@ html {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.-mb-2 {
-  margin-bottom: -0.5rem;
-}
-
-.-mb-5 {
-  margin-bottom: -1.25rem;
-}
-
-.-mb-10 {
-  margin-bottom: -2.5rem;
-}
-
-.-mb-7 {
-  margin-bottom: -1.75rem;
-}
-
-.-mb-4 {
-  margin-bottom: -1rem;
 }
 
 .block {

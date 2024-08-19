@@ -367,8 +367,95 @@ class MClasses{
         }
     }
 
-    public function remove($id){
-        
+    public function classListQualifiedForDelete($instituteId){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT c.*,
+                    mcate.cat_name AS category_name,
+                    mis.full_name AS instructor_name,
+                    mi.name AS institute_name,
+                    cs.status
+                FROM m_classes AS c
+                INNER JOIN m_categories AS mcate ON mcate.id = c.cate_id
+                INNER JOIN m_instructors AS mis ON mis.id = c.instructor_id
+                INNER JOIN m_institutes AS mi ON mi.id = c.institute_id
+                INNER JOIN c_status AS cs ON cs.id = c.c_status_id
+                WHERE (SELECT COUNT(*) FROM t_student_classes_enroll AS e WHERE e.class_id = c.id) = 0
+                AND c.institute_id = :id
+                AND cs.status = 'Upcoming'
+                AND c.del_flg = 0
+                AND c.start_date > CURDATE()"
+            );
+            $sql->bindValue(":id",$instituteId);
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
+    public function classListQualifiedForDeleteByName($instituteId,$title){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT c.*,
+                    mcate.cat_name AS category_name,
+                    mis.full_name AS instructor_name,
+                    mi.name AS institute_name,
+                    cs.status
+                FROM m_classes AS c
+                INNER JOIN m_categories AS mcate ON mcate.id = c.cate_id
+                INNER JOIN m_instructors AS mis ON mis.id = c.instructor_id
+                INNER JOIN m_institutes AS mi ON mi.id = c.institute_id
+                INNER JOIN c_status AS cs ON cs.id = c.c_status_id
+                WHERE (SELECT COUNT(*) FROM t_student_classes_enroll AS e WHERE e.class_id = c.id) = 0
+                AND c.institute_id = :id
+                AND cs.status = 'Upcoming'
+                AND c.del_flg = 0
+                AND c.start_date > CURDATE()
+                AND c.c_title LIKE :title
+                ORDER BY c.id DESC"
+            );
+            $sql->bindValue(":id",$instituteId);
+            $sql->bindValue(":title", '%' . $title . '%');
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
+    function cancelledClassStatusUpdate($classId,$instituteId){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "UPDATE m_classes AS mc
+                SET c_status_id = 4,
+                del_flg = 1
+                WHERE mc.id = :id 
+                AND mc.institute_id = :instituteId 
+                AND mc.del_flg = 0"
+            );
+            $sql->bindValue(":id",$classId);
+            $sql->bindValue(":instituteId",$instituteId);
+            $sql->execute();
+            return true;
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+            return false;
+        }
     }
 
 }

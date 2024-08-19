@@ -212,10 +212,10 @@ async function approved(e, selectedParams) {
                 html: `
                     <div style="width: 450px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
                         <label for="swal-input1" class="-mb-4">Zoom Meeting ID</label>
-                        <input type="text" id="swal-input1" class="swal2-input placeholder-shown:text-gray-700 rounded-md" style="width: 100%;" placeholder="Zoom Meeting ID" />
+                        <input type="text" id="swal-input1" class="swal2-input placeholder-shown:text-gray-700 rounded-md" style="width: 100%;" placeholder="Zoom Meeting ID" autocomplete="off"/>
                         
                         <label for="swal-input2" class="mt-3 -mb-4">Zoom Meeting Password</label>
-                        <input type="text" id="swal-input2" class="swal2-input placeholder-shown:text-gray-700 rounded-md" style="width: 100%;" placeholder="Zoom Meeting Password" />
+                        <input type="text" id="swal-input2" class="swal2-input placeholder-shown:text-gray-700 rounded-md" style="width: 100%;" placeholder="Zoom Meeting Password" autocomplete="off"/>
                         
                         <label for="swal-input3" class="mt-3 -mb-4">Class Title</label>
                         <input type="text" id="swal-input3" class="swal2-input placeholder-shown:text-gray-700 rounded-md" style="width: 100%;" value="${title}" placeholder="Class Title" readonly/>
