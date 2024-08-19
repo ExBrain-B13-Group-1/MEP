@@ -1512,8 +1512,24 @@ html {
   margin-top: 2rem;
 }
 
-.mb-20 {
-  margin-bottom: 5rem;
+.-mb-2 {
+  margin-bottom: -0.5rem;
+}
+
+.-mb-5 {
+  margin-bottom: -1.25rem;
+}
+
+.-mb-10 {
+  margin-bottom: -2.5rem;
+}
+
+.-mb-7 {
+  margin-bottom: -1.75rem;
+}
+
+.-mb-4 {
+  margin-bottom: -1rem;
 }
 
 .block {
@@ -1638,10 +1654,6 @@ html {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-\[88vh\] {
-  height: 88vh;
 }
 
 .w-1\/2 {
@@ -2544,10 +2556,6 @@ html {
   padding-top: 15px;
 }
 
-.pb-20 {
-  padding-bottom: 5rem;
-}
-
 .text-left {
   text-align: left;
 }
@@ -2968,6 +2976,16 @@ html {
 .after\:content-\[\'\'\]::after {
   --tw-content: '';
   content: var(--tw-content);
+}
+
+.placeholder-shown\:text-gray-700:-moz-placeholder-shown {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.placeholder-shown\:text-gray-700:placeholder-shown {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 .hover\:border-gray-300:hover {

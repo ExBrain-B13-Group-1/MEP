@@ -17,8 +17,11 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Enrollment</title>
-    <!-- Tailwind output css -->
+    <!-- jQuery Ui -->
+    <link href="./../css/jquery-ui.css" rel="stylesheet" />
+    <!-- Tailwind output css -->    
     <link href="./../css/output.css" rel="stylesheet" />
+    
 </head>
 
 <body class="bg-gray-300 dark:bg-gray-800">
@@ -339,6 +342,8 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
     <script src="./../js/path.js" type="text/javascript"></script>
     <!-- darkmode lightmode js -->
     <script src="./../js/darkandlight.js" type="text/javascript"></script>
+    <!-- jQuery Ui -->
+    <script src="./../lib/jquery-ui.js" type="text/javascript"></script>
     <!-- sweetalert2 js1 -->
     <script src="./../lib/sweetalert2@11.js" type="text/javascript"></script>
     <!-- customjs -->

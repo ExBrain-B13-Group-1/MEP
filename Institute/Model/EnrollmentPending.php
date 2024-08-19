@@ -18,10 +18,16 @@ class EnrollmentPending{
                     mc.institute_id,
                     ms.student_id AS s_unique_id,
                     ms.name AS student_name,
+                    ms.email AS student_email,
                     ms.gender,
                     mc.c_title,
                     mc.c_fee,
-                    ms.phone
+                    ms.phone,
+                    mc.days,
+                    mc.start_time,
+                    mc.end_time,
+                    mc.start_date,
+                    mc.end_date
                 FROM pending_enrollment AS pe
                 INNER JOIN m_classes AS mc ON mc.id = pe.enrolled_class_id
                 INNER JOIN m_students AS ms ON ms.id = pe.student_id
@@ -53,7 +59,12 @@ class EnrollmentPending{
                     ms.gender,
                     mc.c_title,
                     mc.c_fee,
-                    ms.phone
+                    ms.phone,
+                    mc.days,
+                    mc.start_time,
+                    mc.end_time,
+                    mc.start_date,
+                    mc.end_date
                 FROM pending_enrollment AS pe
                 INNER JOIN m_classes AS mc ON mc.id = pe.enrolled_class_id
                 INNER JOIN m_students AS ms ON ms.id = pe.student_id
@@ -117,17 +128,19 @@ class EnrollmentPending{
     }
 
 
-    public function updatePendingStatusForReject($studentID){
+    public function updatePendingStatusForReject($studentID,$reason){
         try{
             $dbconn = new DBConnection();
             // get connection
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
                 "UPDATE pending_enrollment AS pe
-                    SET pe.pending_status = -1 
+                    SET pe.pending_status = -1 ,
+                    pe.rejected_reason = :reason
                     WHERE pe.student_id = :id"
             );
             $sql->bindValue(":id",$studentID);
+            $sql->bindValue(":reason",$reason);
             $sql->execute();
             return true;
         }catch(\Throwable $th){

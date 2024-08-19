@@ -3,12 +3,12 @@ const pendingListURL = `http://localhost/MEP/Institute/Controller/EnrollmentPend
 const filterByStudentNameURL = `http://localhost/MEP/Institute/Controller/FilterByNameEnrollmentPendingController.php`;
 const showRelatedReceiptImageURL = `http://localhost/MEP/Institute/Controller/GetRelatedReceiptImageController.php`;
 const pendingRejectedURL = `http://localhost/MEP/Institute/Controller/PendingRejectedController.php`;
-const pendingApprovedURL = ``;
+const pendingApprovedURL = `http://localhost/MEP/Institute/Controller/PendingApprovedController.php`;
 
 let baseUrl = `../../../../storages/uploads/`;
 
 $(document).ready(function () {
-     // Replace with your data source URL
+    // Replace with your data source URL
     let dynurl = pendingListURL;
     let jsonData = [];
 
@@ -46,8 +46,8 @@ $(document).ready(function () {
                                     <span>Receipt</span>
                                 </td>
                                 <td class="px-6 py-4">
-                                    <ion-icon name="close-circle-outline" class="relative top-1 w-7 h-7 text-red-500 dark:text-red-500 cursor-pointer mr-2 hover:text-red-700 dark:hover:text-red-600" onclick="rejected(event,${rowData.student_id})"></ion-icon>
-                                    <ion-icon name="checkmark-circle-outline" class="relative top-1 w-7 h-7 text-green-600 dark:text-green-500 cursor-pointer hover:text-green-700 dark:hover:text-green-400" onclick="approved(event,${rowData.student_id,rowData.student_email})"></ion-icon>
+                                    <ion-icon name="close-circle-outline" class="relative top-1 w-7 h-7 text-red-500 dark:text-red-500 cursor-pointer mr-2 hover:text-red-700 dark:hover:text-red-600" onclick="rejected(event,${rowData.student_id},'${rowData.student_email}','${rowData.start_date}','${rowData.end_date}')"></ion-icon>
+                                    <ion-icon name="checkmark-circle-outline" class="relative top-1 w-7 h-7 text-green-600 dark:text-green-500 cursor-pointer hover:text-green-700 dark:hover:text-green-400" onclick="approved(event,[${rowData.student_id},'${rowData.student_email}','${rowData.start_date}','${rowData.end_date}','${rowData.days}','${rowData.start_time}','${rowData.end_time}','${rowData.c_title}'])"></ion-icon>
                                 </td>
                             </tr>`;
             // Construct your table row HTML using rowData and append to tableBody
@@ -56,8 +56,6 @@ $(document).ready(function () {
     }
 
     fetchData();
-
-
     // filter by name 
     $('#search-input').on('keyup', () => {
         let text = $('#search-input').val();
@@ -66,7 +64,7 @@ $(document).ready(function () {
             method: 'POST',
             dataType: 'json',
             data: {
-                studentname : text
+                studentname: text
             },
             success: function (datas) {
                 jsonData = datas;
@@ -79,20 +77,17 @@ $(document).ready(function () {
             }
         });
     });
-    
-
 });
-
 
 function addThousandSeparator(value) {
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function showReceipt(image){
-    Swal.fire(`<img src='${baseUrl+image}' />`);
+function showReceipt(image) {
+    Swal.fire(`<img src='${baseUrl + image}' />`);
 }
 
-function rejected(e,id){
+async function rejected(e, id, email) {
     Swal.fire({
         title: "Are you sure to reject?",
         text: "Notice: Check receipt image before reject!",
@@ -102,40 +97,101 @@ function rejected(e,id){
         confirmButtonColor: "#3085d6",
         confirmButtonText: "Confirm",
         reverseButtons: true // This will swap the positions of the cancel and confirm buttons
-    }).then((result) => {
+    }).then(async (result) => {
         if (result.isConfirmed) {
             let rejectrow = e.target.parentElement.parentElement;
             let enrollmentcount = document.getElementById('pendingcount');
             let changeNum = parseInt(enrollmentcount.innerHTML);
-            $.ajax({
-                url: pendingRejectedURL,
-                method: 'POST',
-                dataType: 'json',
-                data:{
-                    id: id
+
+            const { value: text } = await Swal.fire({
+                input: "textarea",
+                inputLabel: "Rejected Reason Message",
+                inputPlaceholder: "Type your message here...",
+                inputAttributes: {
+                    "aria-label": "Type your message here",
+                    "style": "height: 70vh; width: 86%; resize: none;"
                 },
-                success: function (status) {
-                    // console.log(data);
-                    if(status === "success"){
-                        rejectrow.remove();
-                        enrollmentcount.innerHTML = changeNum - 1;
-                        Swal.fire({
-                            title: "Reject Completed!",
-                            icon: "success",
-                        });
+                showCancelButton: true,
+                reverseButtons: true,
+                preConfirm: (text) => {
+                    if (text.trim() === "") {
+                        Swal.showValidationMessage("Message is required");
+                        return false;
                     }
-                },
-                error: function (xhr, status, error) {
-                    console.error('Error fetching data:', status, error);
+                    return text;
                 }
             });
 
-            
+            if (!text) {
+                return; // If validation failed, exit the function
+            }
+
+            // console.log(id);
+            // console.log(email);
+            // console.log(text);
+
+            let dataobj = {
+                id: id,
+                email: email,
+                reason: text
+            }
+
+            let stringifyData = JSON.stringify(dataobj);
+            // console.log(stringifyData);
+
+            var xmlhttp = new XMLHttpRequest();
+            var url = pendingRejectedURL;
+            xmlhttp.open("POST", url, true);
+            xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlhttp.send("datas=" + encodeURIComponent(stringifyData)); // Use encodeURIComponent
+
+            Swal.fire({
+                title: "Rejected Process Running...",
+                html: "I will close in <b></b> milliseconds.",
+                timer: 3000,
+                timerProgressBar: true,
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                    const timer = Swal.getPopup().querySelector("b");
+                    timerInterval = setInterval(() => {
+                        timer.textContent = `${Swal.getTimerLeft()}`;
+                        xmlhttp.onreadystatechange = function () {
+                            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                                var result = xmlhttp.responseText;
+                                // console.log(result);s
+                                if (result) {
+                                    rejectrow.remove();
+                                    enrollmentcount.innerHTML = changeNum - 1;
+                                } else {
+                                    Swal.fire({
+                                        title: "Rejected Failed!",
+                                        icon: "error"
+                                    });
+                                }
+                            } else if (xmlhttp.readyState === 4) {
+                                console.error('Error:', xmlhttp.statusText); // Add error handling
+                            }
+                        }
+                    }, 100);
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
+                }
+            }).then((result) => {
+                /* Read more about handling dismissals below */
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log("I was closed by the timer");
+                }
+            });
         }
     });
 }
 
-function approved(e,id,email){
+async function approved(e, selectedParams) {
+    const [id, email, startdate, enddate, days, starttime, endtime, title] = selectedParams;
+    console.log(startdate);
+    console.log(enddate);
     Swal.fire({
         title: "Are you sure to approve?",
         text: "Notice: Check receipt image before approve!",
@@ -145,36 +201,131 @@ function approved(e,id,email){
         confirmButtonColor: "#3085d6",
         confirmButtonText: "Confirm",
         reverseButtons: true // This will swap the positions of the cancel and confirm buttons
-    }).then((result) => {
+    }).then(async (result) => {
         if (result.isConfirmed) {
-            let approverow = e.target.parentElement.parentElement;
+            let rejectrow = e.target.parentElement.parentElement;
             let enrollmentcount = document.getElementById('pendingcount');
             let changeNum = parseInt(enrollmentcount.innerHTML);
-            $.ajax({
-                url: pendingApproveURL,
-                method: 'POST',
-                dataType: 'json',
-                data:{
-                    id: id,
-                    email: email
-                },
-                success: function (status) {
-                    // console.log(data);
-                    if(status === "success"){
-                        approverow.remove();
-                        enrollmentcount.innerHTML = changeNum - 1;
-                        Swal.fire({
-                            title: "Approve Completed!",
-                            icon: "success",
-                        });
+
+            const { value: formValues } = await Swal.fire({
+                title: "Send Zoom Invitation",
+                html: `
+                    <div style="width: 450px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                        <label for="swal-input1" class="-mb-4">Zoom Meeting ID</label>
+                        <input type="text" id="swal-input1" class="swal2-input placeholder-shown:text-gray-700 rounded-md" style="width: 100%;" placeholder="Zoom Meeting ID" />
+                        
+                        <label for="swal-input2" class="mt-3 -mb-4">Zoom Meeting Password</label>
+                        <input type="text" id="swal-input2" class="swal2-input placeholder-shown:text-gray-700 rounded-md" style="width: 100%;" placeholder="Zoom Meeting Password" />
+                        
+                        <label for="swal-input3" class="mt-3 -mb-4">Class Title</label>
+                        <input type="text" id="swal-input3" class="swal2-input placeholder-shown:text-gray-700 rounded-md" style="width: 100%;" value="${title}" placeholder="Class Title" readonly/>
+                        
+                        <label for="swal-input4" class="mt-3 -mb-4">Start Date</label>
+                        <input type="text" id="swal-input4" class="swal2-input placeholder-shown:text-gray-700 rounded-md" style="width: 100%;" placeholder="Start Date" readonly value="${startdate}"/>
+                        
+                        <label for="swal-input5" class="mt-3 -mb-4">End Date</label>
+                        <input type="text" id="swal-input5" class="swal2-input placeholder-shown:text-gray-700 rounded-md" style="width: 100%;" placeholder="End Date" readonly value="${enddate}"/>
+
+                        <input type="hidden" id="swal-input6" value="${days}" />
+                        <input type="hidden" id="swal-input7" value="${starttime}" />
+                        <input type="hidden" id="swal-input8" value="${endtime}" />
+                    </div>
+                `,
+                focusConfirm: false,
+                preConfirm: () => {
+                    const meetingID = document.getElementById("swal-input1").value;
+                    const meetingPassword = document.getElementById("swal-input2").value;
+                    const classTitle = document.getElementById("swal-input3").value;
+                    const startDate = document.getElementById("swal-input4").value;
+                    const endDate = document.getElementById("swal-input5").value;
+                    const days = document.getElementById("swal-input6").value;
+                    const start_time = document.getElementById("swal-input7").value;
+                    const end_time = document.getElementById("swal-input8").value;
+
+                    if (!meetingID || !meetingPassword || !classTitle || !startDate || !endDate || !days || !start_time || !end_time) {
+                        Swal.showValidationMessage("All fields are required");
+                        return false;
                     }
-                },
-                error: function (xhr, status, error) {
-                    console.error('Error fetching data:', status, error);
+
+                    return [meetingID, meetingPassword, classTitle, startDate, endDate, days, start_time, end_time];
                 }
             });
 
-            
+            if (formValues) {
+                let student_id = id;
+                let student_email = email;
+                let meetingID = formValues[0];
+                let meetingPassword = formValues[1];
+                let classTitle = formValues[2];
+                let startDate = formValues[3];
+                let endDate = formValues[4];
+                let days = formValues[5];
+                let start_time = formValues[6];
+                let end_time = formValues[7];
+
+                let dataobj = {
+                    student_id: student_id,
+                    student_email: student_email,
+                    meetingID: meetingID,
+                    meetingPassword: meetingPassword,
+                    classTitle: classTitle,
+                    startDate: startDate,
+                    endDate: endDate,
+                    days: days,
+                    start_time: start_time,
+                    end_time: end_time
+                }
+
+                let stringifyData = JSON.stringify(dataobj);
+                console.log(stringifyData);
+
+                var xmlhttp = new XMLHttpRequest();
+                var url = pendingApprovedURL;
+                xmlhttp.open("POST", url, true);
+                xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xmlhttp.send("datas=" + encodeURIComponent(stringifyData)); // Use encodeURIComponent
+
+                Swal.fire({
+                    title: "Rejected Process Running...",
+                    html: "I will close in <b></b> milliseconds.",
+                    timer: 3000,
+                    timerProgressBar: true,
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                        const timer = Swal.getPopup().querySelector("b");
+                        timerInterval = setInterval(() => {
+                            timer.textContent = `${Swal.getTimerLeft()}`;
+                            xmlhttp.onreadystatechange = function () {
+                                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                                    var result = xmlhttp.responseText;
+                                    console.log(result);
+                                    if (result) {
+                                        rejectrow.remove();
+                                        enrollmentcount.innerHTML = changeNum - 1;
+                                        Swal.close();
+                                    } else {
+                                        Swal.fire({
+                                            title: "Approved Failed!",
+                                            icon: "error"
+                                        });
+                                    }
+                                } else if (xmlhttp.readyState === 4) {
+                                    console.error('Error:', xmlhttp.statusText); // Add error handling
+                                }
+                            }
+                        }, 100);
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval);
+                    }
+                }).then((result) => {
+                    /* Read more about handling dismissals below */
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                        console.log("I was closed by the timer");
+                    }
+                });
+            }
         }
     });
 }
