@@ -17,7 +17,6 @@ class MInstructors
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
                 "SELECT * FROM m_instructors 
-                JOIN m_classes ON m_classes.id = m_instructors.id
                 WHERE m_instructors.institute_id = :id"
             );
             $sql->bindValue(":id",$id);
@@ -38,7 +37,7 @@ class MInstructors
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
                 "SELECT * FROM m_instructors 
-                JOIN m_classes ON m_classes.id = m_instructors.id
+                LEFT JOIN m_classes ON m_classes.id = m_instructors.id
                 WHERE m_instructors.institute_id = :id AND m_instructors.full_name LIKE :name"
             );
             $sql->bindValue(":id",$id);
@@ -327,5 +326,37 @@ class MInstructors
         }
     }
 
-    public function remove($id) {}
+    public function instructorQualifiedForDelete($instructorid,$instituteid) {
+        try {
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+
+            // Check if the instructor is associated with any classes that are not completed
+            $sql = $pdo->prepare(
+                "SELECT COUNT(*) AS class_count
+                    FROM m_classes AS c
+                    INNER JOIN c_status AS cs ON cs.id = c.c_status_id
+                    WHERE c.instructor_id = :instructorid
+                    AND c.institute_id = :instituteid
+                    AND cs.status != 'Completed' 
+                    AND c.del_flg != 1"
+            );
+            $sql->bindValue(':instructorid', $instructorid);
+            $sql->bindValue(':instituteid', $instituteid);
+            $sql->execute();
+            $result = $sql->fetch(PDO::FETCH_ASSOC);
+
+            if ($result['class_count'] > 0) {
+                // Instructor is associated with classes that are not completed
+                return false;
+            } else {
+                // Instructor is not associated with any classes or all associated classes are completed
+                return true;
+            }
+        } catch (\Throwable $th) {
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
 }

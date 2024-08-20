@@ -1,10 +1,12 @@
 let instructorLists = `http://localhost/MEP/Institute/Controller/ViewInstructorController.php`;
 let searchInstructorByNameURL = `http://localhost/MEP/Institute/Controller/SearchInstructorByNameController.php`;
 
+let qualifyForDeleteURL = `http://localhost/MEP/Institute/Controller/InstructorDeleteRuleController.php`;
+
 $(document).ready(function () {
     // Replace with your data source URL
     let dynurl = instructorLists;
-    let rowsPerPage = 9;
+    let rowsPerPage = 8;
     let jsonData = [];
     let currentPage = 1;
 
@@ -37,28 +39,28 @@ $(document).ready(function () {
             // console.log(rowData);
             const row = `
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <td class="w-4 p-4">
-                        ${rowData['instructor_sr_no']}
-                    </td>
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        ${rowData['full_name']}
-                    </th>
-                    <td class="px-6 py-4">
-                        ${rowData['gender']}
-                    </td>
-                    <td class="px-6 py-4">
-                        ${rowData['email']}
-                    </td>
-                    <td class="px-6 py-4">
-                        ${rowData['phone']}
-                    </td>
-                    <td class="px-6 py-4">
-                        <a href="javascript:void(0);" class="text-blue-700 underline card-details" onclick="showCard(${rowData.id})">Details</a>
-                    </td>
-                    <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                        <a href="http://localhost/MEP/Institute/Controller/ViewDetailsInstructorController.php?instructorid=${rowData.id}" class="text-blue-700 underline">Edit</a>
-                    </td>
-                </tr>`;
+                                <td class="w-4 p-4">
+                                    ${rowData.instructor_sr_no}
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    ${rowData.full_name}
+                                </th>
+                                <td class="px-6 py-4">
+                                    ${rowData.gender}
+                                </td>
+                                <td class="px-6 py-4">
+                                    ${rowData.email}
+                                </td>
+                                <td class="px-6 py-4">
+                                    ${rowData.phone}
+                                </td>
+                                <td class="px-6 py-4">
+                                    <a href="javascript:void(0);" class="text-blue-700 underline card-details" onclick="showCard(${rowData.id})">Details</a>
+                                </td>
+                                <td class="px-6 py-4 text-red-600 cursor-pointer">
+                                    <ion-icon name="trash-outline" class="relative top-1 w-5 h-5 ml-5" onclick="deleteInstructor(event,${rowData.id})"></ion-icon>
+                                </td>
+                            </tr>`;
             // Construct your table row HTML using rowData and append to tableBody
             tableBody.append(row);
         }
@@ -175,7 +177,6 @@ $(document).ready(function () {
     });
 });
 
-
 function showCard(id) {
     $('#card-container').html(`<div class="h-[70vh] overflow-y-auto hide-scrollbar loading-spinner flex justify-center items-center">
                                     <div role="status">
@@ -284,7 +285,6 @@ function showCard(id) {
         .catch(error => console.error('Error fetching instructor data:', error));
 }
 
-
 function closeCard() {
     document.getElementById('card-container').classList.add('hidden');
     let getlisttable = document.getElementById('list-table');
@@ -292,7 +292,45 @@ function closeCard() {
     getlisttable.classList.add('col-span-8');
 }
 
-
+function deleteInstructor(event,id) {
+    event.preventDefault();
+    // event.target.closest('tr').remove();
+    console.log(id);
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Confirm",
+        reverseButtons: true,
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: qualifyForDeleteURL,
+                method: 'POST',
+                data: { instructorid: id},
+                success: function (response) {
+                    console.log(response);
+                    // let resultobj = JSON.parse(response);
+                    // if(resultobj.success){
+                    //     event.target.closest('tr').remove();
+                    //     Swal.fire({
+                    //         title: "Deleted!",
+                    //         text: "Instructor has been deleted.",
+                    //         icon: "success",
+                    //         showConfirmButton: false
+                    //     });
+                    //     setTimeout(() => {
+                    //         location.reload();
+                    //     }, 1000); // Reload after 2 seconds
+                    // }
+                }
+            });
+        }
+    });
+}
 
 
 

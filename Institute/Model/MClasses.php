@@ -387,7 +387,8 @@ class MClasses{
                 AND c.institute_id = :id
                 AND cs.status = 'Upcoming'
                 AND c.del_flg = 0
-                AND c.start_date > CURDATE()"
+                AND c.start_date >= CURDATE()
+                ORDER BY c.id DESC"
             );
             $sql->bindValue(":id",$instituteId);
             $sql->execute();
@@ -419,7 +420,7 @@ class MClasses{
                 AND c.institute_id = :id
                 AND cs.status = 'Upcoming'
                 AND c.del_flg = 0
-                AND c.start_date > CURDATE()
+                AND c.start_date >= CURDATE()
                 AND c.c_title LIKE :title
                 ORDER BY c.id DESC"
             );
@@ -452,6 +453,41 @@ class MClasses{
             $sql->execute();
             return true;
         }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+            return false;
+        }
+    }
+
+    function classQualifiedForEdit($instituteId, $classId) {
+        try {
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT COUNT(*) AS class_count
+                FROM m_classes AS c
+                INNER JOIN m_categories AS mcate ON mcate.id = c.cate_id
+                INNER JOIN m_instructors AS mis ON mis.id = c.instructor_id
+                INNER JOIN m_institutes AS mi ON mi.id = c.institute_id
+                INNER JOIN c_status AS cs ON cs.id = c.c_status_id
+                WHERE (SELECT COUNT(*) FROM t_student_classes_enroll AS e WHERE e.class_id = c.id) = 0
+                AND c.institute_id = :id
+                AND cs.status = 'Upcoming'
+                AND c.del_flg = 0
+                AND c.start_date > CURDATE()
+                AND c.id = :classId"
+            );
+            $sql->bindValue(":id", $instituteId);
+            $sql->bindValue(":classId", $classId);
+            $sql->execute();
+            $result = $sql->fetch(PDO::FETCH_ASSOC);
+            if($result['class_count'] > 0){
+                return true;
+            }else{
+                return false;
+            }
+        } catch (\Throwable $th) {
             // fail connection
             echo "Unexpected Error Occurs! $th";
             return false;

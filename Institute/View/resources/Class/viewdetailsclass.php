@@ -298,7 +298,7 @@ function formatDays($days)
 
     <!-- Data Area Class List-->
     <div class="block pt-20 pb-8 px-5 ml-64 bg-gray-300 dark:bg-gray-800">
-        <div class="grid grid-cols-10 gap-7 mt-10 ">
+        <div class="h-[83vh] grid grid-cols-10 gap-7 mt-10">
             <div class="bg-white col-span-8 col-start-2 rounded-lg px-4 py-2 dark:bg-gray-700 duration-500">
                 <form action="" method="" class="px-20 py-10">
                     <div class="grid grid-cols-2 gap-20">
@@ -319,7 +319,7 @@ function formatDays($days)
                         <!-- left -->
                         <div class="pl-5">
                             <div class="flex justify-end">
-                                <a href="http://localhost/MEP/Institute/Controller/EditClassController.php?classid=<?= $results[0]["id"] ?>">
+                                <a href="javascript:void(0)" onclick="editClass(<?= $results[0]['id'] ?>)">
                                     <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit Class</button>
                                 </a>
                             </div>
@@ -391,7 +391,7 @@ function formatDays($days)
     <!-- darkmode lightmode js -->
     <script src="./../js/darkandlight.js" type="text/javascript"></script>
     <!-- customjs -->
-    <!-- <script src="./../js/classList.js" type="text/javascript"></script> -->
+    <script src="./../js/editclass.js" type="text/javascript"></script>
 </body>
 
 </html>

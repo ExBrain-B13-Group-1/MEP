@@ -146,7 +146,7 @@ async function rejected(e, id, email) {
             xmlhttp.send("datas=" + encodeURIComponent(stringifyData)); // Use encodeURIComponent
 
             Swal.fire({
-                title: "Rejected Process Running...",
+                title: "Reject Process Running...",
                 html: "I will close in <b></b> milliseconds.",
                 timer: 3000,
                 timerProgressBar: true,
@@ -286,7 +286,7 @@ async function approved(e, selectedParams) {
                 xmlhttp.send("datas=" + encodeURIComponent(stringifyData)); // Use encodeURIComponent
 
                 Swal.fire({
-                    title: "Rejected Process Running...",
+                    title: "Approve Process Running...",
                     html: "I will close in <b></b> milliseconds.",
                     timer: 3000,
                     timerProgressBar: true,

@@ -215,7 +215,8 @@ function deleteClass(event, id) {
                         Swal.fire({
                             title: "Deleted!",
                             text: "Your class has been deleted.",
-                            icon: "success"
+                            icon: "success",
+                            showConfirmButton: false
                         });
                         setTimeout(() => {
                             location.reload();
