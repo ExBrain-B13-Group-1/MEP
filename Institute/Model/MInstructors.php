@@ -17,7 +17,8 @@ class MInstructors
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
                 "SELECT * FROM m_instructors 
-                WHERE m_instructors.institute_id = :id"
+                WHERE m_instructors.institute_id = :id 
+                AND m_instructors.del_flg != 1"
             );
             $sql->bindValue(":id",$id);
             $sql->execute();
@@ -38,7 +39,10 @@ class MInstructors
             $sql = $pdo->prepare(
                 "SELECT * FROM m_instructors 
                 LEFT JOIN m_classes ON m_classes.id = m_instructors.id
-                WHERE m_instructors.institute_id = :id AND m_instructors.full_name LIKE :name"
+                WHERE m_instructors.institute_id = :id 
+                AND m_instructors.del_flg != 1
+                AND m_instructors.full_name LIKE :name"
+                
             );
             $sql->bindValue(":id",$id);
             $sql->bindValue(":name", '%' . $name . '%');
@@ -359,4 +363,27 @@ class MInstructors
             echo "Unexpected Error Occurs! $th";
         }
     }
+
+    public function updateDeleteFlagUpdate($instructorid,$instituteid){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "UPDATE m_instructors SET del_flg = 1 
+                WHERE id = :instructorid
+                AND institute_id = :instituteid
+                "
+            );
+            $sql->bindValue(':instructorid', $instructorid);
+            $sql->bindValue(':instituteid', $instituteid);
+            $sql->execute();
+            return true;
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
+
 }

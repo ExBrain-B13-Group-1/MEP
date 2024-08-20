@@ -3,6 +3,9 @@ let searchInstructorByNameURL = `http://localhost/MEP/Institute/Controller/Searc
 
 let qualifyForDeleteURL = `http://localhost/MEP/Institute/Controller/InstructorDeleteRuleController.php`;
 
+let updateDatabaseURL = `http://localhost/MEP/Institute/Controller/DeleteInstuctorUpdateDatabaseController.php`;
+
+
 $(document).ready(function () {
     // Replace with your data source URL
     let dynurl = instructorLists;
@@ -312,22 +315,47 @@ function deleteInstructor(event,id) {
                 method: 'POST',
                 data: { instructorid: id},
                 success: function (response) {
-                    console.log(response);
-                    // let resultobj = JSON.parse(response);
-                    // if(resultobj.success){
-                    //     event.target.closest('tr').remove();
-                    //     Swal.fire({
-                    //         title: "Deleted!",
-                    //         text: "Instructor has been deleted.",
-                    //         icon: "success",
-                    //         showConfirmButton: false
-                    //     });
-                    //     setTimeout(() => {
-                    //         location.reload();
-                    //     }, 1000); // Reload after 2 seconds
-                    // }
+                    // console.log(response);
+                    let resultobj = JSON.parse(response);
+                    console.log(resultobj);
+                    if(resultobj.qualify){
+                        event.target.closest('tr').remove();
+                        updateDatabase(id);
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Instructor has been deleted.",
+                            icon: "success",
+                            showConfirmButton: false
+                        });
+                        setTimeout(() => {
+                            location.reload();
+                        }, 1000); // Reload after 2 seconds
+                    }else{
+                        Swal.fire({
+                            title: "Not Allow!",
+                            text: "Instructor has not been deleted. Because there are classes that instructor teaches.",
+                            icon: "warning",
+                            showConfirmButton: false
+                        });
+                    }
                 }
             });
+        }
+    });
+}
+
+function updateDatabase(id){
+    console.log(id);
+    $.ajax({
+        url: updateDatabaseURL, 
+        method: 'POST',
+        dataType: 'json',
+        data: { instructorid: id},
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (xhr, status, error) {
+            console.error('Error fetching data:', status, error);
         }
     });
 }

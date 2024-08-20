@@ -10,7 +10,7 @@ $qualify = array();
 if(isset($_COOKIE['institute_id'])){
     $id = $_COOKIE['institute_id'];
     $instructorObj = new MInstructors();
-    $qualifiedForDelete = $instructorObj->instructorQualifiedForDelete(1,61);
+    $qualifiedForDelete = $instructorObj->instructorQualifiedForDelete($instructorid,$id);
     // print_r($qualifiedForDelete);
     if($qualifiedForDelete){
         $qualify['qualify'] = true;
