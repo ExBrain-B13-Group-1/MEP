@@ -155,7 +155,7 @@
                             <!-- 2 Buttons (Back, Enroll) -->
                             <div class="col-span-1 md:col-span-2 flex justify-between">
                                 <button type="button" class="py-2 px-4 bg-white text-primary-main font-bold rounded-md hover:bg-opacity-90 duration-75"><a href="../profile.php">Back</a></button>
-                                <button type="submit" name="" id="submit-button" class=" py-2 px-4 bg-white text-primary-main font-bold rounded-md opacity-50 cursor-not-allowed duration-75" disabled>Verify</button>
+                                <button type="submit" name="" id="verify-button" class=" py-2 px-4 bg-white text-primary-main font-bold rounded-md opacity-50 cursor-not-allowed duration-75" disabled>Verify</button>
                             </div>
                         </div>
                     </form>

@@ -27,13 +27,18 @@ if (isset($_POST['login'])) {
             // Check if "Remember Me" is checked
             if (isset($_POST['remember_me'])) {
                 // Set a cookie that lasts for 30 days
-                setcookie('user-email', $email, time() + (86400 * 30), '/'); 
+                setcookie('user-email', $email, time() + (86400 * 30), '/');
             } else {
                 // If "Remember Me" is not checked, remove the cookie
                 setcookie('user-email', '', time() - 3600, '/');
             }
             // Set the cookie for user ID
-            setcookie('user_id', $user['id'], time() + (86400 * 30), '/'); 
+            setcookie('user_id', $user['id'], time() + (86400 * 30), '/');
+
+            // Optional: Clear institute_id
+            if (isset($_COOKIE['institute_id'])) {
+                setcookie('institute_id', '', time() - 3600, '/');
+            }
 
             header("Location: ../View/resources/dashboard.php");
             exit();
@@ -60,13 +65,18 @@ if (isset($_POST['login'])) {
             // Check if "Remember Me" is checked
             if (isset($_POST['remember_me'])) {
                 // Set a cookie that lasts for 30 days
-                setcookie('institute-email', $email, time() + (86400 * 30), '/'); 
+                setcookie('institute-email', $email, time() + (86400 * 30), '/');
             } else {
                 // If "Remember Me" is not checked, remove the cookie
                 setcookie('institute-email', '', time() - 3600, '/');
             }
             // Set the cookie for institute ID
-            setcookie('institute_id', $institute['id'], time() + (86400 * 30), '/'); 
+            setcookie('institute_id', $institute['id'], time() + (86400 * 30), '/');
+
+             // Optional: Clear user_id
+             if (isset($_COOKIE['user_id'])) {
+                setcookie('user_id', '', time() - 3600, '/');
+            }
 
             header("Location: http://localhost/MEP/Institute/View/resources/Dashboard/dashoverview.php");
             exit();
@@ -94,12 +104,12 @@ if (isset($_POST['forgotPs'])) {
     if ($user) {
         $success = $mLogins->updateUserPs($user['id'], $password);
         if ($success) {
-            $_SESSION['email'] = $email; 
+            $_SESSION['email'] = $email;
             $_SESSION['user_id'] = $user['id'];
             $userName = $user['name'];
             $template = file_get_contents("./mailtemplate/eamilTemplate.html");
-            $template = str_replace("###username",$userName,$template);
-            $template = str_replace("###password",$password,$template);
+            $template = str_replace("###username", $userName, $template);
+            $template = str_replace("###password", $password, $template);
             // send otp
             $mail->sendMail(
                 "$email",
@@ -116,12 +126,12 @@ if (isset($_POST['forgotPs'])) {
     if ($institute) {
         $success = $mLogins->updateInstitutePs($institute['id'], $password);
         if ($success) {
-            $_SESSION['email'] = $email; 
-            $_SESSION['institute_id'] = $institute['id']; 
+            $_SESSION['email'] = $email;
+            $_SESSION['institute_id'] = $institute['id'];
             $instituteName = $institute['name'];
             $template = file_get_contents("./mailtemplate/eamilTemplate.html");
-            $template = str_replace("###username",$instituteName,$template);
-            $template = str_replace("###password",$password,$template);
+            $template = str_replace("###username", $instituteName, $template);
+            $template = str_replace("###password", $password, $template);
             // send otp
             $mail->sendMail(
                 "$email",
@@ -147,7 +157,7 @@ if (isset($_POST['sendOtp'])) {
     // Check user table
     $user = $mLogins->authLoginUser($email);
     if ($user && password_verify($enteredOtp, $user['password'])) {
-        $_SESSION['user_id'] = $user['id']; 
+        $_SESSION['user_id'] = $user['id'];
         header("Location: ../View/resources/Auth/newPassword.php");
         exit();
     }

@@ -8,7 +8,6 @@ $(document).ready(function () {
   handleFileUpload("#upload-front", "#preview-image-front", "#file-name-front");
   handleFileUpload("#upload-back", "#preview-image-back", "#file-name-back");
 
-
   // Function for handling file upload (nrc front & back)
   function handleFileUpload(inputId, previewImageId, fileNameId) {
     $(inputId).on("change", function (event) {
@@ -48,13 +47,12 @@ $(document).ready(function () {
   // Handling agree terms (if clicked, unlock opacity)
   $("#agree-terms").change(function () {
     if ($(this).is(":checked")) {
-      console.log("got clicked");
-      $("#submit-button")
+      $("#submit-button, #verify-button")
         .prop("disabled", false)
         .removeClass("opacity-50 cursor-not-allowed")
         .addClass("hover:bg-opacity-90");
     } else {
-      $("#submit-button")
+      $("#submit-button, #verify-button")
         .prop("disabled", true)
         .addClass("opacity-50 cursor-not-allowed")
         .removeClass("hover:bg-opacity-90");
@@ -74,92 +72,129 @@ $(document).ready(function () {
     }
   });
 
-  $("#submit-button").on("click", function (e) {
-    e.preventDefault(); 
+  $("#verify-button").on("click", function (e) {
+    e.preventDefault();
 
     function validateForm() {
-        let isValid = true;
-        
-        // Check if all required text inputs have values
-        $("input[required]").each(function() {
-            if ($.trim($(this).val()) === '') {
-                isValid = false;
-                $(this).addClass('border-red-500'); 
-            } else {
-                $(this).removeClass('border-red-500');
-            }
-        });
-        
-        // Check if at least one gender radio button is selected
-        if (!$('input[name="gender"]:checked').val()) {
-            isValid = false;
-            $("#gender").addClass('border-red-500'); 
-        } else {
-            $("#gender").removeClass('border-red-500');
-        }
+      let isValid = true;
 
-        // Check if files are selected
-        let nrc_front = $("#file-input-front")[0].files[0];
-        let nrc_back = $("#file-input-back")[0].files[0];
-        if (!nrc_front || !nrc_back) {
-            isValid = false;
-            // Optionally add error styling or messages for file inputs
-            $("#upload-area-front, #upload-area-back").addClass('border-red-500');
+      // Check if all required text inputs have values
+      $("input[required]").each(function () {
+        if ($.trim($(this).val()) === "") {
+          isValid = false;
+          $(this).addClass("border-red-500");
         } else {
-            $("#upload-area-front, #upload-area-back").removeClass('border-red-500');
+          $(this).removeClass("border-red-500");
         }
+      });
 
-        return isValid;
+      // Check if at least one gender radio button is selected
+      if (!$('input[name="gender"]:checked').val()) {
+        isValid = false;
+        $("#gender").addClass("border-red-500");
+      } else {
+        $("#gender").removeClass("border-red-500");
+      }
+
+      // Check if files are selected
+      let nrc_front = $("#file-input-front")[0].files[0];
+      let nrc_back = $("#file-input-back")[0].files[0];
+      if (!nrc_front || !nrc_back) {
+        isValid = false;
+        // Optionally add error styling or messages for file inputs
+        $("#upload-area-front, #upload-area-back").addClass("border-red-500");
+      } else {
+        $("#upload-area-front, #upload-area-back").removeClass(
+          "border-red-500"
+        );
+      }
+
+      return isValid;
     }
 
     // Perform validation
     if (validateForm()) {
-        let username = $("#user-name").val();
-        let email = $("#user-email").val();
-        let age = $("#age").val();
-        let contact = $("#contact").val();
-        let gender = $('input[name="gender"]:checked').val();
+      let username = $("#user-name").val();
+      let email = $("#user-email").val();
+      let age = $("#age").val();
+      let contact = $("#contact").val();
+      let gender = $('input[name="gender"]:checked').val();
 
-        // Append file data
-        let nrc_front = $("#file-input-front")[0].files[0];
-        let nrc_back = $("#file-input-back")[0].files[0];
+      // Append file data
+      let nrc_front = $("#file-input-front")[0].files[0];
+      let nrc_back = $("#file-input-back")[0].files[0];
 
-        // Create a FormData object
-        let formData = new FormData();
-        formData.append("name", username);
-        formData.append("email", email);
-        formData.append("age", age);
-        formData.append("contact", contact);
-        formData.append("gender", gender);
-        if (nrc_front) {
-            formData.append("nrc_front", nrc_front);
-        }
-        if (nrc_back) {
-            formData.append("nrc_back", nrc_back);
-        }
+      // Create a FormData object
+      let formData = new FormData();
+      formData.append("name", username);
+      formData.append("email", email);
+      formData.append("age", age);
+      formData.append("contact", contact);
+      formData.append("gender", gender);
+      if (nrc_front) {
+        formData.append("nrc_front", nrc_front);
+      }
+      if (nrc_back) {
+        formData.append("nrc_back", nrc_back);
+      }
 
-        // Make the AJAX request
-        $.ajax({
-            url: "../../../Controller/VerifyController.php", 
-            type: "POST",
-            data: formData,
-            processData: false, 
-            contentType: false, 
-            dataType: "text", 
-            success: function (data) {
-                console.log(data);
-                goToStep(2);
-            },
-            error: function (err) {
-                console.log(err);
-                alert("Error occurred during submission.");
-            },
-        });
+      // Make the AJAX request
+      $.ajax({
+        url: "../../../Controller/VerifyController.php",
+        type: "POST",
+        data: formData,
+        processData: false,
+        contentType: false,
+        dataType: "text",
+        success: function (data) {
+          console.log(data);
+          goToStep(2);
+        },
+        error: function (err) {
+          console.log(err);
+          alert("Error occurred during submission.");
+        },
+      });
     } else {
-        alert("Please fill out all required fields and upload both NRC images.");
+      alert("Please fill out all required fields and upload both NRC images.");
     }
-});
+  });
 
+  $("#submit-button").on("click", function (e) {
+    e.preventDefault();
+    let classId = $("#class-id").val();
+    let receipt = $("#receipt")[0].files[0];
+
+    // Create a FormData object
+    let formData = new FormData();
+    formData.append("enrolled_class_id", classId);
+    formData.append("receipt_image", receipt);
+
+    // Make the AJAX request
+    $.ajax({
+      url: "../../../Controller/PendingEnrollmentController.php",
+      type: "POST",
+      data: formData,
+      processData: false,
+      contentType: false,
+      dataType: "text",
+      success: function (data) {
+        console.log(data);
+        if (data.trim() == "authorized") {
+          // Proceed to the next step
+          goToStep(2);
+        } else if (data.trim() == "no-authorized") {
+          // Show alert and redirect to verification page
+          alert("You need to verify your account first.");
+          window.location.href = "./verification.php";
+        }
+      },
+      error: function (err) {
+        console.log(err);
+        alert("Error occurred during submission.");
+      },
+    });
+  });
 
   /* ............
      ............

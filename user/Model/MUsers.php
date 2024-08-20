@@ -2,28 +2,30 @@
 ini_set('display_errors', '1');
 require_once  __DIR__ . '/../Model/DBConnection.php';
 
-class MUser{
+class MUser
+{
     /**
      * (Read)
      */
-    public function getAllUser(){
-        try{
-            $db = new DBConnection();  
+    public function getAllUser()
+    {
+        try {
+            $db = new DBConnection();
             //get connection
             $pdo = $db->connection();
             // query prepare
             $sql = $pdo->prepare(
                 "SELECT * FROM m_user"
             );
-            $sql->execute(); 
+            $sql->execute();
             return $sql->fetchAll(PDO::FETCH_ASSOC);
-        }catch(\Throwable $th){
+        } catch (\Throwable $th) {
             // fail connection or query
             echo "Unexpected Error Occurs! $th";
         }
     }
 
-       /**
+    /**
      * (Create User)
      */
     public function createUser($name, $email, $password)
@@ -36,11 +38,11 @@ class MUser{
             $sql = $pdo->prepare(
                 "INSERT INTO m_user (name, email, password) 
                 VALUES (:name, :email, :password)"
-            );  
+            );
 
             $sql->bindValue(':name', $name);
             $sql->bindValue(':email', $email);
-            $sql->bindValue(":password", password_hash($password,PASSWORD_DEFAULT) );
+            $sql->bindValue(":password", password_hash($password, PASSWORD_DEFAULT));
 
             $sql->execute();
 
@@ -100,7 +102,7 @@ class MUser{
                  ON m_user.id = m_user_coins.user_id 
                  WHERE m_user.id = :id"
             );
-            
+
             $sql->bindValue(":id", $id);
             $sql->execute();
             return $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -110,7 +112,7 @@ class MUser{
         }
     }
 
-    
+
     /**
      * (Check duplicate mail)
      */
@@ -142,7 +144,7 @@ class MUser{
     }
 
 
-     /**
+    /**
      * (Update profile photo)
      */
     public function updateProfile($id, $photo)
@@ -167,15 +169,16 @@ class MUser{
     }
 
 
-     /**
+    /**
      * (Update Verification NRC etc...)
      */
-    public function updateVerify($id, $name, $email, $age, $contact, $gender, $nrc_front, $nrc_back, $nrc_verify) {
+    public function updateVerify($id, $name, $email, $age, $contact, $gender, $nrc_front, $nrc_back, $nrc_verify)
+    {
         try {
             $db = new DBConnection();
             //get connection
             $pdo = $db->connection();
-             // query prepare
+            // query prepare
             $sql = $pdo->prepare(
                 "UPDATE m_user SET name = :name, email = :email, age = :age, contact = :contact, gender = :gender, nrc_front = :nrc_front, nrc_back = :nrc_back, nrc_verify = :nrc_verify WHERE id = :id"
             );
@@ -197,7 +200,7 @@ class MUser{
         }
     }
 
-      /**
+    /**
      * (Update profile information)
      */
     public function updateInfors($id, $name, $social_links)

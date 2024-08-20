@@ -13,9 +13,6 @@
 // };
 
 $(document).ready(function () {
-
-
-  console.log(defaultValue)
   $("#payment-plan").val(defaultValue);
   updatePaymentDetails(defaultValue);
 

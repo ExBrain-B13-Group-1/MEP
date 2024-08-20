@@ -2,8 +2,14 @@
 ini_set('display_errors', '1');
 include '../../Controller/SitemasterController.php';
 include '../../Controller/PricesPlanController.php';
+include '../../Controller/SlotController.php';
+
 // echo "<pre>";
-// print_r($sites);
+// print_r($slots);
+
+// Check for cookies
+$userId = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : null;
+$instituteId = isset($_COOKIE['institute_id']) ? $_COOKIE['institute_id'] : null;
 
 $baseUrl = 'http://localhost/MEP/storages/uploads/';
 // Separate prices by scope
@@ -198,38 +204,51 @@ $svgs = [
                 <div class="hidden duration-700 ease-in-out md:pb-10" data-carousel-item>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:bg-gray-300 relative">
                         <div>
-                            <img src="../../storages/school1.jpg" class="institute-imgs md:mt-7 md:ml-5" alt="school1">
+                            <img src="<?= isset($slots[0]['slider_image']) &&  $slots[0]['slider_image'] ? $baseUrl . $slots[0]['slider_image'] : '../../storages/school1.jpg' ?>"
+                                class="institute-imgs md:mt-7 md:ml-5" alt="school1">
                         </div>
                         <div class="md:pt-[28px] py-5 px-5 md:pr-10 md:relative institute-infos">
                             <div class="flex justify-between">
-                                <h1 class="md:text-xl text-base text-white md:text-gray-950 font-semibold">Sample1 Institute</h1>
-                                <div>
-                                    <ion-icon name="star" class="md:text-2xl text-base md:text-blue-600 text-yellow-300 relative md:top-1 top-0.5"></ion-icon>
-                                    <span class="md:text-xl text-sm relative md:bottom-0 text-white md:text-gray-950">4.9</span>
-                                </div>
+                                <h1 class="md:text-xl text-base text-white md:text-gray-950 font-semibold"><?= ($slots[0]['name']) ?></h1>
                             </div>
                             <div class="md:mb-5 md:mt-2">
                                 <div class="md:w-14 w-10 h-1 relative bottom-1 md:bottom-3 md:bg-blue-700 bg-white"></div>
                             </div>
                             <div class="md:mb-5 hidden md:block">
                                 <h3 class="md:text-lg font-bold text-base"> - About</h3>
-                                <p class="md:text-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque libero quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi quisquam doloremque enim velit maxime laudantium. Reprehenderit molestiae minima voluptates laboriosam delectus, quam dicta neque aperiam similique maxime voluptate alias sit?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque libero quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi quisquam doloremque enim velit maxime laudantium. Reprehenderit molestiae minima voluptates laboriosam delectus, quam dicta neque aperiam similique maxime voluptate alias sit?</p>
+                                <p class="md:text-base">The Global Technology is where imagination meets education. Our mission is to inspire and develop the creative talents of our students. Whether you're interested in fine arts, graphic design, or digital media, our programs offer a blend of traditional techniques and modern technology. Our instructors are seasoned professionals who guide students through a journey of artistic discovery. At Creative Arts Academy, we cultivate creativity, passion, and innovation.</p>
                             </div>
+
                             <div class="md:mt-0 mt-5">
                                 <h3 class="md:text-xl text-sm font-semibold inline-block md:text-blue-600 md:mb-2 mb-4 text-white"> - Popular</h3> <span class="md:text-xl font-semibold text-sm invisible md:visible">Classes</span>
+                                <?php
+                                $classTitlesString = $slots[0]['class_titles'];
+                                $classTitlesArray = explode(', ', $classTitlesString);
+                                $latestTwoClasses = array_slice($classTitlesArray, -2);
+                                ?>
+                                <!-- Display the latest two classes and instructor names -->
                                 <div class="flex justify-between gap-3 md:gap-0">
                                     <div>
                                         <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End Development</span>
+                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">
+                                            <?= isset($latestTwoClasses[0]) ? (explode(' (', $latestTwoClasses[0])[0]) : '' ?>
+                                        </span>
                                     </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By Mr.Matthwe Davis</span>
+                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">
+                                        <?= isset($latestTwoClasses[0]) ? 'By ' . (rtrim(explode(' (', $latestTwoClasses[0])[1], ')')) : '' ?>
+                                    </span>
                                 </div>
+
                                 <div class="flex justify-between gap-3 md:gap-0">
                                     <div>
                                         <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End Development</span>
+                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">
+                                            <?= isset($latestTwoClasses[1]) ? (explode(' (', $latestTwoClasses[1])[0]) : '' ?>
+                                        </span>
                                     </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By Mr.Matthwe Davis</span>
+                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">
+                                        <?= isset($latestTwoClasses[1]) ? 'By ' . (rtrim(explode(' (', $latestTwoClasses[1])[1], ')')) : '' ?>
+                                    </span>
                                 </div>
                             </div>
                             <div class="flex justify-end items-center mt-8 invisible md:visible">
@@ -242,38 +261,51 @@ $svgs = [
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:bg-gray-300 relative">
                         <div>
-                            <img src="../../storages/school2.jpg" class="institute-imgs md:mt-7 md:ml-5" alt="school2">
+                            <img src="<?= isset($slots[1]['slider_image']) &&  $slots[1]['slider_image'] ? $baseUrl . $slots[1]['slider_image'] : '../../storages/school2.jpg' ?>"
+                                class="institute-imgs md:mt-7 md:ml-5" alt="school2">
                         </div>
                         <div class="md:pt-[28px] py-5 px-5 md:pr-10 md:relative institute-infos">
                             <div class="flex justify-between">
-                                <h1 class="md:text-xl text-base text-white md:text-gray-950 font-semibold">Sample2 Institute</h1>
-                                <div>
-                                    <ion-icon name="star" class="md:text-2xl text-base md:text-blue-600 text-yellow-300 relative md:top-1 top-0.5"></ion-icon>
-                                    <span class="md:text-xl text-sm relative md:bottom-0 text-white md:text-gray-950">4.9</span>
-                                </div>
+                                <h1 class="md:text-xl text-base text-white md:text-gray-950 font-semibold"><?= ($slots[1]['name']) ?></h1>
                             </div>
                             <div class="md:mb-5 md:mt-2">
                                 <div class="md:w-14 w-10 h-1 relative bottom-1 md:bottom-3 md:bg-blue-700 bg-white"></div>
                             </div>
                             <div class="md:mb-5 hidden md:block">
                                 <h3 class="md:text-lg font-bold text-base"> - About</h3>
-                                <p class="md:text-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque libero quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi quisquam doloremque enim velit maxime laudantium. Reprehenderit molestiae minima voluptates laboriosam delectus, quam dicta neque aperiam similique maxime voluptate alias sit?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque libero quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi quisquam doloremque enim velit maxime laudantium. Reprehenderit molestiae minima voluptates laboriosam delectus, quam dicta neque aperiam similique maxime voluptate alias sit?</p>
+                                <p class="md:text-base">At Tech Innovators, we believe in shaping the future through technology. Our institute offers cutting-edge courses designed to empower students with the skills needed in today's fast-paced tech industry. From software development to artificial intelligence, our programs are crafted to ensure you stay ahead of the curve. Our faculty comprises industry experts who bring real-world experience into the classroom. Join us to unlock your potential and become a leader in the world of technology.</p>
                             </div>
+
                             <div class="md:mt-0 mt-5">
                                 <h3 class="md:text-xl text-sm font-semibold inline-block md:text-blue-600 md:mb-2 mb-4 text-white"> - Popular</h3> <span class="md:text-xl font-semibold text-sm invisible md:visible">Classes</span>
+                                <?php
+                                $classTitlesString = $slots[1]['class_titles'];
+                                $classTitlesArray = explode(', ', $classTitlesString);
+                                $latestTwoClasses = array_slice($classTitlesArray, -2);
+                                ?>
+                                <!-- Display the latest two classes and instructor names -->
                                 <div class="flex justify-between gap-3 md:gap-0">
                                     <div>
                                         <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End Development</span>
+                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">
+                                            <?= isset($latestTwoClasses[0]) ? (explode(' (', $latestTwoClasses[0])[0]) : '' ?>
+                                        </span>
                                     </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By Mr.Matthwe Davis</span>
+                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">
+                                        <?= isset($latestTwoClasses[0]) ? 'By ' . (rtrim(explode(' (', $latestTwoClasses[0])[1], ')')) : '' ?>
+                                    </span>
                                 </div>
+
                                 <div class="flex justify-between gap-3 md:gap-0">
                                     <div>
                                         <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End Development</span>
+                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">
+                                            <?= isset($latestTwoClasses[1]) ? (explode(' (', $latestTwoClasses[1])[0]) : '' ?>
+                                        </span>
                                     </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By Mr.Matthwe Davis</span>
+                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">
+                                        <?= isset($latestTwoClasses[1]) ? 'By ' . (rtrim(explode(' (', $latestTwoClasses[1])[1], ')')) : '' ?>
+                                    </span>
                                 </div>
                             </div>
                             <div class="flex justify-end items-center mt-8 invisible md:visible">
@@ -286,38 +318,51 @@ $svgs = [
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:bg-gray-300 relative">
                         <div>
-                            <img src="../../storages/school3.jpg" class="institute-imgs md:mt-7 md:ml-5" alt="school3">
+                            <img src="<?= isset($slots[2]['slider_image']) &&  $slots[2]['slider_image'] ? $baseUrl . $slots[2]['slider_image'] : '../../storages/school3.jpg' ?>"
+                                class="institute-imgs md:mt-7 md:ml-5" alt="school3">
                         </div>
                         <div class="md:pt-[28px] py-5 px-5 md:pr-10 md:relative institute-infos">
                             <div class="flex justify-between">
-                                <h1 class="md:text-xl text-base text-white md:text-gray-950 font-semibold">Sample3 Institute</h1>
-                                <div>
-                                    <ion-icon name="star" class="md:text-2xl text-base md:text-blue-600 text-yellow-300 relative md:top-1 top-0.5"></ion-icon>
-                                    <span class="md:text-xl text-sm relative md:bottom-0 text-white md:text-gray-950">4.9</span>
-                                </div>
+                                <h1 class="md:text-xl text-base text-white md:text-gray-950 font-semibold"><?= ($slots[2]['name']) ?></h1>
                             </div>
                             <div class="md:mb-5 md:mt-2">
                                 <div class="md:w-14 w-10 h-1 relative bottom-1 md:bottom-3 md:bg-blue-700 bg-white"></div>
                             </div>
                             <div class="md:mb-5 hidden md:block">
                                 <h3 class="md:text-lg font-bold text-base"> - About</h3>
-                                <p class="md:text-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque libero quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi quisquam doloremque enim velit maxime laudantium. Reprehenderit molestiae minima voluptates laboriosam delectus, quam dicta neque aperiam similique maxime voluptate alias sit?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque libero quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi quisquam doloremque enim velit maxime laudantium. Reprehenderit molestiae minima voluptates laboriosam delectus, quam dicta neque aperiam similique maxime voluptate alias sit?</p>
+                                <p class="md:text-base">Global Business School is dedicated to nurturing the next generation of business leaders. Our curriculum is designed to provide students with a strong foundation in business fundamentals while encouraging innovative thinking and leadership. With a global perspective, we prepare our students to tackle the challenges of an ever-changing business landscape. Our graduates are equipped with the knowledge and skills needed to excel in various industries worldwide. Discover your potential with Global Business School.</p>
                             </div>
+
                             <div class="md:mt-0 mt-5">
                                 <h3 class="md:text-xl text-sm font-semibold inline-block md:text-blue-600 md:mb-2 mb-4 text-white"> - Popular</h3> <span class="md:text-xl font-semibold text-sm invisible md:visible">Classes</span>
+                                <?php
+                                $classTitlesString = $slots[2]['class_titles'];
+                                $classTitlesArray = explode(', ', $classTitlesString);
+                                $latestTwoClasses = array_slice($classTitlesArray, -2);
+                                ?>
+                                <!-- Display the latest two classes and instructor names -->
                                 <div class="flex justify-between gap-3 md:gap-0">
                                     <div>
                                         <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End Development</span>
+                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">
+                                            <?= isset($latestTwoClasses[0]) ? (explode(' (', $latestTwoClasses[0])[0]) : '' ?>
+                                        </span>
                                     </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By Mr.Matthwe Davis</span>
+                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">
+                                        <?= isset($latestTwoClasses[0]) ? 'By ' . (rtrim(explode(' (', $latestTwoClasses[0])[1], ')')) : '' ?>
+                                    </span>
                                 </div>
+
                                 <div class="flex justify-between gap-3 md:gap-0">
                                     <div>
                                         <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End Development</span>
+                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">
+                                            <?= isset($latestTwoClasses[1]) ? (explode(' (', $latestTwoClasses[1])[0]) : '' ?>
+                                        </span>
                                     </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By Mr.Matthwe Davis</span>
+                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">
+                                        <?= isset($latestTwoClasses[1]) ? 'By ' . (rtrim(explode(' (', $latestTwoClasses[1])[1], ')')) : '' ?>
+                                    </span>
                                 </div>
                             </div>
                             <div class="flex justify-end items-center mt-8 invisible md:visible">
@@ -330,82 +375,51 @@ $svgs = [
                 <div class="hidden duration-700 ease-in-out" data-carousel-item>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:bg-gray-300 relative">
                         <div>
-                            <img src="../../storages/school4.jpg" class="institute-imgs md:mt-7 md:ml-5" alt="school4">
+                            <img src="<?= isset($slots[3]['slider_image']) &&  $slots[3]['slider_image'] ? $baseUrl . $slots[3]['slider_image'] : '../../storages/school4.jpg' ?>"
+                                class="institute-imgs md:mt-7 md:ml-5" alt="school4">
                         </div>
                         <div class="md:pt-[28px] py-5 px-5 md:pr-10 md:relative institute-infos">
                             <div class="flex justify-between">
-                                <h1 class="md:text-xl text-base text-white md:text-gray-950 font-semibold">Sample4 Institute</h1>
-                                <div>
-                                    <ion-icon name="star" class="md:text-2xl text-base md:text-blue-600 text-yellow-300 relative md:top-1 top-0.5"></ion-icon>
-                                    <span class="md:text-xl text-sm relative md:bottom-0 text-white md:text-gray-950">4.9</span>
-                                </div>
+                                <h1 class="md:text-xl text-base text-white md:text-gray-950 font-semibold"><?= $slots[3]['name'] ?></h1>
                             </div>
                             <div class="md:mb-5 md:mt-2">
                                 <div class="md:w-14 w-10 h-1 relative bottom-1 md:bottom-3 md:bg-blue-700 bg-white"></div>
                             </div>
                             <div class="md:mb-5 hidden md:block">
                                 <h3 class="md:text-lg font-bold text-base"> - About</h3>
-                                <p class="md:text-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque libero quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi quisquam doloremque enim velit maxime laudantium. Reprehenderit molestiae minima voluptates laboriosam delectus, quam dicta neque aperiam similique maxime voluptate alias sit?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque libero quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi quisquam doloremque enim velit maxime laudantium. Reprehenderit molestiae minima voluptates laboriosam delectus, quam dicta neque aperiam similique maxime voluptate alias sit?</p>
+                                <p class="md:text-base">Health Sciences Institute is committed to advancing healthcare through education and research. Our comprehensive programs cover a wide range of health-related fields, from nursing to biomedical sciences. We equip our students with the knowledge and skills necessary to make a positive impact on global health. Our institute emphasizes hands-on learning, critical thinking, and ethical practices. Join us at Health Sciences Institute to embark on a rewarding career dedicated to improving lives.</p>
                             </div>
+
                             <div class="md:mt-0 mt-5">
                                 <h3 class="md:text-xl text-sm font-semibold inline-block md:text-blue-600 md:mb-2 mb-4 text-white"> - Popular</h3> <span class="md:text-xl font-semibold text-sm invisible md:visible">Classes</span>
+                                <?php
+                                $classTitlesString = $slots[3]['class_titles'];
+                                $classTitlesArray = explode(', ', $classTitlesString);
+                                $latestTwoClasses = array_slice($classTitlesArray, -2);
+                                ?>
+                                <!-- Display the latest two classes and instructor names -->
                                 <div class="flex justify-between gap-3 md:gap-0">
                                     <div>
                                         <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End Development</span>
+                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">
+                                            <?= isset($latestTwoClasses[0]) ? (explode(' (', $latestTwoClasses[0])[0]) : '' ?>
+                                        </span>
                                     </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By Mr.Matthwe Davis</span>
+                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">
+                                        <?= isset($latestTwoClasses[0]) ? 'By ' . (rtrim(explode(' (', $latestTwoClasses[0])[1], ')')) : '' ?>
+                                    </span>
                                 </div>
+
                                 <div class="flex justify-between gap-3 md:gap-0">
                                     <div>
                                         <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End Development</span>
+                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">
+                                            <?= isset($latestTwoClasses[1]) ? (explode(' (', $latestTwoClasses[1])[0]) : '' ?>
+                                        </span>
                                     </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By Mr.Matthwe Davis</span>
-                                </div>
-                            </div>
-                            <div class="flex justify-end items-center mt-8 invisible md:visible">
-                                <button type="button" class="cursor-pointer text-whitemb-40 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-xl text-base px-5 py-3 md:mb-10 mb-0 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">View Details</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Item 5 -->
-                <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:bg-gray-300 relative">
-                        <div>
-                            <img src="../../storages/school5.jpg" class="institute-imgs md:mt-7 md:ml-5" alt="school5">
-                        </div>
-                        <div class="md:pt-[28px] py-5 px-5 md:pr-10 md:relative institute-infos">
-                            <div class="flex justify-between">
-                                <h1 class="md:text-xl text-base text-white md:text-gray-950 font-semibold">Sample5 Institute</h1>
-                                <div>
-                                    <ion-icon name="star" class="md:text-2xl text-base md:text-blue-600 text-yellow-300 relative md:top-1 top-0.5"></ion-icon>
-                                    <span class="md:text-xl text-sm relative md:bottom-0 text-white md:text-gray-950">4.9</span>
-                                </div>
-                            </div>
-                            <div class="md:mb-5 md:mt-2">
-                                <div class="md:w-14 w-10 h-1 relative bottom-1 md:bottom-3 md:bg-blue-700 bg-white"></div>
-                            </div>
-                            <div class="md:mb-5 hidden md:block">
-                                <h3 class="md:text-lg font-bold text-base"> - About</h3>
-                                <p class="md:text-base">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque libero quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi quisquam doloremque enim velit maxime laudantium. Reprehenderit molestiae minima voluptates laboriosam delectus, quam dicta neque aperiam similique maxime voluptate alias sit?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque libero quod pariatur, ipsa odit corrupti, esse aspernatur, deserunt at sequi quisquam doloremque enim velit maxime laudantium. Reprehenderit molestiae minima voluptates laboriosam delectus, quam dicta neque aperiam similique maxime voluptate alias sit?</p>
-                            </div>
-                            <div class="md:mt-0 mt-5">
-                                <h3 class="md:text-xl text-sm font-semibold inline-block md:text-blue-600 md:mb-2 mb-4 text-white"> - Popular</h3> <span class="md:text-xl font-semibold text-sm invisible md:visible">Classes</span>
-                                <div class="flex justify-between gap-3 md:gap-0">
-                                    <div>
-                                        <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End Development</span>
-                                    </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By Mr.Matthwe Davis</span>
-                                </div>
-                                <div class="flex justify-between gap-3 md:gap-0">
-                                    <div>
-                                        <ion-icon name="flame" class="md:text-2xl relative md:top-1 bottom-0.5 text-red-500 md:text-red-600"></ion-icon>
-                                        <span class="md:text-base text-xs text-white md:text-blue-600 relative md:bottom-0 bottom-1.5">Front-End Development</span>
-                                    </div>
-                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">By Mr.Matthwe Davis</span>
+                                    <span class="md:text-base text-xs md:text-red-500 text-white font-black">
+                                        <?= isset($latestTwoClasses[1]) ? 'By ' . (rtrim(explode(' (', $latestTwoClasses[1])[1], ')')) : '' ?>
+                                    </span>
                                 </div>
                             </div>
                             <div class="flex justify-end items-center mt-8 invisible md:visible">
@@ -603,6 +617,7 @@ $svgs = [
 
     <!-- Start Plan & Pricing Section -->
     <section class="pricing-shows md:mx-32 md:mt-20 mt-12 md:pb-16 pb-8 relative h-full overflow-hidden">
+        <!-- Dropdown -->
         <div>
             <div class="flex justify-center items-center md:mb-16 mb-8">
                 <div>
@@ -617,17 +632,17 @@ $svgs = [
                 <div id="dropdown-menu" class="z-10 hidden rounded-lg shadow w-44 bg-gray-200" role="menu" aria-labelledby="personal-dropdown">
                     <ul class="py-2 text-sm text-gray-700">
                         <li>
-                            <a href="javascript:void(0);" class="block px-4 py-2 md:text-lg hover:text-blue-600">User</a>
+                            <a href="javascript:void(0);" class="block px-4 py-2 md:text-lg hover:text-blue-600" data-type="user">User</a>
                         </li>
                         <li>
-                            <a href="javascript:void(0);" class="block px-4 py-2 md:text-lg hover:text-blue-600">Institute</a>
+                            <a href="javascript:void(0);" class="block px-4 py-2 md:text-lg hover:text-blue-600" data-type="institute">Institute</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
 
-    
+        <!-- User Pricing -->
         <div class="swiper-container w-full py-[50px]">
             <div class="swiper-wrapper md:flex md:justify-center md:items-center md:gap-11">
                 <!-- pricing card 1 -->
@@ -670,8 +685,8 @@ $svgs = [
                                 </ul>
                             </div>
                             <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
-                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2">Get started</button>
-                            </div>
+                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2" <?= ($userId) ? '' : 'disabled'; ?>>Get started</button>
+            </div>
                         </div>
                     </div>
                 </div>
@@ -728,7 +743,7 @@ $svgs = [
                                 </ul>
                             </div>
                             <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
-                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2">Upgrade Pro</button>
+                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2" <?= ($userId) ? '' : 'disabled'; ?>>Upgrade Pro</button>
                             </div>
                         </div>
                     </div>
@@ -773,7 +788,7 @@ $svgs = [
                                 </ul>
                             </div>
                             <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
-                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2">Buy now</button>
+                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2" <?= ($userId) ? '' : 'disabled'; ?>>Buy now</button>
                             </div>
                         </div>
                     </div>
@@ -782,6 +797,7 @@ $svgs = [
             <div class="swiper-pagination block md:hidden"></div>
         </div>
 
+        <!-- Institute Pricing -->
         <div class="swiper-container w-full py-[50px] hidden">
             <div class="swiper-wrapper md:flex md:justify-center md:items-center md:gap-11">
                 <!-- pricing card 1 -->
@@ -842,7 +858,7 @@ $svgs = [
                                 </ul>
                             </div>
                             <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
-                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2">Purchase Plan</button>
+                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2" <?= ($instituteId) ? '' : 'disabled'; ?>>Purchase Plan</button>
                             </div>
                         </div>
                     </div>
@@ -905,7 +921,7 @@ $svgs = [
                                 </ul>
                             </div>
                             <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
-                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2">Purchase Plan</button>
+                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2" <?= ($instituteId) ? '' : 'disabled'; ?>>Purchase Plan</button>
                             </div>
                         </div>
                     </div>
@@ -944,7 +960,7 @@ $svgs = [
                                 </ul>
                             </div>
                             <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
-                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2">Purchase Plan</button>
+                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2" <?= ($instituteId) ? '' : 'disabled'; ?>>Purchase Plan</button>
                             </div>
                         </div>
                     </div>
@@ -1383,7 +1399,23 @@ $svgs = [
     <script src="./lib/jquery-3.7.1.js" type="text/javascript"></script>
     <!-- customjs -->
     <script src="./js/index.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {
+            // Handle dropdown price item click
+            $('#dropdown-menu a').on('click', function() {
+                var type = $(this).data('type');
 
+                // Toggle visibility based on type
+                if (type === 'user') {
+                    $('.swiper-container').eq(0).removeClass('hidden');
+                    $('.swiper-container').eq(1).addClass('hidden');
+                } else if (type === 'institute') {
+                    $('.swiper-container').eq(1).removeClass('hidden');
+                    $('.swiper-container').eq(0).addClass('hidden');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

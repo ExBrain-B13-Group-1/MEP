@@ -178,7 +178,6 @@ $(document).ready(function () {
     attributeFilter: ["class"],
   });
 
-
   // console.log(jsonInstitutePays);
 
   function getTopInstitutes(data, topN) {
@@ -219,88 +218,125 @@ $(document).ready(function () {
   // Separate into top 4 and remaining
   const top4Institutes = top7Institutes.slice(0, 4);
   const remainingInstitutes = top7Institutes.slice(4, 7);
-  // console.log(top4Institutes);
-  // console.log(remainingInstitutes);
+  const instituteIds = top4Institutes.map((institute) => institute.institute_id);
+  console.log(instituteIds);
+  
+  let slots = []; // Declare slots globally to access later
+  
+  if (instituteIds.length > 0) {
+      // Create a FormData object
+      let formData = new FormData();
+      // Append the instituteIds array to the FormData object
+      formData.append("institute_ids", JSON.stringify(instituteIds));
+  
+      // Make the AJAX request
+      $.ajax({
+          url: "../../Controller/SlotController.php",
+          type: "POST",
+          data: formData,
+          processData: false,
+          contentType: false,
+          dataType: "json",
+          success: function (response) {
+              if (response.status === 'success') {
+                  // Clear existing logos
+                  $('#logos').empty();
+                  console.log("hit");
+  
+                  slots = response.slots; // Assign the response slots to the global variable
+  
+                  // Append updated logos
+                  response.slots.forEach(slot => {
+                      $('#logos').append(`
+                          <img src="${baseUrl + slot.photo}" alt="${slot.institute_id}" class="logo rounded-full w-8 h-8" data-institute="${slot.institute_id}">
+                      `);
+                  });
+  
+                  console.log(response.message);
+  
+              } else {
+                  console.log(response.message);
+              }
+          },
+          error: function (err) {
+              console.log(err);
+              alert("Error occurred during submission.");
+          },
+      });
+  }
   
   // Start Top Client
   let tableContent = `
-                  <table class="w-full table-auto cursor-pointer">
-             <thead>
-                 <tr class="border-b bg-[#D9D9D9] bg-opacity-30">
-                     <th class="text-left px-4">Profile</th>
-                     <th class="text-left px-4">Name</th>
-                     <th class="text-left px-4">Amount</th>
-                 </tr>
-             </thead>
-             <tbody>
-             `;
-
-             
- const baseUrl = 'http://localhost/MEP/storages/uploads/';
+      <table class="w-full table-auto cursor-pointer">
+          <thead>
+              <tr class="border-b bg-[#D9D9D9] bg-opacity-30">
+                  <th class="text-left px-4">Profile</th>
+                  <th class="text-left px-4">Name</th>
+                  <th class="text-left px-4">Amount</th>
+              </tr>
+          </thead>
+          <tbody>
+  `;
+  
+  const baseUrl = "http://localhost/MEP/storages/uploads/";
   top4Institutes.forEach((institute) => {
-    const imageUrl = `${baseUrl}${institute.photo}`;
-    tableContent += `
-                     <tr class="border-b hover:bg-[#D9D9D9] hover:bg-opacity-10">
-                         <td class="text-left px-4">
-                             <div class="w-8 h-8 rounded-full overflow-hidden">
-                                 <img src="${imageUrl}" class="w-full h-full object-cover rounded-full">
-                             </div>
-                         </td>
-                         <td class="text-left pl-4">${institute.name}</td>
-                         <td class="text-left">${
-                           institute.total_payment.toLocaleString("en-US") +
-                           " MMK"
-                         }</td>
-                     </tr>
-                 `;
+      const imageUrl = `${baseUrl}${institute.photo}`;
+      tableContent += `
+          <tr class="border-b hover:bg-[#D9D9D9] hover:bg-opacity-10">
+              <td class="text-left px-4">
+                  <div class="w-8 h-8 rounded-full overflow-hidden">
+                      <img src="${imageUrl}" class="w-full h-full object-cover rounded-full">
+                  </div>
+              </td>
+              <td class="text-left pl-4">${institute.name}</td>
+              <td class="text-left">${
+                  institute.total_payment.toLocaleString("en-US") + " MMK"
+              }</td>
+          </tr>
+      `;
   });
-
+  
   tableContent += `
-                     </tbody>
-                 </table>
-             `;
-
+          </tbody>
+      </table>
+  `;
+  
   $("#top-clients").html(tableContent);
   // End Top Clients
-
+  
   // Start Calendar Section
   var calendarEl = document.getElementById("calendar");
   var calendar = new FullCalendar.Calendar(calendarEl, {
-    initialView: "dayGridMonth",
-    events: [], // Events will be added dynamically
+      initialView: "dayGridMonth",
+      events: [], // Events will be added dynamically
   });
   calendar.render();
-
-  // Assuming slots is an array of ad slot objects
-  console.log(slots);
-
-  // Make logo a little big when clicked
-  $(".logo").on("click", function () {
-    $(".logo").removeClass("active transform scale-125");
-
-    $(this).addClass("active transform scale-125");
-
-    var instituteId = $(this).data("institute");
-
-    calendar.removeAllEvents();
-
-    // Filter slots based on the selected institute ID
-    var instituteEvents = slots
-      .filter((slot) => slot.institute_id == instituteId)
-      .map((slot) => ({
-        title: "Limit", 
-        start: slot.ad_start_date,
-        end: slot.ad_end_date,
-      }));
-
-    // Add filtered events to the calendar
-    instituteEvents.forEach((event) => {
-      calendar.addEvent(event);
-    });
+  
+  // Make logo a little big when clicked, with event delegation
+  $(document).on("click", ".logo", function () {
+      $(".logo").removeClass("active transform scale-125");
+      $(this).addClass("active transform scale-125");
+  
+      var instituteId = $(this).data("institute");
+  
+      calendar.removeAllEvents();
+  
+      // Filter slots based on the selected institute ID
+      var instituteEvents = slots
+          .filter((slot) => slot.institute_id == instituteId)
+          .map((slot) => ({
+              title: "Limit",
+              start: slot.ad_start_date,
+              end: slot.ad_end_date,
+          }));
+  
+      // Add filtered events to the calendar
+      instituteEvents.forEach((event) => {
+          calendar.addEvent(event);
+      });
   });
-
+  
   // End Calendar Section
-
 
   // Start Ad Slots
   let adSlotsContent = `

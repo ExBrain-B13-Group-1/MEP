@@ -83,7 +83,7 @@ $firstItem = json_encode($firstItem);
 
             <div>
                 <!-- Enrollment Form Back-End -->
-                <form id="enrollForm" class="form-step active space-y-6" action="">
+                <form id="enrollForm" class="form-step active space-y-6" action="" enctype="multipart/form-data">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-4">
                         <div>
                             <!-- User Full Name -->
@@ -103,6 +103,7 @@ $firstItem = json_encode($firstItem);
                             </div>
                             <!-- Class Name -->
                             <div class="mb-4">
+                                <input type="hidden" id="class-id" value="17"> <!-- Change Class id -->
                                 <label for="class-name" class="text-dark-gray text-sm">Class</label>
                                 <input type="text" id="class-name" value="Javascript For Beginner" disabled class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
                             </div>
@@ -180,8 +181,8 @@ $firstItem = json_encode($firstItem);
                             </div>
                             <!-- Attachment -->
                             <div id="attachment-receipt" class="mt-[11.5rem]">
-                                <label for="attachment" class="text-dark-gray text-sm">Attachment *</label>
-                                <input type="file" id="attachment" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
+                                <label for="receipt" class="text-dark-gray text-sm">Attachment *</label>
+                                <input type="file" id="receipt" class="w-full px-4 py-2 border rounded-md bg-white focus:outline-none focus:ring-1 focus:ring-blue-light-bg" required>
                             </div>
                         </div>
                     </div>

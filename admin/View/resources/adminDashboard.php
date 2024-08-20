@@ -51,7 +51,12 @@ $_SESSION['institutePays'] = $userPays;
 // Convert PHP array to JSON
 $jsonUserPays = json_encode($userPays);
 $jsonInstitutePays = json_encode($institutePays);
-$slotsData = json_encode($slots);
+// Ensure $slots is defined
+if (isset($slots) && !empty($slots)) {
+    $slotsData = json_encode($slots);
+} else {
+    $slotsData = json_encode([]); // If $slots is not set or empty, pass an empty array
+}
 ?>
 
 <!DOCTYPE html>
@@ -408,9 +413,7 @@ $slotsData = json_encode($slots);
                         <!-- Calendar Placeholder -->
                         <div id="calendar" class="dark:text-white"></div>
                         <div id="logos" class="flex justify-center items-center mt-4 space-x-2">
-                            <?php foreach ($slots as $slot): ?>
-                                <img src="<?= $baseUrl . ($slot['photo']); ?>" alt="<?= ($slot['institute_id']); ?>" class="logo rounded-full w-8 h-8" data-institute="<?= ($slot['institute_id']); ?>">
-                            <?php endforeach; ?>
+                           
                         </div>
                     </div>
                     <!-- Top Clients -->
