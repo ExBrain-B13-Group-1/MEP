@@ -330,7 +330,7 @@ $results = json_decode(urldecode($encodedResults), true);
                                     <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit Instructor</button>
                                 </a>
                             </div>
-                            <div class="mt-20">
+                            <div class="mt-4">
                                 <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Full Name :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60"><?=$results[0]['full_name']?></span>
                             </div>
                             <div class="mt-4">

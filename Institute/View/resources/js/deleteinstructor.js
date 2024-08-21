@@ -5,6 +5,8 @@ let qualifyForDeleteURL = `http://localhost/MEP/Institute/Controller/InstructorD
 
 let updateDatabaseURL = `http://localhost/MEP/Institute/Controller/DeleteInstuctorUpdateDatabaseController.php`;
 
+let baseurlimg = `../../../storages/uploads/`;
+
 
 $(document).ready(function () {
     // Replace with your data source URL
@@ -212,7 +214,7 @@ function showCard(id) {
                                     </button>
                                 </div>
                                 <div class="relative">
-                                    <img src="${item.profile_picture}" alt="${item.full_name}">
+                                    <img src="${baseurlimg+item.profile_picture}" class="w-20 h-20 rounded-full" alt="${item.full_name}">
                                     <div class="absolute top-0 right-0 w-5 h-5 rounded-full bg-blue-700 flex justify-center items-center">
                                         <ion-icon name="checkmark-outline" class="text-white"></ion-icon>
                                     </div>
@@ -335,7 +337,7 @@ function deleteInstructor(event,id) {
                             title: "Not Allow!",
                             text: "Instructor has not been deleted. Because there are classes that instructor teaches.",
                             icon: "warning",
-                            showConfirmButton: false
+                            showConfirmButton: true
                         });
                     }
                 }

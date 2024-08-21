@@ -2,7 +2,6 @@
 ini_set('display_errors', '1');
 
 include '../../../Controller/InstituteController.php';
-include '../../../Controller/GetSocialLinksController.php';
 include '../../../Controller/common/CountForEnrollmentPending.php';
 $pendingCount = $count;
 
@@ -18,6 +17,8 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Setting</title>
+    <!-- sweetalert -->
+    <script src="./../lib/sweetalert2.min.css" type="text/css"></script>
     <!-- Tailwind output css -->
     <link href="./../css/output.css" rel="stylesheet" />
 </head>
@@ -60,7 +61,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                             <div>
                                 <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false">
                                     <span class="sr-only">Open user menu</span>
-                                    <img class="w-14 h-14 rounded-full select-none" src="<?= $baseUrl . ($institute['photo']) ?>" alt="institute photo" alt="user photo">
+                                    <img id="institute-profile" class="w-14 h-14 rounded-full select-none" src="<?= $baseUrl.($institute['photo']) ?>" alt="institute photo" alt="user photo">
                                 </button>
                             </div>
                             <div class="ml-3 pt-2 dark:text-white">
@@ -267,7 +268,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
     </aside>
 
     <!-- Data Area Setting-->
-    <div class="block pt-20 pb-6 px-6 ml-64  bg-gray-300 dark:bg-gray-800 dashoverviews">
+    <div class="block pt-10 pb-6 px-6 ml-64  bg-gray-300 dark:bg-gray-800 dashoverviews">
         <div class="grid grid-cols-10 gap-4">
 
             <!-- General Component -->
@@ -307,7 +308,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                             </div>
                         </div>
                         <div class="mt-14">
-                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-10 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Save</button>
+                            <button type="button" id="save-password" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-10 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Save</button>
                         </div>
                     </div>
 
@@ -384,86 +385,10 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
     <script src="./../js/path.js" type="text/javascript"></script>
     <!-- darkmode lightmode js -->
     <script src="./../js/darkandlight.js" type="text/javascript"></script>
+    <!-- sweetalert -->
+    <script src="./../lib/sweetalert2@11.js" type="text/javascript"></script>
     <!-- customjs -->
     <script src="./../js/setting.js" type="text/javascript"></script>
 </body>
 
 </html>
-
-
-
-
-<!-- <div class="hidden bg-white col-span-8 col-start-2 rounded-lg px-20 py-10 mt-16 dark:bg-gray-600 duration-500 generaledits">
-    <div>
-        <h2 class="text-2xl font-bold dark:text-white mb-5 opacity-80">Institute Information</h2>
-    </div>
-    <form action="" method="">
-        <div class="grid grid-cols-2 gap-20">
-
-            <div>
-                <p class="opacity-70 text-xl dark:text-white dark:opacity-80 mb-2 font-medium">Logo</p>
-                <div class="flex items-center justify-center w-full">
-                    <label for="dropzone-file1" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50  dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                            <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
-                            </svg>
-                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-                        </div>
-                        <input id="dropzone-file3" type="file" class="hidden" />
-                    </label>
-                </div>
-            </div>
-
-            <div>
-                <p class="opacity-70 text-xl dark:text-white dark:opacity-80 mb-2 font-medium">Background Photo</p>
-                <div class="flex items-center justify-center w-full">
-                    <label for="dropzone-file2" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50  dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                            <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
-                            </svg>
-                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
-                        </div>
-                        <input id="dropzone-file4" type="file" class="hidden" />
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="grid grid-cols-2 gap-20">
-            <div class="mb-6 mt-8">
-                <label for="ins-name-edit" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Institute Name</label>
-                <input type="text" id="ins-name-edit" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-            </div>
-        </div>
-        <h2 class="text-2xl font-bold dark:text-white mb-5 mt-6 opacity-80">Institute Information</h2>
-        <div class="grid grid-cols-2 gap-20">
-            <div>
-                <div class="mb-6 mt-0">
-                    <label for="email-edit" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Email</label>
-                    <input type="email" id="email-edit" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                </div>
-                <div class="mb-6 mt-0">
-                    <label for="phone-edit" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Phone</label>
-                    <input type="text" id="phone-edit" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                </div>
-            </div>
-            <div>
-                <div class="mb-6 mt-0">
-                    <label for="website-edit" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Website</label>
-                    <input type="text" id="website-edit" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                </div>
-                <div class="mb-6 mt-0">
-                    <label for="address-edit" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Address</label>
-                    <input type="text" id="address-edit" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 py-5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                </div>
-            </div>
-        </div>
-        <div class="flex justify-end mt-6">
-            <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xl px-10 py-2.5 me-2 mb-2 mr-10 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 cancels">Cancel</button>
-            <button type="submit" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-xl px-12 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800 saves">Save</button>
-        </div>
-    </form>
-</div> -->

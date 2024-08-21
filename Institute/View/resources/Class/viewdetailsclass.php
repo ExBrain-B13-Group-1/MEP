@@ -36,6 +36,8 @@ function formatDays($days)
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Class - View</title>
+    <!-- sweetalert2 -->
+    <link rel="stylesheet" href="./../lib/sweetalert2.min.css" type="text/css">
     <!-- Tailwind output css -->
     <link href="./../css/output.css" rel="stylesheet" />
 </head>
@@ -390,6 +392,8 @@ function formatDays($days)
     <script src="./../js/path.js" type="text/javascript"></script>
     <!-- darkmode lightmode js -->
     <script src="./../js/darkandlight.js" type="text/javascript"></script>
+    <!-- sweetalert2 -->
+    <script src="./../lib/sweetalert2@11.js" type="text/javascript"></script>
     <!-- customjs -->
     <script src="./../js/editclass.js" type="text/javascript"></script>
 </body>
