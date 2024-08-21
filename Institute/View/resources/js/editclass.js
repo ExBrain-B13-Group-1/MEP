@@ -12,7 +12,12 @@ function editClass(classId){
         if(response.qualify){
             window.location.href = "http://localhost/MEP/Institute/Controller/EditClassController.php?classid=" + classId;
         }else{
-            alert("You are not allowed to edit this class");
+            Swal.fire({
+                title: 'You are not allowed to edit this class',
+                text: 'Please check the class edit rule',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
         }
     }).catch(function(error){
         console.log(error);

@@ -1,6 +1,8 @@
 let instructorLists = `http://localhost/MEP/Institute/Controller/ViewInstructorController.php`;
 let searchInstructorByNameURL = `http://localhost/MEP/Institute/Controller/SearchInstructorByNameController.php`;
 
+let baseurlimg = "../../../storages/uploads/";
+
 $(document).ready(function () {
     // Replace with your data source URL
     let dynurl = instructorLists;
@@ -208,7 +210,7 @@ function showCard(id) {
                                     </button>
                                 </div>
                                 <div class="relative">
-                                    <img src="${item.profile_picture}" alt="${item.full_name}">
+                                    <img src="${baseurlimg + item.profile_picture}" class="w-20 h-20 rounded-full" alt="${item.full_name}">
                                     <div class="absolute top-0 right-0 w-5 h-5 rounded-full bg-blue-700 flex justify-center items-center">
                                         <ion-icon name="checkmark-outline" class="text-white"></ion-icon>
                                     </div>

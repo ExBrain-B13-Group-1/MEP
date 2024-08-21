@@ -3,6 +3,8 @@ $(document).ready(function () {
     let settingurl = `http://localhost/MEP/Institute/Controller/GetProfileSettingDataController.php`;
     let updateUrl = `http://localhost/MEP/Institute/Controller/UpdateSettingController.php`;
 
+    let updatepasswordurl = `http://localhost/MEP/Institute/Controller/UpdatePasswordController.php`;
+
     let getsociallinkurl = `http://localhost/MEP/Institute/Controller/GetSocialLinksController.php`;
     let sociallinkurl = `http://localhost/MEP/Institute/Controller/UpdateSocialLinkController.php`;
     let baseurl = `../../../../storages/uploads/`;
@@ -58,7 +60,7 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data) {
                 let datas = data[0];
-                console.log(datas);
+                // console.log(datas);
                 currentphoto = datas.photo;
                 let displaydata = `
                     <div class="flex justify-between items-center">
@@ -72,7 +74,7 @@ $(document).ready(function () {
                                 <div class="flex items-center justify-center w-full">
                                     <label for="dropzone-file1" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50  dark:bg-gray-700  dark:border-gray-600 ">
                                         <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                            <img src="${baseurl + datas.photo}" class="h-64" alt="">
+                                            <img id="currentphoto" src="${baseurl + datas.photo}" class="h-64" alt="">
                                         </div>
                                     </label>
                                 </div>
@@ -156,7 +158,6 @@ $(document).ready(function () {
         $('#savechange').on('click', function (e) {
             e.preventDefault();
 
-            // console.log('Button clicked');
             let photo = uploadphoto === "" ? currentphoto : uploadphoto;
             let instituteName = $('#institute_name').val();
             let email = $('#email').val();
@@ -164,34 +165,73 @@ $(document).ready(function () {
             let website = $('#website').val();
             let address = $('#address').val();
 
-            // console.log('Variables:', { photo, instituteName, email, phone, website, address });
-            let dataobj = { photo: photo, institute_name: instituteName, email: email, phone: phone, website: website, address: address };
-            // console.log(dataobj);
-            let datajsonobj = JSON.stringify(dataobj);
-            console.log(datajsonobj);
+            let formData = new FormData();
+            formData.append('photo', $('#changephoto')[0].files[0]);
+            formData.append('institute_name', instituteName);
+            formData.append('email', email);
+            formData.append('phone', phone);
+            formData.append('website', website);
+            formData.append('address', address);
+
+            console.log(formData);
 
             var xmlhttp = new XMLHttpRequest();
-            var url = updateUrl;
-            xmlhttp.open("POST", url, true);
-            xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xmlhttp.send("datas=" + datajsonobj);
-
+            xmlhttp.open("POST", updateUrl, true);
             xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-                    var result = xmlhttp.responseText;
-                    var resultobj = JSON.parse(result);
-                    console.log(resultobj);
-                    window.alert("done");
-                    window.location.reload();
+                if (xmlhttp.readyState === 4) {
+                    if (xmlhttp.status === 200) {
+                        // console.log(xmlhttp.responseText);
+                        var response = JSON.parse(xmlhttp.responseText);
+                        console.log(response);
+                        if(response.success){
+                            $('#preview_image').attr('src','');
+                            $('#showtext').removeClass('hidden').addClass('block');
+                            $('#preview_image').removeClass('block').addClass('hidden');
+                            $('#currentphoto').attr('src',`${baseurl + response.photo}`);
+                            $('#institute-profile').attr('src',`${baseurl + response.photo}`);
+                            $('#institute-name').text(response.institute_name);
+                            $('#email').val(response.email);
+                            $('#phone').val(response.phone);
+                            $('#website').val(response.website);
+                            $('#address').val(response.address);
+
+                            Swal.fire({
+                                title: "Success",
+                                text: "Update Successfully!",
+                                icon: "success",
+                                timer: 2000,
+                                timerProgressBar: true,
+                                toast: true,
+                                position: "top",
+                                showConfirmButton: false,
+                            });
+                            // window.location.reload();
+                        }
+                        
+                    } else {
+                        console.error('Error uploading data:', xmlhttp.statusText);
+                        try {
+                            let response = JSON.parse(xmlhttp.responseText);
+                            Swal.fire({
+                                title: "Error",
+                                text: response.message || "Failed to update settings",
+                                icon: "error"
+                            });
+                        } catch (e) {
+                            Swal.fire({
+                                title: "Error",
+                                text: "Failed to update settings",
+                                icon: "error"
+                            });
+                        }
+                    }
                 }
-            }
+            };
+            xmlhttp.send(formData);
         });
-
-
     }
 
     fetchData();
-
 
     async function showSocialLinks() {
         await $.ajax({
@@ -199,7 +239,7 @@ $(document).ready(function () {
             method: 'GET',
             dataType: 'json',
             success: function (data) {
-                console.log(data);
+                // console.log(data);
                 let displaydata = `
                     <div class="mb-6 mt-8">
                         <label for="facebook-link" class="block mb-2 text-xl text-gray-900 dark:text-white opacity-70">Facebook Link</label>
@@ -224,13 +264,10 @@ $(document).ready(function () {
             error: function (xhr, status, error) {
                 console.error('Error fetching data:', status, error);
             }
-
         });
     }
 
     showSocialLinks();
-
-
 
     $('#updatesociallinks').on('click', function (e) {
         e.preventDefault();
@@ -266,11 +303,80 @@ $(document).ready(function () {
                 $('#instagram-link').val(`${resultobj.instagramlink}`);
                 $('#x-link').val(`${resultobj.xlink}`);
 
-                window.alert("Update Succefully!!");
+                Swal.fire({
+                    title: "Social Link Updated",
+                    text: "Social Link Updated Successfully",
+                    icon: "success",
+                    timer: 3000,
+                    timerProgressBar: true,
+                    toast: true,
+                    position: "top",
+                    showConfirmButton: false,
+                });
                 // window.location.reload();
             }
         }
     });
+
+
+    $('#save-password').on('click',function(e){
+        e.preventDefault();
+        // console.log('hay');
+
+        let currentpassword = $('#cur-password').val();
+        let newpassword = $('#new-password').val();
+        let confirmpassword = $('#confirm-password').val();
+        // console.log(currentpassword,newpassword,confirmpassword);
+
+        if (!currentpassword || !newpassword || !confirmpassword) {
+            Swal.fire({
+                title: "Error",
+                text: "All password fields must be filled out.",
+                icon: "error"
+            });
+            return;
+        }
+
+        let dataobj = {currentpassword:currentpassword,newpassword:newpassword,confirmpassword:confirmpassword};
+        let datajsonobj = JSON.stringify(dataobj);
+        console.log(datajsonobj);
+
+        var xmlhttp = new XMLHttpRequest();
+        var url = updatepasswordurl;
+        xmlhttp.open("POST", url, true);
+        xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xmlhttp.send("datas=" + datajsonobj);
+
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                var result = xmlhttp.responseText;
+                console.log(result);
+                var resultobj = JSON.parse(result);
+                console.log(resultobj);
+                if (resultobj['success']) {
+                    $('#cur-password').val('');
+                    $('#new-password').val('');
+                    $('#confirm-password').val('');
+                    Swal.fire({
+                        title: "Success",
+                        text: resultobj['message'],
+                        icon: "success",
+                        timer: 3000,
+                        timerProgressBar: true,
+                        toast: true,
+                        position: "top",
+                        showConfirmButton: false,
+                    });
+                } else {
+                    Swal.fire({
+                        title: "Error",
+                        text: resultobj['message'],
+                        icon: "error"
+                    });
+                }
+            }
+        }
+    })
 
 
 });

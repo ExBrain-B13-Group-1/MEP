@@ -132,6 +132,40 @@ class Settings{
         }
     }
 
+
+    public function getCurrentPasswordHash($instituteID){
+        try{
+            $dbconn = new DBConnection();
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare("SELECT mi.password
+                                    FROM m_institutes AS mi 
+                                    WHERE mi.id = :id");
+            $sql->bindValue(":id", $instituteID);
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $results[0]['password'];
+        }catch(\Throwable $th){
+            echo "Unexpected Error Occurs! $th";
+            return false;
+        }
+    }
+
+
+    public function updatePassword($newpassword,$instituteID){
+        try{
+            $dbconn = new DBConnection();
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare("UPDATE m_institutes SET password = :password WHERE id = :id");
+            $sql->bindValue(":password", password_hash($newpassword, PASSWORD_DEFAULT));
+            $sql->bindValue(":id", $instituteID);
+            $sql->execute();
+            return true;
+        }catch(\Throwable $th){
+            echo "Unexpected Error Occurs! $th";
+            return false;
+        }
+    }
+
 }
 
 
