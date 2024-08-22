@@ -37,7 +37,7 @@ include '../../Controller/UserController.php';
     <!-- Start Header Section -->
     <header>
         <!-- start navbar -->
-        <nav class="bg-white fixed w-[100%] z-20 top-0 left-0 border-b border-gray-200 md:h-20 md:py-3">
+        <nav class="bg-white fixed w-[100%] z-20 top-0 left-0 border-b border-gray-200 md:h-18 md:py-1">
             <div class="md:px-32 flex items-center justify-between mx-auto px-4 relative">
                 <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src="./img/LOGO.svg" class="md:h-14 h-10" alt="MEP Logo" />
@@ -51,13 +51,13 @@ include '../../Controller/UserController.php';
                 <div id="menuList" isOpen="false" class="hidden md:flex absolute md:static top-16 right-0 left-0 mx-24 md:mx-auto md:items-center md:justify-center bg-gray-200 rounded-xl ">
                     <ul class="flex flex-col md:flex-row justify-between items-center font-medium md:space-x-10 p-3 md:p-0">
                         <li>
-                            <a href="./dashboard.php" id="userDashboard" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Dashboard</a>
+                            <a href="./home.php" id="userDashboard" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Home</a>
                         </li>
                         <li>
                             <a href="./class.php" aria-active="true" id="userClass" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Class</a>
                         </li>
                         <li>
-                            <a href="./schedule.php" id="userSchedule" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Schedule</a>
+                            <a href="./pricing.php" id="userSchedule" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Pricing</a>
                         </li>
                         <li>
                             <a href="./support.php" id="userSupport" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Support</a>
@@ -89,14 +89,14 @@ include '../../Controller/UserController.php';
                             <div class="relative">
                                 <img src="<?= !empty($user[0]['photo']) ? '../../../storages/uploads/' . $user[0]['photo'] : './img/profile.png'; ?>" alt="profile" class="rounded-full mr-2 md:w-10 w-8 md:h-10 h-8" />
                                 <?php if (isset($_COOKIE['verified'])): ?>
-                                    <ion-icon name="checkmark-circle" class="text-green-600 absolute right-0 top-[1.45rem]"></ion-icon>
+                                    <ion-icon name="checkmark-circle" class="text-green-600 absolute md:right-0 top-[1.45rem]"></ion-icon>
                                 <?php endif; ?>
                             </div>
                             <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
                         </div>
                     </div>
 
-                    <div id="profileMenu" class="hidden absolute bottom-0 right-0 md:mr-0 mr-3 border-2 shadow-lg bg-white w-44 rounded-lg p-3 translate-y-52 translate-x-4">
+                    <div id="profileMenu" class="hidden absolute bottom-0 right-0 md:mr-0 mr-3 border-2 shadow-lg bg-white w-44 rounded-lg p-3 md:translate-y-52 translate-y-48 md:-translate-x-20 -translate-x-5">
                         <h1 class="font-bold"><?= ucwords(strtolower($user[0]['name'])); ?></h1>
                         <div class="flex items-center select-none">
                             <ion-icon name="wallet-outline" class="text-lg mx-2 my-2"></ion-icon>
@@ -123,7 +123,6 @@ include '../../Controller/UserController.php';
                         </a>
                     </div>
                 </div>
-            </div>
             </div>
         </nav>
         <!-- end navbar -->
@@ -861,7 +860,7 @@ include '../../Controller/UserController.php';
     <script src="./lib/swiper-bundle.min.js" type="text/javascript"></script>
     <!-- jQuery -->
     <script src="./lib/jquery-3.7.1.js" type="text/javascript"></script>
-    <!-- nav js1 psk -->
+    <!-- nav js1 -->
     <script src="./js/navbar.js" type="text/javascript"></script>
     <!-- customjs -->
     <script src="./js/viewdetailsclass.js" type="text/javascript"></script>

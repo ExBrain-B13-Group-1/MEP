@@ -40,7 +40,7 @@ if (isset($_POST['login'])) {
                 setcookie('institute_id', '', time() - 3600, '/');
             }
 
-            header("Location: ../View/resources/dashboard.php");
+            header("Location: ../View/resources/home.php");
             exit();
         } else {
             $_SESSION['ps_error'] = "Incorrect Password!";
