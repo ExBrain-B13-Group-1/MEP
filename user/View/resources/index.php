@@ -32,10 +32,6 @@ $aboutContents = array_filter($sites, function ($site) {
 $serviceContents = array_filter($sites, function ($site) {
     return $site['page_name'] === 'Service';
 });
-// echo "<pre>";
-// print_r($serviceContents);
-// echo "<pre>";
-// print_r($institutePrices);
 
 // Separate home contents of title
 $titleText = $homeContents[1]['title'];
@@ -435,7 +431,6 @@ $svgs = [
                 <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
                 <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
                 <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
             </div>
             <!-- Slider controls -->
             <button type="button" class="absolute md:top-0 -top-6 start-0  flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>

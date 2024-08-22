@@ -5,25 +5,19 @@ include '../../Controller/SitemasterController.php';
 include '../../Controller/SlotController.php';
 include '../../Controller/UserController.php';
 include '../../Controller/EnrolledClassController.php';
-
+include '../../Controller/BankingController.php';
+include '../../Controller/PayController.php';
 // echo "<pre>";
-// print_r($slots);
+// print_r($user);
 
 // Check for cookies
 $userId = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : null;
+$userProId = isset($_COOKIE['pro_user_id']) ? $_COOKIE['pro_user_id'] : null;
 $instituteId = isset($_COOKIE['institute_id']) ? $_COOKIE['institute_id'] : null;
 
 $baseUrl = 'http://localhost/MEP/storages/uploads/';
 
 $baseUrlInstitute = 'http://localhost/MEP/Institute/storages/uploads/';
-// Separate prices by scope
-// $userPrices = array_filter($prices, function ($price) {
-//     return $price['scope'] === 'user';
-// });
-
-// $institutePrices = array_filter($prices, function ($price) {
-//     return $price['scope'] === 'institute';
-// });
 
 $homeContents = array_filter($sites, function ($site) {
     return $site['page_name'] === 'Home';
@@ -36,10 +30,6 @@ $aboutContents = array_filter($sites, function ($site) {
 $serviceContents = array_filter($sites, function ($site) {
     return $site['page_name'] === 'Service';
 });
-// echo "<pre>";
-// print_r($serviceContents);
-// echo "<pre>";
-// print_r($institutePrices);
 
 // Separate home contents of title
 $titleText = $homeContents[1]['title'];
@@ -63,29 +53,6 @@ $svgs = [
     '<svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 14 14"><path fill="currentColor" fill-rule="evenodd" d="M1.5 0A1.5 1.5 0 0 0 0 1.5v6A1.5 1.5 0 0 0 1.5 9h11A1.5 1.5 0 0 0 14 7.5v-6A1.5 1.5 0 0 0 12.5 0zm6.125 1.454a.625.625 0 1 0-1.25 0v.4a1.532 1.532 0 0 0-.15 3.018l1.197.261a.39.39 0 0 1-.084.773h-.676a.39.39 0 0 1-.369-.26a.625.625 0 0 0-1.178.416c.194.55.673.965 1.26 1.069v.415a.625.625 0 1 0 1.25 0V7.13a1.641 1.641 0 0 0 .064-3.219L6.492 3.65a.281.281 0 0 1 .06-.556h.786a.388.388 0 0 1 .369.26a.625.625 0 1 0 1.178-.416a1.64 1.64 0 0 0-1.26-1.069zM2.75 3.75a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5m8.5 0a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5M4.5 9.875c.345 0 .625.28.625.625v2a.625.625 0 1 1-1.25 0v-2c0-.345.28-.625.625-.625m5.625.625a.625.625 0 1 0-1.25 0v2a.625.625 0 1 0 1.25 0zm-2.5.75a.625.625 0 1 0-1.25 0v2a.625.625 0 1 0 1.25 0z" clip-rule="evenodd"/></svg>'
 ];
 
-
-$today = new DateTime();
-$progressArray = [];
-if (!empty($data)) {
-    foreach ($data as $index => $class) {
-        $startDate = new DateTime($class['start_date']);
-        $endDate = new DateTime($class['end_date']);
-
-        $totalDuration = $startDate->diff($endDate)->days;
-        $progressDuration = $startDate->diff($today)->days;
-
-        // Calculate progress percentage
-        $progressPercentage = 0;
-        if ($totalDuration > 0) {
-            $progressPercentage = ($progressDuration / $totalDuration) * 100;
-            // Ensure progress doesn't exceed 100%
-            if ($progressPercentage > 100) {
-                $progressPercentage = 100;
-            }
-        }
-        $progressArray[$index] = round($progressPercentage, 2);
-    }
-}
 
 ?>
 
@@ -513,7 +480,6 @@ if (!empty($data)) {
                 <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
                 <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
                 <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
             </div>
             <!-- Slider controls -->
             <button type="button" class="absolute md:top-0 -top-6 start-0  flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>

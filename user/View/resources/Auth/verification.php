@@ -58,9 +58,9 @@
         </style>
     </head>
 
-    <body class="bg-custom-enroll-bg">
+    <body class="bg-custom-enroll-bg bg-cover">
         <div class="flex items-center justify-center min-h-screen">
-            <div class="py-8 px-20 bg-primary-main rounded-lg bg-opacity-90 shadow-xl w-3/4 relative overflow-hidden">
+            <div class="py-8 px-8 md:px-20 bg-primary-main rounded-lg bg-opacity-90 shadow-xl w-4/4 md:w-3/4  relative overflow-hidden">
                 <!-- Logo and Form Name -->
                 <div class="flex flex-col md:flex-row justify-between items-center ">
                     <img src="../../../../storages/logo-white.svg" class="mb-5" alt="logo">

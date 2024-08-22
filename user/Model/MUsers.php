@@ -224,4 +224,40 @@ class MUser
             return false;
         }
     }
+
+
+    /**
+     * (Checking is verified)
+     */
+    public function isVerified($id)
+    {
+        try {
+            $db = new DBConnection();
+            // Get connection
+            $pdo = $db->connection();
+
+            // Prepare the query to check if the user_id and p_id exist together
+            $sql = $pdo->prepare(
+                "SELECT nrc_verify FROM m_user WHERE id = :id"
+            );
+
+            // Bind the parameters
+            $sql->bindParam(':id', $id);
+
+            // Execute the query
+            $sql->execute();
+
+            // Fetch the result as an associative array
+            $result = $sql->fetch(PDO::FETCH_ASSOC);
+
+            // Check if nrc_verify is 1
+            if ($result && $result['nrc_verify'] == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (\Throwable $th) {
+            return false; // Return false to indicate failure
+        }
+    }
 }

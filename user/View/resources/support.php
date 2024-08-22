@@ -156,6 +156,8 @@ include '../../Controller/UserFaqController.php';
   </nav>
   <!-- end navbar -->
 
+  <!--! Start Code Here -->
+
 
   <div class="block pt-20 md:px-10 ml-6 mb-10">
     <div class="h-screen grid grid-cols-4 gap-7 mt-3">
@@ -296,6 +298,10 @@ include '../../Controller/UserFaqController.php';
                       </svg>
                     </button>
                   </div>
+
+
+
+
                 </form>
               </div>
             </div>
@@ -307,8 +313,6 @@ include '../../Controller/UserFaqController.php';
 
   <script src="js/fileUpload.js"></script>
   <script src="js/support.js"></script>
-  <!-- nav js1 -->
-  <script src="./js/navbar.js" type="text/javascript"></script>
 </body>
 
 </html>

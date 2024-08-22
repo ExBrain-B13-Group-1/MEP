@@ -1,11 +1,15 @@
 <?php
 ini_set('display_errors', '1');
-// include '../../Controller/SitemasterController.php';
+
 include '../../Controller/PricesPlanController.php';
 include '../../Controller/UserController.php';
-// include '../../Controller/SlotController.php';
+include '../../Controller/BankingController.php';
+include '../../Controller/PayController.php';
+// echo "<pre>";
+// print_r($slots);
 
 $userId = isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : null;
+$userProId = isset($_COOKIE['pro_user_id']) ? $_COOKIE['pro_user_id'] : null;
 $instituteId = isset($_COOKIE['institute_id']) ? $_COOKIE['institute_id'] : null;
 
 $baseUrl = 'http://localhost/MEP/storages/uploads/';
@@ -14,48 +18,33 @@ $userPrices = array_filter($prices, function ($price) {
     return $price['scope'] === 'user';
 });
 
+// Merge data into a single array using IDs as keys
+$paymentData = [];
+// To make default value to first item
+$firstItem = null;
 
-// $institutePrices = array_filter($prices, function ($price) {
-//     return $price['scope'] === 'institute';
-// });
+foreach ($bankings as $banking) {
+    $key = 'bank:' . $banking['id'];
+    $paymentData[$key] = [
+        'name' => $banking['bank_name'],
+        'image' => $banking['bank_image'],
+        'qr_code' => $banking['qr_code']
+    ];
+    if (!$firstItem) {
+        $firstItem = $key;
+    }
+}
 
-// $homeContents = array_filter($sites, function ($site) {
-//     return $site['page_name'] === 'Home';
-// });
-
-// $aboutContents = array_filter($sites, function ($site) {
-//     return $site['page_name'] === 'About Us';
-// });
-
-// $serviceContents = array_filter($sites, function ($site) {
-//     return $site['page_name'] === 'Service';
-// });
-// echo "<pre>";
-// print_r($serviceContents);
-// echo "<pre>";
-// print_r($institutePrices);
-
-// Separate home contents of title
-// $titleText = $homeContents[1]['title'];
-// Split the text into title and subtitle based on the delimiter
-// $delimiter = 'with ';
-// $parts = explode($delimiter, $titleText, 2);
-
-// Handle cases where the delimiter might not be found
-// $title = $parts[0] ?? $titleText;
-// $subtitle = isset($parts[1]) ? $delimiter . $parts[1] : '';
-
-
-// For service svgs
-// $svgId = 0;
-// $svgs = [
-//     '<svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="currentColor" d="m226.53 56.41l-96-32a8 8 0 0 0-5.06 0l-96 32A8 8 0 0 0 24 64v80a8 8 0 0 0 16 0V75.1l33.59 11.19a64 64 0 0 0 20.65 88.05c-18 7.06-33.56 19.83-44.94 37.29a8 8 0 1 0 13.4 8.74C77.77 197.25 101.57 184 128 184s50.23 13.25 65.3 36.37a8 8 0 0 0 13.4-8.74c-11.38-17.46-27-30.23-44.94-37.29a64 64 0 0 0 20.65-88l44.12-14.7a8 8 0 0 0 0-15.18ZM176 120a48 48 0 1 1-86.65-28.45l36.12 12a8 8 0 0 0 5.06 0l36.12-12A47.9 47.9 0 0 1 176 120"/></svg>',
-//     '<svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><path d="M44 8H4v30h15l5 5l5-5h15z"/><circle cx="24" cy="19" r="5" fill="currentColor"/><path d="M33 32c0-4.418-4.03-8-9-8s-9 3.582-9 8"/></g></svg>',
-//     '<svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12.005 13.003a3 3 0 0 1 2.08 5.162l-1.91 1.837h2.83v2h-6l-.001-1.724l3.694-3.555a1 1 0 1 0-1.693-.72h-2a3 3 0 0 1 3-3m6 0v4h2v-4h2v9h-2v-3h-4v-6zm-14-1a7.99 7.99 0 0 0 3 6.246v2.416a10 10 0 0 1-5-8.662zm8-10c5.185 0 9.449 3.946 9.95 9h-2.012a8.001 8.001 0 0 0-14.554-3.5h2.616v2h-6v-6h2v2.499a9.99 9.99 0 0 1 8-4"/></svg>',
-//     '<svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 8H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h1v4a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-4h3l5 4V4zm9.5 4c0 1.71-.96 3.26-2.5 4V8c1.53.75 2.5 2.3 2.5 4"/></svg>',
-//     '<svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024"><path fill="currentColor" d="m665.216 768l110.848 192h-73.856L591.36 768H433.024L322.176 960H248.32l110.848-192H160a32 32 0 0 1-32-32V192H64a32 32 0 0 1 0-64h896a32 32 0 1 1 0 64h-64v544a32 32 0 0 1-32 32zM832 192H192v512h640zM352 448a32 32 0 0 1 32 32v64a32 32 0 0 1-64 0v-64a32 32 0 0 1 32-32m160-64a32 32 0 0 1 32 32v128a32 32 0 0 1-64 0V416a32 32 0 0 1 32-32m160-64a32 32 0 0 1 32 32v192a32 32 0 1 1-64 0V352a32 32 0 0 1 32-32"/></svg>',
-//     '<svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 14 14"><path fill="currentColor" fill-rule="evenodd" d="M1.5 0A1.5 1.5 0 0 0 0 1.5v6A1.5 1.5 0 0 0 1.5 9h11A1.5 1.5 0 0 0 14 7.5v-6A1.5 1.5 0 0 0 12.5 0zm6.125 1.454a.625.625 0 1 0-1.25 0v.4a1.532 1.532 0 0 0-.15 3.018l1.197.261a.39.39 0 0 1-.084.773h-.676a.39.39 0 0 1-.369-.26a.625.625 0 0 0-1.178.416c.194.55.673.965 1.26 1.069v.415a.625.625 0 1 0 1.25 0V7.13a1.641 1.641 0 0 0 .064-3.219L6.492 3.65a.281.281 0 0 1 .06-.556h.786a.388.388 0 0 1 .369.26a.625.625 0 1 0 1.178-.416a1.64 1.64 0 0 0-1.26-1.069zM2.75 3.75a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5m8.5 0a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5M4.5 9.875c.345 0 .625.28.625.625v2a.625.625 0 1 1-1.25 0v-2c0-.345.28-.625.625-.625m5.625.625a.625.625 0 1 0-1.25 0v2a.625.625 0 1 0 1.25 0zm-2.5.75a.625.625 0 1 0-1.25 0v2a.625.625 0 1 0 1.25 0z" clip-rule="evenodd"/></svg>'
-// ];
+foreach ($pays as $payment) {
+    $key = 'pay:' . $payment['id'];
+    $paymentData[$key] = [
+        'name' => $payment['pay_name'],
+        'image' => $payment['pay_image'],
+        'qr_code' => $payment['qr_code']
+    ];
+}
+$paymentData = json_encode($paymentData);
+$firstItem = json_encode($firstItem);
 
 ?>
 
@@ -73,9 +62,27 @@ $userPrices = array_filter($prices, function ($price) {
     <link rel="stylesheet" href="./lib/aos.css" type="text/css">
     <!-- Tailwind output css -->
     <link href="./css/output.css" rel="stylesheet" />
+
+    <style>
+        .payment-overlay {
+            position: absolute;
+            top: 68%;
+            left: 49%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+    </style>
 </head>
 
 <body class="relative">
+    <!-- Notification Message -->
+    <div id="notification" class="fixed top-0 left-1/2 transform -translate-x-1/2 bg-primary-main text-white py-2 px-4 rounded shadow-lg opacity-0 transition-opacity duration-500 ease-in-out z-[100]">
+        <p id="notificationMessage" class="text-sm text-center"></p>
+    </div>
     <!-- start navbar -->
     <nav class="bg-white fixed w-[100%] top-0 left-0 border-b border-gray-200 md:h-18 md:py-1 z-50">
         <div class="md:px-32 flex items-center justify-between mx-auto px-4 relative">
@@ -170,7 +177,7 @@ $userPrices = array_filter($prices, function ($price) {
     <!-- End Header Section -->
 
     <!-- Start Plan & Pricing Section -->
-    <section class="pricing-shows md:mx-32 md:mt-36 mt-12 md:pb-16 pb-8 relative h-full overflow-hidden">
+    <section class="pricing-shows md:mx-32 md:mt-20 mt-12 md:pb-16 pb-8 relative h-full overflow-hidden">
         <!-- Dropdown -->
         <div>
             <div class="flex justify-center items-center md:mb-16 mb-8">
@@ -223,8 +230,13 @@ $userPrices = array_filter($prices, function ($price) {
                                 </ul>
                             </div>
                             <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
-                                <button type="button" class="text-white md:w-80 w-60 bg-gray-600 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2 cursor-pointer" disabled>In Use</button>
+                                <button type="button"
+                                    class="text-white md:w-80 w-60 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2 
+         <?= (!$userId || !$userProId) ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300'; ?>"
+                                    <?= ($userId) ? '' : 'disabled'; ?>><?= (!$userProId) ? 'In Use' : 'Activated'; ?>
+                                </button>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -281,7 +293,11 @@ $userPrices = array_filter($prices, function ($price) {
                                 </ul>
                             </div>
                             <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
-                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2" <?= ($userId) ? '' : 'disabled'; ?>>Upgrade Pro</button>
+                                <button type="button"
+                                    class="pro-button text-white md:w-80 w-60 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2 
+        <?= (!$userId || $userProId) ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300'; ?>"
+                                    <?= (!$userId || $userProId) ? 'disabled' : ''; ?>> <?= (!$userProId) ? 'Upgrade Pro' : 'In Use'; ?>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -292,7 +308,7 @@ $userPrices = array_filter($prices, function ($price) {
                         <div class="w-full md:h-[60vh] h-[50vh] rounded-xl border-2 border-gray-300 border-t-0 shadow-lg relative swiper-slide">
                             <div class="flex justify-center items-center md:mt-8 mt-4 absolute md:-top-24 -top-14 left-1/2 -translate-x-1/2">
                                 <div class="md:w-80 md:h-24 w-60 h-20 rounded-xl bg-indigo-800 flex flex-col justify-center items-center shadow-lg">
-                                    <p class="text-gray-400 md:text-base text-sm">500 Coins</p>
+                                    <p class="text-gray-400 md:text-base text-sm">30 Coins</p>
                                     <h1 class="text-white font-semibold md:text-2xl text-xl"><?= number_format($userPrices[1]['amount'], 0, '', ','); ?> MMK</h1>
                                     <small class="text-gray-200 text-xs">Unlimited buy</small>
                                 </div>
@@ -326,8 +342,13 @@ $userPrices = array_filter($prices, function ($price) {
                                 </ul>
                             </div>
                             <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
-                                <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2" <?= ($userId) ? '' : 'disabled'; ?>>Buy now</button>
+                                <button type="button"
+                                    class="coins-button text-white md:w-80 w-60 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2 
+        <?= ($userId) ? 'bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300' : 'bg-gray-400 cursor-not-allowed'; ?>"
+                                    <?= ($userId) ? '' : 'disabled'; ?>>Buy Now
+                                </button>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -337,6 +358,67 @@ $userPrices = array_filter($prices, function ($price) {
 
     </section>
     <!-- End Plan & Pricing Section -->
+
+    <!-- Modal backdrop -->
+    <div id="modalBackdrop" class="hidden fixed inset-0 bg-black bg-opacity-60 z-40"></div>
+
+    <!-- Modal box -->
+    <div id="pricingModal" class="hidden fixed inset-0 z-50">
+        <div class="bg-slate-50 rounded-lg shadow-xl w-3/4 md:w-2/6 py-6 px-10 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h2 id="modalTitle" class="text-2xl font-bold text-indigo-800">Upgrade to Pro</h2>
+            <p id="modalDescription" class="mt-4 text-gray-600">Get the Pro package for 50,000 MMK. Enjoy additional features like receiving 1000 points each month, unlimited consultations, and more.</p>
+
+            <!-- Payment Section -->
+            <div id="paymentSection" class="mt-6">
+                <h3 class="text-xl font-semibold text-gray-700">Payment Details</h3>
+                <!-- Payment Plan -->
+                <div id="payment-plan-container" class="mb-44">
+                    <label for="payment-plan" class="text-dark-gray text-sm">Payment Plan</label>
+                    <div class="relative">
+                        <select id="payment-plan" class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-10 rounded-md leading-tight focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
+                            <!-- Group for Banking -->
+                            <optgroup label="Banking">
+                                <?php foreach ($bankings as $banking) : ?>
+                                    <option value="bank:<?= $banking['id'] ?>">
+                                        <?= ($banking['bank_name'] . " Banking - ") ?><?= ($banking['account_name'] . " ") ?><?= '(' . ($banking['account_number']) . ')' ?>
+                                    </option>
+                                <?php endforeach ?>
+                            </optgroup>
+
+                            <!-- Group for Payments -->
+                            <optgroup label="Payments">
+                                <?php foreach ($pays as $pay) : ?>
+                                    <option value="pay:<?= $pay['id'] ?>">
+                                        <?= ($pay['pay_name'] . " - ") ?><?= ($pay['user_name'] . " ") ?><?= '(' .  '0' . ($pay['ph_num']) . ')' ?>
+                                    </option>
+                                <?php endforeach ?>
+                            </optgroup>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-2 flex items-center px-2 text-gray-700">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M7 10l5 5 5-5H7z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="payment-details" class="payment-overlay flex items-center mt-4">
+                        <img id="payment-logo" src="" alt="Payment Logo" class="h-16 mr-4">
+                        <img id="qr-code" src="" alt="QR Code" class="w-24 h-24">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal actions -->
+            <div class="flex justify-end mt-10">
+                <button id="cancelButton" class="text-gray-500 hover:text-gray-700 px-4 py-2">Cancel</button>
+                <button id="confirmButton" class="bg-indigo-800 hover:bg-blue-800 text-white px-4 py-2 rounded-lg ml-4">Buy Now</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Start Footer Section -->
     <footer class="bg-blue-900 text-white md:px-32 py-8 px-4 mt-10">
@@ -441,6 +523,36 @@ $userPrices = array_filter($prices, function ($price) {
     <script src="./js/navbar.js" type="text/javascript"></script>
     <!-- customjs -->
     <script src="./js/pricing.js" type="text/javascript"></script>
+
+    <!-- Payment Data js -->
+    <script src="./js/paymentData.js" type="text/javascript"></script>
+
+    <script>
+        var paymentData = <?php echo $paymentData; ?>;
+        var defaultValue = <?php echo $firstItem; ?>;
+    </script>
+
+    <?php if (isset($_SESSION['notification_message'])): ?>
+        <script>
+            $(document).ready(function() {
+                // Call the function to show notification
+                showNotification('<?php echo $_SESSION['notification_message']; ?>');
+                // Clear the session variables after showing notification
+                <?php unset($_SESSION['notification_message']); ?>
+            });
+
+            // Show Notification for 2 seconds
+            function showNotification(message) {
+                const notification = $('#notification');
+                const notificationMessage = $('#notificationMessage');
+                notificationMessage.text(message);
+                notification.removeClass('opacity-0').addClass('opacity-100');
+                setTimeout(function() {
+                    notification.removeClass('opacity-100').addClass('opacity-0');
+                }, 2000);
+            }
+        </script>
+    <?php endif; ?>
 
 </body>
 

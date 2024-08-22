@@ -2,11 +2,16 @@
 session_start();
 ini_set('display_errors', '1');
 include __DIR__ . '/../Model/Logins.php';
+include __DIR__ . '/../Model/MUsers.php';
 include __DIR__ . '/common/mailSender.php';
 include __DIR__ . '/../Controller/common/randomGenerator.php';
+include __DIR__ . '/../Model/MUserPayments.php';
+
+$mUserPayments = new MUserPayment();
 
 $mail = new SendMail();
 $mLogins = new Logins();
+$mUsers = new MUser();
 
 $rememberMe = isset($_POST['remember_me']);
 
@@ -38,6 +43,18 @@ if (isset($_POST['login'])) {
             // Optional: Clear institute_id
             if (isset($_COOKIE['institute_id'])) {
                 setcookie('institute_id', '', time() - 3600, '/');
+            }
+
+
+            $isPro = $mUserPayments->checkProPlan($user['id'], 1);
+            if ($isPro) {
+                setcookie('pro_user_id', $user['id'], time() + (86400 * 365), '/');
+            }
+
+            $isVerified = $mUsers->isVerified($user['id']);
+            if ($isVerified) {
+                $expiration = time() + (86400 * 3650); 
+                setcookie('verified', 'Have Been Verified!', $expiration, '/', '', false, true);
             }
 
             header("Location: ../View/resources/home.php");
@@ -73,8 +90,8 @@ if (isset($_POST['login'])) {
             // Set the cookie for institute ID
             setcookie('institute_id', $institute['id'], time() + (86400 * 30), '/');
 
-             // Optional: Clear user_id
-             if (isset($_COOKIE['user_id'])) {
+            // Optional: Clear user_id
+            if (isset($_COOKIE['user_id'])) {
                 setcookie('user_id', '', time() - 3600, '/');
             }
 

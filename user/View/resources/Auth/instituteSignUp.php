@@ -74,7 +74,7 @@ $cities = json_encode($cities);
     </style>
 </head>
 
-<body class="bg-custom-bg">
+<body class="bg-custom-enroll-bg bg-cover">
     <div class="flex items-center justify-center min-h-screen">
         <div id="loadingSpinner" style="display: none;">Loading...</div>
 

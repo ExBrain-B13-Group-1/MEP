@@ -1,17 +1,8 @@
 <?php
 ini_set('display_errors', '1');
 include '../../Controller/UserController.php';
-// later
-// Initialize session variables if not set
-// if (!isset($_SESSION['notiCount'])) {
-//     $_SESSION['notiCount'] = 0;
-// }
-// $notiCount = $_SESSION['notiCount'];
 
-// if (isset($_SESSION['profile_upload_success'])) {
-//   echo "<script>alert('" . $_SESSION['profile_upload_success'] . "');</script>";
-//   unset($_SESSION['profile_upload_success']);
-// }
+$userProId = isset($_COOKIE['pro_user_id']) ? $_COOKIE['pro_user_id'] : null;
 
 // Split the name into parts by space
 $name_parts = explode(' ', $user[0]['name']);
@@ -197,6 +188,11 @@ $social_links = explode(',', $user[0]['social_links']);
         <div class="w-full text-center p-4">
           <h1 class="font-bold text-xl">Profile</h1>
           <p>Add Information about yourself</p>
+        </div>
+        <div class="bg-blue-100 p-4 rounded-lg shadow-md text-center mb-6">
+          <p class="font-semibold text-blue-800">
+            You are currently using the <span class="text-blue-600 underline"><?= (!$userProId) ? 'Free Plan' : 'Pro Version'; ?></span>
+          </p>
         </div>
         <div>
           <div class="flex justify-between items-center my-2">
