@@ -11,9 +11,6 @@ $institutes = $mInstitutes->getAllInstitute();
 $pendingInstitutes = $mInstitutes->getPendingInstitutes();
 
 
-// echo "<pre>";
-// print_r($institutes);
-
 if (isset($_POST['action'])) {
     echo 'hit';
     $id = $_POST['id'];
@@ -62,6 +59,3 @@ if (isset($_GET['id']) && isset($_GET['action'])) {
 
 $instituteLists = $mInstitutes->getInstitutes();
 
-
-// echo "<pre>";
-// print_r($institute);

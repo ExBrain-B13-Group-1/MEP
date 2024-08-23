@@ -5,6 +5,3 @@ include __DIR__ . '/../Model/MSitemaster.php';
 $mSites = new MSitemaster();
 $sites = $mSites->getAll();
 
-// echo "<pre>";
-// print_r($sites);
-

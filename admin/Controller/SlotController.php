@@ -6,11 +6,8 @@ $mSlots = new MSlot();
 
 if (isset($_POST['institute_ids'])) {
     $instituteIds = json_decode($_POST['institute_ids'], true);
-
     if (is_array($instituteIds) && count($instituteIds) > 0) {
         $updateResult = $mSlots->updateAdSlots($instituteIds);
-
-
         if ($updateResult) {
             // Fetch the updated slots
             $slots = $mSlots->getAll();

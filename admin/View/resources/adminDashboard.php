@@ -18,9 +18,6 @@ include '../../Controller/InstitutePaymentController.php';
 include '../../Controller/UserPaymentController.php';
 include '../../Controller/SlotController.php';
 
-// echo "<pre>";
-// print_r($admin);
-
 $totalUsers = count($users);
 $totalInstitutes = count($institutes);
 
@@ -55,7 +52,7 @@ $jsonInstitutePays = json_encode($institutePays);
 if (isset($slots) && !empty($slots)) {
     $slotsData = json_encode($slots);
 } else {
-    $slotsData = json_encode([]); // If $slots is not set or empty, pass an empty array
+    $slotsData = json_encode([]); 
 }
 ?>
 

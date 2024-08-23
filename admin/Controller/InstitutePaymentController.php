@@ -4,7 +4,6 @@ include __DIR__ . '/../Model/MInstitutePayments.php';
 
 $mInstitutePays = new MInstitutePayment();
 $institutePays = $mInstitutePays->getAll();
-// echo "<pre>";
-// print_r($institutePays);
+
 
 

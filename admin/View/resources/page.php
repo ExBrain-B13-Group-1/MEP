@@ -37,8 +37,6 @@ $aboutContents = array_filter($sites, function ($site) {
 $serviceContents = array_filter($sites, function ($site) {
     return $site['page_name'] === 'Service';
 });
-// echo "<pre>";
-// print_r($aboutContents[4]);
 
 ?>
 

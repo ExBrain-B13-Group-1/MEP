@@ -97,7 +97,7 @@ $(document).ready(function () {
         plugins: {
           legend: {
             labels: {
-              color: getChartTextColor(), // Text color for legend
+              color: getChartTextColor(), 
             },
           },
         },
@@ -141,7 +141,7 @@ $(document).ready(function () {
   let usersPieData;
   if (jsonUserPays) {
     // Generate the pie chart data
-    usersPieData = getPieChartData(jsonUserPays, [50000], totalUsers);
+    usersPieData = getPieChartData(jsonUserPays, [60000], totalUsers);
   } else {
     console.log("No data found!");
   }
@@ -221,7 +221,7 @@ $(document).ready(function () {
   const instituteIds = top4Institutes.map((institute) => institute.institute_id);
   console.log(instituteIds);
   
-  let slots = []; // Declare slots globally to access later
+  let slots = []; 
   
   if (instituteIds.length > 0) {
       // Create a FormData object
@@ -243,7 +243,7 @@ $(document).ready(function () {
                   $('#logos').empty();
                   console.log("hit");
   
-                  slots = response.slots; // Assign the response slots to the global variable
+                  slots = response.slots; 
   
                   // Append updated logos
                   response.slots.forEach(slot => {
@@ -308,7 +308,7 @@ $(document).ready(function () {
   var calendarEl = document.getElementById("calendar");
   var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: "dayGridMonth",
-      events: [], // Events will be added dynamically
+      events: [], 
   });
   calendar.render();
   

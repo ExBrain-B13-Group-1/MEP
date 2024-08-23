@@ -5083,6 +5083,10 @@ video {
     width: 6rem;
   }
 
+  .md\:w-3\/4 {
+    width: 75%;
+  }
+
   .md\:w-40 {
     width: 10rem;
   }
@@ -5137,10 +5141,6 @@ video {
 
   .md\:w-auto {
     width: auto;
-  }
-
-  .md\:w-3\/4 {
-    width: 75%;
   }
 
   .md\:-translate-x-20 {

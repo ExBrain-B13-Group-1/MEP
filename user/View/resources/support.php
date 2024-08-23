@@ -234,8 +234,8 @@ include '../../Controller/UserFaqController.php';
                   <p class="my-3 text-base text-white">1. How to enroll class?</p>
                   <div>
                     <video class="w-full h-3/5" controls>
-                      <source src="movie.mp4" type="video/mp4">
-                      <source src="movie.ogg" type="video/ogg">
+                      <source src="" type="video/mp4">
+                      <source src="" type="video/mp4">
                       Your browser does not support the video tag.
                     </video>
                   </div>
@@ -271,18 +271,18 @@ include '../../Controller/UserFaqController.php';
                   <div class="col-span-1">
                     <!-- Name -->
                     <div class="mb-7">
-                      <input type="text" id="name" placeholder="Name" class="w-full px-4 py-2 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      <input type="email" id="email" placeholder="Email" class="w-full px-4 py-2 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                     </div>
                     <!-- Comment -->
                     <div>
-                      <textarea rows="6" placeholder="Comment" class="w-full px-4 py-2 rounded-md  focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                      <textarea rows="6" id="comment" placeholder="Comment" class="w-full px-4 py-2 rounded-md  focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
                     </div>
                   </div>
                   <div class="col-span-1">
                     <!-- Problem Image -->
                     <div class="mb-6">
                       <div class="upload-area rounded-md" id="upload-area">
-                        <input type="file" id="file-input" accept="image/*" required class="hidden">
+                        <input type="file" id="file-input" name="errImage" accept="image/*" required class="hidden">
                         <img id="uploaded-image" alt="Uploaded Image">
                         <div id="upload-text" class="upload-text text-center">
                           <ion-icon name="cloud-upload-outline" class="text-3xl text-gray-500"></ion-icon>
@@ -298,10 +298,6 @@ include '../../Controller/UserFaqController.php';
                       </svg>
                     </button>
                   </div>
-
-
-
-
                 </form>
               </div>
             </div>

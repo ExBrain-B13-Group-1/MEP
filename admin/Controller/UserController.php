@@ -6,8 +6,6 @@ $mUsers = new MUser();
 $users = $mUsers->getAllUser();
 
 $pendingUsers = $mUsers->getPendingUsers();
-// echo "<pre>";
-// print_r($users);
 
 if(isset($_POST['action'])){
     $id = $_POST['id'];

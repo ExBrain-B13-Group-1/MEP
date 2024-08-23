@@ -68,7 +68,7 @@ if (isset($_POST['verifyPending'])) {
         if ($nrcVerifyStatus == 0) {
             header("Location: ../View/resources/Auth/pendingStage.php");
             exit();
-        } else if ($nrcVerifyStatus == -1) {
+        } else if ($nrcVerifyStatus == -1 || $nrcVerifyStatus == 2) {
             header("Location: ../View/resources/Auth/verification.php");
             exit();
         } else{

@@ -3,6 +3,7 @@ ini_set('display_errors', '1');
 include '../../Controller/UserController.php';
 
 $userProId = isset($_COOKIE['pro_user_id']) ? $_COOKIE['pro_user_id'] : null;
+$verified = isset($_COOKIE['verified']) ? $_COOKIE['verified'] : null;
 
 // Split the name into parts by space
 $name_parts = explode(' ', $user[0]['name']);
@@ -198,11 +199,10 @@ $social_links = explode(',', $user[0]['social_links']);
           <div class="flex justify-between items-center my-2">
             <p>Verify account with NRC</p>
             <form action="../../Controller/UserController.php" method="POST">
-              <button id="verifyButton"
-                type="submit"
-                name="verifyPending"
-                class="bg-white border border-red-400 text-red-400 px-10 py-2 rounded-md hover:bg-red-400 hover:text-white">
-                Verify
+              <button type="submit" id="verifyButton"name="verifyPending"
+                class="md:w-50 w-30 text-sm  rounded-lg md:text-xl px-10 md:px-5 py-3 mb-2 
+         <?= ($verified) ? 'bg-gray-50 border border-gray-300 text-primaryColor text-sm cursor-not-allowed' : 'bg-white border border-red-400 text-red-400 px-10 py-2 rounded-md hover:bg-red-400 hover:text-white'; ?>"
+                <?= (!$verified) ? '' : 'disabled'; ?>><?= (!$userProId) ? 'Verify' : 'Verified'; ?>
               </button>
             </form>
 

@@ -76,4 +76,35 @@ $(document).ready(function () {
       reader.readAsDataURL(file);
     }
   });
+
+  $("#send-message").on("click", function (e) {
+    e.preventDefault();
+
+    let email = $("#email").val();
+    let comment = $("#comment").val();
+    let errImage = $("#errImage")[0].files[0];
+
+    // Create a FormData object
+    let formData = new FormData();
+    formData.append("email", email);
+    formData.append("comment", comment);
+    formData.append("errImage", errImage);
+
+    // Make the AJAX request
+    $.ajax({
+      url: "../../Controller/SupportController.php",
+      type: "POST",
+      data: formData,
+      processData: false,
+      contentType: false,
+      dataType: "text",
+      success: function (data) {
+        console.log(data);
+      },
+      error: function (err) {
+        console.log(err);
+        alert("Error occurred during submission.");
+      },
+    });
+  });
 });
