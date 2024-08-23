@@ -41,7 +41,6 @@ class Students{
                  FROM m_students AS ms 
                  INNER JOIN t_student_classes_enroll AS tsce ON tsce.student_id = ms.id
                  INNER JOIN m_classes AS mc ON mc.id = tsce.class_id 
-                 INNER JOIN t_student_certifications AS tsc ON tsc.student_id = ms.id
                  WHERE mc.institute_id = :id AND ms.name LIKE :studentname"
             );
             
@@ -70,8 +69,7 @@ class Students{
                     FROM m_students AS ms 
                     INNER JOIN t_student_classes_enroll AS tsce ON tsce.student_id = ms.id
                     INNER JOIN m_classes AS mc ON mc.id = tsce.class_id 
-                    INNER JOIN t_student_certifications AS tsc ON tsc.student_id = ms.id
-                    WHERE mc.institute_id = :id AND tsc.certified = 1;
+                    WHERE mc.institute_id = :id AND tsce.certified = 1;
                 "
             );
             $sql->bindValue(':id', $instituteID);
@@ -94,8 +92,7 @@ class Students{
                     FROM m_students AS ms 
                     INNER JOIN t_student_classes_enroll AS tsce ON tsce.student_id = ms.id
                     INNER JOIN m_classes AS mc ON mc.id = tsce.class_id 
-                    INNER JOIN t_student_certifications AS tsc ON tsc.student_id = ms.id
-                    WHERE mc.institute_id = :id AND tsc.certified = 0
+                    WHERE mc.institute_id = :id AND tsce.certified = 0
                 "
             );
             $sql->bindValue(':id', $instituteID);
@@ -107,6 +104,112 @@ class Students{
             echo "Unexpected Error Occurs! $th";
         }
     }
+
+    public function finishedClassStudentList($classid){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT ms.*,
+                    mc.c_title AS class_title,
+                    mc.c_id AS class_id,
+                    mc.id AS class_sr_id,
+                    tsce.certified
+                FROM m_students AS ms
+                INNER JOIN t_student_classes_enroll AS tsce ON tsce.student_id = ms.id
+                INNER JOIN m_classes AS mc ON mc.id = tsce.class_id
+                WHERE tsce.class_id = :id"
+            );
+            $sql->bindValue(":id", $classid);
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
+    public function finishedClassStudentListCertified($classid){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT ms.*,
+                    mc.c_title AS class_title,
+                    mc.c_id AS class_id,
+                    mc.id AS class_sr_id,
+                    tsce.certified
+                FROM m_students AS ms
+                INNER JOIN t_student_classes_enroll AS tsce ON tsce.student_id = ms.id
+                INNER JOIN m_classes AS mc ON mc.id = tsce.class_id
+                WHERE tsce.class_id = :id AND tsce.certified = 1"
+            );
+            $sql->bindValue(":id", $classid);
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
+    public function finishedClassStudentListNoCertified($classid){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT ms.*,
+                    mc.c_title AS class_title,
+                    mc.c_id AS class_id,
+                    mc.id AS class_sr_id,
+                    tsce.certified
+                FROM m_students AS ms
+                INNER JOIN t_student_classes_enroll AS tsce ON tsce.student_id = ms.id
+                INNER JOIN m_classes AS mc ON mc.id = tsce.class_id
+                WHERE tsce.class_id = :id AND tsce.certified = 0"
+            );
+            $sql->bindValue(":id", $classid);
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
+    public function getFinishedClassStudentListByName($classid,$name){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT ms.*,
+                    mc.c_title AS class_title,
+                    mc.c_id AS class_id,
+                    mc.id AS class_sr_id,
+                    tsce.certified
+                FROM m_students AS ms
+                INNER JOIN t_student_classes_enroll AS tsce ON tsce.student_id = ms.id
+                INNER JOIN m_classes AS mc ON mc.id = tsce.class_id
+                WHERE tsce.class_id = :id AND ms.name LIKE :name"
+            );
+            $sql->bindValue(":id", $classid);
+            $sql->bindValue(':name', '%' . $name . '%');
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
 
 
     public function getEnrolledClasses($studentId){
@@ -140,8 +243,8 @@ class Students{
             $sql = $pdo->prepare(
                 "SELECT mc.id,mc.c_title
                 FROM m_classes AS mc
-                INNER JOIN t_student_certifications AS tsc ON mc.id = tsc.class_id
-                WHERE tsc.student_id = :id AND tsc.certified = 1
+                INNER JOIN t_student_classes_enroll AS tsce ON mc.id = tsce.class_id
+                WHERE tsce.student_id = :id AND tsce.certified = 1
                 "
             );
             $sql->bindValue(':id', $studentId);

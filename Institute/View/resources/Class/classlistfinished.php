@@ -458,7 +458,6 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
     <!-- darkmode lightmode js -->
     <script src="./../js/darkandlight.js" type="text/javascript"></script>
     <!-- customjs -->
-    <script src="./../js/paginatedTable.js" type="text/javascript"></script>
     <script src="./../js/finishedclass.js" type="text/javascript"></script>
 </body>
 

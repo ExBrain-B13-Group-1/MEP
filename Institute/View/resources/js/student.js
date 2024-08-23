@@ -44,7 +44,7 @@ $(document).ready(function () {
 
         for (let i = startIndex; i < endIndex; i++) {
             const rowData = jsonData[i];
-            // console.log(rowData);
+            console.log(rowData);
             const row = `<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                             <td class="w-4 p-4">${rowData['student_id']}</td>
                             <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">${rowData['name']}</td>
@@ -274,7 +274,7 @@ function showCard(id) {
                         success: function(classes) {
                             let enrolledClassesHtml = classes.map(cls => `
                                 <li>
-                                    <a href="http://localhost/MEP/Institute/Controller/ViewDetailsClassController.php?classid=${cls.id}">${cls.c_title}</a>
+                                    <a href="http://localhost/MEP/Institute/View/resources/Class/finishedclassdetails.php?classid=${cls.id}">${cls.c_title}</a>
                                 </li>
                             `).join('');
                             $('#enrolled-classes').html(enrolledClassesHtml);
@@ -294,7 +294,7 @@ function showCard(id) {
                             // console.log(classes);
                             let certifiedClassesHtml = classes.map(cls => `
                                 <li>
-                                    <a href="http://localhost/MEP/Institute/View/resources/Class/finishedclassdetails.php?classid=${cls.c_id}">${cls.c_title}</a>
+                                    <a href="http://localhost/MEP/Institute/View/resources/Class/finishedclassdetails.php?classid=${cls.id}">${cls.c_title}</a>
                                 </li>
                             `).join('');
                             $('#certified-classes').html(certifiedClassesHtml);

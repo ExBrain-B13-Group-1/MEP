@@ -1,16 +1,15 @@
 <?php 
 
 ini_set('display_errors', '1');
-require_once  __DIR__ . '/../Model/MClasses.php';
+require_once  __DIR__ . '/../Model/MInstructors.php';
 
 if(isset($_COOKIE['institute_id'])){
     $id = $_COOKIE['institute_id'];
-    $classObj = new MClasses();
-    $finishedclasses = $classObj->finishedClasses($id);
-    echo json_encode($finishedclasses);
+    $obj = new MInstructors();
+    $datas = $obj->topFiveInstructors($id);
+    echo json_encode($datas);
 }else{
     echo "<script>alert('Your session is timed out');</script>";
 }
-
 
 ?>

@@ -5,10 +5,10 @@ require_once  __DIR__ . '/../Model/Students.php';
 
 if(isset($_COOKIE['institute_id'])){
     $name = $_POST['studentname'];
-    $id = $_COOKIE['institute_id'];
+    $classid = $_POST['classid'];
     $obj = new Students();
-    $students = $obj->getFinishedClassStudentListByName($id,$name);
-    echo json_encode($students);
+    $certifiedStudents = $obj->getFinishedClassStudentListByName($classid,$name);
+    echo json_encode($certifiedStudents);
 }else{
     echo "<script>alert('Your session is timed out');</script>";
 }

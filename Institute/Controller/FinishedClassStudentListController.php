@@ -3,14 +3,20 @@
 ini_set('display_errors', '1');
 require_once  __DIR__ . '/../Model/Students.php';
 
+$classid = isset($_POST['classid']) ? $_POST['classid'] : null;
+
+// echo $classid;
+
 if(isset($_COOKIE['institute_id'])){
-    $name = $_POST['studentname'];
     $id = $_COOKIE['institute_id'];
-    $obj = new Students();
-    $students = $obj->getFinishedClassStudentListByName($id,$name);
-    echo json_encode($students);
+    $studentObj = new Students();
+    $studentList = $studentObj->finishedClassStudentList($classid);
+    echo json_encode($studentList);
 }else{
     echo "<script>alert('Your session is timed out');</script>";
 }
+
+
+
 
 ?>

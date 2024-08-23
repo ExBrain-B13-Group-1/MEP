@@ -3,10 +3,10 @@ ini_set('display_errors', '1');
 
 include '../../../Controller/InstituteController.php';
 include '../../../Controller/common/CountForEnrollmentPending.php';
+include '../../../Controller/GetIndicatorOfInstituteController.php';
 $pendingCount = $count;
 // url for logo
 $baseUrl = 'http://localhost/MEP/storages/uploads/';
-
 
 ?>
 
@@ -200,7 +200,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                      </svg>
                      <span class="flex-1 ms-3 whitespace-nowrap">Enrollment</span>
                      <span class="flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-300 bg-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-300">
-                        <?=$pendingCount?>
+                        <?= $pendingCount ?>
                      </span>
                   </a>
                </li>
@@ -276,7 +276,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
    <!-- Data Area Dashboard Overview-->
    <div class="block pt-20 pb-6 px-5 ml-64 bg-gray-300 dark:bg-gray-800 dashoverviews">
       <div class="flex items-center mb-4 gap-5 mt-10">
-         <ul class="flex flex-wrap -mb-px">
+         <!-- <ul class="flex flex-wrap -mb-px">
             <li class="me-2">
                <a href="#" class="inline-block p-2 border-b-2 border-transparent rounded-t-lg text-gray-600 hover:text-black dark:text-gray-300 hover:border-gray-300 dark:hover:text-white">Day</a>
             </li>
@@ -292,54 +292,56 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
             <li class="me-2">
                <a href="#" class="inline-block p-2  rounded-t-lg  dark:text-gray-300  text-gray-600 hover:text-black hover:border-gray-300 dark:hover:text-white">Custom</a>
             </li>
-         </ul>
+         </ul> -->
       </div>
       <div class="grid grid-cols-8 gap-4">
-         <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500">
-            <p class="text-xl mt-3 dark:text-white opacity-90">Total Classes</p>
-            <div class="flex justify-between">
-               <p class="text-2xl font-bold mt-3 dark:text-white opacity-90">8</p>
-               <div class="flex items-center text-green-500">
-                  <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                     <path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42" />
-                  </svg>
-                  <span class="mt-3">+15%</span>
+         <div class="col-span-4 flex justify-between gap-4">
+            <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500">
+               <div class="px-10">
+                  <p class="text-xl mt-3 dark:text-white opacity-50 whitespace-nowrap">Total Classes</p>
+                  <div class="flex justify-end">
+                     <p class="text-2xl font-bold mt-3 text-blue-700 dark:text-blue-400 opacity-90">
+                        <?=$totalclasses?>
+                     </p>
+                     <!-- <div class="flex items-center text-green-500">
+                        <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                           <path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42" />
+                        </svg>
+                        <span class="mt-3">+15%</span>
+                     </div> -->
+                  </div>
                </div>
             </div>
-         </div>
-         <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500">
-            <p class="text-xl mt-3 dark:text-white opacity-90">Total Students</p>
-            <div class="flex justify-between">
-               <p class="text-2xl font-bold mt-3 dark:text-white opacity-90">978</p>
-               <div class="flex items-center text-green-500">
-                  <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                     <path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42" />
-                  </svg>
-                  <span class="mt-3">+50%</span>
+            <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500">
+               <div class="px-10">
+                  <p class="text-xl mt-3 dark:text-white opacity-50 whitespace-nowrap">Total Students</p>
+                  <div class="flex justify-end">
+                     <p class="text-2xl font-bold mt-3 text-blue-700 dark:text-blue-400 opacity-90">
+                        <?=$totalstudents?>   
+                     </p>
+                     <!-- <div class="flex items-center text-green-500">
+                        <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                           <path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42" />
+                        </svg>
+                        <span class="mt-3">+15%</span>
+                     </div> -->
+                  </div>
                </div>
             </div>
-         </div>
-         <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500">
-            <p class="text-xl mt-3 dark:text-white opacity-90">Total Instructors</p>
-            <div class="flex justify-between">
-               <p class="text-2xl font-bold mt-3 dark:text-white opacity-90">98</p>
-               <div class="flex items-center text-green-500">
-                  <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                     <path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42" />
-                  </svg>
-                  <span class="mt-3">+25%</span>
-               </div>
-            </div>
-         </div>
-         <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500">
-            <p class="text-xl mt-3 dark:text-white opacity-90">Feedback Score</p>
-            <div class="flex justify-between">
-               <p class="text-2xl font-bold mt-3 text-red-500 dark:text-red-500 opacity-90">4.5/<span class="ext-2xl font-bold mt-3 text-green-500">5</span></p>
-               <div class="flex items-center text-green-500">
-                  <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                     <path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42" />
-                  </svg>
-                  <span class="mt-3">+15%</span>
+            <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500">
+               <div class="px-12">
+                  <p class="text-xl mt-3 dark:text-white opacity-50 whitespace-nowrap">Total Instructors</p>
+                  <div class="flex justify-end">
+                     <p class="text-2xl font-bold mt-3 text-blue-700 dark:text-blue-400 opacity-90">
+                        <?=$totalinstructors?>
+                     </p>
+                     <!-- <div class="flex items-center text-green-500">
+                        <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                           <path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42" />
+                        </svg>
+                        <span class="mt-3">+15%</span>
+                     </div> -->
+                  </div>
                </div>
             </div>
          </div>
@@ -369,171 +371,12 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                         </th>
                      </tr>
                   </thead>
-                  <tbody>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           C135
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           Front-End Development Course
-                        </th>
-                        <td class="px-6 py-4">
-                           Mr.Matthwe Davis
-                        </td>
-                        <td class="px-6 py-4">
-                           25
-                        </td>
-                        <td class="px-6 py-4">
-                           100,000 MMK
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           View
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           C135
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           Front-End Development Course
-                        </th>
-                        <td class="px-6 py-4">
-                           Mr.Matthwe Davis
-                        </td>
-                        <td class="px-6 py-4">
-                           25
-                        </td>
-                        <td class="px-6 py-4">
-                           100,000 MMK
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           View
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           C135
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           Front-End Development Course
-                        </th>
-                        <td class="px-6 py-4">
-                           Mr.Matthwe Davis
-                        </td>
-                        <td class="px-6 py-4">
-                           25
-                        </td>
-                        <td class="px-6 py-4">
-                           100,000 MMK
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           View
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           C135
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           Front-End Development Course
-                        </th>
-                        <td class="px-6 py-4">
-                           Mr.Matthwe Davis
-                        </td>
-                        <td class="px-6 py-4">
-                           25
-                        </td>
-                        <td class="px-6 py-4">
-                           100,000 MMK
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           View
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           C135
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           Front-End Development Course
-                        </th>
-                        <td class="px-6 py-4">
-                           Mr.Matthwe Davis
-                        </td>
-                        <td class="px-6 py-4">
-                           25
-                        </td>
-                        <td class="px-6 py-4">
-                           100,000 MMK
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           View
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           C135
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           Front-End Development Course
-                        </th>
-                        <td class="px-6 py-4">
-                           Mr.Matthwe Davis
-                        </td>
-                        <td class="px-6 py-4">
-                           25
-                        </td>
-                        <td class="px-6 py-4">
-                           100,000 MMK
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           View
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           C135
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           Front-End Development Course
-                        </th>
-                        <td class="px-6 py-4">
-                           Mr.Matthwe Davis
-                        </td>
-                        <td class="px-6 py-4">
-                           25
-                        </td>
-                        <td class="px-6 py-4">
-                           100,000 MMK
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           View
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           C135
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           Front-End Development Course
-                        </th>
-                        <td class="px-6 py-4">
-                           Mr.Matthwe Davis
-                        </td>
-                        <td class="px-6 py-4">
-                           25
-                        </td>
-                        <td class="px-6 py-4">
-                           100,000 MMK
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           View
-                        </td>
-                     </tr>
+                  <tbody id="table-body">
+                     <!-- data her -->
                   </tbody>
                </table>
                <div class="flex justify-end ">
-                  <button class="bg-gray-200 px-5 py-2 rounded-xl my-5 text-blue-700 hover:bg-gray-400 dark:hover:bg-gray-800 dark:text-blue-600 dark:bg-gray-700 duration-500">See More ></button>
+                  <a href="http://localhost/MEP/Institute/View/resources/Class/classlist.php" class="bg-gray-200 px-5 py-2 rounded-xl my-5 text-blue-700 hover:bg-gray-400 dark:hover:bg-gray-800 dark:text-blue-600 dark:bg-gray-700 duration-500">See More ></a>
                </div>
             </div>
          </div>
@@ -548,9 +391,9 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                <canvas id="studemochart"></canvas>
             </div>
          </div>
-         <div class="bg-white rounded-lg col-span-3 row-span-2 px-4 py-2 dark:bg-gray-600 duration-300">
+         <div class="bg-white rounded-lg col-span-2 row-span-2 px-4 py-2 dark:bg-gray-600 duration-300">
             <h3 class="text-black dark:text-white mb-4 mt-4">Upcoming Event</h3>
-            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+            <!-- <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                   <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                      <tr>
@@ -613,12 +456,12 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                      </tr>
                   </tbody>
                </table>
-            </div>
-            <div class="flex justify-end ">
+            </div> -->
+            <!-- <div class="flex justify-end ">
                <button class="bg-gray-200 px-5 py-2 rounded-xl my-5 text-blue-700 hover:bg-gray-400 dark:hover:bg-gray-800 dark:text-blue-600 dark:bg-gray-700 duration-500">See More ></button>
-            </div>
+            </div> -->
          </div>
-         <div class="bg-white rounded-lg col-span-3 row-span-2 px-4 py-2 dark:bg-gray-600 duration-300">
+         <div class="bg-white rounded-lg col-span-4 row-span-2 px-4 py-2 dark:bg-gray-600 duration-300">
             <h3 class="font-bold dark:text-white mb-4 mt-4">Top 5 Instructors</h3>
             <div class="relative overflow-x-auto shadow-md dark:shadow-none sm:rounded-lg">
                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -637,11 +480,14 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                            PROFESSIONAL
                         </th>
                         <th scope="col" class="px-6 py-3">
+                           CLASS COUNT
+                        </th>
+                        <th scope="col" class="px-6 py-3">
                            ACTION
                         </th>
                      </tr>
                   </thead>
-                  <tbody>
+                  <tbody id="table-body-instructor">
                      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <td class="w-4 p-4">
                            1.
@@ -655,73 +501,8 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                         <td class="px-6 py-4">
                            Software Engineer
                         </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           View
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           2.
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           Liam
-                        </th>
                         <td class="px-6 py-4">
-                           Male
-                        </td>
-                        <td class="px-6 py-4">
-                           Graphic Designer
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           View
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           3.
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           Olivia Brown
-                        </th>
-                        <td class="px-6 py-4">
-                           Female
-                        </td>
-                        <td class="px-6 py-4">
-                           Business Management
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           View
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           4.
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           Noah Davis
-                        </th>
-                        <td class="px-6 py-4">
-                           Male
-                        </td>
-                        <td class="px-6 py-4">
-                           Human Resource Management
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           View
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           5.
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           Ava Wilson
-                        </th>
-                        <td class="px-6 py-4">
-                           Female
-                        </td>
-                        <td class="px-6 py-4">
-                           UI/UX Designer
+                           Class Count
                         </td>
                         <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
                            View
@@ -740,7 +521,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
    <!-- Data Area Finance Overview -->
    <div class="hidden pt-20 pb-6 px-5 ml-64 bg-gray-300 dark:bg-gray-800 finaoverviews">
       <div class="flex items-center mb-4 gap-5 mt-10">
-         <ul class="flex flex-wrap -mb-px">
+         <!-- <ul class="flex flex-wrap -mb-px">
             <li class="me-2">
                <a href="#" class="inline-block p-2 border-b-2 border-transparent rounded-t-lg dark:text-gray-300  text-gray-600 hover:text-black hover:border-gray-300 dark:hover:text-white">Day</a>
             </li>
@@ -756,7 +537,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
             <li class="me-2">
                <a href="#" class="inline-block p-2  rounded-t-lg  dark:text-gray-300  text-gray-600 hover:text-black hover:border-gray-300 dark:hover:text-white">Custom</a>
             </li>
-         </ul>
+         </ul> -->
       </div>
       <div class="grid grid-cols-8 gap-4">
          <div class="col-span-4 grid grid-cols-3 gap-4">

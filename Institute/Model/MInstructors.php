@@ -385,5 +385,40 @@ class MInstructors
         }
     }
 
+    public function topFiveInstructors($id){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT 
+                    mi.id,
+                    mi.full_name AS instructor_name, 
+                    mi.gender,
+                    mi.position, 
+                    COUNT(mc.id) AS class_count
+                FROM 
+                    m_instructors AS mi
+                INNER JOIN 
+                    m_classes AS mc 
+                    ON mi.id = mc.instructor_id
+                WHERE 
+                    mi.institute_id = :id
+                GROUP BY 
+                    mi.id, mi.full_name, mi.gender, mi.position
+                ORDER BY 
+                    class_count DESC 
+                LIMIT 5;"
+            );
+            $sql->bindValue(':id', $id);
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
 
 }

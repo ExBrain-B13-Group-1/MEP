@@ -494,6 +494,46 @@ class MClasses{
         }
     }
 
+    function popularClassDashboard($id){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT 
+                    mc.id,
+                    mc.c_id, 
+                    mc.c_title, 
+                    mi.full_name AS instructor_name, 
+                    mc.max_enrollment, 
+                    mc.c_fee, 
+                    COUNT(tsce.student_id) AS enrollment_count
+                FROM 
+                    m_classes AS mc
+                INNER JOIN 
+                    t_student_classes_enroll AS tsce 
+                    ON tsce.class_id = mc.id
+                INNER JOIN 
+                    m_instructors AS mi 
+                    ON mi.id = mc.instructor_id
+                WHERE 
+                    mc.institute_id = :id
+                GROUP BY 
+                    mc.c_id, mc.c_title, mi.full_name, mc.max_enrollment, mc.c_fee, mc.id
+                ORDER BY 
+                    enrollment_count DESC 
+                LIMIT 8;"
+            );
+            $sql->bindValue(":id",$id);
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }   
+
 }
 
 
