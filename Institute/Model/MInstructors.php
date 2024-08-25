@@ -58,14 +58,16 @@ class MInstructors
     /**
      * this method is used for get all instructor's name from database to use in 'select option'
      */
-    public function getAllInstructorNames(){
+    public function getAllInstructorNames($instituteID){
         try {
             $dbconn = new DBConnection();
             // get connection
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
-                "SELECT m.id,m.full_name FROM m_instructors AS m"
+                "SELECT m.id,m.full_name FROM m_instructors AS m
+                WHERE m.institute_id = :id AND m.del_flg != 1"
             );
+            $sql->bindValue(":id",$instituteID);
             $sql->execute();
             $results = $sql->fetchAll(PDO::FETCH_ASSOC);
             return $results;

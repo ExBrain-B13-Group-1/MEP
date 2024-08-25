@@ -1,13 +1,6 @@
 <?php
 ini_set('display_errors', '1');
 include '../../Controller/UserController.php';
-// later
-// Initialize session variables if not set
-// if (!isset($_SESSION['notiCount'])) {
-//     $_SESSION['notiCount'] = 0;
-// }
-// $notiCount = $_SESSION['notiCount'];
-
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +41,7 @@ include '../../Controller/UserController.php';
       </a>
 
       <button onclick="menuForMobile()" data-collapse-toggle="menuList" type="button" class="inline-flex text-primaryColor hover:text-slate-800 flex-col items-center p-2 w-10 mx-3 h-full justify-center text-sm rounded-lg md:hidden" aria-controls="navbar-default" aria-expanded="false">
-        <p class="font-bold">Detail Class</p>
+        <p class="font-bold text-blue-500">Notification</p>
         <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
       </button>
 
@@ -61,7 +54,7 @@ include '../../Controller/UserController.php';
             <a href="./class.php" id="userClass" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Class</a>
           </li>
           <li>
-            <a href="./pricing.php" id="userSchedule" aria-active="true" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Pricing</a>
+            <a href="./pricing.php" id="userSchedule" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Pricing</a>
           </li>
           <li>
             <a href="./support.php" id="userSupport" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Support</a>

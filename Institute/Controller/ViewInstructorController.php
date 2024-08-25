@@ -7,7 +7,7 @@ require_once  __DIR__ . '/../Model/MInstructors.php';
 if(isset($_COOKIE['institute_id'])){
     $id = $_COOKIE['institute_id'];
     $instructorObj = new MInstructors();
-    $instructorlists = $instructorObj->getAllInstructors(61);
+    $instructorlists = $instructorObj->getAllInstructors($id);
     echo json_encode($instructorlists);
     // echo "<pre>";
     // print_r($instructorlists);

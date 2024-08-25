@@ -53,7 +53,6 @@ $svgs = [
     '<svg class="md:w-14 md:h-14 w-8 h-8 text-white" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 14 14"><path fill="currentColor" fill-rule="evenodd" d="M1.5 0A1.5 1.5 0 0 0 0 1.5v6A1.5 1.5 0 0 0 1.5 9h11A1.5 1.5 0 0 0 14 7.5v-6A1.5 1.5 0 0 0 12.5 0zm6.125 1.454a.625.625 0 1 0-1.25 0v.4a1.532 1.532 0 0 0-.15 3.018l1.197.261a.39.39 0 0 1-.084.773h-.676a.39.39 0 0 1-.369-.26a.625.625 0 0 0-1.178.416c.194.55.673.965 1.26 1.069v.415a.625.625 0 1 0 1.25 0V7.13a1.641 1.641 0 0 0 .064-3.219L6.492 3.65a.281.281 0 0 1 .06-.556h.786a.388.388 0 0 1 .369.26a.625.625 0 1 0 1.178-.416a1.64 1.64 0 0 0-1.26-1.069zM2.75 3.75a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5m8.5 0a.75.75 0 1 1 0 1.5a.75.75 0 0 1 0-1.5M4.5 9.875c.345 0 .625.28.625.625v2a.625.625 0 1 1-1.25 0v-2c0-.345.28-.625.625-.625m5.625.625a.625.625 0 1 0-1.25 0v2a.625.625 0 1 0 1.25 0zm-2.5.75a.625.625 0 1 0-1.25 0v2a.625.625 0 1 0 1.25 0z" clip-rule="evenodd"/></svg>'
 ];
 
-
 ?>
 
 
@@ -63,7 +62,7 @@ $svgs = [
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MEP - Home</title>
+    <title>Home</title>
     <!-- Swiper Slider css1 js1 -->
     <link rel="stylesheet" href="./lib/swiper-bundle.min.css" type="text/css" />
     <!-- AOS scroll animation css1 js1 -->
@@ -85,14 +84,14 @@ $svgs = [
     <!-- Start Header Section -->
     <header class="">
         <!-- start navbar -->
-        <nav class="bg-white fixed w-[100%] z-20 top-0 left-0 border-b border-gray-200 md:h-18 md:py-1">
+        <nav class="bg-white fixed w-[100%] top-0 left-0 border-b border-gray-200 md:h-18 md:py-1 z-50">
             <div class="md:px-32 flex items-center justify-between mx-auto px-4 relative">
                 <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
                     <img src="./img/LOGO.svg" class="md:h-14 h-10" alt="MEP Logo" />
                 </a>
 
                 <button onclick="menuForMobile()" data-collapse-toggle="menuList" type="button" class="inline-flex text-primaryColor hover:text-slate-800 flex-col items-center p-2 w-10 mx-3 h-full justify-center text-sm rounded-lg md:hidden" aria-controls="navbar-default" aria-expanded="false">
-                    <p class="font-bold">Detail Class</p>
+                    <p class="font-bold text-blue-500">Home</p>
                     <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
                 </button>
 
@@ -108,7 +107,7 @@ $svgs = [
                             <a href="./pricing.php" id="userSchedule" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Pricing</a>
                         </li>
                         <li>
-                            <a href="./support.php" id="userSupport" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Support</a>
+                            <a href="./support.php" id="userSupport"  class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Support</a>
                         </li>
                     </ul>
                 </div>
@@ -830,8 +829,6 @@ $svgs = [
     <script src="./lib/jquery-3.7.1.js" type="text/javascript"></script>
     <!-- nav js1 -->
     <script src="./js/navbar.js" type="text/javascript"></script>
-    <!-- customjs -->
-    <script src="./js/home.js" type="text/javascript"></script>
 </body>
 
 </html>

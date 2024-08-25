@@ -39,14 +39,15 @@ class IndicatorOfInstitute{
         }
     }
 
-    public function getTotalInstructor(){
+    public function getTotalInstructor($instituteID){
         try{
             $dbconn = new DBConnection();
             // get connection
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
-                "SELECT COUNT(*) as total_instructors FROM m_instructors"
+                "SELECT COUNT(*) as total_instructors FROM m_instructors WHERE del_flg != 1 AND institute_id = :id"
             );
+            $sql->bindValue(":id",$instituteID);
             $sql->execute();
             $results = $sql->fetchAll(PDO::FETCH_ASSOC);
             return $results[0]['total_instructors'];

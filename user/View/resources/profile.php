@@ -25,7 +25,6 @@ $social_links = explode(',', $user[0]['social_links']);
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Profile</title>
   <link href="./css/output.css" rel="stylesheet" />
-  <link href="./css/navbar.css" rel="stylesheet" />
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -76,7 +75,7 @@ $social_links = explode(',', $user[0]['social_links']);
       </a>
 
       <button onclick="menuForMobile()" data-collapse-toggle="menuList" type="button" class="inline-flex text-primaryColor hover:text-slate-800 flex-col items-center p-2 w-10 mx-3 h-full justify-center text-sm rounded-lg md:hidden" aria-controls="navbar-default" aria-expanded="false">
-        <p class="font-bold">Detail Class</p>
+        <p class="font-bold text-blue-500">Profile</p>
         <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
       </button>
 
@@ -89,7 +88,7 @@ $social_links = explode(',', $user[0]['social_links']);
             <a href="./class.php" id="userClass" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Class</a>
           </li>
           <li>
-            <a href="./pricing.php" id="userSchedule" aria-active="true" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Pricing</a>
+            <a href="./pricing.php" id="userSchedule" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Pricing</a>
           </li>
           <li>
             <a href="./support.php" id="userSupport" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Support</a>
@@ -201,7 +200,7 @@ $social_links = explode(',', $user[0]['social_links']);
             <form action="../../Controller/UserController.php" method="POST">
               <button type="submit" id="verifyButton"name="verifyPending"
                 class="md:w-50 w-30 text-sm  rounded-lg md:text-xl px-10 md:px-5 py-3 mb-2 
-         <?= ($verified) ? 'bg-gray-50 border border-gray-300 text-primaryColor text-sm cursor-not-allowed' : 'bg-white border border-red-400 text-red-400 px-10 py-2 rounded-md hover:bg-red-400 hover:text-white'; ?>"
+                <?= ($verified) ? 'bg-gray-50 border border-gray-300 text-primaryColor text-sm cursor-not-allowed' : 'bg-white border border-red-400 text-red-400 px-10 py-2 rounded-md hover:bg-red-400 hover:text-white'; ?>"
                 <?= (!$verified) ? '' : 'disabled'; ?>><?= (!$userProId) ? 'Verify' : 'Verified'; ?>
               </button>
             </form>

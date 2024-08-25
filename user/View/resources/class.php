@@ -1,12 +1,16 @@
 <?php
 ini_set('display_errors', '1');
 include '../../Controller/UserController.php';
+require_once  __DIR__ . '/../../Model/MClasses.php';
 // later
 // Initialize session variables if not set
 // if (!isset($_SESSION['notiCount'])) {
 //     $_SESSION['notiCount'] = 0;
 // }
 // $notiCount = $_SESSION['notiCount'];
+
+$obj = new MClasses();
+$categories = $obj->getAllCategories();
 
 ?>
 
@@ -87,7 +91,7 @@ include '../../Controller/UserController.php';
             </a>
 
             <button onclick="menuForMobile()" data-collapse-toggle="menuList" type="button" class="inline-flex text-primaryColor hover:text-slate-800 flex-col items-center p-2 w-10 mx-3 h-full justify-center text-sm rounded-lg md:hidden" aria-controls="navbar-default" aria-expanded="false">
-                <p class="font-bold">Detail Class</p>
+                <p class="font-bold text-blue-500">Class</p>
                 <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
             </button>
 
@@ -100,7 +104,7 @@ include '../../Controller/UserController.php';
                         <a href="./class.php" id="userClass" aria-active="true" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Class</a>
                     </li>
                     <li>
-                        <a href="./pricing.php" id="userSchedule" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Pricing</a>
+                        <a href="./pricing.php" id="userSchedule"  class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Pricing</a>
                     </li>
                     <li>
                         <a href="./support.php" id="userSupport" class="block w-full md:w-auto text-center py-2 px-6 aria-[active=true]:bg-primaryColor aria-[active=true]:text-white text-black rounded-xl hover:text-primaryColor">Support</a>
@@ -174,28 +178,13 @@ include '../../Controller/UserController.php';
     <div class="block pt-24 px-4 md:px-32 mb-10 z-10">
         <!-- Hero Section -->
         <div class="container mx-auto">
-            <div class="flex justify-between">
+            <div class="flex justify-between md:flex-row flex-col">
                 <div class="text-left mb-4">
-                    <h1 class="text-xl font-bold">Web Development Courses</h1>
+                    <h1 class="text-xl font-bold">Myanmar Education Platform</h1>
                     <p class="text-sm text-gray-600">Explore courses from experienced, real-world experts.</p>
                 </div>
                 <!-- Dropdown Fields -->
-                <div class="mb-4">
-                    <label for="fees-type" class="text-dark-gray text-sm"></label>
-                    <div class="relative">
-                        <select id="fees-type" class="block appearance-none w-full bg-white border border-primaryColor hover:border-gray-400 px-4 py-2 pr-10 rounded-md leading-tight focus:outline-none focus:ring-1 focus:ring-blue-light-bg">
-                            <option value="development" selected>Development</option>
-                            <option value="language">Language</option>
-                            <option value="language">Business</option>
-                            <option value="language">Marketing</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-2 flex items-center px-2 text-gray-700">
-                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                <path d="M7 10l5 5 5-5H7z" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
 
             <div class="hidden md:block">
@@ -305,11 +294,11 @@ include '../../Controller/UserController.php';
         <!-- Body Section -->
         <div class="container mx-auto">
             <!-- Title & Search -->
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
-                <h2 class="text-lg md:text-2xl font-bold mb-4 md:mb-0">All Web Development Courses</h2>
-                <div class="relative w-full md:w-auto">
+            <div class="flex flex-col md:flex-row md:justify-end mt-5 md:mt-10 items-start md:items-center mb-8">
+                <!-- <h2 class="text-lg md:text-2xl font-bold mb-4 md:mb-0">All Web Development Courses</h2> -->
+                <div class="relative w-full md:w-96">
                     <!-- Search -->
-                    <input type="text" class="border border-primaryColor px-10 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none" placeholder="Search">
+                    <input type="text" id="search-input" class="border border-primaryColor px-10 py-2 rounded flex items-center w-full pl-10 pr-4 text-sm outline-none" placeholder="Search by class title ...">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" class="absolute top-1/2 left-3 transform -translate-y-1/2 text-primaryColor" viewBox="0 0 24 24">
                         <g fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="11" cy="11" r="7" />
@@ -323,34 +312,70 @@ include '../../Controller/UserController.php';
             <div class="flex justify-between items-center flex-wrap">
                 <div class="flex space-x-4 w-full md:w-auto">
                     <!-- Filter -->
-                    <div class="relative">
+                    <!-- <div class="relative">
                         <button id="filter-button" data-dropdown-toggle="dropdown" class="border border-primaryColor px-4 py-4 rounded flex items-center w-full md:w-auto pl-10 pr-4 text-sm outline-none">Filter</button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="absolute top-1/2 left-3 transform -translate-y-1/2" viewBox="0 0 16 16" fill="currentColor">
                             <path d="M6 1a3 3 0 0 0-2.83 2H0v2h3.17a3.001 3.001 0 0 0 5.66 0H16V3H8.83A3 3 0 0 0 6 1M5 4a1 1 0 1 1 2 0a1 1 0 0 1-2 0m5 5a3 3 0 0 0-2.83 2H0v2h7.17a3.001 3.001 0 0 0 5.66 0H16v-2h-3.17A3 3 0 0 0 10 9m-1 3a1 1 0 1 1 2 0a1 1 0 0 1-2 0" />
                         </svg>
-                    </div>
+                    </div> -->
                     <!-- Sort By -->
-                    <div class="relative inline-block text-left border border-primaryColor rounded pr-2 w-full md:w-auto">
-                        <label for="sort" class="block text-xs font-medium text-gray-700 pl-3 mt-1">Sort by</label>
-                        <select id="sort" class="block w-full pl-2 pr-9 py-1 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
-                            <option>Most Popular</option>
-                            <option>New</option>
-                            <option>Trending</option>
+                    <div class="relative inline-block text-left border border-primaryColor rounded w-full md:w-auto">
+                        <label for="category-select" class="block text-xs font-medium text-gray-700 pl-3 mt-1">Sort by</label>
+                        <select id="category-select" class="block w-full pl-2 pr-10 py-1 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                            <option selected disabled value="default">Choose Category</option>
+                            <?php foreach ($categories as $category) : ?>
+                                <option value="<?= $category['id'] ?>">
+                                    <?= $category['cat_name'] ?>
+                                </option>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                     <!-- Clear Filter -->
-                    <button id="clear" class="hidden md:block ml-4">Clear Filter</button>
+                    <!-- <button id="clear" class="hidden md:block ml-4">Clear Filter</button> -->
                 </div>
                 <!-- Search Results -->
                 <div class="hidden md:block">
-                    <p id="result">234 results</p>
+                    <p id="result">
+                        <span id="total-results">0</span> results</p>
                 </div>
             </div>
 
             <div class="grid grid-cols-3 md:grid-cols-5 gap-4">
                 <!-- Left Column -->
-                <div class="col-span-2 w-full max-w-sm py-12 hidden md:block">
-                    <!-- Rating -->
+
+                <!-- Right Column -->
+                <!-- Container for dynamic class data -->
+                <div class="col-span-3 md:col-span-5">
+                    <div class="w-full py-6">
+                        <!-- Dynamic Classes will be here-->
+                        <div id="classes-container">
+
+                        </div>
+                        <!-- Pagination -->
+                        <div class="flex justify-center mt-10">
+                            <nav aria-label="Page navigation">
+                                <ul id="pagination" class="inline-flex items-center -space-x-px">
+                                    <!-- Pagination buttons will be inserted here by jQuery -->
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/class.js"></script>
+
+</body>
+
+</html>
+
+
+
+<!-- 
+<div class="col-span-2 w-full max-w-sm py-12 hidden md:block">
+                    //Rating
                     <div class="relative text-sm border-t-2 pt-4">
                         <label class="block text-base font-bold text-gray-700 mb-2">Rating</label>
                         <div class="rating-options pl-4 mb-4">
@@ -372,7 +397,7 @@ include '../../Controller/UserController.php';
                             </div>
                         </div>
                     </div>
-                    <!-- Institutes -->
+                    //Institutes
                     <div class="relative text-sm border-t-2 pt-5 ">
                         <label class="block text-base font-bold text-gray-700 mb-2">Institutes</label>
                         <div class="checkbox-list pl-4" id="institutesList">
@@ -396,7 +421,7 @@ include '../../Controller/UserController.php';
                                 <input id="future-skill-university" type="checkbox" value="" class="w-4 h-4 text-primaryColor bg-gray-100 border-gray-300 rounded-md focus:ring-primaryColor focus:ring-1">
                                 <label for="future-skills-university" class="ms-2 text-gray-700">Future Skills University</label>
                             </div>
-                            <!-- Additional hidden checkboxes -->
+                            //Additional hidden checkboxes
                             <div class="additional-checkboxes hidden">
                                 <div class="flex items-center mt-3">
                                     <input id="digital-creators" type="checkbox" value="" class="w-4 h-4 text-primaryColor bg-gray-100 border-gray-300 rounded-md focus:ring-primaryColor focus:ring-1">
@@ -424,7 +449,7 @@ include '../../Controller/UserController.php';
                             See more <ion-icon name="chevron-down-outline" class="ml-2 toggleIcon"></ion-icon>
                         </button>
                     </div>
-                    <!-- Available Classes -->
+                    //Available Classes
                     <div class="relative text-sm border-t-2 pt-5 ">
                         <label class="block text-base font-bold text-gray-700 mb-2">All Available Classes</label>
                         <div class="checkbox-list pl-4" id="classesList">
@@ -448,7 +473,7 @@ include '../../Controller/UserController.php';
                                 <input id="react" type="checkbox" value="" class="w-4 h-4 text-primaryColor bg-gray-100 border-gray-300 rounded-md focus:ring-primaryColor focus:ring-1">
                                 <label for="react" class="ms-2 text-gray-700">Building Interactive Website with React</label>
                             </div>
-                            <!-- Additional hidden checkboxes -->
+                            // Additional hidden checkboxes
                             <div class="additional-checkboxes hidden">
                                 <div class="flex items-center mt-3">
                                     <input id="node" type="checkbox" value="" class="w-4 h-4 text-primaryColor bg-gray-100 border-gray-300 rounded-md focus:ring-primaryColor focus:ring-1">
@@ -477,29 +502,4 @@ include '../../Controller/UserController.php';
                         </button>
                     </div>
                 </div>
-                <!-- Right Column -->
-                <!-- Container for dynamic class data -->
-                <div class="col-span-3 w-full py-6">
-                    <!-- Dynamic Classes will be here-->
-                    <div id="classes-container">
-
-                    </div>
-
-                    <!-- Pagination -->
-                    <div class="flex justify-center mt-6">
-                        <nav aria-label="Page navigation">
-                            <ul id="pagination" class="inline-flex items-center -space-x-px">
-                                <!-- Pagination buttons will be inserted here by jQuery -->
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="js/class.js"></script>
-
-</body>
-
-</html>
+-->

@@ -1,13 +1,6 @@
 <?php
 ini_set('display_errors', '1');
 include '../../Controller/UserController.php';
-// later
-// Initialize session variables if not set
-// if (!isset($_SESSION['notiCount'])) {
-//     $_SESSION['notiCount'] = 0;
-// }
-// $notiCount = $_SESSION['notiCount'];
-
 ?>
 
 
@@ -49,7 +42,7 @@ include '../../Controller/UserController.php';
       </a>
 
       <button onclick="menuForMobile()" data-collapse-toggle="menuList" type="button" class="inline-flex text-primaryColor hover:text-slate-800 flex-col items-center p-2 w-10 mx-3 h-full justify-center text-sm rounded-lg md:hidden" aria-controls="navbar-default" aria-expanded="false">
-        <p class="font-bold">Detail Class</p>
+        <p class="font-bold text-blue-500">Chat</p>
         <ion-icon name="chevron-down-outline" class="text-lg"></ion-icon>
       </button>
 
