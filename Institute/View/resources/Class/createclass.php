@@ -291,7 +291,7 @@ function selectedCategory($catename)
 
     <!-- Data Area Class List-->
     <div class="block pt-20 pb-8 px-5 ml-64 bg-gray-300 dark:bg-gray-800">
-        <div class="grid grid-cols-10 gap-7 mt-10 ">
+        <div class="grid grid-cols-10 gap-7 mt-10">
             <div class="bg-white col-span-8 col-start-2 rounded-lg px-4 py-2 dark:bg-gray-700 duration-500">
                 <form id="classform" action="http://localhost/MEP/Institute/Controller/CreateClassController.php" method="POST" enctype="multipart/form-data" class="px-10">
                     <div class="grid grid-cols-2 gap-10">
@@ -399,7 +399,7 @@ function selectedCategory($catename)
                             <div class="mt-4 pl-5">
                                 <label for="instructor" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Instructor</label>
                                 <div class="grid grid-cols-4 gap-3">
-                                    <select id="instructor" name="instructor-id" class="col-span-3 bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                                    <select id="instructor" name="instructor-id" class="col-span-4 bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                                         <option selected disabled>Choose Instructor</option>
                                         <?php foreach ($instructorNames as $iname) : ?>
                                             <option value="<?= $iname["id"]; ?>">
@@ -407,7 +407,7 @@ function selectedCategory($catename)
                                             </option>
                                         <?php endforeach; ?>
                                     </select>
-                                    <button type="button" class="h-full w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</button>
+                                    <!-- <button type="button" class="h-full w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add</button> -->
                                 </div>
                             </div>
                             <h1 class="text-xl mb-5 mt-8 dark:text-white font-bold">Pricing and Enrollment</h1>
@@ -532,10 +532,9 @@ function selectedCategory($catename)
             $('#default-datepicker-1').datepicker({
                 theme: 'dark',
                 numberOfMonths: 1,
-
                 showAnim: "slideDown",
                 dateFormat: "dd-mm-yy",
-
+                minDate: 0, // Prevent selecting past dates
                 onClose: function(selectdate) {
                     $('#default-datepicker-2').datepicker("option", "minDate", selectdate);
                     $('#default-datepicker-3').datepicker("option", "maxDate", selectdate);
@@ -544,24 +543,16 @@ function selectedCategory($catename)
 
             $('#default-datepicker-2').datepicker({
                 numberOfMonths: 1,
-
                 showAnim: "slideDown",
                 dateFormat: "dd-mm-yy",
-
-                // onClose: function(selectdate) {
-                //     $('#bookingstart').datepicker("option", "maxDate", selectdate);
-                // },
+                minDate: 0, // Prevent selecting past dates
             });
 
             $('#default-datepicker-3').datepicker({
                 numberOfMonths: 1,
-
                 showAnim: "slideDown",
                 dateFormat: "dd-mm-yy",
-
-                // onClose: function(selectdate) {
-                //     $('#default-datepicker-1').datepicker("option", "minDate", selectdate);
-                // },
+                minDate: 0, // Prevent selecting past dates
             });
         });
     </script>

@@ -14,10 +14,11 @@ class Students{
             // get connection
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
-                "SELECT DISTINCT ms.*
+                "SELECT DISTINCT ms.*, mu.photo
                 FROM m_students AS ms
                 INNER JOIN t_student_classes_enroll AS tsce ON ms.id = tsce.student_id
                 INNER JOIN m_classes AS mc ON tsce.class_id = mc.id
+                INNER JOIN m_user AS mu ON ms.user_id = mu.id
                 WHERE mc.institute_id = :id"    
             );
             $sql->bindValue(':id',$instituteid);
@@ -37,11 +38,12 @@ class Students{
             $pdo = $dbconn->connection();
             
             $sql = $pdo->prepare(
-                "SELECT DISTINCT ms.* 
-                 FROM m_students AS ms 
-                 INNER JOIN t_student_classes_enroll AS tsce ON tsce.student_id = ms.id
-                 INNER JOIN m_classes AS mc ON mc.id = tsce.class_id 
-                 WHERE mc.institute_id = :id AND ms.name LIKE :studentname"
+                "SELECT DISTINCT ms.*, mu.photo
+                FROM m_students AS ms
+                INNER JOIN t_student_classes_enroll AS tsce ON ms.id = tsce.student_id
+                INNER JOIN m_classes AS mc ON tsce.class_id = mc.id
+                INNER JOIN m_user AS mu ON ms.user_id = mu.id
+                WHERE mc.institute_id = :id AND ms.name LIKE :studentname"
             );
             
             $sql->bindValue(':id', $instituteID);
@@ -65,10 +67,11 @@ class Students{
             // get connection
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
-                "SELECT DISTINCT ms.* 
-                    FROM m_students AS ms 
-                    INNER JOIN t_student_classes_enroll AS tsce ON tsce.student_id = ms.id
-                    INNER JOIN m_classes AS mc ON mc.id = tsce.class_id 
+                "SELECT DISTINCT ms.*, mu.photo
+                FROM m_students AS ms
+                INNER JOIN t_student_classes_enroll AS tsce ON ms.id = tsce.student_id
+                    INNER JOIN m_classes AS mc ON tsce.class_id = mc.id
+                    INNER JOIN m_user AS mu ON ms.user_id = mu.id
                     WHERE mc.institute_id = :id AND tsce.certified = 1;
                 "
             );
@@ -88,10 +91,11 @@ class Students{
             // get connection
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
-                "SELECT DISTINCT ms.* 
-                    FROM m_students AS ms 
-                    INNER JOIN t_student_classes_enroll AS tsce ON tsce.student_id = ms.id
-                    INNER JOIN m_classes AS mc ON mc.id = tsce.class_id 
+                "SELECT DISTINCT ms.*, mu.photo
+                FROM m_students AS ms
+                INNER JOIN t_student_classes_enroll AS tsce ON ms.id = tsce.student_id
+                    INNER JOIN m_classes AS mc ON tsce.class_id = mc.id
+                    INNER JOIN m_user AS mu ON ms.user_id = mu.id
                     WHERE mc.institute_id = :id AND tsce.certified = 0
                 "
             );
@@ -111,7 +115,7 @@ class Students{
             // get connection
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
-                "SELECT ms.*,
+                "SELECT ms.*,mu.photo,
                     mc.c_title AS class_title,
                     mc.c_id AS class_id,
                     mc.id AS class_sr_id,
@@ -119,6 +123,7 @@ class Students{
                 FROM m_students AS ms
                 INNER JOIN t_student_classes_enroll AS tsce ON tsce.student_id = ms.id
                 INNER JOIN m_classes AS mc ON mc.id = tsce.class_id
+                INNER JOIN m_user AS mu ON ms.user_id = mu.id
                 WHERE tsce.class_id = :id"
             );
             $sql->bindValue(":id", $classid);
@@ -137,7 +142,7 @@ class Students{
             // get connection
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
-                "SELECT ms.*,
+                "SELECT ms.*,mu.photo,
                     mc.c_title AS class_title,
                     mc.c_id AS class_id,
                     mc.id AS class_sr_id,
@@ -145,6 +150,7 @@ class Students{
                 FROM m_students AS ms
                 INNER JOIN t_student_classes_enroll AS tsce ON tsce.student_id = ms.id
                 INNER JOIN m_classes AS mc ON mc.id = tsce.class_id
+                INNER JOIN m_user AS mu ON ms.user_id = mu.id
                 WHERE tsce.class_id = :id AND tsce.certified = 1"
             );
             $sql->bindValue(":id", $classid);
@@ -163,7 +169,7 @@ class Students{
             // get connection
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
-                "SELECT ms.*,
+                "SELECT ms.*,mu.photo,
                     mc.c_title AS class_title,
                     mc.c_id AS class_id,
                     mc.id AS class_sr_id,
@@ -171,6 +177,7 @@ class Students{
                 FROM m_students AS ms
                 INNER JOIN t_student_classes_enroll AS tsce ON tsce.student_id = ms.id
                 INNER JOIN m_classes AS mc ON mc.id = tsce.class_id
+                INNER JOIN m_user AS mu ON ms.user_id = mu.id
                 WHERE tsce.class_id = :id AND tsce.certified = 0"
             );
             $sql->bindValue(":id", $classid);
@@ -189,7 +196,7 @@ class Students{
             // get connection
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
-                "SELECT ms.*,
+                "SELECT ms.*,mu.photo,
                     mc.c_title AS class_title,
                     mc.c_id AS class_id,
                     mc.id AS class_sr_id,
@@ -197,6 +204,7 @@ class Students{
                 FROM m_students AS ms
                 INNER JOIN t_student_classes_enroll AS tsce ON tsce.student_id = ms.id
                 INNER JOIN m_classes AS mc ON mc.id = tsce.class_id
+                INNER JOIN m_user AS mu ON ms.user_id = mu.id
                 WHERE tsce.class_id = :id AND ms.name LIKE :name"
             );
             $sql->bindValue(":id", $classid);

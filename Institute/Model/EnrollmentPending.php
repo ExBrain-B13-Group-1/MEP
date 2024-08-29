@@ -16,13 +16,13 @@ class EnrollmentPending{
             $sql = $pdo->prepare(
                 "SELECT pe.*,
                     mc.institute_id,
-                    ms.student_id AS s_unique_id,
-                    ms.name AS student_name,
-                    ms.email AS student_email,
-                    ms.gender,
+                    mu.id AS user_id,
+                    mu.name AS user_name,
+                    mu.email AS user_email,
+                    mu.gender,
+                    mu.photo,
                     mc.c_title,
                     mc.c_fee,
-                    ms.phone,
                     mc.days,
                     mc.start_time,
                     mc.end_time,
@@ -30,7 +30,7 @@ class EnrollmentPending{
                     mc.end_date
                 FROM pending_enrollment AS pe
                 INNER JOIN m_classes AS mc ON mc.id = pe.enrolled_class_id
-                INNER JOIN m_students AS ms ON ms.id = pe.student_id
+                INNER JOIN m_user AS mu ON mu.id = pe.user_id
                 WHERE pe.pending_status = 0 AND mc.institute_id = :id"
             );
             $sql->bindValue(":id",$instituteID);
@@ -53,13 +53,13 @@ class EnrollmentPending{
             $sql = $pdo->prepare(
                 "SELECT pe.*,
                     mc.institute_id,
-                    ms.student_id AS s_unique_id,
-                    ms.name AS student_name,
-                    ms.email AS student_email,
-                    ms.gender,
+                    mu.id AS s_unique_id,
+                    mu.name AS student_name,
+                    mu.email AS student_email,
+                    mu.gender,
                     mc.c_title,
                     mc.c_fee,
-                    ms.phone,
+                    mu.contact,
                     mc.days,
                     mc.start_time,
                     mc.end_time,
@@ -67,8 +67,8 @@ class EnrollmentPending{
                     mc.end_date
                 FROM pending_enrollment AS pe
                 INNER JOIN m_classes AS mc ON mc.id = pe.enrolled_class_id
-                INNER JOIN m_students AS ms ON ms.id = pe.student_id
-                WHERE pe.pending_status = 0 AND mc.institute_id = :id AND ms.name LIKE :studentname"
+                INNER JOIN m_user AS mu ON mu.id = pe.user_id
+                WHERE pe.pending_status = 0 AND mc.institute_id = :id AND mu.name LIKE :studentname"
             );
             
             $sql->bindValue(':id', $instituteID);
@@ -107,7 +107,7 @@ class EnrollmentPending{
         }
     }
 
-    public function getRelatedReceiptImage($studentID){
+    public function getRelatedReceiptImage($userID){
         try{
             $dbconn = new DBConnection();
             // get connection
@@ -115,9 +115,9 @@ class EnrollmentPending{
             $sql = $pdo->prepare(
                 "SELECT pe.receipt_image
                 FROM pending_enrollment AS pe
-                WHERE pe.student_id = :id"
+                WHERE pe.user_id = :id"
             );
-            $sql->bindValue(":id",$studentID);
+            $sql->bindValue(":id",$userID);
             $sql->execute();
             $results = $sql->fetchAll(PDO::FETCH_ASSOC);
             return $results;
@@ -128,7 +128,7 @@ class EnrollmentPending{
     }
 
 
-    public function updatePendingStatusForReject($studentID,$reason){
+    public function updatePendingStatusForReject($userID,$enrolledClassID,$reason){
         try{
             $dbconn = new DBConnection();
             // get connection
@@ -137,9 +137,10 @@ class EnrollmentPending{
                 "UPDATE pending_enrollment AS pe
                     SET pe.pending_status = -1 ,
                     pe.rejected_reason = :reason
-                    WHERE pe.student_id = :id"
+                    WHERE pe.user_id = :id AND pe.enrolled_class_id = :enrolledClassID"
             );
-            $sql->bindValue(":id",$studentID);
+            $sql->bindValue(":id",$userID);
+            $sql->bindValue(":enrolledClassID",$enrolledClassID);
             $sql->bindValue(":reason",$reason);
             $sql->execute();
             return true;
@@ -150,7 +151,7 @@ class EnrollmentPending{
         }
     }
 
-    public function updatePendingStatusForApprove($studentID){
+    public function updatePendingStatusForApprove($userID,$enrolledClassID){
         try{
             $dbconn = new DBConnection();
             // get connection
@@ -158,9 +159,10 @@ class EnrollmentPending{
             $sql = $pdo->prepare(
                 "UPDATE pending_enrollment AS pe
                     SET pe.pending_status = 1 
-                    WHERE pe.student_id = :id"
+                    WHERE pe.user_id = :id AND pe.enrolled_class_id = :enrolledClassID"
             );
-            $sql->bindValue(":id",$studentID);
+            $sql->bindValue(":id",$userID);
+            $sql->bindValue(":enrolledClassID",$enrolledClassID);
             $sql->execute();
             return true;
         }catch(\Throwable $th){

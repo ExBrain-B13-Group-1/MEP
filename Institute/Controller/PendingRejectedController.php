@@ -13,13 +13,14 @@ if (isset($_POST['datas']) && !empty($_POST['datas'])) {
     $datas = $_POST['datas'];
     $dataobj = json_decode($datas);
 
-    if (isset($dataobj->id, $dataobj->email, $dataobj->reason)) {
+    if (isset($dataobj->id, $dataobj->enrolled_class_id, $dataobj->email, $dataobj->reason)) {
         $student_id = $dataobj->id;
         $student_email = $dataobj->email;
+        $enrolled_class_id = $dataobj->enrolled_class_id;
         $reason = $dataobj->reason;
 
         $obj = new EnrollmentPending(); // Fixed typo in class name
-        $success = $obj->updatePendingStatusForReject($student_id, $reason);
+        $success = $obj->updatePendingStatusForReject($student_id, $enrolled_class_id, $reason);
 
         $datas = [
             "success" => $success,

@@ -49,7 +49,7 @@ $(document).ready(function () {
             },
             success: function (response) {
                 datas = response[0];
-                console.log(datas);
+                // console.log(datas);
                 const detailsinfo = `
                     <nav class="flex py-3 text-blue-500 md:mb-5 mb-3 md:px-0 px-5" aria-label="Breadcrumb">
                         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
@@ -93,9 +93,11 @@ $(document).ready(function () {
                                     </div>
                                 </div>
                                 <div class="flex justify-center items-center md:pr-5 pr-7">
-                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-xl text-lg md:px-10 px-7 md:py-3 py-2.5">
-                                        <a href="../../View/resources/Auth/enrollment.php">Enroll Now</a>
-                                    </button>
+                                    <a href="http://localhost/MEP/user/Controller/CheckEnrollClassInfoController.php?classid=${datas.id}">
+                                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg md:text-xl text-lg md:px-10 px-7 md:py-3 py-2.5">
+                                            Enroll Now
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -147,7 +149,7 @@ $(document).ready(function () {
                             </div>
                             <div>
                                 <ion-icon name="call-outline" class="md:text-2xl text-xl relative md:top-2 top-1 md:mr-2 mr-2"></ion-icon>
-                                <span class="text-base">(+95)</span><span>${datas.i_phone}</span>
+                                <span class="text-base"></span><span>${datas.i_phone}</span>
                             </div>
                             <div>
                                 <ion-icon name="location-outline" class="md:text-2xl text-xl relative md:top-1 top-1.5 md:mr-2 mr-2"></ion-icon>
@@ -171,7 +173,7 @@ $(document).ready(function () {
                             </div>
                             <div>
                                 <ion-icon name="call-outline" class="md:text-2xl text-xl relative md:top-2 top-1 md:mr-2 mr-2"></ion-icon>
-                                <span class="text-base">(+95)</span><span>${datas.instructor_phone}</span>
+                                <span class="text-base"></span><span>${datas.instructor_phone}</span>
                             </div>
                             <div>
                                 <ion-icon name="location-outline" class="md:text-2xl text-xl relative md:top-1 top-1.5 md:mr-2 mr-2"></ion-icon>
@@ -205,7 +207,7 @@ $(document).ready(function () {
                 });
                 $('#institute-info').html(instituteinfos);
                 $('#instructor-info').html(instructorinfos);
-                
+
             },
             error: function (xhr, status, error) {
                 console.log(error);
@@ -224,10 +226,10 @@ $(document).ready(function () {
                 success: function (datas) {
                     const carddatas = datas.map(
                         (classes) =>
-                            `<div class="border-b-2 md:pb-4 md:mt-4 mt-5">
+                            `<div class="border-b-2 md:pb-4 md:mt-4 mt-5 cursor-pointer" onclick="window.location.href='viewdetailsclass.php?classid=${classes.id}'">
                                 <div class="flex flex-col md:grid md:grid-cols-8">
                                     <div class="md:col-span-1 md:block inline">
-                                        <img src="${baseurl}${classes.c_photo}" class="md:w-[300px] w-[150px] rounded-lg" alt="class-stu-also">
+                                        <img src="${baseurl}${classes.c_photo}" class="md:w-[300px] w-[150px] rounded-lg" alt="${classes.c_photo}">
                                     </div>
                                     <div class="md:col-span-4 flex flex-col gap-1.5 md:ml-5">
                                         <h3 class="md:text-xl text-base font-semibold md:mt-0 md:mb-0 mt-5 mb-3">${classes.c_title}</h3>
@@ -259,7 +261,7 @@ $(document).ready(function () {
                                                 </svg>
                                                 <span class="inline font-medium md:text-xl text-base relative md:top-0 top-0.5">${classes.credit_point}</span>
                                             </div>
-                                            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded"><a href="../../View/resources/Auth/enrollment.php">Enroll</a></button>
+                                            <button type="button" class="z-50 text-white bg-blue-700 hover:bg-blue-800 font-medium text-xl px-10 md:py-1 md:mt-1 py-2.5 border rounded"><a href="http://localhost/MEP/user/Controller/CheckEnrollClassInfoController.php?classid=${classes.id}">Enroll</a></button>
                                         </div>
                                     </div>
                                 </div>

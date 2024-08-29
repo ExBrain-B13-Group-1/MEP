@@ -23,7 +23,7 @@ $(document).ready(function () {
         classtitle: ''
       },
       success: function (data) {
-        console.log(data);
+        // console.log(data);
         jsonData = data['classes'];
         if (data['success']) {
           $('#total-results').text(data['classes'].length);
@@ -48,9 +48,9 @@ $(document).ready(function () {
 
     for (let i = startIndex; i < endIndex; i++) {
       const rowData = jsonData[i];
-      // console.log(rowData);
+      console.log(rowData);
       const row = `
-                <div class="flex justify-between border-b-2 py-5 cursor-pointer" data-id="${rowData.id}" onclick="window.location.href='viewdetailsclass.php?id=${rowData.id}'">
+                <div class="flex justify-between border-b-2 py-5 cursor-pointer" data-id="${rowData.id}" onclick="window.location.href='viewdetailsclass.php?classid=${rowData.id}'">
                   <div class="flex justify-between items-start space-x-4 ">
                       <div>
                           <img src="${baseurl}${rowData.c_photo}" alt="${rowData.c_photo}" class="md:w-[200px] w-[100px] object-cover">
@@ -67,9 +67,9 @@ $(document).ready(function () {
                                   <div class="md:mt-2 text-gray-600">
                                         <p class="text-base font-bold whitespace-nowrap">${addThousandSeparator(rowData.c_fee)} MMK</p>
                                         <svg class="inline font-bold md:w-5 md:h-5 w-4 h-4 md:mr-1 md:mt-0 mt-2 mr-0.5 relative -top-0.5" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932c0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853c0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836c0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91c0 .542-.412.914-1.135.982V8.518z"/><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M8 13.5a5.5 5.5 0 1 1 0-11a5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/></g></svg>
-                                        <span class="inline font-bold text-base relative md:top-0 top-0.5 mb-2">100</span>
+                                        <span class="inline font-bold text-base relative md:top-0 top-0.5 mb-2">${rowData.credit_point}</span>
                                   </div>             
-                      <button class="bg-primaryColor text-white px-2 py-1 rounded mt-2"><a href="../../View/resources/Auth/enrollment.php">Enroll</a></button>
+                      <button class="bg-primaryColor text-white px-2 py-1 rounded mt-2"><a href="http://localhost/MEP/user/Controller/CheckEnrollClassInfoController.php?classid=${rowData.id}">Enroll</a></button>
                   </div>
                 </div>`;
       container.append(row);
@@ -269,7 +269,7 @@ $(document).ready(function () {
                               <span class="inline font-bold text-base relative md:top-0 top-0.5">${course.credit_point}</span>
                           </div>
                           <button class="bg-primaryColor text-white px-4 py-1 rounded mt-2">
-                            <a href="../../View/resources/Auth/enrollment.php">Enrolls</a>
+                            <a href="http://localhost/MEP/user/Controller/CheckEnrollClassInfoController.php?classid=${course.id}">Enrolls</a>
                           </button>
                       </div>
                   </div>
@@ -433,7 +433,7 @@ $(document).ready(function () {
           const carddatas = datas[category].map(
             (classes) =>
               `<div class="w-64 shadow-md flex-shrink-0" data-course-id="${classes.id}">
-                        <a href="viewdetailsclass.php?id=${classes.id}" class="block">
+                        <a href="viewdetailsclass.php?classid=${classes.id}" class="block">
                           <img class="rounded-t-lg w-full h-[150px]" src="${baseurl}${classes.c_photo}" alt="${classes.c_photo}" />
                           <div class="p-4">
                             <h2 class="text-base text-black font-bold">${classes.c_title}</h2>
@@ -451,7 +451,7 @@ $(document).ready(function () {
                               </div>
                               <p class="text-base font-bold">${classes.c_fee}</p>
                               <button class="bg-primaryColor text-white px-4 py-1 rounded mt-2">
-                                <a href="../../View/resources/Auth/enrollment.php">Enroll</a>
+                                <a href="http://localhost/MEP/user/Controller/CheckEnrollClassInfoController.php?classid=${classes.id}">Enroll</a>
                               </button>
                             </div>
                           </div>

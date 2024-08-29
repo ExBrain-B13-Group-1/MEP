@@ -274,7 +274,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
    </aside>
 
    <!-- Data Area Dashboard Overview-->
-   <div class="block pt-20 pb-6 px-5 ml-64 bg-gray-300 dark:bg-gray-800 dashoverviews">
+   <div class="block pt-14 pb-5 px-5 ml-64 bg-gray-300 dark:bg-gray-800 dashoverviews">
       <div class="flex items-center mb-4 gap-5 mt-10">
          <!-- <ul class="flex flex-wrap -mb-px">
             <li class="me-2">
@@ -295,52 +295,54 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
          </ul> -->
       </div>
       <div class="grid grid-cols-8 gap-4">
-         <div class="col-span-4 flex justify-between gap-4">
-            <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500">
-               <div class="px-10">
-                  <p class="text-xl mt-3 dark:text-white opacity-50 whitespace-nowrap">Total Classes</p>
-                  <div class="flex justify-end">
-                     <p class="text-2xl font-bold mt-3 text-blue-700 dark:text-blue-400 opacity-90">
-                        <?=$totalclasses?>
-                     </p>
-                     <!-- <div class="flex items-center text-green-500">
+         <div class="col-span-4 gap-4">
+            <div class="grid grid-cols-3 gap-4">
+               <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500">
+                  <div class="px-10 pb-5">
+                     <p class="text-xl mt-2.5 mb-3 dark:text-white opacity-50 whitespace-nowrap">Total Classes</p>
+                     <div class="flex justify-end">
+                        <p class="text-2xl font-bold mt-3 text-blue-700 dark:text-blue-400 opacity-90">
+                           <?= $totalclasses ? $totalclasses : 0 ?>
+                        </p>
+                        <!-- <div class="flex items-center text-green-500">
                         <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                            <path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42" />
                         </svg>
                         <span class="mt-3">+15%</span>
                      </div> -->
+                     </div>
                   </div>
                </div>
-            </div>
-            <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500">
-               <div class="px-10">
-                  <p class="text-xl mt-3 dark:text-white opacity-50 whitespace-nowrap">Total Students</p>
-                  <div class="flex justify-end">
-                     <p class="text-2xl font-bold mt-3 text-blue-700 dark:text-blue-400 opacity-90">
-                        <?=$totalstudents?>   
-                     </p>
-                     <!-- <div class="flex items-center text-green-500">
+               <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500">
+                  <div class="px-10 pb-5">
+                     <p class="text-xl mt-2.5 mb-3 dark:text-white opacity-50 whitespace-nowrap">Total Students</p>
+                     <div class="flex justify-end">
+                        <p class="text-2xl font-bold mt-3 text-blue-700 dark:text-blue-400 opacity-90">
+                           <?= $totalstudents ? $totalstudents : 0 ?>
+                        </p>
+                        <!-- <div class="flex items-center text-green-500">
                         <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                            <path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42" />
                         </svg>
                         <span class="mt-3">+15%</span>
                      </div> -->
+                     </div>
                   </div>
                </div>
-            </div>
-            <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500">
-               <div class="px-12">
-                  <p class="text-xl mt-3 dark:text-white opacity-50 whitespace-nowrap">Total Instructors</p>
-                  <div class="flex justify-end">
-                     <p class="text-2xl font-bold mt-3 text-blue-700 dark:text-blue-400 opacity-90">
-                        <?=$totalinstructors?>
-                     </p>
-                     <!-- <div class="flex items-center text-green-500">
+               <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500">
+                  <div class="px-10 pb-5">
+                     <p class="text-xl mt-2.5 mb-3 dark:text-white opacity-50 whitespace-nowrap">Total Instructors</p>
+                     <div class="flex justify-end">
+                        <p class="text-2xl font-bold mt-3 text-blue-700 dark:text-blue-400 opacity-90">
+                           <?= $totalinstructors ? $totalinstructors : 0 ?>
+                        </p>
+                        <!-- <div class="flex items-center text-green-500">
                         <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                            <path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42" />
                         </svg>
                         <span class="mt-3">+15%</span>
                      </div> -->
+                     </div>
                   </div>
                </div>
             </div>
@@ -387,8 +389,10 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
          </div>
          <div class="bg-white rounded-lg col-span-2 row-span-2 px-4 py-2 dark:bg-gray-600 duration-300">
             <h3 class="text-black dark:text-white mb-8 mt-4">Student Demographics by Age</h3>
-            <div class="demochart dark:text-white">
-               <canvas id="studemochart"></canvas>
+            <div class="w-full flex justify-center">
+               <div class="demochart dark:text-white">
+                  <canvas id="studemochart"></canvas>
+               </div>
             </div>
          </div>
          <div class="bg-white rounded-lg col-span-2 row-span-2 px-4 py-2 dark:bg-gray-600 duration-300">
@@ -511,7 +515,9 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                   </tbody>
                </table>
                <div class="flex justify-end">
-                  <button class="bg-gray-200 px-5 py-2 rounded-xl my-5 text-blue-700 hover:bg-gray-400 dark:hover:bg-gray-800 dark:text-blue-600 dark:bg-gray-700 duration-500">See More ></button>
+                  <a href="http://localhost/MEP/Institute/View/resources/Instructor/instructorlist.php">
+                     <button class="bg-gray-200 px-5 py-2 rounded-xl my-5 text-blue-700 hover:bg-gray-400 dark:hover:bg-gray-800 dark:text-blue-600 dark:bg-gray-700 duration-500">See More ></button>
+                  </a>
                </div>
             </div>
          </div>
@@ -519,7 +525,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
    </div>
 
    <!-- Data Area Finance Overview -->
-   <div class="hidden pt-20 pb-6 px-5 ml-64 bg-gray-300 dark:bg-gray-800 finaoverviews">
+   <div class="hidden pt-14 pb-5 px-5 ml-64 bg-gray-300 dark:bg-gray-800 finaoverviews">
       <div class="flex items-center mb-4 gap-5 mt-10">
          <!-- <ul class="flex flex-wrap -mb-px">
             <li class="me-2">
@@ -541,45 +547,45 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
       </div>
       <div class="grid grid-cols-8 gap-4">
          <div class="col-span-4 grid grid-cols-3 gap-4">
-            <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500 flex items-center">
+            <div class="bg-white rounded-lg px-5 py-5 dark:bg-gray-600 duration-500 flex items-center">
                <div class="w-full">
-                  <p class="text-xl mt-3 dark:text-white opacity-90">Total Revenue</p>
-                  <div class="flex justify-between">
-                     <p class="text-2xl font-bold mt-3 dark:text-white opacity-90">$50K</p>
-                     <div class="flex items-center text-green-500">
+                  <p class="text-xl text-center mb-3 dark:text-white opacity-50">Cash Income</p>
+                  <div class="flex justify-end">
+                     <p class="text-2xl text-blue-700 dark:text-blue-400 font-bold mt-3">50K</p>
+                     <!-- <div class="flex items-center text-green-500">
                         <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                            <path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42" />
                         </svg>
                         <span class="mt-3">+15%</span>
-                     </div>
+                     </div> -->
                   </div>
                </div>
             </div>
             <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500 flex items-center">
                <div class="w-full">
-                  <p class="text-xl mt-3 dark:text-white opacity-90">Net Profit</p>
-                  <div class="flex justify-between">
-                     <p class="text-2xl font-bold mt-3 dark:text-white opacity-90">$20K</p>
-                     <div class="flex items-center text-green-500">
+                  <p class="text-xl text-center mb-3 dark:text-white opacity-50">Coin Income</p>
+                  <div class="flex justify-end">
+                     <p class="text-2xl text-blue-700 dark:text-blue-400 font-bold mt-3">2000</p>
+                     <!-- <div class="flex items-center text-green-500">
                         <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                            <path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42" />
                         </svg>
                         <span class="mt-3">+10%</span>
-                     </div>
+                     </div> -->
                   </div>
                </div>
             </div>
             <div class="bg-white rounded-lg px-5 dark:bg-gray-600 duration-500 flex items-center">
                <div class="w-full">
-                  <p class="text-xl mt-3 dark:text-white opacity-90">Average Revenue per Student</p>
-                  <div class="flex justify-between">
-                     <p class="text-2xl font-bold mt-3 dark:text-white opacity-90">$33.33</p>
-                     <div class="flex items-center text-green-500">
+                  <p class="text-xl text-center mb-3 dark:text-white opacity-50">Total Income</p>
+                  <div class="flex justify-end">
+                     <p class="text-2xl text-blue-700 dark:text-blue-400 font-bold mt-3">500K</p>
+                     <!-- <div class="flex items-center text-green-500">
                         <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                            <path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42" />
                         </svg>
                         <span class="mt-3">+8%</span>
-                     </div>
+                     </div> -->
                   </div>
                </div>
             </div>

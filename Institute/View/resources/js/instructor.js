@@ -199,7 +199,7 @@ function showCard(id) {
                 if (item.id === id) {
                     console.log(item);
                     let cardhtml = `
-                            <div class="h-[70vh] overflow-y-auto hide-scrollbar">
+                        <div class="h-[70vh] overflow-y-auto hide-scrollbar">
                             <div class="flex items-center gap-5">
                                 <div class="absolute top-0 right-0 pt-3 pr-5">
                                     <button type="button" class="px-2 py-2 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-base w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-500 dark:hover:text-white" onclick="closeCard()">
@@ -241,7 +241,7 @@ function showCard(id) {
                                 <div class="mt-3">
                                     <h3 class="text-red-600 dark:text-white mt-5 mb-3 font-black">Skill</h3>
                                     <div>
-                                        <p class="dark:text-white dark:opacity-80 inline ">Programming Languages :</p> <span class="dark:text-blue-400 text-blue-700">${item.skills}</span>
+                                        <span class="dark:text-blue-400 text-blue-700">${item.skills}</span>
                                     </div>
                                 </div>
                                 <div class="mt-3">

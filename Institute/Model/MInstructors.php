@@ -117,16 +117,17 @@ class MInstructors
         }
     }
 
-    public function recentCreatedInstructorId($generateInstructorId){
+    public function recentCreatedInstructorId($generateInstructorId,$instituteid){
         try{
             $dbconn = new DBConnection();
             // get connection
             $pdo = $dbconn->connection();
             $sql = $pdo->prepare(
                 "SELECT mi.id FROM m_instructors AS mi
-                WHERE mi.instructor_sr_no = :id"
+                WHERE mi.instructor_sr_no = :id AND mi.institute_id = :instituteid"
             );
             $sql->bindValue(":id",$generateInstructorId);
+            $sql->bindValue(":instituteid",$instituteid);
             $sql->execute();
             $results = $sql->fetchAll(PDO::FETCH_ASSOC);
             return $results[0]['id'];
@@ -405,7 +406,7 @@ class MInstructors
                     m_classes AS mc 
                     ON mi.id = mc.instructor_id
                 WHERE 
-                    mi.institute_id = :id
+                    mi.institute_id = :id AND mi.del_flg = 0
                 GROUP BY 
                     mi.id, mi.full_name, mi.gender, mi.position
                 ORDER BY 

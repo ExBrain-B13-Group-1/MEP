@@ -27,6 +27,7 @@ $(document).ready(function () {
     let rowsPerPage = 8;
     let jsonData = [];
     let currentPage = 1;
+    let count = 1;
 
     function fetchData() {
         $.ajax({
@@ -38,7 +39,7 @@ $(document).ready(function () {
             },
             success: function (data) {
                 jsonData = data;
-                console.log(data);
+                // console.log(data);
                 displayData();
                 setupPagination();
                 if (Array.isArray(data) && data.length > 0) {
@@ -55,6 +56,8 @@ $(document).ready(function () {
     function displayData() {
         const tableBody = $('#table-body'); // Replace with your table's body selector
         tableBody.empty();
+        
+        count = (currentPage - 1) * rowsPerPage + 1;
 
         const startIndex = (currentPage - 1) * rowsPerPage;
         const endIndex = Math.min(startIndex + rowsPerPage, jsonData.length);
@@ -64,7 +67,7 @@ $(document).ready(function () {
             // console.log(rowData);
             const row = `<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <td class="w-4 p-4">
-                                    ${rowData.student_id}
+                                    ${count++}
                                 </td>
                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     ${rowData.name}
@@ -293,14 +296,13 @@ function showCard(id) {
                             </button>
                         </div>
                         <div class="relative">
-                            <img src="${baseUrl + item.profile_photo}" class="w-16 h-16 rounded-full" alt="${item.profile_photo}">
+                            <img src="${item.profile_photo == null ? 'http://localhost/MEP/Institute/storages/userProfileDefault.png' : baseUrl + item.profile_photo}" class="w-16 h-16 rounded-full" alt="${item.profile_photo}">
                             <div class="absolute top-0 right-0 w-5 h-5 rounded-full bg-blue-700 flex justify-center items-center">
                                 <ion-icon name="checkmark-outline" class="text-white"></ion-icon>
                             </div>
                         </div>
                         <div class="dark:text-white">
                             <h3 class="font-black">${item.name}</h3>
-                            <span class="dark:opacity-60">ID - ${item.student_id}</span>
                         </div>
                         </div>
                         <div>
@@ -311,17 +313,7 @@ function showCard(id) {
                             </div>
                             <div>
                                 <ion-icon name="call-outline" class="w-5 h-5 relative top-1 mr-2 dark:text-white opacity-60"></ion-icon> 
-                                <span class="dark:text-white opacity-80">${item.phone}</span>
-                            </div>
-                            <div>
-                                <ion-icon name="logo-linkedin" class="w-5 h-5 relative top-1 mr-2 dark:text-white opacity-60"></ion-icon> 
-                                <span class="text-blue-700 dark:text-blue-400">${item.linkedin}</span>
-                            </div>
-                        </div>
-                        <div>
-                            <div>
-                                <h3 class="text-red-600 dark:text-white mt-8 mb-3 font-black">Address</h3>
-                                <p class="dark:text-white mr-2 opacity-80">${item.address}</p>
+                                <span class="dark:text-white opacity-80">${item.phone ? item.phone : 'No Data'}</span>
                             </div>
                         </div>
                         <div>
@@ -368,7 +360,7 @@ function showCard(id) {
                             // console.log(classes);
                             let certifiedClassesHtml = classes.map(cls => `
                                 <li>
-                                    <a href="http://localhost/MEP/Institute/View/resources/Class/finishedclassdetails.php?classid=${cls.c_id}">${cls.c_title}</a>
+                                    <a href="http://localhost/MEP/Institute/View/resources/Class/finishedclassdetails.php?classid=${cls.id}">${cls.c_title}</a>
                                 </li>
                             `).join('');
                             $('#certified-classes').html(certifiedClassesHtml);

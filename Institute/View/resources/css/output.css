@@ -1484,6 +1484,10 @@ html {
   margin-top: 0.5rem;
 }
 
+.mt-2\.5 {
+  margin-top: 0.625rem;
+}
+
 .mt-20 {
   margin-top: 5rem;
 }
@@ -2659,11 +2663,6 @@ html {
 .text-blue-300 {
   --tw-text-opacity: 1;
   color: rgb(164 202 254 / var(--tw-text-opacity));
-}
-
-.text-blue-400 {
-  --tw-text-opacity: 1;
-  color: rgb(118 169 250 / var(--tw-text-opacity));
 }
 
 .text-blue-500 {

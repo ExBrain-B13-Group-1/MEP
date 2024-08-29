@@ -172,21 +172,69 @@ $(document).ready(function () {
 
     // Make the AJAX request
     $.ajax({
-      url: "../../../Controller/PendingEnrollmentController.php",
+      url: "http://localhost/MEP/user/Controller/PendingEnrollmentController.php",
       type: "POST",
       data: formData,
       processData: false,
       contentType: false,
       dataType: "text",
       success: function (data) {
-        console.log(data);
-        if (data.trim() == "authorized") {
-          // Proceed to the next step
-          goToStep(2);
-        } else if (data.trim() == "no-authorized") {
-          // Show alert and redirect to verification page
-          alert("You need to verify your account first.");
-          window.location.href = "./verification.php";
+        let response = JSON.parse(data);
+        console.log(response);
+        if (response.success && response.payment_type === "receipt") {
+          goToStep(2);      
+        }else{
+            if(response.message === "Duplicated Enrollment!"){
+                Swal.fire({
+                    title: "Duplicated Enrollment!",
+                    text: "You have already enrolled in this class!",
+                    icon: "error",
+                });
+            }
+
+            if(response.message === "Unauthorized! User not verified!"){
+              Swal.fire({
+                title: "Verification Needed!",
+                text: "You need to verify your account to enroll in this class!",
+                icon: "error",
+                showCancelButton: true,
+                confirmButtonText: "Verify",
+                cancelButtonText: "Cancel",
+                reverseButtons: true,
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "http://localhost/MEP/user/View/resources/Auth/verification.php";
+                }
+            });
+            }
+
+            if(response.message === "Coin Not Enough!"){
+                Swal.fire({
+                    title: "Coin Not Enough!",
+                    text: "You do not have enough coins to enroll in this class!",
+                    icon: "error",
+                    showCancelButton: true,
+                    confirmButtonText: "Buy Coin",
+                    cancelButtonText: "Cancel",
+                    reverseButtons: true,
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = "http://localhost/MEP/user/View/resources/pricing.php";
+                    }
+                });
+            }
+
+            if(response.message === "Duplicate Enroll!"){
+                Swal.fire({
+                    title: "Duplicate Enroll!",
+                    text: "You have already enrolled in this class!",
+                    icon: "error",
+                });
+            }
+
+            if(response.message === "Enrollment Successful"){
+                goToStep(2);
+            }
         }
       },
       error: function (err) {
@@ -195,8 +243,4 @@ $(document).ready(function () {
       },
     });
   });
-
-  /* ............
-     ............
-     End HPP Code */
 });

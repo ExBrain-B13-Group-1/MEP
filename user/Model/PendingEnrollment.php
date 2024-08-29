@@ -7,7 +7,7 @@ class PendingEnrollment
     /**
      * (Insert into pending)
      */
-    public function createPending($student_id, $enrolled_class_id, $receipt_image)
+    public function createPending($user_id, $enrolled_class_id, $receipt_image)
     {
         try {
             $db = new DBConnection();
@@ -15,12 +15,12 @@ class PendingEnrollment
 
             // Step 1: Insert the data into pending_enrollment table
             $sql = $pdo->prepare("
-                INSERT INTO pending_enrollment (student_id, enrolled_class_id, receipt_image)
-                VALUES (:student_id, :enrolled_class_id, :receipt_image)
+                INSERT INTO pending_enrollment (user_id, enrolled_class_id, receipt_image)
+                VALUES (:user_id, :enrolled_class_id, :receipt_image)
             ");
 
             // Bind the values to the SQL statement
-            $sql->bindValue(':student_id', $student_id);
+            $sql->bindValue(':user_id', $user_id);
             $sql->bindValue(':enrolled_class_id', $enrolled_class_id);
             $sql->bindValue(':receipt_image', $receipt_image);
             // Execute the statement
@@ -67,6 +67,53 @@ class PendingEnrollment
     }
 
 
+    public function isAlreadyStudent($user_email)
+    {
+        try {
+            $db = new DBConnection();
+            $pdo = $db->connection();
+            $sql = $pdo->prepare("SELECT COUNT(*) as count FROM m_students WHERE email = :email");
+            $sql->bindValue(":email", $user_email);
+            $sql->execute();
+            $result = $sql->fetch(PDO::FETCH_ASSOC);
+            if ($result['count'] > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (\Throwable $th) {
+            echo "Unexpected Error Occurred: " . htmlspecialchars($th->getMessage());
+            return false;
+        }
+    }
+
+
+    public function isDuplicatedForPendingState($user_id, $enrolled_class_id)
+    {
+        try {
+            $db = new DBConnection();
+            $pdo = $db->connection();
+
+            $sql = $pdo->prepare("SELECT * FROM pending_enrollment 
+            WHERE user_id = :user_id 
+            AND enrolled_class_id = :enrolled_class_id 
+            AND pending_status != -1");
+            $sql->bindValue(":user_id", $user_id);
+            $sql->bindValue(":enrolled_class_id", $enrolled_class_id);
+            $sql->execute();
+
+            if ($sql->rowCount() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (\Throwable $th) {
+            echo "Unexpected Error Occurred: " . htmlspecialchars($th->getMessage());
+            return false;
+        }
+    }
+
+
     /**
      * (Get Student Id)
      */
@@ -91,4 +138,21 @@ class PendingEnrollment
             echo "Unexpected Error Occurs! $th";
         }
     }
+
+
+    public function getCostCoins($enrolled_class_id)
+    {
+        try {
+            $db = new DBConnection();
+            $pdo = $db->connection();
+            $sql = $pdo->prepare("SELECT credit_point FROM m_classes WHERE id = :id");
+            $sql->bindValue(":id", $enrolled_class_id);
+            $sql->execute();
+            $result = $sql->fetch(PDO::FETCH_ASSOC);
+            return $result['credit_point'];
+        } catch (\Throwable $th) {
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
 }

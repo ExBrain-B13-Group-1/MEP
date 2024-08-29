@@ -26,13 +26,13 @@ if (isset($_POST["submit"]) && isset($_COOKIE['institute_id'])) {
 
     // Ensure the upload directory exists and has the correct permissions
     if (!is_dir($uploadDir)) {
-        mkdir($uploadDir, 0777);
+        mkdir($uploadDir, 0777, true);
     }
 
     // if already exists permission update 
-    if (is_dir($uploadDir)) {
-        chmod($uploadDir, 0777);
-    }
+    // if (is_dir($uploadDir)) {
+    //     chmod($uploadDir, 0777);
+    // }
 
     $name = $_FILES['image']['name'];
 
@@ -118,10 +118,11 @@ if (isset($_POST["submit"]) && isset($_COOKIE['institute_id'])) {
             $instructorObj = new MInstructors();
             $success = $instructorObj->addInstructor($datasarr);
             if($success){
-                $id = $instructorObj->recentCreatedInstructorId($instructor_id);
+                $id = $instructorObj->recentCreatedInstructorId($instructor_id,$instituteid);
                 $redirectUrl = "../Controller/ViewDetailsInstructorController.php?instructorid=$id";
                 header("Location: $redirectUrl");
                 exit();
+                echo "instructorid = $id";
             }else{
                 echo "Fail modify process.";
             }

@@ -48,6 +48,8 @@ function selectedCategory($catename)
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Class - Modify</title>
+    <!-- jQuery Ui css1 js1 -->
+    <link rel="stylesheet" href="./../lib/jquery-ui-1.14.0/jquery-ui.min.css" type="text/css">
     <!-- Tailwind output css -->
     <link href="./../css/output.css" rel="stylesheet" />
 </head>
@@ -319,7 +321,7 @@ function selectedCategory($catename)
 
     <!-- Data Area Class List-->
     <div class="block pt-20 pb-8 px-5 ml-64 bg-gray-300 dark:bg-gray-800">
-        <div class="h-[83vh] grid grid-cols-10 gap-7 mt-10 ">
+        <div class="grid grid-cols-10 gap-7 mt-10 ">
             <div class="bg-white col-span-8 col-start-2 rounded-lg px-4 py-2 dark:bg-gray-700 duration-500">
                 <form id="classform" action="http://localhost/MEP/Institute/Controller/ModifyClassController.php" method="POST" enctype="multipart/form-data" class="px-10">
                     <div class="grid grid-cols-2 gap-10">
@@ -362,25 +364,25 @@ function selectedCategory($catename)
                             <div class="pl-5">
                                 <div class="grid grid-cols-2 gap-5">
                                     <div>
-                                        <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="datepicker-autohide-1">Start Date (mm/dd/yy)</label>
+                                        <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="default-datepicker-1">Start Date (mm/dd/yy)</label>
                                         <div class="relative max-w-sm">
                                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                                 <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                                     <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                                                 </svg>
                                             </div>
-                                            <input id="datepicker-autohide-1" datepicker datepicker-autohide type="text" name="start-date" value="<?php echo date('m/d/Y', strtotime($results[0]['start_date'])); ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
+                                            <input id="default-datepicker-1" type="text" name="start-date" value="<?php echo date('m/d/Y', strtotime($results[0]['start_date'])); ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
                                         </div>
                                     </div>
                                     <div>
-                                        <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="datepicker-autohide-2">End Date (mm/dd/yy)</label>
+                                        <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="default-datepicker-2">End Date (mm/dd/yy)</label>
                                         <div class="relative max-w-sm">
                                             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                                 <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                                     <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                                                 </svg>
                                             </div>
-                                            <input id="datepicker-autohide-2" datepicker datepicker-autohide type="text" name="end-date" value="<?php echo date('m/d/Y', strtotime($results[0]['end_date'])); ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
+                                            <input id="default-datepicker-2" type="text" name="end-date" value="<?php echo date('m/d/Y', strtotime($results[0]['end_date'])); ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
                                         </div>
                                     </div>
                                 </div>
@@ -415,7 +417,7 @@ function selectedCategory($catename)
                                                 <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd" />
                                             </svg>
                                         </div>
-                                        <input type="time" id="start-time" name="start-time" class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min="00:00" max="24:00" value="<?= $results[0]['start_time'] ?>" required />
+                                        <input type="time" id="start-time" name="start-time" class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min="00:00" max="24:00" value="<?= $results[0]['start_time'] ?>" autocomplete="off" required />
                                     </div>
                                 </div>
                                 <div>
@@ -426,7 +428,7 @@ function selectedCategory($catename)
                                                 <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd" />
                                             </svg>
                                         </div>
-                                        <input type="time" id="end-time" name="end-time" class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min="00:00" max="24:00" value="<?= $results[0]['end_time'] ?>" required />
+                                        <input type="time" id="end-time" name="end-time" class="bg-gray-50 border leading-none border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" min="00:00" max="24:00" value="<?= $results[0]['end_time'] ?>" autocomplete="off" required />
                                     </div>
                                 </div>
                             </div>
@@ -458,14 +460,14 @@ function selectedCategory($catename)
                                 <input type="text" id="maxenrollment" name="max-enrollment" value="<?= $results[0]['max_enrollment'] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Eg. 25" required />
                             </div>
                             <div class="mt-4 pl-5">
-                                <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="datepicker-autohide-3">Enrollment Deadline</label>
+                                <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="default-datepicker-3">Enrollment Deadline</label>
                                 <div class="relative">
                                     <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                                         <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                                             <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                                         </svg>
                                     </div>
-                                    <input id="datepicker-autohide-3" datepicker datepicker-autohide type="text" name="enrollment-deadline" value="<?php echo date('m/d/Y', strtotime($results[0]['enrollment_deadline'])); ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date" required>
+                                    <input id="default-datepicker-3" type="text" name="enrollment-deadline" value="<?php echo date('m/d/Y', strtotime($results[0]['enrollment_deadline'])); ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" autocomplete="off" placeholder="Select date" required>
                                 </div>
                             </div>
                             <div class="mt-4 pl-5">
@@ -509,6 +511,8 @@ function selectedCategory($catename)
     <script src="./../lib/flowbite.min.js" type="text/javascript"></script>
     <!-- jQuery -->
     <script src="./../lib/jquery-3.7.1.min.js" type="text/javascript"></script>
+    <!-- jQuery Ui css1 js1-->
+    <script src="./../lib/jquery-ui-1.14.0/jquery-ui.min.js" type="text/javascript"></script>
     <!-- chartjs -->
     <script src="./../lib/chart.js" type="text/javascript"></script>
     <!-- datatable -->
@@ -519,6 +523,12 @@ function selectedCategory($catename)
     <script src="./../js/darkandlight.js" type="text/javascript"></script>
     <!-- customjs -->
     <script type="text/javascript">
+        let startDate = document.querySelector('#default-datepicker-1').value;
+        let endDate = document.querySelector('#default-datepicker-2').value;
+
+        console.log(startDate);
+        console.log(endDate);
+
         let getdays = document.querySelectorAll('input[type=checkbox]');
         let classfee = document.querySelector('#classfee');
         let creditCoin = document.querySelector('#creditpoint');
@@ -562,6 +572,35 @@ function selectedCategory($catename)
         document.getElementById('modify-savechange').addEventListener('click', function() {
             document.getElementById('binaryDayInput').value = binaryDay;
         });
+
+        $(document).ready(function() {
+            $('#default-datepicker-1').datepicker({
+                theme: 'dark',
+                numberOfMonths: 1,
+                showAnim: "slideDown",
+                dateFormat: "dd-mm-yy",
+                minDate: 0, // Prevent selecting past dates
+                onClose: function(selectdate) {
+                    $('#default-datepicker-2').datepicker("option", "minDate", selectdate);
+                    $('#default-datepicker-3').datepicker("option", "maxDate", selectdate);
+                }
+            });
+
+            $('#default-datepicker-2').datepicker({
+                numberOfMonths: 1,
+                showAnim: "slideDown",
+                dateFormat: "dd-mm-yy",
+                minDate: 0, // Prevent selecting past dates
+            });
+
+            $('#default-datepicker-3').datepicker({
+                numberOfMonths: 1,
+                showAnim: "slideDown",
+                dateFormat: "dd-mm-yy",
+                minDate: 0, // Prevent selecting past dates
+            });
+        });
+
     </script>
 
 </html>

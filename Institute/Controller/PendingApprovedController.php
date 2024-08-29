@@ -4,6 +4,8 @@ ini_set('display_errors', '1');
 require_once  __DIR__ . '/../Model/EnrollmentPending.php';
 require_once  __DIR__ . '/../Controller/common/mailSender.php';
 require_once  __DIR__ . '/../Model/MInstitutes.php';
+require_once  __DIR__ . '/../Model/MClassApproveAndReject.php';
+require_once  __DIR__ . '/../Model/DataTransfer.php';
 
 header("Access-Control-Allow-Origin:*");		// any website (*)
 header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE,OPTIONS");		// methods
@@ -41,13 +43,13 @@ if (isset($_POST['datas']) && !empty($_POST['datas'])) {
     $datas = $_POST['datas'];
     $dataobj = json_decode($datas);
 
-    if (isset($dataobj->student_id, $dataobj->student_email, $dataobj->meetingID, 
+    if (isset($dataobj->user_id, $dataobj->user_email, $dataobj->meetingID, 
         $dataobj->meetingPassword, $dataobj->classTitle, 
         $dataobj->startDate, $dataobj->endDate, $dataobj->days, 
-        $dataobj->start_time, $dataobj->end_time)) {
+        $dataobj->start_time, $dataobj->end_time, $dataobj->enrolled_class_id)) {
 
-        $student_id = $dataobj->student_id;
-        $student_email = $dataobj->student_email;
+        $user_id = $dataobj->user_id;
+        $user_email = $dataobj->user_email;
         $days = binaryDaysToFormatted($dataobj->days); // Updated line
         $start_time = (new DateTime($dataobj->start_time))->format('h:i A');
         $end_time = (new DateTime($dataobj->end_time))->format('h:i A');
@@ -56,15 +58,27 @@ if (isset($_POST['datas']) && !empty($_POST['datas'])) {
         $classTitle = $dataobj->classTitle;
         $startDate = (new DateTime($dataobj->startDate))->format('Y-m-d');
         $endDate = (new DateTime($dataobj->endDate))->format('Y-m-d');
+        $enrolled_class_id = $dataobj->enrolled_class_id;
 
         $obj = new EnrollmentPending(); // Fixed typo in class name
-        $success = $obj->updatePendingStatusForApprove($student_id);
+        $classApproveAndReject = new MClassApproveAndReject();
+        $dataTransfer = new DataTransfer();
+        $isAlreadyStudent = $classApproveAndReject->isAlreadyStudent($user_email);
+        if ($isAlreadyStudent) {
+            $student_id = $classApproveAndReject->getStudentByEmail($user_email);
+        } else {
+            $dataTransfer->createStudent($dataTransfer->getUserDataWithId($user_id));
+            $student_id = $classApproveAndReject->getStudentByEmail($user_email);
+        }
+        $addEnrollTable = $dataTransfer->createEnrollTable($student_id['id'], $enrolled_class_id);
+        $success = $obj->updatePendingStatusForApprove($user_id,$enrolled_class_id);
+
+        // echo json_encode(array("isStudent" => $isAlreadyStudent, "student_id" => $student_id, "enrolled_class_id" => $enrolled_class_id, "addEnrollTable" => $addEnrollTable));
 
         $datas = [
             "success" => $success,  
             "message" => "Approved Enrollment",
         ];
-
 
         if ($success) {
             $bodyText = "
@@ -84,12 +98,11 @@ if (isset($_POST['datas']) && !empty($_POST['datas'])) {
                 Best regards, <br/>
                 $instituteName
             ";
-
             $obj = new SendMail();
-            $obj->sendMail($student_email, "Approved Enrollment", $bodyText);   
+            $obj->sendMail($user_email, "Approved Enrollment", $bodyText);   
             echo json_encode($datas);
         } else {
-            echo json_encode($datas); // Use json_encode for failure response
+            echo json_encode(array("success" => false, "message" => "Failed to update enrollment status")); // Use json_encode for failure response
         }
     } else {
         echo json_encode([

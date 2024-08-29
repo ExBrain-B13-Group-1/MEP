@@ -293,7 +293,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                     <table class="w-full text-base text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-400 dark:bg-gray-700 duration-500 dark:text-gray-400">
                             <th scope="col" class="p-4 whitespace-nowrap">
-                                Student ID
+                                NO
                             </th>
                             <th scope="col" class="px-6 py-3">
                                 FULLNAME

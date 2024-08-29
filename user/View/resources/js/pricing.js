@@ -141,8 +141,8 @@ $(document).ready(function () {
       payId = selectedOption.split(":")[1];
     }
     // Log the results for testing
-    console.log("Bank ID:", bankId);
-    console.log("Pay ID:", payId);
+    // console.log("Bank ID:", bankId);
+    // console.log("Pay ID:", payId);
 
     // Create a FormData object
     let formData = new FormData();

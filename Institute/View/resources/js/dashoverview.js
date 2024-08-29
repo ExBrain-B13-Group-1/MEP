@@ -8,6 +8,10 @@ const popularClassURL = `http://localhost/MEP/Institute/Controller/PopularClassD
 
 const topFiveInstructorURL = `http://localhost/MEP/Institute/Controller/TopFiveInstructorDashboardController.php`;
 
+let trendingChartInstance;
+let stuDemoChartInstance;
+let monthlyRevenueInstance;
+
 $(document).ready(function () {
     fetchDataAndRenderCharts();
 
@@ -119,7 +123,7 @@ $(document).ready(function () {
         for (let i = 0; i < jsonDataInstructor.length; i++) {
             const rowData = jsonDataInstructor[i];
             let count = i+1;
-            console.log(rowData);
+            // console.log(rowData);
             const row= `<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                             <td class="w-4 p-4">
                                 ${count}.
@@ -158,10 +162,8 @@ function fetchDataAndRenderCharts() {
         url: indicatorURL,
         method: 'GET',
         success: function (response) {
-            
             const datas = JSON.parse(response);
-            console.log(datas);
-            // console.log(data['studentDemographics']);
+            // console.log(datas['studentDemographics']);
             let trendingData = new Array(12).fill(0);
             datas['monthlyEnrollments'].forEach(entry => {
                 const monthIndex = entry['month'] - 1;
@@ -198,7 +200,7 @@ function updateChartColors() {
 
 // Monthly Trending Chart
 function renderTrendingChart(data) {
-    const trendingChartInstance = new Chart(trendingChart, {
+    trendingChartInstance = new Chart(trendingChart, {
         type: "bar",
         data: {
             labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -256,7 +258,7 @@ function renderStuDemoChart(data) {
     // console.log(agegroup);
     // console.log(percentage);
 
-    const stuDemoChartInstance = new Chart(stuDemoChart, {
+    stuDemoChartInstance = new Chart(stuDemoChart, {
         type: "pie",
         data: {
             labels: agegroup,
@@ -299,7 +301,7 @@ function renderStuDemoChart(data) {
 
 
 // Monthly Revenue
-const monthlyRevenueInstance = new Chart(monthlyRevenue, {
+monthlyRevenueInstance = new Chart(monthlyRevenue, {
     type: "bar",
     data: {
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -321,7 +323,7 @@ const monthlyRevenueInstance = new Chart(monthlyRevenue, {
             },
             title: {
                 display: true,
-                text: 'Monthly Enrollment Trends',
+                text: 'Monthly Income Trends',
                 color: localStorage.getItem("labelColor")
             }
         },

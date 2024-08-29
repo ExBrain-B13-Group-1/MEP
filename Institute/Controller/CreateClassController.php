@@ -30,9 +30,9 @@ if (isset($_POST["submit"]) && isset($_COOKIE['institute_id'])) {
         mkdir($uploadDir, 0777);
     }
 
-    if (is_dir($uploadDir)) {
-        chmod($uploadDir, 0777);
-    }
+    // if (is_dir($uploadDir)) {
+    //     chmod($uploadDir, 0777);
+    // }
 
     $name = $_FILES['image']['name'];
     $filename = rand(1000, 100000) . "-" . $name;
@@ -110,7 +110,7 @@ if (isset($_POST["submit"]) && isset($_COOKIE['institute_id'])) {
             $coinObj = new UpdateRemainingCoin();
             $isUpdateCoin = $coinObj->updateRemainingCoin($updateCoinAmt, $instututeID);
             if ($success && $isUpdateCoin) {
-                $classid = $classobj->recentCreatedClassId($class_id);
+                $classid = $classobj->recentCreatedClassId($class_id,$instututeID);
                 $redirectUrl = "../Controller/ViewDetailsClassController.php?classid=$classid";
                 header("Location: $redirectUrl");
                 exit();

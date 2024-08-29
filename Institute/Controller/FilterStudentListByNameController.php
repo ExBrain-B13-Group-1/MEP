@@ -7,7 +7,7 @@ if(isset($_COOKIE['institute_id'])){
     $name = $_POST['studentname'];
     $id = $_COOKIE['institute_id'];
     $obj = new Students();
-    $students = $obj->getFinishedClassStudentListByName($id,$name);
+    $students = $obj->getStudentsFilterByName($id,$name);
     echo json_encode($students);
 }else{
     echo "<script>alert('Your session is timed out');</script>";

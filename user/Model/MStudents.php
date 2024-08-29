@@ -29,96 +29,83 @@ class MStudent
         }
     }
 
-    /**
-     * (Get Student Enrolled Classes with their respective instructor, institute)
-     */
-    public function getDetailsEnrolled($id)
+    public function getStudentNameAndEmail($id)
     {
         try {
             $db = new DBConnection();
+            //get connection
             $pdo = $db->connection();
-            
-            // Initialize an array to store the results
-            $details = [];
-    
-            // Step 1: Get all class IDs related to the student
-            $sql1 = $pdo->prepare("
-                SELECT class_id
-                FROM t_student_classes_enroll
-                WHERE student_id = :id
-            ");
-            $sql1->bindValue(':id', $id, PDO::PARAM_INT);
-            $sql1->execute();
-            
-            // Fetch and debug class IDs
-            $class_ids = $sql1->fetchAll(PDO::FETCH_COLUMN);
-    
-            // Check if there are any class IDs
-            if (!empty($class_ids)) {
-                foreach ($class_ids as $class_id) {
-                    // Step 2: Get class details using class_id
-                    $sql2 = $pdo->prepare("
-                        SELECT c_title, instructor_id, institute_id, start_date, end_date
-                        FROM m_classes
-                        WHERE id = :class_id
-                    ");
-                    $sql2->bindValue(':class_id', $class_id, PDO::PARAM_INT);
-                    try {
-                        $sql2->execute();
-                    } catch (PDOException $e) {
-                        echo "SQL Error: " . htmlspecialchars($e->getMessage()) . "<br>";
-                    }
-                    
-                    // Fetch and debug class details
-                    $class = $sql2->fetch(PDO::FETCH_ASSOC);
-    
-                    if ($class) {
-                        // Step 3: Get instructor details
-                        $stmt = $pdo->prepare("
-                            SELECT full_name, profile_picture
-                            FROM m_instructors
-                            WHERE id = :instructor_id
-                        ");
-                        $stmt->bindValue(':instructor_id', $class['instructor_id'], PDO::PARAM_INT);
-                        $stmt->execute();
-                        
-                        // Fetch and debug instructor details
-                        $instructor = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-                        // Step 4: Get institute details
-                        $stmt = $pdo->prepare("
-                            SELECT name
-                            FROM m_institutes
-                            WHERE id = :institute_id
-                        ");
-                        $stmt->bindValue(':institute_id', $class['institute_id'], PDO::PARAM_INT);
-                        $stmt->execute();
-                        
-                        // Fetch and debug institute details
-                        $institute = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-                        // Add the details to the array
-                        $details[] = [
-                            'class_name' => $class['c_title'] ?? 'N/A',
-                            'start_date' => $class['start_date'] ?? 'N/A',
-                            'end_date' => $class['end_date'] ?? 'N/A',
-                            'instructor_name' => $instructor['full_name'] ?? 'N/A',
-                            'instructor_profile' => $instructor['profile_picture'] ?? 'N/A',
-                            'institute_name' => $institute['name'] ?? 'N/A'
-                        ];
-                    }
-                }
-            }
-            // Return the details array
-            return $details;
-            
+            // query prepare
+            $sql = $pdo->prepare(
+                "SELECT mu.name,mu.email
+                FROM m_user AS mu
+                WHERE mu.id = :id"
+            );
+
+            $sql->bindValue(":id", $id);
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
         } catch (\Throwable $th) {
-            // Handle errors
-            echo "Unexpected Error Occurs! " . htmlspecialchars($th->getMessage());
-            return [];
+            // fail connection or query
+            echo "Unexpected Error Occurs! $th";
         }
     }
-    
-    
-    
+
+    public function getEnrollClassInfo($id)
+    {
+        try {
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT c.id,
+                    c.c_title,
+                    c.start_date,
+                    c.end_date,
+                    c.c_fee,
+                    c.credit_point,
+                    mit.name AS institute_name,
+                    mi.full_name AS instructor_name
+                FROM m_classes AS c
+                INNER JOIN c_status AS cs ON c.c_status_id = cs.id
+                INNER JOIN m_categories AS mc ON c.cate_id = mc.id
+                INNER JOIN m_instructors AS mi ON c.instructor_id = mi.id
+                INNER JOIN m_institutes AS mit ON c.institute_id = mit.id
+                WHERE c.id = :id AND c.del_flg = 0;"
+            );
+            $sql->bindValue(":id", $id);
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        } catch (\Throwable $th) {
+            // fail connections
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
+
+    public function getLatestStudentID($instituteID){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT s.student_id FROM m_students AS s 
+                WHERE s.institute_id = :id
+                ORDER BY s.student_id DESC LIMIT 1 ;"
+            );
+            $sql->bindValue(":id",$instituteID);
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            if($results){
+                return $results[0]['student_id'];
+            }else{
+                return "S1000";
+            }
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
 }

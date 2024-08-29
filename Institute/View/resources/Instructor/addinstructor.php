@@ -379,7 +379,7 @@ $cities = json_encode($cities);
 
                             <div class="mt-10 pl-5 pb-5">
                                 <div class="flex justify-between">
-                                    <a href="">
+                                    <a href="javascript:void(0);" onclick="window.history.back();">
                                         <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-base w-40 px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Cancel</button>
                                     </a>
                                     <a href="javascript:void(0);">

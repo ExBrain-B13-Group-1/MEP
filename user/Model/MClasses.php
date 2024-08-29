@@ -42,6 +42,7 @@ class MClasses
                 LEFT JOIN m_categories AS mc ON c.cate_id = mc.id
                 LEFT JOIN t_student_classes_enroll AS e ON c.id = e.class_id
                 WHERE c.c_status_id = 1 AND c.del_flg = 0
+                AND c.start_date >= NOW() 
                 GROUP BY c.id
                 ORDER BY enrollments_count DESC;"
             );
@@ -72,6 +73,7 @@ class MClasses
                 LEFT JOIN m_instructors AS mi ON c.instructor_id = mi.id
                 LEFT JOIN m_categories AS mc ON c.cate_id = mc.id
                 WHERE c.c_status_id = 1 AND c.del_flg = 0
+                AND c.start_date >= NOW()
                 ORDER BY c.create_date DESC;"
             );
             $sql->execute();
@@ -103,6 +105,7 @@ class MClasses
                 LEFT JOIN m_categories AS mc ON c.cate_id = mc.id
                 LEFT JOIN t_student_classes_enroll AS e ON c.id = e.class_id
                 WHERE c.c_status_id = 1 AND c.del_flg = 0
+                AND c.start_date >= NOW()
                 AND e.create_date >= DATE_SUB(NOW(), INTERVAL 15 DAY)
                 AND c.create_date >= DATE_SUB(NOW(), INTERVAL 30 DAY)  
                 GROUP BY c.id
@@ -141,6 +144,7 @@ class MClasses
                 mi.experience AS instructor_exp,
                 mi.address AS instructor_address,
                 mi.email AS instructor_email,
+                mi.phone AS instructor_phone,
                 mi.skills AS instructor_skills,
                 mi.linkedin AS instructor_linkedin,
                 mi.portfolio AS instructor_portfolio
@@ -178,7 +182,7 @@ class MClasses
                 LEFT JOIN m_categories AS mc ON c.cate_id = mc.id
                 LEFT JOIN m_instructors AS mi ON c.instructor_id = mi.id
                 LEFT JOIN m_institutes AS mit ON c.institute_id = mit.id
-                WHERE c.cate_id = :cate_id AND c.del_flg = 0"
+                WHERE c.cate_id = :cate_id AND c.del_flg = 0 AND c.start_date >= NOW()"
             );
             $sql->bindValue(":cate_id", $category);
             $sql->execute();
@@ -208,7 +212,7 @@ class MClasses
                 LEFT JOIN m_categories AS mc ON c.cate_id = mc.id
                 LEFT JOIN m_instructors AS mi ON c.instructor_id = mi.id
                 LEFT JOIN m_institutes AS mit ON c.institute_id = mit.id
-                WHERE c.c_title LIKE :title AND c.del_flg = 0"
+                WHERE c.c_title LIKE :title AND c.del_flg = 0 AND c.start_date >= NOW()"
             );
             $sql->bindValue(":title", "%" . $title . "%");
             $sql->execute();
@@ -239,7 +243,7 @@ class MClasses
                 LEFT JOIN m_instructors AS mi ON c.instructor_id = mi.id
                 LEFT JOIN m_categories AS mc ON c.cate_id = mc.id
                 LEFT JOIN t_student_classes_enroll AS e ON c.id = e.class_id
-                WHERE c.c_status_id = 1 AND c.del_flg = 0
+                WHERE c.c_status_id = 1 AND c.del_flg = 0 AND c.start_date >= NOW()
                 GROUP BY c.id
                 ORDER BY enrollments_count DESC LIMIT 10"
             );
@@ -251,4 +255,5 @@ class MClasses
             echo "Unexpected Error Occurs! $th";
         }
     }
+
 }

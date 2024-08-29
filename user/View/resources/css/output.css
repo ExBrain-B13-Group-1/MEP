@@ -974,10 +974,6 @@ video {
   margin-bottom: 0.25rem;
 }
 
-.mb-1\.5 {
-  margin-bottom: 0.375rem;
-}
-
 .mb-10 {
   margin-bottom: 2.5rem;
 }
@@ -1138,8 +1134,8 @@ video {
   margin-top: 2rem;
 }
 
-.mt-\[11\.5rem\] {
-  margin-top: 11.5rem;
+.mt-\[16\.5rem\] {
+  margin-top: 16.5rem;
 }
 
 .mt-\[2px\] {
@@ -1410,6 +1406,10 @@ video {
   width: 100px;
 }
 
+.w-\[150px\] {
+  width: 150px;
+}
+
 .w-\[26rem\] {
   width: 26rem;
 }
@@ -1432,14 +1432,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-1\/4 {
-  width: 25%;
-}
-
-.w-\[150px\] {
-  width: 150px;
 }
 
 .max-w-4xl {
@@ -1468,6 +1460,10 @@ video {
 
 .flex-shrink-0 {
   flex-shrink: 0;
+}
+
+.grow {
+  flex-grow: 1;
 }
 
 .-translate-x-1\/2 {
@@ -2670,6 +2666,11 @@ video {
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
+.text-red-700 {
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity));
+}
+
 .text-red-800 {
   --tw-text-opacity: 1;
   color: rgb(153 27 27 / var(--tw-text-opacity));
@@ -2692,11 +2693,6 @@ video {
 .text-yellow-500 {
   --tw-text-opacity: 1;
   color: rgb(234 179 8 / var(--tw-text-opacity));
-}
-
-.text-yellow-600 {
-  --tw-text-opacity: 1;
-  color: rgb(202 138 4 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -2831,6 +2827,10 @@ video {
 
 .duration-75 {
   transition-duration: 75ms;
+}
+
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
 .ease-in-out {
@@ -3178,10 +3178,6 @@ html {
     bottom: 12rem;
   }
 
-  .md\:bottom-\[3px\] {
-    bottom: 3px;
-  }
-
   .md\:left-10 {
     left: 2.5rem;
   }
@@ -3497,10 +3493,6 @@ html {
     height: 6rem;
   }
 
-  .md\:h-28 {
-    height: 7rem;
-  }
-
   .md\:h-3 {
     height: 0.75rem;
   }
@@ -3547,6 +3539,10 @@ html {
 
   .md\:h-auto {
     height: auto;
+  }
+
+  .md\:w-1\/4 {
+    width: 25%;
   }
 
   .md\:w-10 {
@@ -3617,6 +3613,10 @@ html {
     width: 200px;
   }
 
+  .md\:w-\[300px\] {
+    width: 300px;
+  }
+
   .md\:w-\[450px\] {
     width: 450px;
   }
@@ -3635,14 +3635,6 @@ html {
 
   .md\:w-auto {
     width: auto;
-  }
-
-  .md\:w-1\/4 {
-    width: 25%;
-  }
-
-  .md\:w-\[300px\] {
-    width: 300px;
   }
 
   .md\:-translate-x-20 {

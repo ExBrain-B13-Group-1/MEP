@@ -37,7 +37,8 @@ $(document).ready(function () {
   // Function for toggling fees-type (if MMK, appear payment qr) (if not, hide)
   function togglePaymentPlan() {
     const selectedFee = $("#fees-type").val();
-    if (selectedFee === "500") {
+    // console.log(selectedFee);
+    if (selectedFee.includes("Coins")) {
       $("#payment-plan-container, #attachment-receipt").css({
         display: "none",
       });
