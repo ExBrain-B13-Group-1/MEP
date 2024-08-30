@@ -9,7 +9,11 @@ if(isset($_COOKIE['institute_id'])){
     $certifiedStudents = $obj->getNoCertificateStudents($id);
     echo json_encode($certifiedStudents);
 }else{
-    echo "<script>alert('Your session is timed out');</script>";
+    echo "
+    <script>
+        alert('Your session is timed out');
+        window.location.href = 'http://localhost/MEP/Institute/Controller/LogoutController.php';        
+    </script>";
 }
 
 ?>

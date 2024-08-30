@@ -82,7 +82,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "<script>alert('Fail Update');</script>";
         }
     } else {
-        echo "<script>alert('Your session is timed out');</script>";
+        echo "
+            <script>
+                alert('Your session is timed out');
+                window.location.href = 'http://localhost/MEP/Institute/Controller/LogoutController.php';        
+            </script>";
     }
 } else {
     echo json_encode([

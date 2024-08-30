@@ -9,7 +9,11 @@ if(isset($_COOKIE['institute_id'])){
     $datas = $obj->popularClassDashboard($id);
     echo json_encode($datas);
 }else{
-    echo "<script>alert('Your session is timed out');</script>";
+    echo "
+    <script>
+        alert('Your session is timed out');
+        window.location.href = 'http://localhost/MEP/Institute/Controller/LogoutController.php';        
+    </script>";
 }
 
 ?>
