@@ -547,7 +547,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
       </div>
       <div class="grid grid-cols-8 gap-4">
          <div class="col-span-4 grid grid-cols-3 gap-4">
-            <div class="bg-white rounded-lg px-5 py-5 dark:bg-gray-600 duration-500 flex items-center">
+            <div class="bg-white rounded-lg px-5 py-2 dark:bg-gray-600 duration-500 flex items-center">
                <div class="w-full">
                   <p class="text-xl text-center mb-3 dark:text-white opacity-50">Cash Income</p>
                   <div class="flex justify-end">

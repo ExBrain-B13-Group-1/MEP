@@ -30,6 +30,28 @@ class UpdateRemainingCoin{
         }
     }
 
+
+    public function getCurrentCoin($instituteId){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT mic.remain_amount
+                    FROM m_institute_coins AS mic 
+                    WHERE mic.institute_id = :id"
+            );
+            $sql->bindValue(":id",$instituteId);
+            $sql->execute();
+            $result = $sql->fetch(PDO::FETCH_ASSOC); // Fetch the result
+            return $result['remain_amount'];
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+            return false;
+        }
+    }
+
 }
 
 

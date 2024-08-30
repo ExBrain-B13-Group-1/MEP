@@ -98,7 +98,7 @@ function selectedCategory($catename)
                                             <path d="M8.702 5.222a1.332 1.332 0 0 0-1.258-.889H6.412a1.19 1.19 0 0 0-.254 2.353l1.571.344a1.334 1.334 0 0 1-.285 2.637h-.888a1.334 1.334 0 0 1-1.258-.89M7 4.333V3m0 8V9.666" />
                                         </g>
                                     </svg>
-                                    <span class="select-none"><?= abs($institute['remaining_coin']) ?></span>
+                                    <span id="update-coin" class="select-none"><?= abs($institute['remaining_coin']) ?></span>
                                 </div>
                             </div>
                             <div class="flex items-center ml-6 text-2xl cursor-pointer dark:text-white">
@@ -560,24 +560,287 @@ function selectedCategory($catename)
             });
         });
 
-        // function alertFunction() {
-        //     Swal.fire({
-        //         title: 'Insufficient coin',
-        //         text: 'You have insufficient coin to create this class',
-        //         icon: 'error',
-        //         showCancelButton: true,
-        //         confirmButtonText: 'Buy Coin',
-        //         cancelButtonText: 'Cancel'
-        //     }).then((result) => {
-        //         if (result.isConfirmed) {
-        //             window.location.href = '../Controller/BuyCoinController.php';
-        //         }
-        //         if (result.isDismissed) {
-        //             window.location.href = 'http://localhost/MEP/Institute/View/resources/Dashboard/dashoverview.phps'; // Updated to redirect to dashboard
-        //         }
-        //     });
-        // }
+        function alertFunction() {
+            Swal.fire({
+                title: 'Insufficient coin',
+                text: 'You have insufficient coin to create this class',
+                icon: 'error',
+                showCancelButton: true,
+                confirmButtonText: 'Buy Coin',
+                cancelButtonText: 'Cancel',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+                    $.ajax({
+                        url: 'http://localhost/MEP/Institute/Controller/PricingForInstituteController.php',
+                        method: 'GET',
+                        success: function(response) {
+                            let dataobj = JSON.parse(response);
+                            let pricingdata = dataobj['pricingdata'];
+                            let role = dataobj['role'][0]['role'];
+                            let instituteID = dataobj['institute_id'];
+                            let coinAmt = dataobj['coin_amt'];
+                            console.log(dataobj);
+                            Swal.fire({
+                                title: 'Pricing Plans',
+                                html: `
+                            <div class="pricing-shows md:mx-32 md:mt-20 mt-12 md:pb-16 pb-8 relative h-full overflow-hidden">
+                            <!-- Institute Pricing -->
+                                <div class="flex w-full py-[50px]">
+                                    <div class="flex md:flex md:justify-center md:items-center md:gap-11">
+                                        <!-- pricing card 1 -->
+                                        <div class="swiper-slide bg-center bg-cover w-[300px] md:w-[450px] h-auto md:h-auto">
+                                            <div class="pricing-box w-full h-full">
+                                                <div class="w-full md:h-[60vh] h-[50vh] rounded-xl border-2 border-gray-300 border-t-0 shadow-lg relative swiper-slide">
+                                                    <div class="flex justify-center items-center md:mt-8 mt-4 absolute md:-top-24 -top-14 left-1/2 -translate-x-1/2">
+                                                        <div class="md:w-80 md:h-24 w-60 h-20 rounded-xl bg-indigo-800 flex flex-col justify-center items-center shadow-lg">
+                                                            <p class="text-gray-400 md:text-base text-sm">Business</p>
+                                                            <h1 class="text-white font-semibold md:text-2xl text-xl">${Math.floor(pricingdata[0]['amount']).toLocaleString()} MMK</h1>
+                                                            <small class="text-gray-200 text-xs">Monthly</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex justify-start md:px-16 md:mt-3 md:pt-14 pt-14 px-10">
+                                                        <ul class="space-y-4 text-left text-gray-800 flex flex-col gap-2">
+                                                            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                                                </svg>
+                                                                <span>Receive 100 point each month</span>
+                                                            </li>
+                                                            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                                                </svg>
+                                                                <span>10 Coupon Code ( 10% - 30% )</span>
+                                                            </li>
+                                                            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                                                </svg>
+                                                                <span>Get one slot advertise</span>
+                                                            </li>
+                                                            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                                                </svg>
+                                                                <span>Get two event</span>
+                                                            </li>
+                                                            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                                                </svg>
+                                                                <span>SEO ( 1 - 20 )</span>
+                                                            </li>
+                                                            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                                                </svg>
+                                                                <span>5 Classes</span>
+                                                            </li>
+                                                            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                                                </svg>
+                                                                <span>Support Service</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
+                                                        <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2" ${role === "Business" ? "disabled" : ""}>${role === "Business" ? "In Use" : "Purchase Plan"}</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- pricing card 2 -->
+                                        <div class="swiper-slide bg-center bg-cover w-[300px] md:w-[450px] h-auto md:h-auto">
+                                            <div class="pricing-box w-full h-full">
+                                                <div class="w-full md:h-[60vh] h-[50vh] rounded-xl border-2 border-gray-300 border-t-0 shadow-lg relative swiper-slide">
+                                                    <div class="flex justify-center items-center md:mt-8 mt-4 absolute md:-top-24 -top-14 left-1/2 -translate-x-1/2">
+                                                        <div class="md:w-80 md:h-24 w-60 h-20 rounded-xl bg-indigo-800 flex flex-col justify-center items-center shadow-lg">
+                                                            <p class="text-gray-400 md:text-base text-sm">Enterprise</p>
+                                                            <h1 class="text-white font-semibold md:text-2xl text-xl">${Math.floor(pricingdata[1]['amount']).toLocaleString()} MMK</h1>
+                                                            <small class="text-gray-200 text-xs">Yearly</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex justify-start md:px-16 md:mt-3 md:pt-14 pt-14 px-10">
+                                                        <ul class="space-y-4 text-left text-gray-800 flex flex-col gap-2">
+                                                            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                                                </svg>
+                                                                <span>Receive 5000 point each month</span>
+                                                            </li>
+                                                            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                                                </svg>
+                                                                <span>Unlimited Coupon Code ( 30% - 50% )</span>
+                                                            </li>
+                                                            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                                                </svg>
+                                                                <span>Get Three slot advertise in one month</span>
+                                                            </li>
+                                                            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                                                </svg>
+                                                                <span>Unlimited event</span>
+                                                            </li>
+                                                            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                                                </svg>
+                                                                <span>SEO ( 1 - 10)</span>
+                                                            </li>
+                                                            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                                                </svg>
+                                                                <span>Unlimited Class</span>
+                                                            </li>
+                                                            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                                                </svg>
+                                                                <span>Support Service</span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
+                                                        <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2" ${role === "Enterprise" ? "disabled" : ""}>${role === "Enterprise" ? "In Use" : "Purchase Plan"}</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- pricing card 3 -->
+                                        <div class="swiper-slide bg-center bg-cover w-[300px] md:w-[450px] h-auto md:h-auto">
+                                            <div class="pricing-box w-full h-full">
+                                                <div class="w-full md:h-[60vh] h-[50vh] rounded-xl border-2 border-gray-300 border-t-0 shadow-lg relative swiper-slide">
+                                                    <div class="flex justify-center items-center md:mt-8 mt-4 absolute md:-top-24 -top-14 left-1/2 -translate-x-1/2">
+                                                        <div class="md:w-80 md:h-24 w-60 h-20 rounded-xl bg-indigo-800 flex flex-col justify-center items-center shadow-lg">
+                                                            <p class="text-gray-400 md:text-base text-sm">500 Coins</p>
+                                                            <h1 class="text-white font-semibold md:text-2xl text-xl">${Math.floor(pricingdata[2]['amount']).toLocaleString()} MMK</h1>
+                                                            <small class="text-gray-200 text-xs">Unlimited buy</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="flex justify-start md:px-16 md:mt-3 md:pt-14 pt-14 px-10">
+                                                        <ul class="space-y-4 text-left text-gray-800 flex flex-col gap-2">
+                                                            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                                                </svg>
+                                                                <span>Can buy unlimited</span>
+                                                            </li>
+                                                            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                                                </svg>
+                                                                <span>Events</span>
+                                                            </li>
+                                                            <li class="flex items-center space-x-3 rtl:space-x-reverse">
+                                                                <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-800 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                                                                </svg>
+                                                                <span>Class </span>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="flex justify-center absolute md:bottom-4 bottom-2 left-1/2 -translate-x-1/2">
+                                                        <button type="button" class="text-white md:w-80 w-60 bg-indigo-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-base md:text-xl px-10 md:px-5 py-3 mb-2" onclick="buyCoin(${instituteID},${coinAmt})">Buy Coin</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `,
+                                showConfirmButton: false,
+                                customClass: {
+                                    popup: 'swal-wide'
+                                }
+                            });
+
+                            // Add custom CSS for the full-screen effect
+                            const style = document.createElement('style');
+                            style.innerHTML = `
+                        .swal-wide {
+                            width: 100% !important;
+                            height: 100% !important;
+                            max-width: none !important;
+                            padding: 0 !important;
+                        }
+                        .swal2-popup {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    `;
+                            document.head.appendChild(style);
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            // handle error
+                        }
+                    });
+                }
+                if (result.isDismissed) {
+                    window.location.href = 'http://localhost/MEP/Institute/View/resources/Dashboard/dashoverview.php';
+                }
+            });
+        }
+
+        alertFunction();
+
+        function buyCoin(instituteID,coinAmt) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "Do you want to buy coins?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, buy it!',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: 'http://localhost/MEP/Institute/Controller/BuyCoinController.php',
+                        method: 'POST',
+                        data: {
+                            "institute_id": instituteID,
+                            "fix_coin": coinAmt
+                        },
+                        success: function(response) {
+                            let dataobj = JSON.parse(response);
+                            console.log(dataobj);
+                            if (dataobj.success) {
+                                $('#update-coin').html(dataobj['update_coin']);
+                                Swal.fire(
+                                    'Purchased!',
+                                    'Your coins have been purchased.',
+                                    'success'
+                                ).then(() => {
+                                    window.location.href = 'http://localhost/MEP/Institute/View/resources/Class/createclass.php';
+                                });
+                            }
+                        },
+                        error: function() {
+                            Swal.fire(
+                                'Error!',
+                                'There was an error processing your request.',
+                                'error'
+                            );
+                        }
+                    });
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    window.location.href = 'http://localhost/MEP/Institute/View/resources/Dashboard/dashoverview.php';
+                }
+            });
+        }
     </script>
 
 </html>
-

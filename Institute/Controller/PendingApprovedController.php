@@ -93,7 +93,7 @@ if (isset($_POST['datas']) && !empty($_POST['datas'])) {
                 Start Time: $start_time <br/>
                 End Time: $end_time <br/><br/> 
                 Start Date: $startDate <br/>
-                End Date: $endDate <br/><br/> 
+                End Date: $endDate <br/><br/>
 
                 Best regards, <br/>
                 $instituteName

@@ -37,7 +37,6 @@ class MClasses{
         }
     }
 
-
     public function getAllClassesBySearchTitle($id, $title) {
         try {
             $dbconn = new DBConnection();
@@ -67,7 +66,6 @@ class MClasses{
             echo "Unexpected Error Occurs! $th";
         }
     }
-    
 
     /**
      * 

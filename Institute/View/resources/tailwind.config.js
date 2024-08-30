@@ -13,6 +13,7 @@ module.exports = {
     "./js/**/*.{html,js,php}",
     "./Class/**/*.{html,js,php}",
     "./History/**/*.{html,js,php}",
+    "./common/**/*.{html,js,php}",
     "./node_modules/flowbite/**/*.js"
   ],
   theme: {
