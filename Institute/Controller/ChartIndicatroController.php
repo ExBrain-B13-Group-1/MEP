@@ -10,7 +10,8 @@ if(isset($_COOKIE['institute_id'])){
     $id = $_COOKIE['institute_id'];
     $datas = [
         'monthlyEnrollments' => $obj->getMonthlyTrending($id),
-        'studentDemographics' => $obj->getStudentDemographics($id)
+        'studentDemographics' => $obj->getStudentDemographics($id),
+        'monthlyIncome' => $obj->getMonthlyIncome($id)
     ];
 
     if($datas){

@@ -1,4 +1,5 @@
 
+
 // filter by checkbox categories
 let finishedClassStudentListURL = `http://localhost/MEP/Institute/Controller/FinishedClassStudentListController.php`;
 let updateCertificationStatusURL = `http://localhost/MEP/Institute/Controller/UpdateCertificationStatusController.php`;
@@ -25,7 +26,7 @@ $(document).ready(function () {
     let dynurl = finishedClassStudentListURL;
     let inputs = $('input[type=checkbox]');
     let rowsPerPage = 8;
-    let jsonData = [];
+    let jsonData = [];  
     let currentPage = 1;
     let count = 1;
 
@@ -38,7 +39,11 @@ $(document).ready(function () {
                 classid: classId
             },
             success: function (data) {
-                jsonData = data;
+                if (dynurl === finishedClassStudentListURL) {
+                    jsonData = data;
+                } else {
+                    jsonData = data; // Ensure jsonData is always updated
+                }
                 // console.log(data);
                 displayData();
                 setupPagination();

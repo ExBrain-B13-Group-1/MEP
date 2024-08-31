@@ -48,7 +48,7 @@ $(document).ready(function () {
 
     for (let i = startIndex; i < endIndex; i++) {
       const rowData = jsonData[i];
-      console.log(rowData);
+      // console.log(rowData);
       const row = `
                 <div class="flex justify-between border-b-2 py-5 cursor-pointer" data-id="${rowData.id}" onclick="window.location.href='viewdetailsclass.php?classid=${rowData.id}'">
                   <div class="flex justify-between items-start space-x-4 ">
@@ -164,7 +164,6 @@ $(document).ready(function () {
     } else {
       currentPage = parseInt(page);
     }
-
     displayData();
     setupPagination(); // Re-render pagination with updated currentPage
   }
@@ -178,6 +177,7 @@ $(document).ready(function () {
     let title = $('#search-input').val();
     $('#category-select option').prop('selected', false);
     $('#category-select option[value="default"]').prop('selected', true);
+    currentPage = 1;
     console.log(title);
     $.ajax({
       url: searchByClassTitle,
@@ -200,7 +200,9 @@ $(document).ready(function () {
 
   // search by category
   $('#category-select').on('change', () => {
+    $('#search-input').val('');
     let category = $('#category-select').val();
+    currentPage = 1;
     $.ajax({
       url: searchWithCategory,
       method: 'POST',

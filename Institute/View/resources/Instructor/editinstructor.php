@@ -102,12 +102,16 @@ $skills = json_encode($results[0]['skills']);
                         <div class="flex items-center">
                             <div class="grid grid-cols-3 gap-8 mx-14">
                                 <ion-icon name="sunny-outline" class="w-6 h-6 cursor-pointer dark:text-white modechanges"></ion-icon>
-                                <svg class="w-6 h-6 cursor-pointer dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M427.68 351.43C402 320 383.87 304 383.87 217.35C383.87 138 343.35 109.73 310 96c-4.43-1.82-8.6-6-9.95-10.55C294.2 65.54 277.8 48 256 48s-38.21 17.55-44 37.47c-1.35 4.6-5.52 8.71-9.95 10.53c-33.39 13.75-73.87 41.92-73.87 121.35C128.13 304 110 320 84.32 351.43C73.68 364.45 83 384 101.61 384h308.88c18.51 0 27.77-19.61 17.19-32.57M320 384v16a64 64 0 0 1-128 0v-16" />
-                                </svg>
-                                <svg class="w-6 h-6 cursor-pointer dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path fill="currentColor" fill-rule="evenodd" d="M14.208 4.83q.68.21 1.3.54l1.833-1.1a1 1 0 0 1 1.221.15l1.018 1.018a1 1 0 0 1 .15 1.221l-1.1 1.833q.33.62.54 1.3l2.073.519a1 1 0 0 1 .757.97v1.438a1 1 0 0 1-.757.97l-2.073.519q-.21.68-.54 1.3l1.1 1.833a1 1 0 0 1-.15 1.221l-1.018 1.018a1 1 0 0 1-1.221.15l-1.833-1.1q-.62.33-1.3.54l-.519 2.073a1 1 0 0 1-.97.757h-1.438a1 1 0 0 1-.97-.757l-.519-2.073a7.5 7.5 0 0 1-1.3-.54l-1.833 1.1a1 1 0 0 1-1.221-.15L4.42 18.562a1 1 0 0 1-.15-1.221l1.1-1.833a7.5 7.5 0 0 1-.54-1.3l-2.073-.519A1 1 0 0 1 2 12.72v-1.438a1 1 0 0 1 .757-.97l2.073-.519q.21-.68.54-1.3L4.27 6.66a1 1 0 0 1 .15-1.221L5.438 4.42a1 1 0 0 1 1.221-.15l1.833 1.1q.62-.33 1.3-.54l.519-2.073A1 1 0 0 1 11.28 2h1.438a1 1 0 0 1 .97.757zM12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8" />
-                                </svg>
+                                <a href="http://localhost/MEP/Institute/View/resources/Notification/notification.php">
+                                    <svg class="w-6 h-6 cursor-pointer dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M427.68 351.43C402 320 383.87 304 383.87 217.35C383.87 138 343.35 109.73 310 96c-4.43-1.82-8.6-6-9.95-10.55C294.2 65.54 277.8 48 256 48s-38.21 17.55-44 37.47c-1.35 4.6-5.52 8.71-9.95 10.53c-33.39 13.75-73.87 41.92-73.87 121.35C128.13 304 110 320 84.32 351.43C73.68 364.45 83 384 101.61 384h308.88c18.51 0 27.77-19.61 17.19-32.57M320 384v16a64 64 0 0 1-128 0v-16" />
+                                    </svg>
+                                </a>
+                                <a href="http://localhost/MEP/Institute/View/resources/Setting/setting.php">
+                                    <svg class="w-6 h-6 cursor-pointer dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" d="M14.208 4.83q.68.21 1.3.54l1.833-1.1a1 1 0 0 1 1.221.15l1.018 1.018a1 1 0 0 1 .15 1.221l-1.1 1.833q.33.62.54 1.3l2.073.519a1 1 0 0 1 .757.97v1.438a1 1 0 0 1-.757.97l-2.073.519q-.21.68-.54 1.3l1.1 1.833a1 1 0 0 1-.15 1.221l-1.018 1.018a1 1 0 0 1-1.221.15l-1.833-1.1q-.62.33-1.3.54l-.519 2.073a1 1 0 0 1-.97.757h-1.438a1 1 0 0 1-.97-.757l-.519-2.073a7.5 7.5 0 0 1-1.3-.54l-1.833 1.1a1 1 0 0 1-1.221-.15L4.42 18.562a1 1 0 0 1-.15-1.221l1.1-1.833a7.5 7.5 0 0 1-.54-1.3l-2.073-.519A1 1 0 0 1 2 12.72v-1.438a1 1 0 0 1 .757-.97l2.073-.519q.21-.68.54-1.3L4.27 6.66a1 1 0 0 1 .15-1.221L5.438 4.42a1 1 0 0 1 1.221-.15l1.833 1.1q.62-.33 1.3-.54l.519-2.073A1 1 0 0 1 11.28 2h1.438a1 1 0 0 1 .97.757zM12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8" />
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -141,7 +145,7 @@ $skills = json_encode($results[0]['skills']);
                                         <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guide</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                                        <a href="./../Setting/setting.php" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
                                     </li>
                                     <li>
                                         <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Help Center</a>
@@ -335,7 +339,7 @@ $skills = json_encode($results[0]['skills']);
                                 <div class="mt-4">
                                     <label for="fullname" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Full Name</label>
                                     <input type="text" id="fullname" name="fullname" value="<?= $results[0]['full_name'] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Full Name" required />
-                                    <input type="hidden" name="instructorid" value="<?=$results[0]['id']?>">
+                                    <input type="hidden" name="instructorid" value="<?= $results[0]['id'] ?>">
                                 </div>
                                 <div class="mt-4">
                                     <label for="professional" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Position (Professional)</label>
@@ -407,7 +411,7 @@ $skills = json_encode($results[0]['skills']);
                             <div class="pl-5">
                                 <label class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80" for="edit-profile">Instructor Profile Photo</label>
                                 <!-- Display the current image -->
-                                <img id="preview_image" src="<?=$baseUrlInstructor.$results[0]['profile_picture']?>" alt="Instructor Profile Photo" class="mb-2 w-40 object-cover rounded-lg">
+                                <img id="preview_image" src="<?= $baseUrlInstructor . $results[0]['profile_picture'] ?>" alt="Instructor Profile Photo" class="mb-2 w-40 object-cover rounded-lg">
                                 <!-- Input to upload a new image -->
                                 <!-- <input  aria-describedby="user_avatar_help" id="edit-profile" type="file" name="image" accept=".jpg, .jpeg" onchange="document.getElementById('preview_image').src = window.URL.createObjectURL(this.files[0]);document.getElementById('preview_image').classList.remove('hidden')" required /> -->
                                 <input type="file" name="image" id="preview_image" class="block w-full text-base text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" onchange="document.getElementById('preview_image').src = window.URL.createObjectURL(this.files[0]);document.getElementById('preview_image').classList.remove('hidden')" required />
@@ -415,24 +419,24 @@ $skills = json_encode($results[0]['skills']);
                             <div class="mt-4 pl-5">
                                 <label for="bio" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Bio</label>
                                 <textarea id="bio" rows="4" name="bio" class="resize-none block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write biography...." required>
-                                    <?=trim($results[0]['bio'])?>
+                                    <?= trim($results[0]['bio']) ?>
                                 </textarea>
                             </div>
                             <div class="mt-4 pl-5">
                                 <label for="education" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Education</label>
                                 <textarea id="education" rows="4" name="education" class="resize-none block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write education background...." required>
-                                    <?=trim($results[0]['education'])?>
+                                    <?= trim($results[0]['education']) ?>
                                 </textarea>
                             </div>
                             <div class="mt-4 pl-5">
-                                <label for="experience"  class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Experience</label>
+                                <label for="experience" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Experience</label>
                                 <textarea id="experience" rows="4" name="experience" class="resize-none block p-2.5 w-full text-base text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write experience...." required>
-                                    <?=trim($results[0]['experience'])?>
+                                    <?= trim($results[0]['experience']) ?>
                                 </textarea>
                             </div>
 
                             <div class="mt-4 pl-5">
-                            <label for="skills" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Skills</label>
+                                <label for="skills" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Skills</label>
                                 <div class="tags-input-container flex flex-wrap border border-gray-300 dark:border-gray-600 p-2 rounded" id="tags-input-container">
                                     <input type="text" id="tags-input" class="tags-input outline-none flex-grow bg-white dark:bg-gray-700 text-black dark:text-white border-0 focus:outline-none focus:ring-0" placeholder="Add a skill">
                                     <input type="hidden" name="skills" id="skills" />
@@ -441,12 +445,12 @@ $skills = json_encode($results[0]['skills']);
 
                             <div class="mt-4 pl-5">
                                 <label for="linkedin" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">LinkedIn</label>
-                                <input type="linkedin" id="address" name="linkedin" value="<?=$results[0]['linkedin']?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="https://linkedin/profile/johndoe123" required />
+                                <input type="linkedin" id="address" name="linkedin" value="<?= $results[0]['linkedin'] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="https://linkedin/profile/johndoe123" required />
                             </div>
 
                             <div class="mt-4 pl-5">
                                 <label for="Portfolio" class="block mb-2 text-base font-medium text-gray-900 dark:text-white opacity-80">Portfolio</label>
-                                <input type="text" id="Portfolio" name="portfolio" value="<?=$results[0]['portfolio']?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="https://example.com" required />
+                                <input type="text" id="Portfolio" name="portfolio" value="<?= $results[0]['portfolio'] ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="https://example.com" required />
                             </div>
 
                             <div class="mt-10 pl-5 pb-5">

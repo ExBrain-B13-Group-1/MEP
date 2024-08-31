@@ -64,12 +64,16 @@ $results = json_decode(urldecode($encodedResults), true);
                         <div class="flex items-center">
                             <div class="grid grid-cols-3 gap-8 mx-14">
                                 <ion-icon name="sunny-outline" class="w-6 h-6 cursor-pointer dark:text-white modechanges"></ion-icon>
-                                <svg class="w-6 h-6 cursor-pointer dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M427.68 351.43C402 320 383.87 304 383.87 217.35C383.87 138 343.35 109.73 310 96c-4.43-1.82-8.6-6-9.95-10.55C294.2 65.54 277.8 48 256 48s-38.21 17.55-44 37.47c-1.35 4.6-5.52 8.71-9.95 10.53c-33.39 13.75-73.87 41.92-73.87 121.35C128.13 304 110 320 84.32 351.43C73.68 364.45 83 384 101.61 384h308.88c18.51 0 27.77-19.61 17.19-32.57M320 384v16a64 64 0 0 1-128 0v-16" />
-                                </svg>
-                                <svg class="w-6 h-6 cursor-pointer dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path fill="currentColor" fill-rule="evenodd" d="M14.208 4.83q.68.21 1.3.54l1.833-1.1a1 1 0 0 1 1.221.15l1.018 1.018a1 1 0 0 1 .15 1.221l-1.1 1.833q.33.62.54 1.3l2.073.519a1 1 0 0 1 .757.97v1.438a1 1 0 0 1-.757.97l-2.073.519q-.21.68-.54 1.3l1.1 1.833a1 1 0 0 1-.15 1.221l-1.018 1.018a1 1 0 0 1-1.221.15l-1.833-1.1q-.62.33-1.3.54l-.519 2.073a1 1 0 0 1-.97.757h-1.438a1 1 0 0 1-.97-.757l-.519-2.073a7.5 7.5 0 0 1-1.3-.54l-1.833 1.1a1 1 0 0 1-1.221-.15L4.42 18.562a1 1 0 0 1-.15-1.221l1.1-1.833a7.5 7.5 0 0 1-.54-1.3l-2.073-.519A1 1 0 0 1 2 12.72v-1.438a1 1 0 0 1 .757-.97l2.073-.519q.21-.68.54-1.3L4.27 6.66a1 1 0 0 1 .15-1.221L5.438 4.42a1 1 0 0 1 1.221-.15l1.833 1.1q.62-.33 1.3-.54l.519-2.073A1 1 0 0 1 11.28 2h1.438a1 1 0 0 1 .97.757zM12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8" />
-                                </svg>
+                                <a href="http://localhost/MEP/Institute/View/resources/Notification/notification.php">
+                                    <svg class="w-6 h-6 cursor-pointer dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M427.68 351.43C402 320 383.87 304 383.87 217.35C383.87 138 343.35 109.73 310 96c-4.43-1.82-8.6-6-9.95-10.55C294.2 65.54 277.8 48 256 48s-38.21 17.55-44 37.47c-1.35 4.6-5.52 8.71-9.95 10.53c-33.39 13.75-73.87 41.92-73.87 121.35C128.13 304 110 320 84.32 351.43C73.68 364.45 83 384 101.61 384h308.88c18.51 0 27.77-19.61 17.19-32.57M320 384v16a64 64 0 0 1-128 0v-16" />
+                                    </svg>
+                                </a>
+                                <a href="http://localhost/MEP/Institute/View/resources/Setting/setting.php">
+                                    <svg class="w-6 h-6 cursor-pointer dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path fill="currentColor" fill-rule="evenodd" d="M14.208 4.83q.68.21 1.3.54l1.833-1.1a1 1 0 0 1 1.221.15l1.018 1.018a1 1 0 0 1 .15 1.221l-1.1 1.833q.33.62.54 1.3l2.073.519a1 1 0 0 1 .757.97v1.438a1 1 0 0 1-.757.97l-2.073.519q-.21.68-.54 1.3l1.1 1.833a1 1 0 0 1-.15 1.221l-1.018 1.018a1 1 0 0 1-1.221.15l-1.833-1.1q-.62.33-1.3.54l-.519 2.073a1 1 0 0 1-.97.757h-1.438a1 1 0 0 1-.97-.757l-.519-2.073a7.5 7.5 0 0 1-1.3-.54l-1.833 1.1a1 1 0 0 1-1.221-.15L4.42 18.562a1 1 0 0 1-.15-1.221l1.1-1.833a7.5 7.5 0 0 1-.54-1.3l-2.073-.519A1 1 0 0 1 2 12.72v-1.438a1 1 0 0 1 .757-.97l2.073-.519q.21-.68.54-1.3L4.27 6.66a1 1 0 0 1 .15-1.221L5.438 4.42a1 1 0 0 1 1.221-.15l1.833 1.1q.62-.33 1.3-.54l.519-2.073A1 1 0 0 1 11.28 2h1.438a1 1 0 0 1 .97.757zM12 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8" />
+                                    </svg>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -103,7 +107,7 @@ $results = json_decode(urldecode($encodedResults), true);
                                         <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Guide</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+                                        <a href="./../Setting/setting.php" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
                                     </li>
                                     <li>
                                         <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Help Center</a>
@@ -326,35 +330,35 @@ $results = json_decode(urldecode($encodedResults), true);
                         <!-- right -->
                         <div class="pl-5">
                             <div class="mt-1 flex justify-end">
-                                <a href="http://localhost/MEP/Institute/Controller/EditInstructorController.php?instructorid=<?=$results[0]['id']?>">
+                                <a href="http://localhost/MEP/Institute/Controller/EditInstructorController.php?instructorid=<?= $results[0]['id'] ?>">
                                     <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xl px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit Instructor</button>
                                 </a>
                             </div>
                             <div class="mt-4">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Full Name :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60"><?=$results[0]['full_name']?></span>
+                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Full Name :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60"><?= $results[0]['full_name'] ?></span>
                             </div>
                             <div class="mt-4">
                                 <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Date of Birth :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60"><?= date("d-m-Y", strtotime($results[0]['date_of_birth'])) ?></span>
                             </div>
                             <div class="mt-4">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Gender :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60"><?=$results[0]['gender']?></span>
+                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Gender :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60"><?= $results[0]['gender'] ?></span>
                             </div>
                             <div class="mt-4">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Skill :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60"><?=$results[0]['skills']?></span>
+                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Skill :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60"><?= $results[0]['skills'] ?></span>
                             </div>
                             <div class="mt-4 border-b pb-10">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Address :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60"><?=$results[0]['address']?></span>
+                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Address :</span> <span class="text-xl opacity-50 dark:text-white dark:opacity-60"><?= $results[0]['address'] ?></span>
                             </div>
                             <div class="mt-4 pt-8">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">LinkedIn :</span> <span class="text-xl opacity-50  dark:opacity-60 text-blue-800 dark:text-blue-400"><?=$results[0]['linkedin']?></span>
+                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">LinkedIn :</span> <span class="text-xl opacity-50  dark:opacity-60 text-blue-800 dark:text-blue-400"><?= $results[0]['linkedin'] ?></span>
                             </div>
                             <div class="mt-4">
-                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Portfolio :</span> <span class="text-xl opacity-50 dark:opacity-60 text-blue-800 dark:text-blue-400"><?=$results[0]['portfolio']?></span>
+                                <span class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85 mr-5">Portfolio :</span> <span class="text-xl opacity-50 dark:opacity-60 text-blue-800 dark:text-blue-400"><?= $results[0]['portfolio'] ?></span>
                             </div>
                             <div class="mt-12">
                                 <h1 class="text-xl opacity-90 dark:text-white font-bold dark:opacity-85">Experience</h1>
                                 <div class="opacity-50 dark:text-white dark:opacity-50 text-justify">
-                                <?=$results[0]['experience']?>
+                                    <?= $results[0]['experience'] ?>
                                 </div>
                             </div>
                         </div>

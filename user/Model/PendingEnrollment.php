@@ -7,7 +7,7 @@ class PendingEnrollment
     /**
      * (Insert into pending)
      */
-    public function createPending($user_id, $enrolled_class_id, $receipt_image)
+    public function createPending($user_id, $enrolled_class_id, $receipt_image, $cash_amt, $coin_amt)
     {
         try {
             $db = new DBConnection();
@@ -15,14 +15,16 @@ class PendingEnrollment
 
             // Step 1: Insert the data into pending_enrollment table
             $sql = $pdo->prepare("
-                INSERT INTO pending_enrollment (user_id, enrolled_class_id, receipt_image)
-                VALUES (:user_id, :enrolled_class_id, :receipt_image)
+                INSERT INTO pending_enrollment (user_id, enrolled_class_id, receipt_image, cash_amt, coin_amt)
+                VALUES (:user_id, :enrolled_class_id, :receipt_image, :cash_amt, :coin_amt)
             ");
 
             // Bind the values to the SQL statement
             $sql->bindValue(':user_id', $user_id);
             $sql->bindValue(':enrolled_class_id', $enrolled_class_id);
             $sql->bindValue(':receipt_image', $receipt_image);
+            $sql->bindValue(':cash_amt', $cash_amt);
+            $sql->bindValue(':coin_amt', $coin_amt);
             // Execute the statement
             $sql->execute();
 
@@ -114,6 +116,29 @@ class PendingEnrollment
     }
 
 
+    public function isAlreadyEnrolled($user_id, $class_id)
+    {
+        try {
+            $db = new DBConnection();
+            $pdo = $db->connection();
+
+            $sql = $pdo->prepare("");
+            $sql->bindValue(":user_id", $user_id);
+            $sql->bindValue(":class_id", $class_id);
+            $sql->execute();
+
+            if ($sql->rowCount() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (\Throwable $th) {
+            echo "Unexpected Error Occurred: " . htmlspecialchars($th->getMessage());
+            return false;
+        }
+    }
+
+
     /**
      * (Get Student Id)
      */
@@ -155,4 +180,19 @@ class PendingEnrollment
         }
     }
 
+
+    public function getCashAmt($enrolled_class_id)
+    {
+        try {
+            $db = new DBConnection();
+            $pdo = $db->connection();
+            $sql = $pdo->prepare("SELECT c_fee FROM m_classes WHERE id = :id");
+            $sql->bindValue(":id", $enrolled_class_id);
+            $sql->execute();
+            $result = $sql->fetch(PDO::FETCH_ASSOC);    
+            return $result['c_fee'];
+        } catch (\Throwable $th) {
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
 }

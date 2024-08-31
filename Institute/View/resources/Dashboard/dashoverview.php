@@ -8,6 +8,13 @@ $pendingCount = $count;
 // url for logo
 $baseUrl = 'http://localhost/MEP/storages/uploads/';
 
+function formatNumber($number) {
+   if ($number >= 1000) {
+       return number_format($number / 1000, 1) . ' K';
+   }
+   return number_format($number);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -551,7 +558,9 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                <div class="w-full">
                   <p class="text-xl text-center mb-3 dark:text-white opacity-50">Cash Income</p>
                   <div class="flex justify-end">
-                     <p class="text-2xl text-blue-700 dark:text-blue-400 font-bold mt-3">50K</p>
+                     <p class="text-2xl text-blue-700 dark:text-blue-400 font-bold mt-3">
+                        <?php echo formatNumber($total_cash); ?>
+                     </p>
                      <!-- <div class="flex items-center text-green-500">
                         <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                            <path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42" />
@@ -565,7 +574,9 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                <div class="w-full">
                   <p class="text-xl text-center mb-3 dark:text-white opacity-50">Coin Income</p>
                   <div class="flex justify-end">
-                     <p class="text-2xl text-blue-700 dark:text-blue-400 font-bold mt-3">2000</p>
+                     <p class="text-2xl text-blue-700 dark:text-blue-400 font-bold mt-3">
+                        <?php echo $total_coin; ?>
+                     </p>
                      <!-- <div class="flex items-center text-green-500">
                         <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                            <path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42" />
@@ -579,7 +590,9 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                <div class="w-full">
                   <p class="text-xl text-center mb-3 dark:text-white opacity-50">Total Income</p>
                   <div class="flex justify-end">
-                     <p class="text-2xl text-blue-700 dark:text-blue-400 font-bold mt-3">500K</p>
+                     <p class="text-2xl text-blue-700 dark:text-blue-400 font-bold mt-3">
+                     <?php echo formatNumber($tatal_amount); ?>
+                     </p>
                      <!-- <div class="flex items-center text-green-500">
                         <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                            <path fill="currentColor" d="M21.71 7.29a1 1 0 0 0-1.42 0L14 13.59l-4.29-4.3a1 1 0 0 0-1.42 0l-6 6a1 1 0 0 0 0 1.42a1 1 0 0 0 1.42 0L9 11.41l4.29 4.3a1 1 0 0 0 1.42 0l7-7a1 1 0 0 0 0-1.42" />
@@ -591,7 +604,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
             </div>
          </div>
          <div class="bg-white col-span-4 row-span-4 rounded-lg px-4 py-2 dark:bg-gray-600 duration-500">
-            <h3 class="font-bold dark:text-white mb-3 mt-5">Recent Transactions</h3>
+            <h3 class="font-bold dark:text-white mb-3 mt-5">Recent Enrollments</h3>
             <div class="relative overflow-x-auto shadow-md dark:shadow-none sm:rounded-lg">
                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                   <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 duration-500 dark:text-gray-400">
@@ -600,161 +613,39 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                            Date
                         </th>
                         <th scope="col" class="px-6 py-3">
-                           Transaction ID
+                           NAME
                         </th>
                         <th scope="col" class="px-6 py-3">
-                           Description
+                           CLASS TITLE
                         </th>
                         <th scope="col" class="px-6 py-3">
-                           Amount
+                           AMOUNT
                         </th>
                         <th scope="col" class="px-6 py-3">
-                           Type
+                           PAYMENT TYPE
                         </th>
                      </tr>
                   </thead>
-                  <tbody>
+                  <tbody id="table-body-transaction">
                      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 whitespace-nowrap">
                            July 1, 2024
                         </th>
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           TX12345
+                           John Doe
                         </th>
                         <td class="px-6 py-4 whitespace-wrap">
-                           Payment received from John Doe
+                           Back-End Development
                         </td>
                         <td class="px-6 py-4">
                            100,000 MMK
                         </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           Revenue
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <th scope="row" class="px-6 py-4 whitespace-nowrap">
-                           July 1, 2024
-                        </th>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           TX12345
-                        </th>
-                        <td class="px-6 py-4 whitespace-wrap">
-                           Payment received from John Doe
-                        </td>
                         <td class="px-6 py-4">
-                           100,000 MMK
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           Revenue
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <th scope="row" class="px-6 py-4 whitespace-nowrap">
-                           July 1, 2024
-                        </th>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           TX12345
-                        </th>
-                        <td class="px-6 py-4 whitespace-wrap">
-                           Payment received from John Doe
-                        </td>
-                        <td class="px-6 py-4">
-                           100,000 MMK
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           Revenue
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <th scope="row" class="px-6 py-4 whitespace-nowrap">
-                           July 1, 2024
-                        </th>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           TX12345
-                        </th>
-                        <td class="px-6 py-4 whitespace-wrap">
-                           Payment received from John Doe
-                        </td>
-                        <td class="px-6 py-4">
-                           100,000 MMK
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           Revenue
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <th scope="row" class="px-6 py-4 whitespace-nowrap">
-                           July 1, 2024
-                        </th>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           TX12345
-                        </th>
-                        <td class="px-6 py-4 whitespace-wrap">
-                           Payment received from John Doe
-                        </td>
-                        <td class="px-6 py-4">
-                           100,000 MMK
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           Revenue
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <th scope="row" class="px-6 py-4 whitespace-nowrap">
-                           July 1, 2024
-                        </th>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           TX12345
-                        </th>
-                        <td class="px-6 py-4 whitespace-wrap">
-                           Payment received from John Doe
-                        </td>
-                        <td class="px-6 py-4">
-                           100,000 MMK
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           Revenue
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <th scope="row" class="px-6 py-4 whitespace-nowrap">
-                           July 1, 2024
-                        </th>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           TX12345
-                        </th>
-                        <td class="px-6 py-4 whitespace-wrap">
-                           Payment received from John Doe
-                        </td>
-                        <td class="px-6 py-4">
-                           100,000 MMK
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           Revenue
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <th scope="row" class="px-6 py-4 whitespace-nowrap">
-                           July 1, 2024
-                        </th>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           TX12345
-                        </th>
-                        <td class="px-6 py-4 whitespace-wrap">
-                           Payment received from John Doe
-                        </td>
-                        <td class="px-6 py-4">
-                           100,000 MMK
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
-                           Revenue
+                           Cash
                         </td>
                      </tr>
                   </tbody>
                </table>
-               <div class="flex justify-end ">
-                  <button class="bg-gray-200 px-5 py-2 rounded-xl my-5 text-blue-700 hover:bg-gray-400 dark:hover:bg-gray-800 dark:text-blue-600 dark:bg-gray-700 duration-500">See More ></button>
-               </div>
             </div>
          </div>
          <div class="bg-white col-span-4 row-span-3 rounded-lg px-4 py-2 dark:bg-gray-600 duration-300 pt-14">
@@ -769,109 +660,36 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                   <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                      <tr>
                         <th scope="col" class="px-6 py-4">
-                           EVENT TITLE & TYPE
+                           NO
                         </th>
                         <th scope="col" class="px-6 py-4">
-                           INSTRUCTOR
+                           CLASS TITLE
+                        </th>
+                        <th scope="col" class="px-6 py-4">
+                           COIN AMOUNT
                         </th>
                         <th scope="col" class="px-6 py-4">
                            DATE/TIME
-                        </th>
-                        <th scope="col" class="px-6 py-4">
-                           ACTION
                         </th>
                      </tr>
                   </thead>
                   <tbody>
                      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-wrap dark:text-white">
-                           Understanding Cloud Computing in 2024 <span>(Webinar)</span>
+                           1
                         </th>
                         <td class="px-6 py-4">
-                           Mr.Matthwe Davis
+                           Back-End Development
+                        </td>
+                        <td class="px-6 py-4">
+                           100
                         </td>
                         <td class="px-6 py-4">
                            July 29, 2024 9:00 AM
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700">
-                           View
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-wrap dark:text-white">
-                           Understanding Cloud Computing in 2024 <span>(Webinar)</span>
-                        </th>
-                        <td class="px-6 py-4">
-                           Mr.Matthwe Davis
-                        </td>
-                        <td class="px-6 py-4">
-                           July 29, 2024 9:00 AM
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700">
-                           View
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-wrap dark:text-white">
-                           Understanding Cloud Computing in 2024 <span>(Webinar)</span>
-                        </th>
-                        <td class="px-6 py-4">
-                           Mr.Matthwe Davis
-                        </td>
-                        <td class="px-6 py-4">
-                           July 29, 2024 9:00 AM
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700">
-                           View
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-wrap dark:text-white">
-                           Understanding Cloud Computing in 2024 <span>(Webinar)</span>
-                        </th>
-                        <td class="px-6 py-4">
-                           Mr.Matthwe Davis
-                        </td>
-                        <td class="px-6 py-4">
-                           July 29, 2024 9:00 AM
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700">
-                           View
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-wrap dark:text-white">
-                           Understanding Cloud Computing in 2024 <span>(Webinar)</span>
-                        </th>
-                        <td class="px-6 py-4">
-                           Mr.Matthwe Davis
-                        </td>
-                        <td class="px-6 py-4">
-                           July 29, 2024 9:00 AM
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700">
-                           View
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-wrap dark:text-white">
-                           Understanding Cloud Computing in 2024 <span>(Webinar)</span>
-                        </th>
-                        <td class="px-6 py-4">
-                           Mr.Matthwe Davis
-                        </td>
-                        <td class="px-6 py-4">
-                           July 29, 2024 9:00 AM
-                        </td>
-                        <td class="px-6 py-4 underline text-blue-700">
-                           View
                         </td>
                      </tr>
                   </tbody>
                </table>
-            </div>
-            <div class="flex justify-end ">
-               <button class="bg-gray-200 px-5 py-2 rounded-xl my-5 text-blue-700 hover:bg-gray-400 dark:hover:bg-gray-800 dark:text-blue-600 dark:bg-gray-700 duration-500">See More ></button>
             </div>
          </div>
          <div class="bg-white rounded-lg col-span-4 row-span-2 px-4 py-2 dark:bg-gray-600 duration-300">
@@ -921,151 +739,8 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                            Applied
                         </td>
                      </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           SVE50
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           $30
-                        </th>
-                        <td class="px-6 py-4">
-                           July 1, 2024
-                        </td>
-                        <td class="px-6 py-4">
-                           John Doe
-                        </td>
-                        <td class="px-6 py-4">
-                           Data Science 101
-                        </td>
-                        <td class="px-6 py-4">
-                           Applied
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           SVE50
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           $30
-                        </th>
-                        <td class="px-6 py-4">
-                           July 1, 2024
-                        </td>
-                        <td class="px-6 py-4">
-                           John Doe
-                        </td>
-                        <td class="px-6 py-4">
-                           Data Science 101
-                        </td>
-                        <td class="px-6 py-4">
-                           Applied
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           SVE50
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           $30
-                        </th>
-                        <td class="px-6 py-4">
-                           July 1, 2024
-                        </td>
-                        <td class="px-6 py-4">
-                           John Doe
-                        </td>
-                        <td class="px-6 py-4">
-                           Data Science 101
-                        </td>
-                        <td class="px-6 py-4">
-                           Applied
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           SVE50
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           $30
-                        </th>
-                        <td class="px-6 py-4">
-                           July 1, 2024
-                        </td>
-                        <td class="px-6 py-4">
-                           John Doe
-                        </td>
-                        <td class="px-6 py-4">
-                           Data Science 101
-                        </td>
-                        <td class="px-6 py-4">
-                           Applied
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           SVE50
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           $30
-                        </th>
-                        <td class="px-6 py-4">
-                           July 1, 2024
-                        </td>
-                        <td class="px-6 py-4">
-                           John Doe
-                        </td>
-                        <td class="px-6 py-4">
-                           Data Science 101
-                        </td>
-                        <td class="px-6 py-4">
-                           Applied
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           SVE50
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           $30
-                        </th>
-                        <td class="px-6 py-4">
-                           July 1, 2024
-                        </td>
-                        <td class="px-6 py-4">
-                           John Doe
-                        </td>
-                        <td class="px-6 py-4">
-                           Data Science 101
-                        </td>
-                        <td class="px-6 py-4">
-                           Applied
-                        </td>
-                     </tr>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           SVE50
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           $30
-                        </th>
-                        <td class="px-6 py-4">
-                           July 1, 2024
-                        </td>
-                        <td class="px-6 py-4">
-                           John Doe
-                        </td>
-                        <td class="px-6 py-4">
-                           Data Science 101
-                        </td>
-                        <td class="px-6 py-4">
-                           Applied
-                        </td>
-                     </tr>
                   </tbody>
                </table>
-               <div class="flex justify-end">
-                  <button class="bg-gray-200 px-5 py-2 rounded-xl my-5 text-blue-700 hover:bg-gray-400 dark:hover:bg-gray-800 dark:text-blue-600 dark:bg-gray-700 duration-500">See More ></button>
-               </div>
             </div>
          </div>
       </div>

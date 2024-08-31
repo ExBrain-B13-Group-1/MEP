@@ -62,6 +62,51 @@ class IndicatorOfInstitute{
             echo "Unexpected Error Occurs! $th";
         }
     }
+
+
+    public function getTotalCash($instituteID){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT SUM(pe.cash_amt) AS total_cash_amt
+                FROM m_classes AS mc
+                INNER JOIN pending_enrollment AS pe ON pe.enrolled_class_id = mc.id
+                WHERE mc.institute_id = :id AND pe.pending_status = 1;"
+            );
+            $sql->bindValue(":id",$instituteID);
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $results[0]['total_cash_amt'];
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
+
+    public function getTotalCoin($instituteID){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT SUM(pe.coin_amt) AS total_coin_amt
+                FROM m_classes AS mc
+                INNER JOIN pending_enrollment AS pe ON pe.enrolled_class_id = mc.id
+                WHERE mc.institute_id = :id AND pe.pending_status = 1;"
+            );
+            $sql->bindValue(":id",$instituteID);
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $results[0]['total_coin_amt'];
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
 }
 
 ?>

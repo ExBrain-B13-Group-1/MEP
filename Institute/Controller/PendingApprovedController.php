@@ -73,8 +73,6 @@ if (isset($_POST['datas']) && !empty($_POST['datas'])) {
         $addEnrollTable = $dataTransfer->createEnrollTable($student_id['id'], $enrolled_class_id);
         $success = $obj->updatePendingStatusForApprove($user_id,$enrolled_class_id);
 
-        // echo json_encode(array("isStudent" => $isAlreadyStudent, "student_id" => $student_id, "enrolled_class_id" => $enrolled_class_id, "addEnrollTable" => $addEnrollTable));
-
         $datas = [
             "success" => $success,  
             "message" => "Approved Enrollment",

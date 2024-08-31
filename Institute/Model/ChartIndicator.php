@@ -64,6 +64,35 @@ class ChartIndicator{
         }
     }
 
+
+    public function getMonthlyIncome($instituteID){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT 
+                MONTH(pe.create_date) as month, 
+                SUM(pe.coin_amt * 1000) + SUM(pe.cash_amt) as total_income 
+                FROM 
+                m_classes AS mc
+                INNER JOIN 
+                pending_enrollment AS pe ON pe.enrolled_class_id = mc.id
+                WHERE 
+                mc.institute_id = :instituteID AND pe.pending_status = 1
+                GROUP BY 
+                MONTH(pe.create_date);"
+            );
+            $sql->bindValue(":instituteID",$instituteID);
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
 }
 
 ?>

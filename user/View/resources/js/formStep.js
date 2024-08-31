@@ -215,7 +215,7 @@ $(document).ready(function () {
                     icon: "error",
                     showCancelButton: true,
                     confirmButtonText: "Buy Coin",
-                    cancelButtonText: "Cancel",
+                    cancelButtonText: "Cancel", 
                     reverseButtons: true,
                 }).then((result) => {
                     if (result.isConfirmed) {
@@ -224,7 +224,7 @@ $(document).ready(function () {
                 });
             }
 
-            if(response.message === "Duplicate Enroll!"){
+            if(response.message === "Duplicate Enrolled"){
                 Swal.fire({
                     title: "Duplicate Enroll!",
                     text: "You have already enrolled in this class!",

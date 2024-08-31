@@ -166,6 +166,7 @@ $(document).ready(function () {
     // filter by class title 
     $('#search-input').on('keyup', () => {
         let title = $('#search-input').val();
+        currentPage = 1;
         console.log(title);
         $.ajax({
             url: classListQualifiedForDeleteURLByName,

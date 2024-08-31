@@ -10,6 +10,10 @@ if (isset($_COOKIE['institute_id'])) {
     $totalclasses = $obj->getTotalClass($id);
     $totalstudents = $obj->getTotalStudent($id);
     $totalinstructors = $obj->getTotalInstructor($id);
+    
+    $total_cash = $obj->getTotalCash($id);
+    $total_coin = $obj->getTotalCoin($id);
+    $tatal_amount = $total_cash + ($total_coin * 1000);
 } else {
     $totalinstructors = "No Result";
 }

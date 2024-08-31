@@ -141,6 +141,7 @@ $(document).ready(function () {
     // filter by name 
     $('#search-input').on('keyup', () => {
         let name = $('#search-input').val();
+        currentPage = 1;
         console.log(name);
         $.ajax({
             url: searchInstructorByNameURL,

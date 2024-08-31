@@ -8,6 +8,8 @@ const popularClassURL = `http://localhost/MEP/Institute/Controller/PopularClassD
 
 const topFiveInstructorURL = `http://localhost/MEP/Institute/Controller/TopFiveInstructorDashboardController.php`;
 
+
+
 let trendingChartInstance;
 let stuDemoChartInstance;
 let monthlyRevenueInstance;
@@ -165,13 +167,18 @@ function fetchDataAndRenderCharts() {
             const datas = JSON.parse(response);
             // console.log(datas['studentDemographics']);
             let trendingData = new Array(12).fill(0);
+            let revenueData = new Array(12).fill(0);
             datas['monthlyEnrollments'].forEach(entry => {
                 const monthIndex = entry['month'] - 1;
                 trendingData[monthIndex] = entry['total_enrollment'];
             });
             renderTrendingChart(trendingData);
             renderStuDemoChart(datas['studentDemographics']);
-            // renderMonthlyRevenueChart(data.monthlyRevenue);
+            datas['monthlyIncome'].forEach(entry => {
+                const monthIndex = entry['month'] - 1;
+                revenueData[monthIndex] = entry['total_income'];
+            });
+            renderMonthlyRevenueChart(revenueData);
         },
         error: function (error) {
             console.error('Error fetching chart data:', error);
@@ -301,43 +308,45 @@ function renderStuDemoChart(data) {
 
 
 // Monthly Revenue
-monthlyRevenueInstance = new Chart(monthlyRevenue, {
-    type: "bar",
-    data: {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [
-            {
-                label: "Monthly",
-                data: [12, 19, 3, 5, 2, 3, 5, 10, 12, 4, 5, 10],
-                backgroundColor: "#1a56db",
-                borderWidth: 1,
-            },
-        ],
-    },
-    options: {
-        plugins: {
-            legend: {
-                labels: {
+function renderMonthlyRevenueChart(data) {
+    monthlyRevenueInstance = new Chart(monthlyRevenue, {
+        type: "bar",
+        data: {
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            datasets: [
+                {
+                    label: "Monthly",
+                    data: data,
+                    backgroundColor: "#1a56db",
+                    borderWidth: 1,
+                },
+            ],
+        },
+        options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: localStorage.getItem("labelColor")
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'Monthly Income Trends',
                     color: localStorage.getItem("labelColor")
                 }
             },
-            title: {
-                display: true,
-                text: 'Monthly Income Trends',
-                color: localStorage.getItem("labelColor")
+            scales: {
+                x: {
+                    ticks: {
+                        color: localStorage.getItem("labelColor")
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: localStorage.getItem("labelColor")
+                    }
+                }
             }
         },
-        scales: {
-            x: {
-                ticks: {
-                    color: localStorage.getItem("labelColor")
-                }
-            },
-            y: {
-                ticks: {
-                    color: localStorage.getItem("labelColor")
-                }
-            }
-        }
-    },
-});
+    });
+}

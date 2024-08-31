@@ -2,7 +2,7 @@
 // filter by checkbox categories
 let finishedClassStudentListURL = `http://localhost/MEP/Institute/Controller/FinishedClassStudentListController.php`;
 // filter by keyword 
-// let studentListFilterByKeyword = `http://localhost/MEP/Institute/Controller/SearchByNameFinishedClassStudentController.php`;
+let studentListFilterByKeyword = `http://localhost/MEP/Institute/Controller/SearchByNameFinishedClassStudentController.php`;
 
 let baseUrl = `../../../../storages/uploads/`;
 
@@ -17,10 +17,11 @@ console.log(classId); // Outputs: 11 if the URL is ?classid=11
 $(document).ready(function () {
      // Replace with your data source URL
     let dynurl = finishedClassStudentListURL;
-    let rowsPerPage = 8;
+    let rowsPerPage = 10;
     let jsonData = [];
     let currentPage = 1;
     let count = 1;
+    let filteredData = []; // Add this variable to store filtered data
 
     function fetchData() {
         $.ajax({
@@ -52,11 +53,12 @@ $(document).ready(function () {
         
         count = (currentPage - 1) * rowsPerPage + 1;
 
+        const dataToDisplay = filteredData.length > 0 ? filteredData : jsonData; // Use filtered data if available
         const startIndex = (currentPage - 1) * rowsPerPage;
-        const endIndex = Math.min(startIndex + rowsPerPage, jsonData.length);
+        const endIndex = Math.min(startIndex + rowsPerPage, dataToDisplay.length);
 
         for (let i = startIndex; i < endIndex; i++) {
-            const rowData = jsonData[i];
+            const rowData = dataToDisplay[i];
             // console.log(rowData);
             const row = `<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <td class="w-4 p-4">
@@ -87,7 +89,8 @@ $(document).ready(function () {
     function setupPagination() {
         const container = $('#pagination');
         container.empty();
-        const pageCount = Math.ceil(jsonData.length / rowsPerPage);
+        const dataToPaginate = filteredData.length > 0 ? filteredData : jsonData; // Use filtered data if available
+        const pageCount = Math.ceil(dataToPaginate.length / rowsPerPage);
 
         const prevButton = `
             <li>
@@ -129,7 +132,8 @@ $(document).ready(function () {
                 currentPage--;
             }
         } else if (page === 'next') {
-            const pageCount = Math.ceil(jsonData.length / rowsPerPage);
+            const dataToPaginate = filteredData.length > 0 ? filteredData : jsonData; // Use filtered data if available
+            const pageCount = Math.ceil(dataToPaginate.length / rowsPerPage);
             if (currentPage < pageCount) {
                 currentPage++;
             }
@@ -162,8 +166,9 @@ $(document).ready(function () {
                 classid : classId
             },
             success: function (data) {
-                jsonData = data;
+                filteredData = data; // Store filtered data
                 console.log(data);
+                currentPage = 1; // Reset to first page
                 displayData();
                 setupPagination();
             },

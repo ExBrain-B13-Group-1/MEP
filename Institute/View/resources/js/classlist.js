@@ -23,13 +23,13 @@ function showStatus(status) {
 }
 
 
-
 $(document).ready(function () {
     // Replace with your data source URL
     let dynurl = viewClassLIstURL;
     let rowsPerPage = 10;
     let jsonData = [];
     let currentPage = 1;
+    let filteredData = []; // Add this variable to store filtered data
 
     function fetchData() {
         $.ajax({
@@ -37,8 +37,11 @@ $(document).ready(function () {
             method: 'GET',
             dataType: 'json',
             success: function (data) {
-                jsonData = data;
-                // console.log(data);
+                if(dynurl === searchByNameURL){
+                    filteredData = data;
+                }else{
+                    jsonData = data;
+                }
                 displayData();
                 setupPagination();
             },
@@ -49,15 +52,15 @@ $(document).ready(function () {
     }
 
     function displayData() {
-        const tableBody = $('#table-body'); // Replace with your table's body selector
+        const tableBody = $('#table-body');
         tableBody.empty();
 
+        const dataToDisplay = dynurl === searchByNameURL ? filteredData : jsonData;
         const startIndex = (currentPage - 1) * rowsPerPage;
-        const endIndex = Math.min(startIndex + rowsPerPage, jsonData.length);
+        const endIndex = Math.min(startIndex + rowsPerPage, dataToDisplay.length);
 
         for (let i = startIndex; i < endIndex; i++) {
-            const rowData = jsonData[i];
-            // console.log(rowData);
+            const rowData = dataToDisplay[i];
             const row = `
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <td class="w-4 p-4">${rowData.c_id}</td>
@@ -73,7 +76,6 @@ $(document).ready(function () {
                         <a href="http://localhost/MEP/Institute/Controller/ViewDetailsClassController.php?classid=${rowData.id}&status=${rowData.class_status}">View</a>
                     </td>   
                 </tr>`;
-            // Construct your table row HTML using rowData and append to tableBody
             tableBody.append(row);
         }
     }
@@ -81,7 +83,8 @@ $(document).ready(function () {
     function setupPagination() {
         const container = $('#pagination');
         container.empty();
-        const pageCount = Math.ceil(jsonData.length / rowsPerPage);
+        const dataToPaginate = dynurl === searchByNameURL ? filteredData : jsonData;
+        const pageCount = Math.ceil(dataToPaginate.length / rowsPerPage);
 
         const prevButton = `
            <li>
@@ -148,7 +151,7 @@ $(document).ready(function () {
     // filter by name 
     $('#search-input').on('keyup', () => {
         let title = $('#search-input').val();
-        console.log(title);
+        dynurl = searchByNameURL; // Update dynurl to search URL
         $.ajax({
             url: searchByNameURL,
             method: 'POST',
@@ -157,8 +160,8 @@ $(document).ready(function () {
                 classtitle: title
             },
             success: function (data) {
-                jsonData = data;
-                console.log(data);
+                filteredData = data; // Store filtered data
+                currentPage = 1; // Reset to first page
                 displayData();
                 setupPagination();
             },

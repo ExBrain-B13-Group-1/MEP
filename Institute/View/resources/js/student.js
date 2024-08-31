@@ -168,6 +168,7 @@ $(document).ready(function () {
     // filter by name 
     $('#search-input').on('keyup', () => {
         let text = $('#search-input').val();
+        currentPage = 1;
         $.ajax({
             url: studentListFilterByKeyword,
             method: 'POST',
