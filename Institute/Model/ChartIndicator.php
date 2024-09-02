@@ -93,6 +93,30 @@ class ChartIndicator{
         }
     }
 
+
+    public function getMonthlyCoinUsage($instituteID){
+        try{
+            $dbconn = new DBConnection();
+            // get connection
+            $pdo = $dbconn->connection();
+            $sql = $pdo->prepare(
+                "SELECT 
+                MONTH(cu.create_date) as month, 
+                SUM(cu.coin_amount) as total_coin 
+                FROM coin_usage_history AS cu
+                WHERE cu.institute_id = :instituteID
+                GROUP BY MONTH(cu.create_date)"
+            );
+            $sql->bindValue(":instituteID",$instituteID);
+            $sql->execute();
+            $results = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $results;
+        }catch(\Throwable $th){
+            // fail connection
+            echo "Unexpected Error Occurs! $th";
+        }
+    }
+
 }
 
 ?>

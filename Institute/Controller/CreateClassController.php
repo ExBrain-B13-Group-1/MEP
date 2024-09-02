@@ -6,6 +6,7 @@ require_once  __DIR__ . '/../Model/MClasses.php';
 require_once  __DIR__ . '/../Model/MInstitutes.php';
 require_once  __DIR__ . '/../Model/UpdateRemainingCoin.php';
 require_once  __DIR__ . '/../Controller/common/GenerateClassId.php';
+require_once  __DIR__ . '/../Model/History.php';
 
 $mInstitutes = new MInstitute();
 
@@ -112,6 +113,8 @@ if (isset($_POST["submit"]) && isset($_COOKIE['institute_id'])) {
                 $isUpdateCoin = $coinObj->updateRemainingCoin($updateCoinAmt, $instututeID);
                 if ($success && $isUpdateCoin) {
                     $classid = $classobj->recentCreatedClassId($class_id,$instututeID);
+                    $coinObj = new History();
+                    $coinObj->todayCoinUsage($datasarr,$classid);
                     $redirectUrl = "../Controller/ViewDetailsClassController.php?classid=$classid";
                     header("Location: $redirectUrl");
                     exit();

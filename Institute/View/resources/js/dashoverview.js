@@ -1,6 +1,7 @@
 const trendingChart = document.getElementById("trendingchart");
 const stuDemoChart = document.getElementById("studemochart");
 const monthlyRevenue = document.getElementById('monthlyrevenuechart');
+const monthlyCoinUsage = document.getElementById('monthlycoinusage');
 
 const indicatorURL = `http://localhost/MEP/Institute/Controller/ChartIndicatroController.php`;
 
@@ -8,11 +9,15 @@ const popularClassURL = `http://localhost/MEP/Institute/Controller/PopularClassD
 
 const topFiveInstructorURL = `http://localhost/MEP/Institute/Controller/TopFiveInstructorDashboardController.php`;
 
+const recentEnrollmentsURL = `http://localhost/MEP/Institute/Controller/GetRecentEnrollmentsDashboardController.php`;
+
+const todayUsageCoinHistoryURL = `http://localhost/MEP/Institute/Controller/TodayUsageCoinHistoryController.php`;
 
 
 let trendingChartInstance;
 let stuDemoChartInstance;
 let monthlyRevenueInstance;
+let coinUsageInstances;
 
 $(document).ready(function () {
     fetchDataAndRenderCharts();
@@ -97,8 +102,6 @@ $(document).ready(function () {
 
     fetchDataPopularClass();
 
-
-
     // Replace with your data source URL
     let jsonDataInstructor = [];
 
@@ -153,6 +156,103 @@ $(document).ready(function () {
 
     fetchDataInstructor();
 
+
+    let jsonDataRecentEnrollments = [];
+
+    function fetchDataRecentEnrollments() {
+        $.ajax({
+            url: recentEnrollmentsURL,
+            method: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                jsonDataRecentEnrollments = data;
+                displayDataRecentEnrollments();
+            },
+            error: function (xhr, status, error) {
+                console.error('Error fetching data:', status, error);
+            }
+        });
+    }
+
+    function displayDataRecentEnrollments() {
+        const tableBody = $('#table-body-recent-enrollments');
+        tableBody.empty();
+
+        for (let i = 0; i < jsonDataRecentEnrollments.length; i++) {
+            const rowData = jsonDataRecentEnrollments[i];
+            // console.log(rowData);
+            const row= `<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <td class="px-6 py-4">
+                                ${rowData.create_date.split(' ')[0]}    
+                            </td>
+                            <td class="px-6 py-4">
+                                ${rowData.name}
+                            </td>
+                            <td class="px-6 py-4">
+                                ${rowData.c_title}
+                            </td>
+                            <td class="px-6 py-4">
+                                ${rowData.coin_amt ? rowData.coin_amt : addThousandSeparator(rowData.cash_amt) }
+                            </td>
+                            <td class="px-6 py-4 ${rowData.coin_amt ? "text-blue-500" : "text-green-500"}">
+                                ${rowData.coin_amt ? "Coin" : "Cash"}
+                            </td>
+                        </tr>`;
+            tableBody.append(row);
+        }
+    }
+    
+    fetchDataRecentEnrollments();
+
+
+    let jsonDataTodayUsageCoinHistory = [];
+
+    function fetchDataTodayUsageCoinHistory() {
+        $.ajax({
+            url: todayUsageCoinHistoryURL,
+            method: 'GET',
+            dataType: 'json',
+            success: function (data) {
+                console.log(data);
+                jsonDataTodayUsageCoinHistory = data;
+                displayDataTodayUsageCoinHistory();
+            },
+            error: function (xhr, status, error) {
+                console.error('Error fetching data:', status, error);
+            }
+        });
+    }
+
+    function displayDataTodayUsageCoinHistory() {
+        const tableBody = $('#today-coin-usage');
+        tableBody.empty();
+
+        for (let i = 0; i < jsonDataTodayUsageCoinHistory.length; i++) {
+            const rowData = jsonDataTodayUsageCoinHistory[i];
+            // console.log(rowData);
+            const row= `<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                            <td class="px-6 py-4">
+                                ${i+1}
+                            </td>
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                ${rowData.c_title}
+                            </th>
+                            <td class="px-6 py-4">
+                                ${rowData.coin_amount}
+                            </td>
+                            <td class="px-6 py-4">
+                                ${addThousandSeparator(rowData.c_fee)}
+                            </td>
+                            <td class="px-6 py-4 underline text-blue-700 cursor-pointer">
+                                <a href="http://localhost/MEP/Institute/Controller/ViewDetailsClassController.php?classid=${rowData.class_id}">View</a>
+                            </td>
+                        </tr>`;
+            tableBody.append(row);
+        }
+    }
+    
+    fetchDataTodayUsageCoinHistory();
+
 });
 
 function addThousandSeparator(value) {
@@ -165,9 +265,10 @@ function fetchDataAndRenderCharts() {
         method: 'GET',
         success: function (response) {
             const datas = JSON.parse(response);
-            // console.log(datas['studentDemographics']);
+            console.log(datas);
             let trendingData = new Array(12).fill(0);
             let revenueData = new Array(12).fill(0);
+            let coinUsageData = new Array(12).fill(0);
             datas['monthlyEnrollments'].forEach(entry => {
                 const monthIndex = entry['month'] - 1;
                 trendingData[monthIndex] = entry['total_enrollment'];
@@ -179,6 +280,11 @@ function fetchDataAndRenderCharts() {
                 revenueData[monthIndex] = entry['total_income'];
             });
             renderMonthlyRevenueChart(revenueData);
+            datas['monthlyCoinUsage'].forEach(entry => {
+                const monthIndex = entry['month'] - 1;
+                coinUsageData[monthIndex] = entry['total_coin'];
+            });
+            renderMonthlyCoinUsage(coinUsageData);
         },
         error: function (error) {
             console.error('Error fetching chart data:', error);
@@ -203,6 +309,12 @@ function updateChartColors() {
     monthlyRevenueInstance.options.scales.x.ticks.color = labelColor;
     monthlyRevenueInstance.options.scales.y.ticks.color = labelColor;
     monthlyRevenueInstance.update();
+
+    coinUsageInstances.options.plugins.legend.labels.color = labelColor;
+    coinUsageInstances.options.plugins.title.color = labelColor;
+    coinUsageInstances.options.scales.x.ticks.color = labelColor;
+    coinUsageInstances.options.scales.y.ticks.color = labelColor;
+    coinUsageInstances.update();
 }
 
 // Monthly Trending Chart
@@ -332,6 +444,51 @@ function renderMonthlyRevenueChart(data) {
                 title: {
                     display: true,
                     text: 'Monthly Income Trends',
+                    color: localStorage.getItem("labelColor")
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: localStorage.getItem("labelColor")
+                    }
+                },
+                y: {
+                    ticks: {
+                        color: localStorage.getItem("labelColor")
+                    }
+                }
+            }
+        },
+    });
+}
+
+
+// Monthly Coin Usage
+function renderMonthlyCoinUsage(data) {
+    coinUsageInstances = new Chart(monthlyCoinUsage, {
+        type: "bar",
+        data: {
+            labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            datasets: [
+                {
+                    label: "Monthly",
+                    data: data,
+                    backgroundColor: "#1a56db",
+                    borderWidth: 1,
+                },
+            ],
+        },
+        options: {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: localStorage.getItem("labelColor")
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'Monthly Coin Usages',
                     color: localStorage.getItem("labelColor")
                 }
             },

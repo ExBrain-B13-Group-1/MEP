@@ -626,24 +626,8 @@ function formatNumber($number) {
                         </th>
                      </tr>
                   </thead>
-                  <tbody id="table-body-transaction">
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <th scope="row" class="px-6 py-4 whitespace-nowrap">
-                           July 1, 2024
-                        </th>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           John Doe
-                        </th>
-                        <td class="px-6 py-4 whitespace-wrap">
-                           Back-End Development
-                        </td>
-                        <td class="px-6 py-4">
-                           100,000 MMK
-                        </td>
-                        <td class="px-6 py-4">
-                           Cash
-                        </td>
-                     </tr>
+                  <tbody id="table-body-recent-enrollments">
+                     <!-- data here -->
                   </tbody>
                </table>
             </div>
@@ -653,92 +637,38 @@ function formatNumber($number) {
                <canvas id="monthlyrevenuechart"></canvas>
             </div>
          </div>
-         <div class="bg-white rounded-lg col-span-4 row-span-2 px-4 py-2 dark:bg-gray-600 duration-300">
-            <h3 class="text-black dark:text-white mb-4 mt-5">Credit Points Usage</h3>
-            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-               <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                  <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                     <tr>
-                        <th scope="col" class="px-6 py-4">
-                           NO
-                        </th>
-                        <th scope="col" class="px-6 py-4">
-                           CLASS TITLE
-                        </th>
-                        <th scope="col" class="px-6 py-4">
-                           COIN AMOUNT
-                        </th>
-                        <th scope="col" class="px-6 py-4">
-                           DATE/TIME
-                        </th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-wrap dark:text-white">
-                           1
-                        </th>
-                        <td class="px-6 py-4">
-                           Back-End Development
-                        </td>
-                        <td class="px-6 py-4">
-                           100
-                        </td>
-                        <td class="px-6 py-4">
-                           July 29, 2024 9:00 AM
-                        </td>
-                     </tr>
-                  </tbody>
-               </table>
+      
+         <div class="bg-white col-span-4 row-span-4 rounded-lg px-4 py-2 dark:bg-gray-600 duration-300 pt-14">
+            <div>
+               <canvas id="monthlycoinusage"></canvas>
             </div>
          </div>
-         <div class="bg-white rounded-lg col-span-4 row-span-2 px-4 py-2 dark:bg-gray-600 duration-300">
-            <h3 class="font-bold dark:text-white mb-4 mt-5">Discounts and Coupons Used</h3>
+
+         <div class="bg-white rounded-lg col-span-4 row-span-4 px-4 py-2 dark:bg-gray-600 duration-300">
+            <h3 class="font-bold dark:text-white mb-4 mt-5">Today Coin Usage</h3>
             <div class="relative overflow-x-auto shadow-md dark:shadow-none sm:rounded-lg">
                <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                   <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 duration-500 dark:text-gray-400">
                      <tr>
-                        <th scope="col" class="p-4 whitespace-nowrap">
-                           Coupon Code
+                        <th scope="col" class="px-6 py-3">
+                           No
                         </th>
                         <th scope="col" class="px-6 py-3">
-                           Discount Amount
+                           CLASS TITLE
                         </th>
                         <th scope="col" class="px-6 py-3">
-                           Applied Date
+                           COIN AMOUNT
                         </th>
                         <th scope="col" class="px-6 py-3">
-                           Student Name
+                           CLASS FEES
                         </th>
                         <th scope="col" class="px-6 py-3">
-                           Class Name
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                           Status
+                           ACTION
                         </th>
                      </tr>
                   </thead>
-                  <tbody>
-                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                        <td class="w-4 p-4">
-                           SVE50
-                        </td>
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                           $30
-                        </th>
-                        <td class="px-6 py-4">
-                           July 1, 2024
-                        </td>
-                        <td class="px-6 py-4">
-                           John Doe
-                        </td>
-                        <td class="px-6 py-4">
-                           Data Science 101
-                        </td>
-                        <td class="px-6 py-4">
-                           Applied
-                        </td>
-                     </tr>
+                  <tbody id="today-coin-usage">
+                     <!-- data here -->
                   </tbody>
                </table>
             </div>

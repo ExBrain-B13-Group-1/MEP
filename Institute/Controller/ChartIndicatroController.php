@@ -11,7 +11,8 @@ if(isset($_COOKIE['institute_id'])){
     $datas = [
         'monthlyEnrollments' => $obj->getMonthlyTrending($id),
         'studentDemographics' => $obj->getStudentDemographics($id),
-        'monthlyIncome' => $obj->getMonthlyIncome($id)
+        'monthlyIncome' => $obj->getMonthlyIncome($id),
+        'monthlyCoinUsage' => $obj->getMonthlyCoinUsage($id)
     ];
 
     if($datas){
