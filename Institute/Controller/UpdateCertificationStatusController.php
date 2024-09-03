@@ -2,6 +2,7 @@
 
 ini_set('display_errors', '1');
 require_once  __DIR__ . '/../Model/UpdateCertificationStatus.php';
+require_once  __DIR__ . '/../Model/History.php';
 
 header("Access-Control-Allow-Origin:*");		// any website (*)
 header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE,OPTIONS");		// methods
@@ -24,6 +25,13 @@ if(isset($_POST['datas'])){
         // Log the data being processed
         // error_log("Updating student_id: $student_id, certified: $certified, class_id: $class_id");
 
+        $historyArr = [
+            "module" => "Certification",
+            "action" => "update",
+            "remark" => "Certification Status Updated",
+            "instituteid" => $_COOKIE['institute_id']
+        ];
+
         try {
             $success = $obj->updateCertificationStatus($student_id, $certified, $class_id);
             if(!$success){
@@ -32,6 +40,8 @@ if(isset($_POST['datas'])){
                 echo json_encode(array("success" => false, "message" => "Certification status update failed"));
                 exit;
             }
+            $history = new History();
+            $history->addHistoryModule($historyArr);
         } catch (Exception $e) {
             // Log the exception
             error_log("Exception occurred: " . $e->getMessage());

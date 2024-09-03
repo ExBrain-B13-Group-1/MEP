@@ -2,6 +2,7 @@
 
 ini_set('display_errors', '1');
 require_once  __DIR__ . '/../Model/Settings.php';
+require_once  __DIR__ . '/../Model/History.php';
 
 header("Access-Control-Allow-Origin:*");		// any website (*)
 header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE,OPTIONS");		// methods
@@ -22,6 +23,13 @@ $datas = [
     "xlink"=>$x_link 
 ];
 
+$historyArr = [
+    "module" => "Settings",
+    "action" => "update",
+    "remark" => "Social Links Updated",
+    "instituteid" => $_COOKIE['institute_id']
+];
+
 // echo json_encode($datas);
 
 if(isset($_COOKIE['institute_id'])){
@@ -30,6 +38,8 @@ if(isset($_COOKIE['institute_id'])){
     $success = $obj->updateSociallinks($datas,$id);
     // $success = true;
     if($success){
+        $history = new History();
+        $history->addHistoryModule($historyArr);
         echo json_encode($datas);
     }else{
         echo "Fail Update";

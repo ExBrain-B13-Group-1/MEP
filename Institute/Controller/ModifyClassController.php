@@ -2,6 +2,7 @@
 
 ini_set('display_errors', '1');
 require_once  __DIR__ . '/../Model/MClasses.php';
+require_once  __DIR__ . '/../Model/History.php';
 
 
 // if (isset($_POST["submit"])) {
@@ -100,6 +101,13 @@ if (isset($_POST["submit"])) {
         "creditpoint"=>(int)$creditpoint
     ];
 
+    $historyArr = [
+        "module" => "Class",
+        "action" => "modify",
+        "remark" => "Class Modified",
+        "instituteid" => $_COOKIE['institute_id']
+    ];
+
     // Check if the file extension is allowed
     if (in_array($ext, $allowedTypes)) {
         // Move the uploaded file to the target directory
@@ -107,6 +115,8 @@ if (isset($_POST["submit"])) {
             $classobj = new MClasses();
             $success = $classobj->modifyClass($datasarr,$classid);
             if($success){
+                $history = new History();
+                $history->addHistoryModule($historyArr);
                 $redirectUrl = "../Controller/ViewDetailsClassController.php?classid=$classid";
                 header("Location: $redirectUrl");
                 exit();

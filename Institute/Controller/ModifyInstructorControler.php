@@ -2,6 +2,7 @@
 
 ini_set('display_errors', '1');
 require_once  __DIR__ . '/../Model/MInstructors.php';
+require_once  __DIR__ . '/../Model/History.php';
 
 if (isset($_POST["submit"])) {
 
@@ -96,6 +97,13 @@ if (isset($_POST["submit"])) {
         "portfolio" => $portfolio,
     ];
 
+    $historyArr = [
+        "module" => "Instructor",
+        "action" => "modify",
+        "remark" => "Instructor Modified",
+        "instituteid" => $_COOKIE['institute_id']
+    ];
+
     // echo "<pre>";
     // print_r($datasarr);
 
@@ -104,8 +112,10 @@ if (isset($_POST["submit"])) {
         // Move the uploaded file to the target directory
         if (move_uploaded_file($tempname, $targetpath)) {
             $instructorObj = new MInstructors();
+            $history = new History();
             $success = $instructorObj->modifyInstructor($datasarr,$instructor_id);
             if($success){
+                $history->addHistoryModule($historyArr);
                 $redirectUrl = "../Controller/ViewDetailsInstructorController.php?instructorid=$instructor_id";
                 header("Location: $redirectUrl");
                 exit();

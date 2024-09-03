@@ -34,6 +34,39 @@ class History{
         }
     }
 
+
+    public function addHistoryModule(array $module){
+        $moduletype = $module['module'];
+        $moduleaction = $module['action'];
+        $moduleremark = $module['remark'];
+        $instituteid = $module['instituteid'];
+
+        $dbconn = new DBConnection();
+        $pdo = $dbconn->connection();
+        $sql = $pdo->prepare(
+            "INSERT INTO history (module,action,remark,institute_id) VALUES (:moduletype,:moduleaction,:moduleremark,:instituteid)"
+        );
+        $sql->bindValue(":moduletype", $moduletype);
+        $sql->bindValue(":moduleaction", $moduleaction);
+        $sql->bindValue(":moduleremark", $moduleremark);
+        $sql->bindValue(":instituteid", $instituteid);
+        $sql->execute();
+        return true;
+    }
+
+
+    public function getHistoryModule($id, $action){ 
+        $dbconn = new DBConnection();
+        $pdo = $dbconn->connection();
+        $sql = $pdo->prepare(
+            "SELECT * FROM history WHERE institute_id = :id AND action LIKE :action ORDER BY create_date DESC"
+        );
+        $sql->bindValue(":id", $id);
+        $sql->bindValue(":action",'%'.$action.'%');
+        $sql->execute();
+        return $sql->fetchAll();
+    }
+
 }
 
 

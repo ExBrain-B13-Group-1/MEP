@@ -174,7 +174,7 @@ function selectedCategory($catename)
                             <li class="sidebarlinks" click-page="class-lists">
                                 <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-[#d9dffc] dark:text-white dark:hover:bg-gray-700">Class Lists</a>
                             </li>
-                            <li class="sidebarlinks" click-page="create-new-class">
+                            <li class="bg-[#d9dffc] dark:bg-gray-700 rounded-md sidebarlinks" click-page="create-new-class">
                                 <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-[#d9dffc] dark:text-white dark:hover:bg-gray-700">Create a New Class</a>
                             </li>
                             <li class="sidebarlinks" click-page="delete-class">

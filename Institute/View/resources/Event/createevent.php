@@ -206,7 +206,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                             <li class="sidebarlinks" click-page="event-list">
                                 <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-[#d9dffc] dark:text-white dark:hover:bg-gray-700">Event Lists</a>
                             </li>
-                            <li class="sidebarlinks" click-page="create-event">
+                            <li class="bg-[#d9dffc] dark:bg-gray-700 rounded-md sidebarlinks" click-page="create-event">
                                 <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-[#d9dffc] dark:text-white dark:hover:bg-gray-700">Create Event</a>
                             </li>
                         </ul>

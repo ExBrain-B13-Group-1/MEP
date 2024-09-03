@@ -213,7 +213,7 @@ function showCard(id) {
                             </button>
                         </div>
                         <div class="relative">
-                            <img src="${item.profile_photo == null ? 'http://localhost/MEP/Institute/storages/userProfileDefault.png' : baseUrl + item.profile_photo}" class="w-16 h-16 rounded-full" alt="${item.profile_photo}">
+                            <img src="${item.photo == null ? 'http://localhost/MEP/Institute/storages/userProfileDefault.png' : baseUrl + item.photo}" class="w-16 h-16 rounded-full" alt="${item.profile_photo}">
                             <div class="absolute top-0 right-0 w-5 h-5 rounded-full bg-blue-700 flex justify-center items-center">
                                 <ion-icon name="checkmark-outline" class="text-white"></ion-icon>
                             </div>

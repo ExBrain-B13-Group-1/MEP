@@ -75,7 +75,7 @@ $(document).ready(function () {
                                 <td class="px-6 py-4">
                                     ${rowData.end_date}
                                 </td>
-                                <td class="px-6 py-4 text-green-500">
+                                <td class="px-6 py-4 text-yellow-500">
                                     ${rowData.status}
                                 </td>
                                 <td class="px-6 py-4">

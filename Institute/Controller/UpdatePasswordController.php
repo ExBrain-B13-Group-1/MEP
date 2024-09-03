@@ -2,6 +2,7 @@
 
 ini_set('display_errors', '1');
 require_once  __DIR__ . '/../Model/Settings.php';
+require_once  __DIR__ . '/../Model/History.php';
 
 header("Access-Control-Allow-Origin:*");		// any website (*)
 header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE,OPTIONS");		// methods
@@ -13,6 +14,13 @@ $currentpassword = $getdatas->currentpassword;
 $newpassword = $getdatas->newpassword;
 $confirmpassword = $getdatas->confirmpassword;
 
+$historyArr = [
+    "module" => "Settings",
+    "action" => "update",
+    "remark" => "Password Updated",
+    "instituteid" => $_COOKIE['institute_id']
+];
+
 $obj = new Settings();
 $hashedPassword = $obj->getCurrentPasswordHash($_COOKIE['institute_id']); // Assuming this method exists and retrieves the hashed password from the database
 
@@ -20,6 +28,8 @@ if(password_verify($currentpassword, $hashedPassword)){
     if($newpassword === $confirmpassword){
         $success = $obj->updatePassword($newpassword,$_COOKIE['institute_id']);
         if($success){
+            $history = new History();
+            $history->addHistoryModule($historyArr);
             echo json_encode(array("success"=>true,"message"=>"Password updated successfully"));   
         }else{
             echo json_encode(array("success"=>false,"message"=>"Password update failed"));

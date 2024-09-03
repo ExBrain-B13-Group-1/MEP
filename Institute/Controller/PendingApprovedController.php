@@ -6,6 +6,7 @@ require_once  __DIR__ . '/../Controller/common/mailSender.php';
 require_once  __DIR__ . '/../Model/MInstitutes.php';
 require_once  __DIR__ . '/../Model/MClassApproveAndReject.php';
 require_once  __DIR__ . '/../Model/DataTransfer.php';
+require_once  __DIR__ . '/../Model/History.php';
 
 header("Access-Control-Allow-Origin:*");		// any website (*)
 header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE,OPTIONS");		// methods
@@ -38,6 +39,13 @@ function binaryDaysToFormatted($binaryDays) {
     }
     return implode(", ", $formattedDays);
 }
+
+$historyArr = [
+    "module" => "Enrollment",
+    "action" => "Approve",
+    "remark" => "Enrollment Approved",
+    "instituteid" => $_COOKIE['institute_id']
+];
 
 if (isset($_POST['datas']) && !empty($_POST['datas'])) {
     $datas = $_POST['datas'];
@@ -72,6 +80,9 @@ if (isset($_POST['datas']) && !empty($_POST['datas'])) {
         }
         $addEnrollTable = $dataTransfer->createEnrollTable($student_id['id'], $enrolled_class_id);
         $success = $obj->updatePendingStatusForApprove($user_id,$enrolled_class_id);
+
+        $history = new History();
+        $history->addHistoryModule($historyArr);
 
         $datas = [
             "success" => $success,  

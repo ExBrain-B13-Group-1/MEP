@@ -35,16 +35,6 @@
   scrollbar-width: none;  /* for Firefox */
 }
 
-.sidebar-dark-currents{
-  background-color: #374151;
-  border-radius: 8px;
-}
-
-.sidebar-light-currents{
-  background-color: #d9dffc;
-  border-radius: 8px;
-}
-
 .active{
   background-color: #374151;
   color: #ffffff;

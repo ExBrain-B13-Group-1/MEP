@@ -1284,10 +1284,6 @@ html {
   grid-row: span 4 / span 4;
 }
 
-.row-span-1 {
-  grid-row: span 1 / span 1;
-}
-
 .m-1 {
   margin: 0.25rem;
 }
@@ -1600,10 +1596,6 @@ html {
   height: 1rem;
 }
 
-.h-40 {
-  height: 10rem;
-}
-
 .h-5 {
   height: 1.25rem;
 }
@@ -1672,16 +1664,8 @@ html {
   height: 100vh;
 }
 
-.h-96 {
-  height: 24rem;
-}
-
-.h-\[20vh\] {
-  height: 20vh;
-}
-
-.max-h-96 {
-  max-height: 24rem;
+.h-\[79vh\] {
+  height: 79vh;
 }
 
 .w-1\/2 {
@@ -2074,10 +2058,6 @@ html {
   overflow-y: auto;
 }
 
-.overflow-y-scroll {
-  overflow-y: scroll;
-}
-
 .text-ellipsis {
   text-overflow: ellipsis;
 }
@@ -2232,6 +2212,11 @@ html {
 .bg-\[\#ECEFFF\] {
   --tw-bg-opacity: 1;
   background-color: rgb(236 239 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#d9dffc\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(217 223 252 / var(--tw-bg-opacity));
 }
 
 .bg-blue-50 {
@@ -2821,6 +2806,11 @@ html {
   color: rgb(5 122 85 / var(--tw-text-opacity));
 }
 
+.text-orange-500 {
+  --tw-text-opacity: 1;
+  color: rgb(255 90 31 / var(--tw-text-opacity));
+}
+
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(240 82 82 / var(--tw-text-opacity));
@@ -2982,16 +2972,6 @@ html {
   /* for Internet Explorer, Edge */
   scrollbar-width: none;
   /* for Firefox */
-}
-
-.sidebar-dark-currents{
-  background-color: #374151;
-  border-radius: 8px;
-}
-
-.sidebar-light-currents{
-  background-color: #d9dffc;
-  border-radius: 8px;
 }
 
 .active{

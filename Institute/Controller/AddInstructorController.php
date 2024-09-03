@@ -1,10 +1,11 @@
 <?php
 
-session_start();
+// session_start();
 ini_set('display_errors', '1');
 require_once  __DIR__ . '/../Model/MInstitutes.php';
 require_once  __DIR__ . '/../Model/MInstructors.php';
 require_once  __DIR__ . '/../Controller/common/GenerateInstructorId.php';
+require_once  __DIR__ . '/../Model/History.php';
 
 $mInstitutes = new MInstitute();
 
@@ -111,6 +112,13 @@ if (isset($_POST["submit"]) && isset($_COOKIE['institute_id'])) {
     // echo "<pre>";
     // print_r($datasarr);
 
+    $historyArr = [
+        "module" => "Instructor",
+        "action" => "create",
+        "remark" => "Instructor Created",
+        "instituteid" => $_COOKIE['institute_id']
+    ];
+
     // Check if the file extension is allowed
     if (in_array($ext, $allowedTypes)) {
         // Move the uploaded file to the target directory
@@ -118,6 +126,8 @@ if (isset($_POST["submit"]) && isset($_COOKIE['institute_id'])) {
             $instructorObj = new MInstructors();
             $success = $instructorObj->addInstructor($datasarr);
             if($success){
+                $history = new History();
+                $history->addHistoryModule($historyArr);
                 $id = $instructorObj->recentCreatedInstructorId($instructor_id,$instituteid);
                 $redirectUrl = "../Controller/ViewDetailsInstructorController.php?instructorid=$id";
                 header("Location: $redirectUrl");

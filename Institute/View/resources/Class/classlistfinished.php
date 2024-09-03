@@ -47,10 +47,10 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                 <div class="ml-64 relative top-2 pl-3">
                     <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500  dark:border-gray-700 dark:text-gray-400">
                         <li class="me-2 h-10">
-                            <a href="#" class="inline-block p-4 text-base rounded-t-lg hover:dark:bg-gray-600 changes">Class Lists</a>
+                            <a href="javascript:void(0);" class="inline-block p-4 text-base rounded-t-lg hover:dark:bg-gray-600 changes">Class Lists</a>
                         </li>
                         <li class="me-2 h-10">
-                            <a href="#" class="inline-block p-4 text-base rounded-t-lg hover:dark:bg-gray-600 changes actives">Completed Classes</a>
+                            <a href="javascript:void(0);" class="inline-block p-4 text-base rounded-t-lg hover:dark:bg-gray-600 changes actives">Completed Classes</a>
                         </li>
                     </ul>
                 </div>
@@ -160,7 +160,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                             </svg>
                         </button>
                         <ul id="dropdown-class" class="hidden py-2 space-y-2">
-                            <li class="sidebarlinks" click-page="class-lists">
+                            <li class="bg-[#d9dffc] dark:bg-gray-700 rounded-md sidebarlinks" click-page="class-lists">
                                 <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-[#d9dffc] dark:text-white dark:hover:bg-gray-700">Class Lists</a>
                             </li>
                             <li class="sidebarlinks" click-page="create-new-class">

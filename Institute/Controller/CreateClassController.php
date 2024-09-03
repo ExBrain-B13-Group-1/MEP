@@ -98,6 +98,13 @@ if (isset($_POST["submit"]) && isset($_COOKIE['institute_id'])) {
         "instituteid" => (int)$instituteid
     ];
 
+    $historyArr = [
+        "module" => "Class",
+        "action" => "create",
+        "remark" => "Class Created",
+        "instituteid" => $_COOKIE['institute_id']
+    ];
+
     // echo "<pre>";
     // print_r($datasarr);
 
@@ -109,10 +116,12 @@ if (isset($_POST["submit"]) && isset($_COOKIE['institute_id'])) {
             if (move_uploaded_file($tempname, $targetpath)) {
                 $classobj = new MClasses();
                 $coinObj = new UpdateRemainingCoin();
+                $history = new History();
                 $success = $classobj->addClass($datasarr, $instututeID);
                 $isUpdateCoin = $coinObj->updateRemainingCoin($updateCoinAmt, $instututeID);
                 if ($success && $isUpdateCoin) {
                     $classid = $classobj->recentCreatedClassId($class_id,$instututeID);
+                    $history->addHistoryModule($historyArr);
                     $coinObj = new History();
                     $coinObj->todayCoinUsage($datasarr,$classid);
                     $redirectUrl = "../Controller/ViewDetailsClassController.php?classid=$classid";

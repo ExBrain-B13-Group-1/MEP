@@ -3,6 +3,7 @@
 ini_set('display_errors', '1');
 require_once  __DIR__ . '/../Model/EnrollmentPending.php';
 require_once  __DIR__ . '/../Controller/common/mailSender.php';
+require_once  __DIR__ . '/../Model/History.php';
 
 header("Access-Control-Allow-Origin:*");		// any website (*)
 header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE,OPTIONS");		// methods
@@ -22,6 +23,13 @@ if (isset($_POST['datas']) && !empty($_POST['datas'])) {
         $obj = new EnrollmentPending(); // Fixed typo in class name
         $success = $obj->updatePendingStatusForReject($student_id, $enrolled_class_id, $reason);
 
+        $historyArr = [
+            "module" => "Enrollment",
+            "action" => "Reject",
+            "remark" => "Enrollment Rejected",
+            "instituteid" => $_COOKIE['institute_id']
+        ];
+
         $datas = [
             "success" => $success,
             "message" => "Rejected Enrollment",
@@ -29,6 +37,8 @@ if (isset($_POST['datas']) && !empty($_POST['datas'])) {
 
         if ($success) {
             $obj = new SendMail();
+            $history = new History();
+            $history->addHistoryModule($historyArr);
             $obj->sendMail($student_email, "Rejected Enrollment", $reason);
             echo json_encode($datas);
         } else {

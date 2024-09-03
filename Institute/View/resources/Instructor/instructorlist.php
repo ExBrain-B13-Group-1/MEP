@@ -159,7 +159,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                             </svg>
                         </button>
                         <ul id="dropdown-instructor" class="hidden py-2 space-y-2">
-                            <li class="sidebarlinks" click-page="instructor-list">
+                            <li class="bg-[#d9dffc] dark:bg-gray-700 rounded-md sidebarlinks" click-page="instructor-list">
                                 <a href="#" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-[#d9dffc] dark:text-white dark:hover:bg-gray-700">Instructor List</a>
                             </li>
                             <li class="sidebarlinks" click-page="add-instructor">

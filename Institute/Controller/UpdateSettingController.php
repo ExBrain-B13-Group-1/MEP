@@ -2,6 +2,7 @@
 
 ini_set('display_errors', '1');
 require_once  __DIR__ . '/../Model/Settings.php';
+require_once  __DIR__ . '/../Model/History.php';
 
 header("Access-Control-Allow-Origin:*");
 header("Access-Control-Allow-Methods:GET,POST,PUT,DELETE,OPTIONS");
@@ -72,11 +73,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         "address" => $address
     ];
 
+    $historyArr = [
+        "module" => "Settings",
+        "action" => "update",
+        "remark" => "Settings Updated",
+        "instituteid" => $_COOKIE['institute_id']
+    ];
+
     if (isset($_COOKIE['institute_id'])) {
         $id = $_COOKIE['institute_id'];
         $obj = new Settings();
         $success = $obj->updateSetting($datas, $id);    
         if ($success) {
+            $history = new History();
+            $history->addHistoryModule($historyArr);
             echo json_encode($datas);
         } else {
             echo "<script>alert('Fail Update');</script>";

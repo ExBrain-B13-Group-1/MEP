@@ -207,7 +207,7 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                         </ul>
                     </li>
 
-                    <li class="mb-1.5 sidebarlinks" click-page="history">
+                    <li class="mb-1.5 bg-[#d9dffc] dark:bg-gray-700 rounded-md sidebarlinks" click-page="history">
                         <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#d9dffc] dark:hover:bg-gray-700 group">
                             <svg class="w-5 h-5  text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <g fill="none">
@@ -259,32 +259,26 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
     <div class="pt-20 pb-6 px-5 ml-64  dark:bg-gray-800">
         <div class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700 mt-3 mb-3">
             <ul class="flex flex-wrap -mb-px">
-                <li class="me-2">
-                    <a href="#" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">All</a>
+                <li class="me-2 module-tabs" click-tab="all">
+                    <a href="javascript:void(0);" class="inline-block p-4">All</a>
                 </li>
-                <li class="me-2">
-                    <a href="#" class="inline-block p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active dark:text-blue-500 dark:border-blue-500" aria-current="page">Class</a>
+                <li class="me-2 module-tabs" click-tab="create">
+                    <a href="javascript:void(0);" class="inline-block p-4">Create</a>
                 </li>
-                <li class="me-2">
-                    <a href="#" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">Instructor</a>
+                <li class="me-2 module-tabs" click-tab="modify">
+                    <a href="javascript:void(0);" class="inline-block p-4">Modify</a>
                 </li>
-                <li class="me-2">
-                    <a href="#" class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">Event</a>
+                <li class="me-2 module-tabs" click-tab="delete">
+                    <a href="javascript:void(0);" class="inline-block p-4">Delete</a>
                 </li>
             </ul>
         </div>
-        <div class="grid gap-4">
+        <div class="h-[80vh] grid gap-4">
             <div class="col-span-4 row-span-4 rounded-lg dark:bg-gray-600 duration-500">
                 <div class="relative overflow-x-auto shadow-md dark:shadow-none sm:rounded-lg">
                     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-300 dark:bg-gray-700 duration-500 dark:text-gray-400">
                             <tr>
-                                <th scope="col" class="px-6 py-3">
-                                    NO.
-                                </th>
-                                <th scope="col" class="px-6 py-3">
-                                    NAME
-                                </th>
                                 <th scope="col" class="px-6 py-3">
                                     MODULE
                                 </th>
@@ -299,243 +293,14 @@ $baseUrl = 'http://localhost/MEP/storages/uploads/';
                                 </th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td scope="row" class="px-6 py-4 whitespace-nowrap">
-                                    1.
-                                </td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Admin 1
-                                </td>
-                                <td class="px-6 py-4 whitespace-wrap">
-                                    Class
-                                </td>
-                                <td class="px-6 py-4">
-                                    create
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    Create Class
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    1 hour ago
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td scope="row" class="px-6 py-4 whitespace-nowrap">
-                                    1.
-                                </td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Admin 1
-                                </td>
-                                <td class="px-6 py-4 whitespace-wrap">
-                                    Class
-                                </td>
-                                <td class="px-6 py-4">
-                                    create
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    Create Class
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    1 hour ago
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td scope="row" class="px-6 py-4 whitespace-nowrap">
-                                    1.
-                                </td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Admin 1
-                                </td>
-                                <td class="px-6 py-4 whitespace-wrap">
-                                    Class
-                                </td>
-                                <td class="px-6 py-4">
-                                    create
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    Create Class
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    1 hour ago
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td scope="row" class="px-6 py-4 whitespace-nowrap">
-                                    1.
-                                </td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Admin 1
-                                </td>
-                                <td class="px-6 py-4 whitespace-wrap">
-                                    Class
-                                </td>
-                                <td class="px-6 py-4">
-                                    create
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    Create Class
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    1 hour ago
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td scope="row" class="px-6 py-4 whitespace-nowrap">
-                                    1.
-                                </td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Admin 1
-                                </td>
-                                <td class="px-6 py-4 whitespace-wrap">
-                                    Class
-                                </td>
-                                <td class="px-6 py-4">
-                                    create
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    Create Class
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    1 hour ago
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td scope="row" class="px-6 py-4 whitespace-nowrap">
-                                    1.
-                                </td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Admin 1
-                                </td>
-                                <td class="px-6 py-4 whitespace-wrap">
-                                    Class
-                                </td>
-                                <td class="px-6 py-4">
-                                    create
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    Create Class
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    1 hour ago
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td scope="row" class="px-6 py-4 whitespace-nowrap">
-                                    1.
-                                </td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Admin 1
-                                </td>
-                                <td class="px-6 py-4 whitespace-wrap">
-                                    Class
-                                </td>
-                                <td class="px-6 py-4">
-                                    create
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    Create Class
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    1 hour ago
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td scope="row" class="px-6 py-4 whitespace-nowrap">
-                                    1.
-                                </td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Admin 1
-                                </td>
-                                <td class="px-6 py-4 whitespace-wrap">
-                                    Class
-                                </td>
-                                <td class="px-6 py-4">
-                                    create
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    Create Class
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    1 hour ago
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td scope="row" class="px-6 py-4 whitespace-nowrap">
-                                    1.
-                                </td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Admin 1
-                                </td>
-                                <td class="px-6 py-4 whitespace-wrap">
-                                    Class
-                                </td>
-                                <td class="px-6 py-4">
-                                    create
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    Create Class
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    1 hour ago
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <td scope="row" class="px-6 py-4 whitespace-nowrap">
-                                    1.
-                                </td>
-                                <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    Admin 1
-                                </td>
-                                <td class="px-6 py-4 whitespace-wrap">
-                                    Class
-                                </td>
-                                <td class="px-6 py-4">
-                                    create
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    Create Class
-                                </td>
-                                <td class="px-6 py-4 ">
-                                    1 hour ago
-                                </td>
-                            </tr>
+                        <tbody id="history-table-body">
+
                         </tbody>
                     </table>
                     <div class="flex justify-center">
                         <nav aria-label="Page navigation example">
-                            <ul class="flex items-center -space-x-px h-10 text-base my-10">
-                                <li>
-                                    <a href="#" class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                                        <span class="sr-only">Previous</span>
-                                        <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-                                </li>
-                                <li>
-                                    <a href="#" aria-current="page" class="z-10 flex items-center justify-center px-4 h-10 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
-                                        <span class="sr-only">Next</span>
-                                        <svg class="w-3 h-3 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
-                                        </svg>
-                                    </a>
-                                </li>
+                            <ul class="flex items-center -space-x-px h-10 text-base my-6" id="pagination" class="pagination-controls">
+                                <!-- Pagination buttons will be injected here -->
                             </ul>
                         </nav>
                     </div>
